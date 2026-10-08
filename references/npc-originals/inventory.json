@@ -1,0 +1,293 @@
+{
+  "title": "DORMI village — approved NPC concept image inventory",
+  "checked_on": "2026-10-08",
+  "summary": "13 original image files containing 26 approved character concepts. The archive includes source concept images only; no model-comparison boards or rebuilt/redrawn images are included. In the checked v127 game snapshot, 20 depicted characters are placed and 6 are approved concepts not yet placed.",
+  "files": [
+    {
+      "filename": "dormi-school-resident-designs.png",
+      "type": "approved original concept lineup",
+      "characters": [
+        {
+          "id": "nurse-otter",
+          "label": "보건실 수달",
+          "role": "infirmary helper",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "music-bird",
+          "label": "음악실 작은 새",
+          "role": "music teacher",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "art-chameleon",
+          "label": "미술실 카멜레온",
+          "role": "art teacher",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "User approved this three-character school lineup before placement; project provenance identifies it as the approved October 2026 school-resident concept sheet.",
+      "bytes": 1886072,
+      "sha256": "e778e30398fa6346de307d5a2bb7356b25d91f25b66b0f4d93e9cd05106cb303"
+    },
+    {
+      "filename": "도름이_상점주민_시안.png",
+      "type": "approved original concept lineup",
+      "characters": [
+        {
+          "id": "cafe-dog",
+          "label": "카페 강아지",
+          "role": "café baker",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "craft-beaver",
+          "label": "공방 비버",
+          "role": "craft resident",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "post-penguin",
+          "label": "우체국 펭귄",
+          "role": "postal resident",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "photo-fox",
+          "label": "사진관 여우",
+          "role": "photographer",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "User approved the four-role lineup and appearances during the concept review; project provenance identifies this as the approved shop-resident concept.",
+      "bytes": 2047365,
+      "sha256": "2793ef68012093a92db222f934a601be058bd81a4aaa17490eec3be4080ddb3d"
+    },
+    {
+      "filename": "dormi-principal-bear-concept.png",
+      "type": "approved original character concept",
+      "characters": [
+        {
+          "id": "principal-bear",
+          "label": "곰 교장선생님",
+          "role": "principal",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": null,
+      "approval_basis": "The checked project provenance explicitly identifies this as the user-approved principal-bear concept; the approval date is not retained in that source.",
+      "bytes": 2311588,
+      "sha256": "61db2b83b09a98bb32cee62aea4c6783ee4caa8f9de9e0781379ff20237bea92"
+    },
+    {
+      "filename": "dormi-gardener-hedgehog-preview.png",
+      "type": "approved original character concept",
+      "characters": [
+        {
+          "id": "gardener-hedgehog",
+          "label": "토리, 고슴도치 정원사",
+          "role": "park gardener",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "User approved this hedgehog appearance for the gardener role; project provenance records this as the approved final-geometry reference.",
+      "bytes": 1965090,
+      "sha256": "afbcb3781f122d34924538fe645597cf099a3681e9600dc9776e92fa1e80132d"
+    },
+    {
+      "filename": "dormi-library-animal-alternatives.png",
+      "type": "approved original concept lineup",
+      "characters": [
+        {
+          "id": "chinchilla",
+          "label": "친칠라 사서",
+          "role": "library circulation desk",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "armadillo",
+          "label": "아르마딜로",
+          "role": "library book-picker",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "capybara",
+          "label": "카피바라",
+          "role": "library reading companion",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-03",
+      "approval_basis": "User selected all three shown characters and requested distributing them through the expanded library; this exact image matches the approved trio.",
+      "bytes": 1596585,
+      "sha256": "97580d549724874bd958f399e8608014cd9c6d34e8e536457f3984b511814a18"
+    },
+    {
+      "filename": "도름이_운동장_토끼친구_시안_v1.png",
+      "type": "approved original character concept",
+      "characters": [
+        {
+          "id": "athletic-rabbit",
+          "label": "주황 머리띠 토끼",
+          "role": "sports-field ball/running friend",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "User approved the orange-headband rabbit concept after reviewing this image.",
+      "bytes": 1214665,
+      "sha256": "6807c5418ab3864cf90606d3fe035ffe43761d60b362da8960ba703dd15b1e8f"
+    },
+    {
+      "filename": "도름이_야구하는_호랑이친구_시안_v1.png",
+      "type": "approved original character concept",
+      "characters": [
+        {
+          "id": "baseball-tiger",
+          "label": "야구 호랑이",
+          "role": "baseball practice friend",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "User approved the teal-cap tiger appearance during the tiger/shop-resident concept review.",
+      "bytes": 1865341,
+      "sha256": "7797fe24779a70bd9414bbc983bc8b3f90dc401247f716ad3cafdefdc6b545e0"
+    },
+    {
+      "filename": "도름이_새이웃_승인시안_1_광장_교실_수학_국어.png",
+      "type": "approved original concept lineup",
+      "characters": [
+        {
+          "id": "plaza-sheep",
+          "label": "광장 어린 양",
+          "role": "plaza resident",
+          "game_status": "approved concept; not placed in v127"
+        },
+        {
+          "id": "classroom-hamster",
+          "label": "교실 햄스터",
+          "role": "star-classroom resident",
+          "game_status": "approved concept; not placed in v127"
+        },
+        {
+          "id": "math-redpanda",
+          "label": "수학실 레서판다",
+          "role": "math-room teacher",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "korean-fawn",
+          "label": "국어실 아기 사슴",
+          "role": "Korean-room resident",
+          "game_status": "approved concept; not placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "User approved the seven-character new-resident concept set and asked for detailed modeling faithful to the images.",
+      "bytes": 1625840,
+      "sha256": "ce5d1cdbe4f34061642db8ba193befda7bc2b43444afe5095bde099c1a1c3ebd"
+    },
+    {
+      "filename": "도름이_새이웃_승인시안_2_영어_사회_컴퓨터.png",
+      "type": "approved original concept lineup",
+      "characters": [
+        {
+          "id": "english-koala",
+          "label": "영어실 코알라",
+          "role": "English-room resident",
+          "game_status": "approved concept; not placed in v127 (separate from the bakery koala barista)"
+        },
+        {
+          "id": "social-raccoon",
+          "label": "사회실 라쿤",
+          "role": "social-studies-room resident",
+          "game_status": "approved concept; not placed in v127"
+        },
+        {
+          "id": "computer-little-robot",
+          "label": "컴퓨터실 꼬마 로봇",
+          "role": "computer-room resident",
+          "game_status": "approved concept; not placed in v127 (separate from the placed robot dog)"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "User approved the seven-character new-resident concept set and asked for detailed modeling faithful to the images.",
+      "bytes": 1706938,
+      "sha256": "5028afe80413a8b8b404cace1ea5db1eae6b6994bff2a6f1594a46545ddc05f4"
+    },
+    {
+      "filename": "도름이마을_과학실_초파리_시안_v3_검은눈_동그란안경.png",
+      "type": "approved original character concept",
+      "characters": [
+        {
+          "id": "science-fly",
+          "label": "검은 눈·동그란 안경·흰 가운 초파리",
+          "role": "science-room teacher",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-03",
+      "approval_basis": "User chose the black-eyed, round-glasses, white-lab-coat version after reviewing its concept image.",
+      "bytes": 1535727,
+      "sha256": "0f30865f215b6997c605b1941bc4c4f3c1d593a88c5a15a0d9a03d51892ba7c3"
+    },
+    {
+      "filename": "image(20261003-080034).png",
+      "type": "user-provided selected character reference",
+      "characters": [
+        {
+          "id": "athletic-turtle",
+          "label": "역기를 든 거북이",
+          "role": "sports/gym resident",
+          "game_status": "placed in v127 indoor gym"
+        }
+      ],
+      "approval_date": "2026-10-03",
+      "approval_basis": "User attached this turtle image and explicitly directed that the turtle be changed to this appearance.",
+      "bytes": 1005167,
+      "sha256": "d3dcad5f30d6edfe988f860a2b77b1c448c9bd0ddf2b36fa21b422a92eb73347"
+    },
+    {
+      "filename": "DORMI-항구-비행장-직원-시안.png",
+      "type": "approved original concept lineup",
+      "characters": [
+        {
+          "id": "harbor-seal",
+          "label": "물범 항구 안내원",
+          "role": "harbor staff",
+          "game_status": "placed in v127"
+        },
+        {
+          "id": "airport-sugar-glider",
+          "label": "슈가글라이더 비행장 안내원",
+          "role": "airport staff",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-06",
+      "approval_basis": "User approved both travel-staff designs after reviewing this original concept image.",
+      "bytes": 2015910,
+      "sha256": "1372167385380d02f789e17ba9ac34f3f34afa46df8ecd35409a3a3f64b5d2f8"
+    },
+    {
+      "filename": "도름이_컴퓨터실_로봇강아지_외형시안.png",
+      "type": "approved original appearance concept",
+      "characters": [
+        {
+          "id": "computer-robot-dog",
+          "label": "컴퓨터실 로봇 강아지",
+          "role": "computer-room resident",
+          "game_status": "placed in v127"
+        }
+      ],
+      "approval_date": "2026-10-04",
+      "approval_basis": "The checked project source explicitly cites this as the user's approved robot-dog appearance concept used for the original procedural model.",
+      "bytes": 1379791,
+      "sha256": "096689907366c4ce38616cf9189880de9ea1c4e73cea4d8e3e95dbcec0ca12b6"
+    }
+  ]
+}
