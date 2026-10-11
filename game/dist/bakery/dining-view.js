@@ -1,0 +1,40 @@
+import {drinkLiquidColor} from './food-colors.js';
+import * as THREE from 'three';
+import {createMarshmallowPose} from '../marshmallow/pose.js';
+import {disposeToyTree} from '../world/toy-kit.js';
+import {FOOD_BREAD_IDS} from '../state/food-catalog.js';
+import {DINING_CONTACT,DINING_DURATION} from './food-controller.js';
+const smooth=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);};
+function breadGeometry(bitten=false){const g=new THREE.SphereGeometry(1,32,24),p=g.attributes.position,c=new Float32Array(p.count*3),gold=new THREE.Color('#dca05f'),cream=new THREE.Color('#ffe0a1');for(let i=0;i<p.count;i++){let x=p.getX(i)*.20,y=p.getY(i)*.11+.11,z=p.getZ(i)*.12,cut=false;const r=.10*.10-x*x-(y-.14)*(y-.14);if(bitten&&r>0&&z<-.025){const next=-.125+Math.sqrt(r);if(next>z){z=next;cut=true;}}p.setXYZ(i,x,y,z);c.set((cut?cream:gold).toArray(),i*3);}g.setAttribute('color',new THREE.BufferAttribute(c,3));g.computeVertexNormals();g.computeBoundingBox();g.computeBoundingSphere();return g;}
+function makeServing(itemId){const root=new THREE.Group(),mat=color=>new THREE.MeshStandardMaterial({color,roughness:.83}),mesh=(geometry,material,parent=root)=>{const m=new THREE.Mesh(geometry,material);m.castShadow=m.receiveShadow=true;parent.add(m);return m;};let whole=null,bitten=null,liquid=null,foam=null,grip,contact;
+ if(FOOD_BREAD_IDS.includes(itemId)){whole=mesh(breadGeometry(),new THREE.MeshStandardMaterial({vertexColors:true,roughness:1}));bitten=mesh(breadGeometry(true),whole.material);bitten.visible=false;whole.name='dining.whole-bread';bitten.name='dining.bitten-bread';if(itemId==='miniCake'){whole.material.color.set('#dbba81');bitten.material.color.set('#dbba81');}if(itemId==='croissant'){whole.scale.x=bitten.scale.x=1.15;for(const x of[-.1,0,.1]){const score=mesh(new THREE.TorusGeometry(.058,.012,6,18,Math.PI),mat('#af773e'));score.position.set(x,.195,.015);score.rotation.set(Math.PI/2,0,Math.PI/2);score.scale.set(.65,1,1);}}contact=new THREE.Vector3(0,.11,-.12);grip=new THREE.Vector3(.15,.06,.045);
+ }else{const points=[[.095,0],[.103,.01],[.121,.205],[.135,.222],[.137,.235],[.122,.235],[.118,.217],[.086,.02]].map(p=>new THREE.Vector2(...p));const cup=mesh(new THREE.LatheGeometry(points,32),mat(itemId==='appleJuice'?'#f2d9a8':'#f6ecda'));cup.name='dining.cup';const handle=mesh(new THREE.TorusGeometry(.075,.019,10,26),cup.material);handle.position.set(.15,.12,0);handle.rotation.y=Math.PI/2;liquid=mesh(new THREE.CylinderGeometry(.117,.117,.008,32),mat(drinkLiquidColor(itemId)));liquid.name='dining.liquid';liquid.position.y=.211;if(itemId==='latte'){foam=mesh(new THREE.TorusGeometry(.038,.008,6,24),mat('#fff1d5'));foam.rotation.x=Math.PI/2;foam.position.y=.217;}contact=new THREE.Vector3(0,.235,-.135);grip=new THREE.Vector3(.218,.12,0);}
+ return {root,grip,contact,showConsumed(v){if(whole){whole.visible=!v;bitten.visible=v;}if(liquid)liquid.position.y=v?.055:.211;if(foam)foam.visible=!v;},dispose:()=>disposeToyTree(root)};
+}
+/** Props and reversible original rounded-arm adapter only. The current ActivitySession
+ * remains the sole writer of player/model root transforms and floor support. */
+export function createCafeDiningView({zoneRoot,player,model,poser,seat,itemId}){
+ if(!zoneRoot||!model||!poser||!seat?.anchor||seat.floor!=='floor2')throw new TypeError('Dining needs the live upstairs seat and original actor');
+ const bounds=[];model.traverse(o=>{if(o.isMesh)bounds.push([o.geometry,o.geometry.boundingBox?.clone(),o.geometry.boundingSphere?.clone()]);});
+ const root=new THREE.Group();root.name='cafe.dining.session';zoneRoot.add(root);
+ const pose=createMarshmallowPose(model,poser,{seated:true}),serving=makeServing(itemId);root.add(serving.root);
+ const plate=new THREE.Mesh(new THREE.CylinderGeometry(.255,.23,.025,32),new THREE.MeshStandardMaterial({color:'#f5e8d0',roughness:.9}));plate.name='dining.plate';plate.castShadow=plate.receiveShadow=true;root.add(plate);
+ const tableTopY=seat.floorY+.93,tablePoint=new THREE.Vector3(seat.anchor.x,tableTopY+.025,seat.anchor.z-.87);
+ plate.position.copy(tablePoint);plate.position.y=tableTopY+.0125;
+ // Contact uses actual original smile/tongue geometry, never a presumed face center.
+ model.updateWorldMatrix(true,true);const mouthMesh=model.getObjectByName('Happy_open_smile'),tongue=model.getObjectByName('Little_pink_tongue'),mouthBox=new THREE.Box3().setFromObject(mouthMesh),mouthWorld=mouthBox.getCenter(new THREE.Vector3());
+ const mouth=player.worldToLocal(mouthWorld.clone());
+ // Smile surface world AABB is rotated by player yaw. Find local front from source mesh vertices.
+ let mouthFront=-Infinity;const mouthPoint=new THREE.Vector3();for(const source of[mouthMesh,tongue]){const a=source.geometry.attributes.position;for(let i=0;i<a.count;i++){mouthPoint.fromBufferAttribute(a,i);source.localToWorld(mouthPoint);player.worldToLocal(mouthPoint);mouthFront=Math.max(mouthFront,mouthPoint.z);}}
+ mouth.x=0;mouth.z=mouthFront+.006;
+ const localTable=player.worldToLocal(zoneRoot.localToWorld(tablePoint.clone())),angle=FOOD_BREAD_IDS.includes(itemId)?0:.26,contactQuaternion=new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1,0,0),angle),mouthBase=mouth.clone().sub(serving.contact.clone().applyQuaternion(contactQuaternion));
+ const hand=new THREE.Vector3(),touch=new THREE.Vector3(),position=new THREE.Vector3(),quat=new THREE.Quaternion(),worldQuat=new THREE.Quaternion(),world=new THREE.Vector3();let alive=true,frame={elapsed:0,consumed:false},handContactError=0,mouthContactError=Infinity,servingBottomY=0,faceClearance=0;
+ function update(next){if(!alive)return;frame=next;const elapsed=Math.max(0,next.elapsed??0),up=smooth(elapsed/DINING_CONTACT),down=elapsed>1.3?smooth((elapsed-1.3)/(DINING_DURATION-1.3)):0,amount=up*(1-down);position.copy(localTable).lerp(mouthBase,amount);quat.identity().slerp(contactQuaternion,amount);
+  hand.copy(serving.grip).applyQuaternion(quat).add(position);pose.update({hands:{right:hand.toArray(),left:[.50,.39,.22]},elbows:{right:[.60,.59,.33],left:[.57,.46,.17]}});
+  player.updateWorldMatrix(true,true);root.updateWorldMatrix(true,true);serving.root.position.copy(root.worldToLocal(player.localToWorld(position.clone())));player.getWorldQuaternion(worldQuat);const rootWorld=root.getWorldQuaternion(new THREE.Quaternion()).invert();serving.root.quaternion.copy(rootWorld.multiply(worldQuat).multiply(quat));serving.showConsumed(!!next.consumed);serving.root.visible=elapsed<DINING_DURATION;serving.root.updateWorldMatrix(true,true);
+  touch.copy(serving.contact).applyQuaternion(quat).add(position);mouthContactError=touch.distanceTo(mouth);handContactError=Infinity;
+  servingBottomY=new THREE.Box3().setFromObject(serving.root).min.y;faceClearance=touch.z-mouthFront;
+ }
+ update(frame);
+ return {root,update,snapshot:()=>{const body=model.getObjectByName('Dormi_body'),vertices=body.geometry.attributes.position;for(let i=0;i<vertices.count;i++){world.fromBufferAttribute(vertices,i);body.localToWorld(world);player.worldToLocal(world);handContactError=Math.min(handContactError,world.distanceTo(hand));}return({itemId,tableTopY,servingBottomY,mouth:mouth.toArray(),contact:touch.toArray(),hand:hand.toArray(),mouthContactError,handContactError,faceClearance,elapsed:frame.elapsed,consumed:!!frame.consumed,biteVisible:!!frame.consumed&&FOOD_BREAD_IDS.includes(itemId),tablePoint:tablePoint.toArray()});},dispose(){if(!alive)return;alive=false;pose.dispose();for(const[g,box,sphere]of bounds){g.boundingBox=box;g.boundingSphere=sphere;}disposeToyTree(root);}};
+}

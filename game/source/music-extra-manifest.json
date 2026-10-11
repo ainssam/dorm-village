@@ -1,0 +1,327 @@
+{
+  "collection": "Dormi Original Listening Music — Additional Genres",
+  "version": 1,
+  "source": "compose-extra-music.py",
+  "license": "../dist/licenses/music-extra.txt",
+  "sample_rate_hz": 44100,
+  "authorship": "Newly specified AI-authored scores and entirely local procedural synthesis; no recordings, samples, soundfonts, or borrowed melodies supplied or used.",
+  "listening_review_limitation": "Numerical and score review only. No supported perceptual audio-listening tool was available; the tracks have not been auditioned by this agent. Objective checks do not establish subjective musical quality or guarantee seamless playback in every browser.",
+  "pieces": [
+    {
+      "id": "clover-waltz",
+      "title": "Clover Waltz",
+      "composer": "AI-authored for Dormi; procedural synthesis",
+      "synthetic": true,
+      "original_score": true,
+      "external_samples_used": false,
+      "genre": "Warm plucked-string folk waltz",
+      "mood": "Gentle, cozy and lightly swaying",
+      "bpm": 72,
+      "time_signature": "3/4",
+      "bars": 16,
+      "key": "G major",
+      "loop_start_sample": 0,
+      "loop_end_sample": 1764000,
+      "loop_start_seconds": 0,
+      "loop_end_seconds": 40.0,
+      "score_duration_seconds": 40.0,
+      "reference_pcm": {
+        "sample_frames": 1764000,
+        "duration_seconds": 40.0,
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "peak_linear": 0.376373291,
+        "peak_dbfs": -8.48762,
+        "rms_linear": 0.066832348,
+        "rms_dbfs": -23.50027,
+        "clipped_sample_count": 0,
+        "dc_offset_per_channel": [
+          -5.0689628064767575e-09,
+          9.68812003968254e-09
+        ],
+        "seam": {
+          "boundary_step_per_channel": [
+            0.001220703125,
+            0.0020751953125
+          ],
+          "maximum_boundary_step": 0.0020751953125,
+          "boundary_step_dbfs": -53.65882,
+          "nearby_step_rms": 0.0022786049157521265,
+          "boundary_step_over_nearby_step_rms": 0.91073,
+          "first_100ms_rms_dbfs": -23.61273,
+          "last_100ms_rms_dbfs": -30.8325,
+          "level_change_last_to_first_100ms_db": 7.21977,
+          "note": "The seam spans one normal sample interval. A small measured step is not a perceptual listening test."
+        }
+      },
+      "mastering_gain": 0.6861199116466815,
+      "target_rms_dbfs": -23.5,
+      "composition_notes": [
+        "A newly authored sixteen-bar melody in G major, in four related four-bar phrases.",
+        "Warm procedural nylon-like plucks carry both melody and chord accompaniment; separate plucked bass and tiny wood taps mark a 3/4 folk sway.",
+        "The last D7 turns back to the opening G. All note and room tails wrap across the exact 40-second loop.",
+        "Synthetic plucked-string timbres, not a recording of a real guitar or mandolin."
+      ],
+      "recommended_bgm_gain": 0.3,
+      "recommended_listening_gain": 0.7,
+      "review": "Numerical and score review only. No supported perceptual audio-listening tool was available; the tracks have not been auditioned by this agent. Objective checks do not establish subjective musical quality or guarantee seamless playback in every browser.",
+      "files": {
+        "ogg": {
+          "name": "clover-waltz.ogg",
+          "bytes": 517201,
+          "sha256": "abf50f02deae7e263d6cc1767385231fb8fa37b535432a9c7d5173a84c1bc8f3",
+          "decoded_analysis": {
+            "sample_frames": 1764000,
+            "duration_seconds": 40.0,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.375822425,
+            "peak_dbfs": -8.50035,
+            "rms_linear": 0.067094466,
+            "rms_dbfs": -23.46627,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -2.9445673896213795e-06,
+              -5.994140360204843e-06
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                -0.000590846873819828,
+                0.0012780632823705673
+              ],
+              "maximum_boundary_step": 0.0012780632823705673,
+              "boundary_step_dbfs": -57.86895,
+              "nearby_step_rms": 0.002281355786620111,
+              "boundary_step_over_nearby_step_rms": 0.56022,
+              "first_100ms_rms_dbfs": -23.58324,
+              "last_100ms_rms_dbfs": -30.80214,
+              "level_change_last_to_first_100ms_db": 7.2189,
+              "note": "The seam spans one normal sample interval. A small measured step is not a perceptual listening test."
+            },
+            "frame_count_matches_reference": true
+          },
+          "loudness": {
+            "integrated_lufs": -21.1,
+            "loudness_range_lu": 1.4,
+            "true_peak_dbtp": -8.5,
+            "method": "FFmpeg EBU R128 / BS.1770 with reconstructed true peak",
+            "log_file": "clover-waltz.ogg.loudness.txt"
+          }
+        },
+        "mp3": {
+          "name": "clover-waltz.mp3",
+          "bytes": 801618,
+          "sha256": "3707df7bade95c3f155a97408a206c8219e97e83bc7831a6458d7c69abc7f922",
+          "decoded_analysis": {
+            "sample_frames": 1764000,
+            "duration_seconds": 40.0,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.355998963,
+            "peak_dbfs": -8.97103,
+            "rms_linear": 0.063490082,
+            "rms_dbfs": -23.94588,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              7.865256660444348e-07,
+              2.663584316581492e-07
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                -0.0001662406139075756,
+                0.002867019735276699
+              ],
+              "maximum_boundary_step": 0.002867019735276699,
+              "boundary_step_dbfs": -50.85139,
+              "nearby_step_rms": 0.0021650872636745653,
+              "boundary_step_over_nearby_step_rms": 1.32421,
+              "first_100ms_rms_dbfs": -24.05996,
+              "last_100ms_rms_dbfs": -31.27445,
+              "level_change_last_to_first_100ms_db": 7.21449,
+              "note": "The seam spans one normal sample interval. A small measured step is not a perceptual listening test."
+            },
+            "frame_count_matches_reference": true
+          },
+          "loudness": {
+            "integrated_lufs": -21.5,
+            "loudness_range_lu": 1.4,
+            "true_peak_dbtp": -9.0,
+            "method": "FFmpeg EBU R128 / BS.1770 with reconstructed true peak",
+            "log_file": "clover-waltz.mp3.loudness.txt"
+          }
+        },
+        "wav": {
+          "name": "clover-waltz.wav",
+          "bytes": 7056044,
+          "sha256": "4368d10433a7ba325cde2dd385412fdc851141ecec9488bfe823101e4cffac80",
+          "format": "PCM signed 16-bit stereo, 44100 Hz",
+          "loudness": {
+            "integrated_lufs": -21.1,
+            "loudness_range_lu": 1.4,
+            "true_peak_dbtp": -8.5,
+            "method": "FFmpeg EBU R128 / BS.1770 with reconstructed true peak",
+            "log_file": "clover-waltz.wav.loudness.txt"
+          }
+        }
+      }
+    },
+    {
+      "id": "pixel-parade",
+      "title": "Pixel Parade",
+      "composer": "AI-authored for Dormi; procedural synthesis",
+      "synthetic": true,
+      "original_score": true,
+      "external_samples_used": false,
+      "genre": "Playful retro 8-bit / chiptune",
+      "mood": "Bright, playful and gently bouncy",
+      "bpm": 100,
+      "time_signature": "4/4",
+      "bars": 16,
+      "key": "C major",
+      "loop_start_sample": 0,
+      "loop_end_sample": 1693440,
+      "loop_start_seconds": 0,
+      "loop_end_seconds": 38.4,
+      "score_duration_seconds": 38.4,
+      "reference_pcm": {
+        "sample_frames": 1693440,
+        "duration_seconds": 38.4,
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "peak_linear": 0.356750488,
+        "peak_dbfs": -8.95271,
+        "rms_linear": 0.070792414,
+        "rms_dbfs": -23.00027,
+        "clipped_sample_count": 0,
+        "dc_offset_per_channel": [
+          -1.7300214356575965e-09,
+          -8.848338801123748e-09
+        ],
+        "seam": {
+          "boundary_step_per_channel": [
+            -0.00018310546875,
+            -3.0517578125e-05
+          ],
+          "maximum_boundary_step": 0.00018310546875,
+          "boundary_step_dbfs": -74.74597,
+          "nearby_step_rms": 0.009570884003051262,
+          "boundary_step_over_nearby_step_rms": 0.01913,
+          "first_100ms_rms_dbfs": -19.5589,
+          "last_100ms_rms_dbfs": -29.72724,
+          "level_change_last_to_first_100ms_db": 10.16834,
+          "note": "The seam spans one normal sample interval. A small measured step is not a perceptual listening test."
+        }
+      },
+      "mastering_gain": 1.0997561398934617,
+      "target_rms_dbfs": -23.0,
+      "composition_notes": [
+        "A newly authored sixteen-bar C-major tune with an A/A-variation/B/turnaround shape, at a straight 100 BPM.",
+        "Band-limited 25-percent pulse melody, 50-percent pulse chord arpeggios, triangle bass and quiet digitally synthesized noise drums.",
+        "The timbre deliberately recalls simple retro chip oscillators, rather than claiming emulation of a particular game, soundtrack or hardware.",
+        "The closing G resolves to C at the exact 38.4-second loop; periodic tails and filters avoid filter startup transients."
+      ],
+      "recommended_bgm_gain": 0.3,
+      "recommended_listening_gain": 0.7,
+      "review": "Numerical and score review only. No supported perceptual audio-listening tool was available; the tracks have not been auditioned by this agent. Objective checks do not establish subjective musical quality or guarantee seamless playback in every browser.",
+      "files": {
+        "ogg": {
+          "name": "pixel-parade.ogg",
+          "bytes": 515546,
+          "sha256": "b8321001ac0098c80cad151dd3103a047e93a5d7b39822ed585d748338cdb09b",
+          "decoded_analysis": {
+            "sample_frames": 1693440,
+            "duration_seconds": 38.4,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.359335124,
+            "peak_dbfs": -8.89001,
+            "rms_linear": 0.071105675,
+            "rms_dbfs": -22.96191,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -1.0419782240906925e-05,
+              -3.5062728380522854e-07
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                0.00029966235160827637,
+                0.0006461348384618759
+              ],
+              "maximum_boundary_step": 0.0006461348384618759,
+              "boundary_step_dbfs": -63.79354,
+              "nearby_step_rms": 0.00954306095424353,
+              "boundary_step_over_nearby_step_rms": 0.06771,
+              "first_100ms_rms_dbfs": -19.51132,
+              "last_100ms_rms_dbfs": -29.75496,
+              "level_change_last_to_first_100ms_db": 10.24364,
+              "note": "The seam spans one normal sample interval. A small measured step is not a perceptual listening test."
+            },
+            "frame_count_matches_reference": true
+          },
+          "loudness": {
+            "integrated_lufs": -21.4,
+            "loudness_range_lu": 1.4,
+            "true_peak_dbtp": -8.9,
+            "method": "FFmpeg EBU R128 / BS.1770 with reconstructed true peak",
+            "log_file": "pixel-parade.ogg.loudness.txt"
+          }
+        },
+        "mp3": {
+          "name": "pixel-parade.mp3",
+          "bytes": 769226,
+          "sha256": "c0d564ac49fa25c11c222b0be6b8c6b10c42ab3ad62453a0adc195399016b59d",
+          "decoded_analysis": {
+            "sample_frames": 1693440,
+            "duration_seconds": 38.4,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.338731945,
+            "peak_dbfs": -9.40288,
+            "rms_linear": 0.067251799,
+            "rms_dbfs": -23.44592,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -7.397963470020387e-07,
+              -6.629536997539738e-07
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                -0.0007759761065244675,
+                -0.0026099104434251785
+              ],
+              "maximum_boundary_step": 0.0026099104434251785,
+              "boundary_step_dbfs": -51.66749,
+              "nearby_step_rms": 0.009103067863623844,
+              "boundary_step_over_nearby_step_rms": 0.28671,
+              "first_100ms_rms_dbfs": -20.00531,
+              "last_100ms_rms_dbfs": -30.17529,
+              "level_change_last_to_first_100ms_db": 10.16998,
+              "note": "The seam spans one normal sample interval. A small measured step is not a perceptual listening test."
+            },
+            "frame_count_matches_reference": true
+          },
+          "loudness": {
+            "integrated_lufs": -21.9,
+            "loudness_range_lu": 1.4,
+            "true_peak_dbtp": -9.4,
+            "method": "FFmpeg EBU R128 / BS.1770 with reconstructed true peak",
+            "log_file": "pixel-parade.mp3.loudness.txt"
+          }
+        },
+        "wav": {
+          "name": "pixel-parade.wav",
+          "bytes": 6773804,
+          "sha256": "01c21b9cd88c2915f0250db71ea94d6bd448d6e4152794b121559e585ab49c1e",
+          "format": "PCM signed 16-bit stereo, 44100 Hz",
+          "loudness": {
+            "integrated_lufs": -21.4,
+            "loudness_range_lu": 1.4,
+            "true_peak_dbtp": -9.0,
+            "method": "FFmpeg EBU R128 / BS.1770 with reconstructed true peak",
+            "log_file": "pixel-parade.wav.loudness.txt"
+          }
+        }
+      }
+    }
+  ]
+}

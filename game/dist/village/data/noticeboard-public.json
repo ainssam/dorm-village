@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "visibility": "public",
+  "verifiedAt": "2026-10-05T11:00:36.428Z",
+  "source": {
+    "title": "도름스 공개 앱 목록 · 최신순 앞 30개"
+  },
+  "items": [
+    {
+      "title": "우리동네 폰: 배달, 택시, 피싱문자 등 연습 앱",
+      "tagline": "배달, 택시, 피싱문자 등 자립 위한 연습 앱",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "시퀀스팡3",
+      "tagline": "수열의 규칙이 퍼즐이 되는 순간, 숫자 타일로 즐기는 수열 학습 게임",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "전하 서바이벌",
+      "tagline": "전하를 직접 바꾸며 인력과 척력을 체험하고, 스토리와 문제로 전기력 개념을 익히는 고등학교 물리 수업용 게임",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "척척 물류센터",
+      "tagline": "특수교육대상학생 직업교육 웹앱",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "[세포와 물질대사] 발아콩 물질대사 탐구 시뮬레이션",
+      "tagline": "고등학교 세포와 물질대사 - 발아 중인 콩의 물질대사 탐구 시뮬레이션 초안입니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "인생 현황판 (월급,지출,투자,자산,배당,일기)",
+      "tagline": "교사의 월급부터 실시간 주가·배당, 카드값 예정표까지 한곳에서 관리하는 올인원 라이프 대시보드",
+      "category": "콘텐츠·제작도구",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "PICK&GO : 한 줄 고르고, 바로 GO!",
+      "tagline": "숫자 카드를 고르고 조합하며 계산의 원리와 전략적 판단을 익히는 2~4인 웹 보드게임",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "전람회의 그림 <The Promenade>",
+      "tagline": "무소르그스키 <전람회의 그림> 게임 빙자 감상 수업 코스웨어입니다. PC최적화 되어있습니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "사주 프롬프트 생성기",
+      "tagline": "인공지능으로 사주 보고 싶은 사람이 이용합니다.",
+      "category": "기타",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "나랏말ᄊᆞ미, 중세 국어를 해독하는 웹 게임",
+      "tagline": "중·고등학생이 옛말의 단서를 모아 뜻을 찾고 세종의 서문을 읽는 국어 학습 게임입니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "[대학원용] 연구방법 길잡이",
+      "tagline": "대학원에 다니시는 선생님용",
+      "category": "기타",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "수학사 아틀라스 2.2",
+      "tagline": "수학사에 관심이 있는 교사 및 학생",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "시험 결과 분석 척척이",
+      "tagline": "교과 선생님이 나이스에서 내려받은 학생답 정오표와 문항정보표를 브라우저에 넣으면, 성취수준·문항·평가영역·학생별 시험 결과를 그 자리에서 분석하는 데 쓰는 프로그램입니다.",
+      "category": "평가·성적처리",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "McKay Clinic 4.0",
+      "tagline": "수학교사 및 학생",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "Pyxis",
+      "tagline": "카훗, 패들렛, 구글 Forms를 한 프로젝트에 묶었습니다. 학생들의 활동을 확인하고 AI를 이용해 활동을 분석할 수 있습니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "음운 해전",
+      "tagline": "중고등학생이 조음 위치·방법·세기를 골라 음운을 만들어 쏘며 국어의 자음·단모음 체계를 익히는 웹 학습 게임입니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "우리 아이 단어장",
+      "tagline": "초등 자녀의 매일 영단어 습관을 엄마·아빠가 함께 관리하고, 공부·심부름을 달란트와 쿠폰으로 칭찬해 주는 가정용 학습 앱",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "제빵냥의 거대빵 타이쿤",
+      "tagline": "거대한 빵을 만들며 닮음비와 넓이의 비,부피의 비 관계를 익히는 게임",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "MNIST 손글씨 이미지 인식 사이트",
+      "tagline": "이미지데이터 처리 단원 예시",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "학교 생활 위젯 만들기 스튜디오(컴퓨터용)",
+      "tagline": "학교 구성원의 컴퓨터에 필요한 내용만 들어간 간단 위젯을 설치합니다.",
+      "category": "기타",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "디드 — 우리 반 디지털 드로잉",
+      "tagline": "설치 없이 인터넷 창에서 여는 초등 디지털 드로잉입니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "SW·AI 놀이터 — 1~6학년 정보 교육 주간 활동",
+      "tagline": "1~6학년이 학년별 월드에서 디지털 시민교육, 로봇 코딩, AI 체험을 게임과 퀴즈로 합니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "밤하늘 관찰 — 달·별자리·태양계 시뮬레이터",
+      "tagline": "달의 위상 변화, 달 표면, 별자리, 태양계, 밀물과 썰물을 인터넷 창에서 바로 관찰합니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "노션 교무수첩 만들기 Git",
+      "tagline": "노션을 교무수첩으로 사용하시는 선생님들께 기본적인 틀을 만들어주는 데 도움을 드리는 Git입니다.",
+      "category": "콘텐츠·제작도구",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "학생 내신 및 모의고사 성적 분석",
+      "tagline": "나이스(NEIS) 성적 일람표 엑셀 파일과 모의고사 성적 파일을 하나만 올리면, 학생별 성적 변화를 그래프로 보여주고 상담 기록 초안까지 AI가 함께 작성해 주는 담임 업무용 웹앱입니다.",
+      "category": "학급경영",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "퀴즈온",
+      "tagline": "수식 및 그래프 입력이 자유로운 실시간 퀴즈 프로그램입니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "교사용 설문지 프롬프트 생성기",
+      "tagline": "학교 현장 맞춤형 200대 설문 템플릿을 고르고 문항을 자유롭게 편집하여, 구글 설문지를 통째로 완성하는 Apps Script 코드를 1초 만에 생성하는 교사용 AI 프롬프트 빌더",
+      "category": "학급경영",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "설문으로 행발제작기",
+      "tagline": "학생 설문 기반 학급 컨설팅 & AI 행동발달 솔루션",
+      "category": "평가·성적처리",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "「구운몽: 인간 재미 어떠하더냐」",
+      "tagline": "「구운몽: 인간 재미 어떠하더냐」는 고등학생이 성진이 되어 연화봉을 걷고, 양소유가 되어 한평생을 살아 본 뒤 한순간에 깨어나며 몽자류 소설의 환몽 구조를 익히는 탑뷰 도트 학습 게임입니다.",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    },
+    {
+      "title": "Battle with Fly - 초파리와 숫자 기억 대결",
+      "tagline": "초파리의 신경망 모델과 대표적인 무리수의 숫자를 번갈아 외워보는 체험형 게임",
+      "category": "교과·수업",
+      "summaryVisibility": "public"
+    }
+  ]
+}

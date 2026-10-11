@@ -1,0 +1,831 @@
+{
+  "name": "Dormi social-studies physical globe",
+  "generatedOn": "2026-10-04",
+  "source": {
+    "dataset": "Natural Earth physical land 1:110 million",
+    "layer": "ne_110m_land",
+    "repository": "https://github.com/nvkelso/natural-earth-vector",
+    "revision": "ca96624a56bd078437bca8184e78163e5039ad19",
+    "revisionDate": "2022-06-02T07:25:00Z",
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_land.geojson",
+    "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+    "bytes": 138160,
+    "license": "Public domain (Natural Earth terms)",
+    "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "retainedLicense": "licenses/NATURAL-EARTH-LICENSE.md",
+    "sourceFile": "source/ne_110m_land.geojson"
+  },
+  "projection": {
+    "name": "Equirectangular",
+    "implementation": "d3-geo 3.1.1 geoEquirectangular",
+    "width": 1024,
+    "height": 512,
+    "longitudeExtent": [
+      -180,
+      180
+    ],
+    "latitudeExtent": [
+      90,
+      -90
+    ],
+    "padding": 0,
+    "northUp": true,
+    "westLeft": true,
+    "pixelFormula": [
+      "x=(longitude+180)/360*1024",
+      "y=(90-latitude)/180*512"
+    ],
+    "sphereUV": [
+      "u=(longitude+180)/360",
+      "v=(latitude+90)/180"
+    ],
+    "textureFlipY": true,
+    "antimeridian": "D3 spherical antimeridian clipping; both longitude edges retained",
+    "poles": "Full extent, south-pole land and north-pole ocean retained"
+  },
+  "presentation": {
+    "palette": {
+      "ocean": "#a6cbd2",
+      "land": "#b6c58b",
+      "grid": "#7298a0"
+    },
+    "countryBorders": false,
+    "countryNames": false,
+    "labels": false,
+    "graticuleDegrees": 30
+  },
+  "processing": {
+    "geometryRemoved": 0,
+    "features": 127,
+    "landAreaSteradians": 3.627891493630341,
+    "sourceSimplification": "None beyond pinned 110m dataset",
+    "winding": "Original D3-compatible rings unchanged"
+  },
+  "validation": {
+    "pixelChecks": [
+      {
+        "name": "Africa",
+        "lon": 20,
+        "lat": 10,
+        "expectedLand": true,
+        "xy": [
+          568.8888888888889,
+          227.55555555555554
+        ],
+        "uv": [
+          0.5555555555555556,
+          0.5555555555555556
+        ],
+        "pixel": [
+          568,
+          227
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Asia",
+        "lon": 90,
+        "lat": 40,
+        "expectedLand": true,
+        "xy": [
+          768,
+          142.22222222222223
+        ],
+        "uv": [
+          0.75,
+          0.7222222222222222
+        ],
+        "pixel": [
+          768,
+          142
+        ],
+        "rgba": [
+          178,
+          194,
+          140,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Europe",
+        "lon": 20,
+        "lat": 50,
+        "expectedLand": true,
+        "xy": [
+          568.8888888888889,
+          113.77777777777777
+        ],
+        "uv": [
+          0.5555555555555556,
+          0.7777777777777778
+        ],
+        "pixel": [
+          568,
+          113
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "North America",
+        "lon": -100,
+        "lat": 45,
+        "expectedLand": true,
+        "xy": [
+          227.55555555555554,
+          128
+        ],
+        "uv": [
+          0.2222222222222222,
+          0.75
+        ],
+        "pixel": [
+          227,
+          128
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "South America",
+        "lon": -60,
+        "lat": -10,
+        "expectedLand": true,
+        "xy": [
+          341.33333333333337,
+          284.44444444444446
+        ],
+        "uv": [
+          0.3333333333333333,
+          0.4444444444444444
+        ],
+        "pixel": [
+          341,
+          284
+        ],
+        "rgba": [
+          175,
+          192,
+          141,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Australia",
+        "lon": 134,
+        "lat": -25,
+        "expectedLand": true,
+        "xy": [
+          893.1555555555556,
+          327.1111111111111
+        ],
+        "uv": [
+          0.8722222222222222,
+          0.3611111111111111
+        ],
+        "pixel": [
+          893,
+          327
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Antarctica",
+        "lon": 0,
+        "lat": -85,
+        "expectedLand": true,
+        "xy": [
+          512,
+          497.7777777777778
+        ],
+        "uv": [
+          0.5,
+          0.027777777777777776
+        ],
+        "pixel": [
+          512,
+          497
+        ],
+        "rgba": [
+          178,
+          194,
+          140,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Greenland",
+        "lon": -42,
+        "lat": 73,
+        "expectedLand": true,
+        "xy": [
+          392.5333333333333,
+          48.355555555555554
+        ],
+        "uv": [
+          0.38333333333333336,
+          0.9055555555555556
+        ],
+        "pixel": [
+          392,
+          48
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Japan Honshu",
+        "lon": 138,
+        "lat": 36,
+        "expectedLand": true,
+        "xy": [
+          904.5333333333333,
+          153.6
+        ],
+        "uv": [
+          0.8833333333333333,
+          0.7
+        ],
+        "pixel": [
+          904,
+          153
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "New Zealand North Island",
+        "lon": 175.4,
+        "lat": -38.5,
+        "expectedLand": true,
+        "xy": [
+          1010.9155555555556,
+          365.5111111111111
+        ],
+        "uv": [
+          0.9872222222222221,
+          0.2861111111111111
+        ],
+        "pixel": [
+          1010,
+          365
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "New Zealand South Island",
+        "lon": 170.5,
+        "lat": -44,
+        "expectedLand": true,
+        "xy": [
+          996.9777777777779,
+          381.15555555555557
+        ],
+        "uv": [
+          0.9736111111111111,
+          0.25555555555555554
+        ],
+        "pixel": [
+          996,
+          381
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Madagascar",
+        "lon": 46,
+        "lat": -20,
+        "expectedLand": true,
+        "xy": [
+          642.8444444444444,
+          312.8888888888889
+        ],
+        "uv": [
+          0.6277777777777778,
+          0.3888888888888889
+        ],
+        "pixel": [
+          642,
+          312
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Sumatra",
+        "lon": 101,
+        "lat": -1,
+        "expectedLand": true,
+        "xy": [
+          799.2888888888889,
+          258.84444444444443
+        ],
+        "uv": [
+          0.7805555555555556,
+          0.49444444444444446
+        ],
+        "pixel": [
+          799,
+          258
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Java",
+        "lon": 110,
+        "lat": -7.5,
+        "expectedLand": true,
+        "xy": [
+          824.8888888888889,
+          277.3333333333333
+        ],
+        "uv": [
+          0.8055555555555556,
+          0.4583333333333333
+        ],
+        "pixel": [
+          824,
+          277
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Borneo",
+        "lon": 114,
+        "lat": 0.7,
+        "expectedLand": true,
+        "xy": [
+          836.2666666666667,
+          254.0088888888889
+        ],
+        "uv": [
+          0.8166666666666667,
+          0.5038888888888889
+        ],
+        "pixel": [
+          836,
+          254
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Sulawesi",
+        "lon": 120,
+        "lat": -2,
+        "expectedLand": true,
+        "xy": [
+          853.3333333333333,
+          261.68888888888887
+        ],
+        "uv": [
+          0.8333333333333334,
+          0.4888888888888889
+        ],
+        "pixel": [
+          853,
+          261
+        ],
+        "rgba": [
+          175,
+          192,
+          141,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "New Guinea",
+        "lon": 140,
+        "lat": -5,
+        "expectedLand": true,
+        "xy": [
+          910.2222222222222,
+          270.22222222222223
+        ],
+        "uv": [
+          0.8888888888888888,
+          0.4722222222222222
+        ],
+        "pixel": [
+          910,
+          270
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Fiji Viti Levu",
+        "lon": 178,
+        "lat": -17.8,
+        "expectedLand": true,
+        "xy": [
+          1018.3111111111111,
+          306.6311111111111
+        ],
+        "uv": [
+          0.9944444444444445,
+          0.40111111111111114
+        ],
+        "pixel": [
+          1018,
+          306
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Fiji Vanua Levu",
+        "lon": 179.5,
+        "lat": -16.5,
+        "expectedLand": true,
+        "xy": [
+          1022.5777777777778,
+          302.93333333333334
+        ],
+        "uv": [
+          0.9986111111111111,
+          0.4083333333333333
+        ],
+        "pixel": [
+          1022,
+          302
+        ],
+        "rgba": [
+          175,
+          199,
+          170,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Pacific Ocean",
+        "lon": -140,
+        "lat": 0,
+        "expectedLand": false,
+        "xy": [
+          113.77777777777777,
+          256
+        ],
+        "uv": [
+          0.1111111111111111,
+          0.5
+        ],
+        "pixel": [
+          113,
+          256
+        ],
+        "rgba": [
+          163,
+          200,
+          207,
+          255
+        ],
+        "rasterLand": false
+      },
+      {
+        "name": "Atlantic Ocean",
+        "lon": -30,
+        "lat": 0,
+        "expectedLand": false,
+        "xy": [
+          426.6666666666667,
+          256
+        ],
+        "uv": [
+          0.4166666666666667,
+          0.5
+        ],
+        "pixel": [
+          426,
+          256
+        ],
+        "rgba": [
+          159,
+          196,
+          203,
+          255
+        ],
+        "rasterLand": false
+      },
+      {
+        "name": "Indian Ocean",
+        "lon": 80,
+        "lat": -25,
+        "expectedLand": false,
+        "xy": [
+          739.5555555555555,
+          327.1111111111111
+        ],
+        "uv": [
+          0.7222222222222222,
+          0.3611111111111111
+        ],
+        "pixel": [
+          739,
+          327
+        ],
+        "rgba": [
+          166,
+          203,
+          210,
+          255
+        ],
+        "rasterLand": false
+      },
+      {
+        "name": "North Pole",
+        "lon": 0,
+        "lat": 89.8,
+        "expectedLand": false,
+        "xy": [
+          512,
+          0.5688888888888926
+        ],
+        "uv": [
+          0.5,
+          0.9988888888888889
+        ],
+        "pixel": [
+          512,
+          0
+        ],
+        "rgba": [
+          163,
+          200,
+          207,
+          255
+        ],
+        "rasterLand": false
+      },
+      {
+        "name": "South Pole",
+        "lon": 0,
+        "lat": -89.8,
+        "expectedLand": true,
+        "xy": [
+          512,
+          511.43111111111114
+        ],
+        "uv": [
+          0.5,
+          0.001111111111111127
+        ],
+        "pixel": [
+          512,
+          511
+        ],
+        "rgba": [
+          178,
+          194,
+          140,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Antarctica west seam",
+        "lon": -179.8,
+        "lat": -85,
+        "expectedLand": true,
+        "xy": [
+          0.5688888888888641,
+          497.7777777777778
+        ],
+        "uv": [
+          0.000555555555555524,
+          0.027777777777777776
+        ],
+        "pixel": [
+          0,
+          497
+        ],
+        "rgba": [
+          178,
+          194,
+          140,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Antarctica east seam",
+        "lon": 179.8,
+        "lat": -85,
+        "expectedLand": true,
+        "xy": [
+          1023.4311111111111,
+          497.7777777777778
+        ],
+        "uv": [
+          0.9994444444444445,
+          0.027777777777777776
+        ],
+        "pixel": [
+          1023,
+          497
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Pacific west seam",
+        "lon": -179.8,
+        "lat": 0,
+        "expectedLand": false,
+        "xy": [
+          0.5688888888888641,
+          256
+        ],
+        "uv": [
+          0.000555555555555524,
+          0.5
+        ],
+        "pixel": [
+          0,
+          256
+        ],
+        "rgba": [
+          160,
+          197,
+          205,
+          255
+        ],
+        "rasterLand": false
+      },
+      {
+        "name": "Pacific east seam",
+        "lon": 179.8,
+        "lat": 0,
+        "expectedLand": false,
+        "xy": [
+          1023.4311111111111,
+          256
+        ],
+        "uv": [
+          0.9994444444444445,
+          0.5
+        ],
+        "pixel": [
+          1023,
+          256
+        ],
+        "rgba": [
+          163,
+          200,
+          207,
+          255
+        ],
+        "rasterLand": false
+      },
+      {
+        "name": "Chukotka west seam",
+        "lon": -179.8,
+        "lat": 66,
+        "expectedLand": true,
+        "xy": [
+          0.5688888888888641,
+          68.26666666666665
+        ],
+        "uv": [
+          0.000555555555555524,
+          0.8666666666666667
+        ],
+        "pixel": [
+          0,
+          68
+        ],
+        "rgba": [
+          173,
+          196,
+          161,
+          255
+        ],
+        "rasterLand": true
+      },
+      {
+        "name": "Chukotka east seam",
+        "lon": 179.8,
+        "lat": 66,
+        "expectedLand": true,
+        "xy": [
+          1023.4311111111111,
+          68.26666666666665
+        ],
+        "uv": [
+          0.9994444444444445,
+          0.8666666666666667
+        ],
+        "pixel": [
+          1023,
+          68
+        ],
+        "rgba": [
+          182,
+          197,
+          139,
+          255
+        ],
+        "rasterLand": true
+      }
+    ],
+    "renderer": "@resvg/resvg-js 2.6.2"
+  },
+  "files": [
+    {
+      "file": "world-globe-equirectangular.svg",
+      "bytes": 101225,
+      "sha256": "2f220d5f8d34e496309dba972e186daab87cf73c70d2f8df4d318137f06d68c4"
+    },
+    {
+      "file": "world-globe-1024.png",
+      "bytes": 62683,
+      "sha256": "b8358ed462f8fcc05b980f72966fa48821a27ede7d3baf266d61ae5cba5fda58"
+    }
+  ]
+}

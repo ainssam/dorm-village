@@ -1,0 +1,2 @@
+export const POST_RECIPIENTS={chinchilla:{name:'친칠라',role:'도서관 대출대 친구',reply:'편지가 도착해서 책장 사이까지 환해졌어요. 도서관에서 또 만나요!'},armadillo:{name:'아르마딜로',role:'책장 정리 친구',reply:'네 편지를 좋아하는 책갈피 옆에 두었어. 오늘의 작은 발견도 함께 기억할게!'},capybara:{name:'카피바라',role:'창가에서 읽는 친구',reply:'햇볕 드는 창가에서 천천히 읽었어. 마음이 따뜻해지는 하루를 보내렴.'}};
+export const POST_TEMPLATES={hello:{label:'안부 한 줄',text:'오늘 마을을 산책했어. 너에게도 포근한 하루가 되었으면 좋겠어.'},thanks:{label:'고마운 마음',text:'함께해 줘서 고마워. 작은 순간들이 더 반짝였어.'},discovery:{label:'작은 발견',text:'오늘 좋아하는 순간을 하나 찾았어. 다음에 만나면 같이 이야기하자.'}};

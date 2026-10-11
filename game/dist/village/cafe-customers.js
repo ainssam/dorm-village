@@ -1,0 +1,27 @@
+import {createResident,poseResident,disposeResident} from '../residents/residents.js';
+import {CAFE_RESIDENTS,CAFE_NAMES,CAFE_MENU} from './cafe-config.js';
+import {signLabel} from '../world/handwriting.js';
+export const CAFE_QUEUE=[{x:1.25,z:1.2},{x:-1.25,z:1.2}];
+export function along(points,progress){let total=0;const lengths=points.slice(1).map((p,i)=>{const n=Math.hypot(p.x-points[i].x,p.z-points[i].z);total+=n;return n;});let left=Math.max(0,Math.min(1,progress))*total;for(let i=0;i<lengths.length;i++){const a=points[i],b=points[i+1],len=lengths[i];if(left<=len||i===lengths.length-1){const t=len?left/len:1;return {x:a.x+(b.x-a.x)*t,z:a.z+(b.z-a.z)*t,yaw:Math.atan2(b.x-a.x,b.z-a.z)};}left-=len;}return {...points[0],yaw:0};}
+export function cafeGuestPose(order,time,{served=false,departureMs=null}={}){
+ const q=CAFE_QUEUE[order.slot],side=order.slot===0?1:-1,entry=[{x:0,z:4.12},{x:0,z:2.6},q];
+ if(!served){if(time<order.shownMs)return {...along(entry,(time-order.admittedMs)/3000),y:.04,walking:true,seated:false};return {...q,y:.04,yaw:Math.PI,walking:false,seated:false};}
+ const age=(time-order.servedMs)/1000,seat={x:side*3.3,z:3.6},approach={x:side*2,z:3.6},depart=(departureMs??order.servedMs+12000)-order.servedMs;
+ if(age<3.2)return {...along([q,{x:side*2,z:1.4},approach],age/3.2),y:.04,walking:true,seated:false};
+ if(age<4){const p=(age-3.2)/.8;return {...along([approach,seat],p),y:.04+.28*p,walking:false,seated:true,yaw:Math.PI};}
+ if(age<depart/1000)return {...seat,y:.32,yaw:Math.PI,walking:false,seated:true};
+ const out=age-depart/1000;if(out<.8)return {...along([seat,approach],out/.8),y:.32-.28*out/.8,walking:false,seated:true,yaw:Math.PI};
+ if(out<5)return {...along([approach,{x:side*1.25,z:3.8},{x:0,z:4.12}],(out-.8)/4.2),y:.04,walking:true,seated:false};return null;
+}
+export async function attachCafeCustomers(view,getCafe){
+ const corridor=view.cafeGuestCorridor??null,models=new Map(),bubbles=new Map();let alive=true,lastBubble='',tickTime=0;
+ const originalDispose=view.dispose.bind(view);view.dispose=()=>{if(!alive)return;alive=false;corridor?.dispose();for(const m of models.values())disposeResident(m);models.clear();originalDispose();};
+ try{await Promise.all(CAFE_RESIDENTS.map(async id=>{const model=await createResident(id,{showBook:false});if(!alive){disposeResident(model);return;}model.visible=false;view.root.add(model);models.set(id,model);}));}catch(e){view.dispose();throw e;}
+ function clearBubbles(){for(const b of bubbles.values()){b.traverse(o=>{o.geometry?.dispose();for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[]){m.map?.dispose();m.dispose();}});b.removeFromParent();}bubbles.clear();}
+ const baseDispose=view.dispose;view.dispose=()=>{clearBubbles();baseDispose();};
+ view.updateCafeGuests=(dt,active,reduced=false)=>{if(!alive)return;let s,guarded;if(corridor){try{s=getCafe();if(!s)return;guarded=corridor.updateCafe({cafe:s,dt,active,poseFor:view.cafeGuestPose??cafeGuestPose});}catch(error){view.dispose();throw error;}}else{s=getCafe();if(!s)return;}if(active&&!reduced)tickTime+=dt;const poses=[];for(const id of CAFE_RESIDENTS){const order=s.orders.find(o=>o.residentId===id),served=!order?[...s.settled].reverse().find(o=>o.residentId===id):null,nextServed=served?s.settled.find(o=>o.servedMs>=served.servedMs&&o.ordinal>served.ordinal):null,departureMs=served?Math.max(served.servedMs+4000,Math.min(served.servedMs+12000,nextServed?.servedMs??Infinity)):null,pose=guarded?(guarded.get(id)??null):order?cafeGuestPose(order,s.activeMs):served?cafeGuestPose(served,s.activeMs,{served:true,departureMs}):null,model=models.get(id);model.visible=!!pose;if(!pose)continue;model.position.set(pose.x,pose.y+(pose.walking&&active&&!reduced?Math.abs(Math.sin(tickTime*5))*.014:0),pose.z);model.rotation.y=pose.yaw;poseResident(model,{time:tickTime,walking:pose.walking&&active&&!reduced,headYaw:pose.seated?Math.sin(tickTime*.6)*.10:0,showBook:false});const parts=model.userData.parts,rest=model.userData.restPose;for(const role of ['Arm.L','Arm.R']){if(!parts[role]||!rest[role])continue;parts[role].rotation.copy(rest[role].rotation);if(pose.seated)parts[role].rotation.x-=.23+Math.sin(tickTime*1.4)*.04;}poses.push({id,seatId:guarded?pose.seatId:served?`bakeryCafe.chair-${served.slot===0?'right':'left'}`:null,x:pose.x,z:pose.z,yaw:pose.yaw,moving:pose.walking,...(guarded?{radius:pose.radius,y:pose.y,floor:pose.floor,floorY:pose.floorY,supportY:pose.supportY,orderId:pose.orderId,waitingForHop:pose.waitingForHop}:{})});}
+ const sig=s.orders.map(o=>o.id).join('|');if(sig!==lastBubble){lastBubble=sig;clearBubbles();for(const o of s.orders){const q=CAFE_QUEUE[o.slot],text=Object.entries(o.items).map(([id,n])=>CAFE_MENU[id].label+(n>1?` ${n}`:'')).join(' · ');const b=signLabel(text,q.x,2.01,q.z,2,'#64452b','#fff7df',view.root);if(b)bubbles.set(o.residentId,b);}}
+ for(const [id,b]of bubbles){const m=models.get(id);b.position.x=m.position.x;b.position.z=m.position.z;b.visible=m.visible&&(!guarded||guarded.get(id)?.orderId===s.orders.find(o=>o.residentId===id)?.id);}
+ view.cafeGuestSnapshot=()=>poses;};
+ view.updateCafeGuests(0,false);const previous=view.residents;view.residents={snapshot:()=>[...previous.snapshot(),...(view.cafeGuestSnapshot?.()??[])],interactions:()=>previous.interactions(),collisionWorld:()=>{const world=previous.collisionWorld();return {...world,circles:[...(world.circles??[]),...(view.cafeGuestSnapshot?.()??[]).map(p=>({...p,radius:p.radius??.52}))]};}};return view;
+}

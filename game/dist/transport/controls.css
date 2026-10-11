@@ -1,0 +1,14 @@
+/* Native compact transport controls keep sound and save warnings reachable. */
+.boat-controls{position:absolute;z-index:7;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:calc(30px + env(safe-area-inset-bottom));padding:4px;background:#fff9ebf5;border:1px solid #aabdb6;border-radius:12px;max-width:540px;margin:0 auto;pointer-events:auto}
+.boat-status{font-size:16px;line-height:20px;margin:0 4px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#314e52}
+.boat-buttons{display:grid;grid-template-columns:minmax(48px,.7fr) minmax(48px,1fr) minmax(48px,1.2fr);gap:6px}
+.boat-buttons button{min-width:0;min-height:48px;padding:2px 5px;border-radius:8px;font-size:18px;line-height:1.12;white-space:normal;touch-action:manipulation;background:#e7eddf;color:#203c41;border:1px solid #96aaa0}
+.boat-buttons button:focus-visible{outline:3px solid #315f58;outline-offset:2px}.boat-buttons button:disabled{opacity:.7}
+#stage[data-boat-active=true] .bottom-controls,#stage[data-boat-active=true] .mission-pill,#stage[data-boat-active=true] .activity-note{visibility:hidden;pointer-events:none}
+body:has(#stage[data-boat-active=true]) footer{left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));font-size:14px}
+body:has(#stage[data-boat-active=true]) footer .device-note{display:none}
+body[data-save-warning=true] .boat-controls{bottom:calc(74px + env(safe-area-inset-bottom))}
+@media(min-width:621px) and (max-height:520px){.boat-controls{max-width:none;display:flex;align-items:center;gap:8px;bottom:calc(30px + env(safe-area-inset-bottom))}.boat-status{flex:1;min-width:0;white-space:normal;margin:0 4px}.boat-buttons{width:360px;flex-shrink:0}body[data-save-warning=true] .boat-controls{bottom:calc(64px + env(safe-area-inset-bottom))}}
+@media(max-width:360px){.boat-buttons{grid-template-columns:minmax(48px,.7fr) minmax(48px,1fr) minmax(48px,1.15fr)}.boat-status{font-size:15px}}
+
+.boat-mode-choices{display:grid;gap:10px}.boat-mode-choices button{min-height:48px;padding:10px 14px;border-radius:10px;background:#e7eddf;border:1px solid #96aaa0;color:#203c41}#stage[data-boat-active=true] #overview-sky{visibility:hidden}

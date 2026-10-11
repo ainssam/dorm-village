@@ -1,0 +1,1 @@
+export const FISH_GRILL=Object.freeze({id:'courtyard.fish-grill',roomId:'courtyard',type:'fishCooking',mode:'camp',label:'물고기 구워 먹기',radius:.8,at:{x:-10,z:20.55},fixture:{x:-10,z:21.8,yaw:Math.PI,hx:.65,hz:.42},station:{x:-9.5,y:-.44,z:19.7,yaw:Math.PI},player:{x:.5,y:.49,z:-.85}});

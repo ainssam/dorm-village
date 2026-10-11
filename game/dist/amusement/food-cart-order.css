@@ -1,0 +1,17 @@
+.amusement-food-overlay{position:absolute;inset:0;z-index:55;display:grid;align-items:end;justify-items:center;padding:max(12px,env(safe-area-inset-top)) max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:#243d3618;color:#344b49;font-family:inherit}
+.amusement-food-overlay[hidden],.amusement-food-overlay [hidden]{display:none!important}
+.amusement-food-panel{box-sizing:border-box;width:min(390px,100%);margin:0 0 max(8px,env(safe-area-inset-bottom));padding:12px 14px;background:#fff9ebf5;border:1px solid #dbc9b9;border-radius:18px;box-shadow:0 3px 14px #304d4a30}
+.amusement-food-panel header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+.amusement-food-panel strong{font-size:16px;line-height:1.3}
+.amusement-food-panel p{min-height:20px;margin:0 0 9px;font-size:14px;line-height:1.4}
+.amusement-food-panel label{display:block;margin:0 0 5px;font-size:12px;color:#58716a}
+.amusement-food-panel select,.amusement-food-panel button{box-sizing:border-box;min-height:48px;border:1px solid #c9b6a3;border-radius:12px;background:#fffdf6;color:#344b49;font:inherit;font-size:14px}
+.amusement-food-panel select{width:100%;padding:8px 10px;margin-bottom:9px}
+.amusement-food-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+.amusement-food-actions button{padding:8px 10px;font-weight:650;touch-action:manipulation}
+.amusement-food-actions [data-food-order],.amusement-food-actions [data-food-eat]{background:#d9eddf}
+.amusement-food-panel header button{min-width:68px;padding:7px 10px;touch-action:manipulation}
+.amusement-food-panel small{display:block;margin-top:8px;font-size:11px;line-height:1.4;color:#58716a}
+.amusement-food-panel button:focus-visible,.amusement-food-panel select:focus-visible{outline:3px solid #317c72;outline-offset:2px}
+@media (orientation:landscape) and (max-height:520px){.amusement-food-overlay{align-items:center}.amusement-food-panel{width:min(440px,calc(100% - 16px));margin-bottom:0;padding:8px 10px}.amusement-food-panel header{margin-bottom:4px}.amusement-food-panel p{margin-bottom:5px}.amusement-food-panel select,.amusement-food-panel button{min-height:42px}.amusement-food-panel select{margin-bottom:5px}.amusement-food-panel small{margin-top:4px}}
+@media (prefers-reduced-motion:reduce){.amusement-food-overlay *{scroll-behavior:auto}}

@@ -1,0 +1,27 @@
+import * as THREE from 'three';
+import {ROOMS} from '../world/rooms.js';
+import {CLAY} from '../world/toy-kit.js';
+import {canMove} from '../physics.js';
+import {resolveLocation} from '../world/location.js';
+import {boatEndpointContext,boatScenePoint,boatEndpointWorld} from './boat-space.js';
+const finite=values=>values.every(Number.isFinite),same=(a,b)=>a.length===b.length&&a.every((v,i)=>Math.abs(v-b[i])<1e-9);
+/** Narrow boat-only settlement adapter. Ownership is read independently by
+ * RoomManager; this module proves host coherence and never disposes a room. */
+export function createBoatHostSettlement({getView,getRoom,setRoom,scene,player,model,poser,cam,camera,stage,clearInput=()=>{},stopLocomotion=()=>{},syncRoom,document:doc=globalThis.document}){
+ let prepared=null,stamp=null,syncedRoom=null,lastErrors=[];
+ const cameraStamp=()=>({width:stage.clientWidth,height:stage.clientHeight,position:camera.position.toArray(),quaternion:camera.quaternion.toArray(),projection:camera.projectionMatrix.toArray(),target:cam.controls.target.toArray(),zoom:camera.zoom});
+ const uiAt=room=>doc?.querySelector?.('#room-name')?.textContent===room.label&&doc?.querySelector?.('#stage')?.getAttribute?.('aria-label')===room.label+' 3D 공간';
+ function prepare(next,endpoint){const room=resolveLocation({roomId:endpoint.roomId,spawnId:endpoint.spawnId})?.runtimeRoom,context=boatEndpointContext(next,endpoint),landing=boatScenePoint(next,scene,endpoint,{...endpoint.landing,y:.05}),local=boatEndpointWorld(next,endpoint),world=next.collisionWorld?.()??next.residents?.collisionWorld?.()??room;if(!room||!canMove(local,endpoint.landing.x,endpoint.landing.z,.66)||!canMove(world,landing.x,landing.z,.66)||!next.root||!context.dock?.ready)throw Error('Boat host landing is not prepared');prepared={next,room,landing,address:{roomId:endpoint.roomId,spawnId:endpoint.spawnId},background:new THREE.Color(room.id==='courtyard'?room.background:CLAY.sky)};stamp=null;syncedRoom=null;lastErrors=[];return landing;}
+ function captureCommitted(next){if(!prepared||prepared.next!==next||getView()!==next)return false;stamp=cameraStamp();if(uiAt(prepared.room))syncedRoom=prepared.room.id;return true;}
+ function probe(next=prepared?.next){try{const p=prepared;if(!p||next!==p.next||getView()!==next||getRoom()!==p.room||next.root.parent!==scene||next.navigationAddress?.roomId!==p.address.roomId||next.navigationAddress?.spawnId!==p.address.spawnId||!next.root.visible||player.parent!==scene||!stamp)return false;const now=cameraStamp(),aspect=(camera.right-camera.left)/(camera.top-camera.bottom),expected=stage.clientWidth/stage.clientHeight;
+  return player.position.distanceTo(new THREE.Vector3(p.landing.x,p.landing.y,p.landing.z))<1e-9&&Math.abs(player.rotation.y-p.landing.yaw)<1e-9&&model.position.length()<1e-9&&Math.hypot(model.rotation.x,model.rotation.y,model.rotation.z)<1e-9&&poser.getState().name==='stand'&&doc?.body?.dataset?.room===p.room.id&&cam.getRoomId()===p.room.id&&scene.background?.isColor&&scene.background.getHex()===p.background.getHex()&&uiAt(p.room)&&syncedRoom===p.room.id&&now.width===stamp.width&&now.height===stamp.height&&same(now.position,stamp.position)&&same(now.quaternion,stamp.quaternion)&&same(now.projection,stamp.projection)&&same(now.target,stamp.target)&&now.zoom===stamp.zoom&&finite([...now.position,...now.quaternion,...now.projection,...now.target,now.zoom])&&Math.abs(aspect-expected)<1e-7;
+ }catch{return false;}}
+ function settle({next,old}={}){lastErrors=[];const p=prepared;try{if(!p||next!==p.next||getView()!==next)return false;}catch{return false;}const run=(name,fn)=>{try{fn();return true;}catch(error){lastErrors.push({step:name,message:String(error.message??error)});return false;}};
+  // Each physical step is independent, so a later UI/camera failure cannot roll
+  // the original actor into an origin that may already have been disposed.
+  run('room',()=>setRoom(p.room));run('address',()=>next.navigationAddress={...p.address});run('root',()=>{if(next.root.parent!==scene)scene.add(next.root);next.root.visible=true;if(old?.root){old.root.visible=false;old.root.removeFromParent();}});run('background',()=>scene.background=p.background);run('input',clearInput);run('locomotion',stopLocomotion);run('position',()=>player.position.set(p.landing.x,p.landing.y,p.landing.z));run('orientation',()=>player.rotation.set(0,p.landing.yaw,0));run('pose',()=>{poser.reset();model.position.set(0,0,0);model.rotation.set(0,0,0);});run('dataset',()=>doc.body.dataset.room=p.room.id);
+  if(run('camera',()=>{cam.apply({...p.room,camera:next.camera??p.room.camera},player.position,next.root);cam.resize();}))stamp=cameraStamp();
+  if(run('ui-audio',syncRoom))syncedRoom=p.room.id;return lastErrors.length===0&&probe(next);
+ }
+ return{prepare,captureCommitted,probe,settle,clear(){prepared=null;stamp=null;syncedRoom=null;lastErrors=[];},snapshot:()=>({preparedRoom:prepared?.room.id??null,cameraSize:stamp?{width:stamp.width,height:stamp.height}:null,syncedRoom,errors:lastErrors.map(e=>({...e}))})};
+}

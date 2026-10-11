@@ -1,0 +1,9 @@
+{
+  "beforeAssetSha256": "7f559b4f32f5cd4e4775ee14623e9a2b8e271906be862f39f272881b684d58cf",
+  "afterAssetSha256": "32190c8f6503d7fafd3455ddacfbbccaadfcc617c16e2ab01e1f0e6f8ed66e4c",
+  "meshCount": 37,
+  "materialsUnchanged": true,
+  "attributesByteExact": 85,
+  "indexArraysByteExact": 39,
+  "note": "glTF traversal reorders mesh/accessor records after parenting correction; all individual geometry attribute/index payloads remain byte exact"
+}

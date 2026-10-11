@@ -1,0 +1,17 @@
+DORMI additional original listening music — provenance and use note
+
+These scores and recordings were newly created for the requesting user through
+procedural composition and synthesis. No external recordings, sample libraries,
+soundfonts, game audio, or supplied third-party melodies were used. The synthesis
+code has no network dependency at runtime.
+
+No additional third-party media attribution requirement was identified for these
+newly generated scores or audio. Their use remains subject to the terms governing
+the generating service and applicable law. No representation is made that an
+AI-generated score or recording is eligible for copyright in every jurisdiction,
+or that unintentional similarity to any existing work has been exhaustively ruled
+out. Python, NumPy, SciPy and FFmpeg are separate tools with their own licenses;
+their executables and libraries are not included in this package.
+
+These are original procedural synthetic music assets, not premium AI music API
+output, live instrumental recordings, or a soundtrack from an existing game.

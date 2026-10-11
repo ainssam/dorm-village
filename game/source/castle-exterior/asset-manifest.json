@@ -1,0 +1,71 @@
+{
+  "name": "dormi-castle-open-exterior",
+  "version": "1.0.1",
+  "status": "source-tested-and-preview-inspected; owner-integration-pending",
+  "integrationSource": "source/castle-exterior.mjs",
+  "sourceSha256": "f0026a225739bb35f98983dfbb8255aec4cb7683f8ca26fbb4b6c81f5a1f3fb0",
+  "geometry": {
+    "meshes": 24,
+    "triangles": 6706,
+    "materials": 21,
+    "min": [
+      -4.590000152587891,
+      -1.1920928910669204e-08,
+      -1.0233500003814697
+    ],
+    "max": [
+      4.590000152587891,
+      9,
+      0.8982750177383423
+    ],
+    "size": [
+      9.180000305175781,
+      9.000000011920928,
+      1.921625018119812
+    ],
+    "parts": 260
+  },
+  "ownerLabelReservedTriangles": 2,
+  "estimatedIntegratedIslandTriangles": 119804,
+  "playerTriangleCountUnchanged": 72954,
+  "tests": {
+    "passed": 11,
+    "failed": 0,
+    "passageRays": 210,
+    "clippedTriangleEdgeInteriorSamples": 7512,
+    "actualBridgeTowerTriangleProbes": 30,
+    "minimumVerifiedBridgeTowerOverlap": 0.0986
+  },
+  "preview": {
+    "png": "preview/castle-exterior-768.png",
+    "glb": "preview/castle-exterior.glb",
+    "source": "preview/rendered-source.mjs",
+    "sourceSha256": "d1837ed8db53f975987f641863ef4ce4a374208ea149e994632c42b3158b5269",
+    "finalSourceDifference": "Wing wall depths .44\u2192.37 expose mint panes. Existing bridge layer widths become 5.05/5.15/5.12, creating verified actual overlap with both tower shafts. Heights/depths, footprint, mesh and triangle counts unchanged. Final source has 11 passing tests; no second render.",
+    "width": 768,
+    "height": 768,
+    "cpuThreads": 1,
+    "samples": 16,
+    "renderPeakObservedTreeRssMiB": 254.78515625,
+    "nativePeakRssMiB": 261.70703125,
+    "elapsedSeconds": 19.876386234987876
+  },
+  "referencePixelsInspected": [
+    "../dormi-castle-exterior-assets/references/approved-day-v1.png",
+    "../dormi-castle-exterior-assets/inspection-r2/castle-exterior-768.png"
+  ],
+  "siteModified": false,
+  "previousAssetOverwritten": false,
+  "collisionDefinitionsChanged": false,
+  "playerModified": false,
+  "newDependenciesInstalled": false,
+  "requiresOwnerValidation": [
+    "in-game entrance silhouette and camera",
+    "full-size original actor sweep",
+    "existing camera occlusion fade",
+    "actual environment night/day behavior",
+    "actual integrated scene triangle total"
+  ],
+  "license": "LICENSE.txt",
+  "provenance": "PROVENANCE.md"
+}

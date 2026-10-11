@@ -1,0 +1,67 @@
+/* Scoped to the Korean workshop; uses the existing cream, leaf and ink palette. */
+.korean-learning{min-width:0;color:var(--ink);line-height:1.55}
+.korean-learning [hidden]{display:none!important}
+.korean-learning button{min-height:50px;min-width:48px;padding:10px 14px;border:1px solid #a8baa6;border-radius:9px;background:#edf0e3;color:var(--ink);font-size:20px;line-height:1.4;overflow-wrap:anywhere;touch-action:manipulation}
+.korean-learning button:hover{border-color:#4a7561;background:#e0eadb}
+.korean-learning button:focus-visible,.korean-learning summary:focus-visible,.korean-learning a:focus-visible{outline:3px solid #426b59;outline-offset:3px}
+.korean-learning button[aria-pressed=true],.korean-learning button[aria-selected=true]{background:#f5d783;border-color:#94762e}
+.korean-learning button:disabled{opacity:.65;cursor:default;transform:none}
+.korean-learning button.primary{background:#3e7161;color:#fff9e8;border-color:#315c4e}
+.korean-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin:8px 0 23px;padding-bottom:15px;border-bottom:1px solid #c6cdb4}
+.korean-tabs button{font-size:18px;padding:9px 5px}
+.korean-panel{min-width:0}
+.korean-learning .korean-progress{font-size:18px;color:#456252;margin:0 0 12px;font-variant-numeric:tabular-nums}
+.korean-learning .korean-prompt{font-size:clamp(25px,4.2vw,31px);line-height:1.6;margin:8px 0 20px;word-break:keep-all;overflow-wrap:anywhere}
+.korean-choices{display:grid;grid-template-columns:1fr;gap:9px;margin:12px 0}
+.korean-choices button{text-align:left;padding:13px 15px}
+.korean-spelling-choices{grid-template-columns:1fr 1fr;gap:12px}
+.korean-spelling-choices button{text-align:center;font-size:28px;min-height:72px;background:#fff8e7}
+.korean-learning .korean-answer-sentence{font-size:20px;color:#2c5e4c;margin:14px 0 0}
+.korean-learning .korean-feedback{font-size:20px;line-height:1.6;margin:18px 0 12px;min-height:3em;padding:12px 15px;border-left:4px solid #b89a44;background:#f4edd4}
+.korean-feedback[data-outcome=correct]{border-left-color:#54815f;background:#e6eedc}
+.korean-actions{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0 4px}
+.korean-actions button{flex:1 1 140px}
+.korean-composition-preview{display:flex;align-items:center;gap:24px;margin:15px 0 21px;padding:12px 18px;border-left:4px solid #719479;background:#eef0df}
+.korean-syllable{font-size:80px;line-height:1.2;min-width:1.15em;text-align:center;font-family:'Dormi Gentle Pen',system-ui,sans-serif;font-weight:700}
+.korean-learning .korean-equation{font-size:23px;margin:0;word-break:keep-all}
+.korean-tile-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.korean-tile-group{min-width:0;padding:0;margin:0;border:0}
+.korean-tile-group legend{font-size:18px;margin-bottom:7px;color:#456252}
+.korean-tiles{display:flex;flex-wrap:wrap;gap:6px}
+.korean-tiles button{font-family:'Dormi Gentle Pen',system-ui,sans-serif;font-size:24px;font-weight:700;min-width:50px;padding:7px 10px}
+.korean-tiles button[data-value=""]{font-family:inherit;font-size:18px;font-weight:700}
+.korean-words{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:12px 0 24px}
+.korean-words button{padding:10px 5px;font-size:20px}
+.korean-learning .korean-dictionary-word{font-size:35px;line-height:1.35;margin:15px 0 9px}
+.korean-learning .korean-definition{font-size:22px;line-height:1.65;margin:8px 0 20px}
+.korean-learning .korean-example{font-size:20px;margin:4px 0 12px;padding-left:15px;border-left:3px solid #d1bd85}
+.korean-learning .korean-note{font-size:17px;line-height:1.65;color:#456252;margin:12px 0 5px}
+.korean-learning a{color:#275b4d;text-underline-offset:4px;overflow-wrap:anywhere}
+.korean-learning .korean-source-details{margin:16px 0 0;padding:8px 0}
+.korean-source-details summary,.korean-history-more summary{font-size:18px;min-height:48px;cursor:pointer;padding:10px 0}
+.korean-source-details p{font-size:18px;line-height:1.65;margin:10px 0}
+.korean-footer{padding-top:8px}
+.korean-footer .korean-story{background:transparent;border:0;text-decoration:underline;text-underline-offset:4px;padding-left:0;font-size:18px}
+.korean-learning .korean-history-title{font-size:43px;letter-spacing:.1em;margin:9px 0}
+.korean-history-heading{display:grid;grid-template-columns:minmax(0,1fr) 86px;gap:20px;align-items:center}
+.korean-history-calligraphy{display:block;width:86px;height:228px;object-fit:contain}
+.korean-learning .korean-history-caption{font-size:24px;margin:10px 0 3px}
+.korean-history-facts{list-style:none;display:grid;gap:8px;padding:18px 0;margin:18px 0;border-top:1px solid #c6cdb4;border-bottom:1px solid #c6cdb4}
+.korean-history-facts li{font-size:21px;line-height:1.5}
+.korean-learning .korean-letter-count{font-size:20px;line-height:1.65}
+.korean-history-more p{font-size:20px}
+@media(max-width:540px){
+ .korean-tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-bottom:18px}
+ .korean-tabs button{font-size:19px}
+ .korean-tile-slots{grid-template-columns:1fr;gap:12px}
+ .korean-tile-group{display:grid;grid-template-columns:1fr;gap:2px}
+ .korean-tile-group legend{font-size:18px;margin-bottom:5px}
+ .korean-tiles button{flex:1 1 48px;min-height:52px}
+ .korean-composition-preview{gap:15px;padding:10px 14px;margin-bottom:16px}
+ .korean-syllable{font-size:68px}
+ .korean-learning .korean-equation{font-size:20px}
+ .korean-words{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:18px}
+ .korean-actions button{flex-basis:120px}
+ .korean-learning .korean-note{font-size:17px}
+ .korean-learning .korean-history-title{font-size:38px}
+}

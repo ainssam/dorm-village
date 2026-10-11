@@ -1,0 +1,21 @@
+This asset package includes two OFL-licensed derivative fonts.
+
+Dormi Story Hand is derived from Nanum DongHwaDdoBag / 나눔손글씨 동화또박.
+Copyright © 2019 NAVER Corporation. All rights reserved. Font created by CLOVA AI OCR Team.
+Source: https://hangeul.pstatic.net/hangeul_static/webfont/clova/NanumDongHwaDdoBag.ttf
+
+Dormi Gentle Pen is derived from NanumBarunpen / 나눔바른펜.
+Copyright © 2014 NHN Corporation. All rights reserved. Font designed by YoonDesign Inc.
+Source: https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunpen/NanumBarunpenR.ttf
+
+Modifications: removed TrueType bytecode hinting, converted to WOFF2, replaced reserved family names, created optional current-game-copy subsets. Glyph outlines and advance widths are unchanged in the full files. The UI subsets omit unused glyphs.
+The modified fonts remain under SIL Open Font License 1.1. The original copyright notices and full license are included in NAVER-OFL-1.1.txt. No endorsement by NAVER, NHN or YoonDesign is implied.
+
+Official redistribution/license notice: https://hangeul.naver.com/font
+Official full license: https://help.naver.com/service/30016/contents/18088?osType=PC&lang=ko
+Official stylesheet identifying the font files: https://m-hangeul.naver.com/css/fonts.css?20241022
+Downloaded and checked: 2026-10-03 UTC.
+
+Dormi Gentle Pen Bold, derived from NanumBarunpen Bold.
+Source: https://hangeul.pstatic.net/hangeul_static/webfont/NanumBarunpen/NanumBarunpenB.ttf
+Original weight 700 and glyph outlines preserved. Hint programs removed, renamed derivative, converted to WOFF2 under the same Naver SIL Open Font License 1.1.

@@ -1,0 +1,9 @@
+import {createTeaTimeController} from './tea-time.js';import {createTeaRoute} from './tea-route.js';import {createTeaResidentAdapters} from './tea-residents.js';import {TEA_SEAT} from './tea-layout.js';
+/** Installs on the current bakery view. The game/dining owner supplies the one frame tick and save command. */
+export function attachTeaTime(view,{getCafe,getSceneEpoch=()=>0,getRoom=()=>view.roomId,getPlayerSeat,armConsumption,onChange=()=>{}}={}){
+ if(view.teaTime)return view.teaTime;const guard=view.cafeGuestCorridor;if(!guard)throw Error('Tea time requires bakery shared corridor ownership');let alive=true,seatOwner=null;
+ const available=id=>{try{return alive&&guard.residentAvailable(id,getCafe())&&!(view.residents?.snapshot?.()??[]).some(r=>r.id===id);}catch{return false;}};
+ const api=createTeaTimeController({getRoom:()=>alive?getRoom():null,getSceneEpoch,getPlayerSeat,armConsumption,onChange,isResidentAvailable:available,adapters:createTeaResidentAdapters(view.root,{isVisible:p=>p?.floor!=='floor2'||(view.upperReveal?.()??0)>=.999}),acquireResident(id){if(!available(id))return false;const token=guard.acquireResident(id,getCafe());return token?()=>guard.releaseResident(token):false;},reserveSeat(id){if(!alive||id!==TEA_SEAT.id||seatOwner)return false;const token={};seatOwner=token;return()=>{if(seatOwner===token)seatOwner=null;};},route:{create:spec=>createTeaRoute({...spec,getWorld:owner=>guard.visitorWorld(owner),reserveStairHop:s=>guard.reserveVisitorHop(s),releaseStairHop:guard.releaseStairHop})}});
+ view.teaTime=api;view.teaGuestSnapshot=()=>{const s=api.snapshot(),p=s.pose;return p&&p.visible!==false?[{...p,id:s.residentId,owner:s.token,seatId:p.seatId,radius:p.radius+(s.sharing ? .32 : 0),minY:p.y,maxY:p.y+1.6,supportY:p.supportY,floor:p.floor,teaGuest:true}]:[];};
+ const dispose=view.dispose.bind(view);view.dispose=()=>{if(!alive)return;api.dispose();alive=false;seatOwner=null;dispose();};return api;
+}

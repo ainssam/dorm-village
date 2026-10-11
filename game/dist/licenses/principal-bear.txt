@@ -1,0 +1,2 @@
+Dormi principal bear
+Original model, rig, animations and fitted chair cushion created for this game from its user-approved generated concept. No third-party model or texture was used. Three.js runtime uses the game's existing MIT-licensed dependency. The standalone source generator and asset metadata are retained with the project source.

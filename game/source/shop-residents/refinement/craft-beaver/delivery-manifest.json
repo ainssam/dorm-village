@@ -1,0 +1,79 @@
+{
+  "candidate": "craft-beaver-polished-low.glb",
+  "frozen_sha256": "398bf61664ce906bb49fc4183cf5e6b197c5feebcba3a32c18bacaf6c1e10749",
+  "source_files": [
+    "build_craft_beaver.py",
+    "baseline_shop_generator.py"
+  ],
+  "reports": [
+    "README.md",
+    "provenance.json",
+    "runtime-validation.json",
+    "topology-validation.json",
+    "tail-transition-validation.json"
+  ],
+  "rebuild_byte_identical": true,
+  "metrics": {
+    "bytes": 466372,
+    "triangles": 22507,
+    "drawCalls": 39,
+    "poses": 288,
+    "maxVisibleRadius": 0.7155567358647726,
+    "minGround": 0,
+    "maxHeight": 1.653333891146163
+  },
+  "surface_count_verified": 8,
+  "before_after_sheets": [
+    "before-after-front.png",
+    "before-after-three-quarter.png",
+    "before-after-rear.png",
+    "before-after-work.png",
+    "before-after-walk.png"
+  ],
+  "role_previews_from_runtime": [
+    "before-work.glb",
+    "after-work.glb",
+    "before-walk.glb",
+    "after-walk.glb"
+  ],
+  "production_files_modified": false,
+  "preview_images": {
+    "before-after-front.png": {
+      "size": [
+        1440,
+        940
+      ],
+      "sha256": "8e1524583f8b7fea38fb8f723134c1256f06632374c17c04cab2efda7e34a766"
+    },
+    "before-after-three-quarter.png": {
+      "size": [
+        1440,
+        940
+      ],
+      "sha256": "438b731a7a48b46b224c84502aec9dd4a54c17580190bb8d1b5b3c5357a0a444"
+    },
+    "before-after-rear.png": {
+      "size": [
+        1440,
+        940
+      ],
+      "sha256": "330dfa6738980bc61ec7ed0a5f8a3397006b5561d621a81ad036535fe3547563"
+    },
+    "before-after-work.png": {
+      "size": [
+        1440,
+        940
+      ],
+      "sha256": "75d89352e334928ab04675fbb98a12a32754ea1e0af50fa12cdc4b04b4b6a955"
+    },
+    "before-after-walk.png": {
+      "size": [
+        1440,
+        940
+      ],
+      "sha256": "f97b329a9591a5302fe864108337f1f8efbfe4e6171d5e90fdb96878d81ad300"
+    }
+  },
+  "actual_glb_render_count": 10,
+  "final_render_log_errors": 0
+}

@@ -1,0 +1,4411 @@
+{
+  "title": "Pixel Parade",
+  "id": "pixel-parade",
+  "tempo_bpm": 100,
+  "time_signature": "4/4",
+  "bars": 16,
+  "key": "C major",
+  "chords_by_bar": [
+    "C",
+    "G/B",
+    "Am",
+    "F",
+    "Dm",
+    "G",
+    "C/E",
+    "G",
+    "F",
+    "C/E",
+    "Dm",
+    "Am",
+    "F",
+    "Dm",
+    "G7",
+    "G"
+  ],
+  "events": [
+    {
+      "instrument": "triangle_bass",
+      "beat": 0.0,
+      "midi": 36,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 0.75,
+      "midi": 48,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 1.5,
+      "midi": 36,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 2.0,
+      "midi": 36,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 2.75,
+      "midi": 48,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 3.5,
+      "midi": 36,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 0.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 0.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 0.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 0.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 1.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 1.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 2.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 2.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 2.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 2.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 3.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 3.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 0.0,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 0.5,
+      "midi": 72,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 1.5,
+      "midi": 79,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 2.5,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 3.0,
+      "midi": 74,
+      "gate_beats": 0.73,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 0.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 2.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 1.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 3.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 0.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 0.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 1.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 1.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 2.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 2.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 3.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 3.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 4.0,
+      "midi": 35,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 4.75,
+      "midi": 47,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 5.5,
+      "midi": 35,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 6.0,
+      "midi": 35,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 6.75,
+      "midi": 47,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 7.5,
+      "midi": 35,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 4.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 4.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 4.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 4.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 5.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 5.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 6.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 6.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 6.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 6.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 7.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 7.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 4.0,
+      "midi": 74,
+      "gate_beats": 0.71,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 5.0,
+      "midi": 71,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 5.5,
+      "midi": 74,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 6.5,
+      "midi": 79,
+      "gate_beats": 0.94,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 4.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 6.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 5.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 7.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 4.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 4.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 5.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 5.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 6.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 6.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 7.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 7.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 8.0,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 8.75,
+      "midi": 45,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 9.5,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 10.0,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 10.75,
+      "midi": 45,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 11.5,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 8.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 8.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 8.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 8.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 9.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 9.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 10.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 10.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 10.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 10.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 11.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 11.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 8.0,
+      "midi": 76,
+      "gate_beats": 0.7,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 9.0,
+      "midi": 81,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 9.5,
+      "midi": 79,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 10.5,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 11.0,
+      "midi": 72,
+      "gate_beats": 0.72,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 8.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 10.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 9.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 11.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 8.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 8.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 9.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 9.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 10.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 10.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 11.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 11.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 12.0,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 12.75,
+      "midi": 41,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 13.5,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 14.0,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 14.75,
+      "midi": 41,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 15.5,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 12.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 12.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 12.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 12.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 13.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 13.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 14.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 14.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 14.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 14.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 15.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 15.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 12.5,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 13.0,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 14.0,
+      "midi": 72,
+      "gate_beats": 1.19,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 12.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 14.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 13.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 15.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 12.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 12.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 13.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 13.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 14.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 14.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 15.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 15.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 16.0,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 16.75,
+      "midi": 50,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 17.5,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 18.0,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 18.75,
+      "midi": 50,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 19.5,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 16.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 16.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 16.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 16.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 17.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 17.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 18.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 18.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 18.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 18.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 19.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 19.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 16.0,
+      "midi": 74,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 16.5,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 17.5,
+      "midi": 81,
+      "gate_beats": 0.7,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 18.5,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 19.5,
+      "midi": 76,
+      "gate_beats": 0.32,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 16.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 18.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 17.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 19.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 16.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 16.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 17.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 17.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 18.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 18.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 19.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 19.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 20.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 20.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 21.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 22.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 22.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 23.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 20.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 20.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 20.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 20.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 21.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 21.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 22.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 22.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 22.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 22.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 23.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 23.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 20.0,
+      "midi": 74,
+      "gate_beats": 0.72,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 21.5,
+      "midi": 71,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 22.0,
+      "midi": 67,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 23.0,
+      "midi": 74,
+      "gate_beats": 0.72,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 20.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 22.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 21.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 23.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 20.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 20.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 21.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 21.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 22.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 22.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 23.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 23.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 24.0,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 24.75,
+      "midi": 52,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 25.5,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 26.0,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 26.75,
+      "midi": 52,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 27.5,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 24.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 24.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 24.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 24.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 25.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 25.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 26.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 26.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 26.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 26.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 27.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 27.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 24.0,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 24.5,
+      "midi": 79,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 25.5,
+      "midi": 76,
+      "gate_beats": 0.7,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 26.5,
+      "midi": 72,
+      "gate_beats": 0.89,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 24.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 26.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 25.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 27.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 24.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 24.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 25.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 25.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 26.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 26.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 27.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 27.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 28.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 28.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 29.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 30.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 30.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 31.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 28.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 28.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 28.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 28.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 29.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 29.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 30.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 30.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 30.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 30.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 31.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 31.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 29.0,
+      "midi": 71,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 29.5,
+      "midi": 74,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 30.5,
+      "midi": 79,
+      "gate_beats": 0.74,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 28.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 30.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 29.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 31.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 28.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 28.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 29.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 29.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 30.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 30.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 31.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 31.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 32.0,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 32.75,
+      "midi": 41,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 33.5,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 34.0,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 34.75,
+      "midi": 41,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 35.5,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 32.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 32.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 32.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 32.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 33.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 33.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 34.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 34.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 34.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 34.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 35.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 35.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 32.0,
+      "midi": 81,
+      "gate_beats": 0.69,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 33.0,
+      "midi": 79,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 33.5,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 34.5,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 35.0,
+      "midi": 72,
+      "gate_beats": 0.73,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 32.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 34.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 33.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 35.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 32.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 32.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 33.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 33.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 34.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 34.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 35.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 35.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 36.0,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 36.75,
+      "midi": 52,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 37.5,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 38.0,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 38.75,
+      "midi": 52,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 39.5,
+      "midi": 40,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 36.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 36.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 36.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 36.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 37.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 37.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 38.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 38.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 38.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 38.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 39.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 39.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 36.0,
+      "midi": 79,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 36.5,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 37.5,
+      "midi": 72,
+      "gate_beats": 0.7,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 39.0,
+      "midi": 76,
+      "gate_beats": 0.73,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 36.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 38.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 37.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 39.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 36.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 36.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 37.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 37.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 38.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 38.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 39.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 39.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 40.0,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 40.75,
+      "midi": 50,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 41.5,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 42.0,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 42.75,
+      "midi": 50,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 43.5,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 40.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 40.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 40.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 40.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 41.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 41.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 42.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 42.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 42.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 42.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 43.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 43.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 40.5,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 41.0,
+      "midi": 81,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 42.0,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 42.5,
+      "midi": 74,
+      "gate_beats": 0.93,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 40.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 42.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 41.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 43.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 40.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 40.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 41.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 41.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 42.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 42.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 43.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 43.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 44.0,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 44.75,
+      "midi": 45,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 45.5,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 46.0,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 46.75,
+      "midi": 45,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 47.5,
+      "midi": 33,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 44.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 44.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 44.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 44.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 45.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 45.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 46.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 46.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 46.5,
+      "midi": 64,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 46.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 47.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 47.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 44.0,
+      "midi": 76,
+      "gate_beats": 0.72,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 45.5,
+      "midi": 72,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 46.5,
+      "midi": 69,
+      "gate_beats": 1.05,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 44.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 46.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 45.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 47.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 44.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 44.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 45.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 45.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 46.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 46.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 47.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 47.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 48.0,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 48.75,
+      "midi": 41,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 49.5,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 50.0,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 50.75,
+      "midi": 41,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 51.5,
+      "midi": 29,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 48.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 48.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 48.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 48.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 49.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 49.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 50.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 50.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 50.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 50.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 51.0,
+      "midi": 60,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 51.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 48.0,
+      "midi": 72,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 48.5,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 49.5,
+      "midi": 81,
+      "gate_beats": 0.69,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 50.5,
+      "midi": 79,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 51.0,
+      "midi": 77,
+      "gate_beats": 0.73,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 48.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 50.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 49.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 51.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 48.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 48.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 49.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 49.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 50.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 50.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 51.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 51.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 52.0,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 52.75,
+      "midi": 50,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 53.5,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 54.0,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 54.75,
+      "midi": 50,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 55.5,
+      "midi": 38,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 52.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 52.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 52.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 52.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 53.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 53.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 54.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 54.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 54.5,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 54.75,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 55.0,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 55.25,
+      "midi": 69,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 52.5,
+      "midi": 74,
+      "gate_beats": 0.38,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 53.0,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 54.0,
+      "midi": 76,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 54.5,
+      "midi": 74,
+      "gate_beats": 0.96,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 52.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 54.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 53.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 55.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 52.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 52.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 53.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 53.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 54.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 54.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 55.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 55.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 56.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 56.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 57.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 58.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 58.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 59.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 56.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 56.25,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 56.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 56.75,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 57.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 57.25,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 58.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 58.25,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 58.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 58.75,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 59.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 59.25,
+      "midi": 65,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 56.0,
+      "midi": 71,
+      "gate_beats": 0.69,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 57.0,
+      "midi": 74,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 57.5,
+      "midi": 77,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 58.5,
+      "midi": 74,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 59.0,
+      "midi": 71,
+      "gate_beats": 0.69,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 56.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 58.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 57.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 59.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 56.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 56.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 57.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 57.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 58.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 58.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 59.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 59.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 60.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 60.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 61.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 62.0,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.21,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 62.75,
+      "midi": 43,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "triangle_bass",
+      "beat": 63.5,
+      "midi": 31,
+      "gate_beats": 0.38,
+      "velocity": 0.15,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 60.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 60.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 60.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 60.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 61.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 61.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 62.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 62.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 62.5,
+      "midi": 62,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 62.75,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 63.0,
+      "midi": 59,
+      "gate_beats": 0.165,
+      "velocity": 0.071,
+      "pan": -0.24
+    },
+    {
+      "instrument": "chip_arp",
+      "beat": 63.25,
+      "midi": 67,
+      "gate_beats": 0.165,
+      "velocity": 0.052,
+      "pan": -0.24
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 60.0,
+      "midi": 74,
+      "gate_beats": 0.7,
+      "velocity": 0.2,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 61.5,
+      "midi": 71,
+      "gate_beats": 0.38,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 62.5,
+      "midi": 67,
+      "gate_beats": 0.7,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "pulse_lead",
+      "beat": 63.5,
+      "midi": 71,
+      "gate_beats": 0.32,
+      "velocity": 0.18,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 60.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_kick",
+      "beat": 62.0,
+      "midi": 36,
+      "gate_beats": 0.1,
+      "velocity": 0.092,
+      "pan": 0.0
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 61.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_snare",
+      "beat": 63.0,
+      "midi": 60,
+      "gate_beats": 0.1,
+      "velocity": 0.055,
+      "pan": -0.1
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 60.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 60.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 61.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 61.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 62.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 62.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 63.0,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.02,
+      "pan": 0.2
+    },
+    {
+      "instrument": "chip_hat",
+      "beat": 63.5,
+      "midi": 60,
+      "gate_beats": 0.05,
+      "velocity": 0.03,
+      "pan": 0.2
+    }
+  ],
+  "synthesis_seed": 20261005,
+  "score_notes": [
+    "A newly authored sixteen-bar C-major tune with an A/A-variation/B/turnaround shape, at a straight 100 BPM.",
+    "Band-limited 25-percent pulse melody, 50-percent pulse chord arpeggios, triangle bass and quiet digitally synthesized noise drums.",
+    "The timbre deliberately recalls simple retro chip oscillators, rather than claiming emulation of a particular game, soundtrack or hardware.",
+    "The closing G resolves to C at the exact 38.4-second loop; periodic tails and filters avoid filter startup transients."
+  ]
+}

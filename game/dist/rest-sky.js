@@ -1,0 +1,4 @@
+const OUTDOOR=new Set(['courtyard','park','playground','sportsField','amusementIsland','observatoryIsland']);
+const eligible=c=>OUTDOOR.has(c?.roomId)&&!c.inside&&c.state==='active'&&!c.exitRequested&&!!c.activity&&['sit','read','sleep'].includes(c.activity.kind)&&!c.activity.duration;
+/** Keep the current pose owner during the explicit sky modal, never recreate a seat. */
+export function createRestSkyHold(getContext){let ticket=null;return{canOpen:()=>eligible(getContext()),begin(){const c=getContext();if(!eligible(c))return()=>{};const own={activity:c.activity,scene:c.scene,roomId:c.roomId};ticket=own;return()=>{if(ticket===own)ticket=null;};},get held(){const c=getContext();return !!ticket&&eligible(c)&&c.activity===ticket.activity&&c.scene===ticket.scene&&c.roomId===ticket.roomId;},cancel(){ticket=null;}};}

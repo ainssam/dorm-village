@@ -1,0 +1,11 @@
+import * as THREE from 'three';
+import {BUMPER as C} from './bumper-layout.js';
+// This room has one fixed main-camera framing. Decorative rear canopy is not a
+// reason to shrink the full-size actor. Fitting runs on entry/resize, never a RAF.
+const boxes=[[-C.halfX-.17,C.halfX+.17,.02,.55,-C.halfZ-.17,C.halfZ+.17],[-C.halfX+C.radius-.66,C.halfX-C.radius+.66,C.rootY+.14,C.rootY+1.59,-C.halfZ+C.radius-.7,C.halfZ-C.radius+.7],[C.dock.x-.66,C.dock.x+.66,.05,2.34,C.dock.z+.35,C.dock.z+4.05],[-2.1,-.7,.05,1.7,4.15,5.35]];
+export function bumperSafeArea(stage){const w=stage.clientWidth,h=stage.clientHeight,r=stage.getBoundingClientRect?.()??{left:0,top:0,right:w,bottom:h},rect=selector=>{const e=stage.querySelector?.(selector);return e&&!e.hidden&&(e.getClientRects?.().length??1)?e.getBoundingClientRect?.():null;},bar=globalThis.document?.querySelector?.('.topbar')?.getBoundingClientRect?.(),tools=rect('.scene-tools'),guide=rect('#activity-note'),panel=rect('.bumper-controls'),action=rect('.action-area'),top=Math.max(24,(bar?.bottom??81)-r.top+12,(tools?.bottom??0)-r.top+12);
+ const footer=globalThis.document?.querySelector?.('footer')?.getBoundingClientRect?.();
+ if(w>h&&h<520)return{left:Math.max(180,(panel?.right??168)-r.left+12),right:Math.max(168,r.right-(action?.left??w-156)+12),top,bottom:Math.max(42,r.bottom-(footer?.top??r.bottom)+12)};
+ return{left:12,right:12,top,bottom:Math.max(208,r.bottom-Math.min(panel?.top??h-196,guide?.top??h,action?.top??h)+12)};
+}
+export function fitBumperCamera(camera,{width,height},padding){if(width<=0||height<=0)return;camera.updateMatrixWorld(true);const v=new THREE.Vector3();let l=Infinity,r=-Infinity,b=Infinity,t=-Infinity;for(const box of boxes)for(const x of[box[0],box[1]])for(const y of[box[2],box[3]])for(const z of[box[4],box[5]]){v.set(x,y,z).applyMatrix4(camera.matrixWorldInverse);l=Math.min(l,v.x);r=Math.max(r,v.x);b=Math.min(b,v.y);t=Math.max(t,v.y);}const p=padding??{left:12,right:12,top:93,bottom:208},pixels=Math.max(1,Math.min((width-p.left-p.right)/(r-l),(height-p.top-p.bottom)/(t-b)))/1.01,cx=(l+r)/2+(p.right-p.left)/(2*pixels),cy=(t+b)/2+(p.top-p.bottom)/(2*pixels);Object.assign(camera,{left:cx-width/(2*pixels),right:cx+width/(2*pixels),top:cy+height/(2*pixels),bottom:cy-height/(2*pixels),near:.1,far:200});camera.updateProjectionMatrix();}

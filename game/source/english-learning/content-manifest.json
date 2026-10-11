@@ -1,0 +1,405 @@
+{
+  "status": "READ_ONLY_FUTURE_STAGE_NOT_SHIPPED",
+  "verifiedOn": "2026-10-04",
+  "roomId": "english",
+  "roomName": "소리숲 영어실",
+  "sources": {
+    "bc_words": "https://learnenglishkids.britishcouncil.org/grammar-vocabulary/word-games",
+    "bc_directions": "https://learnenglishkids.britishcouncil.org/grammar-vocabulary/word-games/directions",
+    "bc_prepositions": "https://learnenglishkids.britishcouncil.org/grammar-vocabulary/grammar-practice/prepositions-place",
+    "bc_cafe": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/ordering-cafe?page=2",
+    "bc_beginner_listen": "https://learnenglish.britishcouncil.org/free-resources/listening/a1",
+    "mdn_voices": "https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis/getVoices",
+    "mdn_autoplay": "https://developer.mozilla.org/en-US/docs/Web/Media/Guides/Autoplay"
+  },
+  "sourceUse": "Grammar/activity suitability reference only; no British Council audio, illustrations, games or worksheets copied. All exercise/example content here is newly authored.",
+  "words": [
+    {
+      "id": "book",
+      "word": "book",
+      "meaningKo": "책",
+      "example": "This is my book.",
+      "clipId": "dict-book",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "pencil",
+      "word": "pencil",
+      "meaningKo": "연필",
+      "example": "I have a blue pencil.",
+      "clipId": "dict-pencil",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "chair",
+      "word": "chair",
+      "meaningKo": "의자",
+      "example": "Please sit on this chair.",
+      "clipId": "dict-chair",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "window",
+      "word": "window",
+      "meaningKo": "창문",
+      "example": "The window is open.",
+      "clipId": "dict-window",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "tree",
+      "word": "tree",
+      "meaningKo": "나무",
+      "example": "A bird is in the tree.",
+      "clipId": "dict-tree",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "flower",
+      "word": "flower",
+      "meaningKo": "꽃",
+      "example": "This flower is yellow.",
+      "clipId": "dict-flower",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "water",
+      "word": "water",
+      "meaningKo": "물",
+      "example": "I would like some water.",
+      "clipId": "dict-water",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "milk",
+      "word": "milk",
+      "meaningKo": "우유",
+      "example": "May I have some milk?",
+      "clipId": "dict-milk",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "apple",
+      "word": "apple",
+      "meaningKo": "사과",
+      "example": "I have two apples.",
+      "clipId": "dict-apple",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "bread",
+      "word": "bread",
+      "meaningKo": "빵",
+      "example": "I like bread.",
+      "clipId": "dict-bread",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "school",
+      "word": "school",
+      "meaningKo": "학교",
+      "example": "Our school has a library.",
+      "clipId": "dict-school",
+      "authored": "original example; common lexical fact"
+    },
+    {
+      "id": "library",
+      "word": "library",
+      "meaningKo": "도서관",
+      "example": "We read in the library.",
+      "clipId": "dict-library",
+      "authored": "original example; common lexical fact"
+    }
+  ],
+  "sentenceAssembly": [
+    {
+      "id": "sentence-1",
+      "sentence": "I have a book.",
+      "tokens": [
+        "I",
+        "have",
+        "a",
+        "book."
+      ],
+      "feedbackKo": "책 한 권이 있다고 말해요.",
+      "acceptCaseInsensitive": true,
+      "rejectOnlyTargetMismatch": true
+    },
+    {
+      "id": "sentence-2",
+      "sentence": "This is my pencil.",
+      "tokens": [
+        "This",
+        "is",
+        "my",
+        "pencil."
+      ],
+      "feedbackKo": "이것이 내 연필이라고 소개해요.",
+      "acceptCaseInsensitive": true,
+      "rejectOnlyTargetMismatch": true
+    },
+    {
+      "id": "sentence-3",
+      "sentence": "I like apples.",
+      "tokens": [
+        "I",
+        "like",
+        "apples."
+      ],
+      "feedbackKo": "좋아하는 것을 말해요.",
+      "acceptCaseInsensitive": true,
+      "rejectOnlyTargetMismatch": true
+    },
+    {
+      "id": "sentence-4",
+      "sentence": "The book is under the chair.",
+      "tokens": [
+        "The book",
+        "is",
+        "under",
+        "the chair."
+      ],
+      "feedbackKo": "어디에 있는지 말할 때 장소 표현을 붙여요.",
+      "acceptCaseInsensitive": true,
+      "rejectOnlyTargetMismatch": true
+    },
+    {
+      "id": "sentence-5",
+      "sentence": "May I have some water?",
+      "tokens": [
+        "May I",
+        "have",
+        "some water?"
+      ],
+      "feedbackKo": "물 좀 달라고 정중하게 부탁해요.",
+      "acceptCaseInsensitive": true,
+      "rejectOnlyTargetMismatch": true
+    },
+    {
+      "id": "sentence-6",
+      "sentence": "The library is next to the school.",
+      "tokens": [
+        "The library",
+        "is",
+        "next to",
+        "the school."
+      ],
+      "feedbackKo": "도서관이 학교 옆에 있어요.",
+      "acceptCaseInsensitive": true,
+      "rejectOnlyTargetMismatch": true
+    }
+  ],
+  "listeningPictureChoices": [
+    {
+      "id": "listen-book",
+      "spoken": "book",
+      "answer": "book",
+      "choices": [
+        "book",
+        "tree",
+        "apple"
+      ],
+      "clipId": "dict-book"
+    },
+    {
+      "id": "listen-pencil",
+      "spoken": "pencil",
+      "answer": "pencil",
+      "choices": [
+        "pencil",
+        "flower",
+        "bread"
+      ],
+      "clipId": "dict-pencil"
+    },
+    {
+      "id": "listen-chair",
+      "spoken": "chair",
+      "answer": "chair",
+      "choices": [
+        "chair",
+        "water",
+        "school"
+      ],
+      "clipId": "dict-chair"
+    },
+    {
+      "id": "listen-window",
+      "spoken": "window",
+      "answer": "window",
+      "choices": [
+        "window",
+        "milk",
+        "library"
+      ],
+      "clipId": "dict-window"
+    },
+    {
+      "id": "listen-tree",
+      "spoken": "tree",
+      "answer": "tree",
+      "choices": [
+        "tree",
+        "apple",
+        "book"
+      ],
+      "clipId": "dict-tree"
+    },
+    {
+      "id": "listen-flower",
+      "spoken": "flower",
+      "answer": "flower",
+      "choices": [
+        "flower",
+        "bread",
+        "pencil"
+      ],
+      "clipId": "dict-flower"
+    },
+    {
+      "id": "listen-water",
+      "spoken": "water",
+      "answer": "water",
+      "choices": [
+        "water",
+        "school",
+        "chair"
+      ],
+      "clipId": "dict-water"
+    },
+    {
+      "id": "listen-milk",
+      "spoken": "milk",
+      "answer": "milk",
+      "choices": [
+        "milk",
+        "library",
+        "window"
+      ],
+      "clipId": "dict-milk"
+    },
+    {
+      "id": "listen-apple",
+      "spoken": "apple",
+      "answer": "apple",
+      "choices": [
+        "apple",
+        "book",
+        "tree"
+      ],
+      "clipId": "dict-apple"
+    },
+    {
+      "id": "listen-bread",
+      "spoken": "bread",
+      "answer": "bread",
+      "choices": [
+        "bread",
+        "pencil",
+        "flower"
+      ],
+      "clipId": "dict-bread"
+    },
+    {
+      "id": "listen-school",
+      "spoken": "school",
+      "answer": "school",
+      "choices": [
+        "school",
+        "chair",
+        "water"
+      ],
+      "clipId": "dict-school"
+    },
+    {
+      "id": "listen-library",
+      "spoken": "library",
+      "answer": "library",
+      "choices": [
+        "library",
+        "window",
+        "milk"
+      ],
+      "clipId": "dict-library"
+    }
+  ],
+  "roleplays": [
+    {
+      "id": "cafe",
+      "label": "카페에서 주문하기",
+      "steps": [
+        {
+          "speaker": "staff",
+          "line": "Hello! What would you like?",
+          "choices": [
+            {
+              "line": "Some milk, please.",
+              "intent": "milk"
+            },
+            {
+              "line": "Some water, please.",
+              "intent": "water"
+            }
+          ],
+          "allChoicesValid": true
+        },
+        {
+          "speaker": "staff",
+          "line": "Here you are.",
+          "choices": [
+            {
+              "line": "Thank you.",
+              "intent": "thanks"
+            },
+            {
+              "line": "Thanks!",
+              "intent": "thanks"
+            }
+          ],
+          "allChoicesValid": true
+        }
+      ],
+      "completion": "Match the drink picture to the requested item; no money/account checkout."
+    },
+    {
+      "id": "directions",
+      "label": "길을 물어보기",
+      "lines": [
+        "Excuse me. Where is the library?",
+        "Go straight. Turn left.",
+        "Thank you!"
+      ],
+      "mapRequirements": "Generate a tiny original grid where the selected instructions truly reach library. Do not reuse these directions on a mismatching real map."
+    }
+  ],
+  "pictureBook": {
+    "id": "dormi-blue-pencil",
+    "title": "Dormi’s Blue Pencil",
+    "pages": [
+      "Dormi has a blue pencil.",
+      "The pencil is not on the desk.",
+      "Dormi looks under the chair.",
+      "There it is! Now Dormi can draw a star."
+    ],
+    "authored": "original four-page text; illustrations must match every location"
+  },
+  "wallPhrases": [
+    "Hello!",
+    "Thank you.",
+    "May I come in?",
+    "Could you help me?",
+    "See you!"
+  ],
+  "audio": {
+    "status": "not produced or licensed yet",
+    "required": "Bundled clearly licensed/original voice clips, one consistent accent, manual listening check before release. Do not clone an identifiable person.",
+    "optionalFallback": "Device speech synthesis only when a real suitable voice is available; not the sole promised listening path.",
+    "constraints": [
+      "start from an explicit Play gesture",
+      "one active clip at a time",
+      "stop on close/hidden/room change",
+      "replay and transcript always available",
+      "audio failure cannot mark an answer wrong"
+    ]
+  }
+}

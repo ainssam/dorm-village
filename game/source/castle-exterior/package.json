@@ -1,0 +1,12 @@
+{
+  "name": "dormi-castle-open-exterior",
+  "version": "1.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/castle-exterior.test.mjs"
+  },
+  "peerDependencies": {
+    "three": "0.180.0"
+  }
+}

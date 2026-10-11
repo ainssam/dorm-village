@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+.openai/
+.sites-runtime/
+test-results/
+playwright-report/
+*.log
+.DS_Store

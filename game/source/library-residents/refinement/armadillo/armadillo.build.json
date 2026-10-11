@@ -1,0 +1,19 @@
+{
+  "source_sha256": "cbe277494510075f039280b3bf0a7f2882914994e8b640b2314fb0c5dc103268",
+  "candidate_sha256": "345e535068d2e5b8dfb524a122954c732088aa4e63dd6b1e6f6f7e66b9af7c07",
+  "bytes": 470916,
+  "changed_positions": 240,
+  "changed_normals": 324,
+  "protected_positions": 1905,
+  "position_accessor": 80,
+  "normal_accessor": 81,
+  "only_top_three_panels": true,
+  "max_inward_displacement": 0.013712045050787824,
+  "embedding": 0.001,
+  "bounds_exact": true,
+  "boundary_old_gap_minmax": [
+    0.00126717262570053,
+    0.005208822054142526
+  ],
+  "boundary_new_target_gap": -0.001
+}

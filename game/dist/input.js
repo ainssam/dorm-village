@@ -1,0 +1,39 @@
+const keyMap={ArrowUp:'up',KeyW:'up',ArrowDown:'down',KeyS:'down',ArrowLeft:'left',KeyA:'left',ArrowRight:'right',KeyD:'right'};
+export function stickVector(dx,dy,radius){const length=Math.hypot(dx,dy);if(!Number.isFinite(length)||!(radius>0)||length<=radius*.12)return{x:0,z:0};const amount=Math.min(1,(length/radius-.12)/.88);return{x:dx/length*amount,z:-dy/length*amount};}
+export class InputState{
+ constructor(){this.keys=new Map();this.held=new Set();this.pointers=new Map();this.locked=false;this.stick={x:0,z:0};this.sprintKeys=new Set();this.jumpQueued=false;}
+ get sprinting(){return !this.locked&&(this.sprintKeys.size>0||Math.hypot(this.stick.x,this.stick.z)>=.92);}
+ requestJump(){if(!this.locked)this.jumpQueued=true;}
+ consumeJump(){const value=this.jumpQueued;this.jumpQueued=false;return value&&!this.locked;}
+ get directions(){return new Set([...this.keys.values(),...this.pointers.values()]);}
+ get axes(){if(this.locked)return{x:0,z:0};const d=this.directions,x=Number(d.has('right'))-Number(d.has('left')),z=Number(d.has('up'))-Number(d.has('down')),n=Math.hypot(x,z);return n?{x:x/n,z:z/n}:{...this.stick};}
+ setStick(x,z){if(this.locked)return;const n=Math.hypot(x,z);this.stick=Number.isFinite(n)?{x:x/Math.max(1,n),z:z/Math.max(1,n)}:{x:0,z:0};}
+ pressKey(code){const first=!this.held.has(code);this.held.add(code);if(this.locked||!first)return false;if(keyMap[code])this.keys.set(code,keyMap[code]);if(code==='ShiftLeft'||code==='ShiftRight')this.sprintKeys.add(code);if(code==='Space')this.requestJump();return code==='KeyE';}
+ releaseKey(code){this.held.delete(code);this.keys.delete(code);this.sprintKeys.delete(code);}
+ pointerDown(id,direction){if(!this.locked)this.pointers.set(id,direction);}
+ pointerUp(id){this.pointers.delete(id);}
+ setLocked(value){this.locked=value;if(value){this.keys.clear();this.pointers.clear();this.stick={x:0,z:0};this.sprintKeys.clear();this.jumpQueued=false;}}
+ clear(){this.keys.clear();this.held.clear();this.pointers.clear();this.stick={x:0,z:0};this.sprintKeys.clear();this.jumpQueued=false;}
+}
+export function setupInput({interact,resetCamera,openMap,rotateCamera,canUseActions=null,onCancel=()=>{}}){
+ const state=new InputState();canUseActions??=()=>!state.locked;const buttons=[...document.querySelectorAll('[data-move]')];
+ const stick=document.querySelector('#move-stick'),knob=stick?.querySelector?.('.stick-knob'),jumpButton=document.querySelector('#jump');let stickPointer=null,jumpPointer=null,jumpEnabled=false,drivingStickEnabled=false,drivingStick={x:0,z:0};const jumpKeys=new Set();
+ const resetStick=()=>{const id=stickPointer;stickPointer=null;state.stick={x:0,z:0};drivingStick={x:0,z:0};if(knob)knob.style.transform='translate(0px, 0px)';stick?.classList.remove('is-pressed');if(id!==null){try{if(stick?.hasPointerCapture?.(id))stick.releasePointerCapture(id);}catch{}}};
+ const resetJump=()=>{const id=jumpPointer;jumpPointer=null;jumpKeys.clear();jumpButton?.classList.remove('is-pressed');if(id!==null){try{if(jumpButton?.hasPointerCapture?.(id))jumpButton.releasePointerCapture(id);}catch{}}};
+ const clear=()=>{resetStick();resetJump();state.clear();buttons.forEach(b=>b.classList.remove('is-pressed'));onCancel();};
+ const moveStick=e=>{if(e.pointerId!==stickPointer||state.locked&&!drivingStickEnabled)return;e.preventDefault();const r=stick.getBoundingClientRect(),dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2,radius=Math.min(r.width,r.height)*.34,v=stickVector(dx,dy,radius),n=Math.max(1,Math.hypot(dx,dy)/radius);if(drivingStickEnabled)drivingStick=v;else state.setStick(v.x,v.z);if(knob)knob.style.transform=`translate(${dx/n}px, ${dy/n}px)`;};
+ if(stick){stick.addEventListener('pointerdown',e=>{if(state.locked&&!drivingStickEnabled||stickPointer!==null||e.button!==0||(e.isPrimary===false&&jumpPointer===null))return;e.preventDefault();stickPointer=e.pointerId;stick.setPointerCapture(e.pointerId);stick.classList.add('is-pressed');moveStick(e);});stick.addEventListener('pointermove',moveStick);for(const type of ['pointerup','pointercancel','lostpointercapture'])stick.addEventListener(type,e=>{if(e.pointerId===stickPointer)resetStick();});}
+ window.addEventListener('keydown',e=>{if(e.defaultPrevented)return;if(e.target?.closest?.('input,textarea,select,[contenteditable="true"]'))return;if(keyMap[e.code]&&(document.querySelector('#stage')?.dataset?.bumperActive==='true'||document.querySelector('#stage')?.dataset?.coasterActive==='true')&&(e.target?.isContentEditable||e.target?.closest?.('button,a,[role="button"]')))return;if(e.ctrlKey||e.metaKey||e.altKey)return;if(!keyMap[e.code]&&e.code!=='KeyE'&&e.code!=='KeyR'&&e.code!=='KeyM'&&e.code!=='Escape'&&e.code!=='BracketLeft'&&e.code!=='BracketRight'&&e.code!=='Space'&&e.code!=='ShiftLeft'&&e.code!=='ShiftRight')return;if(document.querySelector('dialog[open]'))return;if(e.code==='Space'&&e.target?.closest?.('button,a,[role=button]'))return;if(keyMap[e.code]&&e.target?.id==='activity-text')return;e.preventDefault();if(e.repeat)return;if(e.code==='Space'&&!jumpEnabled)return;if(e.code==='BracketLeft'||e.code==='BracketRight'){if(!e.repeat&&canUseActions())rotateCamera?.(e.code==='BracketLeft'?-Math.PI/6:Math.PI/6);return;}if(e.code==='Escape'){if(!e.repeat&&canUseActions())interact(true);return;}if(e.code==='KeyE'){if(!e.repeat&&canUseActions())interact();return;}if(e.code==='KeyM'){if(!e.repeat&&canUseActions())openMap?.();return;}if(e.code==='KeyR'){if(!e.repeat&&canUseActions())resetCamera();return;}if(state.pressKey(e.code))interact();});
+ window.addEventListener('keyup',e=>state.releaseKey(e.code));
+ window.addEventListener('blur',clear);window.addEventListener('orientationchange',clear);document.addEventListener('visibilitychange',()=>{if(document.hidden)clear();});
+ for(const button of buttons){button.addEventListener('pointerdown',e=>{e.preventDefault();if(state.locked)return;button.setPointerCapture(e.pointerId);state.pointerDown(e.pointerId,button.dataset.move);button.classList.add('is-pressed');});for(const type of ['pointerup','pointercancel','lostpointercapture'])button.addEventListener(type,e=>{state.pointerUp(e.pointerId);if(![...state.pointers.values()].includes(button.dataset.move))button.classList.remove('is-pressed');});}
+ if(jumpButton){
+  const request=()=>{if(jumpEnabled&&!state.locked&&!document.querySelector('dialog[open]'))state.requestJump();};
+  jumpButton.addEventListener('pointerdown',e=>{if(e.button!==0||jumpPointer!==null||!jumpEnabled||state.locked)return;e.preventDefault();jumpPointer=e.pointerId;jumpButton.setPointerCapture?.(e.pointerId);jumpButton.classList.add('is-pressed');request();});
+  for(const type of ['pointerup','pointercancel','lostpointercapture'])jumpButton.addEventListener(type,e=>{if(e.pointerId===jumpPointer){if(type!=='pointerup')state.jumpQueued=false;resetJump();}});
+  jumpButton.addEventListener('keydown',e=>{if(e.code!=='Space'&&e.code!=='Enter')return;e.preventDefault();e.stopPropagation();if(e.repeat||jumpKeys.has(e.code))return;jumpKeys.add(e.code);request();});
+  jumpButton.addEventListener('keyup',e=>{jumpKeys.delete(e.code);});
+  jumpButton.addEventListener('click',e=>{if(e.detail===0)request();});
+ }
+ return {state,clear,setDrivingStickEnabled(value){drivingStickEnabled=!!value;resetStick();if(stick)stick.disabled=state.locked&&!drivingStickEnabled;},getDrivingStick(){return drivingStickEnabled?{...drivingStick}:{x:0,z:0};},setJumpEnabled(value){jumpEnabled=!!value;if(jumpButton){jumpButton.hidden=!value;jumpButton.disabled=!value;}if(!value){state.jumpQueued=false;resetJump();}},setLocked(value){const wasLocked=state.locked;state.setLocked(value);if(value&&!wasLocked){resetStick();resetJump();buttons.forEach(b=>b.classList.remove('is-pressed'));}buttons.forEach(b=>b.disabled=value);if(stick)stick.disabled=value&&!drivingStickEnabled;}};
+}

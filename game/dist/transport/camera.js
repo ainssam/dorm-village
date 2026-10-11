@@ -1,0 +1,10 @@
+import * as THREE from 'three';
+// Same contract as the native compact strip: 48px buttons, status, and live save footer.
+export function boatSafeArea(width,height,{saveWarning=false,safeInsets={}}={}){const landscape=width>height&&height<520;return{left:12+(safeInsets.left??0),right:12+(safeInsets.right??0),top:(landscape?76:88)+(safeInsets.top??0),bottom:(landscape?(saveWarning?126:86):(saveWarning?160:112))+(safeInsets.bottom??0)};}
+export function createBoatCamera(){const camera=new THREE.OrthographicCamera(-5,5,5,-5,.1,300),target=new THREE.Vector3(),p=new THREE.Vector3();camera.name='transport.camera';let alive=true;
+ function fit(width,height,frame={}){if(!alive)return camera;const {x=0,y=0,z=0,yaw=0,actor=null,bounds=null}=frame,w=Math.max(1,width),h=Math.max(1,height),c=Math.cos(yaw),s=Math.sin(yaw),world=(px,py,pz)=>p.set(x+px*c+pz*s,y+py,z-px*s+pz*c),focusZ=actor?actor.z-.7:1;
+ target.copy(world(0,.8,focusZ));camera.position.copy(world(4.4,8,focusZ+14));camera.up.set(0,1,0);camera.lookAt(target);camera.updateMatrixWorld(true);let l=Infinity,r=-Infinity,b=Infinity,t=-Infinity;
+ const boxes=bounds?(Array.isArray(bounds[0])?bounds:[bounds]):actor?[[-1.6,1.6,-.3,.8,actor.z-2.65,actor.z+1.25],[actor.x-.61,actor.x+.61,actor.y,actor.y+1.584,actor.z-.62,actor.z+.62]]:[[-1.6,1.6,-.3,2.3,-2.85,4.85]];
+ for(const box of boxes)for(const px of[box[0],box[1]])for(const py of[box[2],box[3]])for(const pz of[box[4],box[5]]){world(px,py,pz).applyMatrix4(camera.matrixWorldInverse);l=Math.min(l,p.x);r=Math.max(r,p.x);b=Math.min(b,p.y);t=Math.max(t,p.y);}const padding=frame.padding??boatSafeArea(w,h,frame),pixels=Math.max(1,Math.min((w-padding.left-padding.right)/(r-l),(h-padding.top-padding.bottom)/(t-b)))/1.035,cx=(l+r)/2+(padding.right-padding.left)/(2*pixels),cy=(t+b)/2+(padding.top-padding.bottom)/(2*pixels);Object.assign(camera,{left:cx-w/(2*pixels),right:cx+w/(2*pixels),top:cy+h/(2*pixels),bottom:cy-h/(2*pixels),zoom:1});camera.updateProjectionMatrix();camera.updateMatrixWorld(true);return camera;}
+ return{camera,fit,get target(){return target.clone();},dispose(){alive=false;}};
+}

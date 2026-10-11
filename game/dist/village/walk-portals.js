@@ -1,0 +1,3 @@
+const SHOPS=['workshop','bakeryCafe','postOffice','photoStudio'];
+// Signed distance in the doorway's own frame; proximity alone never enters.
+export function shopDoorCrossing(room,before,after){if(!before||!after)return null;for(const p of room.portals){if(room.id!=='courtyard'&&!SHOPS.includes(room.id))continue;if(room.id==='courtyard'&&!p.outward&&!SHOPS.includes(p.target.roomId))continue;const n=p.outward??{x:0,z:room.id==='courtyard'?1:-1},a=(before.x-p.at.x)*n.x+(before.z-p.at.z)*n.z,b=(after.x-p.at.x)*n.x+(after.z-p.at.z)*n.z;if(a<=0||b>0||b>=a)continue;const t=a/(a-b),x=before.x+(after.x-before.x)*t-p.at.x,z=before.z+(after.z-before.z)*t-p.at.z;if(Math.abs(x*n.z-z*n.x)<=(p.halfWidth??.35))return p.target;}return null;}

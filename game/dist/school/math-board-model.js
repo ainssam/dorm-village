@@ -1,0 +1,34 @@
+export const BOARD_W=720,BOARD_H=440,MAX_LATEX=2000,MAX_FORMULAS=24,MAX_STROKES=240,MAX_POINTS=12000;
+export const CHALK_COLORS=['#f2ead5','#e6c775','#d89583','#88b5ab','#91aac6'];
+const COMMANDS=new Set(('frac dfrac tfrac sqrt left right mleft mright sin cos tan cot sec csc arcsin arccos arctan sinh cosh tanh log ln exp lim limsup liminf sum prod int iint iiint oint partial infty infinity pi alpha beta gamma delta epsilon varepsilon theta vartheta lambda mu nu xi rho sigma tau phi varphi chi psi omega Gamma Delta Theta Lambda Xi Pi Sigma Phi Psi Omega pm mp times div cdot ast star circ bullet le leq ge geq ne neq approx equiv sim simeq propto in notin subset subseteq supset supseteq cup cap emptyset varnothing forall exists neg land lor implies iff to rightarrow leftarrow leftrightarrow Rightarrow Leftarrow Leftrightarrow mapsto vec overrightarrow overline underline hat widehat bar dot ddot mathbf mathrm mathit mathbb mathcal operatorname text mbox begin end matrix pmatrix bmatrix Bmatrix vmatrix Vmatrix cases aligned align gathered displaystyle textstyle scriptstyle scriptscriptstyle limits nolimits binom dbinom tbinom lbrace rbrace lvert rvert vert Vert lVert rVert langle rangle lfloor rfloor lceil rceil ldots cdots vdots ddots ell degree angle triangle perp parallel prime mid colon quad qquad space thinspace medspace thickspace! placeholder square').split(/\s+/));
+export function validateLatex(value,{draft=false}={}){
+ const fail=message=>({ok:false,message});if(typeof value!=='string'||value.length>MAX_LATEX)return fail('수식은 2,000자 안으로 나누어 주세요.');if(!value.trim())return fail('수식을 먼저 넣어 주세요.');
+ if(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f%#$]/.test(value))return fail('이 기호는 수식 입력에 사용할 수 없어요.');
+ // Only printable ASCII math and a small mathematical Unicode set. No HTML/CSS, URLs or free-form control syntax.
+ if(/[^\x20-\x7e\n\r\t\u00b0\u00b1\u00b7\u00d7\u00f7\u0391-\u03c9\u2009\u2032\u2033\u2061\u2190-\u22ff]/.test(value))return fail('설명은 수식 밖에 적고, 수식에는 숫자·영문·수학 기호를 사용해 주세요.');
+ let depth=0,tokens=0;for(let i=0;i<value.length;i++){const c=value[i];if(c==='\\'){const m=value.slice(i+1).match(/^[a-zA-Z]+|^./s);if(!m)return fail('명령을 마저 입력해 주세요.');const cmd=m[0];if(cmd.length>1||/[a-zA-Z]/.test(cmd)){if(!COMMANDS.has(cmd))return fail('지원하지 않는 명령이에요. 수식 버튼으로 다시 넣어 주세요.');if(cmd==='placeholder'&&!draft)return fail('빈칸을 채운 뒤 칠판에 올려 주세요.');}else if(!'{}[](),;:!| \\'.includes(cmd))return fail('지원하지 않는 수식 기호예요.');i+=cmd.length;tokens++;}else if(c==='{'){if(++depth>20)return fail('수식의 중첩이 너무 깊어요. 두 식으로 나누어 주세요.');}else if(c==='}'&&--depth<0)return fail('여는 괄호와 닫는 괄호를 맞춰 주세요.');}
+ if(depth!==0)return fail('여는 괄호와 닫는 괄호를 맞춰 주세요.');if(tokens>300)return fail('수식이 복잡해요. 두 식으로 나누어 주세요.');
+ const env=[];for(const m of value.matchAll(/\\(begin|end)\{([^}]*)\}/g)){if(!['matrix','pmatrix','bmatrix','Bmatrix','vmatrix','Vmatrix','cases','aligned','gathered'].includes(m[2]))return fail('지원하는 행렬·연립식 틀을 골라 주세요.');if(m[1]==='begin')env.push(m[2]);else if(env.pop()!==m[2])return fail('행렬의 시작과 끝을 맞춰 주세요.');}if(env.length)return fail('행렬의 끝을 닫아 주세요.');
+ if((value.match(/&/g)||[]).length>48||(value.match(/\\\\/g)||[]).length>16)return fail('행렬은 더 작은 여러 개로 나누어 주세요.');return {ok:true,latex:value.trim()};
+}
+const finite=Number.isFinite,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const point=p=>p&&finite(p.x)&&finite(p.y)&&p.x>=0&&p.x<=BOARD_W&&p.y>=0&&p.y<=BOARD_H;
+function validFormula(f){return f&&typeof f.id==='string'&&/^eq_[a-z0-9_]{1,60}$/.test(f.id)&&validateLatex(f.latex).ok&&CHALK_COLORS.includes(f.color)&&[f.x,f.y,f.width,f.height].every(finite)&&f.x>=0&&f.y>=0&&f.width>=12&&f.height>=12&&f.x+f.width<=BOARD_W+.01&&f.y+f.height<=BOARD_H+.01;}
+function validStroke(s){return s&&CHALK_COLORS.includes(s.color)&&finite(s.size)&&s.size>=1&&s.size<=18&&Array.isArray(s.points)&&s.points.length>=1&&s.points.length<=800&&s.points.every(point);}
+export function validBoard(s){return !!(s&&typeof s.baseVisible==='boolean'&&Array.isArray(s.formulas)&&s.formulas.length<=MAX_FORMULAS&&s.formulas.every(validFormula)&&new Set(s.formulas.map(f=>f.id)).size===s.formulas.length&&Array.isArray(s.strokes)&&s.strokes.length<=MAX_STROKES&&s.strokes.every(validStroke)&&s.strokes.reduce((n,x)=>n+x.points.length,0)<=MAX_POINTS);}
+export function boardPoint(e,r){if(!r||!(r.width>0&&r.height>0)||!finite(e.clientX)||!finite(e.clientY))return null;return {x:clamp((e.clientX-r.left)*BOARD_W/r.width,0,BOARD_W),y:clamp((e.clientY-r.top)*BOARD_H/r.height,0,BOARD_H)};}
+export const hitFormula=(f,p)=>p.x>=f.x&&p.x<=f.x+f.width&&p.y>=f.y&&p.y<=f.y+f.height;
+export function fitFormula(f){let width=clamp(Number(f.width)||120,12,BOARD_W),height=clamp(Number(f.height)||45,12,BOARD_H);const k=Math.min(1,BOARD_W/(Number(f.width)||width),BOARD_H/(Number(f.height)||height));if(k<1){width=clamp((Number(f.width)||width)*k,12,BOARD_W);height=clamp((Number(f.height)||height)*k,12,BOARD_H);}return {...f,width,height,x:clamp(Number(f.x)||0,0,BOARD_W-width),y:clamp(Number(f.y)||0,0,BOARD_H-height)};}
+export class MathBoardDocument{
+ constructor(state={baseVisible:true,formulas:[],strokes:[]}){if(!validBoard(state))throw Error('손상된 칠판이에요.');this.state=structuredClone(state);this.past=[];this.future=[];this.epoch=0;this.sequence=0;}
+ get formulas(){return this.state.formulas;}get strokes(){return this.state.strokes;}get baseVisible(){return this.state.baseVisible;}get historyCount(){return this.past.length;}get canUndo(){return this.past.length>0;}get canRedo(){return this.future.length>0;}snapshot(){return structuredClone(this.state);}
+ commit(next){if(!validBoard(next))throw Error('칠판이 가득 찼어요. 일부를 지우거나 PNG로 보관해 주세요.');this.past.push(this.state);if(this.past.length>24)this.past.shift();this.state=next;this.future=[];this.epoch++;}
+ putFormula(input){const existing=input.id&&this.formulas.find(f=>f.id===input.id),id=existing?.id??`eq_${Date.now().toString(36)}_${(++this.sequence).toString(36)}`,f=fitFormula({...input,id});const check=validateLatex(f.latex);if(!check.ok)throw Error(check.message);f.latex=check.latex;this.commit({...this.state,formulas:existing?this.formulas.map(x=>x.id===id?f:x):[...this.formulas,f]});return f;}
+ transform(id,changes){const f=this.formulas.find(x=>x.id===id);if(f)this.putFormula({...f,...changes,id});}
+ remove(id){if(this.formulas.some(f=>f.id===id))this.commit({...this.state,formulas:this.formulas.filter(f=>f.id!==id)});}
+ addStroke(s){this.commit({...this.state,strokes:[...this.strokes,structuredClone(s)]});}
+ setBaseVisible(visible){if(this.baseVisible!==!!visible)this.commit({...this.state,baseVisible:!!visible});}
+ clear(){this.commit({baseVisible:false,formulas:[],strokes:[]});}
+ undo(){if(!this.canUndo)return;this.future.push(this.state);this.state=this.past.pop();this.epoch++;}
+ redo(){if(!this.canRedo)return;this.past.push(this.state);this.state=this.future.pop();this.epoch++;}
+}

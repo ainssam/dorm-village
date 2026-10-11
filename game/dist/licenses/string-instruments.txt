@@ -1,0 +1,1 @@
+Cello and harp mesh geometry, play controls and approximate Web Audio synthesis were authored for DORMI. There are no sampled recordings, third-party soundfonts or copyrighted melodies. The visible controls describe these sounds as synthesized approximations. Existing five original listening tracks keep their separate notices.

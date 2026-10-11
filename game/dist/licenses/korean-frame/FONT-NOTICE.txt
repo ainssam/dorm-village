@@ -1,0 +1,19 @@
+Nanum Brush Script Regular, version 1.100
+Copyright © 2010 NHN Corporation. All rights reserved.
+Font designed by Sandoll Communications Inc. Publisher: Naver.
+Licensed under SIL Open Font License 1.1. Full license: OFL.txt in this directory.
+
+Official source:
+https://github.com/google/fonts/tree/main/ofl/nanumbrushscript
+Font file:
+https://raw.githubusercontent.com/google/fonts/main/ofl/nanumbrushscript/NanumBrushScript-Regular.ttf
+License file:
+https://raw.githubusercontent.com/google/fonts/main/ofl/nanumbrushscript/OFL.txt
+Font metadata:
+https://raw.githubusercontent.com/google/fonts/main/ofl/nanumbrushscript/METADATA.pb
+
+Downloaded 2026-10-04. The original TTF is unmodified.
+The artwork renders the four modern Hangul syllables 훈민정음 as fixed path outlines.
+Only placement and scale are applied; this does not create a modified font.
+The original font file is for regeneration and need not be served by the game.
+No endorsement by NHN, Naver or Sandoll is implied.

@@ -1,0 +1,8 @@
+import * as T from 'three';
+import {ROOMS} from '../world/rooms.js';
+/** Endpoint coordinates belong to a rigid frame; view.root remains the owner. */
+export function boatEndpointContext(view,endpoint){return view?.endpointContext?.(endpoint.roomId)??{frameRoot:view?.root,localRoom:ROOMS[endpoint.roomId],dock:view?.dock};}
+export function boatBase(view,scene,endpoint){const {frameRoot}=boatEndpointContext(view,endpoint);if(!frameRoot||!scene)throw Error('Missing boat endpoint frame');frameRoot.updateWorldMatrix(true,false);scene.updateWorldMatrix(true,false);const m=new T.Matrix4().copy(scene.matrixWorld).invert().multiply(frameRoot.matrixWorld),p=new T.Vector3(),q=new T.Quaternion(),s=new T.Vector3();m.decompose(p,q,s);const e=new T.Euler().setFromQuaternion(q,'YXZ');if(s.distanceTo(new T.Vector3(1,1,1))>1e-7||Math.abs(e.x)+Math.abs(e.z)>1e-7)throw Error('Boat base must preserve full-size level support');return m;}
+export function boatScenePoint(view,scene,endpoint,point){const base=boatBase(view,scene,endpoint),p=new T.Vector3(point.x,point.y??.05,point.z).applyMatrix4(base);return{...point,x:p.x,y:p.y,z:p.z,...(point.yaw===undefined?{}:{yaw:point.yaw+new T.Euler().setFromRotationMatrix(base,'YXZ').y})};}
+export function boatLocalPoint(view,scene,endpoint,point){const base=boatBase(view,scene,endpoint),yaw=new T.Euler().setFromRotationMatrix(base,'YXZ').y,p=new T.Vector3(point.x,point.y??.05,point.z).applyMatrix4(base.invert());return{...point,x:p.x,y:p.y,z:p.z,...(point.yaw===undefined?{}:{yaw:point.yaw-yaw})};}
+export function boatEndpointWorld(view,endpoint){const context=boatEndpointContext(view,endpoint);return context.collisionWorld?.()??view?.collisionWorld?.()??view?.residents?.collisionWorld?.()??context.localRoom;}

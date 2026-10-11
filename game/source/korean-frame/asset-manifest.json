@@ -1,0 +1,120 @@
+{
+  "title": "훈민정음",
+  "textForm": "modern NFC Hangul, not a Middle Korean transcription",
+  "verifiedOn": "2026-10-04",
+  "width": 1160,
+  "height": 2000,
+  "aspectRatio": 0.58,
+  "productionAsset": "assets/hunminjeongeum-calligraphy.png",
+  "vectorSource": "assets/hunminjeongeum-calligraphy.svg",
+  "layout": "Vertical top-to-bottom 훈 / 민 / 정 / 음; game geometry supplies frame.",
+  "targetWorldFace": {
+    "width": 1.08,
+    "height": 1.86,
+    "x": 4.58,
+    "y": 1.96,
+    "z": -4.76
+  },
+  "runtimeFontDependency": false,
+  "glyphCount": 4,
+  "glyphCoverage": [
+    {
+      "character": "훈",
+      "codepoint": "U+D6C8",
+      "glyph": "uniD6C8",
+      "outlineBounds": [
+        20,
+        -270.57142857142856,
+        476.0,
+        610.5625
+      ]
+    },
+    {
+      "character": "민",
+      "codepoint": "U+BBFC",
+      "glyph": "uniBBFC",
+      "outlineBounds": [
+        41.416666666666664,
+        -89.8,
+        602,
+        557
+      ]
+    },
+    {
+      "character": "정",
+      "codepoint": "U+C815",
+      "glyph": "uniC815",
+      "outlineBounds": [
+        20,
+        -159.5,
+        574,
+        580.3333333333334
+      ]
+    },
+    {
+      "character": "음",
+      "codepoint": "U+C74C",
+      "glyph": "uniC74C",
+      "outlineBounds": [
+        19,
+        -219.72727272727272,
+        553,
+        586.2857142857143
+      ]
+    }
+  ],
+  "font": {
+    "family": "Nanum Brush Script",
+    "version": "1.100",
+    "license": "SIL OFL 1.1",
+    "copyright": "Copyright 2010 NHN Corporation. Font designed by Sandoll Communications Inc.",
+    "sha256": "27ceaf578c96f594cdf07fe0181b251790acbb746a164e45c1f6473f89911a31",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/nanumbrushscript/NanumBrushScript-Regular.ttf",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/nanumbrushscript/OFL.txt",
+    "metadataSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/nanumbrushscript/METADATA.pb",
+    "fontModified": false,
+    "hanjaCoverage": {
+      "訓": false,
+      "民": false,
+      "正": false,
+      "音": false
+    },
+    "hanjaPolicy": "Not included in artwork because this brush font has no Hanja coverage; no fallback glyphs."
+  },
+  "sourceImagesUsed": false,
+  "historicalClaims": [
+    {
+      "claim": "Modern title 훈민정음 and Hanja title 訓民正音; 1443 letters and 1446 book are distinct.",
+      "source": "https://www.hangeul.go.kr/exhibition/541"
+    },
+    {
+      "claim": "Modern basic letters number 24. Composite letters and syllable-position inventories are separate counts.",
+      "source": "https://www.korean.go.kr/hangeul/principle/001.html"
+    },
+    {
+      "claim": "The original system had 28 letters: 17 consonants and 11 vowels.",
+      "source": "https://www.hangeul.go.kr/exhibition/541"
+    },
+    {
+      "claim": "October 9 is the commemorative Hangeul Day date; do not assert an exact proven creation or public ceremony on that day.",
+      "source": "https://www.korean.go.kr/hangeul/origin/001.html"
+    },
+    {
+      "claim": "Official transcription has the title 訓民正音 and 28-letter statement.",
+      "source": "https://contents.history.go.kr/front/hm/view.do?levelId=hm_091_0010"
+    }
+  ],
+  "suggestedModernUICaption": {
+    "text": "누구나 쉽게 배워, 날마다 편하게",
+    "label": "세종의 뜻을 오늘말로 풀어쓴 문장",
+    "historicalQuotation": false,
+    "rendering": "Separate normal UI font, not baked into calligraphy artwork."
+  },
+  "suggestedTimeline": "1443년 창제 · 1446년 『훈민정음』 간행 · 10월 9일 한글날",
+  "rights": {
+    "historicalTitle": "Ancient title only, not a modern translation or historical photograph.",
+    "museumPolicySource": "https://www.hangeul.go.kr/html/nurizip/copyrightPolicy.do",
+    "museumImages": "None downloaded or reused. Museum policy requires item-level KOGL check for image reuse.",
+    "output": "Original code-generated paper, frame and abstract decoration. Fonts are used as lettering outlines in a document asset; no derivative font is generated."
+  }
+}

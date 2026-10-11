@@ -1,0 +1,80 @@
+/* Scoped to the English workshop; paper, leaf and gold match the existing classroom. */
+.english-learning{min-width:0;color:var(--ink,#253e46);font-size:20px;line-height:1.55;overflow-wrap:anywhere}
+.english-learning [hidden]{display:none!important}
+.english-learning p{font-size:20px;line-height:1.55;margin:10px 0}
+.english-learning h3{font-size:28px;line-height:1.4;margin:12px 0 16px}
+.english-learning button{min-width:48px;min-height:50px;padding:10px 14px;border:1px solid #a8baa6;border-radius:9px;background:#edf0e3;color:var(--ink,#253e46);font:inherit;font-size:20px;line-height:1.4;overflow-wrap:anywhere;touch-action:manipulation}
+.english-learning button:hover{border-color:#4a7561;background:#e0eadb}
+.english-learning button:focus-visible,.english-learning summary:focus-visible,.english-learning a:focus-visible,.english-panel:focus-visible{outline:3px solid #426b59;outline-offset:3px}
+.english-learning button[aria-pressed=true],.english-learning button[aria-selected=true]{background:#f5d783;border-color:#94762e}
+.english-learning button:disabled{opacity:.62;cursor:default;transform:none}
+.english-learning button.primary{background:#3e7161;color:#fff9e8;border-color:#315c4e}
+.english-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:8px 0 22px;padding-bottom:15px;border-bottom:1px solid #c6cdb4}
+.english-tabs button{padding:9px 6px}
+.english-panel{min-width:0}
+.english-learning .english-progress{color:#456252;margin:0 0 12px;font-variant-numeric:tabular-nums}
+.english-learning .english-prompt{font-size:clamp(25px,4.2vw,31px);line-height:1.55;margin:8px 0 20px;word-break:keep-all}
+.english-learning .english-note{color:#456252;margin:10px 0}
+.english-learning .english-feedback{min-height:3em;margin:18px 0 12px;padding:12px 15px;border-left:4px solid #b89a44;background:#f4edd4}
+.english-feedback[data-outcome=correct]{border-left-color:#54815f;background:#e6eedc}
+.english-actions,.english-audio-actions,.english-roleplay-menu,.english-shelf-menu{display:flex;flex-wrap:wrap;gap:9px;margin:12px 0}
+.english-actions button{flex:1 1 140px}
+.english-audio{margin:12px 0 18px;padding:12px 0;border-top:1px solid #d9d5be;border-bottom:1px solid #d9d5be}
+.english-audio-actions{margin:0 0 8px}
+.english-audio-actions button{flex:1 1 132px}
+.english-learning .english-audio-status{color:#456252}
+.english-learning .english-transcript{padding:10px 14px;background:#f5edcf;border-left:3px solid #b99a44}
+.english-picture{display:block;flex:none;width:100%;aspect-ratio:1;background-image:url('./word-cards.webp');background-repeat:no-repeat;background-size:400% 300%;border-radius:9px;background-color:#fff9eb}
+.english-picture-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:16px 0}
+.english-picture-choices button{display:flex;flex-direction:column;align-items:center;gap:8px;padding:9px;background:#fff8e7}
+.english-picture-choices button>span:last-child{display:block}
+.english-drink-choices{grid-template-columns:repeat(2,minmax(0,1fr));max-width:380px}
+.english-assembled{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:94px;padding:15px;border:2px dashed #92aa97;border-radius:12px;background:#f7f3df}
+.english-assembled button{background:#f5d783;border-color:#b69947}
+.english-learning .english-empty{margin:0;color:#49675a}
+.english-tiles{display:flex;flex-wrap:wrap;gap:8px;padding:8px 0 15px}
+.english-tiles button{min-height:55px;background:#fff9eb}
+.english-learning .english-answer{font-size:24px;color:#2c5e4c;padding-left:14px;border-left:3px solid #7c9c72}
+.english-dialogue-choices{display:grid;gap:10px;margin:14px 0}
+.english-dialogue-choices button{text-align:left;background:#fff8e7;padding:13px 15px}
+.english-dialogue-choices button>span{display:block}
+.english-choice-meaning{margin-top:4px;color:#456252}
+.english-learning .english-dialogue-line{font-size:23px;padding:13px 15px;border-left:4px solid #719479;background:#edf0df}
+.english-map-frame{max-width:360px;margin:15px auto 20px}
+.english-learning .english-map-caption{margin:0 0 8px;text-align:center}
+.english-map{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,1fr);aspect-ratio:1;gap:3px;border:2px solid #9dad91;border-radius:12px;padding:5px;background:#b4c7a4}
+.english-map-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;min-width:0;background:#dce6cf;border-radius:4px}
+.english-map-cell.is-road{background:#f1dcad}
+.english-map-cell.is-library{background:#e3deef;border:2px solid #867bac}
+.english-map-label{font-size:20px;font-weight:700}
+.english-map-marker{display:block;font-size:34px;line-height:1;font-weight:800;color:#254c45}
+.english-word-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin:18px 0}
+.english-word-list button{padding:10px 6px}
+.english-dictionary-entry{display:grid;grid-template-columns:150px minmax(0,1fr);align-items:center;gap:22px;margin:18px 0}
+.english-dictionary-entry h3{font-size:34px;margin:0 0 8px}
+.english-learning .english-meaning{font-size:24px}
+.english-learning .english-example{font-size:23px;margin:8px 0;padding-left:14px;border-left:3px solid #d1bd85}
+.english-book-image{display:block;max-width:100%;width:100%;height:auto;max-height:360px;object-fit:contain;border-radius:12px;background:#efe9d2;margin:16px auto}
+.english-learning .english-book-text{font-size:25px;line-height:1.5;margin:18px 0 12px}
+.english-phrases{border-top:1px solid #c6cdb4;margin-top:22px;padding:8px 0}
+.english-learning.learning-workspace summary{font-size:20px;min-height:48px;padding:10px 0;cursor:pointer}
+.english-phrase{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:0 12px;padding:10px 0;border-top:1px solid #dfdcc7}
+.english-phrase p:first-child{margin-bottom:0}
+.english-phrase p:nth-child(2){grid-column:1;color:#456252;margin-top:2px}
+.english-phrase button{grid-column:2;grid-row:1 / span 2}
+.english-footer{margin-top:18px}
+.english-sources{margin-top:14px;padding:8px 0}
+.english-learning a{color:#275b4d;text-underline-offset:4px;overflow-wrap:anywhere}
+@media(max-width:540px){
+ .english-tabs{grid-template-columns:repeat(2,minmax(0,1fr));margin-bottom:18px}
+ .english-picture-choices{gap:7px}
+ .english-picture-choices button{padding:6px;gap:6px}
+ .english-word-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .english-dictionary-entry{grid-template-columns:120px minmax(0,1fr);gap:16px}
+ .english-dictionary-entry h3{font-size:29px}
+ .english-audio-actions button{flex-basis:125px}
+ .english-roleplay-menu button,.english-shelf-menu button{flex:1 1 135px}
+ .english-actions button{flex-basis:120px}
+ .english-book-image{max-height:280px}
+}
+@media(prefers-reduced-motion:reduce){.english-learning *{scroll-behavior:auto}}

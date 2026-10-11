@@ -1,0 +1,4 @@
+DORMI computer-room robot dog
+Original model and scripted motion authored for this project from the user's approved illustration.
+No third-party mesh, texture, external AI service, credentials or sensor access.
+The GLB contains original geometry and vertex colors. Editable and reproducible Blender source is in source/computer-robot-dog.

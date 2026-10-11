@@ -1,0 +1,416 @@
+{
+  "collection": "Dormi Original Room Music",
+  "version": 1,
+  "source": "compose-music.py",
+  "license": "../dist/licenses/DormiMusic.txt",
+  "sample_rate_hz": 44100,
+  "authorship": "Newly specified AI-authored scores and entirely local procedural synthesis; no copyrighted recordings or borrowed melodies supplied or used.",
+  "listening_review_limitation": "No supported perceptual audio-listening tool was available; objective render, spectral, loudness and loop-boundary checks do not substitute for human listening.",
+  "pieces": [
+    {
+      "id": "windowlight",
+      "title": "Windowlight",
+      "composer": "AI-authored for Dormi; procedural synthesis",
+      "synthetic": true,
+      "original_score": true,
+      "external_samples_used": false,
+      "bpm": 88,
+      "time_signature": "4/4",
+      "bars": 16,
+      "key": "D major",
+      "mood": "Calm lyrical piano-like miniature for home, plaza and listening",
+      "loop_start_sample": 0,
+      "loop_end_sample": 1924364,
+      "loop_start_seconds": 0,
+      "loop_end_seconds": 43.636371882086166,
+      "score_duration_seconds": 43.63636363636363,
+      "reference_pcm": {
+        "sample_frames": 1924364,
+        "duration_seconds": 43.636371882,
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "peak_linear": 0.321868896,
+        "peak_dbfs": -9.8464,
+        "rms_linear": 0.079430391,
+        "rms_dbfs": -22.0003,
+        "clipped_sample_count": 0,
+        "dc_offset_per_channel": [
+          -8.024414576062532e-09,
+          -1.5287619864277236e-08
+        ],
+        "seam": {
+          "boundary_step_per_channel": [
+            0.00262451171875,
+            0.002777099609375
+          ],
+          "maximum_boundary_step": 0.002777099609375,
+          "boundary_step_dbfs": -51.1282,
+          "nearby_step_rms": 0.002192921185793643,
+          "boundary_step_over_nearby_step_rms": 1.26639,
+          "first_100ms_rms_dbfs": -23.0613,
+          "last_100ms_rms_dbfs": -28.3601,
+          "level_change_last_to_first_100ms_db": 5.2988,
+          "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+        }
+      },
+      "mastering_gain": 0.5791057669716918,
+      "composition_notes": [
+        "Three-note descending opening answered by a low upward turn; four related four-bar phrases.",
+        "No drums. Bass, broken inner voices and separately shaped melody use a newly synthesized felt-piano-like timbre.",
+        "Final A13 gently returns to Dmaj9 in a sixteen-bar 4/4 form."
+      ],
+      "recommended_bgm_gain": 0.3,
+      "recommended_listening_gain": 0.7,
+      "review": "Numerical and score review only; no supported listening/playback analysis tool was available. No claim of perceptual listening equivalence.",
+      "files": {
+        "ogg": {
+          "name": "windowlight.ogg",
+          "bytes": 474865,
+          "sha256": "ef92ce3938beb5ad345175c1f799bcc64e42dd7addd51c95e92463cc35ed0d20",
+          "decoded_analysis": {
+            "sample_frames": 1924364,
+            "duration_seconds": 43.636371882,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.323699921,
+            "peak_dbfs": -9.7971,
+            "rms_linear": 0.079713645,
+            "rms_dbfs": -21.9693,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -1.9828224132915543e-05,
+              -1.160820404545135e-05
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                0.004989292472600937,
+                0.0027801375836133957
+              ],
+              "maximum_boundary_step": 0.004989292472600937,
+              "boundary_step_dbfs": -46.0392,
+              "nearby_step_rms": 0.002199714892744469,
+              "boundary_step_over_nearby_step_rms": 2.26815,
+              "first_100ms_rms_dbfs": -23.0387,
+              "last_100ms_rms_dbfs": -28.3303,
+              "level_change_last_to_first_100ms_db": 5.2916,
+              "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+            },
+            "frame_count_matches_reference": true
+          }
+        },
+        "mp3": {
+          "name": "windowlight.mp3",
+          "bytes": 874238,
+          "sha256": "abdacdb6b12843a348831d55dd11d05bd7a05dcf36e4ac96f91fe818b173d19f",
+          "decoded_analysis": {
+            "sample_frames": 1924364,
+            "duration_seconds": 43.636371882,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.305703193,
+            "peak_dbfs": -10.294,
+            "rms_linear": 0.075457918,
+            "rms_dbfs": -22.4459,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -9.278629687780225e-08,
+              2.8756414544830554e-07
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                0.0030345171689987183,
+                -0.0005020257085561752
+              ],
+              "maximum_boundary_step": 0.0030345171689987183,
+              "boundary_step_dbfs": -50.3582,
+              "nearby_step_rms": 0.0020967883045517545,
+              "boundary_step_over_nearby_step_rms": 1.44722,
+              "first_100ms_rms_dbfs": -23.507,
+              "last_100ms_rms_dbfs": -28.8053,
+              "level_change_last_to_first_100ms_db": 5.2983,
+              "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+            },
+            "frame_count_matches_reference": true
+          }
+        },
+        "wav": {
+          "name": "windowlight.wav",
+          "bytes": 7697500,
+          "sha256": "c883b1ad064b4baebc2fed4f5910c25835fd8a4502f4fdc9bf9a456494a9f089",
+          "format": "PCM signed 16-bit stereo, 44100 Hz"
+        }
+      },
+      "loudness_analysis_file": "windowlight.loudness.txt"
+    },
+    {
+      "id": "pocket-kites",
+      "title": "Pocket Kites",
+      "composer": "AI-authored for Dormi; procedural synthesis",
+      "synthetic": true,
+      "original_score": true,
+      "external_samples_used": false,
+      "bpm": 104,
+      "time_signature": "4/4",
+      "bars": 16,
+      "key": "F major",
+      "mood": "Cheerful lightweight electronic / jazz-influenced miniature for playground, sports and listening",
+      "loop_start_sample": 0,
+      "loop_end_sample": 1628308,
+      "loop_start_seconds": 0,
+      "loop_end_seconds": 36.92308390022676,
+      "score_duration_seconds": 36.92307692307692,
+      "reference_pcm": {
+        "sample_frames": 1628308,
+        "duration_seconds": 36.9230839,
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "peak_linear": 0.431732178,
+        "peak_dbfs": -7.2957,
+        "rms_linear": 0.089122375,
+        "rms_dbfs": -21.0003,
+        "clipped_sample_count": 0,
+        "dc_offset_per_channel": [
+          2.779423079624678e-08,
+          1.967899011197513e-09
+        ],
+        "seam": {
+          "boundary_step_per_channel": [
+            3.0517578125e-05,
+            -0.000732421875
+          ],
+          "maximum_boundary_step": 0.000732421875,
+          "boundary_step_dbfs": -62.7048,
+          "nearby_step_rms": 0.0065824486411317695,
+          "boundary_step_over_nearby_step_rms": 0.11127,
+          "first_100ms_rms_dbfs": -17.0378,
+          "last_100ms_rms_dbfs": -30.3356,
+          "level_change_last_to_first_100ms_db": 13.2978,
+          "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+        }
+      },
+      "mastering_gain": 0.7344648515871998,
+      "composition_notes": [
+        "Light 60% swung eighth-note accompaniment at 104 BPM, with a sparse newly authored sixteen-bar melody.",
+        "Original procedural round electric keys, wooden bell, sine bass, brush, shaker and kick; no recorded drum samples.",
+        "F-major extended chords and a C13 turnaround; the percussion remains deliberately quiet under the tune."
+      ],
+      "recommended_bgm_gain": 0.3,
+      "recommended_listening_gain": 0.7,
+      "review": "Numerical and score review only; no supported listening/playback analysis tool was available. No claim of perceptual listening equivalence.",
+      "files": {
+        "ogg": {
+          "name": "pocket-kites.ogg",
+          "bytes": 543982,
+          "sha256": "18747aa1f2bc4ececabbce8fa8d03ce1d075e7ddf5f14ba29ef8c09a744abbba",
+          "decoded_analysis": {
+            "sample_frames": 1628308,
+            "duration_seconds": 36.9230839,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.43334192,
+            "peak_dbfs": -7.2634,
+            "rms_linear": 0.089443758,
+            "rms_dbfs": -20.969,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -2.2849399880332746e-05,
+              -1.6679249421453784e-05
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                0.00035057010245509446,
+                -0.0015916335105430335
+              ],
+              "maximum_boundary_step": 0.0015916335105430335,
+              "boundary_step_dbfs": -55.9631,
+              "nearby_step_rms": 0.006607865588236399,
+              "boundary_step_over_nearby_step_rms": 0.24087,
+              "first_100ms_rms_dbfs": -17.0111,
+              "last_100ms_rms_dbfs": -30.3274,
+              "level_change_last_to_first_100ms_db": 13.3163,
+              "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+            },
+            "frame_count_matches_reference": true
+          }
+        },
+        "mp3": {
+          "name": "pocket-kites.mp3",
+          "bytes": 739969,
+          "sha256": "ae69860510133d96e657fc7b31a55b1e73e8a35918c0021ab3eeac1e0ecbb112",
+          "decoded_analysis": {
+            "sample_frames": 1628308,
+            "duration_seconds": 36.9230839,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.409207046,
+            "peak_dbfs": -7.7611,
+            "rms_linear": 0.084663852,
+            "rms_dbfs": -21.446,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -5.614802808532475e-07,
+              -8.194944729168901e-07
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                -0.0005461837572511286,
+                -0.000233378290431574
+              ],
+              "maximum_boundary_step": 0.0005461837572511286,
+              "boundary_step_dbfs": -65.2532,
+              "nearby_step_rms": 0.006259394901828323,
+              "boundary_step_over_nearby_step_rms": 0.08726,
+              "first_100ms_rms_dbfs": -17.4849,
+              "last_100ms_rms_dbfs": -30.7805,
+              "level_change_last_to_first_100ms_db": 13.2956,
+              "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+            },
+            "frame_count_matches_reference": true
+          }
+        },
+        "wav": {
+          "name": "pocket-kites.wav",
+          "bytes": 6513276,
+          "sha256": "76551149cf4bf510209b98ef726b1c7e22b87c35cbfcd6f19fccd3d789b23742",
+          "format": "PCM signed 16-bit stereo, 44100 Hz"
+        }
+      },
+      "loudness_analysis_file": "pocket-kites.loudness.txt"
+    },
+    {
+      "id": "afterglow-paperboats",
+      "title": "Afterglow Paperboats",
+      "composer": "AI-authored for Dormi; procedural synthesis",
+      "synthetic": true,
+      "original_score": true,
+      "external_samples_used": false,
+      "bpm": 68,
+      "time_signature": "4/4",
+      "bars": 12,
+      "key": "A major / F-sharp minor colors",
+      "mood": "Dreamy soft electronic miniature for quiet rooms and listening",
+      "loop_start_sample": 0,
+      "loop_end_sample": 1867765,
+      "loop_start_seconds": 0,
+      "loop_end_seconds": 42.35294784580499,
+      "score_duration_seconds": 42.35294117647059,
+      "reference_pcm": {
+        "sample_frames": 1867765,
+        "duration_seconds": 42.352947846,
+        "sample_rate_hz": 44100,
+        "channels": 2,
+        "peak_linear": 0.372467041,
+        "peak_dbfs": -8.5782,
+        "rms_linear": 0.079430401,
+        "rms_dbfs": -22.0003,
+        "clipped_sample_count": 0,
+        "dc_offset_per_channel": [
+          -2.6796105572703205e-09,
+          1.0244608654929823e-08
+        ],
+        "seam": {
+          "boundary_step_per_channel": [
+            -0.0018310546875,
+            -0.00262451171875
+          ],
+          "maximum_boundary_step": 0.00262451171875,
+          "boundary_step_dbfs": -51.619,
+          "nearby_step_rms": 0.0055505225219317535,
+          "boundary_step_over_nearby_step_rms": 0.47284,
+          "first_100ms_rms_dbfs": -22.0385,
+          "last_100ms_rms_dbfs": -21.6856,
+          "level_change_last_to_first_100ms_db": -0.3529,
+          "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+        }
+      },
+      "mastering_gain": 0.9742931131555672,
+      "composition_notes": [
+        "A newly authored twelve-bar, low-density tune with two- and three-beat breaths.",
+        "Slow additive sine-cloud chords and softly struck harmonic droplets; no drums, recordings, or external samples.",
+        "The last E6/9 shares common tones with the returning Amaj9; note and reverb tails wrap across the exact loop point."
+      ],
+      "recommended_bgm_gain": 0.3,
+      "recommended_listening_gain": 0.7,
+      "review": "Numerical and score review only; no supported listening/playback analysis tool was available. No claim of perceptual listening equivalence.",
+      "files": {
+        "ogg": {
+          "name": "afterglow-paperboats.ogg",
+          "bytes": 343013,
+          "sha256": "064ec4db676ad4760becfce670989515f1275b1778c55e4baedae4459b93c820",
+          "decoded_analysis": {
+            "sample_frames": 1867765,
+            "duration_seconds": 42.352947846,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.372423917,
+            "peak_dbfs": -8.5792,
+            "rms_linear": 0.079694973,
+            "rms_dbfs": -21.9714,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              -2.144695323687449e-06,
+              -6.411946848648628e-06
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                -0.00264594703912735,
+                -0.006248846650123596
+              ],
+              "maximum_boundary_step": 0.006248846650123596,
+              "boundary_step_dbfs": -44.084,
+              "nearby_step_rms": 0.005572696074989354,
+              "boundary_step_over_nearby_step_rms": 1.12133,
+              "first_100ms_rms_dbfs": -21.9863,
+              "last_100ms_rms_dbfs": -21.6495,
+              "level_change_last_to_first_100ms_db": -0.3368,
+              "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+            },
+            "frame_count_matches_reference": true
+          }
+        },
+        "mp3": {
+          "name": "afterglow-paperboats.mp3",
+          "bytes": 848647,
+          "sha256": "66b225ce8de303c770fe8f4dbedc061c4b14715c221bd9b2eaf48bd383f7f83d",
+          "decoded_analysis": {
+            "sample_frames": 1867765,
+            "duration_seconds": 42.352947846,
+            "sample_rate_hz": 44100,
+            "channels": 2,
+            "peak_linear": 0.353835911,
+            "peak_dbfs": -9.024,
+            "rms_linear": 0.075459251,
+            "rms_dbfs": -22.4458,
+            "clipped_sample_count": 0,
+            "dc_offset_per_channel": [
+              6.505354284298248e-08,
+              1.0672952706148755e-08
+            ],
+            "seam": {
+              "boundary_step_per_channel": [
+                -0.002006266266107559,
+                -0.005572088062763214
+              ],
+              "maximum_boundary_step": 0.005572088062763214,
+              "boundary_step_dbfs": -45.0796,
+              "nearby_step_rms": 0.005359367616328986,
+              "boundary_step_over_nearby_step_rms": 1.03969,
+              "first_100ms_rms_dbfs": -22.4826,
+              "last_100ms_rms_dbfs": -22.1364,
+              "level_change_last_to_first_100ms_db": -0.3462,
+              "note": "The boundary step is one normal sample interval, not a requirement for zero-valued endpoints."
+            },
+            "frame_count_matches_reference": true
+          }
+        },
+        "wav": {
+          "name": "afterglow-paperboats.wav",
+          "bytes": 7471104,
+          "sha256": "067d179b18f6217785f02f5f62472cb2ef2b16de42416703d9ccf57439f0f2fb",
+          "format": "PCM signed 16-bit stereo, 44100 Hz"
+        }
+      },
+      "loudness_analysis_file": "afterglow-paperboats.loudness.txt"
+    }
+  ]
+}

@@ -1,0 +1,452 @@
+{
+  "name": "DORMI physical world wall map",
+  "generatedOn": "2026-10-04",
+  "source": {
+    "dataset": "Natural Earth physical land 1:110 million",
+    "layer": "ne_110m_land",
+    "repository": "https://github.com/nvkelso/natural-earth-vector",
+    "revision": "ca96624a56bd078437bca8184e78163e5039ad19",
+    "revisionDate": "2022-06-02T07:25:00Z",
+    "url": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/ca96624a56bd078437bca8184e78163e5039ad19/geojson/ne_110m_land.geojson",
+    "sha256": "9e0729ee253ca7d7a5c4ae9395fb1902264c5377c52e224d13dd85010e2835d9",
+    "bytes": 138160,
+    "license": "Public domain (Natural Earth terms)",
+    "licenseUrl": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "retainedLicense": "licenses/NATURAL-EARTH-LICENSE.md",
+    "sourceFile": "source/ne_110m_land.geojson"
+  },
+  "projection": {
+    "name": "Equal Earth",
+    "implementation": "d3-geo 3.1.1 geoEqualEarth",
+    "documentation": "https://d3js.org/d3-geo/cylindrical#geoEqualEarth",
+    "source": "https://github.com/d3/d3-geo/blob/v3.1.1/src/projection/equalEarth.js",
+    "northUp": true,
+    "center": [
+      0,
+      0
+    ],
+    "rotate": [
+      0,
+      0,
+      0
+    ],
+    "scale": 364.36433067760964,
+    "translate": [
+      1024,
+      512
+    ],
+    "adaptivePrecisionPxAt2048": 0.15,
+    "fitExtent": [
+      [
+        32,
+        32
+      ],
+      [
+        2016,
+        992
+      ]
+    ],
+    "sphericalBounds": [
+      [
+        37.800577598630184,
+        32.00000000000006
+      ],
+      [
+        2010.1994224013697,
+        992
+      ]
+    ],
+    "distortion": "Equal-area projection; planar shapes vary by location. No nonuniform scaling."
+  },
+  "presentation": {
+    "width": 2048,
+    "height": 1024,
+    "aspectRatio": 2,
+    "recommendedWorldQuad": {
+      "width": 6,
+      "height": 3
+    },
+    "palette": {
+      "paper": "#f4ecd9",
+      "ocean": "#b9d7df",
+      "land": "#a8bd91",
+      "grid": "#628b98",
+      "equator": "#557e8b",
+      "outline": "#83acb8",
+      "label": "#365852",
+      "labelHalo": "#f5f2df"
+    },
+    "graticuleDegrees": 30,
+    "equatorLatitude": 0,
+    "countryBorders": false,
+    "countryNames": false,
+    "visibleBranding": false,
+    "labelsAreSeparateLayer": true,
+    "labelPoints": [
+      {
+        "id": "north-america",
+        "label": "북아메리카",
+        "lon": -103,
+        "lat": 45,
+        "xy": [
+          540.3467816705055,
+          198.56247629569918
+        ]
+      },
+      {
+        "id": "south-america",
+        "label": "남아메리카",
+        "lon": -58,
+        "lat": -20,
+        "xy": [
+          715.4201275541592,
+          658.0464121158633
+        ]
+      },
+      {
+        "id": "europe",
+        "label": "유럽",
+        "lon": 20,
+        "lat": 52,
+        "xy": [
+          1112.8956162513487,
+          157.5811925570477
+        ]
+      },
+      {
+        "id": "africa",
+        "label": "아프리카",
+        "lon": 19,
+        "lat": 8,
+        "xy": [
+          1127.6145392160543,
+          453.04977565583584
+        ]
+      },
+      {
+        "id": "asia",
+        "label": "아시아",
+        "lon": 91,
+        "lat": 42,
+        "xy": [
+          1460.239611391495,
+          217.1054805255901
+        ]
+      },
+      {
+        "id": "oceania",
+        "label": "오세아니아",
+        "lon": 138,
+        "lat": -25,
+        "xy": [
+          1746.012975010911,
+          693.4309574204813
+        ]
+      },
+      {
+        "id": "antarctica",
+        "label": "남극",
+        "lon": 0,
+        "lat": -74,
+        "xy": [
+          1024,
+          965.6801827682045
+        ]
+      },
+      {
+        "id": "equator",
+        "label": "적도",
+        "lon": -18,
+        "lat": 0,
+        "xy": [
+          925.380057759863,
+          512
+        ]
+      }
+    ]
+  },
+  "processing": {
+    "simplification": "None beyond source dataset",
+    "winding": "Source verified D3-compatible; no rings reversed",
+    "perFeatureStroke": false,
+    "clip": "Full sphere only, poles and antimeridian retained",
+    "geometryRemoved": 0,
+    "features": 127,
+    "rings": 128,
+    "vertices": 5143,
+    "landAreaSteradians": 3.627891493630341,
+    "landFraction": 0.28869843210615403
+  },
+  "validation": {
+    "ringClosure": true,
+    "allExteriorAreasBelowHemisphere": true,
+    "northUp": true,
+    "landOceanSamples": [
+      {
+        "name": "Africa",
+        "lon": 20,
+        "lat": 10,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1132.7815873703776,
+          438.38294172656606
+        ]
+      },
+      {
+        "name": "Asia",
+        "lon": 90,
+        "lat": 40,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1461.0375075411966,
+          229.75566642030958
+        ]
+      },
+      {
+        "name": "Europe",
+        "lon": 20,
+        "lat": 50,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1114.3878797941215,
+          168.9363225919118
+        ]
+      },
+      {
+        "name": "North America",
+        "lon": -100,
+        "lat": 45,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          554.4337686121413,
+          198.56247629569918
+        ]
+      },
+      {
+        "name": "South America",
+        "lon": -60,
+        "lat": -10,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          697.6552378888671,
+          585.6170582734339
+        ]
+      },
+      {
+        "name": "Australia",
+        "lon": 134,
+        "lat": -25,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1725.0850626917545,
+          693.4309574204813
+        ]
+      },
+      {
+        "name": "Antarctica",
+        "lon": 0,
+        "lat": -85,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1024,
+          989.2982823096353
+        ]
+      },
+      {
+        "name": "Greenland",
+        "lon": -42,
+        "lat": 73,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          872.6476550767442,
+          61.523146144304405
+        ]
+      },
+      {
+        "name": "Japan Honshu",
+        "lon": 138,
+        "lat": 36,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1710.136200767981,
+          255.6848075268004
+        ]
+      },
+      {
+        "name": "New Zealand North Island",
+        "lon": 175.4,
+        "lat": -38.5,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1883.597385817654,
+          784.6154581122942
+        ]
+      },
+      {
+        "name": "New Zealand South Island",
+        "lon": 170.5,
+        "lat": -44,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1830.3016944713618,
+          819.3165896483326
+        ]
+      },
+      {
+        "name": "Madagascar",
+        "lon": 46,
+        "lat": -20,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1268.735760905322,
+          658.0464121158633
+        ]
+      },
+      {
+        "name": "Sumatra",
+        "lon": 101,
+        "lat": -1,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1577.3271938522316,
+          519.3811272066291
+        ]
+      },
+      {
+        "name": "Java",
+        "lon": 110,
+        "lat": -7.5,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1624.2129015598578,
+          567.277242871278
+        ]
+      },
+      {
+        "name": "Borneo",
+        "lon": 114,
+        "lat": 0.7,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1648.5707008886611,
+          506.8331410750932
+        ]
+      },
+      {
+        "name": "Sulawesi",
+        "lon": 120,
+        "lat": -2,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1681.2749556873669,
+          526.7610798640075
+        ]
+      },
+      {
+        "name": "New Guinea",
+        "lon": 140,
+        "lat": -5,
+        "expectedLand": true,
+        "contains": true,
+        "xy": [
+          1789.6493157363993,
+          548.8821341435804
+        ]
+      },
+      {
+        "name": "Pacific Ocean",
+        "lon": -140,
+        "lat": 0,
+        "expectedLand": false,
+        "contains": false,
+        "xy": [
+          256.9560047989345,
+          512
+        ]
+      },
+      {
+        "name": "Atlantic Ocean",
+        "lon": -30,
+        "lat": 0,
+        "expectedLand": false,
+        "contains": false,
+        "xy": [
+          859.6334295997717,
+          512
+        ]
+      },
+      {
+        "name": "Indian Ocean",
+        "lon": 80,
+        "lat": -25,
+        "expectedLand": false,
+        "contains": false,
+        "xy": [
+          1442.558246383137,
+          693.4309574204813
+        ]
+      }
+    ],
+    "rasterChecks": "See validation/pixel-checks.json and README.md"
+  },
+  "rasterizer": {
+    "name": "@resvg/resvg-js",
+    "version": "2.6.2",
+    "fontForKoVariant": "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+    "fontFamily": "Noto Sans CJK KR",
+    "fontLicense": "SIL Open Font License 1.1; system package copyright retained in licenses/Noto-CJK-copyright.txt"
+  },
+  "files": [
+    {
+      "file": "assets/world-map-equal-earth-1024.png",
+      "bytes": 100004,
+      "sha256": "53829b503987aa3ae703732628463d4a7e57b8cf79575d743412c99f3312c465"
+    },
+    {
+      "file": "assets/world-map-equal-earth-2048.png",
+      "bytes": 211339,
+      "sha256": "de83cc6e357b5f12600a73d5cf121dea05c40c267973210bc4f53452c465531c"
+    },
+    {
+      "file": "assets/world-map-equal-earth-ko-1024.png",
+      "bytes": 111212,
+      "sha256": "198b9128dd28b77977d0b7d845b8e258ffb4832ab67525565ea5fa193da914ba"
+    },
+    {
+      "file": "assets/world-map-equal-earth-ko-2048.png",
+      "bytes": 235800,
+      "sha256": "01bf07d98abf6d83460a30afe31bff5290e8c32abf90221fec14afacdffa5a43"
+    },
+    {
+      "file": "assets/world-map-equal-earth-ko.svg",
+      "bytes": 113292,
+      "sha256": "e461eb45815ca8b00128d7096279f46449f2cb48885041382055b04b232635ed"
+    },
+    {
+      "file": "assets/world-map-equal-earth.svg",
+      "bytes": 112456,
+      "sha256": "0791d1ac4b63947c7df48a41aa7cf867c02d3a8bc14b2c42c1ec5cfd001e731e"
+    },
+    {
+      "file": "assets/world-map-labels-ko.svg",
+      "bytes": 1271,
+      "sha256": "7579e2622011b8a7e6c8214243a850948ed0a1b3f54658b93a3ed7fc8ccfa99c"
+    }
+  ]
+}

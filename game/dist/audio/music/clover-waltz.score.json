@@ -1,0 +1,1555 @@
+{
+  "title": "Clover Waltz",
+  "id": "clover-waltz",
+  "tempo_bpm": 72,
+  "time_signature": "3/4",
+  "bars": 16,
+  "key": "G major",
+  "chords_by_bar": [
+    "G",
+    "D/F#",
+    "Em7",
+    "Cadd9",
+    "Am7",
+    "D7",
+    "G/B",
+    "D",
+    "Em",
+    "Bm7",
+    "Cmaj7",
+    "G/B",
+    "Am7",
+    "Cadd9",
+    "D7sus4",
+    "D7"
+  ],
+  "events": [
+    {
+      "instrument": "folk_bass",
+      "beat": 0.0,
+      "midi": 43,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 1.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 1.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 1.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 2.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 2.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 2.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 0.25,
+      "midi": 71,
+      "gate_beats": 0.58,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 1.0,
+      "midi": 74,
+      "gate_beats": 0.66,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 2.0,
+      "midi": 69,
+      "gate_beats": 0.72,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 1.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 2.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 3.0,
+      "midi": 42,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 4.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 4.022,
+      "midi": 57,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 4.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 5.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 5.022,
+      "midi": 57,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 5.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 3.2,
+      "midi": 69,
+      "gate_beats": 0.58,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 4.0,
+      "midi": 66,
+      "gate_beats": 1.3,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 4.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 5.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 6.0,
+      "midi": 40,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 7.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 7.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 7.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 8.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 8.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 8.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 8.5,
+      "midi": 71,
+      "gate_beats": 0.31,
+      "velocity": 0.059,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 6.0,
+      "midi": 67,
+      "gate_beats": 0.68,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 6.9,
+      "midi": 71,
+      "gate_beats": 0.67,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 8.0,
+      "midi": 74,
+      "gate_beats": 0.7,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 7.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 8.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 9.0,
+      "midi": 36,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 10.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 10.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 10.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 11.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 11.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 11.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 9.25,
+      "midi": 76,
+      "gate_beats": 0.72,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 10.25,
+      "midi": 74,
+      "gate_beats": 1.15,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 10.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 11.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 12.0,
+      "midi": 45,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 13.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 13.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 13.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 14.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 14.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 14.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 12.15,
+      "midi": 72,
+      "gate_beats": 0.6,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 13.0,
+      "midi": 71,
+      "gate_beats": 0.6,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 14.0,
+      "midi": 69,
+      "gate_beats": 0.66,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 13.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 14.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 15.0,
+      "midi": 38,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 16.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 16.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 16.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 17.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 17.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 17.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 15.0,
+      "midi": 66,
+      "gate_beats": 1.3,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 16.75,
+      "midi": 69,
+      "gate_beats": 0.75,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 16.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 17.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 18.0,
+      "midi": 35,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 19.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 19.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 19.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 20.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 20.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 20.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 20.5,
+      "midi": 71,
+      "gate_beats": 0.31,
+      "velocity": 0.059,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 18.2,
+      "midi": 71,
+      "gate_beats": 0.62,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 19.0,
+      "midi": 67,
+      "gate_beats": 1.27,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 19.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 20.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 21.0,
+      "midi": 38,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 22.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 22.022,
+      "midi": 57,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 22.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 23.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 23.022,
+      "midi": 57,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 23.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 22.0,
+      "midi": 69,
+      "gate_beats": 0.52,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 23.0,
+      "midi": 66,
+      "gate_beats": 0.6,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 22.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 23.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 24.0,
+      "midi": 40,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 25.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 25.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 25.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 26.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 26.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 26.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 26.5,
+      "midi": 71,
+      "gate_beats": 0.31,
+      "velocity": 0.059,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 24.0,
+      "midi": 71,
+      "gate_beats": 0.57,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 24.75,
+      "midi": 74,
+      "gate_beats": 0.56,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 25.5,
+      "midi": 76,
+      "gate_beats": 1.0,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 25.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 26.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 27.0,
+      "midi": 35,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 28.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 28.022,
+      "midi": 57,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 28.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 29.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 29.022,
+      "midi": 57,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 29.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 27.2,
+      "midi": 74,
+      "gate_beats": 0.65,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 28.2,
+      "midi": 69,
+      "gate_beats": 1.17,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 28.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 29.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 30.0,
+      "midi": 36,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 31.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 31.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 31.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 32.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 32.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 32.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 32.5,
+      "midi": 71,
+      "gate_beats": 0.31,
+      "velocity": 0.059,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 30.0,
+      "midi": 67,
+      "gate_beats": 0.63,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 30.85,
+      "midi": 71,
+      "gate_beats": 0.7,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 32.0,
+      "midi": 76,
+      "gate_beats": 0.65,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 31.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 32.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 33.0,
+      "midi": 35,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 34.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 34.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 34.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 35.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 35.022,
+      "midi": 59,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 35.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 33.2,
+      "midi": 74,
+      "gate_beats": 1.25,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 34.85,
+      "midi": 71,
+      "gate_beats": 0.73,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 34.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 35.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 36.0,
+      "midi": 45,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 37.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 37.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 37.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 38.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 38.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 38.044,
+      "midi": 64,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 38.5,
+      "midi": 72,
+      "gate_beats": 0.31,
+      "velocity": 0.059,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 36.0,
+      "midi": 72,
+      "gate_beats": 0.63,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 37.0,
+      "midi": 76,
+      "gate_beats": 0.6,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 38.0,
+      "midi": 74,
+      "gate_beats": 0.68,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 37.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 38.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 39.0,
+      "midi": 36,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 40.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 40.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 40.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 41.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 41.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 41.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 39.2,
+      "midi": 72,
+      "gate_beats": 0.7,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 40.2,
+      "midi": 67,
+      "gate_beats": 1.22,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 40.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 41.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 42.0,
+      "midi": 38,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 43.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 43.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 43.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 44.0,
+      "midi": 55,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 44.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 44.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 44.5,
+      "midi": 72,
+      "gate_beats": 0.31,
+      "velocity": 0.059,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 42.0,
+      "midi": 69,
+      "gate_beats": 0.7,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 43.0,
+      "midi": 67,
+      "gate_beats": 0.65,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 44.0,
+      "midi": 66,
+      "gate_beats": 0.65,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 43.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 44.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    },
+    {
+      "instrument": "folk_bass",
+      "beat": 45.0,
+      "midi": 38,
+      "gate_beats": 0.91,
+      "velocity": 0.28,
+      "pan": -0.08
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 46.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.09,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 46.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0837,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 46.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0774,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 47.0,
+      "midi": 54,
+      "gate_beats": 0.74,
+      "velocity": 0.07,
+      "pan": -0.26
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 47.022,
+      "midi": 60,
+      "gate_beats": 0.74,
+      "velocity": 0.0651,
+      "pan": -0.18
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 47.044,
+      "midi": 62,
+      "gate_beats": 0.74,
+      "velocity": 0.0602,
+      "pan": -0.1
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 45.1,
+      "midi": 69,
+      "gate_beats": 1.02,
+      "velocity": 0.31,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 46.55,
+      "midi": 66,
+      "gate_beats": 0.66,
+      "velocity": 0.28,
+      "pan": 0.22
+    },
+    {
+      "instrument": "nylon_pluck",
+      "beat": 47.45,
+      "midi": 69,
+      "gate_beats": 0.31,
+      "velocity": 0.27,
+      "pan": 0.22
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 46.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.027,
+      "pan": -0.11
+    },
+    {
+      "instrument": "wood_tap",
+      "beat": 47.0,
+      "midi": 60,
+      "gate_beats": 0.08,
+      "velocity": 0.021,
+      "pan": -0.11
+    }
+  ],
+  "synthesis_seed": 20261004,
+  "score_notes": [
+    "A newly authored sixteen-bar melody in G major, in four related four-bar phrases.",
+    "Warm procedural nylon-like plucks carry both melody and chord accompaniment; separate plucked bass and tiny wood taps mark a 3/4 folk sway.",
+    "The last D7 turns back to the opening G. All note and room tails wrap across the exact 40-second loop.",
+    "Synthetic plucked-string timbres, not a recording of a real guitar or mandolin."
+  ]
+}

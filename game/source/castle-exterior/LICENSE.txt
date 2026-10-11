@@ -1,0 +1,24 @@
+DORMI OPEN CASTLE EXTERIOR: PROJECT-USE AND THIRD-PARTY NOTICE
+
+The procedural source, tests, documentation, and generated castle geometry in
+this package were authored for the user's DORMI project and are provided for
+the user's use, modification, integration, copying, distribution, and backup.
+This package imposes no additional license fee, attribution requirement, or
+use restriction on those generated materials. This notice does not assert
+copyright ownership over AI-generated material or determine whether copyright
+subsists in any particular part.
+
+The existing DORMI arch dimensions and geometry are retained under existing
+project terms. No new ownership is claimed over the existing project.
+
+Reference images are not included. Their underlying authorship and independent
+redistribution rights were not independently established. This notice does not
+grant a license to redistribute reference images.
+
+Three.js 0.180.0 is an external dependency, not bundled in this package. Its
+LICENSE states MIT, copyright 2010-2025 three.js authors. Retain the required
+notice when distributing Three.js. Blender is an external tool, not bundled.
+No stock geometry or third-party textures are incorporated.
+
+The materials are provided as-is. Recorded source tests do not replace final
+integration, gameplay, performance, or distribution review.

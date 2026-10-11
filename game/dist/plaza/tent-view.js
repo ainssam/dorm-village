@@ -1,0 +1,29 @@
+import {mergeVertices} from 'three/addons/utils/BufferGeometryUtils.js';
+import * as THREE from 'three';import {createCampKit} from './toy-kit.js';import {TENT,CAMP_CHAIRS,tentContains,TENT_PROFILE} from './tent-layout.js';
+export function buildTentInterior(parent){
+ const wrapper=new THREE.Group();wrapper.name='plaza.campsite-tent';wrapper.position.set(TENT.x,.025,TENT.z);parent.add(wrapper);
+ const root=new THREE.Group();root.name='plaza.tent.interior';root.visible=false;wrapper.add(root);const kit=createCampKit(root),{mat,flatBox,plank,cylinder,sphere}=kit;
+ const shell=new THREE.Group();shell.name='plaza.tent.shell';wrapper.add(shell);
+ const cloth=color=>new THREE.MeshStandardMaterial({color,roughness:.94,side:THREE.DoubleSide});
+ const clothMesh=(name,vertices,color,group)=>{const raw=new THREE.BufferGeometry();raw.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));const geometry=mergeVertices(raw);raw.dispose();geometry.computeVertexNormals();const mesh=new THREE.Mesh(geometry,cloth(color));mesh.name=name;group.add(mesh);return mesh;};
+ const makeCanopy=(group,name,start=0,end=TENT_PROFILE.length-1)=>{const vertices=[],zs=[-TENT.hz,0,TENT.hz],factors=[.93,1,.93];for(let j=0;j<2;j++)for(let i=start;i<end;i++){const p=TENT_PROFILE[i],q=TENT_PROFILE[i+1],a=[p.x,p.height*factors[j],zs[j]],b=[q.x,q.height*factors[j],zs[j]],c=[q.x,q.height*factors[j+1],zs[j+1]],d=[p.x,p.height*factors[j+1],zs[j+1]];vertices.push(...a,...b,...c,...a,...c,...d);}return clothMesh(name,vertices,'#b7c79d',group);};
+ makeCanopy(shell,'plaza.tent.canopy');makeCanopy(root,'plaza.tent.inner-left',0,2);makeCanopy(root,'plaza.tent.inner-right',14,16);
+ const cap=(group,name,z,door=false)=>{const shape=new THREE.Shape();shape.moveTo(TENT_PROFILE[0].x,0);for(const p of TENT_PROFILE.slice(1))shape.lineTo(p.x,p.height*.93);if(door){shape.lineTo(.9,0);shape.lineTo(.9,1.88);shape.lineTo(-.9,1.88);shape.lineTo(-.9,0);}shape.closePath();const mesh=new THREE.Mesh(new THREE.ShapeGeometry(shape),cloth(door?'#d5d5ad':'#c4cbaa'));mesh.name=name;mesh.position.z=z;group.add(mesh);return mesh;};
+ cap(shell,'plaza.tent.front-canvas',TENT.hz,true);cap(shell,'plaza.tent.back-canvas',-TENT.hz);cap(root,'plaza.tent.inner-back',-TENT.hz+.01);
+ for(const z of [-TENT.hz-.012,TENT.hz+.012]){const curve=new THREE.CatmullRomCurve3(TENT_PROFILE.map(p=>new THREE.Vector3(p.x,p.height*.93,z))),mesh=new THREE.Mesh(new THREE.TubeGeometry(curve,12,.027,4,false),mat('#798d74'));mesh.name='plaza.tent.flexible-rib';shell.add(mesh);}
+ const local=(x,z)=>[x-TENT.x,z-TENT.z];
+ const pipe=(a,b,h,color,x,y,z,open=false)=>{const mesh=new THREE.Mesh(new THREE.CylinderGeometry(a,b,h,6,1,open),mat(color));mesh.position.set(x,y,z);root.add(mesh);return mesh;};
+ const flatSurface=(w,d,color,x,y,z,parent=root)=>{const mesh=new THREE.Mesh(new THREE.PlaneGeometry(w,d),mat(color));mesh.rotation.x=-Math.PI/2;mesh.position.set(x,y,z);parent.add(mesh);return mesh;};
+ const floor=flatSurface(4.52,4.32,'#cdb88f',0,.016,0);floor.name='plaza.tent.floor';
+
+ const bed=new THREE.Group();bed.name='plaza.tent.airbed';const [bx,bz]=local(TENT.airbed.x,TENT.airbed.z);bed.position.set(bx,0,bz);root.add(bed);const bk=createCampKit(bed);bk.plank(1.3,.30,1.95,'#759690',0,.175,0,.065);for(let i=0;i<6;i++)flatSurface(1.14,.018,'#91afa3',0,.327,-.72+i*.288,bed);bk.sphere(.5,'#e8dfc4',0,.365,-.72,.90,.14,.32);
+ const [sx,sz]=local(TENT.gear.sleepingBag.x,TENT.gear.sleepingBag.z);const bag=pipe(.19,.19,1.02,'#c18e72',sx,.21,sz);bag.name='plaza.tent.sleeping-bag';bag.rotation.z=Math.PI/2;for(const x of [sx-.28,sx+.28]){const band=pipe(.198,.198,.05,'#6e8b80',x,.21,sz,true);band.rotation.z=Math.PI/2;}
+ const [cx,cz]=local(TENT.gear.cooler.x,TENT.gear.cooler.z);const cooler=plank(.76,.44,.56,'#93b6b5',cx,.24,cz,.05);cooler.name='plaza.tent.cooler';flatBox(.78,.055,.58,'#e9e3c9',cx,.49,cz);flatBox(.22,.055,.12,'#6e8887',cx,.55,cz);
+ const [tx,tz]=local(TENT.gear.table.x,TENT.gear.table.z);const table=plank(.84,.08,.60,'#bb9570',tx,.55,tz,.025);table.name='plaza.tent.table';for(const x of [-.32,.32])for(const z of [-.20,.20])flatBox(.055,.49,.055,'#6e7f76',tx+x,.285,tz+z);
+ const lantern=pipe(.13,.14,.24,'#eadcad',tx,.73,tz);lantern.name='plaza.tent.lantern';pipe(.155,.15,.035,'#6e8175',tx,.865,tz);pipe(.15,.155,.035,'#6e8175',tx,.595,tz);
+ const cup=pipe(.075,.06,.13,'#f1dec0',tx+.26,.65,tz+.1);cup.name='plaza.tent.cup';
+ for(const [i,a] of CAMP_CHAIRS.entries()){const chair=buildChair(parent,a,i);if(!a.seaView){wrapper.updateWorldMatrix(true,true);chair.updateWorldMatrix(true,true);root.attach(chair);}}
+ let inside=false;
+ return {root:wrapper,interiorRoot:root,shell,update(position,dt){if(Number.isFinite(dt)&&dt>0)inside=tentContains(position,inside?.22:0);},snapshot:()=>({inside,isolated:true})};
+}
+function buildChair(parent,a,index){const root=new THREE.Group();root.name='plaza.camp-chair.'+index;root.position.set(a.anchor.x,0,a.anchor.z);root.rotation.y=a.anchor.yaw;parent.add(root);const k=createCampKit(root);const tube=(p,q)=>{const v=new THREE.Vector3(...q).sub(new THREE.Vector3(...p)),g=new THREE.CylinderGeometry(.023,.023,v.length(),6,1,true),m=new THREE.Mesh(g,k.mat('#788d87'));m.position.fromArray(p).addScaledVector(v,.5);m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),v.normalize());root.add(m);};for(const x of [-.60,.60]){tube([x,.06,-.40],[x,.48,.30]);tube([x,.06,.32],[x,1.17,-.56]);}tube([-.60,.46,.30],[.60,.46,.30]);tube([-.60,1.17,-.56],[.60,1.17,-.56]);const seat=new THREE.Mesh(new THREE.PlaneGeometry(1.26,.83),k.mat(index?'#b9baa0':'#bfaa87'));seat.material.side=THREE.DoubleSide;seat.rotation.x=-Math.PI/2;seat.position.set(0,.48,-.07);seat.name='plaza.camp-chair.seat';root.add(seat);const back=new THREE.Mesh(new THREE.PlaneGeometry(1.25,.64),k.mat('#b9c5a6'));back.material.side=THREE.DoubleSide;back.position.set(0,.865,-.56);back.name='plaza.camp-chair.back';root.add(back);return root;}

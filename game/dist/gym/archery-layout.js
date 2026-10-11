@@ -1,0 +1,3 @@
+export const ARCHERY=Object.freeze({id:'schoolGym.archery',x:-1.875,z:-8.2,yaw:Math.PI,bay:Object.freeze({minX:-3.5,maxX:-.25,minZ:-14.25,maxZ:-7}),entry:Object.freeze({x:-1.875,z:-6.2,yaw:Math.PI})});
+export const ARCHERY_GEOMETRY=Object.freeze({floorY:.012,backstopZ:5.6,targetZ:4.7,targetY:1.22,targetRadii:Object.freeze([.12,.24,.40,.56,.74]),width:3.1,gripRadius:.037,gripHeight:.15,nockRadius:.018});
+export const ARCHERY_OBSTACLES=Object.freeze([{id:'schoolGym.archery.backstop',x:-1.875,z:-13.8,hx:1.55,hz:.055},...[-1,1].map(s=>({id:'schoolGym.archery.side-'+s,x:-1.875+s*1.55,z:-11.65,hx:.04,hz:2.15}))]);

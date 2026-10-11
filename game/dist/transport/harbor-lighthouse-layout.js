@@ -1,0 +1,6 @@
+import {SEAT_CONTACT} from '../world/seating.js';
+export const HARBOR_LIGHTHOUSE=Object.freeze({x:25.6,z:5.8,radius:.74,height:3.88});
+const x=22.5,z=11.2,yaw=Math.atan2(HARBOR_LIGHTHOUSE.x-x,HARBOR_LIGHTHOUSE.z-z),at={x:x-Math.sin(yaw)*1.5,z:z-Math.cos(yaw)*1.5};
+export const HARBOR_SEAT=Object.freeze({id:'courtyard.harbor.lighthouse-chair',roomId:'courtyard',type:'pose',kind:'sit',seating:true,seatTop:.48,anchor:{x,y:.48-SEAT_CONTACT,z,yaw},at,exit:{...at,yaw},radius:.72,requiresClearApproach:true,enterDuration:1.25,discoveryId:'quiet-seat',label:'등대 앞 의자에 앉기',leaveLabel:'등대 의자에서 일어나기',text:'바닷바람과 작은 등대 곁에서 쉬어요. 등대 바라보기를 누르면 앉은 그대로 풍경을 볼 수 있어요.'});
+export const HARBOR_LOOKOUT=Object.freeze({id:'courtyard.harbor-lighthouse-view',type:'island-lookout',seatId:HARBOR_SEAT.id,at:{x,z},radius:.1,label:'등대 바라보기',title:'등대와 바다',hint:'잠시 앉아 바다를 바라봐요',closeLabel:'원래 시점으로',endpointId:'villageHarbor',sceneObject:'harbor.lighthouse',hidePlayerDuringScenic:true,camera:{eye:[x,1.85,z],target:[25.6,1.65,5.8],fov:66,near:.1,far:200}});
+export const HARBOR_REST_OBSTACLES=Object.freeze([{id:'harbor.lighthouse',x:HARBOR_LIGHTHOUSE.x,z:HARBOR_LIGHTHOUSE.z,hx:.74,hz:.74},{id:HARBOR_SEAT.id,x,z,hx:.65,hz:.50,yaw}]);
