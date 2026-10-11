@@ -10,10 +10,10 @@ import {Locomotion,WALK_SPEED,SPRINT_SPEED} from '../dist/locomotion.js';
 import {ROOMS} from '../dist/world/rooms.js';
 import {buildTentInterior} from '../dist/plaza/tent-view.js';
 import {plazaCollision} from '../dist/plaza/layout.js';
-import {CAMP_CHAIRS} from '../dist/plaza/tent-layout.js';
+import {CAMP_CHAIRS,TENT,tentRoofHeight} from '../dist/plaza/tent-layout.js';
 import {campChairFeetSupported,campChairJumpInRange,campChairLandingAssistTarget,withCampChairJumpCollision,CAMP_CHAIR_JUMP_SURFACES} from '../dist/world/camp-chair-jump-layout.js';
 import {DORMI_BODY_HEIGHT} from '../dist/world/park-jump-layout.js';
-import {createVerticalState,findLandingSurface,shouldFallFromSupport,GRAVITY} from '../dist/vertical-support.js';
+import {createVerticalState,findLandingSurface,shouldFallFromSupport,GRAVITY,JUMP_HEIGHT} from '../dist/vertical-support.js';
 
 const source=fs.readFileSync('dist/game.js','utf8');
 const start=source.indexOf('  const {x,z}=input.state.axes');
@@ -66,6 +66,28 @@ test('only the rendered sea-view seat is opt-in, with full measured feet support
  const yawAdjusted=campChairLandingAssistTarget(world,'courtyard',seat.x,seat.z+.17,0,{canOccupy});
  assert(yawAdjusted&&yawAdjusted.z<seat.landing.maxZ&&campChairFeetSupported(yawAdjusted.x,yawAdjusted.z,0),'assist clamps to the footprint supported for the current orientation');
  model.traverse(o=>{o.geometry?.dispose?.();if(Array.isArray(o.material))o.material.forEach(m=>m.dispose());else o.material?.dispose?.();});built.root.parent?.remove(built.root);
+});
+
+test('the tent chair stays non-jumpable because the real GLB enters the canopy at jump apex',async()=>{
+ const tentChair=CAMP_CHAIRS.find(item=>item.id==='courtyard.camp-chair.0');assert(tentChair);
+ assert.deepEqual(CAMP_CHAIR_JUMP_SURFACES.map(surface=>surface.id),['courtyard.camp-chair.1.seat']);
+ const bytes=fs.readFileSync('dist/dormi.glb'),model=(await new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.length),'')).scene;
+ model.rotation.y=tentChair.anchor.yaw+Math.PI;model.updateMatrixWorld(true);
+ const apexPenetration=(rootX,rootZ)=>{
+  const v=new THREE.Vector3();let deepest=Number.NEGATIVE_INFINITY;
+  model.traverse(o=>{if(!o.isMesh)return;const a=o.geometry.attributes.position;for(let i=0;i<a.count;i++){
+   v.fromBufferAttribute(a,i).applyMatrix4(o.matrixWorld);
+   const x=rootX+v.x,z=rootZ+v.z,roofY=.025+tentRoofHeight(x-TENT.x,z-TENT.z);
+   deepest=Math.max(deepest,.05+JUMP_HEIGHT+v.y-roofY);
+  }});
+  return deepest;
+ };
+ const center=apexPenetration(tentChair.anchor.x,tentChair.anchor.z),c=Math.cos(tentChair.anchor.yaw),s=Math.sin(tentChair.anchor.yaw);
+ const landingCorners=[-.22,.22].flatMap(lx=>[-.06,.05].map(lz=>({x:tentChair.anchor.x+lx*c+lz*s,z:tentChair.anchor.z-lx*s+lz*c})));
+ const worstLanding=Math.max(...landingCorners.map(p=>apexPenetration(p.x,p.z)));
+ assert(center>.04&&center<.06,`the standing GLB enters the canopy by about 5 cm at the chair center (${center.toFixed(3)} m)`);
+ assert(worstLanding>.12&&worstLanding<.15,`the standing GLB enters the canopy by about 13 cm at a supported landing corner (${worstLanding.toFixed(3)} m)`);
+ model.traverse(o=>{o.geometry?.dispose?.();if(Array.isArray(o.material))o.material.forEach(m=>m.dispose());else o.material?.dispose?.();});
 });
 
 test('chair landing assist is bounded, occupancy-aware and cannot cross the backrest',()=>{

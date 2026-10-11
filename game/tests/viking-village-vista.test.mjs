@@ -8,6 +8,7 @@ import {setupCamera} from '../dist/camera.js';
 import {overviewBounds} from '../dist/camera-fit.js';
 import {fitAmusementCamera} from '../dist/amusement/camera.js';
 import {vikingFrame} from '../dist/amusement/viking-ride.js';
+import {VIKING} from '../dist/amusement/layout.js';
 
 function rig(width=390,height=844){
  const old={ResizeObserver:globalThis.ResizeObserver,document:globalThis.document};
@@ -23,30 +24,55 @@ function rig(width=390,height=844){
  return{camera,cam,view,restore(){cam.dispose();view.dispose();Object.assign(globalThis,old);}};
 }
 
-test('Viking eye camera frames a low-cost passive village across the swing with clear lines of sight',()=>{
+test('Viking rider looks forward over a real-model village panorama with safe swing framing',()=>{
  const r=rig(),owner={},player=new T.Group(),model=new T.Group(),pov=r.view.vikingPOV;player.add(model);
  try{
-  const vista=r.view.root.getObjectByName('amusement.viking.village-vista'),ride=r.view.root.getObjectByName('amusement.viking'),carousel=r.view.root.getObjectByName('amusement.carousel'),carts=r.view.root.getObjectByName('amusement.food-carts');
-  assert(vista&&ride&&carousel&&carts);assert.equal(vista.userData.collision,false);assert.equal(vista.userData.interactions,0);assert.equal(vista.userData.residents,0);assert.equal(vista.userData.excludeOverview,true);
-  assert.deepEqual(vista.position.toArray(),[-24.5,0,4.5]);
+  const vista=r.view.root.getObjectByName('amusement.viking.village-vista'),landscape=r.view.root.getObjectByName('amusement.viking.village-landscape'),sea=r.view.root.getObjectByName('amusement.viking.village-vista.sea'),shore=r.view.root.getObjectByName('amusement.viking.village-shore'),island=r.view.root.getObjectByName('amusement.viking.village-island'),ride=r.view.root.getObjectByName('amusement.viking'),carousel=r.view.root.getObjectByName('amusement.carousel'),carts=r.view.root.getObjectByName('amusement.food-carts');
+  assert(vista&&landscape&&sea&&shore&&island&&ride&&carousel&&carts);
+  assert.equal(vista.userData.collision,false);assert.equal(vista.userData.interactions,0);assert.equal(vista.userData.residents,0);assert.equal(vista.userData.excludeOverview,true);assert.equal(vista.userData.viewOnlyMirrorOf,'courtyard');
+  assert.deepEqual(vista.position.toArray(),[VIKING.x,0,VIKING.z+23]);assert(Math.abs(landscape.rotation.y-Math.PI)<1e-9);assert(Math.abs(landscape.scale.x-.34)<1e-9);
+  const expected=['school','home','bakeryCafe','postOffice'];assert.deepEqual(vista.userData.landmarks,expected);
+  for(const id of expected){const marker=vista.getObjectByName('amusement.viking.village.'+id);assert(marker,`${id} source facade exists`);assert.equal(marker.userData.collision,false);assert.equal(marker.userData.interactions,0);assert.equal(marker.userData.facade,id);const source=marker.userData.sourcePosition;assert(Array.isArray(source)&&source.length===3,`${id} carries its authored courtyard position`);assert(marker.userData.bounds.max[1]>1,`${id} source facade has 3D height`);}
   const meshes=[];let triangles=0;vista.traverse(o=>{if(o.isMesh){meshes.push(o);triangles+=o.geometry.index?o.geometry.index.count/3:o.geometry.attributes.position.count/3;}});
-  assert.equal(meshes.length,37);assert.equal(triangles,1296);assert(meshes.every(o=>!o.castShadow&&!o.receiveShadow));
+  assert(meshes.length<=27,`${meshes.length} low-draw-call meshes`);assert(triangles<=2700,`${triangles} panorama triangles`);assert.equal(vista.userData.sourceTriangles,1856);assert(meshes.every(o=>!o.castShadow&&!o.receiveShadow));
+  // The sea surface intersects both terrain skirts; the panorama cannot read as a floating box.
+  const seaY=sea.getWorldPosition(new T.Vector3()).y,shoreBounds=new T.Box3().setFromObject(shore),islandBounds=new T.Box3().setFromObject(island),waterBounds=new T.Box3().setFromObject(sea);
+  assert(shoreBounds.min.y<seaY&&shoreBounds.max.y>seaY,'waterline crosses the beach skirt');assert(islandBounds.min.y<seaY&&islandBounds.max.y>seaY,'waterline crosses the island terrain');
+  const townBounds=new T.Box3();for(const id of expected){const marker=vista.getObjectByName('amusement.viking.village.'+id),b=marker.userData.bounds;townBounds.union(new T.Box3(new T.Vector3(...b.min),new T.Vector3(...b.max)).applyMatrix4(landscape.matrixWorld));}
+  assert(waterBounds.max.z>townBounds.max.z+35,'the water plane continues well beyond the town, toward the horizon');
   const overview=overviewBounds(r.view.root),vistaBounds=new T.Box3().setFromObject(vista);assert(vistaBounds.min.x<overview.min.x,'overview omits the distant village bounds');
   for(const region of[0,-.3]){fitAmusementCamera(r.camera,r.view.root,{width:390,height:844},{},region,{x:-4.5,y:.05,z:1});const withVista=[r.camera.left,r.camera.right,r.camera.top,r.camera.bottom];r.view.root.remove(vista);fitAmusementCamera(r.camera,r.view.root,{width:390,height:844},{},region,{x:-4.5,y:.05,z:1});assert.deepEqual([r.camera.left,r.camera.right,r.camera.top,r.camera.bottom],withVista,'ordinary and food-cart zoom framing is unchanged');r.view.root.add(vista);}
   assert(pov.begin({sourceCamera:r.camera,controls:r.cam.controls,player,model,owner,width:390,height:844}));
-  for(const degrees of[-55,-27,0,27,55]){
-   const angle=degrees*Math.PI/180,f=vikingFrame(angle);player.position.set(f.x,f.y,f.z);player.rotation.set(f.pitch,f.yaw,f.roll,'YXZ');player.updateMatrixWorld(true);
-   const camera=pov.frame({owner,driver:{phase:'active',elapsed:1,dismount:false},width:390,height:844}),focus=new T.Vector3(-24.5,.55,7+2*Math.sin(angle)),direction=new T.Vector3();assert(camera);camera.getWorldDirection(direction);
-   assert(direction.angleTo(focus.clone().sub(camera.position))<1e-7,`focus direction at ${degrees}°`);const projected=focus.clone().project(camera);assert(Math.abs(projected.x)<1e-5&&Math.abs(projected.y)<1e-5);
-   for(const id of['school','home']){const bounds=new T.Box3().setFromObject(vista.getObjectByName('amusement.viking.village.'+id)),center=bounds.getCenter(new T.Vector3()).project(camera);assert(center.z<1&&Math.abs(center.x)<.9&&Math.abs(center.y)<.9,`${id} is visible at ${degrees}°`);const corners=[];for(const x of[bounds.min.x,bounds.max.x])for(const y of[bounds.min.y,bounds.max.y])for(const z of[bounds.min.z,bounds.max.z])corners.push(new T.Vector3(x,y,z).project(camera));const px=Math.max(...corners.map(p=>(1-p.y)*422))-Math.min(...corners.map(p=>(1-p.y)*422));assert(px>=20,`${id} silhouette at ${degrees}° is ${px.toFixed(1)} px`);}
-   // Geometric ray check only: this is not a rendered-pixel visibility claim.
-   for(const gangway of[0,1]){r.view.setVikingFrame({vikingAngle:angle,gangway});r.view.root.updateMatrixWorld(true);for(const id of['school','home']){const target=new T.Box3().setFromObject(vista.getObjectByName('amusement.viking.village.'+id)).getCenter(new T.Vector3()),vector=target.clone().sub(camera.position),ray=new T.Raycaster(camera.position,vector.clone().normalize(),.65,vector.length()-.15),hits=ray.intersectObject(ride,true);assert.equal(hits.length,0,`${hits[0]?.object.name} blocks ${id} at ${degrees}°, gangway ${gangway}`);}}
+  const obstructors=['amusement.viking.boat','amusement.viking.gangway-surface','amusement.viking.deck-ramp','amusement.viking.aisle'].map(name=>{const object=r.view.root.getObjectByName(name);assert(object,name);return object;});
+  const raycaster=new T.Raycaster(),ndc=new T.Vector2();let maxForwardError=0,landmarksFramed=0,landmarkLosChecks=0;
+  for(let degrees=-55;degrees<=55;degrees++){
+   const angle=degrees*Math.PI/180,f=vikingFrame(angle),frame={...f,gangway:0,gangwayStowed:1,restraint:1};r.view.setVikingFrame(frame);player.position.set(f.x,f.y,f.z);player.rotation.set(f.pitch,f.yaw,f.roll,'YXZ');player.updateMatrixWorld(true);r.view.root.updateMatrixWorld(true);
+   const camera=pov.frame({owner,driver:{phase:'active',elapsed:1,dismount:false},width:390,height:844}),direction=new T.Vector3();assert(camera);camera.getWorldDirection(direction);
+   const seatForward=new T.Vector3(0,0,1).applyQuaternion(player.quaternion).normalize();maxForwardError=Math.max(maxForwardError,direction.distanceTo(seatForward));assert(direction.distanceTo(seatForward)<1e-7,`camera tracks rigid seat-local +Z at ${degrees}°`);
+   const right=new T.Vector3(1,0,0).applyQuaternion(camera.quaternion);assert(Math.abs(right.y)<1e-7&&Math.abs(right.z)<1e-7,`camera has no roll at ${degrees}°`);
+   const localEye=player.worldToLocal(camera.position.clone());assert(Math.abs(localEye.y-.9)<1e-7&&Math.abs(localEye.z-.7)<1e-7,`eye stays forward of the face with a safe offset at ${degrees}°`);
+   // The center ray and a compact 3x3 center-screen grid must not pass through
+   // the hull, seat aisle, deck ramp, or deployed access ramp at any swing angle.
+   for(const y of[-.10,0,.10])for(const x of[-.10,0,.10]){ndc.set(x,y);raycaster.setFromCamera(ndc,camera);const hits=raycaster.intersectObjects(obstructors,true);assert.equal(hits.length,0,`${hits[0]?.object.name} blocks center-grid ray (${x},${y}) at ${degrees}°`);}
+   if(degrees>=-10&&degrees<=25){
+    let framed=0;
+    for(const id of expected){const marker=vista.getObjectByName('amusement.viking.village.'+id),b=marker.userData.bounds,bounds=new T.Box3(new T.Vector3(...b.min),new T.Vector3(...b.max)).applyMatrix4(landscape.matrixWorld),center=bounds.getCenter(new T.Vector3()),projected=center.clone().project(camera);
+     if(projected.z<=-1||projected.z>=1||Math.abs(projected.x)>.96||Math.abs(projected.y)>.85)continue;
+     const corners=[];for(const x of[bounds.min.x,bounds.max.x])for(const y of[bounds.min.y,bounds.max.y])for(const z of[bounds.min.z,bounds.max.z])corners.push(new T.Vector3(x,y,z).project(camera));const px=corners.map(p=>(p.x+1)*390/2),py=corners.map(p=>(1-p.y)*844/2);
+     if(Math.min(...px)<8||Math.max(...px)>382||Math.min(...py)<142||Math.max(...py)>648)continue;
+     assert(Math.max(...py)-Math.min(...py)>=22,`${id} reads as a 3D facade in the natural viewing window`);framed++;
+     const vector=center.clone().sub(camera.position),range=vector.length(),ray=new T.Raycaster(camera.position,vector.normalize(),.08,range-.08),hits=ray.intersectObjects(obstructors,true);assert.equal(hits.length,0,`${hits[0]?.object.name} blocks in-frame ${id} line of sight at ${degrees}°`);landmarkLosChecks++;
+    }
+    if(framed>0)landmarksFramed++;
+   }
   }
+  assert(landmarksFramed>=20,`real village panorama is naturally framed across a ride window (${landmarksFramed} angles)`);assert(landmarkLosChecks>=50,`only in-frame facade centers receive LOS checks (${landmarkLosChecks} checks)`);
+  console.log(JSON.stringify({scannedAngles:111,maxForwardError,landmarksFramed,landmarkLosChecks}));
   assert.deepEqual([r.view.root.getObjectByName('amusement.carousel'),r.view.root.getObjectByName('amusement.viking'),r.view.root.getObjectByName('amusement.food-carts')],[carousel,ride,carts]);
  }finally{pov.release(owner);r.restore();}
 });
 
-test('shared village-vista geometry and material dispose once with the amusement scene',()=>{const r=rig();try{const vista=r.view.root.getObjectByName('amusement.viking.village-vista'),body=vista.getObjectByName('amusement.viking.village.school.body');let geometryDisposals=0,materialDisposals=0;body.geometry.addEventListener('dispose',()=>geometryDisposals++);body.material.addEventListener('dispose',()=>materialDisposals++);r.view.dispose();assert.equal(vista.parent,null);assert.equal(geometryDisposals,1);assert.equal(materialDisposals,1);}finally{r.restore();}});
+test('batched real-village geometry and shared material dispose once with the amusement scene',()=>{const r=rig();try{const vista=r.view.root.getObjectByName('amusement.viking.village-vista'),batch=vista.getObjectByName('amusement.viking.village-detail-batch.1');let geometryDisposals=0,materialDisposals=0;batch.geometry.addEventListener('dispose',()=>geometryDisposals++);batch.material.addEventListener('dispose',()=>materialDisposals++);r.view.dispose();assert.equal(vista.parent,null);assert.equal(geometryDisposals,1);assert.equal(materialDisposals,1);}finally{r.restore();}});
 
 test('village vista is visible only in the live Viking rider view and hides on overview, return, cancellation and room disposal',()=>{
  const r=rig(),vista=r.view.root.getObjectByName('amusement.viking.village-vista'),pov=r.view.vikingPOV,owner={},player=new T.Group(),model=new T.Group();player.add(model);

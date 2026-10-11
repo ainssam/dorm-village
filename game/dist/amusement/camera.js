@@ -3,21 +3,27 @@ import {JUMP_HEIGHT} from '../locomotion.js';
 const boundsByRoot=new WeakMap(),boxScratch=new THREE.Box3();
 function cachedMeshes(root,name){let cache=boundsByRoot.get(root);if(!cache){cache=new Map();boundsByRoot.set(root,cache);}if(!cache.has(name)){const records=[],group=root.getObjectByName(name);group?.traverse(o=>{if(!o.isMesh)return;if(!o.geometry.boundingBox)o.geometry.computeBoundingBox();records.push({mesh:o,bounds:o.geometry.boundingBox.clone()});});cache.set(name,records);}return cache.get(name);}
 function includeMeshes(root,name,include,v,maxY=Infinity){for(const{mesh,bounds}of cachedMeshes(root,name)){boxScratch.copy(bounds).applyMatrix4(mesh.matrixWorld);if(Number.isFinite(maxY)&&boxScratch.min.y>maxY)continue;if(Number.isFinite(maxY))boxScratch.max.y=Math.min(boxScratch.max.y,maxY);for(let i=0;i<8;i++){v.set(i&1?boxScratch.max.x:boxScratch.min.x,i&2?boxScratch.max.y:boxScratch.min.y,i&4?boxScratch.max.z:boxScratch.min.z);include(v);}}}
-// The walk view frames the castle and usable carousel rather than empty shore.
-// Short phones prioritize the floor-level play route; decorative roof tips may
-// extend behind the HUD. This changes projection only, never actor scale or
-// manual orbit/zoom. Overview continues to fit the complete island normally.
+// The walk view frames the castle gateway and usable carousel rather than the
+// entire tower silhouette and empty shore. Short phones prioritize the floor-
+// level play route; decorative roof tips may extend behind the HUD. This only
+// changes projection, never actor scale or manual orbit/zoom. Overview still
+// fits the complete island normally.
 export function fitAmusementCamera(camera,root,{width,height},padding={},region=0,player=null){
  if(!root||width<=0||height<=0)return;
+ const smooth=t=>t*t*(3-2*t);
  const pad={left:16,right:16,top:24,bottom:30,...padding},short=width<height&&height<720||height<520;
  camera.updateMatrixWorld(true);root.updateWorldMatrix(true,true);
  const v=new THREE.Vector3();let left=Infinity,right=-Infinity,top=-Infinity,bottom=Infinity;
  const include=p=>{p.applyMatrix4(camera.matrixWorldInverse);left=Math.min(left,p.x);right=Math.max(right,p.x);bottom=Math.min(bottom,p.y);top=Math.max(top,p.y);};
- for(const name of ['amusement.carousel',...(short?[]:['amusement.castle'])])includeMeshes(root,name,include,v,short?2.3:Infinity);
+ for(const name of ['amusement.carousel',...(short?[]:['amusement.castle.gateway'])])includeMeshes(root,name,include,v,short?2.3:Infinity);
  // Keep the unchanged full-size avatar in frame, but frame where they are now
  // rather than reserving space for every entry, ride and return endpoint at once.
  // That lets the view move in from the entrance as the avatar walks into the park.
  const hasPlayer=player&&Number.isFinite(player.x)&&Number.isFinite(player.z);
+ // The central walk-in stays a little tighter than the outside/whole-island
+ // view. It eases back toward the other attraction frames before leaving the
+ // entry lane, and the user can still zoom or orbit this framing manually.
+ const centerFocus=hasPlayer&&!short?smooth(Math.max(0,Math.min(1,(3.2-Math.abs(player.x))/1.6))):0;
  const includePlayer=()=>{if(hasPlayer)for(const x of[player.x-.72,player.x+.72])for(const z of[player.z-.45,player.z+.45])for(const y of[player.y??.05,(player.y??.05)+2.19+JUMP_HEIGHT+.035])include(v.set(x,y,z));};
  if(hasPlayer)includePlayer();
  else for(const z of[-4.85,-.35,1.9,7.75])for(const x of[-.72,.72])for(const y of[.05,2.24])include(v.set(x,y,z));
@@ -26,7 +32,7 @@ export function fitAmusementCamera(camera,root,{width,height},padding={},region=
  // avatar plus the central carousel in view. The user retains the manual zoom.
  const insideX=hasPlayer?Math.max(0,Math.min(1,(2.4-Math.abs(player.x))/.8)):0;
  const insideZ=hasPlayer?Math.max(0,Math.min(1,(7.7-player.z)/5.3)):0;
- const smooth=t=>t*t*(3-2*t),insideFocus=insideX*smooth(insideZ);
+ const insideFocus=insideX*smooth(insideZ);
  if(insideFocus>0){
   const original={left,right,top,bottom};left=bottom=Infinity;right=top=-Infinity;
   includeMeshes(root,'amusement.carousel',include,v,2.3);
@@ -63,7 +69,7 @@ export function fitAmusementCamera(camera,root,{width,height},padding={},region=
  if(player&&Number.isFinite(player.x)&&Number.isFinite(player.z))for(const x of[player.x-.72,player.x+.72])for(const z of[player.z-.45,player.z+.45])for(const y of[player.y??.05,(player.y??.05)+2.19+JUMP_HEIGHT+.035])include(v.set(x,y,z));
  }
  if(!Number.isFinite(left))return;
- const pixels=Math.min((width-pad.left-pad.right)/(right-left),(height-pad.top-pad.bottom)/(top-bottom))/(region>1?.98:1.015);
+ const pixels=Math.min((width-pad.left-pad.right)/(right-left),(height-pad.top-pad.bottom)/(top-bottom))*(region>1?.98:1.015)*(1+.15*centerFocus);
  const cx=(left+right)/2+(pad.right-pad.left)/(2*pixels),cy=(top+bottom)/2+(pad.top-pad.bottom)/(2*pixels);
  Object.assign(camera,{left:cx-width/(2*pixels),right:cx+width/(2*pixels),top:cy+height/(2*pixels),bottom:cy-height/(2*pixels),near:.1,far:200});camera.updateProjectionMatrix();
 }

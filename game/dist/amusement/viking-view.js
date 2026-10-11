@@ -54,12 +54,18 @@ export function buildViking(kit,parent){
  // One tactile dock mat and one cohesive boat pictogram, no duplicate ride hint.
  box(1.80,.025,.70,P.rose,0,.035,V.landingZ,.15,root);
  const sign=new THREE.Group();sign.name='amusement.viking.dock-sign';sign.position.set(2.0,0,6.02-V.z);root.add(sign);cylinder(.045,.055,.88,P.wood,0,.44,0,sign);box(.77,.64,.11,P.cream,0,1.1,0,.16,sign);box(.49,.14,.055,P.rose,0,1.02,.073,.065,sign);box(.036,.25,.025,P.wood,-.02,1.18,.10,.012,sign);const sail=box(.22,.17,.04,P.mint,.09,1.21,.10,.025,sign);sail.rotation.z=-.14;signLabel('바이킹',0,.73,.08,.65,P.ink,P.cream,sign);
- return{root,setFrame({vikingAngle=0,gangway:amount=0}={}){
+ return{root,setFrame(frame={}){
+  const{vikingAngle=0,gangway:amount=0,gangwayStowed:stowAmount=0}=frame;
   const latch=Math.max(0,Math.min(1,Number.isFinite(amount)?amount:0));
+  const stow=Math.max(0,Math.min(1,Number.isFinite(stowAmount)?stowAmount:0));
+  const restraint=Math.max(0,Math.min(1,Number.isFinite(frame.restraint)?frame.restraint:latch));
   pendulum.rotation.x=Number.isFinite(vikingAngle)?vikingAngle:0;
-  gangway.position.z=1.3*latch;
-  // The lap bar rises during boarding and is only seated across the knees once the rider is settled.
-  safetyBar.position.y=1.8*(1-latch);
+  // The external ramp slides laterally into the island edge during the swing;
+  // this clears the bow's forward view without hiding or destroying geometry.
+  gangway.position.set(2.3*stow,0,1.3*latch);
+  // The seat restraint has its own lifecycle, so stowing the ramp cannot lift
+  // the lap bar while the boat is moving.
+  safetyBar.position.y=1.8*(1-restraint);
  }};
 }
 export function buildVikingBranch(kit,parent){const g=new THREE.Group();g.name='amusement.viking-branch';parent.add(g);const curve=new THREE.CatmullRomCurve3([new THREE.Vector3(.9,.047,7.1),new THREE.Vector3(4.5,.047,7.1),new THREE.Vector3(7.8,.047,7.1),new THREE.Vector3(9.6,.047,6.1)]),left=[],right=[];for(let i=0;i<=48;i++){const t=i/48,p=curve.getPoint(t),dir=curve.getTangent(t),normal=new THREE.Vector3(-dir.z,0,dir.x).multiplyScalar(.9);left.push(p.clone().add(normal));right.push(p.clone().sub(normal));}const vertices=[],indices=[];for(let i=0;i<left.length;i++)vertices.push(...left[i].toArray(),...right[i].toArray());for(let i=0;i<left.length-1;i++){const a=i*2;indices.push(a,a+2,a+1,a+1,a+2,a+3);}const geo=new THREE.BufferGeometry();geo.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));geo.setIndex(indices);geo.computeVertexNormals();const mesh=new THREE.Mesh(geo,kit.mat(P.cream));mesh.receiveShadow=true;g.add(mesh);return g;}

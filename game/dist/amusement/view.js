@@ -1,6 +1,7 @@
 import {buildCarouselBridge} from './carousel-bridge.js';
 import {buildCarouselHorse} from './carousel-horse.js';
-import {VILLAGE_BUILDINGS} from '../world/landmarks.js';
+import {VILLAGE_BUILDINGS,buildVillageBuilding} from '../world/landmarks.js';
+import {VILLAGE_SOURCE_SHORE} from '../world/village-layout.js';
 import {buildKartEntrance} from './kart-entrance.js';
 import {buildCastleExterior} from './castle-exterior.js';
 import {createVikingCamera} from './viking-camera.js';
@@ -12,31 +13,64 @@ import {buildCoasterEntrance} from './coaster-view.js';
 import {buildBumperEntrance} from './bumper-view.js';
 import {tagSeasonal} from '../world/seasonal-appearance.js';
 import * as THREE from 'three';
+import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
 import {buildViking,buildVikingBranch} from './viking-view.js';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
 import {buildOutdoorTerrain} from '../world/outdoor-terrain.js';
 import {signLabel} from '../world/handwriting.js';
-import {CAROUSEL as C,ISLAND_SHORE,AMUSEMENT_MAP} from './layout.js';
+import {CAROUSEL as C,ISLAND_SHORE,AMUSEMENT_MAP,VIKING} from './layout.js';
 const P={cream:'#f8e9ce',rose:'#dca5ae',roseDark:'#bb8297',mint:'#a7c9bd',green:'#b7cc9a',gold:'#d4b97e',wood:'#c5a284',ink:'#657d79',white:'#fff5e5'};
-function lathe(kit,points,color,parent,x=0,y=0,z=0,start=0,length=Math.PI*2){const m=new THREE.Mesh(new THREE.LatheGeometry(points.map(p=>new THREE.Vector2(...p)),24,start,length),kit.mat(color));m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;parent.add(m);return m;}
+function lathe(kit,points,color,parent,x=0,y=0,z=0,start=0,length=Math.PI*2,segments=24){const m=new THREE.Mesh(new THREE.LatheGeometry(points.map(p=>new THREE.Vector2(...p)),segments,start,length),kit.mat(color));m.position.set(x,y,z);m.castShadow=m.receiveShadow=true;parent.add(m);return m;}
+function canopySphere(kit,r,color,parent,x,y,z,sx=1,sy=1,sz=1){const mesh=new THREE.Mesh(new THREE.SphereGeometry(r,8,6),kit.mat(color));mesh.position.set(x,y,z);mesh.scale.set(sx,sy,sz);mesh.castShadow=mesh.receiveShadow=true;parent.add(mesh);return mesh;}
 function ring(kit,r,t,color,parent,y){const m=new THREE.Mesh(new THREE.TorusGeometry(r,t,8,64),kit.mat(color));m.rotation.x=Math.PI/2;m.position.y=y;m.castShadow=m.receiveShadow=true;parent.add(m);return m;}
 function castle(kit,parent,{scale=1}={}){const g=buildCastleExterior(THREE);g.position.z=4.85;g.scale.setScalar(scale);parent.add(g);signLabel('구름성',0,3.52,.135,1.65,'#58716f',P.mint,g.getObjectByName('amusement.castle.gateway'));kit.feature(g,'amusement.castle','castle-entrance');return g;}
 function buildVikingVillageVista(kit,parent){
- const vista=new THREE.Group();vista.name='amusement.viking.village-vista';vista.visible=false;vista.position.set(-24.5,0,4.5);vista.userData={decorative:true,static:true,collision:false,interactions:0,residents:0,excludeOverview:true};parent.add(vista);
- const sea=new THREE.Mesh(new THREE.SphereGeometry(1,12,8),kit.mat('#b9d9d7'));sea.name='amusement.viking.village-vista.sea';sea.scale.set(13,.11,8.2);sea.position.y=-.34;vista.add(sea);
- const shore=new THREE.Mesh(new THREE.SphereGeometry(1,12,8),kit.mat('#ead8ac'));shore.name='amusement.viking.village-vista.shore';shore.scale.set(12,.23,7.8);shore.position.y=-.19;vista.add(shore);
- const meadow=new THREE.Mesh(new THREE.SphereGeometry(1,12,8),kit.mat('#a6bd88'));meadow.name='amusement.viking.village-vista.meadow';meadow.scale.set(11.5,.40,7.5);meadow.position.y=-.10;vista.add(meadow);
- const block=new THREE.BoxGeometry(1,1,1),roofShape=new THREE.ConeGeometry(.5,1,4,1),canopyShape=new THREE.SphereGeometry(.62,8,6),trunkShape=new THREE.CylinderGeometry(.12,.17,1,6);
- const cube=(name,material,parent,x,y,z,sx,sy,sz)=>{const mesh=new THREE.Mesh(block,material);mesh.name=name;mesh.position.set(x,y,z);mesh.scale.set(sx,sy,sz);parent.add(mesh);return mesh;};
- const row=[
-  {id:'bakeryCafe',x:.25,z:-3.0,scale:.61},
-  {id:'school',x:.15,z:.5,scale:.47},
-  {id:'home',x:-.45,z:3.2,scale:.63},
-  {id:'postOffice',x:.05,z:5.35,scale:.56},
- ];
- for(const item of row){const config=VILLAGE_BUILDINGS.find(b=>b.id===item.id);if(!config)continue;const building=new THREE.Group();building.name='amusement.viking.village.'+item.id;building.userData={villageVista:true,facade:config.id};building.position.set(item.x,-.10+.40*Math.sqrt(Math.max(0,1-(item.z/7.5)**2))+.03,item.z);building.scale.setScalar(item.scale);vista.add(building);const width=config.width??3.6,depth=config.depth??3,height=config.height??2.45,roofHeight=item.id==='school'?.94:1.12,front=depth/2;cube(building.name+'.body',kit.mat(config.wall),building,0,height/2,0,depth,height,width);const roof=new THREE.Mesh(roofShape,kit.mat(config.roof));roof.name=building.name+'.roof';roof.position.y=height+roofHeight/2;roof.scale.set(depth+.16,roofHeight,width+.16);roof.rotation.y=Math.PI/4;building.add(roof);cube(building.name+'.door',kit.mat(config.door),building,front+.018,.77,0,.045,1.48,.70);for(const side of[-1,1])cube(building.name+'.window.'+side,kit.mat('#a8cdd4'),building,front+.02,1.48,side*width*.27,.04,.58,.50);cube(building.name+'.sign',kit.mat('#fff3d6'),building,front+.03,2.30,0,.045,.30,Math.min(2.1,width*.62));}
- for(const[itemIndex,item]of[{x:-.65,z:-6.8},{x:-.9,z:-3.35},{x:.85,z:.25},{x:-.7,z:4.2},{x:-.6,z:7.0}].entries()){const top=-.10+.40*Math.sqrt(Math.max(0,1-(item.z/7.5)**2)),tree=new THREE.Group();tree.name='amusement.viking.village.tree.'+itemIndex;tree.position.set(item.x,top+.025,item.z);vista.add(tree);const trunk=new THREE.Mesh(trunkShape,kit.mat('#ae8560'));trunk.name=tree.name+'.trunk';trunk.position.y=.38;tree.add(trunk);const crown=new THREE.Mesh(canopyShape,kit.mat(itemIndex%2?'#7ea570':'#a0bf83'));crown.name=tree.name+'.crown';crown.position.y=1.0;crown.scale.set(1,1.08,.95);tree.add(crown);}
- vista.traverse(o=>{if(o.isMesh){o.castShadow=false;o.receiveShadow=false;o.userData.vikingVillageVista=true;}});
+ const vista=new THREE.Group();vista.name='amusement.viking.village-vista';vista.visible=false;vista.position.set(VIKING.x,0,VIKING.z+23);vista.userData={decorative:true,static:true,collision:false,interactions:0,residents:0,excludeOverview:true,viewOnlyMirrorOf:'courtyard'};parent.add(vista);
+ // Reuse the village's authored shoreline, paving plan and landmark builders.
+ // This compact view-only copy has no collision, interactions or residents;
+ // the ordinary walking scene remains its one authoritative, full-scale world.
+ const sea=new THREE.Mesh(new THREE.PlaneGeometry(90,90),new THREE.MeshBasicMaterial({color:'#c4e2e6',toneMapped:false}));sea.name='amusement.viking.village-vista.sea';sea.rotation.x=-Math.PI/2;sea.position.y=-.30*.34;vista.add(sea);
+ const landscape=new THREE.Group();landscape.name='amusement.viking.village-landscape';landscape.scale.setScalar(.34);landscape.rotation.y=Math.PI;vista.add(landscape);
+ const islandOutline=VILLAGE_SOURCE_SHORE.filter((_,index)=>index%2===0);
+ const shoreOutline=islandOutline.map(([x,z])=>[x*1.035,z*1.035]);
+ buildOutdoorTerrain(landscape,shoreOutline,{name:'amusement.viking.village-shore',earth:'#ead8ac',surface:'#ead8ac',top:-.07,bottom:-.34});
+ buildOutdoorTerrain(landscape,islandOutline,{name:'amusement.viking.village-island',earth:'#8fa578',surface:'#a6bd88',top:.025,bottom:-.43});
+ const villageKit=createToyKit(landscape);
+ const roadMaterial=villageKit.mat('#e7debd');
+ for(const[id,points]of[['east-west',[[-11,-1.7],[10,-1.7]]],['north-south',[[0,-5],[0,10]]]]){
+  const[[x0,z0],[x1,z1]]=points,dx=x1-x0,dz=z1-z0,length=Math.hypot(dx,dz),nx=-dz/length, nz=dx/length,w=1,shape=new THREE.Shape();
+  shape.moveTo(x0+nx*w,-(z0+nz*w));shape.lineTo(x1+nx*w,-(z1+nz*w));shape.lineTo(x1-nx*w,-(z1-nz*w));shape.lineTo(x0-nx*w,-(z0-nz*w));shape.closePath();
+  const road=new THREE.Mesh(new THREE.ShapeGeometry(shape),roadMaterial);road.name='amusement.viking.village-path.'+id;road.rotation.x=-Math.PI/2;road.position.y=.043;road.receiveShadow=false;landscape.add(road);
+ }
+ const visibleLandmarks=new Set(['school','home','bakeryCafe','postOffice']),landmarks=[],sourceGeometries=new Set(),sourceMaterials=new Set(),canonicalMaterials=new Map(),batches=new Map(),inverseLandscape=new THREE.Matrix4();
+ for(const config of VILLAGE_BUILDINGS){
+  if(!visibleLandmarks.has(config.id))continue;
+  const building=buildVillageBuilding(villageKit,config),bounds=new THREE.Box3(),marker=new THREE.Group();
+  building.updateWorldMatrix(true,true);bounds.setFromObject(building);inverseLandscape.copy(landscape.matrixWorld).invert();bounds.applyMatrix4(inverseLandscape);
+  marker.name='amusement.viking.village.'+config.id;marker.userData={villageVista:true,decorative:true,collision:false,interactions:0,facade:config.id,sourcePosition:[config.x,0,config.z],sourceYaw:config.yaw??0,bounds:{min:bounds.min.toArray(),max:bounds.max.toArray()}};vista.add(marker);landmarks.push(config.id);
+  building.traverse(o=>{if(!o.isMesh)return;sourceGeometries.add(o.geometry);const old=o.material;sourceMaterials.add(old);
+   const sourceName=o.name??'';
+   // Retain real shell, roof, door and glazing forms; omit tiny trim/crossbars
+   // that are sub-pixel at the rider's viewing distance.
+   const keep=/\.body$|\.gable$|\.roof-slope\.|\.ridge$|\.gambrel$|\.hip$|\.door-frame$|\.door$|\.postal-canopy$|\.attic-window/.test(sourceName)||o.userData.nightWindow;
+   if(!keep)return;
+   const materialKey=[old.type,old.color?.getHexString(),old.roughness,old.metalness,old.opacity,old.transparent,old.side,old.toneMapped].join('|');let material=canonicalMaterials.get(materialKey);if(!material){material=old;canonicalMaterials.set(materialKey,material);}o.material=material;
+   const g=o.geometry.clone(),matrix=new THREE.Matrix4().copy(inverseLandscape).multiply(o.matrixWorld);g.applyMatrix4(matrix);const attributes=Object.keys(g.attributes).sort().join(',')+'|'+(g.index?'indexed':'unindexed');const key=materialKey+'|'+attributes;if(!batches.has(key))batches.set(key,{material,parts:[]});batches.get(key).parts.push(g);
+  });
+  landscape.remove(building);building.clear();
+ }
+ landscape.updateMatrixWorld(true);
+ let batchIndex=0,sourceTriangles=0,lodTriangles=0;
+ for(const{material,parts}of batches.values()){
+  let geometry=mergeGeometries(parts,false);if(!geometry)throw new Error('Unable to batch village-view geometry');
+  const triangles=geometry.index?geometry.index.count/3:geometry.attributes.position.count/3;sourceTriangles+=triangles;
+  lodTriangles+=geometry.index?geometry.index.count/3:geometry.attributes.position.count/3;
+  const mesh=new THREE.Mesh(geometry,material);mesh.name=`amusement.viking.village-detail-batch.${++batchIndex}`;mesh.userData.vikingVillageVista=true;mesh.castShadow=false;mesh.receiveShadow=false;landscape.add(mesh);for(const part of parts)part.dispose();
+ }
+ for(const geometry of sourceGeometries)geometry.dispose();
+ const usedMaterials=new Set([...batches.values()].map(batch=>batch.material));for(const material of sourceMaterials)if(!usedMaterials.has(material))material.dispose();
+ vista.traverse(o=>{if(o.isMesh){o.castShadow=false;o.receiveShadow=false;}});
+ vista.userData.landmarks=landmarks;vista.userData.meshBatches=batchIndex;vista.userData.sourceTriangles=sourceTriangles;vista.userData.lodTriangles=lodTriangles;
  return vista;
 }
 function carriage(kit,parent){const{box,sphere,cylinder,feature}=kit,g=new THREE.Group();g.name='amusement.carousel.carriage';g.position.z=C.seatRadius;parent.add(g);
@@ -55,8 +89,12 @@ function carousel(kit,parent){const{cylinder,sphere,box}=kit,base=new THREE.Grou
  const mast=cylinder(.30,.36,2.92,P.mint,0,1.67,0,base);mast.name='amusement.carousel.mast';for(let i=0;i<8;i++){const a=i*Math.PI/4;sphere(.065,P.gold,Math.sin(a)*.32,.92,Math.cos(a)*.32,1,1,1,base);}
  // Static scalloped canopy above a genuinely rotating platform and fixtures.
  const canopyStart=base.children.length;
- for(let i=0;i<12;i++){const a=i*Math.PI/6,panel=new THREE.Group();panel.name='amusement.carousel.canopy-panel.'+i;base.add(panel);lathe(kit,[[0,4.45],[.12,4.43],[.48,4.20],[1.35,3.81],[2.6,3.38],[3.37,3.13],[3.46,3.10]],i%2?P.cream:P.rose,panel,0,0,0,a,Math.PI/6);const trim=sphere(.31,i%2?P.cream:P.rose,Math.sin(a+Math.PI/12)*3.31,3.03,Math.cos(a+Math.PI/12)*3.31,1,.60,.33,panel);trim.rotation.y=a+Math.PI/12;}
- const rim=new THREE.Group();rim.name='amusement.carousel.canopy-rim';base.add(rim);for(let i=0;i<8;i++){const segment=new THREE.Group();segment.name='amusement.carousel.rim-segment.'+i;rim.add(segment);for(const[r,t,color,y]of[[3.36,.08,P.gold,3.11],[3.29,.035,P.cream,2.87]]){const edge=new THREE.Mesh(new THREE.TorusGeometry(r,t,8,8,Math.PI/4),kit.mat(color));edge.rotation.set(Math.PI/2,0,i*Math.PI/4);edge.position.y=y;edge.userData.keepSilhouette=true;edge.castShadow=edge.receiveShadow=true;segment.add(edge);}}const crown=sphere(.16,P.gold,0,4.53,0,1,1.25,1,base);crown.userData.keepSilhouette=true;
+ for(let i=0;i<12;i++){const a=i*Math.PI/6,panel=new THREE.Group();panel.name='amusement.carousel.canopy-panel.'+i;base.add(panel);
+  // Each petal spans only 30 degrees; eight longitudinal samples keep its
+  // silhouette smooth while avoiding excessive sub-pixel subdivision.
+  lathe(kit,[[0,4.45],[.12,4.43],[.48,4.20],[1.35,3.81],[2.6,3.38],[3.37,3.13],[3.46,3.10]],i%2?P.cream:P.rose,panel,0,0,0,a,Math.PI/6,8);
+  const trim=canopySphere(kit,.31,i%2?P.cream:P.rose,panel,Math.sin(a+Math.PI/12)*3.31,3.03,Math.cos(a+Math.PI/12)*3.31,1,.60,.33);trim.rotation.y=a+Math.PI/12;}
+ const rim=new THREE.Group();rim.name='amusement.carousel.canopy-rim';base.add(rim);for(let i=0;i<8;i++){const segment=new THREE.Group();segment.name='amusement.carousel.rim-segment.'+i;rim.add(segment);for(const[r,t,color,y]of[[3.36,.08,P.gold,3.11],[3.29,.035,P.cream,2.87]]){const edge=new THREE.Mesh(new THREE.TorusGeometry(r,t,8,4,Math.PI/4),kit.mat(color));edge.rotation.set(Math.PI/2,0,i*Math.PI/4);edge.position.y=y;edge.userData.keepSilhouette=true;edge.castShadow=edge.receiveShadow=true;segment.add(edge);}}const crown=canopySphere(kit,.16,P.gold,base,0,4.53,0,1,1.25,1);crown.userData.keepSilhouette=true;
  const canopy=new THREE.Group();canopy.name='amusement.carousel.canopy';const roofParts=base.children.slice(canopyStart);base.add(canopy);for(const part of roofParts)canopy.add(part);
  for(const[i,a]of[Math.PI/2,Math.PI,Math.PI*1.5].entries())buildCarouselHorse(kit,rotor,a,i);carriage(kit,rotor);const boarding=buildCarouselBridge(kit,rotor);
  return {rotor,boarding};}

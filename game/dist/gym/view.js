@@ -40,8 +40,13 @@ export function buildGymView(parent){
  const archery=buildArcheryView(root);archery.machine.position.set(ARCHERY.x,0,ARCHERY.z);archery.machine.rotation.y=ARCHERY.yaw;
  const climbing=buildClimbingView(root);climbing.machine.position.set(CLIMBING.x,0,CLIMBING.z);climbing.machine.rotation.y=CLIMBING.yaw;
  const laser=buildLaserView(root);laser.machine.position.set(LASER.x,0,LASER.z);laser.machine.rotation.y=LASER.yaw;
+ const laserTitle=signLabel('레이저 사격',LASER.x,2.1,-5.8,2.35,'#456c60','#eef0d8',root);
+ const laserGuide=signLabel('원과 별을 천천히 맞혀요',LASER.x,1.5,-5.8,2,'#456c60','#eef0d8',root);
+ const laserSigns=[laserTitle,laserGuide].filter(Boolean);
+ if(laserTitle)laserTitle.name='schoolGym.laser-sign.title';if(laserGuide)laserGuide.name='schoolGym.laser-sign.guide';
+ let laserSignsDisposed=false;
  const curling=buildCurlingView(root);curling.machine.position.set(CURLING.x,0,CURLING.z);curling.machine.rotation.y=CURLING.yaw;
  buildGymAtmosphere(root,GYM_PASSING.bounds);
  let beltDistance=0;
- return{root,curling,laser,machine,belt,entry,stairs,boxing,archery,climbing,get beltDistance(){return beltDistance;},setBelt(distance=0,{reduced=false}={}){beltDistance=Number.isFinite(distance)?distance:0;for(let i=0;i<marks.length;i++)marks[i].position.z=-1.05+((i*.3-(reduced?0:beltDistance))%2.1+2.1)%2.1;},dispose(){curling.dispose();laser.dispose();climbing.dispose();archery.dispose();boxing.dispose();root.removeFromParent();}};
+ return{root,curling,laser,machine,belt,entry,stairs,boxing,archery,climbing,get beltDistance(){return beltDistance;},setBelt(distance=0,{reduced=false}={}){beltDistance=Number.isFinite(distance)?distance:0;for(let i=0;i<marks.length;i++)marks[i].position.z=-1.05+((i*.3-(reduced?0:beltDistance))%2.1+2.1)%2.1;},dispose(){curling.dispose();laser.dispose();climbing.dispose();archery.dispose();boxing.dispose();if(!laserSignsDisposed){laserSignsDisposed=true;for(const sign of laserSigns){sign.geometry.dispose();sign.material.map?.dispose();sign.material.dispose();sign.removeFromParent();}}root.removeFromParent();}};
 }
