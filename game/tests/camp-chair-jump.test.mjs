@@ -226,7 +226,7 @@ test('modal/focus stop preserves an in-flight jump from the raised chair',()=>{
 test('a failed room transition restores the raised chair support and root height',async()=>{
  const h=host({x:seat.x,z:seat.z,y:.05+seat.y});h.setSupported();
  const start=source.indexOf('async function travel(target)'),end=source.indexOf('\nfunction restoreActivity',start),ctx=vm.createContext({
-  view:null,amusementFoodHost:null,gymTools:null,lookoutTools:null,flightTools:null,boatTools:null,produceHost:null,zoneView:()=>null,cafeFoodHost:null,square:null,campModes:null,marshmallow:null,fishCooking:null,plaza:null,libraryQuest:null,fishing:null,preparation:null,cafeTools:null,
+  view:null,amusementFoodHost:null,gymTools:null,lookoutTools:null,flightTools:null,boatTools:null,produceHost:null,zoneView:()=>null,cafeFoodHost:null,square:null,campModes:null,marshmallow:null,fishCooking:null,plaza:null,libraryQuest:null,fishing:null,fishScoop:null,preparation:null,cafeTools:null,
   activity:{active:null},locked:()=>false,locomotion:h.locomotion,player:h.player,villageTools:null,endActivity(){},manager:{async transitionTo(){return'failed';}},performance:{now:()=>0},timings:{transitionMs:[]},ui:{toast(){}}
  });
  assert(start>=0&&end>start);vm.runInContext(source.slice(start,end),ctx);await vm.runInContext('travel({roomId:"park"})',ctx);
