@@ -60,17 +60,22 @@ function buildVikingVillageVista(kit,parent){
   if(!visibleLandmarks.has(config.id))continue;
   const building=buildVillageBuilding(villageKit,config),bounds=new THREE.Box3(),marker=new THREE.Group();
   building.updateWorldMatrix(true,true);bounds.setFromObject(building);inverseLandscape.copy(landscape.matrixWorld).invert();bounds.applyMatrix4(inverseLandscape);
-  marker.name='amusement.viking.village.'+config.id;marker.userData={villageVista:true,decorative:true,collision:false,interactions:0,facade:config.id,sourcePosition:[config.x,0,config.z],sourceYaw:config.yaw??0,bounds:{min:bounds.min.toArray(),max:bounds.max.toArray()}};vista.add(marker);landmarks.push(config.id);
+  marker.name='amusement.viking.village.'+config.id;marker.userData={villageVista:true,decorative:true,collision:false,interactions:0,facade:config.id,sourcePosition:[config.x,0,config.z],sourceYaw:config.yaw??0,bounds:{min:bounds.min.toArray(),max:bounds.max.toArray()},retainedSourceParts:[]};vista.add(marker);landmarks.push(config.id);
   building.traverse(o=>{if(!o.isMesh)return;sourceGeometries.add(o.geometry);const old=o.material;sourceMaterials.add(old);
-   const sourceName=o.name??'';
-   // Retain real shell, roof, door and glazing forms; omit tiny trim/crossbars
-   // that are sub-pixel at the rider's viewing distance.
-   const keep=/\.body$|\.gable$|\.roof-slope\.|\.ridge$|\.gambrel$|\.hip$|\.sawtooth$|\.studio-shed$|\.workshop-window$|\.studio-glazing|\.door-frame$|\.door$|\.postal-canopy$|\.attic-window/.test(sourceName)||o.userData.nightWindow||/\.roof$/.test(o.parent?.name??'')&&o.parent.parent===building;
+   const sourceName=o.name??'',parentName=o.parent?.name??'';
+   // Retain real shells, roof profiles, selected glazing, and the bakery/school
+   // identity cues; omit the remaining tiny trim and crossbars at ride distance.
+   const bakeryAwning=config.id==='bakeryCafe'&&parentName.endsWith('.striped-awning'),schoolClock=config.id==='school'&&sourceName.endsWith('.clock'),schoolClockHand=config.id==='school'&&old.color?.getHexString()==='5d7769'&&o.geometry.type==='BoxGeometry';
+   const keep=/\.body$|\.gable$|\.roof-slope\.|\.ridge$|\.gambrel$|\.hip$|\.sawtooth$|\.studio-shed$|\.workshop-window$|\.studio-glazing|\.door-frame$|\.door$|\.postal-canopy$|\.attic-window/.test(sourceName)||o.userData.nightWindow||/\.roof$/.test(parentName)&&o.parent.parent===building||bakeryAwning||schoolClock||schoolClockHand;
    if(!keep)return;
+   if(bakeryAwning&&!marker.userData.retainedSourceParts.includes('striped-awning'))marker.userData.retainedSourceParts.push('striped-awning');
+   if(schoolClock)marker.userData.retainedSourceParts.push('clock');
+   if(schoolClockHand&&!marker.userData.retainedSourceParts.includes('clock-hand'))marker.userData.retainedSourceParts.push('clock-hand');
    const materialKey=sourceMaterialKey(old),body=/\.body$/.test(sourceName),squareDoor=/\.(?:door|door-frame)$/.test(sourceName)&&!['home','postOffice'].includes(config.id),boxCanopy=/\.(?:postal-canopy|studio-canopy)$/.test(sourceName);
    let g;if(body||squareDoor||boxCanopy){o.geometry.computeBoundingBox();const size=o.geometry.boundingBox.getSize(new THREE.Vector3());g=new THREE.BoxGeometry(size.x,size.y,size.z);}else g=o.geometry.clone();
    const matrix=new THREE.Matrix4().copy(inverseLandscape).multiply(o.matrixWorld);g.applyMatrix4(matrix);queueVistaGeometry(g,old.color,old,!!o.userData.nightLamp,!!o.userData.nightWindow);
   });
+  marker.userData.retainedSourceParts.sort();
   landscape.remove(building);building.clear();
  }
  // Borrow the source courtyard's own low-poly planting and lamps, scaled as

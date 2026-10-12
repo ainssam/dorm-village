@@ -2,6 +2,12 @@ import * as T from 'three';
 import {VIKING as V} from './layout.js';
 const projectionKeys=['left','right','top','bottom','near','far'];
 const ease=value=>{const t=Math.max(0,Math.min(1,value));return t*t*t*(10+t*(-15+6*t));};
+export function vikingFovForAspect(aspect){
+ const a=Number.isFinite(aspect)?Math.max(0,aspect):1;
+ if(a<=.8)return 72;
+ if(a>=1.2)return 64;
+ return T.MathUtils.lerp(72,64,ease((a-.8)/.4));
+}
 
 // This camera observes the original actor in the current scene. It never
 // reparents, hides or replaces the actor, and never orbits the saved camera.
@@ -53,7 +59,7 @@ const eye=new T.Vector3(),lookTarget=new T.Vector3(),forward=new T.Vector3(),loc
   camera.position.lerpVectors(f.position,eye,blend);camera.quaternion.slerpQuaternions(f.quaternion,goal.quaternion,blend);
   const distance=Math.max(.1,f.position.distanceTo(f.target)),span=(f.projection.top-f.projection.bottom)/f.zoom;
   const startFov=2*Math.atan(span/(2*distance))*180/Math.PI;
-  camera.fov=T.MathUtils.lerp(Math.max(1,Math.min(120,startFov)),camera.aspect<.8?72:76,blend);
+  camera.fov=T.MathUtils.lerp(Math.max(1,Math.min(120,startFov)),vikingFovForAspect(camera.aspect),blend);
   camera.updateProjectionMatrix();
   // Blend homogeneous projections too: switching camera types abruptly would
   // jump an asymmetric HUD-safe orthographic frame, even at tiny blend values.
