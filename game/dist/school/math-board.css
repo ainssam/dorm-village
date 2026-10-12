@@ -4,3 +4,15 @@
 @media(max-height:500px) and (orientation:landscape){.math-grid{grid-template-columns:minmax(0,1fr) minmax(280px,1fr)}.math-compose{border-top:0;padding-top:0}.math-workshop #modal-content{padding-top:6px}.math-workshop h2{font-size:22px;margin-bottom:5px}.math-intro{display:none}}
 
 @media(max-height:500px) and (orientation:landscape){.math-workspace{order:0}.math-compose{order:1}}
+
+/* Match the village controls instead of the browser's default gray buttons. */
+.math-workshop button{border:1px solid #b8c7ad;border-radius:10px;background:#fffaf0;box-shadow:0 2px 0 #d1d9c4}
+.math-workshop button[aria-pressed=true]{background:#315f4b;color:#fff7dc;border-color:#315f4b}
+.math-workshop button.primary{background:#f2ce79;border-color:#bf9b4c;color:#294e46}
+.math-workshop .math-quick button{background:#ead9a6;border-color:#c4ac71}
+.math-workshop .math-keypad{padding:9px;background:#e5ebdb;border-radius:13px}
+.math-workshop .math-palette button{border:3px solid #f8f1dc;border-radius:8px;box-shadow:none}
+.math-workshop .math-palette button[aria-pressed=true]{border-color:#253e33}
+.math-workshop button:disabled{box-shadow:none}
+
+.math-more{margin:10px 0;border-top:1px solid #d9caaa;border-bottom:1px solid #d9caaa}.math-more summary{padding:11px 4px;min-height:44px;cursor:pointer;font-size:17px}

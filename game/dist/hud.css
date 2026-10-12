@@ -148,3 +148,6 @@ body[data-save-warning=true] #stage[data-kart-active=true] .kart-controls{bottom
 @media(max-height:520px) and (min-width:541px){#stage[data-vehicle-stick-active=true][data-bumper-active=true] .bumper-controls{bottom:calc(54px + 142px)}}
 body[data-save-warning=true] #stage[data-vehicle-stick-active=true][data-bumper-active=true] .bumper-controls{bottom:calc(max(100px,env(safe-area-inset-bottom) + 84px) + 166px)}
 @media(min-width:621px) and (max-height:520px){body[data-save-warning=true] #stage[data-vehicle-stick-active=true][data-bumper-active=true] .bumper-controls{bottom:calc(63px + 142px)}}
+
+/* Vehicle sticks are absolutely positioned; keep the remaining action group on the right. */
+#stage[data-vehicle-stick-active=true] .bottom-controls .action-area{margin-left:auto}

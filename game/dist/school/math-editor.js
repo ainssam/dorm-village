@@ -13,10 +13,14 @@ export async function mountMathEditor(host,{value='',onChange=()=>{},onError=()=
  const owner=++keyboardOwner;let field,keyboard,alive=true,changed,paste,before,geometry;
  function dispose(){if(!alive)return;alive=false;keyboard?.removeEventListener('geometrychange',geometry);if(owner===keyboardOwner&&keyboard?.container===host.keyboard){keyboard.hide({animate:false});keyboard.container=document.body;}field?.removeEventListener('input',changed);field?.removeEventListener('paste',paste,true);field?.removeEventListener('beforeinput',before,true);field?.remove();host.keyboard.style.height='0px';}
  try{
- field=new library.MathfieldElement({originValidator:'same-origin'});field.smartMode=false;field.mathVirtualKeyboardPolicy='manual';field.menuItems=[];field.smartFence=true;field.setAttribute('aria-label','수식 편집. 빈칸을 누르거나 Tab으로 이동해요');field.setAttribute('inputmode','none');field.setAttribute('virtual-keyboard-mode','manual');
- field.macros={...field.macros,href:{args:2,def:'#2'},htmlData:{args:2,def:'#2'},class:{args:2,def:'#2'},cssId:{args:2,def:'#2'}};
+ field=new library.MathfieldElement({originValidator:'same-origin'});field.smartMode=false;field.mathVirtualKeyboardPolicy='manual';field.smartFence=true;field.setAttribute('aria-label','수식 편집. 빈칸을 누르거나 Tab으로 이동해요');field.setAttribute('inputmode','none');field.setAttribute('virtual-keyboard-mode','manual');
  keyboard=globalThis.mathVirtualKeyboard;keyboard.originValidator='same-origin';keyboard.container=host.keyboard;keyboard.layouts=['numeric','symbols','alphabetic','greek'];keyboard.editToolbar='none';
- let lastValid=value;field.value=value;host.field.replaceChildren(field);
+ host.field.replaceChildren(field);
+ // MathLive creates its internal editor during connection. The menu setter
+ // and macros getter require that editor, even though ordinary options don't.
+ field.menuItems=[];
+ field.macros={...field.macros,href:{args:2,def:'#2'},htmlData:{args:2,def:'#2'},class:{args:2,def:'#2'},cssId:{args:2,def:'#2'}};
+ let lastValid=value;field.value=value;
  changed=function(){if(!alive)return;const next=field.getValue('latex');const check=next===''?{ok:true}:validateLatex(next,{draft:true});if(!check.ok){field.setValue(lastValid,{silenceNotifications:true});onError(check.message);return;}lastValid=next;onChange(next);};
  field.addEventListener('input',changed);
  paste=e=>{e.preventDefault();e.stopPropagation();let text=e.clipboardData?.getData('application/x-latex')||e.clipboardData?.getData('text/plain')||'';text=text.replace(/^\$\$([\s\S]*)\$\$$/,'$1').replace(/^\$([\s\S]*)\$$/,'$1');const check=validateLatex(text,{draft:true});if(!check.ok){onError(check.message);return;}if(lastValid.length+text.length>MAX_LATEX){onError('수식은 2,000자 안으로 나누어 주세요.');return;}field.insert(text,{format:'latex'});changed();};field.addEventListener('paste',paste,true);
