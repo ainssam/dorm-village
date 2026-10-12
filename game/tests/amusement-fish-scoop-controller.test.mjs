@@ -48,7 +48,7 @@ test('controller leases the walking joystick, accepts WASD and Space, then resto
  const f=fixture(),originalPose=f.pose();assert.equal(f.c.open(),true);assert.equal(f.c.open(),false);assert(f.c.active);assert.equal(f.stickEnabled,true);assert.equal(f.player.parent,f.zoneRoot);assert.equal(f.player.position.x,-9);assert.equal(f.player.position.z,-6.9);
  f.click('start');assert.equal(f.c.snapshot().phase,'playing');f.input.stick={x:1,z:0};f.c.tick(.05);const joystickX=f.c.snapshot().net.x;assert(joystickX>0,'the locked walking stick drives the play net');
  f.doc.dispatchEvent(event('keydown',{code:'KeyW',repeat:false}));f.c.tick(.05);f.doc.dispatchEvent(event('keyup',{code:'KeyW'}));assert(f.c.snapshot().net.z<0,'W moves the net toward the far end of the pool');
- f.doc.dispatchEvent(event('keydown',{code:'Space',repeat:false}));assert.equal(f.c.snapshot().attempts,1,'Space starts one scoop');for(let i=0;i<5;i++)f.c.tick(.05);assert.equal(f.c.snapshot().score,1,'the nearby visible fish is caught');
+ f.doc.dispatchEvent(event('keydown',{code:'Space',repeat:false}));assert.equal(f.c.snapshot().attempts,1,'Space starts one scoop');for(let i=0;i<16;i++)f.c.tick(.05);assert.equal(f.c.snapshot().score,1,'the nearby visible fish is caught after the sink and underwater slide');
  f.c.close();assert.equal(f.c.active,false);assert.equal(f.stickEnabled,false);assertRestored(f);assert.deepEqual(f.pose(),originalPose);assert.equal(f.siteClears,1);assert.deepEqual(f.activeEvents,[true,false]);assert.equal(f.stage.classList.contains('fish-scoop-open'),false);assert.equal(f.doc.body.classList.contains('fish-scoop-open'),false);
 });
 

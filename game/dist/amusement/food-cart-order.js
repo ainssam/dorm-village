@@ -26,15 +26,15 @@ export function createAmusementFoodController({getRoom,getView,getActors,isAllow
   holdFrame=makePoseFrame({phase:'ready',elapsed:0,distance:.48});
  const sameScene=session=>!disposed&&session&&getRoom?.()==='amusementIsland'&&session.room==='amusementIsland'&&getView?.()===session.view;
  const actor=()=>getActors?.()??{};
- const notify=()=>onChange(api.snapshot());
+ const notify=reason=>onChange(api.snapshot(),reason);
  function disposeHeld(session){if(session?.held){disposeFoodDisplay(session.held);session.held=null;}if(session?.pose){session.pose.dispose();session.pose=null;}}
  function finish(reason='cancel'){
   const old=current;if(!old)return false;current=null;disposeHeld(old);
-  if(reason==='scene'||reason==='dispose'||reason==='pagehide')notice='';
+  if(reason==='scene'||reason==='dispose'||reason==='pagehide'||reason==='hidden')notice='';
   else if(reason==='cancel')notice='간식을 돌려놓았어요';
-  notify();return true;
+  notify(reason);return true;
  }
- function fail(session,message){if(current!==session)return false;notice=message;finish('cancel');notice=message;notify();return false;}
+ function fail(session,message){if(current!==session)return false;disposeHeld(session);session.phase='menu';session.itemId=null;session.elapsed=0;notice=message;notify('recoverable');return false;}
  function updateHeld(session,frame=holdFrame){
   const {player}=actor();if(!player||!session.held||!session.pose||!frame?.hands?.right||!frame.direction)return false;
   session.pose.update(frame);hand.fromArray(frame.hands.right);direction.fromArray(frame.direction).normalize();
@@ -62,7 +62,7 @@ export function createAmusementFoodController({getRoom,getView,getActors,isAllow
    notice=FOOD_CART_OBJECT_PHRASES[itemId]+' 받았어요';notify();return true;
   },
   eat(){const session=current;if(!session||session.phase!=='holding'||!sameScene(session)||!isAllowed())return false;session.phase='eating';session.elapsed=0;notice='간식을 맛있게 먹어요';notify();return true;},
-  cancel(){return finish('cancel');},
+  cancel(reason='cancel'){return finish(reason);},
   close(){return finish('close');},
   sceneChanged(){return finish('scene');},
   tick(dt){
@@ -91,14 +91,16 @@ const PANEL=`<section class="amusement-food-panel" role="dialog" aria-modal="tru
 /** Small touch-first view. Every listener and DOM node is released on dispose. */
 export function createAmusementFoodOrderUI({stage,controller,getRoom,doc=globalThis.document,win=globalThis.window}={}){
  const root=doc.createElement('div');root.className='amusement-food-overlay';root.hidden=true;root.innerHTML=PANEL;root.setAttribute('aria-label','놀이섬 간식 카트');root.setAttribute('tabindex','-1');stage.append(root);
- const $=selector=>root.querySelector(selector),listeners=[];let alive=true,cartKey='',renderKey='',visibleBefore=false,phaseBefore='closed';
+ const $=selector=>root.querySelector(selector),listeners=[];let alive=true,cartKey='',renderKey='',visibleBefore=false,phaseBefore='closed',sceneToolsState=null;
  const listen=(target,type,fn,options)=>{target?.addEventListener(type,fn,options);listeners.push([target,type,fn,options]);};
+ function hideSceneTools(){const tools=stage.querySelector?.('.scene-tools');if(!tools)return;if(!sceneToolsState)sceneToolsState={node:tools,hidden:tools.hidden};tools.hidden=true;}
+ function restoreSceneTools(){if(!sceneToolsState)return;sceneToolsState.node.hidden=sceneToolsState.hidden;sceneToolsState=null;}
  function hide(){if(!root.hidden)root.hidden=true;}
- function render(){if(!alive)return;const s=controller.snapshot(),visible=getRoom?.()==='amusementIsland'&&s.active&&!doc.hidden;if(root.hidden!==!visible)root.hidden=!visible;if(!visible){renderKey='';if(visibleBefore){visibleBefore=false;doc.querySelector?.('#scene')?.focus?.({preventScroll:true});}phaseBefore='closed';return;}
+ function render(){if(!alive)return;const s=controller.snapshot(),visible=getRoom?.()==='amusementIsland'&&s.active&&!doc.hidden;if(root.hidden!==!visible)root.hidden=!visible;if(visible)hideSceneTools();else restoreSceneTools();if(!visible){renderKey='';if(visibleBefore){visibleBefore=false;doc.querySelector?.('#scene')?.focus?.({preventScroll:true});}phaseBefore='closed';return;}
   const signature=[s.cartId,s.phase,s.itemId,s.notice].join('|');if(signature===renderKey)return;renderKey=signature;
   if(s.cartId!==cartKey){cartKey=s.cartId;const select=$('[data-food-choice]'),old=select.value;select.replaceChildren(...s.foods.map(id=>{const option=doc.createElement('option');option.value=id;option.textContent=FOOD_CART_LABELS[id];return option;}));select.value=s.foods.includes(old)?old:s.foods[0]??'';}
   const cart=cartById.get(s.cartId);$('#amusement-food-title').textContent=cart?.label??'간식 카트';
-  const status=s.phase==='menu'?'진열된 간식을 하나 골라요':s.phase==='holding'?`${FOOD_CART_OBJECT_PHRASES[s.itemId]} 들었어요. 먹거나 돌려놓을 수 있어요`:s.phase==='eating'?'한 입씩 천천히 먹어요':s.phase==='done'?s.notice:s.notice;
+  const status=s.phase==='menu'?(s.notice||'진열된 간식을 하나 골라요'):s.phase==='holding'?`${FOOD_CART_OBJECT_PHRASES[s.itemId]} 들었어요. 먹거나 돌려놓을 수 있어요`:s.phase==='eating'?'한 입씩 천천히 먹어요':s.notice;
   $('#amusement-food-status').textContent=status;
   $('[data-food-choice]').hidden=s.phase!=='menu';$('.amusement-food-choice-label').hidden=s.phase!=='menu';
   $('[data-food-order]').hidden=s.phase!=='menu';$('[data-food-order]').disabled=!s.foods.includes($('[data-food-choice]').value);
@@ -110,15 +112,17 @@ export function createAmusementFoodOrderUI({stage,controller,getRoom,doc=globalT
  function act(action){if(!alive||doc.hidden)return;if(action==='close'||action==='cancel')controller.cancel();else if(action==='order')controller.order($('[data-food-choice]').value);else if(action==='eat')controller.eat();}
  listen(root,'click',e=>{if(e.target===root){controller.cancel();return;}const button=e.target.closest?.('[data-food-close],[data-food-order],[data-food-eat],[data-food-cancel]');if(!button)return;e.preventDefault();if(button.hasAttribute('data-food-close'))act('close');else if(button.hasAttribute('data-food-order'))act('order');else if(button.hasAttribute('data-food-eat'))act('eat');else act('cancel');});
  listen(doc,'keydown',e=>{if(!controller.snapshot().active||doc.hidden)return;if(e.code==='Escape'){if(e.target?.tagName==='SELECT')return;e.preventDefault();e.stopImmediatePropagation?.();controller.cancel();return;}if(e.code==='Tab'){const focusable=['[data-food-choice]','[data-food-order]','[data-food-eat]','[data-food-cancel]','[data-food-close]'].map($).filter(el=>el&&!el.hidden&&!el.disabled);if(!focusable.length)return;const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&e.target===first){e.preventDefault();last.focus?.({preventScroll:true});}else if(!e.shiftKey&&e.target===last){e.preventDefault();first.focus?.({preventScroll:true});}}});
- listen(doc,'visibilitychange',()=>{if(doc.hidden)controller.cancel();});listen(win,'pagehide',()=>controller.cancel());
+ listen(doc,'visibilitychange',()=>{if(doc.hidden)controller.cancel('hidden');});listen(win,'pagehide',()=>controller.cancel('pagehide'));
  render();
- return{render,update:render,dispose(){if(!alive)return;alive=false;controller.cancel();for(const[node,type,fn,options]of listeners)node?.removeEventListener(type,fn,options);listeners.length=0;root.remove();}};
+ return{render,update:render,dispose(){if(!alive)return;alive=false;controller.cancel();restoreSceneTools();for(const[node,type,fn,options]of listeners)node?.removeEventListener(type,fn,options);listeners.length=0;root.remove();}};
 }
 
 /** Main-frame facade used by game.js; deliberately does not create a RAF. */
-export function createAmusementFoodHost({stage,getRoom,getView,getActors,isAllowed=()=>true,onChange=()=>{},doc=globalThis.document,win=globalThis.window,makeFood,makeEatingPose,makePoseFrame}={}){
- let ui=null,disposed=false,lastBusy=false;
- const controller=createAmusementFoodController({getRoom,getView,getActors,isAllowed,onChange:()=>{ui?.render();const next=controller.busy;if(next!==lastBusy){lastBusy=next;onChange(controller.snapshot());}},makeFood,makeEatingPose,makePoseFrame});
+export function createAmusementFoodHost({stage,getRoom,getView,getActors,isAllowed=()=>true,onChange=()=>{},beginCameraFocus=()=>null,doc=globalThis.document,win=globalThis.window,makeFood,makeEatingPose,makePoseFrame}={}){
+ let ui=null,disposed=false,lastBusy=false,cameraFocus=null;
+ const busy=()=>controller.busy||!!cameraFocus?.active;
+ const sync=(_snapshot,reason)=>{ui?.render();const s=controller.snapshot();if(s.active&&!cameraFocus)cameraFocus=beginCameraFocus(s.cartId);if(!s.active&&cameraFocus){cameraFocus.release?.({immediate:['scene','dispose','pagehide','hidden'].includes(reason)});if(!cameraFocus.active)cameraFocus=null;}const next=busy();if(next!==lastBusy){lastBusy=next;onChange(s);}};
+ const controller=createAmusementFoodController({getRoom,getView,getActors,isAllowed,onChange:sync,makeFood,makeEatingPose,makePoseFrame});
  ui=createAmusementFoodOrderUI({stage,controller,getRoom,doc,win});
  return{
   targets:()=>getRoom?.()==='amusementIsland'?FOOD_CART_TARGETS:[],
@@ -127,8 +131,8 @@ export function createAmusementFoodHost({stage,getRoom,getView,getActors,isAllow
   // fixture and the game integration can inspect each transient state.
   order:itemId=>controller.order(itemId),eat:()=>controller.eat(),
   cancel:()=>controller.cancel(),sceneChanged:()=>controller.sceneChanged(),
-  frame(dt){if(disposed)return;if(getRoom?.()!=='amusementIsland'){controller.sceneChanged();ui.render();return;}controller.tick(dt);ui.update();},
-  get busy(){return controller.busy;},get active(){return controller.active;},snapshot:()=>controller.snapshot(),
+  frame(dt){if(disposed)return;if(getRoom?.()!=='amusementIsland'){controller.sceneChanged();ui.render();return;}controller.tick(dt);cameraFocus?.tick?.(dt);if(cameraFocus&&!cameraFocus.active)cameraFocus=null;ui.update();const next=busy();if(next!==lastBusy){lastBusy=next;onChange(controller.snapshot());}},
+  get busy(){return busy();},get active(){return controller.active;},snapshot:()=>controller.snapshot(),
   dispose(){if(disposed)return;controller.dispose();ui.dispose();disposed=true;}
  };
 }

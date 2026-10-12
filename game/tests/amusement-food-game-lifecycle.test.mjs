@@ -31,10 +31,14 @@ async function foodGame(t){
 
 test('actual cart E interaction can reopen after persisted pagehide/pageshow cleanup',async t=>{
  const f=await foodGame(t);
+ f.cam.zoomBy(1.25);const priorZoom=f.camera.zoom;
  assert.equal(f.run('nearby()?.id'),f.target.id,'actual nearby selector offers the cart at its serving point');
  f.pressE();
  const first=f.ctx.amusementFoodHost;
  assert(first?.active,'actual E key opens the real cart host');
+ first.frame(.5);assert.equal(f.camera.zoom,1,'the real game camera enters its absolute cart-focus projection without a manual zoom');assert.equal(f.cam.controls.enabled,false,'real host lock disables camera gestures while the menu owns focus');
+ first.cancel();first.frame(.5);assert.equal(f.camera.zoom,priorZoom,'ordinary close restores the exact pre-focus manual zoom');assert.equal(f.cam.controls.enabled,true,'real game lock releases after the smooth return');
+ f.pressE();assert(first.active,'the real cart can reopen after returning');
  f.handlers.get('pagehide')();
  assert.equal(first.active,false,'pagehide releases the first cart session');
  f.handlers.get('pageshow')({persisted:true});

@@ -92,4 +92,28 @@ export function fitAmusementCamera(camera,root,{width,height},padding={},region=
  Object.assign(camera,{left:cx-width/(2*pixels),right:cx+width/(2*pixels),top:cy+height/(2*pixels),bottom:cy-height/(2*pixels),near:.1,far:200});camera.updateProjectionMatrix();
 }
 
+// A food order is a short, scene-local activity. Focus its serving surface in
+// the space left between the HUD and live order sheet; actor scale and the
+// ordinary west approach remain untouched.
+export function fitAmusementFoodFrame(camera,root,cartId,{width,height,stageTop=0,safe={},panel=null}={}){
+ const cart=root?.getObjectByName('amusement.food-cart.'+cartId);if(!cart||width<=0||height<=0)return null;
+ camera.updateMatrixWorld(true);root.updateWorldMatrix(true,true);
+ let left=Infinity,right=-Infinity,top=-Infinity,bottom=Infinity;const v=new THREE.Vector3();
+ const includePoint=point=>{v.copy(point).applyMatrix4(camera.matrixWorldInverse);left=Math.min(left,v.x);right=Math.max(right,v.x);bottom=Math.min(bottom,v.y);top=Math.max(top,v.y);};
+ const includeObject=object=>{if(!object)return;const box=new THREE.Box3().setFromObject(object);if(box.isEmpty())return;for(let i=0;i<8;i++)includePoint(v.set(i&1?box.max.x:box.min.x,i&2?box.max.y:box.min.y,i&4?box.max.z:box.min.z));};
+ // Frame the display and upper counter, not wheels and cabinet legs. This
+ // gives the selected products room to read on a phone.
+ const serving=new THREE.Box3(new THREE.Vector3(-.92,.92,-.58),new THREE.Vector3(.92,1.70,.58));
+ for(let i=0;i<8;i++)includePoint(v.set(i&1?serving.max.x:serving.min.x,i&2?serving.max.y:serving.min.y,i&4?serving.max.z:serving.min.z).applyMatrix4(cart.matrixWorld));
+ cart.children.filter(child=>child.name.startsWith('food.')).forEach(includeObject);if(!Number.isFinite(left))return null;
+ const panelTop=panel&&Number.isFinite(panel.top)?panel.top-stageTop:height-(safe.bottom??30),
+  pad={left:Math.max(12,safe.left??16),right:Math.max(12,safe.right??16),top:Math.max(24,safe.top??24),bottom:Math.max(12,height-panelTop+8)};
+ // A tiny dialog viewport is better served by the selected cart alone than by
+ // framing empty space; retain bounded insets while never dividing by zero.
+ const availW=Math.max(1,width-pad.left-pad.right),availH=Math.max(1,height-pad.top-pad.bottom),spanX=Math.max(.2,right-left),spanY=Math.max(.2,top-bottom),pixels=Math.min(availW/spanX,availH/spanY)*.99;
+ if(!Number.isFinite(pixels)||pixels<=0)return null;
+ const cx=(left+right)/2+(pad.right-pad.left)/(2*pixels),cy=(top+bottom)/2+(pad.top-pad.bottom)/(2*pixels);
+ return{left:cx-width/(2*pixels),right:cx+width/(2*pixels),top:cy+height/(2*pixels),bottom:cy-height/(2*pixels),near:.1,far:200,zoom:1};
+}
+
 export function amusementRegion(position){const x=position?.x??0;if(x< -3.4){const t=Math.max(0,Math.min(1,(-x-3.4)/1.5));return -.6*t*t*(3-2*t);}if(x>9.6){const t=Math.max(0,Math.min(1,(x-9.6)/3.9));return 1+t*t*(3-2*t);}const t=Math.max(0,Math.min(1,(x-2.4)/5.4));return t*t*(3-2*t);}

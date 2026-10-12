@@ -1,9 +1,14 @@
 // Small deterministic session model. It intentionally has no storage,
 // reward, analytics, clock or DOM dependency.
 export const FISH_SCOOP_SECONDS=50;
-export const FISH_SCOOP_HIT_TIME=.20;
-export const FISH_SCOOP_LOWER_TIME=.20;
-export const FISH_SCOOP_RISE_TIME=.38;
+export const FISH_SCOOP_LOWER_TIME=.42;
+export const FISH_SCOOP_SLIDE_TIME=.36;
+// Contact is evaluated only after the net has sunk and had time to slide
+// beneath the fish. Keep the combined time available for existing callers.
+export const FISH_SCOOP_HIT_TIME=FISH_SCOOP_LOWER_TIME+FISH_SCOOP_SLIDE_TIME;
+export const FISH_SCOOP_RISE_TIME=.56;
+export const FISH_SCOOP_RESTING_Y=.72;
+export const FISH_SCOOP_SUBMERGED_Y=.06;
 export const FISH_SCOOP_CATCH_RADIUS=.34;
 export const FISH_SCOOP_NET_SPEED=1.25;
 const NET_X=.92,NET_Z=.50,POOL_X=1.05,POOL_Z=.60,MAX_DT=.05;
@@ -26,9 +31,11 @@ export function startFishScoop(state){
 }
 
 export function moveFishScoopNet(state,axes,dt){
- if(!state||state.phase!=='playing'||state.scoop.phase!=='idle'||!axes)return state;
+ if(!state||state.phase!=='playing'||!['idle','sliding'].includes(state.scoop.phase)||!axes)return state;
  const x=Number.isFinite(axes.x)?clamp(axes.x,-1,1):0,z=Number.isFinite(axes.z)?clamp(axes.z,-1,1):0;
- const step=Number.isFinite(dt)?clamp(dt,0,.5):0;if(!step||(!x&&!z))return state;
+ let step=Number.isFinite(dt)?clamp(dt,0,.5):0;
+ if(state.scoop.phase==='sliding')step=Math.min(step,Math.max(0,FISH_SCOOP_SLIDE_TIME-state.scoop.elapsed));
+ if(!step||(!x&&!z))return state;
  let nx=state.net.x+x*FISH_SCOOP_NET_SPEED*step,nz=state.net.z+z*FISH_SCOOP_NET_SPEED*step;
  const radius=Math.hypot(nx/NET_X,nz/NET_Z);if(radius>1){nx/=radius;nz/=radius;}
  if(nx===state.net.x&&nz===state.net.z)return state;
@@ -70,8 +77,10 @@ export function stepFishScoop(state,dt){
   if(next.feedback)next.feedback.time=Math.max(0,next.feedback.time-slice);
   if(next.scoop.phase!=='idle'){
    next.scoop.elapsed+=slice;
-   if(next.scoop.phase==='lowering'&&next.scoop.elapsed>=FISH_SCOOP_HIT_TIME){
-    next.scoop.elapsed-=FISH_SCOOP_HIT_TIME;next=resolveScoop(next);
+   if(next.scoop.phase==='lowering'&&next.scoop.elapsed>=FISH_SCOOP_LOWER_TIME){
+    next.scoop.elapsed-=FISH_SCOOP_LOWER_TIME;next.scoop.phase='sliding';
+   }else if(next.scoop.phase==='sliding'&&next.scoop.elapsed>=FISH_SCOOP_SLIDE_TIME){
+    next.scoop.elapsed-=FISH_SCOOP_SLIDE_TIME;next=resolveScoop(next);
    }else if(next.scoop.phase==='rising'&&next.scoop.elapsed>=FISH_SCOOP_RISE_TIME){
     next.scoop={phase:'idle',elapsed:0,result:next.scoop.result,fishIndex:next.scoop.fishIndex};
    }
