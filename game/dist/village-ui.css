@@ -93,6 +93,13 @@ body #stage[data-activity-active=true] .activity-note #activity-text {font-famil
 #modal :is(.map-help,.map-route-description) {font-family:var(--ui-font);font-size:12px;line-height:1.6}
 #modal .map-view-tools button {font-size:14px;border-radius:10px}
 #modal .map-zoom-controls button {font-size:21px}
+/* Keep the atlas controls visually quiet beside the wide map, while coarse-pointer layouts retain full touch targets. */
+@media (min-width: 621px) and (hover: hover) and (pointer: fine) {
+ #modal .map-zoom-controls {gap:3px}
+ #modal .map-zoom-controls button {width:34px;min-width:34px;height:36px;min-height:36px;padding:0;font-size:19px}
+ #modal .map-zoom-controls #map-fit {width:44px;min-width:44px;font-size:14px;padding:0 4px}
+ #modal .map-zoom-controls #map-zoom-readout {min-width:36px;font-size:14px;padding:2px 0}
+}
 /* Library, letters and a diary: book spines and margins give the paper a purpose. */
 #modal.library-books {width:640px;padding:32px}
 #modal.library-books .library-reading-progress {background:transparent;border-bottom:1px solid var(--ui-line);border-radius:0;padding:0 0 14px;font-size:12px;color:var(--ui-muted)}

@@ -138,3 +138,16 @@ test('the phone entry frame gives the gate and carousel a closer first-arrival c
   assert.equal(r.cam.isOverview(),true,'the explicit overview still offers the complete island');
  }finally{r.dispose();}
 });
+
+test('fresh island entry ignores another room’s manual camera while same-room recovery keeps island zoom',()=>{
+ const r=rig(390,844);
+ try{
+  const entryOrientation=r.camera.quaternion.clone();
+  r.cam.apply(ROOMS.courtyard,{x:0,z:3},new THREE.Group());r.cam.rotateBy(.42);r.cam.zoomBy(.1);
+  r.cam.apply(ROOMS.amusementIsland,ROOMS.amusementIsland.spawns.entry,r.view.root);
+  assert.equal(r.camera.zoom,1,'island starts from its readable default frame');
+  assert(r.camera.quaternion.angleTo(entryOrientation)<1e-7,'previous-room orbit does not alter the island reference frame');
+  r.cam.zoomBy(1.15);r.cam.apply(ROOMS.amusementIsland,ROOMS.amusementIsland.spawns.entry,r.view.root);
+  assert.equal(r.camera.zoom,1.15,'same-room recovery preserves the user’s island zoom');
+ }finally{r.dispose();}
+});

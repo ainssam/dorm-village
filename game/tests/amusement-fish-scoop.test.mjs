@@ -42,7 +42,8 @@ test('the complete connected room count is explicit and airport-inclusive, separ
  try{
   assert(view.root.getObjectByName('amusementIsland.airport-frame'),'full room count includes the connected airfield');
   assert.equal(tris(actor.actor),72954);
-  assert.equal(tris(scene),126118,'explicit complete-room regression; the existing 120k guard is island-only and unchanged');
+  // Isolated HEAD 380c4b4 versus working vista measures 2,390 → 2,286 triangles (−104); only the decorative panorama changed.
+  assert.equal(tris(scene),126014,'explicit complete-room regression after the measured 104-triangle panorama reduction; the existing 120k guard is island-only and unchanged');
  }finally{view.dispose();actor.dispose();}
 });
 

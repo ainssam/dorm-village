@@ -9,6 +9,8 @@ import {overviewBounds} from '../dist/camera-fit.js';
 import {fitAmusementCamera} from '../dist/amusement/camera.js';
 import {vikingFrame} from '../dist/amusement/viking-ride.js';
 import {VIKING} from '../dist/amusement/layout.js';
+import {applyEnvironmentMood} from '../dist/world/sky-view.js';
+import {SKY_MOODS} from '../dist/world/time-of-day.js';
 
 function rig(width=390,height=844){
  const old={ResizeObserver:globalThis.ResizeObserver,document:globalThis.document};
@@ -31,10 +33,13 @@ test('Viking rider looks forward over a real-model village panorama with safe sw
   assert(vista&&landscape&&sea&&shore&&island&&ride&&carousel&&carts);
   assert.equal(vista.userData.collision,false);assert.equal(vista.userData.interactions,0);assert.equal(vista.userData.residents,0);assert.equal(vista.userData.excludeOverview,true);assert.equal(vista.userData.viewOnlyMirrorOf,'courtyard');
   assert.deepEqual(vista.position.toArray(),[VIKING.x,0,VIKING.z+23]);assert(Math.abs(landscape.rotation.y-Math.PI)<1e-9);assert(Math.abs(landscape.scale.x-.34)<1e-9);
-  const expected=['school','home','bakeryCafe','postOffice'];assert.deepEqual(vista.userData.landmarks,expected);
+  const expected=['school','home','bakeryCafe','postOffice','workshop','photoStudio'];assert.deepEqual(vista.userData.landmarks,expected);
+  assert.deepEqual(new Set(vista.userData.pathIds),new Set(['east-west','north-south','to-bakeryCafe','to-postOffice','to-workshop','to-photoStudio']),'rider paths are borrowed from the authored village plan');
+  assert.deepEqual(new Set(vista.userData.fixtureIds),new Set(['tree.2','tree.10','tree.11','lamp.1','lamp.3']),'sparse distant planting and lamps use authored courtyard fixtures');
   for(const id of expected){const marker=vista.getObjectByName('amusement.viking.village.'+id);assert(marker,`${id} source facade exists`);assert.equal(marker.userData.collision,false);assert.equal(marker.userData.interactions,0);assert.equal(marker.userData.facade,id);const source=marker.userData.sourcePosition;assert(Array.isArray(source)&&source.length===3,`${id} carries its authored courtyard position`);assert(marker.userData.bounds.max[1]>1,`${id} source facade has 3D height`);}
   const meshes=[];let triangles=0;vista.traverse(o=>{if(o.isMesh){meshes.push(o);triangles+=o.geometry.index?o.geometry.index.count/3:o.geometry.attributes.position.count/3;}});
-  assert(meshes.length<=27,`${meshes.length} low-draw-call meshes`);assert(triangles<=2700,`${triangles} panorama triangles`);assert.equal(vista.userData.sourceTriangles,1856);assert(meshes.every(o=>!o.castShadow&&!o.receiveShadow));
+  assert(meshes.length<=27,`${meshes.length} low-draw-call meshes`);assert(triangles>=1856&&triangles<=2700,`${triangles} bounded real-village panorama triangles`);assert.equal(vista.userData.lodTriangles,triangles,'diagnostic triangle count matches every rendered vista mesh');assert(meshes.every(o=>!o.castShadow&&!o.receiveShadow));
+  const warmLampBatches=meshes.filter(o=>o.userData.nightLamp),windowBatches=meshes.filter(o=>o.userData.nightWindow);assert.equal(warmLampBatches.length,1,'distant courtyard lamps keep their existing night-lamp hook');assert(windowBatches.length>0,'retained village panes preserve their night-window hook');const windowDayColor=windowBatches[0].material.color.getHex();applyEnvironmentMood(vista,SKY_MOODS.night);assert(warmLampBatches[0].material.emissiveIntensity>1);assert.equal(windowBatches[0].material.color.getHexString(),'f5dbaa');assert(windowBatches[0].material.emissiveIntensity>.5);applyEnvironmentMood(vista,SKY_MOODS.day);assert.equal(warmLampBatches[0].material.emissiveIntensity,0);assert.equal(windowBatches[0].material.color.getHex(),windowDayColor);assert.equal(windowBatches[0].material.emissiveIntensity,0);
   // The sea surface intersects both terrain skirts; the panorama cannot read as a floating box.
   const seaY=sea.getWorldPosition(new T.Vector3()).y,shoreBounds=new T.Box3().setFromObject(shore),islandBounds=new T.Box3().setFromObject(island),waterBounds=new T.Box3().setFromObject(sea);
   assert(shoreBounds.min.y<seaY&&shoreBounds.max.y>seaY,'waterline crosses the beach skirt');assert(islandBounds.min.y<seaY&&islandBounds.max.y>seaY,'waterline crosses the island terrain');
