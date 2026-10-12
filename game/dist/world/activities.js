@@ -1,6 +1,6 @@
 import {BOOKS,bookDiscoveryId} from '../state/library.js';
 import {FOREST_SEATS} from './forest-coast-layout.js';
-import {AIRPORT_SEAT} from '../aviation/main-airfield-layout.js';
+import {AIRPORT_SEAT,AIRPORT_DECK_SEAT} from '../aviation/main-airfield-layout.js';
 import {HARBOR_SEAT} from '../transport/harbor-lighthouse-layout.js';
 import {OBSERVATORY_BENCH} from '../observatory/layout.js';
 import {GARDEN_BEDS} from './garden-layout.js';
@@ -43,6 +43,7 @@ export const ACTIVITIES=Object.fromEntries([
  ...FOREST_SEATS.map(s=>({...s})),
  {...HARBOR_SEAT},
  {...AIRPORT_SEAT},
+ {...AIRPORT_DECK_SEAT},
  {...OBSERVATORY_BENCH},
  pose('classroom.chair-left','classroom',{x:-1.65,z:1.94},{x:-1.65,y:.4458,z:.65,yaw:Math.PI},'의자에 앉아 쓰기','read','school-seat',{prop:'notebook',poseName:'deskRead',leaveLabel:'공책 덮고 일어나기',text:'오늘의 숙제: 마을에서 좋아하는 순간 하나를 찾아오기.'}),
  pose('classroom.chair-right','classroom',{x:1.65,z:1.94},{x:1.65,y:.4458,z:.65,yaw:Math.PI},'의자에 앉아 읽기','read','school-seat',{prop:'book',poseName:'deskRead',leaveLabel:'책 덮고 일어나기',text:'책상 위 공책에 작은 하루의 첫 줄을 남겨요.'}),

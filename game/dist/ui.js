@@ -117,10 +117,30 @@ export function setupUI(callbacks){
  }
  function resident(target){open(`<button class="modal-x" data-close aria-label="대화 마치기">×</button><span class="map-eyebrow">${escapeHTML(target.role)}</span><h2 id="modal-title">${escapeHTML(target.name)}</h2><p class="resident-dialogue">${escapeHTML(target.text)}</p><div class="modal-actions"><button class="primary" data-close>이야기 마치기</button></div>`,'resident-conversation');}
  function sky(options={}){
-  if(!canOpenModal())return false;const variant=options?.variant==='telescope'?'telescope':'sky';let view=null,closed=false,validateObservation=null;const initialState=skyObservation,releaseRest=variant==='telescope'?callbacks.prepareTelescope?.():callbacks.prepareSky?.();
-  open(skyViewerHTML({variant}),'sky-viewer',()=>{closed=true;try{const accepted=validateObservation?.(view?.observationState?.());if(accepted)skyObservation=accepted;}catch{}view?.dispose();view=null;releaseRest?.();});
-  const generation=modalGeneration,skyHost=$('#sky-content'),current=()=>!closed&&dialog.open&&modalGeneration===generation&&$('#sky-content')===skyHost;
-  Promise.resolve().then(callbacks.loadSkyViewer??(()=>import('./world/sky-viewer.js'))).then(module=>{if(!current())return;const options=variant==='telescope'?{variant}:{};if(initialState)options.initialState=initialState;view=module.mountSkyViewer(skyHost,Object.keys(options).length?options:undefined);if(!current()){view.dispose();view=null;}else validateObservation=module.validObservationState;}).catch(()=>{if(current()){const status=skyHost.querySelector('[data-sky-clock]');if(status)status.textContent='하늘을 열지 못했어요. 닫고 다시 열어 주세요.';}});
+  if(!canOpenModal())return false;const variant=options?.variant==='telescope'?'telescope':'sky';let view=null,explorer=null,closed=false,validateObservation=null,explorerGeneration=0,activeBodyId='';const initialState=skyObservation,releaseRest=variant==='telescope'?callbacks.prepareTelescope?.():callbacks.prepareSky?.();
+  open(skyViewerHTML({variant}),'sky-viewer',()=>{closed=true;explorerGeneration++;try{const accepted=validateObservation?.(view?.observationState?.());if(accepted)skyObservation=accepted;}catch{}explorer?.dispose?.();explorer=null;view?.dispose();view=null;releaseRest?.();});
+  const generation=modalGeneration,skyHost=$('#sky-content'),explorerStage=$('[data-sky-explorer-stage]'),explorerHost=$('[data-sky-explorer-host]'),liveStatus=$('[data-sky-live-status]'),current=()=>!closed&&dialog.open&&modalGeneration===generation&&$('#sky-content')===skyHost;
+  const allowedBodies=new Set(['Moon','Mercury','Venus','Mars','Jupiter','Saturn','Uranus','Neptune']);
+  function showExplorerMessage(message){
+   if(!explorerHost)return;explorerHost.replaceChildren();const doc=explorerHost.ownerDocument??document,p=doc.createElement('p'),back=doc.createElement('button');p.textContent=message;back.type='button';back.textContent='하늘 관측으로 돌아가기';back.addEventListener('click',returnToSky);explorerHost.append(p,back);
+  }
+  function returnToSky(){
+   if(!current())return;explorerGeneration++;explorer?.dispose?.();explorer=null;activeBodyId='';if(explorerStage)explorerStage.hidden=true;skyHost.hidden=false;view?.resume?.();skyHost.querySelector('[data-sky-explore]')?.focus?.();
+  }
+  function openExplorer(bodyId){
+   if(!current()||variant!=='telescope'||!allowedBodies.has(bodyId)||!explorerStage||!explorerHost)return;
+   explorer?.dispose?.();explorer=null;activeBodyId=bodyId;const request=++explorerGeneration;view?.suspend?.();skyHost.hidden=true;explorerStage.hidden=false;
+   const targetStatus=skyHost.querySelector('[data-sky-target-status]')?.textContent?.trim(),clockStatus=skyHost.querySelector('[data-sky-clock]')?.textContent?.trim();
+   if(liveStatus)liveStatus.textContent=`실제 하늘 관측 상태 · ${targetStatus||'선택한 천체의 방향을 계산해 표시해요.'}${clockStatus?` · ${clockStatus.replace(/\s+/g,' ')}`:''}`;
+   showExplorerMessage('3D 천체 탐험기를 여는 중이에요.');
+   Promise.resolve().then(callbacks.loadBodyInspector??(()=>import('./world/solar-system/body-inspector.js'))).then(module=>{
+    if(!current()||request!==explorerGeneration||activeBodyId!==bodyId)return;
+    if(typeof module?.mountBodyInspector!=='function')throw new Error('Inspector unavailable');
+    explorer=module.mountBodyInspector(explorerHost,{bodyId,onReturn:returnToSky});
+    if(!current()||request!==explorerGeneration){explorer?.dispose?.();explorer=null;}
+   }).catch(()=>{if(current()&&request===explorerGeneration)showExplorerMessage('3D 탐험기를 열지 못했어요. 하늘 관측으로 돌아가 다시 시도해 주세요.');});
+  }
+  Promise.resolve().then(callbacks.loadSkyViewer??(()=>import('./world/sky-viewer.js'))).then(module=>{if(!current())return;const viewerOptions=variant==='telescope'?{variant,onExploreBody:openExplorer}:{};if(initialState)viewerOptions.initialState=initialState;view=module.mountSkyViewer(skyHost,Object.keys(viewerOptions).length?viewerOptions:undefined);if(!current()){view.dispose();view=null;}else validateObservation=module.validObservationState;}).catch(()=>{if(current()){const status=skyHost.querySelector('[data-sky-clock]');if(status)status.textContent='하늘을 열지 못했어요. 닫고 다시 열어 주세요.';}});
  }
  function map(){
   if(!canOpenModal())return false;

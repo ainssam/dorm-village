@@ -20,3 +20,13 @@
 .cafe-food-ui[data-compact=true] .cafe-food-controls{grid-column:1/-1;margin:0;flex-wrap:nowrap}
 .cafe-food-ui[data-compact=true] .cafe-food-controls button{min-width:0;padding:7px 6px;font-size:16px}
 @media(max-height:520px){.cafe-food-ui[data-compact=true]{width:min(280px,calc(100% - 24px))}}
+
+/* Outdoor traveler orders are a separate ground-level self-service region. */
+.traveler-counter-ui{position:absolute;left:max(12px,env(safe-area-inset-left));bottom:var(--cafe-food-bottom,160px);z-index:3;pointer-events:auto;width:min(300px,calc(100% - 24px));font-size:17px;line-height:1.35;color:#284939}
+.traveler-counter-ui[hidden],.traveler-counter-ui [hidden]{display:none!important}
+.traveler-counter-ui button,.traveler-counter-ui select{min-height:44px;font-size:17px;line-height:1.3;border-radius:9px;touch-action:manipulation}
+.traveler-counter-ui button{padding:7px 10px;border:1px solid #a7b597;background:#fff8e8;color:#284939}
+.traveler-counter-ui button:focus-visible,.traveler-counter-ui select:focus-visible{outline:3px solid #496f53;outline-offset:2px}
+.traveler-counter-launch{max-width:100%}.traveler-counter-panel{padding:10px;background:#fffaeef5;border:1px solid #adb99b;border-radius:13px;box-shadow:0 4px 16px #314d3d26;max-height:calc(100dvh - var(--cafe-food-top,140px) - var(--cafe-food-bottom,160px));overflow:auto;overscroll-behavior:contain}
+.traveler-counter-heading{position:sticky;top:0;z-index:1;display:flex;gap:8px;justify-content:space-between;align-items:center;background:#fffaeef5}.traveler-counter-heading strong{font-size:18px}.traveler-counter-status,.traveler-counter-note{font-size:15px;line-height:1.4;margin:7px 0}.traveler-counter-ui select{display:block;width:100%;padding:7px;background:#fffefa;color:#284939;border:1px solid #bcc6ae}.traveler-counter-actions{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}.traveler-counter-actions button{flex:1 1 auto}.traveler-counter-actions [data-traveler="choose"]{background:#f1d397}
+@media(max-height:520px){.traveler-counter-ui{width:280px}.traveler-counter-panel{padding:8px}.traveler-counter-heading strong{font-size:17px}.traveler-counter-status,.traveler-counter-note{margin:5px 0}}
