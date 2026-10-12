@@ -19,7 +19,7 @@ export function weatherOutdoorEligible(context={}){
 export function createWeatherHost({stage,layer=stage,doc=stage?.ownerDocument??globalThis.document,win=globalThis.window,now=Date.now,controllerOptions={},overlayFactory=createWeatherOverlay}={}){
  if(!stage)throw new TypeError('Weather host needs a stage');
  const listeners=new Set(),motion=win?.matchMedia?.('(prefers-reduced-motion: reduce)');
- let selectedCityId='seoul',visualsEnabled=true,visible=!doc?.hidden,reducedMotion=!!motion?.matches,disposed=false,overlay=null,visualError=null,context={},lastCheck=-Infinity,lastSignature='',controller;
+ let selectedCityId='seoul',visualsEnabled=true,visible=!doc?.hidden,reducedMotion=!!motion?.matches,disposed=false,suspended=false,overlay=null,visualError=null,context={},lastCheck=-Infinity,lastSignature='',controller;
  function state(){
   const current=controller.getState();
   const status=current.status==='ready'&&current.freshness==='stale'?'stale':current.status;
@@ -42,22 +42,27 @@ export function createWeatherHost({stage,layer=stage,doc=stage?.ownerDocument??g
  }
  controller=createWeatherController({...controllerOptions,now,onChange:()=>publish()});
  controller.setVisible(visible);controller.setOnline(win?.navigator?.onLine!==false);
- const onVisibility=()=>{if(disposed)return;visible=!doc.hidden;controller.setVisible(visible);publish();};
+ const onVisibility=()=>{if(disposed)return;visible=!suspended&&!doc.hidden;controller.setVisible(visible);publish();};
  const onOffline=()=>{if(!disposed)controller.setOnline(false);};
  const onOnline=()=>{if(!disposed)controller.setOnline(true);};
  const onMotion=event=>{if(disposed)return;reducedMotion=!!event.matches;publish();};
+ function suspend(){if(disposed||suspended)return;suspended=true;visible=false;controller.setVisible(false);overlay?.dispose();overlay=null;publish();}
+ function resume(){if(disposed||!suspended)return;suspended=false;visible=!doc?.hidden;controller.setVisible(visible);publish();}
+ const onPageHide=event=>{if(event?.persisted)suspend();else dispose();};
+ const onPageShow=event=>{if(event?.persisted)resume();};
  doc?.addEventListener?.('visibilitychange',onVisibility);
- win?.addEventListener?.('offline',onOffline);win?.addEventListener?.('online',onOnline);win?.addEventListener?.('pagehide',dispose);
+ win?.addEventListener?.('offline',onOffline);win?.addEventListener?.('online',onOnline);win?.addEventListener?.('pagehide',onPageHide);win?.addEventListener?.('pageshow',onPageShow);
  motion?.addEventListener?.('change',onMotion);
  function dispose(){
   if(disposed)return;disposed=true;
   doc?.removeEventListener?.('visibilitychange',onVisibility);
-  win?.removeEventListener?.('offline',onOffline);win?.removeEventListener?.('online',onOnline);win?.removeEventListener?.('pagehide',dispose);
+  win?.removeEventListener?.('offline',onOffline);win?.removeEventListener?.('online',onOnline);win?.removeEventListener?.('pagehide',onPageHide);win?.removeEventListener?.('pageshow',onPageShow);
   motion?.removeEventListener?.('change',onMotion);
   controller.dispose();overlay?.dispose();overlay=null;listeners.clear();
  }
  return Object.freeze({
   getState:state,
+  suspend,resume,
   subscribe(listener){if(typeof listener!=='function')throw new TypeError('Weather listener required');if(!disposed)listeners.add(listener);listener(state());return ()=>listeners.delete(listener);},
   selectCity(id){if(disposed)return Promise.resolve(state());weatherCity(id);selectedCityId=id;const result=controller.getState().enabled?controller.enable(id,{userEnabled:true}):Promise.resolve(state());publish();return result;},
   enable({userEnabled=false}={}){if(userEnabled!==true)throw new Error('Weather must be explicitly enabled by user');return controller.enable(selectedCityId,{userEnabled:true});},
