@@ -1,7 +1,9 @@
 // Pure trajectory prototype for the three actual rung-to-rung climbs.
 // Start/end mount and top-deck mantle are separate supported transitions.
-// Coordinates returned to the poser are local, +Z front; yaw is PI.
-export const CLIMB={rootX:-4.4,rootZ:2.36,yaw:Math.PI,rungZ:1.82,deckFrontZ:1.70,deckTop:1.05,railRadius:.025,rungs:[.08,.38,.68,.98],footForward:.28,footSupportOffset:-.010537273411403765,handX:.68,handLead:.68,cycleSeconds:1.56};
+// Coordinates returned to the poser are local, +Z front; yaw turns with the
+// relocated station so +Z faces the real rungs on its south pad. Keep the
+// same contact heights/cycle, with the athlete standing north of the rungs.
+export const CLIMB={rootX:1.6,rootZ:5.7,yaw:0,rungZ:6.45,deckFrontZ:6.38,deckTop:1.05,railRadius:.025,rungs:[.08,.38,.68,.98],footForward:.48,footSupportOffset:-.010537273411403765,handX:.68,handLead:.68,handForward:.74,cycleSeconds:1.56};
 const ease=t=>{t=Math.min(1,Math.max(0,t));return t*t*(3-2*t)},mix=(a,b,t)=>a+(b-a)*t;
 /**
  * Six phases per rung: hand A up, opposite foot up, root +.15,
@@ -28,7 +30,7 @@ export function climbContactFrame(seconds){
  if(phase===5)rootY+=.15*u;
  const arc=Math.sin(Math.PI*u),hands={},footOffsets={};
  for(const side of ['left','right']){
-  hands[side]=[CLIMB.handX,worldHands[side]-rootY,.54-(handArcSide===side?.15*arc:0)];
+  hands[side]=[CLIMB.handX,worldHands[side]-rootY,CLIMB.handForward-(handArcSide===side?.15*arc:0)];
   footOffsets[side]=[0,worldFeet[side]-rootY+(footArcSide===side?.075*arc:0),CLIMB.footForward-(footArcSide===side?.15*arc:0)];
  }
  return {root:{x:CLIMB.rootX,y:rootY,z:CLIMB.rootZ,yaw:CLIMB.yaw},hands,footOffsets,worldHands,worldFeet,contacts,phase,cycle:k};

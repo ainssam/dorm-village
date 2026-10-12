@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import * as RealTHREE from 'three';
 import {mountBodyInspector,inspectorBufferSize} from '../dist/world/solar-system/body-inspector.js';
+import {BODY_CATALOG} from '../dist/world/solar-system/catalog.js';
 
 class Node {
  constructor(tag,doc){this.tagName=tag.toUpperCase();this.ownerDocument=doc;this.children=[];this.listeners=new Map();this.attributes={};this.dataset={};this.style={};this.textContent='';this.hidden=false;this.width=390;this.height=500;this.parentElement=null;}
@@ -24,12 +26,13 @@ function fakeRuntime({rendererError=false,fetchError=false,renderError=false}={}
  class Geometry{dispose(){stats.geometryDisposals++;}}
  class Material{constructor(options){Object.assign(this,options);}dispose(){stats.materialDisposals++;}}
  class Texture{constructor(image){this.image=image;this.colorSpace='';this.needsUpdate=false;stats.textureCreations++;}dispose(){stats.textureDisposals++;}}
+ class DataTexture extends Texture{constructor(data,width,height,format){super(data);Object.assign(this,{data,width,height,format});}}
  class Color{constructor(value){this.value=value;}}
  class Light extends Object3D{constructor(...args){super();this.args=args;}}
  class Mesh extends Object3D{constructor(geometry,material){super();this.geometry=geometry;this.material=material;}}
- const THREE={Scene,PerspectiveCamera:Camera,SphereGeometry:Geometry,RingGeometry:Geometry,MeshStandardMaterial:Material,MeshBasicMaterial:Material,Texture,Color,AmbientLight:Light,DirectionalLight:Light,Mesh,DoubleSide:2,SRGBColorSpace:'srgb'};
+ const THREE={Scene,PerspectiveCamera:Camera,SphereGeometry:Geometry,RingGeometry:Geometry,MeshStandardMaterial:Material,MeshBasicMaterial:Material,Texture,DataTexture,RGBAFormat:4,LinearFilter:1,Color,AmbientLight:Light,DirectionalLight:Light,Mesh,DoubleSide:2,SRGBColorSpace:'srgb'};
  class Controls{constructor(camera,canvas){stats.controls++;this.camera=camera;this.domElement=canvas;this.listeners=new Map();this.target={set(){}};this.autoRotate=false;this.enableDamping=false;}addEventListener(t,fn){this.listeners.set(t,fn);}removeEventListener(t){this.listeners.delete(t);}update(){for(const fn of this.listeners.get('change')?[this.listeners.get('change')]:[])fn();}reset(){this.update();}dollyIn(){this.update();}dollyOut(){this.update();}rotateLeft(){this.update();}rotateUp(){this.update();}dispose(){stats.controlDisposals++;this.listeners.clear();}}
- class Renderer{constructor({canvas}){if(rendererError&&stats.rendererFailures===0){stats.rendererFailures++;throw new Error('no WebGL');}stats.renderers++;this.domElement=canvas;}setPixelRatio(v){this.pixelRatio=v;}setSize(w,h){this.domElement.width=w;this.domElement.height=h;}setClearColor(){}render(scene){stats.renders++;if(renderError)throw new Error('lost WebGL context');this.lastScene=scene;}dispose(){stats.rendererDisposals++;}}
+ class Renderer{constructor({canvas}){if(rendererError&&stats.rendererFailures===0){stats.rendererFailures++;throw new Error('no WebGL');}stats.renderers++;this.domElement=canvas;}setPixelRatio(v){this.pixelRatio=v;}setSize(w,h){this.domElement.width=w;this.domElement.height=h;}setClearColor(){}render(scene,camera){stats.renders++;if(renderError)throw new Error('lost WebGL context');this.lastScene=scene;stats.lastScene=scene;stats.lastCamera=camera;}dispose(){stats.rendererDisposals++;}}
  const runtime={THREE,OrbitControls:Controls,createRenderer(canvas){return new Renderer({canvas});},ResizeObserverImpl:class{constructor(fn){resizeCallback=fn;stats.observers++;}observe(){}disconnect(){stats.observerDisposals++;}},fetchImpl:async(url,{signal})=>{stats.fetches.push({url:String(url),signal});if(fetchError)throw Error('offline');return{ok:true,blob:async()=>({})};},createImageBitmapImpl:async(_blob,options)=>{stats.bitmapOptions.push(options);stats.bitmapCreations++;return{close(){stats.bitmapCloses++;}};}};
  return{host:new Node('div',doc),doc,runtime,stats,resize(){resizeCallback?.();}};
 }
@@ -52,6 +55,66 @@ test('mount renders only the selected reviewed local map and exposes accessible 
  assert.match(f.host.find(n=>n.tagName==='DETAILS').find(n=>n.tagName==='A').getAttribute('href'),/^https:/);
  assert.equal(f.stats.fetches.length,1);assert.match(f.stats.fetches[0].url,/assets\/moon\/lroc-color-2k\.jpg/);assert.equal(f.stats.fetches[0].signal.aborted,false);assert.deepEqual(f.stats.bitmapOptions[0],{imageOrientation:'flipY'});
  assert.equal(f.stats.renders>0,true);assert.equal(canvas.focused,true);back.emit('click');assert.equal(returns,1);view.dispose();
+});
+
+test('Mercury uses the reviewed local MESSENGER mosaic and labels its coverage gap as missing map data',async()=>{
+ const f=fakeRuntime(),view=mountBodyInspector(f.host,{bodyId:'Mercury'},f.runtime);await settle();
+ assert.equal(f.host.find(n=>n.dataset.role==='map-kind').textContent,'관측 영상 모자이크');
+ assert.match(f.stats.fetches[0].url,/assets\/mercury\/messenger-pia12397\.jpg/);
+ const details=f.host.find(n=>n.tagName==='DETAILS'),read=node=>node.textContent+node.children.map(read).join(' '),copy=read(details);
+ assert.match(copy,/97\.7%/);assert.match(copy,/5%/);assert.match(copy,/빈 구역/);assert.match(copy,/U\. S\. Geological Survey/);
+ assert.match(copy,/자세와 조명은.*실제 자세·위상을 재현하지 않아요/);view.dispose();
+});
+
+test('planet-specific tints and directional light add form while map-backed surfaces stay untinted',async()=>{
+ const f=fakeRuntime(),view=mountBodyInspector(f.host,{bodyId:'Venus'},f.runtime);await settle();
+ const children=f.stats.lastScene.children,ambient=children[0],key=children[1],sphere=children.find(node=>node.material?.color);
+ assert.ok(ambient.args[1]<=.55,'soft ambient fill leaves visible light and shade');assert.ok(key.args[1]>=1.1,'directional key light models the sphere');
+ assert.equal(sphere.material.color,0xd7a66a);view.dispose();
+ const mapped=fakeRuntime(),mappedView=mountBodyInspector(mapped.host,{bodyId:'Mars'},mapped.runtime);await settle();
+ const mappedSphere=mapped.stats.lastScene.children.find(node=>node.material?.color);assert.equal(mappedSphere.material.color,0xffffff,'verified image colors are not tinted by the body palette');mappedView.dispose();
+});
+
+test('illustrative cloud appearance uses a tiny owned texture and Saturn bands include a schematic Cassini gap',async()=>{
+ const read=node=>node.textContent+node.children.map(read).join(' ');
+ for(const bodyId of ['Venus','Saturn','Uranus','Neptune']){
+  const f=fakeRuntime(),view=mountBodyInspector(f.host,{bodyId},f.runtime);await settle();
+  const sphere=f.stats.lastScene.children.find(node=>node.material?.color),pixels=sphere.material.map.data;
+  assert.equal(sphere.material.color,BODY_CATALOG[bodyId].render.displayColor);assert.equal(sphere.material.map.width,128);assert.equal(sphere.material.map.height,64);
+  assert.equal(pixels.length,128*64*4);assert.ok(Math.min(...pixels)<Math.max(...pixels),'illustrative tone has restrained variation');assert.ok(Math.min(...pixels)>180,'8-bit texture clamps highlights instead of wrapping them to black');
+  assert.match(read(f.host.find(node=>node.tagName==='DETAILS')),/앱에서 그린.*설명용|설명용.*앱에서 그린/);view.dispose();assert.equal(f.stats.textureDisposals,1,'procedural appearance texture is released');
+ }
+ const ring=fakeRuntime(),saturnView=mountBodyInspector(ring.host,{bodyId:'Saturn'},ring.runtime);await settle();
+ const ringMeshes=ring.stats.lastScene.children.filter(node=>node.geometry&&node!==ring.stats.lastScene.children.find(child=>child.material?.color));
+ assert.equal(ringMeshes.length,BODY_CATALOG.Saturn.render.ringBands.length);assert.equal(ring.stats.lastScene.children.length,2+1+BODY_CATALOG.Saturn.render.ringBands.length);
+ const gap=BODY_CATALOG.Saturn.render.ringBands.find(band=>band.region==='cassini-gap');assert.ok(ringMeshes.some(node=>node.material.color===gap.color&&node.material.opacity===gap.opacity));
+ for(let i=1;i<BODY_CATALOG.Saturn.render.ringBands.length;i++)assert.ok(BODY_CATALOG.Saturn.render.ringBands[i-1].outer<=BODY_CATALOG.Saturn.render.ringBands[i].inner,'ring sections do not overlap or z-fight');
+ const camera=ring.stats.lastCamera,[x,y,z]=camera.position.value,distance=Math.hypot(x,y,z),halfHeight=distance*Math.tan(camera.fov*Math.PI/360),halfWidth=halfHeight*camera.aspect,outer=Math.max(...BODY_CATALOG.Saturn.render.ringBands.map(band=>band.outer)),minor=outer*Math.abs(y)/distance;
+ assert.ok(y>0&&minor>0,'ring is viewed from above its plane, not edge-on');assert.ok(outer<halfWidth*.95&&minor<halfHeight*.95,'initial framing leaves portrait-canvas margins around the rings');assert.ok(Math.PI*outer*minor/(4*halfWidth*halfHeight)>.01,'the projected ring has visible area at first open');
+ saturnView.dispose();assert.equal(ring.stats.geometryDisposals,1+BODY_CATALOG.Saturn.render.ringBands.length);assert.equal(ring.stats.materialDisposals,1+BODY_CATALOG.Saturn.render.ringBands.length);
+});
+
+test('real Three.js projects Saturn rings visibly inside portrait and desktop framing',async()=>{
+ for(const{width,height}of[{width:390,height:500},{width:1280,height:800}]){
+  const stats={};
+  class Controls{constructor(camera){this.camera=camera;this.target={value:[0,0,0],set(...value){this.value=value;}};}addEventListener(){}removeEventListener(){}update(){this.camera.lookAt(...this.target.value);this.camera.updateMatrixWorld(true);}dispose(){}}
+  class Observer{constructor(callback){this.callback=callback;}observe(stage){stage.getBoundingClientRect=()=>({width,height});}disconnect(){}}
+  const runtime={THREE:RealTHREE,OrbitControls:Controls,ResizeObserverImpl:Observer,createRenderer(){return{setPixelRatio(){},setSize(){},setClearColor(){},render(scene,camera){scene.updateMatrixWorld(true);camera.updateMatrixWorld(true);stats.scene=scene;stats.camera=camera;},dispose(){}};}};
+  const host=new Node('div',Object.assign(new Node('document',null),{hidden:false}));host.ownerDocument.createElement=tag=>new Node(tag,host.ownerDocument);
+  const view=mountBodyInspector(host,{bodyId:'Saturn'},runtime);await settle();
+  const camera=stats.camera;camera.updateMatrixWorld(true);const meshes=stats.scene.children.filter(node=>node.isMesh&&node.geometry.type==='RingGeometry');
+  assert.equal(meshes.length,BODY_CATALOG.Saturn.render.ringBands.length);
+  const projected=meshes.map(mesh=>{
+   const positions=mesh.geometry.getAttribute('position'),points=[];const point=new RealTHREE.Vector3();
+   for(let i=0;i<positions.count;i++){point.fromBufferAttribute(positions,i).applyMatrix4(mesh.matrixWorld).project(camera);points.push({x:(point.x+1)*width/2,y:(1-point.y)*height/2,z:point.z});}
+   const xs=points.map(p=>p.x),ys=points.map(p=>p.y);let area=0;const index=mesh.geometry.index?.array??Array.from({length:positions.count},(_,i)=>i);
+   for(let i=0;i<index.length;i+=3){const a=points[index[i]],b=points[index[i+1]],c=points[index[i+2]];area+=Math.abs((b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x))/2;}
+   return{mesh,minX:Math.min(...xs),maxX:Math.max(...xs),minY:Math.min(...ys),maxY:Math.max(...ys),area};
+  });
+  for(const bounds of projected){assert.ok(bounds.minX>=8&&bounds.maxX<=width-8,`ring fits horizontally at ${width}×${height}: ${bounds.minX}..${bounds.maxX}`);assert.ok(bounds.minY>=8&&bounds.maxY<=height-8,`ring fits vertically at ${width}×${height}: ${bounds.minY}..${bounds.maxY}`);}
+  const gapIndex=BODY_CATALOG.Saturn.render.ringBands.findIndex(band=>band.region==='cassini-gap');assert.ok(projected[gapIndex].area>1000,'schematic Cassini gap projects to a visible dark band');
+  assert.ok(projected[gapIndex].mesh.material.opacity>.4);view.dispose();
+ }
 });
 
 test('unsupported body ids never reach the renderer or fetch a path',()=>{

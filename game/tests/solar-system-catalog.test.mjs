@@ -25,20 +25,28 @@ test('catalog exposes exactly the eight telescope bodies with evidence-matched a
  }
 });
 
-test('observed texture classifications match the reviewed assets and keep unsupported bodies illustrative',()=>{
+test('observed texture classifications match reviewed assets and unsupported bodies stay explicitly illustrative',()=>{
  assert.equal(BODY_CATALOG.Moon.category,'observed-map');assert.equal(BODY_CATALOG.Moon.source.kind,'image-mosaic');
+ assert.equal(BODY_CATALOG.Mercury.category,'observed-map');assert.equal(BODY_CATALOG.Mercury.source.kind,'image-mosaic');
+ assert.equal(BODY_CATALOG.Mercury.render.colorMap,'./assets/mercury/messenger-pia12397.jpg');assert.equal(BODY_CATALOG.Mercury.source.assetFile,'messenger-pia12397.jpg');assert.equal(BODY_CATALOG.Mercury.source.assetBytes,246265);
+ assert.match(BODY_CATALOG.Mercury.source.coverage,/97\.7%/);assert.match(BODY_CATALOG.Mercury.source.limitations,/5%/);assert.match(BODY_CATALOG.Mercury.source.limitations,/검은.*빈 구역|빈.*검은 구역/);
+ assert.match(BODY_CATALOG.Mercury.source.credit,/NASA.*Johns Hopkins University Applied Physics Laboratory.*Carnegie Institution.*U\. S\. Geological Survey.*Arizona State University/);
  assert.equal(BODY_CATALOG.Mars.category,'observed-map');assert.equal(BODY_CATALOG.Mars.source.kind,'image-mosaic');
  assert.equal(BODY_CATALOG.Jupiter.category,'observed-map');assert.equal(BODY_CATALOG.Jupiter.source.kind,'atmosphere');
- for(const id of ['Mercury','Venus','Saturn','Uranus','Neptune']){
+ for(const id of ['Venus','Saturn','Uranus','Neptune']){
   assert.equal(BODY_CATALOG[id].category,'illustrative');assert.equal(BODY_CATALOG[id].source.kind,'illustrative');
-  assert.equal(BODY_CATALOG[id].render.colorMap,null,`${id} has no reviewed Stage 1 texture`);
+  assert.equal(BODY_CATALOG[id].render.colorMap,null,`${id} has no reviewed Stage 1 texture`);assert.ok(Number.isInteger(BODY_CATALOG[id].render.displayColor),`${id} has an identity-specific educational tint`);
  }
  assert.match(BODY_CATALOG.Mars.source.limitations,/높낮이.*넣지/);
  assert.match(BODY_CATALOG.Jupiter.source.coverage,/80°|80/);assert.match(BODY_CATALOG.Jupiter.source.coverage,/검은 띠.*뜻은 아니에요/);assert.equal(BODY_CATALOG.Jupiter.source.relatedSourceUrl,'https://esahubble.org/images/heic1914b/');assert.equal(BODY_CATALOG.Jupiter.source.licenseUrl,'https://creativecommons.org/licenses/by/4.0/');
  assert.match(BODY_CATALOG.Jupiter.source.licenseText,/CC BY 4\.0/);assert.match(BODY_CATALOG.Jupiter.source.licenseText,/NASA 사이트/);assert.match(BODY_CATALOG.Jupiter.source.licenseText,/바이트가 같다고 주장하지 않아요/);assert.equal(BODY_CATALOG.Jupiter.source.credit,'NASA, ESA, A. Simon (Goddard Space Flight Center), and M.H. Wong (University of California, Berkeley).');
- assert.match(BODY_CATALOG.Saturn.source.limitations,/5\.22|Cassini|illustrative/i);
+ assert.match(BODY_CATALOG.Saturn.source.limitations,/5\.22|카시니|illustrative/i);
  assert.ok(BODY_CATALOG.Saturn.render.ringModel);
- assert.equal(BODY_CATALOG.Uranus.maxZoom,1);assert.equal(BODY_CATALOG.Neptune.maxZoom,1);
+ assert.equal(BODY_CATALOG.Saturn.render.displayColor,0xc6a86d);
+ assert.equal(BODY_CATALOG.Venus.render.displayColor,0xd7a66a);
+ assert.equal(BODY_CATALOG.Uranus.render.displayColor,0x78c8d8);
+ assert.equal(BODY_CATALOG.Neptune.render.displayColor,0x315ac4);
+ assert.equal(BODY_CATALOG.Uranus.maxZoom,1.1);assert.equal(BODY_CATALOG.Neptune.maxZoom,1.1);
 });
 
 test('LOLA conversion uses the documented 1737.4 km reference and rejects malformed samples',()=>{
@@ -53,4 +61,16 @@ test('unknown LOLA NODATA is not guessed or rendered as relief',()=>{
  assert.equal(BODY_CATALOG.Moon.render.heightEncoding.nodata,'unknown');
  assert.equal(BODY_CATALOG.Moon.render.heightEncoding.enabled,false);
  assert.match(BODY_CATALOG.Moon.source.limitations,/빠진 값|높낮이/);
+});
+
+test('illustrative atmosphere texture recipes and Saturn ring bands are constrained and honestly labeled',()=>{
+ for(const id of ['Venus','Saturn','Uranus','Neptune']){
+  const pattern=BODY_CATALOG[id].render.displayPattern;assert.ok(pattern,`${id} should have an individual procedural appearance`);
+  assert.ok(pattern.bands>=3&&pattern.bands<=8);assert.ok(pattern.strength>=.04&&pattern.strength<=.22);
+  assert.match(BODY_CATALOG[id].source.limitations,/앱에서 그린.*설명용|설명용.*앱에서 그린/);
+ }
+ const saturn=BODY_CATALOG.Saturn;
+ assert.ok(saturn.render.ringBands.length>=5);assert.ok(saturn.render.ringBands.some(band=>band.region==='cassini-gap'));
+ assert.ok(Math.max(...saturn.render.ringBands.map(band=>band.outer))<=1.8,'ring footprint stays within mobile portrait framing');
+ assert.match(saturn.render.ringModel,/카시니 간극.*도식/);assert.match(saturn.source.limitations,/관측 자료나/);
 });

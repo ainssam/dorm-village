@@ -38,6 +38,28 @@ function addLink(doc,parent,label,url){
 }
 function messageElement(doc,parent,text){const p=makeElement(doc,'p',text);parent.append(p);return p;}
 
+/** Build a tiny, explicitly illustrative atmospheric tone texture (32 KiB). */
+function createIllustrativeTexture(THREEImpl,recipe){
+ if(!recipe||typeof THREEImpl.DataTexture!=='function')return null;
+ const width=128,height=64,data=new Uint8Array(width*height*4),tau=Math.PI*2;
+ for(let y=0;y<height;y++){
+  const latitude=(.5-y/(height-1))*Math.PI;
+  for(let x=0;x<width;x++){
+   const longitude=x/width*tau;
+   const warp=recipe.warp*Math.sin(longitude*2+latitude*3+recipe.seed);
+   const bands=Math.sin(latitude*recipe.bands*2+warp);
+   const cloud=.25*Math.sin(longitude*3+latitude*5+recipe.seed*2)+.12*Math.sin(longitude*7-latitude*2);
+   const brightness=Math.max(.7,Math.min(1.08,.91+recipe.strength*(.72*bands+.28*cloud)));
+   const value=Math.round(Math.min(1,brightness)*255),i=(y*width+x)*4;
+   data[i]=value;data[i+1]=value;data[i+2]=value;data[i+3]=255;
+  }
+ }
+ const texture=new THREEImpl.DataTexture(data,width,height,THREEImpl.RGBAFormat);
+ texture.colorSpace=THREEImpl.SRGBColorSpace;texture.minFilter=THREEImpl.LinearFilter;texture.magFilter=THREEImpl.LinearFilter;
+ texture.generateMipmaps=false;texture.needsUpdate=true;texture.flipY=false;
+ return texture;
+}
+
 /** A single body, one local optional map, and no continuous render loop. */
 export function mountBodyInspector(host,{bodyId,onReturn}={},runtime={}){
  const doc=host?.ownerDocument??globalThis.document;
@@ -47,8 +69,8 @@ export function mountBodyInspector(host,{bodyId,onReturn}={},runtime={}){
  const createBitmap=runtime.createImageBitmapImpl??globalThis.createImageBitmap?.bind(globalThis);
  const ResizeObserverImpl=runtime.ResizeObserverImpl??globalThis.ResizeObserver;
  const body=TELESCOPE_BODY_IDS.includes(bodyId)?BODY_CATALOG[bodyId]:null;
- let disposed=false,renderer=null,controls=null,controlsChangeCleanup=null,resizeObserver=null,activeController=null,mapTexture=null,mapBitmap=null,canvas=null,material=null,bodyMesh=null,ringMesh=null,scene=null,camera=null;
- const listeners=[];const owned=[];let geometry=null,ringGeometry=null,ringMaterial=null,lastBuffer=null;
+ let disposed=false,renderer=null,controls=null,controlsChangeCleanup=null,resizeObserver=null,activeController=null,mapTexture=null,mapBitmap=null,canvas=null,material=null,bodyMesh=null,scene=null,camera=null;
+ const listeners=[];const owned=[];let geometry=null,lastBuffer=null;const ringGeometries=[],ringMaterials=[];
  const listen=(target,type,fn,options)=>{target?.addEventListener?.(type,fn,options);listeners.push(()=>target?.removeEventListener?.(type,fn,options));};
  const removeAll=()=>{for(const remove of listeners.splice(0)){try{remove();}catch{}}};
  host.replaceChildren?.();
@@ -117,7 +139,7 @@ export function mountBodyInspector(host,{bodyId,onReturn}={},runtime={}){
  }
  function resetCamera(){if(!camera||!initialCamera)return;camera.position.set(...initialCamera);controls?.target?.set?.(0,0,0);controls?.update?.();render();}
  function releaseMap(){
-  if(material?.map){material.map=null;material.needsUpdate=true;}
+  if(material?.map&&material.map===mapTexture){material.map=null;material.needsUpdate=true;}
   try{mapTexture?.dispose?.();}catch{}
   try{mapBitmap?.close?.();}catch{}
   mapTexture=null;mapBitmap=null;
@@ -183,11 +205,18 @@ export function mountBodyInspector(host,{bodyId,onReturn}={},runtime={}){
  if(body){
   try{
    scene=new THREEImpl.Scene();scene.background=new THREEImpl.Color(0x07121d);
-   camera=new THREEImpl.PerspectiveCamera(40,390/520,.1,100);initialCamera=body.id==='Saturn'?[0,0,5.2]:[0,0,3.35];camera.position.set(...initialCamera);
-   scene.add(new THREEImpl.AmbientLight(0xffffff,.84));const light=new THREEImpl.DirectionalLight(0xfff4df,1.4);light.position.set(4,3,5);scene.add(light);
-   geometry=new THREEImpl.SphereGeometry(1,64,40);material=new THREEImpl.MeshStandardMaterial({color:body.render.colorMap?0xffffff:DEFAULT_COLOR,roughness:.82,metalness:0});
+   camera=new THREEImpl.PerspectiveCamera(40,390/520,.1,100);initialCamera=body.id==='Saturn'?[0,4.5,5.2]:[0,0,3.35];camera.position.set(...initialCamera);
+   scene.add(new THREEImpl.AmbientLight(0xffffff,.48));const light=new THREEImpl.DirectionalLight(0xfff4df,1.25);light.position.set(4,3,5);scene.add(light);
+   geometry=new THREEImpl.SphereGeometry(1,64,40);material=new THREEImpl.MeshStandardMaterial({color:body.render.colorMap?0xffffff:(body.render.displayColor??DEFAULT_COLOR),roughness:.82,metalness:0});
    bodyMesh=new THREEImpl.Mesh(geometry,material);scene.add(bodyMesh);
-   if(body.render.ringModel){ringGeometry=new THREEImpl.RingGeometry(1.38,2.18,96);ringMaterial=new THREEImpl.MeshBasicMaterial({color:0xb5a27c,side:THREEImpl.DoubleSide,transparent:true,opacity:.48,depthWrite:false});ringMesh=new THREEImpl.Mesh(ringGeometry,ringMaterial);ringMesh.rotation.x=Math.PI/2;scene.add(ringMesh);}
+   const illustrativeTexture=createIllustrativeTexture(THREEImpl,body.render.displayPattern);
+   if(illustrativeTexture){material.map=illustrativeTexture;material.needsUpdate=true;owned.push(()=>illustrativeTexture.dispose());}
+   for(const band of body.render.ringBands??[]){
+    const bandGeometry=new THREEImpl.RingGeometry(band.inner,band.outer,96);
+    const bandMaterial=new THREEImpl.MeshBasicMaterial({color:band.color,side:THREEImpl.DoubleSide,transparent:true,opacity:band.opacity,depthWrite:false});
+    const bandMesh=new THREEImpl.Mesh(bandGeometry,bandMaterial);bandMesh.rotation.x=Math.PI/2;
+    ringGeometries.push(bandGeometry);ringMaterials.push(bandMaterial);scene.add(bandMesh);
+   }
    if(ResizeObserverImpl){/* observed above; renderer size arrives when mounted */}
    void start();canvas.focus?.();
   }catch(error){setStatus('3D 화면을 시작할 수 없어요. WebGL 지원을 확인하거나 하늘 관측으로 돌아가 주세요.');showRetry();}
@@ -198,7 +227,7 @@ export function mountBodyInspector(host,{bodyId,onReturn}={},runtime={}){
   controlsChangeCleanup?.();controlsChangeCleanup=null;try{controls?.dispose?.();}catch{}controls=null;
   releaseMap();
   for(const release of owned.splice(0)){try{release();}catch{}}
-  try{geometry?.dispose?.();}catch{}try{ringGeometry?.dispose?.();}catch{}try{material?.dispose?.();}catch{}try{ringMaterial?.dispose?.();}catch{}try{renderer?.dispose?.();}catch{}
+  try{geometry?.dispose?.();}catch{}for(const resource of ringGeometries.splice(0)){try{resource.dispose?.();}catch{}}for(const resource of ringMaterials.splice(0)){try{resource.dispose?.();}catch{}}try{material?.dispose?.();}catch{}try{renderer?.dispose?.();}catch{}
   renderer=null;scene=null;camera=null;host.replaceChildren?.();
  }
  if(!body){makeButton(doc,actions,'return','하늘 관측으로 돌아가기',()=>onReturn?.());return Object.freeze({dispose,snapshot:()=>({bodyId:null,disposed}),retry:start});}

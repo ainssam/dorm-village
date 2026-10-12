@@ -22,3 +22,12 @@ test('approach-facing laser station sign names the bay and disposes its canvas r
   view?.dispose();if(priorDocument===undefined)delete globalThis.document;else globalThis.document=priorDocument;
  }
 });
+test('laser shooting lane has a compact real scoreboard tucked clear of the moving targets',()=>{
+ const v=buildGymView(new THREE.Group()),panel=v.laser.machine.getObjectByName('schoolGym.laser.scoreboard');
+ try{
+  assert(panel,'laser lane needs a visible target-status panel');
+  assert.equal(panel.getObjectByName('schoolGym.laser.score-lamps')?.count,5,'one status lamp per supported shot');
+  const targetClearance=panel.position.x-.28/2;
+  assert(targetClearance>1.17,'the full moving plate/star sweep remains to the left of the panel');
+ }finally{v.dispose();}
+});

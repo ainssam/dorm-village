@@ -31,6 +31,13 @@ test('Jupiter polar blank is labeled, dated, and credited',async({page})=>{
  await mount(page);await explore(page,'Jupiter');await expect(page.locator('.solar-inspector-kind')).toContainText('대기 구름 지도');await page.locator('.solar-inspector-source>summary').click();await expect(page.locator('.solar-inspector-source')).toContainText('북위 80°');await expect(page.locator('.solar-inspector-source')).toContainText('검은 띠');await expect(page.locator('.solar-inspector-source')).toContainText('2019-06-27');await expect(page.locator('.solar-inspector-source')).toContainText('NASA, ESA, A. Simon');await expect(page.locator('.solar-inspector-source a[href="https://creativecommons.org/licenses/by/4.0/"]')).toBeVisible();await page.evaluate(()=>window.solarInspectorQA.view.dispose());
 });
 
+test('Mercury uses the small NASA MESSENGER preview with its missing-data caveat',async({page})=>{
+ const requested=[];page.on('request',request=>requested.push(new URL(request.url())));await mount(page);await explore(page,'Mercury');
+ await expect(page.locator('.solar-inspector-kind')).toContainText('관측 영상 모자이크');await expect(page.locator('.solar-inspector-status')).toContainText('지도 자료를 불러왔어요');
+ await page.locator('.solar-inspector-source>summary').click();const source=page.locator('.solar-inspector-source');await expect(source).toContainText('97.7%');await expect(source).toContainText('5%');await expect(source).toContainText('검은 빈 구역');await expect(source).toContainText('정밀 위치 지도는 아니에요');
+ expect(requested.filter(url=>url.pathname.includes('/solar-system/assets/')).map(url=>url.pathname)).toEqual(['/world/solar-system/assets/mercury/messenger-pia12397.jpg']);expect(requested.every(url=>url.origin===new URL(page.url()).origin)).toBe(true);await page.evaluate(()=>window.solarInspectorQA.view.dispose());
+});
+
 test('unsupported maps stay illustrative and failed local maps never masquerade as observations',async({page})=>{
  await mount(page);await explore(page,'Saturn');await expect(page.locator('.solar-inspector-kind')).toContainText('검증된 관측 지도 없음');await page.locator('.solar-inspector-source>summary').click();await expect(page.locator('.solar-inspector-source')).toContainText('단순화한 고리');await page.locator('[data-action="return"]').click();await page.route('**/solar-system/assets/moon/**',route=>route.abort());await explore(page,'Moon');await expect(page.locator('.solar-inspector-status')).toContainText('단색 구체만 보여요');await expect(page.locator('.solar-inspector-status')).not.toContainText('지도를 불러왔어요');await page.locator('[data-action="return"]').click();await page.evaluate(()=>window.solarInspectorQA.view.dispose());
 });

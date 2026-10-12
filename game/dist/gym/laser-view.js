@@ -8,6 +8,16 @@ export function buildLaserView(parent){
  const mesh=(g,c,name,at,host=machine)=>{geometries.add(g);const m=new THREE.Mesh(g,material(c));m.name='schoolGym.laser.'+name;if(at)m.position.set(...at);m.castShadow=true;m.receiveShadow=true;host.add(m);return m;};
  const mat=mesh(new THREE.BoxGeometry(3.1,.012,6.7),'#d4dbc9','floor',[0,.006,2.3]);
  const backstop=mesh(new THREE.BoxGeometry(3.1,2.1,.11),'#a9bca8','backstop',[0,1.062,G.backstopZ]);backstop.userData.kind='backstop';
+ // A small five-shot panel lives on the far edge of the backstop, clear of the
+ // plate/star sweep. Its lights are presentational; only target meshes score.
+ const scoreboard=new THREE.Group();scoreboard.name='schoolGym.laser.scoreboard';scoreboard.position.set(1.40,1.94,G.backstopZ-.10);machine.add(scoreboard);
+ mesh(new THREE.BoxGeometry(.28,.34,.07),'#5c7669','scoreboard.face',[0,0,0],scoreboard);
+ const lampGeometry=new THREE.SphereGeometry(.023,10,8);geometries.add(lampGeometry);
+ const lampMaterial=material('#f7e6a8');lampMaterial.emissive.set('#d49a34');lampMaterial.emissiveIntensity=.55;
+ const scoreLamps=new THREE.InstancedMesh(lampGeometry,lampMaterial,5);scoreLamps.name='schoolGym.laser.score-lamps';
+ const lampPositions=[[-.07,.075,0],[0,.075,0],[.07,.075,0],[-.035,-.075,0],[.035,-.075,0]],lampColors=['#7bb399','#7bb399','#e6bf57','#d8b984','#d8b984'],lampMatrix=new THREE.Matrix4(),lampColor=new THREE.Color();
+ for(let i=0;i<5;i++){lampMatrix.makeTranslation(...lampPositions[i]);scoreLamps.setMatrixAt(i,lampMatrix);scoreLamps.setColorAt(i,lampColor.set(lampColors[i]));}
+ scoreLamps.instanceMatrix.needsUpdate=true;if(scoreLamps.instanceColor)scoreLamps.instanceColor.needsUpdate=true;scoreboard.add(scoreLamps);
  // No tall side catches can hide either plate. The bounded muzzle envelope stays inside the backstop.
  const targets=[];const plate=mesh(new THREE.CircleGeometry(.29,32),'#719eac','plate');targets.push(plate);const shape=new THREE.Shape();for(let i=0;i<10;i++){const a=Math.PI/2+i*Math.PI/5,r=i%2?.145:.32;if(i)shape.lineTo(Math.cos(a)*r,Math.sin(a)*r);else shape.moveTo(Math.cos(a)*r,Math.sin(a)*r);}shape.closePath();const star=mesh(new THREE.ShapeGeometry(shape),'#dbb55d','star');targets.push(star);for(const [i,t]of targets.entries()){t.rotation.y=Math.PI/4;t.userData.kind='target';t.userData.target=i?'star':'plate';}
  const device=new THREE.Group();device.name='schoolGym.laser.toy-light';machine.add(device);
