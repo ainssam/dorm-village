@@ -9,7 +9,7 @@ import {chromium} from '@playwright/test';
 test('math board accepts typing, renders and saves a formula, and reopens',async t=>{
  const root=new URL('../../dist/',import.meta.url);
  const fixture=`<!doctype html><html lang="ko"><meta charset="utf-8">
- <link rel="stylesheet" href="/font-faces.css"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/school/math-board.css">
+ <link rel="stylesheet" href="/font-faces.css"><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/school/math-board.css"><link rel="stylesheet" href="/village-ui.css">
  <dialog id="modal"><div id="modal-content"></div></dialog><script type="module">
  import {createMathBoardTools} from '/school/math-board-view.js';
  const dialog=document.querySelector('dialog');let cleanup;

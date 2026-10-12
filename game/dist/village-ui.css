@@ -1,0 +1,242 @@
+/* Shared visual language: paper, ink, small illustrated objects, generous hierarchy.
+   Loaded after activity styles. Layout and hit areas of world controls stay owned
+   by their activities; transparent 3D courts must never become opaque dialogs. */
+:root {
+ --ui-paper:#fffcf5; --ui-ink:#3b443f; --ui-muted:#6e7166; --ui-line:#deddd0;
+ --ui-accent:#486b61; --ui-tint:#edf1e8; --ui-shadow:0 12px 38px #303e3820;
+ --ui-font:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans CJK KR','Noto Sans KR',system-ui,sans-serif;
+ --ui-hand:'Dormi Gentle Pen',var(--ui-font);
+ --cream:var(--ui-paper); --ink:var(--ui-ink); --muted:#5d685e;
+}
+body,button,select,input,textarea {font-family:var(--ui-font);font-weight:400}
+button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible {outline:3px solid var(--ui-accent);outline-offset:3px}
+button:hover:not(:disabled) {filter:none}
+:where(#modal) button {min-height:48px;padding:10px 14px;border:1px solid var(--ui-line);border-radius:10px;background:var(--ui-paper);color:var(--ui-ink);font-size:15px;line-height:1.5}
+#modal {font-weight:400;--ui-accent:#486b61;--ui-tint:#edf1e8;color:var(--ui-ink);font-family:var(--ui-font)}
+#modal:is(.cooking-workshop,.preparation-workshop,.fish-cooking-workshop,.gathered-recipes) {--ui-accent:#996047;--ui-tint:#f8eee2}
+#modal:is(.school-workshop,.robot-workshop,.world-map-workshop,.english-workshop,.korean-workshop) {--ui-accent:#476a80;--ui-tint:#edf2f5}
+#modal:is(.balance-workshop,.decoration) {--ui-accent:#8a6249;--ui-tint:#f4ece0}
+#modal:is(.resident-conversation,.post-office,.photo-studio) {--ui-accent:#936366;--ui-tint:#f6eeeb}
+#modal:not(:is(.sky-viewer,.gym-workshop,.throw-workshop,.passing-workshop,.race-workshop,.baseball-workshop,.music-workshop,.square-workshop,.preparation-workshop,.fish-cooking-workshop)) {
+ background:var(--ui-paper);border:1px solid #ebe6d8;border-radius:24px;box-shadow:0 24px 80px #23393038,0 2px 0 #ffffffb3 inset;
+ scrollbar-color:#c8cabb transparent;scrollbar-width:thin;
+}
+#modal:not(:is(.sky-viewer,.gym-workshop,.throw-workshop,.passing-workshop,.race-workshop,.baseball-workshop,.music-workshop,.square-workshop,.preparation-workshop,.fish-cooking-workshop))::backdrop {background:#273e4257;backdrop-filter:blur(5px)}
+#modal :is(button,select,input,textarea) {font-family:var(--ui-font)}
+#modal #modal-title {font-family:var(--ui-hand);font-size:32px;line-height:1.25;color:var(--ui-accent);letter-spacing:-.02em}
+#modal p {font-weight:400;font-family:var(--ui-font);font-size:16px;line-height:1.8;color:var(--ui-ink);word-break:keep-all;overflow-wrap:anywhere}
+#modal :is(.caption,.library-local-note,.learning-kicker) {font-size:14px;color:var(--ui-muted)}
+#modal :is(.primary,.secondary,.modal-actions button) {min-height:48px;padding:11px 19px;border:1px solid var(--ui-line);border-radius:12px;font-size:15px;font-weight:600;line-height:1.5;box-shadow:none}
+#modal .primary {background:var(--ui-accent);border-color:var(--ui-accent);color:#fffdf7}
+#modal .secondary {background:transparent;color:var(--ui-accent)}
+#modal .modal-actions {gap:10px;margin-top:22px}
+#modal .modal-x {background:var(--ui-paper);border:1px solid var(--ui-line);border-radius:50%;color:var(--ui-muted);font-family:var(--ui-font);font-size:17px;min-width:44px;min-height:44px;padding:8px 12px;margin:0 0 8px 12px;box-shadow:none;line-height:1.4}
+#modal .modal-x[data-close-style=text] {border-radius:11px;font-size:14px}
+#modal :is(button,summary):hover:not(:disabled) {filter:brightness(.97)}
+#modal button:disabled {cursor:default}
+#modal :is(select,input[type=text],input[type=number],textarea) {border:1px solid #cbd0c6;border-radius:9px;background:#fffefa;color:var(--ui-ink);font-size:16px;font-weight:400;max-width:100%;padding:9px}
+#modal input[type=range] {accent-color:var(--ui-accent)}
+#modal summary {font-weight:400;font-family:var(--ui-font);font-size:14px;line-height:1.6;min-height:44px;align-content:center;color:var(--ui-accent);cursor:pointer}
+#modal .map-eyebrow {font-size:12px;font-family:var(--ui-font);letter-spacing:.06em;color:var(--ui-muted);display:block;margin:0 0 7px}
+#modal .activity-outcome h3 {font-family:var(--ui-hand);font-size:27px;color:var(--ui-accent)}
+#modal .activity-outcome [data-outcome-save] {font-size:12px;color:var(--ui-muted);line-height:1.7;margin-top:10px}
+/* The world: a small stationery toolbar, with the scenery still filling the screen. */
+.topbar .title {border-left:0;padding:10px 15px;background:#fffcf5f2;border-radius:4px 18px 18px 18px;box-shadow:0 3px 18px #28413e0c}
+.topbar .eyebrow {font-family:var(--ui-font);font-size:11px;letter-spacing:.025em;color:var(--ui-muted)}
+.topbar h1 {font-family:var(--ui-hand);font-size:32px;color:#3f6258;text-shadow:none;margin-top:4px}
+.scene-tools {gap:7px}
+.scene-tools button,.scene-tools #village-map,.scene-tools #bgm-toggle {font-family:var(--ui-font);font-size:14px;border:1px solid #deded0;box-shadow:0 3px 12px #334c4210;border-radius:15px;background:#fffcf5f5;color:#526458}
+.scene-tools #village-map {background:#4a6e63;border-color:#4a6e63;color:#fffdf4}
+.scene-tools .map-tool-label {font-size:14px}
+.scene-tools #bgm-toggle[aria-pressed=true],.scene-tools #hud-menu[aria-expanded=true] {background:#ecefdf;border-color:#809682}
+.hud-panel {background:var(--ui-paper);border:1px solid var(--ui-line);border-radius:19px;box-shadow:var(--ui-shadow);padding:16px}
+.hud-heading {border-bottom:1px solid var(--ui-line);padding-bottom:12px;margin-bottom:14px}
+.hud-heading strong {font-family:var(--ui-hand);font-size:25px;color:#486b61}
+.hud-panel button {background:#f6f5ec;border-color:#e1e2d6;border-radius:11px;font-family:var(--ui-font);font-size:13px}
+.hud-panel #hud-close {font-size:13px;background:transparent}
+.hud-panel #camera-reset .tool-label,.hud-panel #sky-open {font-family:var(--ui-font);font-size:13px}
+.hud-panel :is(.camera-tilt-label,.hud-help) {font-size:13px;line-height:1.8}
+.hud-panel #camera-tilt-help {font-size:12px}
+.hud-links {gap:8px;padding:2px 0 7px}
+.hud-links button {min-height:60px;border:0;border-bottom:2px solid #e1e2d5;border-radius:5px 12px 12px 12px;background:#f1f2e8}
+.hud-panel .score strong {font-family:var(--ui-font);font-size:14px}
+.bottom-controls #action {background:#f1d491;border:1px solid #d2b471;color:#514930;border-radius:18px;box-shadow:0 3px 0 #b9a470;font-family:var(--ui-font);font-size:17px}
+.bottom-controls #action kbd {font-family:var(--ui-font);font-size:12px;border-color:#c7ac70;background:#fff9e56b}
+.bottom-controls #nearby-hint {font-family:var(--ui-font);font-size:13px;background:#fffcf5eb;color:#536254;padding:6px 10px;border-radius:7px}
+.bottom-controls #jump {font-family:var(--ui-font);font-size:13px;background:#fffcf5e8;border-color:#c9d1be;box-shadow:0 2px 0 #aabcaa}
+#stick-help,.camera-mouse-help {font-family:var(--ui-font);font-size:12px;color:#526354}
+#save-status,.device-note {font-family:var(--ui-font);font-size:11px}
+#save-status:not([data-warning]) {background:#fffcf5dc;border-radius:6px;padding:3px 7px}
+.message {font-family:var(--ui-font);font-size:15px;background:var(--ui-paper);border:1px solid var(--ui-line);border-radius:14px;box-shadow:var(--ui-shadow)}
+.activity-note,.library-quest {background:var(--ui-paper);border-color:#cdbb8b;border-radius:5px 18px 18px 18px;box-shadow:var(--ui-shadow)}
+body #stage[data-activity-active=true] .activity-note .activity-heading {background:var(--ui-paper)}
+body #stage[data-activity-active=true] .activity-note #activity-title {font-family:var(--ui-hand);font-size:23px;color:#486b61}
+body #stage[data-activity-active=true] .activity-note #activity-close {font-size:13px;border-radius:10px}
+body #stage[data-activity-active=true] .activity-note #activity-text {font-family:var(--ui-font);font-size:15px;line-height:1.8}
+/* Map: an atlas with a quiet directory, rather than a wall of equal buttons. */
+#modal.village-map {padding:28px}
+#modal.village-map .map-location {font-size:13px;margin:8px 0 20px;color:var(--ui-muted)}
+#modal .village-atlas {border:1px solid #dce1d2;border-radius:18px;background:#edf3e9}
+#modal .map-layout {gap:24px}
+#modal .school-directory {background:transparent;border:0;border-bottom:1px solid var(--ui-line);border-radius:0;padding:0 0 14px;margin-bottom:14px}
+#modal .school-directory h3 {font-family:var(--ui-hand);font-size:26px;color:var(--ui-accent);margin:0}
+#modal .school-directory h4 {font-size:13px;color:var(--ui-muted);margin:16px 0 7px}
+#modal .school-directory p {font-size:12px;line-height:1.6;color:var(--ui-muted)}
+#modal .school-place {border:1px solid #dfE3d6;border-radius:7px;background:#f5f6ee;font-size:14px;min-height:44px;text-align:left;padding:9px 11px}
+#modal .school-place .map-place-name {font-family:var(--ui-font);font-size:14px}
+#modal :is(.school-place,.map-mobile-places button)[aria-pressed=true] {background:#e5edde;border-color:#789680;color:#345b46;box-shadow:inset 3px 0 #6f8d6b}
+#modal .map-place-name {font-family:var(--ui-hand);font-size:18px}
+#modal .map-destination {background:#eef2e6;border:0;border-radius:3px 16px 16px 16px;padding:16px}
+#modal .map-destination h3 {font-family:var(--ui-hand);font-size:27px;margin:5px 0}
+#modal .map-destination p {font-size:13px;line-height:1.7}
+#modal .map-selection-label {font-size:11px;letter-spacing:.05em}
+#modal :is(.map-help,.map-route-description) {font-family:var(--ui-font);font-size:12px;line-height:1.6}
+#modal .map-view-tools button {font-size:14px;border-radius:10px}
+#modal .map-zoom-controls button {font-size:21px}
+/* Library, letters and a diary: book spines and margins give the paper a purpose. */
+#modal.library-books {width:640px;padding:32px}
+#modal.library-books .library-reading-progress {background:transparent;border-bottom:1px solid var(--ui-line);border-radius:0;padding:0 0 14px;font-size:12px;color:var(--ui-muted)}
+#modal.library-books .book-choices {gap:18px;margin:22px 0}
+#modal.library-books .book-choices button {position:relative;min-height:145px;padding:20px 16px 20px 24px;border:1px solid #dbdaca;border-left:9px solid var(--book-color);border-radius:3px 10px 10px 3px;background:#f5f1e5;box-shadow:3px 4px 0 #e6e3d8;text-align:left;gap:10px}
+#modal.library-books .book-choices button::after {content:'';position:absolute;top:0;right:16px;width:14px;height:30px;background:var(--book-color);clip-path:polygon(0 0,100% 0,100% 100%,50% 78%,0 100%)}
+#modal.library-books .book-choices button[aria-pressed=true] {outline:2px solid var(--ui-accent);outline-offset:4px;background:#fffcf3}
+#modal.library-books .book-choices span {font-size:11px;color:#64755d;padding-right:17px}
+#modal.library-books .book-choices strong {font-family:var(--ui-hand);font-size:27px;font-weight:700;line-height:1.3;max-width:9em}
+#modal .book-page {border:0;border-left:1px solid #ded3b9;padding:8px 0 8px 22px;margin:28px 0 8px}
+#modal .book-page h3 {font-family:var(--ui-hand);font-size:27px;color:var(--ui-accent)}
+#modal .book-page p {font-size:16px;line-height:2.1}
+#modal .book-question p {background:#f1f1e4;border-radius:2px 12px 12px 12px;padding:14px 17px}
+#modal.library-books .modal-actions {background:var(--ui-paper);border-color:var(--ui-line);padding-top:16px}
+#modal .resident-dialogue {font-family:var(--ui-hand);font-size:26px;line-height:1.9;margin:24px 0;padding-left:18px;border-left:2px solid #d9bcab}
+#modal.resident-conversation #modal-title {font-size:36px}
+#modal .daybook-pages {border-left:1px solid #ded3b9;margin-left:8px;padding-left:23px}
+#modal .daybook-pages li {border-top:0;border-bottom:1px dashed var(--ui-line);padding:16px 0}
+#modal .daybook-pages h3 {font-family:var(--ui-hand);font-size:25px;color:var(--ui-accent)}
+#modal .daybook-pages li>span {font-size:12px}
+#modal :is(.garden-summary,.learning-paper,.postcard-sheet) {background:#f6f2e7;border:1px solid #e5dcc8;border-radius:3px 14px 14px 14px;box-shadow:none}
+#modal .postcard-sheet {background:repeating-linear-gradient(transparent 0,transparent 35px,#dcd9ca 36px),#fffaf0;padding:22px;line-height:36px}
+#modal .photo-preview {border:10px solid #fff;border-bottom-width:30px;border-radius:3px;box-shadow:0 3px 15px #384b3620}
+#modal .material-counts p {background:transparent;border-bottom:1px dashed var(--ui-line);border-radius:0}
+/* Workshop controls retain their color-coded canvases, palettes and game pieces. */
+#modal:is(.school-workshop,.robot-workshop,.balance-workshop) :is(h3,h4) {font-family:var(--ui-hand);color:var(--ui-accent)}
+#modal:is(.robot-workshop,.balance-workshop) #modal-title {background:var(--ui-paper);border-bottom:1px solid var(--ui-line);padding-top:19px;padding-bottom:19px}
+#modal:is(.robot-workshop,.balance-workshop) .modal-x {margin-top:12px}
+#modal :is(.robot-panel,.balance-panel) {padding:22px 26px}
+#modal :is(.robot-stages,.balance-missions) {gap:7px;padding-bottom:16px;border-bottom:1px solid var(--ui-line);margin-bottom:20px}
+#modal :is(.robot-stages,.balance-missions) button {font-family:var(--ui-font);font-size:14px;font-weight:500;min-height:44px;background:transparent;border:1px solid var(--ui-line);border-radius:8px;color:var(--ui-accent)}
+#modal :is(.robot-stages,.balance-missions) button[aria-current=step] {background:var(--ui-accent);border-color:var(--ui-accent);color:#fffdf7}
+#modal :is(.robot-editor,.balance-toolbox) {border-color:var(--ui-line);border-width:1px}
+#modal :is(.robot-palette,.balance-pieces) button {font-size:15px;font-weight:500;background:var(--ui-tint);border:1px solid #cdd8d8;border-radius:10px;padding:12px}
+#modal .robot-palette button[data-command=repeat] {background:#f6ead0;border-color:#d8c394}
+#modal .robot-palette button[data-command=if] {background:#e8edf6;border-color:#bbc8dd}
+#modal :is(.robot-run,.robot-edit-actions,.robot-view-controls,.balance-test-bar,.balance-edits,.balance-position) button {font-size:14px;font-weight:500;border-radius:10px}
+#modal :is(.robot-status,#balance-status,.learning-feedback,.english-feedback,.korean-feedback) {background:var(--ui-tint);border:0;border-left:3px solid var(--ui-accent);border-radius:0 12px 12px 0;padding:14px 16px;font-size:16px;font-weight:400;min-height:0}
+#modal :is(.robot-status,#balance-status)[data-phase=failed],#modal .robot-status[data-phase=error] {background:#faeade;border-left-color:#a66644}
+#modal :is(.robot-status,#balance-status)[data-phase=complete] {background:#f3edda;border-left-color:#af9251}
+#modal .robot-node-label {font-family:var(--ui-font);font-size:15px;font-weight:500}
+#modal .robot-sequence {background:#f7f8f3;border-left-color:#c3d2d3}
+#modal .robot-sequence.insertion-target {background:#eef4ef;border-left-color:var(--ui-accent)}
+#modal .robot-node-moves button {font-size:17px;font-weight:400}
+#modal .robot-insert {font-size:14px!important}
+#modal :is(.robot-legend,.robot-instruction,.robot-position,.robot-efficiency,.balance-caption) {font-size:14px;color:var(--ui-muted)}
+#modal .balance-pieces strong {font-size:16px;font-weight:500}
+#modal .balance-pieces small {font-size:13px;color:var(--ui-muted)}
+#modal :is(.school-tool-row,.subject-choices,.english-learning,.korean-learning,.learning-trays,.learning-evidence) button {font-size:16px;font-weight:500;line-height:1.5;border:1px solid #d4dcd8;border-radius:10px;background:var(--ui-tint);color:var(--ui-ink)}
+#modal :is(.school-tool-row,.english-learning,.korean-learning) button.primary {background:var(--ui-accent);color:#fffdf7;border-color:var(--ui-accent)}
+#modal :is(.english-tabs,.korean-tabs,.match-modes) {border-bottom:1px solid var(--ui-line);padding-bottom:12px;gap:6px}
+#modal :is(.english-tabs,.korean-tabs,.match-modes) button {font-size:14px;border:0;border-radius:5px;background:transparent;padding:10px 6px;color:var(--ui-muted)}
+#modal :is(.english-tabs,.korean-tabs,.match-modes) button[aria-pressed=true],#modal :is(.english-tabs,.korean-tabs) button[aria-selected=true] {color:var(--ui-accent);background:var(--ui-tint);box-shadow:inset 0 -3px var(--ui-accent)}
+#modal :is(.learning-workspace,.english-learning,.korean-learning) button[aria-pressed=true] {border-color:var(--ui-accent);box-shadow:inset 0 -2px var(--ui-accent)}
+#modal .learning-source {border-color:var(--ui-line);margin-top:24px}
+#modal .learning-select {font-family:var(--ui-font);font-size:15px}
+#modal .learning-canvas {border:1px solid #c6d4d3;border-radius:14px}
+#modal .learning-equation {font-size:26px;line-height:1.5}
+#modal .match-grid {border:0;background:#f0eee3;border-radius:16px;padding:16px;gap:12px}
+#modal .match-back {background:radial-gradient(#d5dcbf 1px,transparent 1px) 0 0/9px 9px,#68816c;border-color:#647b61;box-shadow:0 3px 0 #b4bea2}
+#modal .match-back>span {font-family:var(--ui-hand);font-size:18px}
+#modal .match-front {background:#fffdf5;border-color:#d4d3bc;box-shadow:0 3px 0 #d4d3bc}
+#modal .match-card[data-found=true] .match-front {background:#edf3e3;border-color:#9eb58b}
+#modal .match-tally {font-family:var(--ui-font);font-size:13px}
+#modal .match-tally strong {font-size:16px}
+/* Full-scene games: restyle only the real panels, leaving the 3D view clear. */
+:is(.gym-panel,.throw-panel,.passing-panel,.race-panel,.baseball-panel,.claw-panel,.fish-scoop-panel,.amusement-food-panel,.cafe-food-panel,.produce-controls,#preparation-panel,#fish-cook-panel,.square-panel) {background:var(--ui-paper);border-color:var(--ui-line);border-radius:14px;box-shadow:var(--ui-shadow);font-family:var(--ui-font)}
+:is(.claw-heading,.fish-scoop-heading,.amusement-food-panel>header) {background:var(--ui-paper);border-color:var(--ui-line);box-shadow:var(--ui-shadow)}
+:is(.claw-overlay,.fish-scoop-overlay,.cafe-food-ui,.produce-controls,.amusement-food-overlay) button {font-family:var(--ui-font);border-color:#d5d9c9;border-radius:11px;color:var(--ui-ink);font-size:14px}
+.claw-panel {border-top:3px solid #c3989b}
+.fish-scoop-panel {border-top:3px solid #8caeb5}
+.cafe-food-panel {border-top:3px solid #c6a277}
+:is(.claw-heading,.fish-scoop-heading) strong {font-family:var(--ui-hand);font-size:23px}
+#modal:is(.gym-workshop,.throw-workshop,.passing-workshop,.race-workshop,.baseball-workshop,.music-workshop,.square-workshop,.preparation-workshop,.fish-cooking-workshop) #modal-title {font-size:25px;background:var(--ui-paper);border-bottom:1px solid var(--ui-line)}
+#modal.sky-viewer p {color:#f0eedf}
+#modal.sky-viewer #modal-title {color:#fff7df;font-size:32px}
+#modal.sky-viewer .modal-x {background:#203444bd;color:#fff7df;border-color:#edf3df73}
+/* Supporting sheets and drawing tools use the same hierarchy. */
+#modal :is(.map-help,.map-route-description,.map-list-toggle,.map-location) {font-size:13px!important;font-weight:400}
+#modal .map-mobile-places {gap:8px}
+#modal .map-mobile-places button {font-size:14px;border:1px solid var(--ui-line);background:#f7f6ee;border-radius:9px;min-height:44px}
+#modal :is(.settings-list label,.gift-choice,.photo-options label) {font-family:var(--ui-font);font-size:15px;font-weight:400}
+#modal .preview-caption {border:0;padding:12px 14px;background:var(--ui-tint);border-radius:8px;font-size:13px!important;font-weight:400}
+#modal .settings-list {border-top:0}
+#modal .settings-list .danger {font-size:14px;font-weight:500;border:1px solid #e8c7b9;background:#f8eee7;min-height:48px;border-radius:11px}
+#modal.nature-guide {width:720px}
+#modal .nature-fish-grid {gap:24px}
+#modal .nature-fish {padding:8px 0 20px;border-bottom:1px solid var(--ui-line)}
+#modal .nature-fish img {max-height:180px;object-fit:contain}
+#modal .nature-fish h3 {font-family:var(--ui-hand);font-size:26px;line-height:1.4;color:var(--ui-accent);word-break:keep-all}
+#modal .nature-fish :is(.nature-place,.nature-first) {font-size:13px;color:var(--ui-muted)}
+#modal.materials-bag {width:620px}
+#modal .gathering-list li {font-size:14px;gap:14px;padding:14px 0}
+#modal .gathering-list strong {font-size:13px}
+#modal .craft-recipes button {background:#f6f2e7;border:1px solid var(--ui-line);border-radius:9px;padding:14px}
+#modal .craft-recipes strong {font-size:15px}
+#modal .craft-recipes span {font-size:12px;color:var(--ui-muted)}
+#modal .choice-row button {font-size:15px;border-radius:9px;border-color:var(--ui-line)}
+#modal .choice-row button[aria-pressed=true] {background:var(--ui-tint);border-color:var(--ui-accent)}
+#modal.math-workshop .modal-x {margin:0;font-size:14px;background:var(--ui-paper)!important}
+#modal.math-workshop button:not([data-math-color]) {font-weight:500;font-size:14px;border-radius:9px;box-shadow:none}
+#modal.math-workshop button[aria-pressed=true] {background:var(--ui-accent);color:#fffdf7;border-color:var(--ui-accent)}
+#modal .math-quick button {background:#edf2f4;border-color:#c5d4d7;color:var(--ui-accent)}
+#modal .math-keypad {background:#edf0ec;padding:10px;border-radius:12px}
+#modal .math-keypad button {font-family:Georgia,serif!important;font-size:21px!important;font-weight:400!important}
+#modal .math-compose {border-color:var(--ui-line)}
+#modal .math-field-host {border:1px solid #94afa7;border-radius:10px;background:#fffef8}
+#modal .math-board-wrap {border-color:#bba98a;border-width:6px;border-radius:10px}
+#modal .math-intro {font-size:16px!important}
+#modal :is(.art-tools,.art-actions,.pendulum-actions) button {font-size:15px;font-weight:500;border-radius:10px;background:var(--ui-tint);border:1px solid var(--ui-line);color:var(--ui-accent)}
+#modal :is(.art-tools,.art-actions) button[aria-pressed=true] {border-color:var(--ui-accent);box-shadow:inset 0 -2px var(--ui-accent)}
+#modal .art-paper {border:6px solid #d2bea0;border-radius:4px}
+#modal .art-adjust label,#modal .pendulum-controls>label {font-size:15px}
+#modal .weather-controls {font-size:15px}
+#modal .weather-controls button {font-size:15px;background:var(--ui-tint);border-color:var(--ui-line)}
+#modal .weather-controls :is(.weather-caption,.weather-source,.weather-consent) {font-size:13px}
+#modal.sky-viewer summary {color:#f0eedf}
+/* Small screens keep real touch targets and generous text, with less ornament. */
+@media(max-width:620px) {
+ .topbar .title {padding:7px 10px;border-radius:3px 13px 13px 13px}
+ .topbar .eyebrow {font-size:10px}
+ .topbar h1 {font-size:25px}
+ .scene-tools {gap:5px}
+ .scene-tools button,.scene-tools #village-map,.scene-tools #bgm-toggle {font-size:13px;border-radius:12px}
+ .scene-tools .map-tool-label {font-size:13px}
+ .bottom-controls #action {font-size:16px}
+ #modal #modal-title {font-size:28px}
+ #modal.village-map,#modal.library-books {padding:22px 18px}
+ #modal .map-layout {gap:16px}
+ #modal .nature-fish-grid {grid-template-columns:1fr}
+ #modal .nature-fish {display:grid;grid-template-columns:90px minmax(0,1fr);gap:4px 16px}
+ #modal .nature-fish img {width:90px;grid-row:1/5}
+ #modal .nature-fish :is(h3,p,dl) {grid-column:2;margin:3px 0}
+ #modal .nature-fish h3 {font-size:24px}
+ #modal.library-books .book-choices {gap:12px}
+ #modal.library-books .book-choices button {min-height:125px;padding:16px}
+ #modal.library-books .book-choices strong {font-size:25px}
+ #modal .book-page {padding-left:15px;margin-top:22px}
+ #modal :is(.robot-panel,.balance-panel) {padding:16px}
+ #modal .match-grid {padding:10px;gap:8px}
+ #modal :is(.english-tabs,.korean-tabs) button {font-size:13px}
+ #modal .modal-actions {gap:8px}
+}
+@media(prefers-reduced-motion:no-preference) {
+ #modal[open]:not(:is(.gym-workshop,.throw-workshop,.passing-workshop,.race-workshop,.baseball-workshop,.music-workshop,.square-workshop,.preparation-workshop,.fish-cooking-workshop)) {animation:ui-page-in .18s ease-out}
+ @keyframes ui-page-in {from {opacity:0;translate:0 5px}to {opacity:1;translate:0 0}}
+}
