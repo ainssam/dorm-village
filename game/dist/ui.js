@@ -7,7 +7,7 @@ import {SCHOOL_FLOORS,schoolFloorFor,schoolHallId} from './world/school-floor-la
 import {SKY_NOTE} from './world/time-of-day.js';
 import {skyViewerHTML} from './world/sky-viewer-markup.js';
 import {MAP_LANDMARKS,mapLandmarkFor,mapRoute} from './world/map-data.js';
-import {BOOKS,initialLibrary} from './state/library.js';
+import {BOOKS,SHELF_TOPICS,readingShelfBooks,initialLibrary} from './state/library.js';
 import {FLOWER_RECIPES,gardenMessage,initialGarden} from './state/garden.js';
 import {DISCOVERIES,daybookDiscoveries} from './world/activities.js';
 import {ROOMS,SLOTS,ITEM_LABELS} from './world/rooms.js';
@@ -100,10 +100,12 @@ export function setupUI(callbacks){
  function canOpenModal(){return !dialog.open&&!modalActive&&callbacks.canOpenModal?.()!==false;}
  function open(html,kind='',closeAction=null){if(!canOpenModal())return false;modalActive=true;modalGeneration++;modalPointers.clear();clearBackdrop();returnFocus=callbacks.prepareModal?.()??document.activeElement;onClose=closeAction;dialog.className=kind;content.innerHTML=html;content.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>dialog.close());callbacks.lock(true);dialog.showModal();return true;}
  dialog.addEventListener('close',()=>{if(!modalActive||dialog.open)return;modalPointers.clear();clearBackdrop();const finish=onClose;onClose=null;finish?.();callbacks.lock(false);if(returnFocus?.isConnected&&!returnFocus.disabled)returnFocus.focus();else $('#scene').focus();const next=afterClose;afterClose=null;modalActive=false;next?.();});
- function books(initialId){
-  if(!canOpenModal())return false;let selected=Object.hasOwn(BOOKS,initialId)?initialId:(callbacks.getProgress().library??initialLibrary()).selectedBookId;
-  open(`<button class="modal-x" data-close aria-label="책장 닫기">×</button><span class="map-eyebrow">별숲 도서관 · 책장</span><h2 id="modal-title">오늘은 어떤 이야기?</h2><p>책 한 권을 고른 뒤 빈 독서석이나 푹신한 의자에 앉아 읽어요.</p><div class="book-choices">${Object.entries(BOOKS).map(([id,b])=>`<button data-book="${id}" style="--book-color:${b.color}" aria-pressed="false"><span>${b.tag}</span><strong>${b.title}</strong></button>`).join('')}</div><section class="book-page" aria-live="polite"><h3 id="selected-book-title"></h3><p id="selected-book-text"></p></section><div class="modal-actions"><button class="secondary" data-close>더 둘러보기</button><button class="primary" id="select-book">이 책 고르기</button></div>`,'library-books');
-  function render(){content.querySelectorAll('[data-book]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.book===selected)));$('#selected-book-title').textContent=BOOKS[selected].title;$('#selected-book-text').textContent=BOOKS[selected].text;}
+ function books(initialId,shelfIndex){
+  if(!canOpenModal())return false;
+  const library=callbacks.getProgress().library??initialLibrary(),shelf=Number.isInteger(shelfIndex)&&SHELF_TOPICS[shelfIndex]?shelfIndex:(BOOKS[initialId??library.selectedBookId]?.shelf??0),ids=readingShelfBooks(shelf);
+  let selected=ids.includes(initialId)?initialId:ids.includes(library.selectedBookId)?library.selectedBookId:ids[0];
+  open(`<button class="modal-x" data-close aria-label="책장 닫기">×</button><span class="map-eyebrow">별숲 도서관 · ${shelf+1}번 책장</span><h2 id="modal-title">${SHELF_TOPICS[shelf]}에 관한 두 권</h2><p>마음에 드는 책을 골라 빈 독서석에서 읽어 봐요. 다른 주제는 다른 책장에 있어요.</p><p class="library-reading-progress">독서석에서 펼친 책 ${library.readBookIds.length} / ${Object.keys(BOOKS).length}권 · 읽기와 대출 기록은 이 브라우저에 남아요</p><div class="book-choices">${ids.map(id=>{const b=BOOKS[id];return `<button data-book="${id}" style="--book-color:${b.color}" aria-pressed="false"><span>${b.tag}${library.readBookIds.includes(id)?' · 읽은 책':''}</span><strong>${b.title}</strong></button>`;}).join('')}</div><section class="book-page" aria-live="polite"><h3 id="selected-book-title"></h3><p id="selected-book-text"></p><details class="book-question"><summary>읽고 생각해 보기</summary><p id="selected-book-question"></p></details></section><div class="modal-actions"><button class="secondary" data-close>다른 책장 둘러보기</button><button class="primary" id="select-book">이 책 고르기</button></div>`,'library-books');
+  function render(){content.querySelectorAll('[data-book]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.book===selected)));$('#selected-book-title').textContent=BOOKS[selected].title;$('#selected-book-text').textContent=BOOKS[selected].text;$('#selected-book-question').textContent=BOOKS[selected].question;content.querySelector('.book-question').open=false;}
   content.querySelectorAll('[data-book]').forEach(b=>b.onclick=()=>{selected=b.dataset.book;render();});render();
   $('#select-book').onclick=()=>{callbacks.library({type:'SELECT_BOOK',bookId:selected});afterClose=()=>api.toast(`「${BOOKS[selected].title}」을 골랐어요. 빈 의자에 앉아 읽어 봐요`,4500);dialog.close();};
  }

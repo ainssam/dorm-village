@@ -241,7 +241,7 @@ function interact(exitOnly=false,requestedTarget=null){
  else if(target.type==='cafeFood')cafeFoodHost?.open(target.mode);
  else if(target.type==='amusementFood'){amusementFoodHost??=makeAmusementFoodTools();if(!amusementFoodHost.open(target))ui.toast('카트 앞에서 간식을 고를 수 있어요');}
  else if(target.type==='villageTool'){if(room.id==='bakeryCafe'&&target.tool==='bakery')cafeTools.open();else villageTools.open(target);}
- else if(target.type==='books')ui.books(target.bookId);else if(target.type==='loan')ui.loan();else if(target.type==='resident')ui.resident(target);
+ else if(target.type==='books')ui.books(target.bookId,target.shelf);else if(target.type==='loan')ui.loan();else if(target.type==='resident')ui.resident(target);
  else if(target.type==='garden'){if(gardenCanHarvest(progress.garden,target.id)){if(!transact({type:'HARVEST_FLOWERS',id:target.id})){ui.toast('저장하지 못해 꽃잎을 거두지 않았어요',4000);return;}ui.toast(progress.garden.phase==='ready'?`꽃잎 3개를 모았어요! 다른 꽃밭 ${gardenRemaining(progress.garden)}곳에도 꽃이 남아 있어요`:'세 꽃밭의 꽃잎을 모두 모았어요! 다시 물을 주면 함께 자라요',5000);}else ui.message('우리 꽃밭',gardenMessage(progress.garden));}
  else if(target.type==='pose'){
   const campSeat=target.id===PLAZA.seats[0].id;if(campSeat&&!canApproachCampSeat(room.id,player.position,collision(),target)){ui.toast('오른쪽 통나무 자리 앞까지 걸어와 주세요');return;}

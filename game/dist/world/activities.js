@@ -1,3 +1,4 @@
+import {BOOKS,bookDiscoveryId} from '../state/library.js';
 import {FOREST_SEATS} from './forest-coast-layout.js';
 import {AIRPORT_SEAT} from '../aviation/main-airfield-layout.js';
 import {HARBOR_SEAT} from '../transport/harbor-lighthouse-layout.js';
@@ -9,6 +10,7 @@ import {libraryPoses} from './library-layout.js';
 import {configureSeating} from './seating.js';
 // Existing objects tell a single small story: carry a little light through the village.
 export const DISCOVERIES={
+ ...Object.fromEntries(Object.entries(BOOKS).filter(([id])=>!['pocket-star','cloud-letter','seed-chair'].includes(id)).map(([id,b])=>[bookDiscoveryId(id),{place:'별숲 도서관',title:b.title,text:b.text}])),
  'pond-catch':{place:'바람 공원 · 연못',title:'찌가 잠기는 순간',text:'작은 찌를 바라보다가 물고기와 줄을 나눠 당겼다. 기다리고 쉬어 가니 연못의 반짝임이 손 가까이 왔다.'},
  'sea-catch':{place:'별빛 마을 · 바닷가',title:'파도 끝의 선물',text:'바다에 낚싯줄을 드리웠다. 파도처럼 감았다 쉬기를 반복하니 작은 물고기가 반짝이며 올라왔다.'},
  'quiet-seat':{place:'마을의 빈 의자',title:'잠깐 앉아 쉬는 시간',text:'빈 의자에 앉아 책상과 주변 풍경을 바라보았다. 쉬어 가는 시간도 작은 하루의 일부다.'},
