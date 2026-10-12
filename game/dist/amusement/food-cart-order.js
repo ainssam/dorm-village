@@ -91,12 +91,12 @@ const PANEL=`<section class="amusement-food-panel" role="dialog" aria-modal="tru
 /** Small touch-first view. Every listener and DOM node is released on dispose. */
 export function createAmusementFoodOrderUI({stage,controller,getRoom,doc=globalThis.document,win=globalThis.window}={}){
  const root=doc.createElement('div');root.className='amusement-food-overlay';root.hidden=true;root.innerHTML=PANEL;root.setAttribute('aria-label','놀이섬 간식 카트');root.setAttribute('tabindex','-1');stage.append(root);
- const $=selector=>root.querySelector(selector),listeners=[];let alive=true,cartKey='',renderKey='',visibleBefore=false,phaseBefore='closed',sceneToolsState=null;
+ const $=selector=>root.querySelector(selector),listeners=[];let alive=true,cartKey='',renderKey='',visibleBefore=false,phaseBefore='closed',sceneChromeState=[];
  const listen=(target,type,fn,options)=>{target?.addEventListener(type,fn,options);listeners.push([target,type,fn,options]);};
- function hideSceneTools(){const tools=stage.querySelector?.('.scene-tools');if(!tools)return;if(!sceneToolsState)sceneToolsState={node:tools,hidden:tools.hidden};tools.hidden=true;}
- function restoreSceneTools(){if(!sceneToolsState)return;sceneToolsState.node.hidden=sceneToolsState.hidden;sceneToolsState=null;}
+ function hideSceneChrome(){for(const selector of['.scene-tools','.mission-pill']){const node=stage.querySelector?.(selector);if(!node)continue;if(!sceneChromeState.some(entry=>entry.node===node))sceneChromeState.push({node,hidden:node.hidden});node.hidden=true;}}
+ function restoreSceneChrome(){for(const entry of sceneChromeState)entry.node.hidden=entry.hidden;sceneChromeState=[];}
  function hide(){if(!root.hidden)root.hidden=true;}
- function render(){if(!alive)return;const s=controller.snapshot(),visible=getRoom?.()==='amusementIsland'&&s.active&&!doc.hidden;if(root.hidden!==!visible)root.hidden=!visible;if(visible)hideSceneTools();else restoreSceneTools();if(!visible){renderKey='';if(visibleBefore){visibleBefore=false;doc.querySelector?.('#scene')?.focus?.({preventScroll:true});}phaseBefore='closed';return;}
+ function render(){if(!alive)return;const s=controller.snapshot(),visible=getRoom?.()==='amusementIsland'&&s.active&&!doc.hidden;if(root.hidden!==!visible)root.hidden=!visible;if(visible)hideSceneChrome();else restoreSceneChrome();if(!visible){renderKey='';if(visibleBefore){visibleBefore=false;doc.querySelector?.('#scene')?.focus?.({preventScroll:true});}phaseBefore='closed';return;}
   const signature=[s.cartId,s.phase,s.itemId,s.notice].join('|');if(signature===renderKey)return;renderKey=signature;
   if(s.cartId!==cartKey){cartKey=s.cartId;const select=$('[data-food-choice]'),old=select.value;select.replaceChildren(...s.foods.map(id=>{const option=doc.createElement('option');option.value=id;option.textContent=FOOD_CART_LABELS[id];return option;}));select.value=s.foods.includes(old)?old:s.foods[0]??'';}
   const cart=cartById.get(s.cartId);$('#amusement-food-title').textContent=cart?.label??'간식 카트';
@@ -114,7 +114,7 @@ export function createAmusementFoodOrderUI({stage,controller,getRoom,doc=globalT
  listen(doc,'keydown',e=>{if(!controller.snapshot().active||doc.hidden)return;if(e.code==='Escape'){if(e.target?.tagName==='SELECT')return;e.preventDefault();e.stopImmediatePropagation?.();controller.cancel();return;}if(e.code==='Tab'){const focusable=['[data-food-choice]','[data-food-order]','[data-food-eat]','[data-food-cancel]','[data-food-close]'].map($).filter(el=>el&&!el.hidden&&!el.disabled);if(!focusable.length)return;const first=focusable[0],last=focusable.at(-1);if(e.shiftKey&&e.target===first){e.preventDefault();last.focus?.({preventScroll:true});}else if(!e.shiftKey&&e.target===last){e.preventDefault();first.focus?.({preventScroll:true});}}});
  listen(doc,'visibilitychange',()=>{if(doc.hidden)controller.cancel('hidden');});listen(win,'pagehide',()=>controller.cancel('pagehide'));
  render();
- return{render,update:render,dispose(){if(!alive)return;alive=false;controller.cancel();restoreSceneTools();for(const[node,type,fn,options]of listeners)node?.removeEventListener(type,fn,options);listeners.length=0;root.remove();}};
+ return{render,update:render,dispose(){if(!alive)return;alive=false;controller.cancel();restoreSceneChrome();for(const[node,type,fn,options]of listeners)node?.removeEventListener(type,fn,options);listeners.length=0;root.remove();}};
 }
 
 /** Main-frame facade used by game.js; deliberately does not create a RAF. */
@@ -124,15 +124,18 @@ export function createAmusementFoodHost({stage,getRoom,getView,getActors,isAllow
  const sync=(_snapshot,reason)=>{ui?.render();const s=controller.snapshot();if(s.active&&!cameraFocus)cameraFocus=beginCameraFocus(s.cartId);if(!s.active&&cameraFocus){cameraFocus.release?.({immediate:['scene','dispose','pagehide','hidden'].includes(reason)});if(!cameraFocus.active)cameraFocus=null;}const next=busy();if(next!==lastBusy){lastBusy=next;onChange(s);}};
  const controller=createAmusementFoodController({getRoom,getView,getActors,isAllowed,onChange:sync,makeFood,makeEatingPose,makePoseFrame});
  ui=createAmusementFoodOrderUI({stage,controller,getRoom,doc,win});
+ function forceReleaseCameraFocus(){if(cameraFocus){const focus=cameraFocus;cameraFocus=null;try{focus.release?.({immediate:true});}finally{const next=busy();if(next!==lastBusy){lastBusy=next;onChange(controller.snapshot());}}}}
+ const onPageHide=()=>{controller.cancel('pagehide');forceReleaseCameraFocus();},onVisibilityChange=()=>{if(doc.hidden){controller.cancel('hidden');forceReleaseCameraFocus();}};
+ win?.addEventListener?.('pagehide',onPageHide);doc?.addEventListener?.('visibilitychange',onVisibilityChange);
  return{
   targets:()=>getRoom?.()==='amusementIsland'?FOOD_CART_TARGETS:[],
   open(target){if(disposed||target?.type!=='amusementFood')return false;return controller.open(target.cartId);},
   // Kept on the host facade so the UI can be exercised by a lightweight DOM
   // fixture and the game integration can inspect each transient state.
   order:itemId=>controller.order(itemId),eat:()=>controller.eat(),
-  cancel:()=>controller.cancel(),sceneChanged:()=>controller.sceneChanged(),
-  frame(dt){if(disposed)return;if(getRoom?.()!=='amusementIsland'){controller.sceneChanged();ui.render();return;}controller.tick(dt);cameraFocus?.tick?.(dt);if(cameraFocus&&!cameraFocus.active)cameraFocus=null;ui.update();const next=busy();if(next!==lastBusy){lastBusy=next;onChange(controller.snapshot());}},
+  cancel:()=>controller.cancel(),sceneChanged(){const changed=controller.sceneChanged();forceReleaseCameraFocus();ui.render();return changed;},
+  frame(dt){if(disposed)return;if(getRoom?.()!=='amusementIsland'){controller.sceneChanged();forceReleaseCameraFocus();ui.render();return;}controller.tick(dt);cameraFocus?.tick?.(dt);if(cameraFocus&&!cameraFocus.active)cameraFocus=null;ui.update();const next=busy();if(next!==lastBusy){lastBusy=next;onChange(controller.snapshot());}},
   get busy(){return busy();},get active(){return controller.active;},snapshot:()=>controller.snapshot(),
-  dispose(){if(disposed)return;controller.dispose();ui.dispose();disposed=true;}
+  dispose(){if(disposed)return;controller.dispose();forceReleaseCameraFocus();win?.removeEventListener?.('pagehide',onPageHide);doc?.removeEventListener?.('visibilitychange',onVisibilityChange);ui.dispose();disposed=true;}
  };
 }

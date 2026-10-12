@@ -66,8 +66,15 @@ test('hidden and pagehide cancellation release camera focus immediately',()=>{
  for(const event of['visibilitychange','pagehide']){let active=false,immediate=false;const focus={get active(){return active;},tick(){},release(options={}){immediate=!!options.immediate;active=false;}};const f=fixture({beginCameraFocus:()=>{active=true;return focus;}});assert(f.host.open(f.host.targets()[1]));if(event==='visibilitychange')f.doc.hidden=true;(event==='pagehide'?f.win:f.doc).dispatchEvent(new Event(event));assert.equal(immediate,true,event+' does not leave a return animation behind');assert.equal(f.host.busy,false);f.host.dispose();}
 });
 
-test('food modal restores the scene-tools hidden state it found on entry',()=>{
- for(const wasHidden of[false,true]){const f=fixture(),tools=f.stage.querySelector('.scene-tools');tools.hidden=wasHidden;assert(f.host.open(f.host.targets()[0]));assert.equal(tools.hidden,true,'tools are unavailable while the food dialog owns the screen');f.host.cancel();assert.equal(tools.hidden,wasHidden,'cancel restores the exact state that existed before the dialog');f.host.dispose();}
+test('food modal restores the scene chrome hidden states it found on entry',()=>{
+ for(const[toolsHidden,missionHidden]of[[false,false],[true,false],[false,true]]){const f=fixture(),tools=f.stage.querySelector('.scene-tools'),mission=f.stage.querySelector('.mission-pill');tools.hidden=toolsHidden;mission.hidden=missionHidden;assert(f.host.open(f.host.targets()[0]));assert.equal(tools.hidden,true,'tools are unavailable while the food dialog owns the screen');assert.equal(mission.hidden,true,'duplicate mission copy is hidden while the food dialog owns the screen');f.host.cancel();assert.equal(tools.hidden,toolsHidden,'cancel restores the toolbar state found before the dialog');assert.equal(mission.hidden,missionHidden,'cancel restores the mission pill state found before the dialog');f.host.dispose();}
+});
+
+test('orphaned focus leases are immediately released after cancel on dispose, scene exit, hidden, and pagehide',()=>{
+ for(const exit of['dispose','sceneChanged','frame','hidden','pagehide']){let active=false;const releases=[];const focus={get active(){return active;},tick(){},release(options={}){const immediate=!!options.immediate;releases.push(immediate?'immediate':'smooth');if(immediate)active=false;}};const f=fixture({beginCameraFocus:()=>{active=true;return focus;}});assert(f.host.open(f.host.targets()[0]));f.host.cancel();assert(f.host.busy,'the smooth-return lease remains owned after the controller closes');assert.deepEqual(releases,['smooth']);
+  if(exit==='dispose')f.host.dispose();else if(exit==='sceneChanged'){f.setRoom('courtyard');f.host.sceneChanged();}else if(exit==='frame'){f.setRoom('courtyard');f.host.frame(.016);}else if(exit==='hidden'){f.doc.hidden=true;f.doc.dispatchEvent(new Event('visibilitychange'));}else f.win.dispatchEvent(new Event('pagehide'));
+  assert.deepEqual(releases,['smooth','immediate'],exit+' releases a stale return lease immediately');assert.equal(active,false,exit+' does not leave a camera transition alive');assert.equal(f.host.busy,false,exit+' clears the activity lock');assert.equal(f.lockChanges.at(-1),false,exit+' notifies game controls that the lock ended');f.host.dispose();
+ }
 });
 
 test('mobile picker keeps native Escape, dialog Escape cancels, and Tab stays inside visible controls',()=>{

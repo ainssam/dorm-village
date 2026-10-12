@@ -20,9 +20,10 @@ test('selected food cart auto-focuses above the controls, fits a resized phone, 
  globalThis.document=doc;
  const overlay=()=>stage.children.at(-1),panel={hidden:false,getClientRects:()=>overlay()?.hidden?[]:[1],getBoundingClientRect:()=>rect(height<400?height-128:328,height-8)};
  const sceneTools={hidden:false,getClientRects(){return this.hidden?[]:[1];},getBoundingClientRect:()=>rect(131,232)};
+ const missionPill={hidden:false,getClientRects(){return this.hidden?[]:[1];},getBoundingClientRect:()=>rect(84,124)};
  const bottom={hidden:false,getClientRects:()=>[1],getBoundingClientRect:()=>rect(height-196,height-30)};
  const dpad={getBoundingClientRect:()=>rect(height-132,height-8,12,Math.min(147,width-12))},action={getBoundingClientRect:()=>rect(height-8,height-8,width-12,width-12)};
- const stage=new Node();Object.assign(stage,{clientWidth:width,clientHeight:height,append(...items){Node.prototype.append.call(this,...items);},getBoundingClientRect:()=>rect(0,height),querySelector:selector=>selector==='.amusement-food-panel'?panel:selector==='.scene-tools'?sceneTools:selector==='.bottom-controls'?bottom:selector==='.dpad'?dpad:selector==='.action-area'?action:null,querySelectorAll:()=>[sceneTools,bottom]});
+ const stage=new Node();Object.assign(stage,{clientWidth:width,clientHeight:height,append(...items){Node.prototype.append.call(this,...items);},getBoundingClientRect:()=>rect(0,height),querySelector:selector=>selector==='.amusement-food-panel'?panel:selector==='.scene-tools'?sceneTools:selector==='.mission-pill'?missionPill:selector==='.bottom-controls'?bottom:selector==='.dpad'?dpad:selector==='.action-area'?action:null,querySelectorAll:()=>[missionPill,sceneTools,bottom]});
  const win=new Node();
  const canvas=new EventTarget();Object.assign(canvas,{style:{},getRootNode:()=>new EventTarget()});
  const camera=new THREE.OrthographicCamera(),view=buildAmusementView(ROOMS.amusementIsland),actor=await original();
@@ -32,13 +33,13 @@ test('selected food cart auto-focuses above the controls, fits a resized phone, 
  t.after(()=>{host.dispose();cam.dispose();view.dispose();actor.dispose();Object.assign(globalThis,old);});
  cam.zoomBy(1.45);const prior={position:camera.position.clone(),target:cam.controls.target.clone(),zoom:camera.zoom,enabled:cam.controls.enabled};
  const normalHeight=projected(vertices(view.root.getObjectByName('food.ice-cream')),camera,width,height).height;
- assert.equal(sceneTools.getClientRects().length,1,'the unrelated mobile toolbar occupies y=131–232 before opening the cart');
- assert(host.open({type:'amusementFood',cartId:'cold'}),'walk-up menu acquires a bounded camera focus');assert.equal(sceneTools.hidden,true,'the food dialog removes unrelated scene tools from the camera safe area');host.frame(.08);assert.notEqual(camera.zoom,1,'focus eases in instead of snapping');host.frame(.6);
+ assert.equal(sceneTools.getClientRects().length,1,'the unrelated mobile toolbar occupies y=131–232 before opening the cart');assert.equal(missionPill.getBoundingClientRect().top,84);assert.equal(missionPill.getBoundingClientRect().bottom,124,'the duplicated mission pill occupies y=84–124 before opening the cart');
+ assert(host.open({type:'amusementFood',cartId:'cold'}),'walk-up menu acquires a bounded camera focus');assert.equal(sceneTools.hidden,true,'the food dialog removes unrelated scene tools from the camera safe area');assert.equal(sceneTools.getClientRects().length,0);assert.equal(missionPill.hidden,true,'the food dialog hides duplicated mission copy from the camera safe area');assert.equal(missionPill.getClientRects().length,0,'the stale mission rectangle stops reserving focus space');host.frame(.08);assert.notEqual(camera.zoom,1,'focus eases in instead of snapping');host.frame(.6);
  const focused=projected(vertices(view.root.getObjectByName('food.ice-cream')),camera,width,height);
  assert.equal(camera.zoom,1,'focus uses an absolute, neutral projection despite a prior manual zoom');
  assert(focused.height>Math.max(28,normalHeight*1.3),`selected food grows beyond its all-cart walk frame (${normalHeight.toFixed(1)}→${focused.height.toFixed(1)}px)`);
  assert(focused.left>=10&&focused.right<=width-10,'selected cart is horizontally visible');
- assert(focused.top>=93&&focused.bottom<=panel.getBoundingClientRect().top-8,'the cart fits beneath the real topbar and above the measured dialog');assert(focused.top<sceneTools.getBoundingClientRect().bottom,'camera view is not squeezed below the hidden toolbar');
+ assert(focused.top>=93&&focused.bottom<=panel.getBoundingClientRect().top-8,'the cart fits beneath the real topbar and above the measured dialog');
  width=568;height=320;stage.clientWidth=width;stage.clientHeight=height;bottom.getBoundingClientRect=()=>({top:height-68,bottom:height-8,left:0,right:width,width,height:60});cam.resize();host.frame(.6);
  const landscape=projected(vertices(view.root.getObjectByName('food.ice-cream')),camera,width,height);
  assert(landscape.height>32.5,'compact landscape focus still gives the selected item useful size');assert(landscape.top>=93&&landscape.bottom<=panel.getBoundingClientRect().top-8,'resized landscape focus keeps the cart above the live order panel');
@@ -47,7 +48,7 @@ test('selected food cart auto-focuses above the controls, fits a resized phone, 
  assert(narrow.height>30,`narrow landscape focus stays legible at 390×320 (${narrow.height.toFixed(1)}px)`);assert(narrow.top>=93&&narrow.bottom<=panel.getBoundingClientRect().top-8,'narrow landscape scene remains above the compact sheet');
  const css=fs.readFileSync('dist/amusement/food-cart-order.css','utf8'),narrowLayout=css.slice(css.indexOf('max-width:459px'));
  assert.match(narrowLayout,/align-items:end/);assert.match(narrowLayout,/min-height:42px/,'compact landscape controls retain a comfortable touch target');assert.match(narrowLayout,/small\{display:none\}/,'compact mode drops nonessential hint text to preserve view height');
- host.cancel();assert.equal(sceneTools.hidden,false,'closing restores the toolbar’s exact prior visible state');assert.equal(host.busy,true,'the walking lock remains while camera return is underway');host.frame(.6);
+ host.cancel();assert.equal(sceneTools.hidden,false,'closing restores the toolbar’s exact prior visible state');assert.equal(missionPill.hidden,false,'closing restores the mission pill’s exact prior visible state');assert.equal(host.busy,true,'the walking lock remains while camera return is underway');host.frame(.6);
  assert.equal(host.busy,false,'ordinary close completes the return transition');
  assert(camera.position.distanceTo(prior.position)<1e-9);assert(cam.controls.target.distanceTo(prior.target)<1e-9);assert.equal(camera.zoom,prior.zoom);assert.equal(cam.controls.enabled,true,'normal controls return after the smooth camera lease');
  cam.setEnabled(false);const locked=cam.beginAmusementFoodFocus('cold',{player:actor.actor,reducedMotion:false});assert(locked);locked.release();assert.equal(cam.controls.enabled,false,'an independent external camera lock remains respected after a direct focus lease');cam.setEnabled(true);
