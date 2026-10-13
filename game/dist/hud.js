@@ -11,7 +11,7 @@ export function setupHud(doc=document){
  const menu=doc.querySelector('#hud-menu'),panel=doc.querySelector('#hud-panel'),dismiss=doc.querySelector('#hud-close');
  const clearance=setupHudClearance({doc});let alive=true;
  function close({focus=false}={}){if(panel.hidden)return;panel.hidden=true;menu.setAttribute('aria-expanded','false');if(focus)menu.focus({preventScroll:true});}
- function toggle(){if(!alive||menu.disabled)return;if(!panel.hidden){close({focus:true});return;}panel.hidden=false;menu.setAttribute('aria-expanded','true');panel.querySelector('button:not(:disabled)')?.focus({preventScroll:true});}
+ function toggle(){if(!alive||menu.disabled)return;if(!panel.hidden){close({focus:true});return;}panel.hidden=false;menu.setAttribute('aria-expanded','true');(panel.querySelector('.phone-app-grid button:not(:disabled)')??panel.querySelector('button:not(:disabled)'))?.focus({preventScroll:true});}
  const onKey=e=>{if(panel.hidden||e.key!=='Escape')return;e.preventDefault();e.stopPropagation();close({focus:true});};
  const onOutside=e=>{if(panel.hidden||panel.contains(e.target)||menu.contains(e.target))return;close();if(['scene','overview-sky','world-viewport','stage'].includes(e.target?.id)){e.preventDefault();e.stopPropagation();}};
  const onFocus=e=>{if(!panel.hidden&&!panel.contains(e.target)&&!menu.contains(e.target)&&!['scene','overview-sky','world-viewport','stage'].includes(e.target?.id))close();};

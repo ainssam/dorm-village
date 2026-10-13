@@ -37,3 +37,23 @@ test('orthographic-to-eye handoff preserves projected scene points at both trans
 test('screen rotation restores the saved pose and zoom into freshly resized source bounds',async()=>{
  const r=await rig(),before=stamp(r);let resized=0;try{r.pov.begin({...r,width:390,height:844,resizeSource(){resized++;r.sourceCamera.left=-12;r.sourceCamera.right=12;r.sourceCamera.top=4;r.sourceCamera.bottom=-4;r.sourceCamera.zoom=.1;r.sourceCamera.position.set(0,0,0);r.sourceCamera.updateProjectionMatrix();}});r.pov.frame({owner:r.owner,driver:{phase:'active'},width:844,height:390});r.pov.release(r.owner);assert.equal(resized,1);const after=stamp(r);assert.deepEqual({...after,projection:before.projection},before);assert.deepEqual(after.projection,[-12,12,4,-4,.1,100]);}finally{r.pov.dispose();}
 });
+
+test('viking perspective FOV interpolates smoothly from portrait to wide and follows live resizes',async()=>{
+ const {vikingFovForAspect}=await import('../dist/amusement/viking-camera.js');
+ assert.equal(vikingFovForAspect(.6),72);assert.equal(vikingFovForAspect(.8),72);
+ assert(vikingFovForAspect(.9)<72&&vikingFovForAspect(.9)>68);
+ assert.equal(vikingFovForAspect(1),68);
+ assert(vikingFovForAspect(1.1)<68&&vikingFovForAspect(1.1)>64);
+ assert.equal(vikingFovForAspect(1.2),64);assert.equal(vikingFovForAspect(2),64);
+ const r=await rig();try{
+  r.pov.begin({...r,width:390,height:844});let previous=null;
+  for(const aspect of[.79,.8,.81,.9,1,1.1,1.19,1.2,1.21]){
+   const camera=r.pov.frame({owner:r.owner,driver:{phase:'active',elapsed:1,dismount:false},width:Math.round(aspect*1000),height:1000});
+   assert(camera);assert(Math.abs(camera.aspect-aspect)<.001);assert(Math.abs(camera.fov-vikingFovForAspect(aspect))<1e-8);
+   if(previous!==null)assert(Math.abs(camera.fov-previous)<3.5,`FOV jumps during resize near ${aspect}: ${previous}→${camera.fov}`);
+   previous=camera.fov;
+   const eye=r.player.worldToLocal(camera.position.clone());assert(Math.abs(eye.z-.7)<1e-8&&Math.abs(eye.y-.9)<1e-8,'resizing preserves the seat-forward eye offset');
+   const direction=new T.Vector3();camera.getWorldDirection(direction);assert(direction.z>.99&&Math.abs(direction.x)<1e-8,'resizing preserves the rider-forward sightline');
+  }
+ }finally{r.pov.dispose();}
+});

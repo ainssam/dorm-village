@@ -10,3 +10,6 @@
 @media (pointer:coarse),(hover:none){.claw-overlay .claw-stick-controls{display:flex}.claw-overlay .claw-directions{display:none}.claw-overlay .claw-controls{align-items:center}}
 @media (orientation:landscape) and (max-height:520px) and (pointer:coarse),(orientation:landscape) and (max-height:520px) and (hover:none){.claw-overlay .claw-stick-controls{width:124px}.claw-overlay .claw-stick-controls .movement-stick{width:124px;height:124px}.claw-overlay .claw-actions{min-width:0;grid-template-columns:repeat(2,minmax(48px,1fr))}}
 @media (prefers-reduced-motion:reduce){.claw-overlay *{scroll-behavior:auto}}
+/* The claw panel owns guidance while the village map is unavailable. */
+.claw-open .mission-pill,.claw-open footer{visibility:hidden!important;pointer-events:none!important}
+.claw-heading strong{font-size:18px}.claw-overlay button{font-size:16px}.claw-panel p{font-size:16px;line-height:1.45}.claw-panel small{font-size:13px;line-height:1.4}

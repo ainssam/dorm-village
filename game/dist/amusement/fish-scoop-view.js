@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
 import {signLabel} from '../world/handwriting.js';
 import {FISH_SCOOP_POOL,FISH_SCOOP_ACTIVITY} from './layout.js';
-import {fishScoopPositions,FISH_SCOOP_HIT_TIME,FISH_SCOOP_RISE_TIME} from './fish-scoop-model.js';
+import {fishScoopPositions,FISH_SCOOP_LOWER_TIME,FISH_SCOOP_SLIDE_TIME,FISH_SCOOP_RISE_TIME,FISH_SCOOP_RESTING_Y,FISH_SCOOP_SUBMERGED_Y} from './fish-scoop-model.js';
 
 const Y=new THREE.Vector3(0,1,0),PALETTE=['#e89a78','#83aeb0','#e0c778','#bb93ae'];
 function triangleGeometry(points){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(points.flat(),3));g.computeVertexNormals();return g;}
@@ -50,24 +50,34 @@ export function buildFishScoopSite(parent){
  const post=new THREE.Mesh(new THREE.BoxGeometry(.09,.62,.09),mat('#9d795d'));post.position.y=.31;sign.add(post);
  const board=new THREE.Mesh(new THREE.BoxGeometry(.65,.34,.08),mat('#d9c2a0'));board.position.set(0,.55,0);board.name='fish-scoop.sign.board';sign.add(board);
  signLabel('뜰채 연못',0,.55,.044,.57,'#657d79','transparent',sign);
- let state=null,time=0,disposed=false;
+ let state=null,time=0,disposed=false,heldFishIndex=null;
+ function releaseHeldFish(reduced=false){
+  if(heldFishIndex===null)return;
+  const index=heldFishIndex,mesh=fish[index];fishRoot.add(mesh);
+  const p=state&&fishScoopPositions(state)[index];
+  if(p){mesh.position.set(p.x,.285+(reduced?0:Math.sin(state.clock*3+index*2)*.025),p.z);mesh.rotation.y=p.yaw;}
+  mesh.visible=true;heldFishIndex=null;
+ }
  function update(next,{reduced=false}={}){
-  if(disposed)return;state=next;
-  if(!next){net.visible=false;ripple.visible=false;return;}
+  if(disposed)return;
+  if(!next){releaseHeldFish(reduced);state=null;net.visible=false;ripple.visible=false;return;}
+  state=next;
   net.visible=next.phase==='playing'||next.phase==='paused'||next.phase==='complete';
+  const action=next.scoop,carried=action.phase==='rising'&&action.result==='caught'&&Number.isInteger(action.fishIndex)?action.fishIndex:null;
+  if(heldFishIndex!==carried){releaseHeldFish(reduced);if(carried!==null){heldFishIndex=carried;const mesh=fish[carried],p=fishScoopPositions(next)[carried];net.add(mesh);mesh.position.set(p.x-next.net.x,.285+(reduced?0:Math.sin(next.clock*3+carried*2)*.025)-net.position.y,p.z-next.net.z);mesh.rotation.y=p.yaw;mesh.visible=true;}}
   const fishPositions=fishScoopPositions(next);
   for(let i=0;i<fish.length;i++){
-   const p=fishPositions[i],mesh=fish[i];mesh.position.set(p.x,.285+(reduced?0:Math.sin(next.clock*3+i*2)*.025),p.z);mesh.rotation.y=p.yaw;mesh.visible=p.visible;
+   const p=fishPositions[i],mesh=fish[i];if(i!==heldFishIndex){mesh.position.set(p.x,.285+(reduced?0:Math.sin(next.clock*3+i*2)*.025),p.z);mesh.rotation.y=p.yaw;mesh.visible=p.visible;}
    if(!reduced)mesh.userData.tail.rotation.y=Math.sin(next.clock*9+i)*.20;
   }
   net.position.set(next.net.x,0,next.net.z);
-  const action=next.scoop,lower=action.phase==='lowering'?smooth(action.elapsed/FISH_SCOOP_HIT_TIME):action.phase==='rising'?1-smooth(action.elapsed/FISH_SCOOP_RISE_TIME):0;
-  net.position.y=action.phase==='idle'?.72:.72-.50*lower;
+  const lower=action.phase==='lowering'?smooth(action.elapsed/FISH_SCOOP_LOWER_TIME):action.phase==='sliding'?1:action.phase==='rising'?1-smooth(action.elapsed/FISH_SCOOP_RISE_TIME):0;
+  net.position.y=action.phase==='idle'?FISH_SCOOP_RESTING_Y:FISH_SCOOP_RESTING_Y-(FISH_SCOOP_RESTING_Y-FISH_SCOOP_SUBMERGED_Y)*lower;
   if(action.phase==='rising'&&action.result==='caught'){ripple.visible=true;ripple.position.x=next.net.x;ripple.position.z=next.net.z;ripple.scale.setScalar(reduced?1:1.05+.16*Math.sin(next.clock*8));ripple.material.opacity=reduced?.35:.42+.18*Math.sin(next.clock*8);}
   else ripple.visible=false;
  }
  function animate(dt=0,{reduced=false}={}){if(disposed||!Number.isFinite(dt)||dt<=0||reduced)return;time+=Math.min(dt,.05);if(!state){for(let i=0;i<fish.length;i++)fish[i].position.y=.285+Math.sin(time*2.4+i*1.7)*.022;}}
- function dispose(){if(disposed)return;disposed=true;disposeToyTree(root);}
+ function dispose(){if(disposed)return;releaseHeldFish();disposed=true;disposeToyTree(root);}
  root.updateMatrixWorld(true);
  return{root,fish,net,ripple,boardwalk,sign,update,animate,dispose,get state(){return state;}};
 }

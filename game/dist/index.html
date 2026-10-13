@@ -36,6 +36,8 @@
 <link rel="stylesheet" href="./amusement/claw.css">
 <link rel="stylesheet" href="./amusement/fish-scoop.css">
 <link rel="stylesheet" href="./amusement/food-cart-order.css">
+<link rel="stylesheet" href="activity-outcome.css">
+<link rel="stylesheet" href="village-ui.css">
 </head>
 <body>
 <main class="game-shell">
@@ -48,15 +50,28 @@
 <div id="weather-layer" aria-hidden="true"></div>
 <div id="camera-turn-veil" class="camera-turn-veil" aria-hidden="true"></div>
 <div class="scene-top"><div class="mission-pill"><span aria-hidden="true">✦</span><p id="mission">마을에도 반짝이는 별이 있어요</p></div>
-<div class="scene-tools"><button id="village-map" title="마을 지도 · M" aria-label="마을 지도 열기" aria-haspopup="dialog" aria-controls="modal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Zm0 0V3m6 18V6"/></svg><span class="map-tool-label">지도</span></button><button id="bgm-toggle" type="button" aria-pressed="false" aria-label="배경음 켜기">소리</button><button id="hud-menu" type="button" aria-expanded="false" aria-controls="hud-panel" title="시점·확대·기록·설정">메뉴</button></div>
-<section id="hud-panel" class="hud-panel" aria-label="시점과 놀이 도구" hidden>
-<div class="hud-heading"><strong>시점과 놀이 도구</strong><button id="hud-close" type="button" aria-label="놀이 도구 닫기">닫기</button></div>
+<div class="scene-tools"><button id="village-map" title="마을 지도 바로 열기 · M" aria-label="마을 지도 열기" aria-haspopup="dialog" aria-controls="modal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18-6 3V6l6-3 6 3 6-3v15l-6 3-6-3Zm0 0V3m6 18V6"/></svg><span class="map-tool-label">지도</span></button><button id="bgm-toggle" type="button" aria-pressed="false" aria-label="배경음 켜기">소리</button><button id="hud-menu" type="button" aria-expanded="false" aria-controls="hud-panel" title="지도·도감·사진첩·기록·설정 앱 열기">휴대폰</button></div>
+<section id="hud-panel" class="hud-panel" aria-label="도름이의 휴대폰 앱 메뉴" hidden>
+<div class="hud-heading"><strong>도름이의 휴대폰</strong><button id="hud-close" type="button" aria-label="휴대폰 닫기">닫기</button></div>
+<p class="phone-welcome">지도부터 작은 하루 기록까지, 필요한 앱을 골라요</p>
+<div class="phone-app-grid" role="group" aria-label="휴대폰 앱">
+<button id="phone-map" class="phone-app" type="button" aria-label="마을 지도 앱 열기" aria-haspopup="dialog"><span class="phone-app-icon" aria-hidden="true">⌖</span><strong>지도</strong><small>마을 길찾기</small></button>
+<button id="nature-guide" class="phone-app" aria-label="도름이 자연도감 열기" aria-haspopup="dialog"><span class="phone-app-icon" aria-hidden="true">❧</span><strong>자연도감</strong><small>물가에서 만난 친구</small></button>
+<button id="phone-photos" class="phone-app" type="button" aria-label="사진첩 열기" aria-haspopup="dialog"><span class="phone-app-icon" aria-hidden="true">▣</span><strong>사진첩</strong><small>찍어 둔 추억</small></button>
+<button id="materials-bag" class="phone-app" aria-label="재료가방 열기" aria-haspopup="dialog"><span class="phone-app-icon" aria-hidden="true">♧</span><strong>재료가방</strong><small>모은 재료와 요리</small></button>
+<button id="daybook" class="phone-app" title="작은 하루 기록" aria-label="작은 하루 기록 열기" aria-haspopup="dialog"><span class="phone-app-icon" aria-hidden="true">▤</span><strong>작은 기록</strong><small>발견과 책갈피</small></button>
+<button id="sky-open" class="phone-app" aria-haspopup="dialog" aria-label="하늘 보기"><span class="phone-app-icon" aria-hidden="true">☼</span><strong>하늘 보기</strong><small>오늘의 하늘</small></button>
+<button id="weather-open" class="phone-app" type="button" aria-haspopup="dialog" aria-controls="modal" aria-label="지역 날씨 열기"><span class="phone-app-icon" aria-hidden="true">☁</span><strong>지역 날씨</strong><small>날씨 살펴보기</small></button>
+<button id="settings" class="phone-app" aria-label="설정 열기"><span class="phone-app-icon" aria-hidden="true">⚙</span><strong>설정</strong><small>저장과 화면</small></button>
+</div>
+<details class="phone-camera-tools"><summary>시점과 화면 조절</summary><div class="phone-camera-body">
 <div class="hud-camera-modes"><button id="camera-reset" title="시점 되돌리기 · R" aria-label="시점 되돌리기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 8 M4 4v6h6"/><circle cx="12" cy="12" r="2.5"/></svg><span class="tool-label">전체 보기</span></button><button id="camera-home" type="button" title="방 전체에 맞추기 · R">방 맞춤</button></div>
 <div class="view-controls"><div class="camera-rotation" role="group" aria-label="시점 좌우 회전"><button id="camera-left" aria-label="시점 왼쪽으로 30도 회전" title="시점 왼쪽 회전 · [">↶</button><span>시점</span><button id="camera-right" aria-label="시점 오른쪽으로 30도 회전" title="시점 오른쪽 회전 · ]">↷</button></div><div class="zoom-controls" role="group" aria-label="화면 확대와 축소"><button id="zoom-out" aria-label="절반 크기로 축소" title="한 번 누르면 절반 크기">−</button><span id="zoom-readout" aria-live="polite">100%</span><button id="zoom-in" aria-label="더 가까이 보기" title="더 가까이 보기">+</button></div></div>
 <div class="camera-tilt"><div class="camera-tilt-label"><label for="camera-tilt">위아래 기울기</label><output id="camera-tilt-readout" for="camera-tilt">30°</output></div><div class="camera-tilt-controls"><button id="camera-tilt-down" type="button" aria-label="시점을 3도 낮추기" title="더 낮은 곳에서 바라보기">↓</button><input id="camera-tilt" type="range" min="23" max="68" step="1" value="30" aria-label="시점의 위아래 기울기" aria-describedby="camera-tilt-help"><button id="camera-tilt-up" type="button" aria-label="시점을 3도 높이기" title="더 높은 곳에서 내려다보기">↑</button></div><p id="camera-tilt-help">1°씩 조절 · 선택한 각도는 따라가도 유지돼요</p></div>
-<div class="hud-links"><button id="nature-guide" aria-label="도름이 자연도감 열기" aria-haspopup="dialog">자연도감</button><button id="materials-bag" aria-label="재료가방 열기" aria-haspopup="dialog">재료가방</button><button id="daybook" title="작은 하루 기록" aria-label="작은 하루 기록 열기" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h12a2 2 0 0 1 2 2v16H6a3 3 0 0 1-3-3V5a2 2 0 0 1 2-2Z M7 3v18 M11 8h4 M11 12h4"/></svg><span class="tool-label">기록</span></button><button id="sky-open" aria-haspopup="dialog" aria-label="하늘 보기">하늘 보기</button><button id="weather-open" type="button" aria-haspopup="dialog" aria-controls="modal" aria-label="지역 날씨 열기">지역 날씨</button><button id="settings" aria-label="설정 열기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16 M4 17h16"/><circle cx="9" cy="7" r="3" fill="#fff9eb"/><circle cx="16" cy="17" r="3" fill="#fff9eb"/></svg><span class="tool-label">설정</span></button></div><div class="score" aria-label="모은 별" role="status" aria-live="polite"><span class="score-stars" aria-hidden="true"><i>★</i><i>★</i><i>★</i></span><strong id="score">0 / 3</strong></div>
+</div></details>
+<div class="score" aria-label="모은 별" role="status" aria-live="polite"><span class="score-stars" aria-hidden="true"><i>★</i><i>★</i><i>★</i></span><strong id="score">0 / 3</strong></div>
 <section id="weather-menu-summary" aria-label="지역 날씨 연결 상태와 출처"></section>
-<p class="hud-help">이동 WASD · 방향키 / 행동 E<br>달리기 Shift / 점프 Space<br>지도 M / 방 맞춤 R / 회전 [ ]<br>드래그로 화면 이동 · 휠로 확대<br>우클릭 드래그로 좌우·위아래 회전</p><p class="hud-help">휴대폰은 스틱을 끝까지 밀면 달려요<br>한 손가락 이동 · 두 손가락 드래그 회전<br>손가락을 벌리거나 모아 확대·축소</p>
+<details class="phone-help"><summary>이동과 조작 안내</summary><p class="hud-help">이동 WASD · 방향키 / 행동 E<br>달리기 Shift / 점프 Space<br>지도 M / 방 맞춤 R / 회전 [ ]<br>드래그로 화면 이동 · 휠로 확대<br>우클릭 드래그로 좌우·위아래 회전</p><p class="hud-help">휴대폰은 스틱을 끝까지 밀면 달려요<br>한 손가락 이동 · 두 손가락 드래그 회전<br>손가락을 벌리거나 모아 확대·축소</p></details>
 </section></div>
 <p id="camera-mouse-help" class="camera-mouse-help">왼쪽 드래그 이동 · 우클릭 드래그 회전·기울기 · 휠 확대 <span>(Shift+드래그도 회전)</span></p>
 <div class="loading" id="loading" role="status"><span class="loader-star" aria-hidden="true">✦</span><p>도름이가 오는 중…</p></div>

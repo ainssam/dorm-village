@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import * as THREE from 'three';
+import {original} from './helpers/plane-proof.mjs';
+import {createArcheryRig} from '../dist/gym/archery-rig.js';
+import {buildArcheryView} from '../dist/gym/archery-view.js';
+const frame=draw=>({root:{x:0,y:.012,z:0},feet:{left:{x:-.21,y:.012,z:0},right:{x:.21,y:.012,z:0}},guard:1,draw,yaw:0,pitch:.14});
+test('archery target faces straight down the shooting lane',()=>{const s=buildArcheryView();try{assert.equal(s.target.rotation.y,0);}finally{s.dispose();}});
+test('bow stave and hand grip form one ordinary aligned bow with a real rear-hand draw',async()=>{const o=await original(),s=buildArcheryView(o.scene),rig=createArcheryRig(o);try{o.actor.position.y=.012;let first,last;for(const draw of[0,.5,1]){const f=frame(draw);rig.apply(f);s.setBow(rig.fit(f));o.scene.updateMatrixWorld(true);assert(s.stave.position.length()<1e-8,'bow stave is offset from the actual palm grip');assert.equal(s.riser.length,0,'a cross-body offset riser disguises the wrong stance');const grip=s.grip.getWorldPosition(new THREE.Vector3()),nock=s.nock.getWorldPosition(new THREE.Vector3()),forward=new THREE.Vector3(0,0,1).applyQuaternion(s.bow.quaternion),rear=grip.clone().sub(nock);assert(rear.dot(forward)>.3,'draw hand must be behind the extended bow hand');const lateral=new THREE.Vector3(1,0,0).applyQuaternion(s.bow.quaternion);assert(Math.abs(rear.dot(lateral))<.13,'draw hand and bow should share the same shooting plane');const probe=rig.probe(f,s);assert(Math.abs(probe.handGap)<.001);assert(Math.abs(probe.stringGap)<.001);if(draw===0)first=nock;if(draw===1)last=nock;}assert(first.z-last.z>.15,'rear hand visibly pulls the bowstring toward the body');}finally{rig.release();s.dispose();o.dispose();}});

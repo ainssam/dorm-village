@@ -1,0 +1,36 @@
+import test from 'node:test';import assert from 'node:assert/strict';import * as THREE from 'three';
+import {ROOMS} from '../dist/world/rooms.js';import {buildRoom} from '../dist/world/builders.js';import {initialProgress,validateProgress} from '../dist/state/progress.js';import * as activities from '../dist/world/activities.js';import {canMove,insideShore} from '../dist/physics.js';import {collisionFor,zoneBounds} from '../dist/world/connected-layout.js';import {toWorld} from '../dist/world/coordinates.js';import {THROW_COURT} from '../dist/school/throw-model.js';import {SOCCER_OBSTACLES} from '../dist/school/field-layout.js';import {SPORTS_EQUIPMENT_OBSTACLES,SPORTS_EQUIPMENT_ACTIVITIES} from '../dist/school/sports-equipment.js';
+const room=ROOMS.sportsField;
+test('removed balance platform has no invisible obstacle or unreachable activity',()=>{assert(!room.interactables.some(a=>a.id==='sportsField.balance'));assert(activities.DISCOVERIES['school-balance']?.retired);assert(!room.obstacles.some(o=>o.x===4.8&&o.z===.15));});
+test('retiring the balance platform preserves earned memories and growing flowers in old saves',()=>{const save=initialProgress();save.discoveryIds=['flower-water','school-balance'];save.garden.phase='growing';save.garden.moments=['school-balance'];const result=validateProgress(save);assert(result.valid,'previously earned balance must never corrupt a valid save');assert.deepEqual(result.state.discoveryIds,save.discoveryIds);assert.deepEqual(result.state.garden,save.garden);});
+test('retired discoveries appear only when they were earned, without an unreachable empty page',()=>{assert.equal(typeof activities.daybookDiscoveries,'function');assert(!activities.daybookDiscoveries([]).some(([id])=>id==='school-balance'));assert(activities.daybookDiscoveries(['school-balance']).some(([id])=>id==='school-balance'));});
+test('soccer faces inward from the oval tip and the kicked ball enters its mouth',()=>{const v=buildRoom(room,initialProgress()),goal=v.root.getObjectByName('sportsField.soccer-goal'),ball=v.root.getObjectByName('sportsField.ball');assert(goal,'recognizable goal group');assert(goal.position.x>5&&Math.abs(goal.position.z)<.01);const forward=new THREE.Vector3(0,0,1).applyQuaternion(goal.quaternion);assert(forward.x<-.99);const before=ball.position.clone();v.schoolView.kickBall();v.animate(1.3);assert(ball.position.x>goal.position.x&&ball.position.x>before.x);assert(Math.abs(ball.position.z)<.01);assert(Math.abs(ball.position.z-goal.position.z)<1.2);v.dispose();});
+test('basketball meshes and entry are outside the track, with the full ball domain supported',()=>{const v=buildRoom(room,initialProgress()),court=v.schoolView.throwCourt.root,rim=v.root.getObjectByName('throw.rim');court.updateWorldMatrix(true,true);const p=rim.getWorldPosition(new THREE.Vector3());assert(p.x>10,'hoop is beyond the oval instead of in front of it');const entry=room.interactables.find(a=>a.tool==='throw').at;assert(entry.x>8);assert(canMove(room,entry.x,entry.z));for(let x=THROW_COURT.bounds.min.x;x<=THROW_COURT.bounds.max.x;x+=.3)for(let z=THROW_COURT.bounds.min.z;z<=THROW_COURT.bounds.max.z;z+=.3){const p=court.localToWorld(new THREE.Vector3(x,0,z));assert(insideShore(room.shorePolygon,p.x,p.z,THROW_COURT.ballRadius),'every legal ball state stays over terrain');}v.dispose();});
+test('basketball approach and every running-lap sample keep full body clearance',()=>{const w=collisionFor('campus',ROOMS),b=zoneBounds('sportsField');for(let x=7.8;x<=10;x+=.05){const p=toWorld('sportsField',{x,z:0});assert(canMove(w,p.x,p.z,.66));assert(p.x>=b.minX&&p.x<=b.maxX&&p.z>=b.minZ&&p.z<=b.maxZ);}for(let i=0;i<720;i++){const a=i*Math.PI/360,p=toWorld('sportsField',{x:7.7*Math.sin(a),z:5.5*Math.cos(a)});assert(canMove(w,p.x,p.z,.66),'unobstructed track '+i);}});
+test('soccer playing rectangle and the school-hall approach stay clear of other sports stations',()=>{
+ const bounds={minX:-5.7,maxX:5.7,minZ:-2.8,maxZ:2.8};
+ const overlaps=(a,b)=>Math.abs(a.x-b.x)<a.hx+b.hx&&Math.abs(a.z-b.z)<a.hz+b.hz;
+ for(const o of SPORTS_EQUIPMENT_OBSTACLES){
+  assert(o.x+o.hx<=bounds.minX||o.x-o.hx>=bounds.maxX||o.z+o.hz<=bounds.minZ||o.z-o.hz>=bounds.maxZ,
+   `sports fixture ${o.id??''} intrudes into soccer at ${o.x},${o.z}`);
+  for(const soccer of SOCCER_OBSTACLES)assert(!overlaps(o,soccer),`${o.id??'sports fixture'} intrudes into soccer goal collision ${soccer.x},${soccer.z}`);
+  for(const x of[o.x-o.hx,o.x+o.hx])for(const z of[o.z-o.hz,o.z+o.hz])assert(insideShore(room.shorePolygon,x,z),`${o.id??'sports fixture'} stays on the existing land at ${x},${z}`);
+ }
+ const v=buildRoom(room,initialProgress());
+ try{
+  const goal=v.root.getObjectByName('sportsField.soccer-goal'),goalBounds=new THREE.Box3().setFromObject(goal);
+  assert(goal,'soccer goal geometry is emitted');
+  for(const id of['sportsField.pullup','sportsField.climb']){
+   const station=v.root.getObjectByName(id);assert(station,`${id} geometry is emitted`);
+   const equipmentBounds=new THREE.Box3().setFromObject(station);
+   assert(!equipmentBounds.intersectsBox(goalBounds),`${id} geometry overlaps emitted soccer goal at ${equipmentBounds.min.toArray()}–${equipmentBounds.max.toArray()}`);
+  }
+ }finally{v.dispose();}
+ for(const a of SPORTS_EQUIPMENT_ACTIVITIES){
+  assert(a.at.x<bounds.minX||a.at.x>bounds.maxX||a.at.z<bounds.minZ||a.at.z>bounds.maxZ,
+   `${a.id} prompt sits on the soccer court`);
+  assert.equal(a.discoveryId,a.id==='sportsField.pullup'?'school-pullup':'school-climb','preserve saved discovery identity');
+ }
+ const w=collisionFor('campus',ROOMS);
+ for(let z=5.25;z<=6.2;z+=.05){const p=toWorld('sportsField',{x:0,z});assert(canMove(w,p.x,p.z,.66),`clear hall portal runway at z=${z}`);}
+});

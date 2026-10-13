@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import {canMove} from '../physics.js';
 import {autoFitOrthographicBounds} from '../camera-fit.js';
 import {createLaserRig} from './laser-rig.js';
+import {LASER_LIMITS} from './laser-model.js';
 const DT=1/120,smooth=t=>t*t*(3-2*t),sign=s=>s==='left'?-1:1,copy=x=>structuredClone(x);
 /** One original actor owner, supported stationary toy-light entry, and no independent clock. */
 export function createLaserSession({view,player,model,poser,rigFactory=createLaserRig}){
@@ -25,9 +26,11 @@ export function createLaserSession({view,player,model,poser,rigFactory=createLas
   }
   accumulator+=Math.min(dt,.1);let n=Math.floor((accumulator+1e-10)/DT);accumulator=Math.max(0,accumulator-n*DT);const had=n>0;while(n--&&phase!=='done')step();if(had)apply();
  }
+ // Iterate only prop fitting. This cannot pose the actor, advance time or fire a shot.
+ function aimAt(point){if(!alive||exitRequested||!['ready','exercise'].includes(phase)||![point?.x,point?.y].every(Number.isFinite))return null;const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),target={x:clamp(point.x,-1.55,1.55),y:clamp(point.y,.012,2.112),z:4.7};let yaw=frame.yaw,pitch=frame.pitch;for(let i=0;i<8;i++){const emitted=laser.muzzleRay(rig.fit({...frame,yaw,pitch})),dx=target.x-emitted.origin.x,dy=target.y-emitted.origin.y,dz=target.z-emitted.origin.z;yaw=clamp(Math.atan2(dx,dz),LASER_LIMITS.minYaw,LASER_LIMITS.maxYaw);pitch=clamp(Math.atan2(dy,Math.hypot(dx,dz)),LASER_LIMITS.minPitch,LASER_LIMITS.maxPitch);}return{yaw,pitch};}
  function requestExit(){if(!alive||exitRequested)return;exitRequested=true;if(phase==='ready')lowerGuard();}
  function dispose({restore=true}={}){if(!alive)return;alive=false;const owned=view.gymSession===token;if(owned)delete view.gymSession;rig?.release({restore:restore&&owned});if(!restore||!owned)return;for(const r of saved.fixtures){r.n.position.copy(r.p);r.n.quaternion.copy(r.q);r.n.scale.copy(r.s);r.n.visible=r.visible;}laser.machine.updateWorldMatrix(true,true);if(player.parent!==saved.parent){if(saved.parent)saved.parent.add(player);else player.removeFromParent();}player.position.copy(saved.p);player.quaternion.copy(saved.q);player.scale.copy(saved.s);model.position.copy(saved.mp);model.quaternion.copy(saved.mq);model.scale.copy(saved.ms);for(const[n,v]of saved.children)n.visible=v;player.updateWorldMatrix(true,true);}
  try{view.gymSession=token;model.position.set(0,0,0);model.quaternion.identity();for(const[n]of saved.children)if(n!==model)n.visible=false;rig=rigFactory({model,poser});laser.setDevice(null);route(path[0],path[1]);route(path[1],path[2]);apply();}catch(error){dispose();throw error;}
- return{tick,requestExit,dispose,pause(){accumulator=0;},get root(){return machine;},get ready(){return phase==='ready';},get done(){return phase==='done';},get phase(){return phase;},snapshot:()=>({phase,exitRequested,frame:copy(frame),actorUUID:model.uuid,scale:model.scale.toArray()})};
+ return{tick,requestExit,dispose,aimAt,aimPreview:()=>laser.aimPreview(),pause(){accumulator=0;},get root(){return machine;},get ready(){return phase==='ready';},get done(){return phase==='done';},get phase(){return phase;},snapshot:()=>({phase,exitRequested,frame:copy(frame),actorUUID:model.uuid,scale:model.scale.toArray()})};
 }
 export function fitLaserCamera(camera,machine,viewport,{active=false}={}){machine.updateWorldMatrix(true,false);camera.position.set(-3.2,3.1,3.0);camera.quaternion.identity();camera.up.set(0,1,0);camera.lookAt(new THREE.Vector3(0,.85,1.9));camera.updateMatrixWorld(true);const bounds=new THREE.Box3(new THREE.Vector3(-1.63,0,active?-.4:-3.35),new THREE.Vector3(1.63,2.15,active?5.68:1.1));autoFitOrthographicBounds({camera,worldBounds:bounds,viewport,paddingPx:{left:12,right:12,top:12,bottom:12}});camera.applyMatrix4(machine.matrixWorld);camera.updateMatrixWorld(true);return bounds.applyMatrix4(machine.matrixWorld);}
