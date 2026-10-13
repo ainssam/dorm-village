@@ -14,7 +14,7 @@ test('soccer playing rectangle and the school-hall approach stay clear of other 
   assert(o.x+o.hx<=bounds.minX||o.x-o.hx>=bounds.maxX||o.z+o.hz<=bounds.minZ||o.z-o.hz>=bounds.maxZ,
    `sports fixture ${o.id??''} intrudes into soccer at ${o.x},${o.z}`);
   for(const soccer of SOCCER_OBSTACLES)assert(!overlaps(o,soccer),`${o.id??'sports fixture'} intrudes into soccer goal collision ${soccer.x},${soccer.z}`);
-  for(const x of[o.x-o.hx,o.x+o.hx])for(const z of[o.z-o.hz,o.z+o.hz])assert(insideShore(room.shorePolygon,x,z),`${o.id??'sports fixture'} stays on the southern land pad at ${x},${z}`);
+  for(const x of[o.x-o.hx,o.x+o.hx])for(const z of[o.z-o.hz,o.z+o.hz])assert(insideShore(room.shorePolygon,x,z),`${o.id??'sports fixture'} stays on the existing land at ${x},${z}`);
  }
  const v=buildRoom(room,initialProgress());
  try{

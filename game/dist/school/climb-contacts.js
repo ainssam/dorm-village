@@ -1,9 +1,9 @@
 // Pure trajectory prototype for the three actual rung-to-rung climbs.
 // Start/end mount and top-deck mantle are separate supported transitions.
 // Coordinates returned to the poser are local, +Z front; yaw turns with the
-// relocated station so +Z faces the real rungs on its south pad. Keep the
-// same contact heights/cycle, with the athlete standing north of the rungs.
-export const CLIMB={rootX:1.6,rootZ:5.7,yaw:0,rungZ:6.45,deckFrontZ:6.38,deckTop:1.05,railRadius:.025,rungs:[.08,.38,.68,.98],footForward:.48,footSupportOffset:-.010537273411403765,handX:.68,handLead:.68,handForward:.74,cycleSeconds:1.56};
+// relocated station so +Z faces the real rungs on the far-side grass. Keep
+// the same contact heights/cycle, with the athlete south of the rungs.
+export const CLIMB={rootX:6.6,rootZ:-4.8,yaw:Math.PI,rungZ:-5.55,deckFrontZ:-5.48,deckTop:1.05,railRadius:.025,rungs:[.08,.38,.68,.98],footForward:.48,footSupportOffset:-.010537273411403765,handX:.68,handLead:.68,handForward:.74,cycleSeconds:1.56};
 const ease=t=>{t=Math.min(1,Math.max(0,t));return t*t*(3-2*t)},mix=(a,b,t)=>a+(b-a)*t;
 /**
  * Six phases per rung: hand A up, opposite foot up, root +.15,
