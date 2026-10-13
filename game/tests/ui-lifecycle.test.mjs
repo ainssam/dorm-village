@@ -28,7 +28,7 @@ const {setupUI}=await import(`data:text/javascript;base64,${Buffer.from(source).
 let skyLoader=()=>Promise.reject(new Error("No canvas in DOM fixture"));
 let locked=false,mapLoader=()=>Promise.reject(new Error('No WebGL in DOM fixture'));const interactionCalls=[],pianoSeatCalls=[];const progress={collectedIds:[],completedActivityIds:[],ownedItemIds:[],placements:{},settings:{quality:'auto'}};
 let resetCalls=0,resetResult=true;
-const zoomCalls=[];const ui=setupUI({playPianoFromSeat:()=>pianoSeatCalls.push(true),loadSkyViewer:()=>skyLoader(),zoomCamera:factor=>zoomCalls.push(factor),loadMapView:()=>mapLoader(),reset(){resetCalls++;return resetResult;},interact(...args){interactionCalls.push(args)},lock(value){locked=value;trace.push('lock:'+value)},getProgress:()=>progress,travelMap(id){assert.equal(locked,false,'Travel must follow unlock');assert.equal(dialog.open,false,'Travel must follow dialog close');trace.push('travel:'+id)}});
+const zoomCalls=[];let phonePanelOpen=false,photoAlbumOpens=0;const ui=setupUI({prepareModal:()=>{if(!phonePanelOpen)return null;phonePanelOpen=false;return ids.get('hud-menu');},openPhotoAlbum:()=>{photoAlbumOpens++;return ui.workshop('사진첩','<p>기존 사진</p>');},playPianoFromSeat:()=>pianoSeatCalls.push(true),loadSkyViewer:()=>skyLoader(),zoomCamera:factor=>zoomCalls.push(factor),loadMapView:()=>mapLoader(),reset(){resetCalls++;return resetResult;},interact(...args){interactionCalls.push(args)},lock(value){locked=value;trace.push('lock:'+value)},getProgress:()=>progress,travelMap(id){assert.equal(locked,false,'Travel must follow unlock');assert.equal(dialog.open,false,'Travel must follow dialog close');trace.push('travel:'+id)}});
 ids.get('zoom-out').onclick();ids.get('zoom-in').onclick();assert.deepEqual(zoomCalls,[.5,2],'Visible zoom buttons must call the half/double route');
 ids.get('action').onclick({type:'click'});assert.deepEqual(interactionCalls,[[]],'Button click must not pass MouseEvent as exitOnly');
 ui.render(progress,'classroom');ui.map();assert.equal(dialog.open,true);assert.equal(locked,true);
@@ -45,6 +45,11 @@ handlers.close();assert.deepEqual(trace,['lock:true','close-request','lock:false
 trace.length=0;ui.render(progress,'home');ui.map();assert.equal(document.activeElement.dataset.mapPlace,'home');dialog.close();handlers.close();assert.equal(trace.some(t=>t.startsWith('travel:')),false,'Closing without action preserves room');
 for(const id of ['classroom','home','courtyard','playground','park','library']){ui.render(progress,id);assert.ok(ids.get('mission').textContent.length>0);}
 console.log('PASS: six locations, current focus, selectable details, current-location no-op, center route, asynchronous close/unlock/travel order, cancellation, and all six hints. DOM fixture only; native browser layout and Escape remain unverified.');
+
+// Phone apps reuse their existing routes; starting a modal app closes the nonmodal launcher.
+phonePanelOpen=true;document.activeElement=ids.get('phone-map');ids.get('phone-map').onclick();assert.equal(phonePanelOpen,false,'map app dismisses the phone panel before opening the current map');assert.equal(dialog.open,true);ui.close();handlers.close();assert.equal(document.activeElement,ids.get('hud-menu'),'map close returns to the phone trigger');
+phonePanelOpen=true;document.activeElement=ids.get('phone-photos');ids.get('phone-photos').onclick();assert.equal(photoAlbumOpens,1);assert.equal(phonePanelOpen,false,'photo app dismisses the phone panel before opening the existing album');assert.equal(dialog.open,true);assert.match(ids.get('modal-content').innerHTML,/기존 사진/);ui.close();handlers.close();assert.equal(document.activeElement,ids.get('hud-menu'),'photo album close returns to the phone trigger');
+console.log('PASS: phone Map and photo album use current modal lifecycle, unlock and focus-return path. DOM fixture only.');
 
 // Model the asynchronous import lifecycle without pretending this DOM fixture is WebGL.
 await new Promise(setImmediate);
