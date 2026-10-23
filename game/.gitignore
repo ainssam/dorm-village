@@ -2,3 +2,8 @@ node_modules/
 coverage/
 test-results/
 *.log
+
+# Browser review output is reproducible; keep the release records.
+qa/*
+!qa/RELEASE-PLAN.md
+!qa/RELEASE-REPORT.md

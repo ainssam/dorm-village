@@ -30,3 +30,13 @@
 터치 기기의 인형뽑기에는 마을 이동과 같은 모양의 아날로그 스틱을 제공합니다. 손가락을 떼면 이동을 멈추고, 취소·화면 전환에는 입력을 정리합니다. 데스크톱 방향 버튼과 키보드 조작은 유지됩니다. 좁은 가로 화면에서는 조작 패널을 스크롤할 수 있습니다. 입력·크기 규칙 검사는 통과했으며 실제 휴대폰의 3D 조작감 검수는 별도로 필요합니다.
 
 시작 파일 로딩·실행 실패 안내와 중복 실행 없는 재시도, 뒤로 가기 후 배경음·날씨 등 자원 복구 정책을 보완했습니다. [재현 방법·수정 내용·검증 결과](docs/startup-return-stability.md)를 확인해 주세요. 실제 3D 브라우저 동선 검수는 WebGL 지원 환경에서 추가 확인이 필요합니다.
+
+
+## Dorm Village 출시 구성
+
+- Vercel 프로젝트 루트는 `game`, 정적 출력은 `dist`, 검증 명령은 `npm run check && npm test`입니다. `vercel.json`에 배포 헤더를 포함합니다.
+- 새 도름이는 `ainssam/doreumi-desktop-pet`의 Meshy 마스터 모델을 원래 관절·스킨·표정으로 렌더링합니다. 기존 활동 좌표를 CPU 참조 모델에서 새 관절로 연결하여 저장과 활동 계약을 유지합니다.
+- 출처와 원본/파생 파일 해시는 `dist/characters/doreumi/source.json`, 라이선스는 `dist/licenses/`에 있습니다. 자산 재생성: `node scripts/prepare-doreumi.mjs <원본-master.glb-경로>`.
+- 브라우저 검수: 로컬 서버 실행 후 `QA_OUT=qa/review QA_INTERACTIONS=1 node scripts/audit-browser.mjs`. Chromium 경로는 `CHROMIUM_PATH`로 지정합니다. `QA_SCENARIO=1`, `QA_RECOVERY=1`, `QA_MOBILE=1`로 사용 흐름·저장/오류·모바일 검사를 실행합니다. 테스트용 이동 브리지는 Playwright 요청 가로채기에서만 주입됩니다.
+- 기록은 현재 사이트 주소의 브라우저에 저장됩니다. 새 배포 주소로 기존 사이트 기록이 자동 이전되지 않습니다.
+- 검수 결과와 실제 검증 한계: `qa/RELEASE-REPORT.md`.

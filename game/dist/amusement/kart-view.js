@@ -1,3 +1,4 @@
+import {addMeadow} from '../world/landscape-detail.js';
 import * as THREE from 'three';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
 import {signLabel} from '../world/handwriting.js';
@@ -32,6 +33,10 @@ export function buildKartView(def){const root=new THREE.Group();root.name=def.id
  for(const [side,x,z,direction]of[['inner',-.8,3.1,-1],['outer',.8,8.97,1]]){const g=new THREE.Group();g.name='kart.finish.flag.'+side;g.position.set(x,0,z);root.add(g);const pole=new THREE.Mesh(new THREE.CylinderGeometry(.027,.035,2.3,8),kit.mat(P.gold));pole.position.y=1.172;pole.castShadow=true;g.add(pole);for(let row=0;row<2;row++)for(let col=0;col<4;col++){const flag=new THREE.Mesh(new THREE.BoxGeometry(.18,.20,.015),kit.mat((row+col)%2?P.ink:P.cream));flag.position.set(direction*(col+.5)*.18,2.13-row*.20,Math.sin(col*.8)*.04);flag.castShadow=true;g.add(flag);}}
  const raceSign=feature(new THREE.Mesh(new THREE.BoxGeometry(3.8,.8,.12),kit.mat(P.cream)),'kart.race-sign','race-sign');raceSign.position.set(0,.422,0);root.add(raceSign);signLabel('구름 카트 · 1 LAP',0,.422,.066,3.1,P.ink,P.cream,root);
  signLabel('구름 카트 · 1 LAP',0,1.35,11.9,4.4,P.ink,P.cream,root);signLabel('구름성으로',-3.3,.3,11.7,1.7,P.ink,P.mint,root);
+ // Planted infield and a low cream plinth turn the floating slab into a garden circuit.
+ addMeadow(root,{name:'kart.infield',seed:42,patches:[{x:-5,z:0,r:1.7,count:100},{x:5,z:0,r:1.7,count:100},{x:0,z:-1.8,r:.7,count:45}]});
+ box(30.8,.32,18.8,P.cream,0,-.30,0,.08);box(30.4,.18,18.4,P.wood,0,-.55,0,.08);
+ for(const side of[-1,1])for(let i=0;i<7;i++)box(.40,.025,.08,P.cream,side*(7+i),.031,side*8.8,.01);
  let disposed=false,wheelPhase=0,lastX=C.dock.x,lastZ=C.dock.z;
  function setKartFrame(f,dt=0){if(disposed)return;car.position.set(f?.carX??C.dock.x,0,f?.carZ??C.dock.z);car.rotation.y=f?.carYaw??C.dock.yaw;const amount=Math.max(0,Math.min(1,f?.bumperRamp??1));gangway.visible=amount>0;gangway.position.y=-.75*(1-amount);pitGate.position.y=.212-.6*amount;if(f)wheelPhase+=((car.position.x-lastX)*Math.sin(car.rotation.y)+(car.position.z-lastZ)*Math.cos(car.rotation.y))/.305;else wheelPhase=0;lastX=car.position.x;lastZ=car.position.z;for(const wheel of Object.values(asset.wheels))wheel.rotation.x=wheelPhase;for(const pivot of Object.values(asset.steeringPivots))pivot.rotation.y=.22*Math.max(-1,Math.min(1,f?.steer??0));}
  setKartFrame();root.updateMatrixWorld(true);return{root,stars:[],occluders:[],camera:def.camera,setKartFrame,sync(){},setActivityProgress(){},dispose(){if(disposed)return;disposed=true;disposeToyTree(root);}};

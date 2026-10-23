@@ -1,3 +1,4 @@
+import {adaptCharacterRig} from '../character-rig-adapter.js';
 import * as THREE from 'three';
 import {armCurveWeight,footWeight} from '../dormi-sports-pose.js';
 import {createRigidArmMapper} from '../dormi-rigid-arms.js';
@@ -5,6 +6,7 @@ import {CLIMBING_GEOMETRY as G} from './climbing-layout.js';
 const sides=['left','right'],sign=s=>s==='left'?-1:1;
 // Borrow only the original poser's meshes; never add an actor or replace its face.
 export function createClimbingRig({model,poser}={}){
+ if(poser?.poseReference)return adaptCharacterRig(poser,(model,poser)=>createClimbingRig({model,poser}));
  if(!model?.isObject3D||!poser?.setPose||!poser?.getState)throw TypeError('Climbing requires original Dormi');
  const savedPose=poser.getState(),saved=[],records=[],patches={leftHand:[],rightHand:[],leftFoot:[],rightFoot:[]},face=[],arms=createRigidArmMapper(),v=new THREE.Vector3(),source=new THREE.Vector3();let alive=true,applications=0;
  model.traverse(mesh=>{if(mesh.isMesh)saved.push({mesh,g:mesh.geometry,p:mesh.geometry.attributes.position.array.slice(),n:mesh.geometry.attributes.normal?.array.slice(),box:mesh.geometry.boundingBox?.clone(),sphere:mesh.geometry.boundingSphere?.clone()});});

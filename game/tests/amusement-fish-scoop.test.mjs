@@ -42,7 +42,7 @@ test('the complete connected room count is explicit and airport-inclusive, separ
  try{
   assert(view.root.getObjectByName('amusementIsland.airport-frame'),'full room count includes the connected airfield');
   assert.equal(tris(actor.actor),72954);
-  assert.equal(tris(scene),126118,'explicit complete-room regression; the existing 120k guard is island-only and unchanged');
+  assert.equal(tris(scene),131974,'complete room includes 5,856 triangles of aircraft trim; island-only cap stays unchanged');
  }finally{view.dispose();actor.dispose();}
 });
 

@@ -1,0 +1,9 @@
+{
+  "source": "https://github.com/ainssam/doreumi-desktop-pet",
+  "commit": "4433dba715893d75de60948b1968d21f5c79efcb",
+  "asset": "web/public/doreumi/doreumi-master.glb",
+  "attribution": "도름이 © 아인T, CC BY-NC 4.0",
+  "sourceSHA256": "ff950b38e254c5a92c4d198bc333cf9b5763883f5f824de06b8c688019f0afa1",
+  "runtimeSHA256": "037a4be1f2bfc9eabad32ca835bd1cc8ba22fbcf29ee6e171845e41de624941b",
+  "derivation": "Unused embedded motion clips removed; welded mesh simplified with 0.001 error limit; Meshopt encoding. Runtime neutral pose normalized to village coordinates."
+}

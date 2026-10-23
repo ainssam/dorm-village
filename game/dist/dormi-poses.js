@@ -1,3 +1,5 @@
+import {doreumiRigFor} from './assets.js';
+import {createDoreumiRigPoser} from './doreumi-rig-poses.js';
 import {fitWeightsBarRestGrip} from './gym/weights-grip.js';
 import {createRigidArmMapper} from './dormi-rigid-arms.js';
 import {createFishingArmSurface} from './fishing/arm-surface.js';
@@ -25,6 +27,8 @@ import {SWING} from './world/playground-layout.js';
  * This module expects one poser per loaded character instance.
  */
 export function createDormiPoser(model) {
+  const importedRig=doreumiRigFor(model);
+  if(importedRig)return createDoreumiRigPoser(model,importedRig,createDormiPoser(importedRig.reference));
   if (!model?.isObject3D) throw new TypeError('createDormiPoser needs a Three.js model');
   const aliases = { seated:'sit', sitting:'sit', reading:'read', book:'read', swinging:'swing', draw:'chalk', drawing:'chalk', writing:'chalk', watering:'water', sleeping:'sleep', lie:'sleep', lying:'sleep', idle:'stand', reset:'stand' };
   const poses = {

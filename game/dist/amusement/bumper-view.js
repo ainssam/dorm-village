@@ -34,6 +34,11 @@ export function buildBumperView(def){const root=new THREE.Group();root.name=def.
  // sightline to the full-size actor; no lowered roof or extra camera is needed.
  for(const x of[-3.6,3.6])for(const z of[-2.85,2.85])cylinder(.065,.085,4.6,P.wood,x,2.35,z);
  box(7.5,.14,5.9,P.cream,0,4.73,0,.045);for(const x of[-3,-2,-1,0,1,2,3])box(.42,.02,5.8,P.rose,x,4.81,0,.006);box(7.5,.20,.18,P.mint,0,4.58,2.92,.065);
+ // Shallow floor inlays and a continuous cornice add finish without hiding the driver.
+ for(const x of[-2.8,-1.4,0,1.4,2.8])box(.018,.004,5.15,'#b5c8bf',x,.053,0,0);
+ for(const z of[-2.1,-.7,.7,2.1])box(6.5,.004,.018,'#b5c8bf',0,.053,z,0);
+ box(7.3,.25,8.4,P.wood,0,-.22,1.35,.10);
+ for(const z of[-2.92,2.92])for(let i=-5;i<=5;i++)kit.sphere(.055,P.gold,i*.62,4.44,z,1,1,1);
  let disposed=false;
  function setBumperFrame(f){if(disposed)return;player.position.set(f?.carX??C.dock.x,0,f?.carZ??C.dock.z);player.rotation.y=f?.carYaw??0;const amount=Math.max(0,Math.min(1,f?.bumperRamp??1));gangway.visible=amount>0;gangway.position.y=-.75*(1-amount);gate.position.y=.3-amount*.62;}
  setBumperFrame();root.updateMatrixWorld(true);return{root,stars:[],occluders:[],camera:def.camera,setBumperFrame,sync(){},setActivityProgress(){},dispose(){if(disposed)return;disposed=true;disposeToyTree(root);}};

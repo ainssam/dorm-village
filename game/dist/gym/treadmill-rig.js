@@ -1,3 +1,4 @@
+import {adaptCharacterRig} from '../character-rig-adapter.js';
 import * as THREE from 'three';
 import {footWeight,armCurveWeight} from '../dormi-sports-pose.js';
 import {createRigidArmMapper} from '../dormi-rigid-arms.js';
@@ -55,6 +56,7 @@ export function treadmillFootFrame(snapshot={}, {settle=0,origin={},direction={x
  * release restores poser state and exact captured position/normal bytes.
  */
 export function createTreadmillRig({model,poser,deckY=.18}={}){
+ if(poser?.poseReference)return adaptCharacterRig(poser,(model,poser)=>createTreadmillRig({model,poser,deckY}));
   if(!model?.isObject3D||typeof poser?.setPose!=='function')throw new TypeError('Treadmill rig requires the original model and its poser');
   if(!Number.isFinite(deckY))throw new TypeError('Treadmill deck height must be finite');
   const originalPose=poser.getState(),saved=[],records=[],vector=new THREE.Vector3();

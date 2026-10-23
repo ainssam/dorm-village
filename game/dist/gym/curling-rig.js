@@ -1,9 +1,11 @@
+import {adaptCharacterRig} from '../character-rig-adapter.js';
 import * as T from 'three';
 import {armCurveWeight,footWeight} from '../dormi-sports-pose.js';
 import {createRigidArmMapper} from '../dormi-rigid-arms.js';
 import {CURLING_AID as A} from './curling-layout.js';
 /** The original arm and rigid delivery aid have fixed dimensions throughout. */
 export function createCurlingRig({model,poser}){
+ if(poser?.poseReference)return adaptCharacterRig(poser,(model,poser)=>createCurlingRig({model,poser}));
  if(!model?.isObject3D||!poser?.getState||!poser?.setPose)throw TypeError('Original curling actor required');
  const pose=poser.getState(),saved=[],records=[],palms=[],soles={left:[],right:[]},arms=createRigidArmMapper(),v=new T.Vector3(),source=new T.Vector3(),feet={};let alive=true;
  model.traverse(mesh=>{if(mesh.isMesh)saved.push({mesh,g:mesh.geometry,p:mesh.geometry.attributes.position.array.slice(),n:mesh.geometry.attributes.normal?.array.slice(),box:mesh.geometry.boundingBox?.clone(),sphere:mesh.geometry.boundingSphere?.clone()});});
