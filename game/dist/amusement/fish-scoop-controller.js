@@ -1,7 +1,7 @@
 import {createFishScoopSessionView} from './fish-scoop-view.js';
 import {createFishScoopState,startFishScoop,moveFishScoopNet,triggerFishScoop,stepFishScoop,pauseFishScoop,resumeFishScoop,cancelFishScoop} from './fish-scoop-model.js';
 
-const BODY=`<header class="fish-scoop-heading"><strong>뜰채로 물고기 잡기</strong><span data-fish-scoop-clock>50초</span><span data-fish-scoop-score>잡은 물고기 0</span><button type="button" data-fish-scoop-close aria-label="뜰채 놀이 나가기">나가기 ×</button></header><section class="fish-scoop-panel" aria-label="뜰채 놀이 조작"><p data-fish-scoop-status role="status" aria-live="polite">화면 속 물고기 가까이에 뜰채를 옮겨 보세요.</p><div class="fish-scoop-actions"><button type="button" data-fish-scoop-start>시작 · 50초</button><button type="button" data-fish-scoop-catch hidden>뜰채 휙 · Space</button><button type="button" data-fish-scoop-pause hidden>잠깐 쉬기</button><button type="button" data-fish-scoop-retry hidden>한 번 더</button><button type="button" data-fish-scoop-exit>나가기</button></div><small>왼쪽 조이스틱 또는 WASD·방향키로 움직여요. 물고기 가까이에서 뜰채 버튼을 눌러요.</small></section>`;
+const BODY=`<header class="fish-scoop-heading"><strong>뜰채로 물고기 잡기</strong><span data-fish-scoop-clock>50초</span><span data-fish-scoop-score>잡은 물고기 0</span><button type="button" data-fish-scoop-close aria-label="뜰채 놀이 나가기">나가기 ×</button></header><section class="fish-scoop-panel" aria-label="뜰채 놀이 조작"><p data-fish-scoop-status role="status" aria-live="polite">화면 속 물고기 가까이에 뜰채를 옮겨 보세요.</p><div class="fish-scoop-actions"><button type="button" data-fish-scoop-start>시작 · 50초</button><button type="button" data-fish-scoop-catch hidden>건져 올리기 · Space</button><button type="button" data-fish-scoop-pause hidden>잠깐 쉬기</button><button type="button" data-fish-scoop-retry hidden>한 번 더</button><button type="button" data-fish-scoop-exit>나가기</button></div><small>왼쪽 조이스틱 또는 WASD·방향키로 물고기 가까이 뜰채를 옮겨요. 뜰채를 내린 뒤에도 물속에서 살며시 밀 수 있어요.</small></section>`;
 const KEYS=new Set(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','KeyW','KeyA','KeyS','KeyD']);
 
 export function createFishScoopController({stage,ui,input,getView,getRoom,getActors,reduced=false,isAllowed=()=>true,onActive=()=>{},doc=globalThis.document,win=globalThis.window}){
@@ -14,7 +14,8 @@ export function createFishScoopController({stage,ui,input,getView,getRoom,getAct
  function text(s){const game=s.game,phase=game.phase;let status='조이스틱이나 WASD로 뜰채를 옮기고, 물고기 가까이에서 잡아 보세요.';
   if(phase==='ready')status='준비되면 시작해요. 물고기 연못은 화면 안의 3D 공간이에요.';
   else if(phase==='paused')status='잠깐 멈췄어요. 계속하기를 누르면 이어서 놀아요.';
-  else if(phase==='playing'&&game.scoop.phase==='lowering')status='뜰채가 물속으로 내려가요…';
+  else if(phase==='playing'&&game.scoop.phase==='lowering')status='뜰채를 물속으로 천천히 내려요…';
+  else if(phase==='playing'&&game.scoop.phase==='sliding')status='물속에서 뜰채를 살며시 밀어 물고기 아래로 넣어요…';
   else if(phase==='playing'&&game.scoop.phase==='rising')status=game.scoop.result==='caught'?'잡았어요! 물고기 한 마리.':'빗나갔어요. 다시 맞춰 볼까요?';
   else if(phase==='playing'&&game.feedback?.type==='caught')status='잡았어요! 물고기 한 마리.';
   else if(phase==='playing'&&game.feedback?.type==='miss')status='빗나갔어요. 물고기 가까이에서 다시 잡아 봐요.';

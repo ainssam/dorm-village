@@ -1,0 +1,57 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import * as THREE from 'three';
+import {buildAmusementView} from '../dist/amusement/view.js';
+import {createAmusementFoodHost} from '../dist/amusement/food-cart-order.js';
+import {ROOMS} from '../dist/world/rooms.js';
+import {setupCamera} from '../dist/camera.js';
+import {original,projected,vertices} from './helpers/plane-proof.mjs';
+
+test('selected food cart auto-focuses above the controls, fits a resized phone, and returns to the manual camera',async t=>{
+ const {original}=await import('./helpers/plane-proof.mjs');
+ // Build after loading the original so the test exercises the same unscaled actor as play.
+ const old={ResizeObserver:globalThis.ResizeObserver,document:globalThis.document};
+ globalThis.ResizeObserver=class{observe(){}disconnect(){}};
+ let width=320,height=568;const rect=(top,bottom,left=0,right=width)=>({top,bottom,left,right,width:right-left,height:bottom-top});
+ const topbar={getClientRects:()=>[1],getBoundingClientRect:()=>rect(14,81)};
+ class Node extends EventTarget{constructor(){super();this.hidden=false;this.disabled=false;this.value='';this.dataset={};this.style={};this.children=[];this.attributes={};}set innerHTML(value){this.markup=value;}setAttribute(key,value){this.attributes[key]=value;}append(...items){for(const item of items){this.children.push(item);item.parentNode=this;}}appendChild(item){this.append(item);}replaceChildren(...items){this.children=items;this.options=items;}querySelector(selector){if(!this.nodes)this.nodes=new Map();if(!this.nodes.has(selector))this.nodes.set(selector,new Node());return this.nodes.get(selector);}remove(){this.removed=true;}closest(){return null;}focus(){this.focused=true;}}
+ const doc=new Node();doc.hidden=false;doc.body=new Node();doc.createElement=tag=>tag==='canvas'?{getContext:()=>null}:new Node();doc.fonts={ready:Promise.resolve()};doc.querySelector=selector=>selector==='.topbar'?topbar:null;
+ globalThis.document=doc;
+ const overlay=()=>stage.children.at(-1),panel={hidden:false,getClientRects:()=>overlay()?.hidden?[]:[1],getBoundingClientRect:()=>rect(height<400?height-128:328,height-8)};
+ const sceneTools={hidden:false,getClientRects(){return this.hidden?[]:[1];},getBoundingClientRect:()=>rect(131,232)};
+ const missionPill={hidden:false,getClientRects(){return this.hidden?[]:[1];},getBoundingClientRect:()=>rect(84,124)};
+ const bottom={hidden:false,getClientRects:()=>[1],getBoundingClientRect:()=>rect(height-196,height-30)};
+ const dpad={getBoundingClientRect:()=>rect(height-132,height-8,12,Math.min(147,width-12))},action={getBoundingClientRect:()=>rect(height-8,height-8,width-12,width-12)};
+ const stage=new Node();Object.assign(stage,{clientWidth:width,clientHeight:height,append(...items){Node.prototype.append.call(this,...items);},getBoundingClientRect:()=>rect(0,height),querySelector:selector=>selector==='.amusement-food-panel'?panel:selector==='.scene-tools'?sceneTools:selector==='.mission-pill'?missionPill:selector==='.bottom-controls'?bottom:selector==='.dpad'?dpad:selector==='.action-area'?action:null,querySelectorAll:()=>[missionPill,sceneTools,bottom]});
+ const win=new Node();
+ const canvas=new EventTarget();Object.assign(canvas,{style:{},getRootNode:()=>new EventTarget()});
+ const camera=new THREE.OrthographicCamera(),view=buildAmusementView(ROOMS.amusementIsland),actor=await original();
+ actor.actor.position.set(-4.90,.05,-1.2);actor.actor.rotation.y=Math.PI/2;actor.scene.updateMatrixWorld(true);
+ const cam=setupCamera(camera,canvas,stage,{setSize(){}});cam.apply(ROOMS.amusementIsland,actor.actor.position,view.root);
+ const host=createAmusementFoodHost({stage,doc,win,getRoom:()=> 'amusementIsland',getView:()=>view,getActors:()=>({player:actor.actor}),onChange:s=>cam.setEnabled(!s.busy),beginCameraFocus:(cartId,options)=>cam.beginAmusementFoodFocus(cartId,options)});
+ t.after(()=>{host.dispose();cam.dispose();view.dispose();actor.dispose();Object.assign(globalThis,old);});
+ cam.zoomBy(1.45);const prior={position:camera.position.clone(),target:cam.controls.target.clone(),zoom:camera.zoom,enabled:cam.controls.enabled};
+ const normalHeight=projected(vertices(view.root.getObjectByName('food.ice-cream')),camera,width,height).height;
+ assert.equal(sceneTools.getClientRects().length,1,'the unrelated mobile toolbar occupies y=131–232 before opening the cart');assert.equal(missionPill.getBoundingClientRect().top,84);assert.equal(missionPill.getBoundingClientRect().bottom,124,'the duplicated mission pill occupies y=84–124 before opening the cart');
+ assert(host.open({type:'amusementFood',cartId:'cold'}),'walk-up menu acquires a bounded camera focus');assert.equal(sceneTools.hidden,true,'the food dialog removes unrelated scene tools from the camera safe area');assert.equal(sceneTools.getClientRects().length,0);assert.equal(missionPill.hidden,true,'the food dialog hides duplicated mission copy from the camera safe area');assert.equal(missionPill.getClientRects().length,0,'the stale mission rectangle stops reserving focus space');host.frame(.08);assert.notEqual(camera.zoom,1,'focus eases in instead of snapping');host.frame(.6);
+ const focused=projected(vertices(view.root.getObjectByName('food.ice-cream')),camera,width,height);
+ assert.equal(camera.zoom,1,'focus uses an absolute, neutral projection despite a prior manual zoom');
+ assert(focused.height>Math.max(28,normalHeight*1.3),`selected food grows beyond its all-cart walk frame (${normalHeight.toFixed(1)}→${focused.height.toFixed(1)}px)`);
+ assert(focused.left>=10&&focused.right<=width-10,'selected cart is horizontally visible');
+ assert(focused.top>=93&&focused.bottom<=panel.getBoundingClientRect().top-8,'the cart fits beneath the real topbar and above the measured dialog');
+ width=568;height=320;stage.clientWidth=width;stage.clientHeight=height;bottom.getBoundingClientRect=()=>({top:height-68,bottom:height-8,left:0,right:width,width,height:60});cam.resize();host.frame(.6);
+ const landscape=projected(vertices(view.root.getObjectByName('food.ice-cream')),camera,width,height);
+ assert(landscape.height>32.5,'compact landscape focus still gives the selected item useful size');assert(landscape.top>=93&&landscape.bottom<=panel.getBoundingClientRect().top-8,'resized landscape focus keeps the cart above the live order panel');
+ width=390;stage.clientWidth=width;cam.resize();host.frame(.6);
+ const narrow=projected(vertices(view.root.getObjectByName('food.ice-cream')),camera,width,height);
+ assert(narrow.height>30,`narrow landscape focus stays legible at 390×320 (${narrow.height.toFixed(1)}px)`);assert(narrow.top>=93&&narrow.bottom<=panel.getBoundingClientRect().top-8,'narrow landscape scene remains above the compact sheet');
+ const css=fs.readFileSync('dist/amusement/food-cart-order.css','utf8'),narrowLayout=css.slice(css.indexOf('max-width:459px'));
+ assert.match(narrowLayout,/align-items:end/);assert.match(narrowLayout,/min-height:42px/,'compact landscape controls retain a comfortable touch target');assert.match(narrowLayout,/small\{display:none\}/,'compact mode drops nonessential hint text to preserve view height');
+ host.cancel();assert.equal(sceneTools.hidden,false,'closing restores the toolbar’s exact prior visible state');assert.equal(missionPill.hidden,false,'closing restores the mission pill’s exact prior visible state');assert.equal(host.busy,true,'the walking lock remains while camera return is underway');host.frame(.6);
+ assert.equal(host.busy,false,'ordinary close completes the return transition');
+ assert(camera.position.distanceTo(prior.position)<1e-9);assert(cam.controls.target.distanceTo(prior.target)<1e-9);assert.equal(camera.zoom,prior.zoom);assert.equal(cam.controls.enabled,true,'normal controls return after the smooth camera lease');
+ cam.setEnabled(false);const locked=cam.beginAmusementFoodFocus('cold',{player:actor.actor,reducedMotion:false});assert(locked);locked.release();assert.equal(cam.controls.enabled,false,'an independent external camera lock remains respected after a direct focus lease');cam.setEnabled(true);
+ const second=cam.beginAmusementFoodFocus('warm',{reducedMotion:true});assert(second);assert.equal(camera.zoom,1,'reduced motion enters directly at the focused frame');
+ second.release();assert.equal(second.active,false,'reduced-motion return is immediate');assert.equal(camera.zoom,prior.zoom);assert.equal(cam.controls.enabled,true,'exit leaves normal camera input enabled');
+});

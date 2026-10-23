@@ -15,16 +15,16 @@ export function validObservationState(value){
  try{if(!value?.request||!['now','selected'].includes(value.request.mode))return null;return Object.freeze({displayMode:'scientific',request:createSkyRequest(value.request)});}catch{return null;}
 }
 /** One capped 2D surface. Every listener, timer, texture and observer is owned here. */
-export function mountSkyViewer(host,{clock=()=>new Date(),now=()=>performance.now(),setTimer=setTimeout,clearTimer=clearTimeout,initialState=null,variant='sky'}={}){
+export function mountSkyViewer(host,{clock=()=>new Date(),now=()=>performance.now(),setTimer=setTimeout,clearTimer=clearTimeout,initialState=null,variant='sky',onExploreBody=null}={}){
  const telescope=variant==='telescope',restored=validObservationState(initialState);
  const canvas=host.querySelector('[data-sky-canvas]'),ctx=canvas?.getContext('2d');if(!ctx)throw new Error('Sky canvas unavailable');
  const doc=canvas.ownerDocument??globalThis.document,media=globalThis.matchMedia?.('(prefers-reduced-motion: reduce)'),sheetHost=host.querySelector('[data-sky-observer-host]');
- let alive=true,assets=null,observer=null,drawTimer=null,clockTimer=null,size=null,drag=null,sky=null,prepared=null;const listeners=[];let solarEvents=null,solarKey='',solarEventUpdates=0,horizonViews=null,horizonViewUpdates=0,horizonFraming=false;
+ let alive=true,suspended=false,assets=null,observer=null,drawTimer=null,clockTimer=null,size=null,drag=null,sky=null,prepared=null;const listeners=[];let solarEvents=null,solarKey='',solarEventUpdates=0,horizonViews=null,horizonViewUpdates=0,horizonFraming=false;
  const safely=fn=>{try{fn();}catch{}};
  function dispose(){if(!alive)return;alive=false;if(drawTimer!==null)safely(()=>clearTimer(drawTimer));if(clockTimer!==null)safely(()=>clearTimer(clockTimer));drawTimer=clockTimer=null;safely(()=>observer?.disconnect());if(drag)safely(()=>canvas.releasePointerCapture?.(drag.id));drag=null;for(const remove of listeners)safely(remove);listeners.length=0;safely(()=>assets?.dispose());safely(()=>{canvas.width=canvas.height=1;});size=null;sky=null;prepared=null;solarEvents=null;horizonViews=null;solarKey='';horizonFraming=false;}
  try{
  assets=createSkyAssets(()=>doc.createElement('canvas'));if(sheetHost)sheetHost.innerHTML=telescope?telescopeObserverSheetHTML():observerSheetHTML();
- const node=id=>host.querySelector(`[data-sky-${id}]`),status=node('clock'),guideButton=node('guides'),pauseButton=node('pause'),resetButton=node('reset'),note=node('note'),settings=node('settings'),city=node('city'),local=node('local'),feedback=node('feedback'),fold=node('fold'),foldChoice=node('fold-choice'),fov=node('fov'),targetSelect=node('target'),aimButton=node('aim'),targetStatus=node('target-status');
+ const node=id=>host.querySelector(`[data-sky-${id}]`),status=node('clock'),guideButton=node('guides'),pauseButton=node('pause'),resetButton=node('reset'),note=node('note'),settings=node('settings'),city=node('city'),local=node('local'),feedback=node('feedback'),fold=node('fold'),foldChoice=node('fold-choice'),fov=node('fov'),targetSelect=node('target'),aimButton=node('aim'),exploreButton=node('explore'),targetStatus=node('target-status');
  let reduced=!!media?.matches,paused=false,guides=false,last=now(),time=0,mood=timeOfDay(clock()),observation=restored??initialObservation(clock()),preparedKey='',modelUpdates=0,projectionUpdates=0,pendingFold=null,error='',targetId='',targetOptionsKey='';
  if(restored){if(!telescope&&initialState.displayMode==='decorative')observation=applyObservation(observation,{type:'display',value:'decorative'});if(observation.request.mode==='now')observation=applyObservation(observation,{type:'now',instantUtcMs:clock().getTime()});}
  const offset={x:0,y:0},camera={yawDeg:180,pitchDeg:35,verticalFovDeg:75};
@@ -36,7 +36,7 @@ export function mountSkyViewer(host,{clock=()=>new Date(),now=()=>performance.no
   const targets=telescopeTargets(sky),selected=targets.find(o=>o.id===targetId);
   const options='<option value="">직접 둘러보기</option>'+targets.map(o=>`<option value="${o.id}">${o.label} · ${o.limbHorizonState==='partial'?'지평선에 걸쳐 있음':o.aboveHorizon?'지평선 위':'지평선 아래'}</option>`).join('');
   if(targetSelect){if(options!==targetOptionsKey){targetSelect.innerHTML=options;targetOptionsKey=options;}targetSelect.value=selected?targetId:'';}
-  if(aimButton)aimButton.disabled=!selected;
+  if(aimButton)aimButton.disabled=!selected;if(exploreButton)exploreButton.disabled=!selected;
   const status=telescopeTargetStatus(selected,{planetSuppressed:sky?scientificAtmosphere(sky.sunAltitudeDeg).stars<.08:false});
   const phaseHelp=selected?.kind==='moon'?'\n밝은 비율은 달 원반에서 햇빛을 받는 부분의 비율이에요.':'';
   write(targetStatus,`${status}${phaseHelp}\n고도: 지평선 0° · 머리 위 90° / 방위: 북 0° · 동 90° · 남 180° · 서 270°`);
@@ -66,18 +66,18 @@ export function mountSkyViewer(host,{clock=()=>new Date(),now=()=>performance.no
  function restoreForm(form){if(local){local.value=form.value;local.min=form.min;local.max=form.max;}pendingFold=form.pendingFold;if(fold)fold.hidden=form.foldHidden;if(foldChoice)foldChoice.value=form.choice;}
  function compute(){if(observation.displayMode!=='scientific')return;sky=computeSkySnapshot(observation.request);modelUpdates++;prepared=null;error='';computeSolarDay();}
  function draw(){
-  if(!alive||hidden())return;const rect=canvas.getBoundingClientRect(),next=skyBufferSize(rect.width||1,rect.height||1,globalThis.devicePixelRatio||1);if(!size||next.pixelWidth!==size.pixelWidth||next.pixelHeight!==size.pixelHeight){canvas.width=next.pixelWidth;canvas.height=next.pixelHeight;}size=next;ctx.setTransform(size.pixelWidth/size.width,0,0,size.pixelHeight/size.height,0,0);
+  if(!alive||suspended||hidden())return;const rect=canvas.getBoundingClientRect(),next=skyBufferSize(rect.width||1,rect.height||1,globalThis.devicePixelRatio||1);if(!size||next.pixelWidth!==size.pixelWidth||next.pixelHeight!==size.pixelHeight){canvas.width=next.pixelWidth;canvas.height=next.pixelHeight;}size=next;ctx.setTransform(size.pixelWidth/size.width,0,0,size.pixelHeight/size.height,0,0);
   if(observation.displayMode==='scientific'&&sky){const key=`${size.width}|${size.height}|${camera.yawDeg}|${camera.pitchDeg}|${camera.verticalFovDeg}`;if(!prepared||key!==preparedKey){prepared=prepareScientificSky(sky,{...size,...camera,variant,horizonFraming});preparedKey=key;projectionUpdates++;}drawScientificSky(ctx,{prepared,time,guides,assets});}
   else if(observation.displayMode==='decorative')drawSkyVista(ctx,{...size,mood,time,offset,guides,assets});
  }
  function stopDraw(){if(drawTimer!==null)clearTimer(drawTimer);drawTimer=null;}
  function stopClock(){if(clockTimer!==null)clearTimer(clockTimer);clockTimer=null;}
- function scheduleDraw(){stopDraw();last=now();if(alive&&!hidden()&&!paused&&!reduced)drawTimer=setTimer(frame,1000/SKY_BUDGET.fps);}
- function scheduleClock(){stopClock();if(alive&&!hidden()&&(observation.displayMode==='decorative'||observation.request.mode==='now'))clockTimer=setTimer(clockUpdate,15000);}
- function frame(){drawTimer=null;if(!alive||hidden()||paused||reduced)return;const current=now();time+=Math.min(.1,Math.max(0,(current-last)/1000));last=current;draw();drawTimer=setTimer(frame,1000/SKY_BUDGET.fps);}
- function clockUpdate(){clockTimer=null;if(!alive||hidden())return;try{mood=timeOfDay(clock());if(observation.request.mode==='now'){observation=applyObservation(observation,{type:'now',instantUtcMs:clock().getTime()});compute();}}catch{error='시각 계산을 갱신하지 못했어요';}draw();syncControls();scheduleClock();}
+ function scheduleDraw(){stopDraw();last=now();if(alive&&!suspended&&!hidden()&&!paused&&!reduced)drawTimer=setTimer(frame,1000/SKY_BUDGET.fps);}
+ function scheduleClock(){stopClock();if(alive&&!suspended&&!hidden()&&(observation.displayMode==='decorative'||observation.request.mode==='now'))clockTimer=setTimer(clockUpdate,15000);}
+ function frame(){drawTimer=null;if(!alive||suspended||hidden()||paused||reduced)return;const current=now();time+=Math.min(.1,Math.max(0,(current-last)/1000));last=current;draw();drawTimer=setTimer(frame,1000/SKY_BUDGET.fps);}
+ function clockUpdate(){clockTimer=null;if(!alive||suspended||hidden())return;try{mood=timeOfDay(clock());if(observation.request.mode==='now'){observation=applyObservation(observation,{type:'now',instantUtcMs:clock().getTime()});compute();}}catch{error='시각 계산을 갱신하지 못했어요';}draw();syncControls();scheduleClock();}
  const release=e=>{if(drag&&(e.pointerId===undefined||e.pointerId===drag.id)){try{canvas.releasePointerCapture?.(drag.id);}catch{}drag=null;}};
- function visibility(){stopDraw();stopClock();release({});if(!hidden()){clockUpdate();scheduleDraw();}}
+ function visibility(){stopDraw();stopClock();release({});if(!suspended&&!hidden()){clockUpdate();scheduleDraw();}}
  function updateCamera(x,y){if(observation.displayMode==='scientific'){camera.yawDeg=(x%360+360)%360;camera.pitchDeg=Math.max(telescope?-90:-5,Math.min(telescope?90:85,y));}else{offset.x=Math.max(-1,Math.min(1,x));offset.y=Math.max(-1,Math.min(1,y));}draw();}
  function change(action){
   if(!alive||(telescope&&action.type==='display'&&action.value!=='scientific'))return false;
@@ -115,6 +115,7 @@ export function mountSkyViewer(host,{clock=()=>new Date(),now=()=>performance.no
   listen(fov,'change',()=>{const value=Number(fov.value);if(TELESCOPE_FOVS.includes(value)){camera.verticalFovDeg=value;draw();}syncControls();});
   listen(targetSelect,'change',()=>{targetId=telescopeTargets(sky).some(o=>o.id===targetSelect.value)?targetSelect.value:'';syncTelescopeControls();});
   listen(aimButton,'click',()=>{const target=telescopeTargets(sky).find(o=>o.id===targetId);if(!target)return;release({});updateCamera(target.azimuthDeg??camera.yawDeg,target.altitudeDeg);syncTelescopeControls();});
+  listen(exploreButton,'click',()=>{const target=telescopeTargets(sky).find(o=>o.id===targetId);if(target)onExploreBody?.(target.id);});
  }
  listen(city,'change',()=>change({type:'city',id:city.value}));listen(node('mode'),'change',()=>change({type:'display',value:node('mode').value}));listen(node('now'),'click',()=>change({type:'now',instantUtcMs:clock().getTime()}));listen(node('apply'),'click',applyTime);listen(local,'input',()=>{pendingFold=null;if(fold)fold.hidden=true;write(feedback,'미리 볼 시각을 입력한 뒤 적용해 주세요.');});listen(node('settings-done'),'click',()=>{if(settings)settings.open=false;settings?.querySelector?.('summary')?.focus?.();});
  listen(settings,'toggle',()=>{if(settings?.open)release({});});
@@ -123,6 +124,6 @@ export function mountSkyViewer(host,{clock=()=>new Date(),now=()=>performance.no
  listen(canvas,'keydown',e=>{const d={ArrowLeft:[-8,0],ArrowRight:[8,0],ArrowUp:[0,6],ArrowDown:[0,-6]};if(e.key==='Home'){e.preventDefault();resetCamera();}else if(d[e.key]){e.preventDefault();const [x,y]=d[e.key];observation.displayMode==='scientific'?updateCamera(camera.yawDeg+x*(camera.verticalFovDeg/75),camera.pitchDeg+y*(camera.verticalFovDeg/75)):updateCamera(offset.x+x/40,offset.y-y/30);}});
  listen(media,'change',()=>{reduced=!!media.matches;syncControls();draw();scheduleDraw();});listen(doc,'visibilitychange',visibility);
  observer=new ResizeObserver(draw);observer.observe(canvas);ensureHandwriting('북두칠성 오리온자리 시각 예시 계산').then(draw);compute();updateForm();draw();syncControls();scheduleClock();scheduleDraw();
- return {observationState(){return alive?validObservationState(observation):null;},snapshot(){return{alive,time,reduced,paused,guides,offset:{...offset},camera:{...camera},mood:mood.id,displayMode:observation.displayMode,observer:observation.request.observer,mode:observation.request.mode,computedForUtcMs:sky?.computedForUtcMs,modelUpdates,projectionUpdates,solarEventUpdates,horizonViewUpdates,horizonFraming,visibleStars:prepared?.stars.length??0,visibleLabels:Math.min(8,(guides?prepared?.labels.length??0:0)+(prepared?.cardinals.length??0)),textures:alive?SKY_BUDGET.textures:0,textureBytes:alive?2*256*256*4:0,bufferPixels:alive&&size?size.pixelWidth*size.pixelHeight:0,animationScheduled:drawTimer!==null,clockScheduled:clockTimer!==null,source:formatSkyStatus(observation.request),...(telescope?{variant:'telescope',targetId,visibleBodyIds:prepared?.bodies.map(o=>o.id)??[]}: {})};},dispose};
+ return {observationState(){return alive?validObservationState(observation):null;},suspend(){if(!alive||suspended)return;suspended=true;stopDraw();stopClock();release({});},resume(){if(!alive||!suspended)return;suspended=false;draw();scheduleDraw();scheduleClock();},snapshot(){return{alive,suspended,time,reduced,paused,guides,offset:{...offset},camera:{...camera},mood:mood.id,displayMode:observation.displayMode,observer:observation.request.observer,mode:observation.request.mode,computedForUtcMs:sky?.computedForUtcMs,modelUpdates,projectionUpdates,solarEventUpdates,horizonViewUpdates,horizonFraming,visibleStars:prepared?.stars.length??0,visibleLabels:Math.min(8,(guides?prepared?.labels.length??0:0)+(prepared?.cardinals.length??0)),textures:alive?SKY_BUDGET.textures:0,textureBytes:alive?2*256*256*4:0,bufferPixels:alive&&size?size.pixelWidth*size.pixelHeight:0,animationScheduled:drawTimer!==null,clockScheduled:clockTimer!==null,source:formatSkyStatus(observation.request),...(telescope?{variant:'telescope',targetId,visibleBodyIds:prepared?.bodies.map(o=>o.id)??[]}: {})};},dispose};
  }catch(error){dispose();throw error;}
 }

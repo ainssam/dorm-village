@@ -5,6 +5,7 @@
   "scripts": {
     "check": "node scripts/check.mjs",
     "test": "npm run test:focused",
+    "test:browser": "node --test tests/browser/*.test.mjs",
     "test:focused": "node --test tests/*.test.mjs",
     "serve": "node scripts/serve.mjs",
     "build:math": "node scripts/build-math-vendor.mjs"

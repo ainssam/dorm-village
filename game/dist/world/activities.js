@@ -1,5 +1,6 @@
+import {BOOKS,bookDiscoveryId} from '../state/library.js';
 import {FOREST_SEATS} from './forest-coast-layout.js';
-import {AIRPORT_SEAT} from '../aviation/main-airfield-layout.js';
+import {AIRPORT_SEAT,AIRPORT_DECK_SEAT} from '../aviation/main-airfield-layout.js';
 import {HARBOR_SEAT} from '../transport/harbor-lighthouse-layout.js';
 import {OBSERVATORY_BENCH} from '../observatory/layout.js';
 import {GARDEN_BEDS} from './garden-layout.js';
@@ -9,6 +10,7 @@ import {libraryPoses} from './library-layout.js';
 import {configureSeating} from './seating.js';
 // Existing objects tell a single small story: carry a little light through the village.
 export const DISCOVERIES={
+ ...Object.fromEntries(Object.entries(BOOKS).filter(([id])=>!['pocket-star','cloud-letter','seed-chair'].includes(id)).map(([id,b])=>[bookDiscoveryId(id),{place:'별숲 도서관',title:b.title,text:b.text}])),
  'pond-catch':{place:'바람 공원 · 연못',title:'찌가 잠기는 순간',text:'작은 찌를 바라보다가 물고기와 줄을 나눠 당겼다. 기다리고 쉬어 가니 연못의 반짝임이 손 가까이 왔다.'},
  'sea-catch':{place:'별빛 마을 · 바닷가',title:'파도 끝의 선물',text:'바다에 낚싯줄을 드리웠다. 파도처럼 감았다 쉬기를 반복하니 작은 물고기가 반짝이며 올라왔다.'},
  'quiet-seat':{place:'마을의 빈 의자',title:'잠깐 앉아 쉬는 시간',text:'빈 의자에 앉아 책상과 주변 풍경을 바라보았다. 쉬어 가는 시간도 작은 하루의 일부다.'},
@@ -41,6 +43,7 @@ export const ACTIVITIES=Object.fromEntries([
  ...FOREST_SEATS.map(s=>({...s})),
  {...HARBOR_SEAT},
  {...AIRPORT_SEAT},
+ {...AIRPORT_DECK_SEAT},
  {...OBSERVATORY_BENCH},
  pose('classroom.chair-left','classroom',{x:-1.65,z:1.94},{x:-1.65,y:.4458,z:.65,yaw:Math.PI},'의자에 앉아 쓰기','read','school-seat',{prop:'notebook',poseName:'deskRead',leaveLabel:'공책 덮고 일어나기',text:'오늘의 숙제: 마을에서 좋아하는 순간 하나를 찾아오기.'}),
  pose('classroom.chair-right','classroom',{x:1.65,z:1.94},{x:1.65,y:.4458,z:.65,yaw:Math.PI},'의자에 앉아 읽기','read','school-seat',{prop:'book',poseName:'deskRead',leaveLabel:'책 덮고 일어나기',text:'책상 위 공책에 작은 하루의 첫 줄을 남겨요.'}),

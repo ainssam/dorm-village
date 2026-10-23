@@ -9,3 +9,4 @@
 .fish-scoop-open .bottom-controls .dpad{visibility:visible!important;pointer-events:auto!important}.fish-scoop-open #move-stick{visibility:visible!important;pointer-events:auto!important}.fish-scoop-open #stick-help{visibility:visible!important}
 @media (orientation:landscape) and (max-height:520px){.fish-scoop-heading{top:max(6px,env(safe-area-inset-top));left:10px;transform:none}.fish-scoop-panel{right:max(10px,env(safe-area-inset-right));bottom:max(8px,env(safe-area-inset-bottom));width:190px;padding:7px 8px}.fish-scoop-panel p{min-height:24px}.fish-scoop-panel small{font-size:9px}}
 @media (prefers-reduced-motion:reduce){.fish-scoop-overlay *{scroll-behavior:auto}}
+.fish-scoop-open .mission-pill,.fish-scoop-open footer{visibility:hidden!important;pointer-events:none!important}

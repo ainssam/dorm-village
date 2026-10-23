@@ -1,4 +1,4 @@
-import {AIRPORT_LOOKOUT} from '../aviation/main-airfield-layout.js';
+import {AIRPORT_LOOKOUT,AIRPORT_DECK_LOOKOUT} from '../aviation/main-airfield-layout.js';
 import {HARBOR_LOOKOUT,HARBOR_SEAT} from '../transport/harbor-lighthouse-layout.js';
 import {LOOKOUT_VIEW} from './layout.js';
 import {createLookoutCamera} from './camera.js';
@@ -24,7 +24,7 @@ export function createLookoutGameHost({getContext,isAllowed,clearInput,onChange=
  }
  const controller=createLookoutController({reduced,onCut:scenic=>sourceResize(scenic),onRelease:release,onChange:()=>controls?.sync()});
  const api={
-  open(target){const lookout=[LOOKOUT_VIEW,HARBOR_LOOKOUT,AIRPORT_LOOKOUT].find(x=>x.id===target?.id);if(!lookout||disposed||controller.active||!isAllowed(lookout)||doc?.hidden||doc?.hasFocus?.()===false)return false;const c=getContext(),world=c.view?.collisionWorldAt?.(c.player.position)??c.view?.collisionWorld?.()??c.view?.residents?.collisionWorld?.()??c.room;
+  open(target){const lookout=[LOOKOUT_VIEW,HARBOR_LOOKOUT,AIRPORT_LOOKOUT,AIRPORT_DECK_LOOKOUT].find(x=>x.id===target?.id);if(!lookout||disposed||controller.active||!isAllowed(lookout)||doc?.hidden||doc?.hasFocus?.()===false)return false;const c=getContext(),world=c.view?.collisionWorldAt?.(c.player.position)??c.view?.collisionWorld?.()??c.view?.residents?.collisionWorld?.()??c.room;
    if(c.room.id!=='courtyard'||c.view?.worldId!=='courtyard'||c.view?.root?.parent!==c.scene||c.model?.parent!==c.player||c.player.parent!==c.scene||target?.type!==lookout.type||(lookout.sceneObject&&!c.view.root.getObjectByName(lookout.sceneObject))||!seated(c,lookout)||(!lookout.seatId&&(Math.hypot(c.player.position.x-lookout.at.x,c.player.position.z-lookout.at.z)>lookout.radius+1e-8||!canMove(world,c.player.position.x,c.player.position.z,RADIUS)||!lineClear(world,c.player.position,lookout.at,RADIUS))))return false;
    try{clearInput();mapSeatHold=null;c.cam.setEnabled(false);entry={lookout,releaseEndpoint:null,seatActivity:lookout.seatId?c.activity.active:null,view:c.view,root:c.view.root,player:c.player,model:c.model,saved:capture(c.camera,c.cam),width:stage.clientWidth,height:stage.clientHeight};c.view.prepareEndpoint?.(lookout.endpointId);const endpoint=lookout.endpointId?c.view.endpointContext?.(lookout.endpointId):null;entry.releaseEndpoint=(endpoint?.dock??endpoint?.airport)?.pin?.()??null;camera=createLookoutCamera(stage.clientWidth,stage.clientHeight,lookout.camera);ocean=createLookoutOcean({camera,mood:getMood()?.id??'day'});ocean.root.visible=false;c.scene.add(ocean.root);controller.start();controls=mountLookoutControls({stage,controller:api,lookout});onChange();return true;}catch(error){lastError=error?.message??String(error);if(controller.active)controller.cancel('error');else release({reason:'error',map:false});return false;}
   },

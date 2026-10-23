@@ -17,7 +17,7 @@ export class ResidentController{
    r.x=x;r.z=z;r.moving=true;r.distance+=step;
   }
  }
- interactions(){return this.residents.map(r=>({id:'resident.'+r.id,type:'resident',residentId:r.id,at:r.spec.talkAt??{x:r.x,z:r.z},radius:r.spec.interactionRadius??1.8,label:r.spec.name+'와 이야기하기',name:r.spec.name,role:r.spec.role,text:r.spec.text}));}
+ interactions(){return this.residents.map(r=>({id:'resident.'+r.id,type:'resident',residentId:r.id,at:r.spec.talkAt??{x:r.x,z:r.z},radius:r.spec.interactionRadius??1.8,label:r.spec.name+' · 이야기하기',name:r.spec.name,role:r.spec.role,text:r.spec.text}));}
  collisionWorld(){return {...this.room,circles:[...(this.room.circles??[]),...this.residents.map(r=>({x:r.x,z:r.z,avoidSlide:!r.spec.stationary&&!(r.courtesy?.blockedTime>.8),radius:r.spec.walkRadius&&(r.phase!=='rest'&&r.phase!=='lifting'||r.stowProp)?r.spec.walkRadius:r.spec.radius??RESIDENT_RADIUS}))]};}
  snapshot(){return this.residents.map(({id,x,z,yaw,moving})=>({id,x,z,yaw,moving}));}
 }

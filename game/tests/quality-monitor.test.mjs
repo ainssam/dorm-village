@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {QualityMonitor,isQualitySampleEligible} from '../dist/quality.js';
+const playing={ready:true,hidden:false,focused:true,locked:true,modalLock:true,transitionLock:false,activityRendering:true};
+test('rendering activity remains sampled while its own modal locks walking',()=>{assert.equal(isQualitySampleEligible(playing),true);const q=new QualityMonitor();let changed=false;for(let n=0;n<100;n++)changed=q.sample(100,isQualitySampleEligible(playing))||changed;assert.equal(changed,true);});
+test('background, transitions, startup and failures never count as slow gameplay',()=>{for(const patch of[{hidden:true},{focused:false},{transitionLock:true},{ready:false},{failed:true},{resetting:true}])assert.equal(isQualitySampleEligible({...playing,...patch}),false,JSON.stringify(patch));assert.equal(isQualitySampleEligible({...playing,activityRendering:false}),false);});
+test('normal walking and existing cafe/plaza frames remain eligible',()=>{assert.equal(isQualitySampleEligible({ready:true,locked:false}),true);for(const flag of['cafeActive','plazaBusy'])assert.equal(isQualitySampleEligible({ready:true,locked:true,[flag]:true}),true);});
+test('isolated resumed frame and invalid intervals reset the sample rather than downgrade',()=>{for(const interval of[Infinity,NaN,-1,0,10001]){const q=new QualityMonitor();assert.equal(q.sample(interval,true),false);assert.equal(q.downgraded,false);for(let i=0;i<600;i++)assert.equal(q.sample(16,true),false);}});
+test('ineligible frames reset prior slow samples and only sustained slow play lowers quality once',()=>{const q=new QualityMonitor();for(let i=0;i<99;i++)assert.equal(q.sample(100,true),false);q.sample(100,false);assert.equal(q.sample(100,true),false);for(let i=0;i<98;i++)assert.equal(q.sample(100,true),false);assert.equal(q.sample(100,true),true);assert.equal(q.sample(100,true),false);});

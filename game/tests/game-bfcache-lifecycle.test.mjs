@@ -46,6 +46,7 @@ test('persisted pagehide cancels transient work, keeps reusable owners alive and
   assert.equal(f.calls.filter(c=>c[0]==='weatherSummary').length,0);
   f.handlers.get('pageshow')({persisted:true});
   assert.equal(f.calls.filter(c=>c[0]==='ui'&&c[1]==='toast').length,cycle+1,'Read-only notice falls back while a native close event still owns the modal lock');
+  assert.equal(f.calls.findLast(c=>c[0]==='ui'&&c[1]==='message')[4]?.reload,true,'return offers deliberate refresh without releasing read-only fencing');
   assert.equal(f.ctx.baseline.blocked,true);
   assert.equal(f.ctx.baseline.writerReady,false);
   assert(f.calls.some(c=>c[0]==='save'&&c[1]==='read-only'));

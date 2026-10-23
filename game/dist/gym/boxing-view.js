@@ -5,6 +5,12 @@ import {BOXING_GEOMETRY as G,BOXING_BAG_PARTS} from './boxing-layout.js';
 export function buildBoxingView(parent){
  const machine=new THREE.Group();machine.name='schoolGym.boxing';parent?.add(machine);const kit=createToyKit(machine),solids=[];
  const mat=kit.box(3.1,.01,3.7,'#b9cabc',0,.007,-.25,.003);mat.name='schoolGym.boxing.mat';
+ const ringMark=(name,w,d,x,z,color='#f1d184')=>{const n=kit.box(w,.012,d,color,x,.02,z,.01);n.name='schoolGym.boxing.ring-mark.'+name;return n;};
+ // A warm, bounded ring outline and corner pads give the existing bag station
+ // a clear training-floor identity; decals sit below the actor's supported feet.
+ ringMark('left-rail',.05,3.30,-1.42,-.25);ringMark('right-rail',.05,3.30,1.42,-.25);
+ ringMark('near-rail',2.78,.05,0,-1.87);ringMark('far-rail',2.78,.05,0,1.37);
+ for(const[x,z]of[[-1.23,-1.67],[1.23,-1.67],[-1.23,1.17],[1.23,1.17]])ringMark(`corner-${x}-${z}`,.24,.24,x,z,'#cb8b69');
  for(const side of[-1,1]){solids.push(kit.box(.20,2.14,.22,'#7b9990',side*1.12,1.082,G.bagZ,.04));kit.box(.40,.05,.58,'#92ada0',side*1.12,.037,G.bagZ,.02);}
  solids.push(kit.box(2.44,.14,.2,'#7b9990',0,2.05,G.bagZ,.04));
  const suspension=new THREE.Group();suspension.name='schoolGym.boxing.suspension';suspension.position.set(0,G.pivotY,G.bagZ);machine.add(suspension);

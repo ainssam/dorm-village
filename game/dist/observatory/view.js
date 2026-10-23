@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
 import {buildOutdoorTerrain} from '../world/outdoor-terrain.js';
 import {signLabel} from '../world/handwriting.js';
+import {tagSeasonal} from '../world/seasonal-appearance.js';
 import {DOME,OBSERVATORY_WALLS,OBSERVATORY_SHORE,TELESCOPE,TELESCOPE_FOOT,OBSERVATORY_MAP} from './layout.js';
 const P={cream:'#f0e5ce',stone:'#d7ccb9',roof:'#83aaa9',rim:'#62898c',brass:'#c6a16b',dark:'#596a68',wood:'#c4a482',grass:'#b7caa5',path:'#dfd5bc'};
 function tube(kit,parent,a,b,r,color,name){const start=new THREE.Vector3(...a),end=new THREE.Vector3(...b),mesh=kit.cylinder(r,r,start.distanceTo(end),color,0,0,0,parent);mesh.position.copy(start).add(end).multiplyScalar(.5);mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),end.sub(start).normalize());mesh.name=name;return mesh;}
@@ -33,7 +34,14 @@ function bench(kit,parent){const g=new THREE.Group();g.name='observatory.bench';
  for(let i=0;i<a.count;i++){p.fromBufferAttribute(a,i);q.set(Math.max(Math.abs(p.x)-core.x,0),Math.max(Math.abs(p.y)-core.y,0),Math.max(Math.abs(p.z)-core.z,0));if(q.lengthSq()>0){q.normalize().multiplyScalar(r);p.set(Math.sign(p.x)*(Math.min(Math.abs(p.x),core.x)+q.x),Math.sign(p.y)*(Math.min(Math.abs(p.y),core.y)+q.y),Math.sign(p.z)*(Math.min(Math.abs(p.z),core.z)+q.z));}const z=p.z-.055,t=THREE.MathUtils.clamp(z/.12,0,1);a.setXYZ(i,p.x,p.y-.052*t*t*(3-2*t),p.z);}a.needsUpdate=true;seat.geometry.computeVertexNormals();seat.geometry.computeBoundingBox();seat.geometry.computeBoundingSphere();
  box(2.04,.57,.14,P.wood,0,.96,-.52,.065,g).name='observatory.bench.back';for(const x of[-.79,.79])for(const z of[-.27,.27])box(.14,.53,.14,P.dark,x,.285,z,.05,g);return g;
 }
-export function buildObservatoryView(def){const root=new THREE.Group();root.name=def.id;const kit=createToyKit(root);buildOutdoorTerrain(root,OBSERVATORY_SHORE,{name:'observatory.island',seasonalRole:'terrain.grass',surface:P.grass,earth:'#afa994',bottom:-.4});dome(kit,root);telescope(kit,root);bench(kit,root);const dock=addObservatoryDock(root);
+function scenicBackRise(kit,parent){const g=new THREE.Group();g.name='observatory.scenic.back-rise';g.position.set(0,.024,-8);g.userData={decorative:true,collision:false,walkable:false,interactions:0};parent.add(g);const mesh=new THREE.Mesh(new THREE.SphereGeometry(1,24,12),kit.mat('#a6bd88'));mesh.name='observatory.scenic.back-rise.surface';mesh.scale.set(4.45,1.0,1.2);mesh.castShadow=false;mesh.receiveShadow=true;tagSeasonal(mesh,'terrain.grass');g.add(mesh);return g;}
+function benchLantern(kit,parent){const g=new THREE.Group();g.name='observatory.bench.lantern';g.position.set(-1.28,0,-.25);g.userData={decorative:true,collision:false,walkable:false,interactions:0};parent.add(g);
+ const {cylinder,sphere}=kit;cylinder(.10,.13,.07,P.dark,0,.035,0,g).name='observatory.bench.lantern.base';cylinder(.035,.05,.78,P.dark,0,.43,0,g).name='observatory.bench.lantern.post';
+ cylinder(.17,.15,.07,P.brass,0,.84,0,g).name='observatory.bench.lantern.lower-rim';const glass=sphere(.11,P.cream,0,.97,0,1,1,1,g);glass.name='observatory.bench.lantern.glass';glass.userData.nightLamp=true;
+ cylinder(.15,.17,.07,P.brass,0,1.10,0,g).name='observatory.bench.lantern.upper-rim';cylinder(0,.20,.13,P.dark,0,1.20,0,g).name='observatory.bench.lantern.cap';
+ const light=new THREE.PointLight('#ffe0a6',0,3.2,2);light.name='observatory.bench.lantern.light';light.position.set(0,.98,0);light.userData={timeOfDayLight:true,nightIntensity:1.35};g.add(light);return g;
+}
+export function buildObservatoryView(def){const root=new THREE.Group();root.name=def.id;const kit=createToyKit(root);buildOutdoorTerrain(root,OBSERVATORY_SHORE,{name:'observatory.island',seasonalRole:'terrain.grass',surface:P.grass,earth:'#afa994',bottom:-.4});scenicBackRise(kit,root);dome(kit,root);telescope(kit,root);const seat=bench(kit,root);benchLantern(kit,seat);const dock=addObservatoryDock(root);
  kit.box(2.65,.012,6.4,P.path,0,.033,4.35,.09).name='observatory.entry-path';kit.box(4.95,.010,1.25,P.path,3.8,.034,4.35,.09).name='observatory.bench-path';kit.box(1.6,.03,.5,P.roof,0,.05,8.4,.12);signLabel('마을로',0,.22,8.7,1.3,P.dark,P.cream,root);
  let disposed=false;return{root,dock,stars:[],occluders:[],camera:def.camera,sync(){},animate(){},setActivityProgress(){},dispose(){if(disposed)return;disposed=true;dock.dispose();disposeToyTree(root);}};
 }

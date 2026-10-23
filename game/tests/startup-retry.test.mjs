@@ -10,6 +10,8 @@ function runBootstrap(createLoader) {
   assert.ok(bootstrap, 'index.html must keep the startup recovery bootstrap');
   assert.match(bootstrap, /return import\('\.\/game\.js'\)\.catch\(/);
   const fallback = { hidden: true };
+  const scene = { tabIndex: 0 };
+  const viewport = { inert: false };
   const title = { textContent: '3D 화면을 열지 못했어요' };
   const message = { textContent: '' };
   const loading = { hidden: false };
@@ -17,8 +19,9 @@ function runBootstrap(createLoader) {
     disabled: false,
     textContent: '다시 열기',
     onclick: null,
+    focus(){document.activeElement=this;},
   };
-  const elements = { fallback, 'fallback-title': title, 'fallback-text': message, loading, retry };
+  const elements = { scene, 'world-viewport': viewport, fallback, 'fallback-title': title, 'fallback-text': message, loading, retry };
   let reloads = 0;
   const logged = [];
   const document = {
@@ -35,7 +38,7 @@ function runBootstrap(createLoader) {
   assert.notEqual(executable, bootstrap);
   const context = vm.createContext({ document, window, console: { error: (...args) => logged.push(args) } });
   const result = new vm.Script(executable, { filename: 'dist/index.html#startup-bootstrap' }).runInContext(context);
-  return { result, fallback, title, message, loading, retry, document, logged, get reloads() { return reloads; } };
+  return { result, scene, viewport, fallback, title, message, loading, retry, document, logged, get reloads() { return reloads; } };
 }
 
 test('startup module/dependency rejection announces failure and offers one safe full-page retry', async () => {
@@ -95,3 +98,5 @@ test('startup bootstrap is self-contained and replaces the former uncaught stati
   assert.match(bootstrap, /retry\.onclick=/);
   assert.match(bootstrap, /window\.location\.reload\(\)/);
 });
+
+test('startup failure focuses retry and removes the covered canvas from keyboard navigation',async()=>{const state=runBootstrap(()=>()=>Promise.reject(new Error('load')));await state.result;assert.equal(state.scene.tabIndex,-1);assert.equal(state.viewport.inert,true);assert.equal(state.document.activeElement,state.retry);assert.match(html,/id="fallback-help"/);assert.match(html,/브라우저 데이터.*삭제하지/);});

@@ -1,7 +1,7 @@
 import {buildCarouselBridge} from './carousel-bridge.js';
 import {buildCarouselHorse} from './carousel-horse.js';
 import {VILLAGE_BUILDINGS,buildVillageBuilding} from '../world/landmarks.js';
-import {VILLAGE_SOURCE_SHORE} from '../world/village-layout.js';
+import {VILLAGE_LAYOUT,VILLAGE_SOURCE_SHORE} from '../world/village-layout.js';
 import {buildKartEntrance} from './kart-entrance.js';
 import {buildCastleExterior} from './castle-exterior.js';
 import {createVikingCamera} from './viking-camera.js';
@@ -32,46 +32,79 @@ function buildVikingVillageVista(kit,parent){
  // the ordinary walking scene remains its one authoritative, full-scale world.
  const sea=new THREE.Mesh(new THREE.PlaneGeometry(90,90),new THREE.MeshBasicMaterial({color:'#c4e2e6',toneMapped:false}));sea.name='amusement.viking.village-vista.sea';sea.rotation.x=-Math.PI/2;sea.position.y=-.30*.34;vista.add(sea);
  const landscape=new THREE.Group();landscape.name='amusement.viking.village-landscape';landscape.scale.setScalar(.34);landscape.rotation.y=Math.PI;vista.add(landscape);
- const islandOutline=VILLAGE_SOURCE_SHORE.filter((_,index)=>index%2===0);
+ const islandOutline=VILLAGE_SOURCE_SHORE.filter((_,index)=>index%3===0);
  const shoreOutline=islandOutline.map(([x,z])=>[x*1.035,z*1.035]);
  buildOutdoorTerrain(landscape,shoreOutline,{name:'amusement.viking.village-shore',earth:'#ead8ac',surface:'#ead8ac',top:-.07,bottom:-.34});
  buildOutdoorTerrain(landscape,islandOutline,{name:'amusement.viking.village-island',earth:'#8fa578',surface:'#a6bd88',top:.025,bottom:-.43});
  const villageKit=createToyKit(landscape);
  const roadMaterial=villageKit.mat('#e7debd');
- for(const[id,points]of[['east-west',[[-11,-1.7],[10,-1.7]]],['north-south',[[0,-5],[0,10]]]]){
-  const[[x0,z0],[x1,z1]]=points,dx=x1-x0,dz=z1-z0,length=Math.hypot(dx,dz),nx=-dz/length, nz=dx/length,w=1,shape=new THREE.Shape();
-  shape.moveTo(x0+nx*w,-(z0+nz*w));shape.lineTo(x1+nx*w,-(z1+nz*w));shape.lineTo(x1-nx*w,-(z1-nz*w));shape.lineTo(x0-nx*w,-(z0-nz*w));shape.closePath();
-  const road=new THREE.Mesh(new THREE.ShapeGeometry(shape),roadMaterial);road.name='amusement.viking.village-path.'+id;road.rotation.x=-Math.PI/2;road.position.y=.043;road.receiveShadow=false;landscape.add(road);
+ const scenicPaths=new Set(['east-west','north-south','to-bakeryCafe','to-postOffice','to-workshop','to-photoStudio']),pathParts=[],pathMatrix=new THREE.Matrix4().makeRotationX(-Math.PI/2);
+ for(const path of VILLAGE_LAYOUT.paths){if(!scenicPaths.has(path.id))continue;for(let i=1;i<path.points.length;i++){
+  const[x0,z0]=path.points[i-1],[x1,z1]=path.points[i],dx=x1-x0,dz=z1-z0,length=Math.hypot(dx,dz);if(length<1e-6)continue;
+  const nx=-dz/length,nz=dx/length,w=path.width/2,shape=new THREE.Shape();shape.moveTo(x0+nx*w,-(z0+nz*w));shape.lineTo(x1+nx*w,-(z1+nz*w));shape.lineTo(x1-nx*w,-(z1-nz*w));shape.lineTo(x0-nx*w,-(z0-nz*w));shape.closePath();
+  const part=new THREE.ShapeGeometry(shape);part.applyMatrix4(pathMatrix);part.translate(0,.043,0);pathParts.push(part);
+ }}
+ if(pathParts.length){const road=new THREE.Mesh(mergeGeometries(pathParts,false),roadMaterial);road.name='amusement.viking.village-layout-paths';road.userData={sourceLayout:'VILLAGE_LAYOUT.paths',pathIds:[...scenicPaths]};road.receiveShadow=false;landscape.add(road);pathParts.forEach(part=>part.dispose());}
+ const visibleLandmarks=new Set(['school','home','bakeryCafe','postOffice','workshop','photoStudio']),landmarks=[],sourceGeometries=new Set(),sourceMaterials=new Set(),canonicalMaterials=new Map(),batches=new Map(),inverseLandscape=new THREE.Matrix4();
+ function queueVistaGeometry(geometry,color,sourceMaterial,nightLamp=false,nightWindow=false){
+  sourceMaterials.add(sourceMaterial);const materialKey=sourceMaterialKey(sourceMaterial);
+  const rgb=color?.isColor?color:new THREE.Color(color),colorData=new Float32Array(geometry.attributes.position.count*3);
+  for(let i=0;i<colorData.length;i+=3){colorData[i]=rgb.r;colorData[i+1]=rgb.g;colorData[i+2]=rgb.b;}
+  geometry.setAttribute('color',new THREE.BufferAttribute(colorData,3));
+  const attributes=Object.keys(geometry.attributes).sort().join(',')+'|'+(geometry.index?'indexed':'unindexed'),key=materialKey+'|'+attributes+'|nightLamp:'+nightLamp+'|nightWindow:'+nightWindow;
+  if(!batches.has(key)){const material=sourceMaterial.clone();material.color.set('#ffffff');material.vertexColors=true;canonicalMaterials.set(key,material);batches.set(key,{material,parts:[],nightLamp,nightWindow});}
+  batches.get(key).parts.push(geometry);
  }
- const visibleLandmarks=new Set(['school','home','bakeryCafe','postOffice']),landmarks=[],sourceGeometries=new Set(),sourceMaterials=new Set(),canonicalMaterials=new Map(),batches=new Map(),inverseLandscape=new THREE.Matrix4();
+ function sourceMaterialKey(material){return[material.type,material.roughness,material.metalness,material.opacity,material.transparent,material.side,material.toneMapped].join('|');}
  for(const config of VILLAGE_BUILDINGS){
   if(!visibleLandmarks.has(config.id))continue;
   const building=buildVillageBuilding(villageKit,config),bounds=new THREE.Box3(),marker=new THREE.Group();
   building.updateWorldMatrix(true,true);bounds.setFromObject(building);inverseLandscape.copy(landscape.matrixWorld).invert();bounds.applyMatrix4(inverseLandscape);
-  marker.name='amusement.viking.village.'+config.id;marker.userData={villageVista:true,decorative:true,collision:false,interactions:0,facade:config.id,sourcePosition:[config.x,0,config.z],sourceYaw:config.yaw??0,bounds:{min:bounds.min.toArray(),max:bounds.max.toArray()}};vista.add(marker);landmarks.push(config.id);
+  marker.name='amusement.viking.village.'+config.id;marker.userData={villageVista:true,decorative:true,collision:false,interactions:0,facade:config.id,sourcePosition:[config.x,0,config.z],sourceYaw:config.yaw??0,bounds:{min:bounds.min.toArray(),max:bounds.max.toArray()},retainedSourceParts:[]};vista.add(marker);landmarks.push(config.id);
   building.traverse(o=>{if(!o.isMesh)return;sourceGeometries.add(o.geometry);const old=o.material;sourceMaterials.add(old);
-   const sourceName=o.name??'';
-   // Retain real shell, roof, door and glazing forms; omit tiny trim/crossbars
-   // that are sub-pixel at the rider's viewing distance.
-   const keep=/\.body$|\.gable$|\.roof-slope\.|\.ridge$|\.gambrel$|\.hip$|\.door-frame$|\.door$|\.postal-canopy$|\.attic-window/.test(sourceName)||o.userData.nightWindow;
+   const sourceName=o.name??'',parentName=o.parent?.name??'';
+   // Retain real shells, roof profiles, selected glazing, and the bakery/school
+   // identity cues; omit the remaining tiny trim and crossbars at ride distance.
+   const bakeryAwning=config.id==='bakeryCafe'&&parentName.endsWith('.striped-awning'),schoolClock=config.id==='school'&&sourceName.endsWith('.clock'),schoolClockHand=config.id==='school'&&old.color?.getHexString()==='5d7769'&&o.geometry.type==='BoxGeometry';
+   const keep=/\.body$|\.gable$|\.roof-slope\.|\.ridge$|\.gambrel$|\.hip$|\.sawtooth$|\.studio-shed$|\.workshop-window$|\.studio-glazing|\.door-frame$|\.door$|\.postal-canopy$|\.attic-window/.test(sourceName)||o.userData.nightWindow||/\.roof$/.test(parentName)&&o.parent.parent===building||bakeryAwning||schoolClock||schoolClockHand;
    if(!keep)return;
-   const materialKey=[old.type,old.color?.getHexString(),old.roughness,old.metalness,old.opacity,old.transparent,old.side,old.toneMapped].join('|');let material=canonicalMaterials.get(materialKey);if(!material){material=old;canonicalMaterials.set(materialKey,material);}o.material=material;
-   const g=o.geometry.clone(),matrix=new THREE.Matrix4().copy(inverseLandscape).multiply(o.matrixWorld);g.applyMatrix4(matrix);const attributes=Object.keys(g.attributes).sort().join(',')+'|'+(g.index?'indexed':'unindexed');const key=materialKey+'|'+attributes;if(!batches.has(key))batches.set(key,{material,parts:[]});batches.get(key).parts.push(g);
+   if(bakeryAwning&&!marker.userData.retainedSourceParts.includes('striped-awning'))marker.userData.retainedSourceParts.push('striped-awning');
+   if(schoolClock)marker.userData.retainedSourceParts.push('clock');
+   if(schoolClockHand&&!marker.userData.retainedSourceParts.includes('clock-hand'))marker.userData.retainedSourceParts.push('clock-hand');
+   const materialKey=sourceMaterialKey(old),body=/\.body$/.test(sourceName),squareDoor=/\.(?:door|door-frame)$/.test(sourceName)&&!['home','postOffice'].includes(config.id),boxCanopy=/\.(?:postal-canopy|studio-canopy)$/.test(sourceName);
+   let g;if(body||squareDoor||boxCanopy){o.geometry.computeBoundingBox();const size=o.geometry.boundingBox.getSize(new THREE.Vector3());g=new THREE.BoxGeometry(size.x,size.y,size.z);}else g=o.geometry.clone();
+   const matrix=new THREE.Matrix4().copy(inverseLandscape).multiply(o.matrixWorld);g.applyMatrix4(matrix);queueVistaGeometry(g,old.color,old,!!o.userData.nightLamp,!!o.userData.nightWindow);
   });
+  marker.userData.retainedSourceParts.sort();
   landscape.remove(building);building.clear();
+ }
+ // Borrow the source courtyard's own low-poly planting and lamps, scaled as
+ // distant silhouettes rather than duplicating the full walkable village.
+ const fixtureIds=['tree.2','tree.10','tree.11','lamp.1','lamp.3'],fixtures=VILLAGE_LAYOUT.fixtures.filter(f=>fixtureIds.includes(f.id));
+ for(const fixture of fixtures){const {x,z}=fixture.transform??{x:0,z:0},scale=fixture.scale??1;
+  if(fixture.id.startsWith('tree.')){
+   const trunk=new THREE.CylinderGeometry(.15*scale,.23*scale,1.75*scale,8);trunk.translate(x,.875*scale,z);queueVistaGeometry(trunk,'#ae8560',villageKit.mat('#ae8560'));
+   const canopy=new THREE.SphereGeometry(.76*scale,6,4);canopy.scale(1,1.04,.95);canopy.translate(x,2.03*scale,z);queueVistaGeometry(canopy,'#7ea570',villageKit.mat('#7ea570'));
+   const crown=new THREE.SphereGeometry(.52*scale,6,4);crown.scale(.93,1.05,.90);crown.translate(x-.39*scale,2.16*scale,z+.08*scale);queueVistaGeometry(crown,'#a0bf83',villageKit.mat('#a0bf83'));
+  }else{
+   const base=new THREE.CylinderGeometry(.18,.24,.10,8);base.translate(x,.075,z);queueVistaGeometry(base,'#69877b',villageKit.mat('#69877b'));
+   const post=new THREE.CylinderGeometry(.055,.09,2.15,8);post.translate(x,1.10,z);queueVistaGeometry(post,'#69877b',villageKit.mat('#69877b'));
+   const hood=new THREE.BoxGeometry(.43,.10,.43);hood.translate(x,2.28,z);queueVistaGeometry(hood,'#e1c593',villageKit.mat('#e1c593'));
+   const bulb=new THREE.SphereGeometry(.18,8,4);bulb.scale(1,1.10,1);bulb.translate(x,2.12,z);queueVistaGeometry(bulb,'#f0e7c9',villageKit.mat('#f0e7c9'),true);
+   const cap=new THREE.CylinderGeometry(.30,.06,.19,8);cap.translate(x,2.41,z);queueVistaGeometry(cap,'#6f897c',villageKit.mat('#6f897c'));
+  }
  }
  landscape.updateMatrixWorld(true);
  let batchIndex=0,sourceTriangles=0,lodTriangles=0;
- for(const{material,parts}of batches.values()){
+ for(const{material,parts,nightLamp,nightWindow}of batches.values()){
   let geometry=mergeGeometries(parts,false);if(!geometry)throw new Error('Unable to batch village-view geometry');
   const triangles=geometry.index?geometry.index.count/3:geometry.attributes.position.count/3;sourceTriangles+=triangles;
-  lodTriangles+=geometry.index?geometry.index.count/3:geometry.attributes.position.count/3;
-  const mesh=new THREE.Mesh(geometry,material);mesh.name=`amusement.viking.village-detail-batch.${++batchIndex}`;mesh.userData.vikingVillageVista=true;mesh.castShadow=false;mesh.receiveShadow=false;landscape.add(mesh);for(const part of parts)part.dispose();
+  const mesh=new THREE.Mesh(geometry,material);mesh.name=`amusement.viking.village-detail-batch.${++batchIndex}`;mesh.userData={vikingVillageVista:true,...(nightLamp?{nightLamp:true}:{}),...(nightWindow?{nightWindow:true}:{})};mesh.castShadow=false;mesh.receiveShadow=false;landscape.add(mesh);for(const part of parts)part.dispose();
  }
  for(const geometry of sourceGeometries)geometry.dispose();
- const usedMaterials=new Set([...batches.values()].map(batch=>batch.material));for(const material of sourceMaterials)if(!usedMaterials.has(material))material.dispose();
+ const usedMaterials=new Set();vista.traverse(o=>{for(const m of o.material?(Array.isArray(o.material)?o.material:[o.material]):[])usedMaterials.add(m);});for(const material of sourceMaterials)if(!usedMaterials.has(material))material.dispose();
  vista.traverse(o=>{if(o.isMesh){o.castShadow=false;o.receiveShadow=false;}});
- vista.userData.landmarks=landmarks;vista.userData.meshBatches=batchIndex;vista.userData.sourceTriangles=sourceTriangles;vista.userData.lodTriangles=lodTriangles;
+ vista.userData.landmarks=landmarks;vista.userData.fixtureIds=fixtures.map(f=>f.id);vista.userData.pathIds=[...scenicPaths];vista.userData.meshBatches=batchIndex;vista.userData.sourceTriangles=sourceTriangles;vista.userData.lodTriangles=(()=>{let count=0;vista.traverse(o=>{if(o.isMesh)count+=o.geometry.index?o.geometry.index.count/3:o.geometry.attributes.position.count/3;});return count;})();
  return vista;
 }
 function carriage(kit,parent){const{box,sphere,cylinder,feature}=kit,g=new THREE.Group();g.name='amusement.carousel.carriage';g.position.z=C.seatRadius;parent.add(g);

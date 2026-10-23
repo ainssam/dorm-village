@@ -2,6 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
   FISH_SCOOP_SECONDS,
+  FISH_SCOOP_HIT_TIME,
+  FISH_SCOOP_LOWER_TIME,
+  FISH_SCOOP_SLIDE_TIME,
+  FISH_SCOOP_RISE_TIME,
   createFishScoopState,
   startFishScoop,
   moveFishScoopNet,
@@ -30,7 +34,7 @@ test('fish scoop is a deterministic 50-second transient round with bounded movin
   assert.equal(a.timeLeft, 48);
 });
 
-test('the net moves with bounded axes and only one scoop can be active at once', () => {
+test('the net moves with bounded axes and only steers again during the underwater slide', () => {
   let state = startFishScoop(createFishScoopState());
   state = moveFishScoopNet(state, {x: 1, z: .5}, 30);
   assert((state.net.x / .92) ** 2 + (state.net.z / .50) ** 2 <= 1.000001);
@@ -38,22 +42,37 @@ test('the net moves with bounded axes and only one scoop can be active at once',
   assert.equal(state.scoop.phase, 'lowering');
   assert.equal(triggerFishScoop(state), state);
   assert.equal(moveFishScoopNet(state, {x: -1, z: -1}, .1), state);
+  state = run(state, FISH_SCOOP_LOWER_TIME + .01);
+  assert.equal(state.scoop.phase, 'sliding');
+  const beforeSlide={...state.net};
+  state = moveFishScoopNet(state, {x: -1, z: -1}, .1);
+  assert(state.net.x < beforeSlide.x && state.net.z < beforeSlide.z, 'the player can gently guide the submerged net beneath a fish');
+  assert.equal(triggerFishScoop(state), state, 'a second catch cannot interrupt the active scoop');
 });
 
-test('a scoop resolves once at the water contact, scores one fish or a miss, and can retry', () => {
+test('a scoop sinks, slides beneath a nearby fish, then resolves fairly and lifts', () => {
   let state = startFishScoop(createFishScoopState({seed: 0}));
   const [fish] = fishScoopPositions(state);
   state = moveFishScoopNet(state, {x: fish.x, z: fish.z}, 1);
   state = triggerFishScoop(state);
-  state = run(state, .45);
+  state = run(state, FISH_SCOOP_LOWER_TIME - .03);
+  assert.equal(state.scoop.phase, 'lowering');
+  assert.equal(state.score, 0, 'reaching the fish during descent never counts as a hit');
+  state = run(state, .08);
+  assert.equal(state.scoop.phase, 'sliding');
+  assert.equal(state.score, 0, 'the net first settles below the visible waterline');
+  state = run(state, FISH_SCOOP_SLIDE_TIME + .03);
   assert.equal(state.scoop.result, 'caught');
   assert.equal(state.score, 1);
   assert.equal(state.attempts, 1);
-  state = run(state, .8);
+  assert.equal(state.scoop.phase, 'rising');
+  assert(state.scoop.elapsed < FISH_SCOOP_RISE_TIME);
+  assert.equal(FISH_SCOOP_HIT_TIME,FISH_SCOOP_LOWER_TIME+FISH_SCOOP_SLIDE_TIME);
+  state = run(state, FISH_SCOOP_RISE_TIME + .08);
   assert.equal(state.scoop.phase, 'idle');
   state = moveFishScoopNet(state, {x: 0, z: -1}, .4);
   state = triggerFishScoop(state);
-  state = run(state, .45);
+  state = run(state, FISH_SCOOP_HIT_TIME + .04);
   assert.equal(state.score, 1);
   assert.equal(state.attempts, 2);
   assert.equal(state.scoop.result, 'miss');
@@ -67,7 +86,7 @@ test('pause freezes clock and scoop animation; explicit resume is required', () 
   const paused = stepFishScoop(state, 5);
   assert.deepEqual(paused, state);
   state = resumeFishScoop(paused);
-  state = run(state, .35);
+  state = run(state, FISH_SCOOP_HIT_TIME + .06);
   assert.equal(state.phase, 'playing');
   assert.equal(state.scoop.phase, 'rising');
   assert.equal(state.scoop.result, 'caught');

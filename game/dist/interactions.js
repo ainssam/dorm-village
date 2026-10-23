@@ -6,6 +6,21 @@ const priority=i=>i.type==='portal'?0:i.type==='resident'?2:1;
 const restful=i=>i.type==='pose'&&(i.seating||i.kind==='sleep');
 const distance=(a,b)=>Math.hypot(a.x-b.x,a.z-b.z);
 const anchor=i=>i.localTarget?toWorld(i.ownerRoomId??i.localTarget.roomId,i.localTarget.anchor):i.anchor;
+const authoredRadius=Symbol('authoredInteractionRadius');
+const experienceTypes=new Set(['activity','amusementFood','claw','fishScoop','gymTool','homeTool','schoolTool','telescope','villageTool']);
+const expandsForExperience=i=>experienceTypes.has(i?.type)||i?.type==='pose'&&!restful(i);
+export function interactionRadius(i){
+ const radius=i?.[authoredRadius]??i?.radius;
+ if(!expandsForExperience(i)||!Number.isFinite(radius)||radius<=0||radius>=1.1)return radius;
+ return Math.min(1.35,Math.max(radius+.4,1.05));
+}
+function resolvedTarget(i,overrides={}){
+ const radius=interactionRadius(i),authored=i?.[authoredRadius]??i?.radius;
+ if(!Object.keys(overrides).length&&radius===i?.radius)return i;
+ const result={...i,...overrides,radius};
+ if(i?.[authoredRadius]!==undefined||radius!==i?.radius)Object.defineProperty(result,authoredRadius,{value:authored,enumerable:true});
+ return result;
+}
 function boxDistance(p,o){const c=Math.cos(o.yaw??0),s=Math.sin(o.yaw??0),x=(p.x-o.x)*c-(p.z-o.z)*s,z=(p.x-o.x)*s+(p.z-o.z)*c;return Math.hypot(Math.max(Math.abs(x)-o.hx,0),Math.max(Math.abs(z)-o.hz,0));}
 function nearRestFurniture(room,i,player,radius){
  if(!restful(i))return false;
@@ -19,7 +34,7 @@ function nearRestFurniture(room,i,player,radius){
 export function canReachInteraction(room,player,i,radius=RADIUS){
  if(i.type==='gymTool'||i.type==='claw')radius=Math.max(radius,.66);
  radius=i.type==='boat'||i.type==='flight'?Math.max(radius,BOARDING_CLEARANCE):i.id==='courtyard.campfire.seat.dormi'?Math.max(radius,.66):radius;
- if(i.mode==='walk'||!(distance(player,i.at)<=i.radius||nearRestFurniture(room,i,player,radius)))return false;
+ if(i.mode==='walk'||!(distance(player,i.at)<=interactionRadius(i)||nearRestFurniture(room,i,player,radius)))return false;
  const clearance=(restful(i)||i.requiresClearApproach)?radius:.05;
  if(!lineClear(room,player,i.at,clearance))return false;
  // Some café seats mount from a second authored side-aisle point. Validate the
@@ -27,4 +42,4 @@ export function canReachInteraction(room,player,i,radius=RADIUS){
  const local=i.localTarget??i,stage=local.seatApproach&&!local.seatViaApproach?local.seatApproach:null;
  return !stage||lineClear(room,player,i.localTarget?toWorld(i.ownerRoomId??local.roomId,stage):stage,clearance);
 }
-export function findInteraction(room,player,extra=[],clearanceWorld=room){return [...room.portals,...room.interactables,...extra].flatMap(i=>i.approaches?.length?i.approaches.map((at,approachIndex)=>({...i,at,approachIndex})):[i]).filter(i=>canReachInteraction(restful(i)||i.requiresClearApproach?clearanceWorld:room,player,i)).sort((a,b)=>priority(a)-priority(b)||(restful(a)&&restful(b)?distance(player,anchor(a))-distance(player,anchor(b)):0)||distance(player,a.at)-distance(player,b.at)||a.id.localeCompare(b.id))[0]??null;}
+export function findInteraction(room,player,extra=[],clearanceWorld=room){return [...room.portals,...room.interactables,...extra].flatMap(i=>i.approaches?.length?i.approaches.map((at,approachIndex)=>resolvedTarget(i,{at,approachIndex})):[resolvedTarget(i)]).filter(i=>canReachInteraction(restful(i)||i.requiresClearApproach?clearanceWorld:room,player,i)).sort((a,b)=>priority(a)-priority(b)||(restful(a)&&restful(b)?distance(player,anchor(a))-distance(player,anchor(b)):0)||distance(player,a.at)-distance(player,b.at)||a.id.localeCompare(b.id))[0]??null;}

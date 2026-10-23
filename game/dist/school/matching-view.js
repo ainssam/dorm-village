@@ -1,3 +1,4 @@
+import {activityOutcomeMarkup,mountActivityOutcome} from '../activity-outcome.js';
 import {createMatchController,SPELLING_PAIRS} from './matching-game.js';
 const drawings={
  book:'<path d="M18 25q17-8 32 0 15-8 32 0v49q-17-8-32 0-15-8-32 0z" fill="#88b4a0"/><path d="M50 25v49M25 35q10-4 18 0m-18 11q10-4 18 0m-18 11q10-4 18 0m14-22q10-4 18 0m-18 11q10-4 18 0m-18 11q10-4 18 0" fill="none"/>',
@@ -9,10 +10,10 @@ const drawings={
 };
 const svg=id=>`<svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" fill="none" stroke="#45665a" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round">${drawings[id]??drawings.star}</svg>`;
 const escape=s=>String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
-export function matchingGameMarkup(){return `<div id="matching-game" class="matching-game" data-mode="pictures"><div class="match-modes" role="group" aria-label="놀이 선택"><button type="button" data-match-mode="pictures" aria-pressed="true">같은 그림</button><button type="button" data-match-mode="spelling" aria-pressed="false">맞춤법</button></div><p id="match-instruction" class="match-instruction">두 장씩 뒤집어 같은 그림을 찾아요</p><div class="match-tally"><strong id="match-count"></strong><span id="match-moves"></span></div><div class="match-grid" role="group" aria-label="뒤집을 카드" aria-describedby="match-instruction">${Array.from({length:12},(_,i)=>`<button type="button" class="match-card" data-match-card="${i}" aria-label="${i+1}번 카드, 뒤집기"><span class="match-inner" aria-hidden="true"><span class="match-back">${svg('star')}<span data-match-back="${i}"></span></span><span class="match-front" data-match-face="${i}"></span><span class="match-check">✓</span></span></button>`).join('')}</div><p id="match-status" class="match-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="match-note" class="match-note" hidden><strong id="match-sentence"></strong><p id="match-explanation"></p><a id="match-source" target="_blank" rel="noopener noreferrer">국립국어원 설명 보기</a></div><div class="match-actions"><button id="match-restart" type="button">새로 섞기</button><button type="button" data-close>닫기</button></div><p class="match-footnote">시간 제한 없이 천천히 · 이번 놀이는 저장되지 않아요</p></div>`;}
+export function matchingGameMarkup(){return `<div id="matching-game" class="matching-game" data-mode="pictures"><div class="match-modes" role="group" aria-label="놀이 선택"><button type="button" data-match-mode="pictures" aria-pressed="true">같은 그림</button><button type="button" data-match-mode="spelling" aria-pressed="false">맞춤법</button></div><p id="match-instruction" class="match-instruction">두 장씩 뒤집어 같은 그림을 찾아요</p><div class="match-tally"><strong id="match-count"></strong><span id="match-moves"></span></div><div class="match-grid" role="group" aria-label="뒤집을 카드" aria-describedby="match-instruction">${Array.from({length:12},(_,i)=>`<button type="button" class="match-card" data-match-card="${i}" aria-label="${i+1}번 카드, 뒤집기"><span class="match-inner" aria-hidden="true"><span class="match-back">${svg('star')}<span data-match-back="${i}"></span></span><span class="match-front" data-match-face="${i}"></span><span class="match-check">✓</span></span></button>`).join('')}</div><p id="match-status" class="match-status" role="status" aria-live="polite" aria-atomic="true"></p><div id="match-note" class="match-note" hidden><strong id="match-sentence"></strong><p id="match-explanation"></p><a id="match-source" target="_blank" rel="noopener noreferrer">국립국어원 설명 보기</a></div>${activityOutcomeMarkup("match-outcome")}<div class="match-actions"><button id="match-restart" type="button">새로 섞기</button><button type="button" data-close>닫기</button></div><p class="match-footnote">시간 제한 없이 천천히 · 이번 놀이는 저장되지 않아요</p></div>`;}
 export function mountMatchingGame({document:doc=globalThis.document,random=Math.random,schedule=setTimeout,cancel=clearTimeout}={}){
  const $=s=>doc.querySelector(s),all=s=>[...doc.querySelectorAll(s)],root=$('#matching-game'),cards=all('[data-match-card]'),faces=all('[data-match-face]'),backs=all('[data-match-back]'),modes=all('[data-match-mode]'),instruction=$('#match-instruction'),count=$('#match-count'),moves=$('#match-moves'),status=$('#match-status'),note=$('#match-note'),sentence=$('#match-sentence'),explanation=$('#match-explanation'),source=$('#match-source'),restart=$('#match-restart');
- let alive=true;const shown=[];
+ let alive=true;const shown=[];const outcome=mountActivityOutcome($('#match-outcome'),{onRetry:()=>{controller.restart();cards[0].focus();},onExit:()=>root.closest('dialog').close()});
  const controller=createMatchController({random,schedule,cancel,onChange(state){
   if(!alive)return;const spelling=state.mode==='spelling';root.setAttribute('data-mode',state.mode);root.setAttribute('data-complete',String(state.complete));
   instruction.textContent=spelling?'문장 카드와 빈칸에 맞는 표현 카드를 찾아요':'두 장씩 뒤집어 같은 그림을 찾아요';
@@ -26,6 +27,7 @@ export function mountMatchingGame({document:doc=globalThis.document,random=Math.
    backs[i].textContent=spelling?type:String(i+1);
    if(shown[i]!==card.id){shown[i]=card.id;faces[i].innerHTML=card.kind==='picture'?`${svg(card.pair)}<span class="match-picture-label">${escape(card.label)}</span>`:`<span class="match-card-type">${type}</span>${card.context?`<span class="match-context">${escape(card.context)}</span>`:''}<span class="match-word ${card.kind==='answer'?'match-answer':''}">${escape(card.label)}</span>`;}
   }
+  $('#match-restart').parentElement.hidden=state.complete;outcome.update({show:state.complete,title:'모든 짝을 찾았어요!',detail:`${state.moves}번 만에 ${state.cards.length/2}쌍 완성`,saveText:'이번 놀이는 저장되지 않아요. 다시 하면 카드를 새로 섞어요.',next:{label:spelling?'다음 놀이 · 같은 그림':'다음 놀이 · 맞춤법',run:()=>controller.setMode(spelling?'pictures':'spelling')}});
   if(state.complete)status.textContent=`모두 찾았어요! ${state.moves}번 만에 ${state.cards.length/2}쌍 완성`;
   else if(state.outcome==='match')status.textContent='짝을 찾았어요!';
   else if(state.outcome==='miss')status.textContent='다른 짝이에요. 잠시 뒤 다시 뒤집혀요';
@@ -35,5 +37,5 @@ export function mountMatchingGame({document:doc=globalThis.document,random=Math.
   if(pair){sentence.textContent=pair.sentence;explanation.textContent=pair.explanation;source.setAttribute('href',pair.source);}
  }});
  cards.forEach((b,i)=>b.onclick=()=>controller.flip(i));for(const b of modes)b.onclick=()=>controller.setMode(b.dataset.matchMode);restart.onclick=()=>controller.restart();
- return()=>{alive=false;controller.dispose();};
+ return()=>{alive=false;outcome.dispose();controller.dispose();};
 }
