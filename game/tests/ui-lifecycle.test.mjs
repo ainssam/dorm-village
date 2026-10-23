@@ -113,3 +113,10 @@ assert.equal(selectAll('[data-close]').length,1,'A failed full-surface sky must 
 assert.match(selectAll('[data-sky-clock]')[0].textContent,/열지 못/,'The error is readable in the existing header');
 selectAll('[data-close]')[0].onclick();handlers.close();assert.equal(locked,false);assert.equal(ui.skyActive,false);
 console.log('PASS: failed sky import preserves a visible close button and ordinary unlock/focus cleanup. DOM fixture only.');
+
+// Recovery is deliberate: choosing to look around cannot silently reload or write.
+let recoveryReloads=0;window.location={reload(){recoveryReloads++;}};
+assert(ui.message('저장 잠금 확인','저장된 놀이에서 이어 해요',{reload:true}));
+const recoverButton=selectAll('[data-reload]')[0];assert(recoverButton,'return notice has a direct safe reload action');assert.equal(document.activeElement,recoverButton);assert.equal(recoveryReloads,0);
+recoverButton.onclick();recoverButton.onclick();assert.equal(recoveryReloads,1,'double activation reloads once');assert(recoverButton.disabled);ui.close();handlers.close();
+assert(ui.message('저장 잠금 확인','둘러보기',{reload:true}));selectAll('[data-close]')[0].onclick();handlers.close();assert.equal(recoveryReloads,1,'dismissal does not reload');

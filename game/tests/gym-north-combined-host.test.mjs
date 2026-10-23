@@ -13,7 +13,7 @@ import {findInteraction} from '../dist/interactions.js';
 import {createGymHost} from '../dist/gym/host.js';
 
 class Node {
- constructor(){this.listeners=new Map();this.value='';this.disabled=false;this.style={};this.classList={add(){},remove(){}};this.tagName='DIV';this.clientWidth=390;this.clientHeight=844;}
+ constructor(){this.listeners=new Map();this.value='';this.disabled=false;this.style={values:{},setProperty(name,value){this.values[name]=String(value);}};this.classList={add(){},remove(){}};this.tagName='DIV';this.clientWidth=390;this.clientHeight=844;}
  addEventListener(t,f){if(!this.listeners.has(t))this.listeners.set(t,new Set());this.listeners.get(t).add(f);}
  removeEventListener(t,f){this.listeners.get(t)?.delete(f);}
  setAttribute(name,value){this[name]=String(value);}

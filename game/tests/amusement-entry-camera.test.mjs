@@ -121,10 +121,12 @@ test('actual game scopes the ride return marker guard to arrival, room changes, 
  assert.equal(await vm.runInContext(`(${reset})()`,context),false,'fixture stops after reset persists at a later cleanup failure');
  assert.equal(select()?.id,portal.id,'a successfully persisted reset explicitly clears the transient arrival guard');
 
+ let recoveryFocused=false;
  const fail=game.match(/^function fail\(text\).+$/m)?.[0];assert(fail,'actual runtime-disposal path remains extractable');
- Object.assign(context,{failed:false,ready:true,resetGeneration:0,view:null,fishScoop:null,amusementFoodHost:null,gymTools:null,lookoutTools:null,boatTools:null,weatherHost:null,weatherSummaryCleanup:null,flightTools:null,produceHost:null,zoneView:()=>null,cafeFoodHost:null,bakeryHost:null,square:null,campModes:null,marshmallow:null,fishCooking:null,plaza:null,fishing:null,preparation:null,elevatorTools:null,libraryQuest:null,gameAudio:{dispose(){},suspend(){},resume(){}},skyView:{dispose(){}},cam:{dispose(){}},homeTools:null,schoolTools:null,villageTools:null,cafeTools:null,ui:{close(){}},endActivity(){},input:{clear(){}},manager:{cancel(){}},$:()=>({hidden:false,textContent:''}),document:{body:{dataset:{}}},updateLock(){}});
+ Object.assign(context,{failed:false,ready:true,resetGeneration:0,view:null,fishScoop:null,amusementFoodHost:null,gymTools:null,lookoutTools:null,boatTools:null,weatherHost:null,weatherSummaryCleanup:null,flightTools:null,produceHost:null,zoneView:()=>null,cafeFoodHost:null,bakeryHost:null,square:null,campModes:null,marshmallow:null,fishCooking:null,plaza:null,fishing:null,preparation:null,elevatorTools:null,libraryQuest:null,gameAudio:{dispose(){},suspend(){},resume(){}},skyView:{dispose(){}},cam:{dispose(){}},homeTools:null,schoolTools:null,villageTools:null,cafeTools:null,ui:{close(){}},endActivity(){},input:{clear(){}},manager:{cancel(){}},$:()=>({hidden:false,textContent:'',focus(){recoveryFocused=true;}}),document:{body:{dataset:{}}},updateLock(){}});
  arrive();assert.equal(select(),null);
  vm.runInContext(`${fail}\nfail('fixture disposal')`,context);
+ assert.equal(recoveryFocused,true,'runtime startup failure focuses visible recovery action');
  assert.equal(select()?.id,portal.id,'runtime disposal clears the transient arrival guard');
 });
 
