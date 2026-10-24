@@ -80,3 +80,20 @@ dialog{overscroll-behavior:contain;scrollbar-width:thin}dialog button{word-break
  .robot-workshop .robot-legend,.robot-workshop .robot-position,.robot-workshop .robot-efficiency{font-size:13px;line-height:1.65}
  .robot-workshop .robot-status{font-size:16px;line-height:1.6}.robot-workshop .robot-goals{font-size:16px}
 }
+
+/* A short performance is chosen in a readable sheet, then plays in the world. */
+#doreumi-open{min-height:44px;padding:10px 17px;border-radius:24px;background:#fff9eb;color:#234d48;border:1px solid #b7c5b1;font:600 14px Pretendard,sans-serif;pointer-events:auto}
+#doreumi-open:disabled{opacity:.45}
+#doreumi-menu{margin:4px 0 12px;width:100%;background:#e4eddc;border:1px solid #b5c5ac;color:#234d48}
+.doreumi-motion-menu{width:min(660px,calc(100vw - 24px))}
+.doreumi-motion-menu .modal-x{min-width:52px;border-radius:12px;font-size:14px}
+.motion-intro{max-width:48ch;padding-right:32px}
+.motion-category{margin:24px 0 0}.motion-category h3{font-size:15px;margin:0 0 10px;color:#426358}
+.motion-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.motion-card{display:flex;flex-direction:column;gap:8px;min-height:92px;padding:14px;text-align:left;background:#fffdf6;border:1px solid #c2cdb8;border-radius:14px;color:#234d48}
+.motion-card:hover{background:#eaf1df;border-color:#77977c}.motion-card:focus-visible{outline:3px solid #d19b33;outline-offset:2px}
+.motion-card-heading{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%}.motion-card strong{font-size:16px}.motion-card>span:last-child{font-size:13px;line-height:1.5;font-weight:400;color:#526a60}.motion-duration{font-size:12px;font-weight:500;color:#687c70;white-space:nowrap}
+.doreumi-performance{position:absolute;z-index:14;right:18px;top:var(--hud-mission-top,88px);display:flex;align-items:center;gap:12px;max-width:calc(100% - 36px);padding:12px 14px;background:#fff9ebf5;border:1px solid #c1cdb9;border-radius:16px;box-shadow:0 3px 16px #243e2815;pointer-events:auto}
+.doreumi-performance[hidden]{display:none}.doreumi-performance>div{display:flex;flex-direction:column;gap:4px}.doreumi-performance strong{font-size:15px}.doreumi-performance span{font-size:11px;color:#526a60}.doreumi-performance button{min-height:44px;padding:9px 12px;border:1px solid #bdc9b3;border-radius:11px;background:#edf2df;color:#234d48;font:600 13px Pretendard,sans-serif}
+@media(max-width:640px){.motion-grid{gap:8px}.motion-card{padding:12px 10px;min-height:100px}.motion-card strong{font-size:15px}.motion-intro{padding-right:20px}.doreumi-performance{right:12px;max-width:calc(100% - 24px);gap:8px;padding:9px 10px}.doreumi-performance strong{font-size:14px}.doreumi-performance span{font-size:10px}#doreumi-open{padding:9px 13px}}
+@media(max-width:640px){.doreumi-performance{top:calc(var(--hud-mission-top,88px) + 48px)}}
