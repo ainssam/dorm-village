@@ -1,4 +1,4 @@
-import {addMeadow,addPathEdging} from './landscape-detail.js';
+import {addMeadow} from './landscape-detail.js';
 import {FOREST_PAVING_OUTLINES} from './forest-paving-outlines.js';
 import {forestCoastOutline} from './forest-coast-layout.js';
 import {buildForestTheater} from './forest-theater-view.js';
@@ -29,7 +29,6 @@ export function buildVillageScene(kit,{remoteScenery=true}={}){
  // Polygon union precedes triangulation: junctions are one continuous non-overlapping surface.
  const roadMat=clayMaterial('#e7debd'),road=new THREE.Group();road.name='village.paths';road.userData.paths=paths;road.userData.outlines=ROAD_OUTLINES;root.add(road);
  for(const outer of ROAD_OUTLINES.filter(p=>signedArea(p)>0)){const shape=shapeOf(outer);for(const hole of ROAD_OUTLINES.filter(p=>signedArea(p)<0&&pointInPolygon(outer,p[0]))){const path=new THREE.Path();hole.forEach(([x,z],i)=>i?path.lineTo(x,-z):path.moveTo(x,-z));path.closePath();shape.holes.push(path);}const mesh=new THREE.Mesh(new THREE.ShapeGeometry(shape),roadMat);mesh.rotation.x=-Math.PI/2;mesh.position.y=.043;mesh.receiveShadow=true;mesh.name='village.paving-surface';road.add(mesh);}
- addPathEdging(root,ROAD_OUTLINES);
  addMeadow(root,{name:'village.meadow',shore:island.shorePolygon,patches:[...fixtures.filter(f=>f.geometryKey==='tree').map(f=>({x:f.transform.x,z:f.transform.z,r:1.2,count:44})),...[[ -4,1],[4,1],[-5,-3],[5,-5],[-10,5],[11,6],[-6,11],[7,12]].map(([x,z])=>({x,z,r:1.4,count:55}))],exclude:(x,z)=>ROAD_OUTLINES.some(p=>signedArea(p)>0&&pointInPolygon(p,[x,z]))});
  // Flat plaza inlay preserves the open exercise clearing and all walk routes.
  const plazaRing=new THREE.Mesh(new THREE.RingGeometry(2.55,2.59,96),clayMaterial('#c6b58c'));plazaRing.rotation.x=-Math.PI/2;plazaRing.position.set(0,.046,1);plazaRing.name='village.plaza-inlay';root.add(plazaRing);

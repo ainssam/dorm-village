@@ -22,14 +22,3 @@ export function addMeadow(root,{name='meadow',patches=[],shore=null,exclude=()=>
  }
  return group;
 }
-
-export function addPathEdging(root,outlines,{y=.049,color='#cbbd96',spacing=.65}={}){
- const points=[];
- for(const line of outlines)for(let i=0;i<line.length;i++){
-  const a=line[i],b=line[(i+1)%line.length],dx=b[0]-a[0],dz=b[1]-a[1],length=Math.hypot(dx,dz),count=Math.floor(length/spacing);
-  for(let k=0;k<count;k++){const t=(k+.5)/count;points.push({x:a[0]+dx*t,z:a[1]+dz*t,yaw:Math.atan2(dx,dz)});}
- }
- if(!points.length)return;
- const mesh=new THREE.InstancedMesh(new THREE.BoxGeometry(.07,.025,.32),new THREE.MeshStandardMaterial({color,roughness:1}),points.length),pose=new THREE.Object3D();mesh.name='landscape.path-edging';mesh.receiveShadow=true;
- points.forEach((p,i)=>{pose.position.set(p.x,y,p.z);pose.rotation.y=p.yaw;pose.updateMatrix();mesh.setMatrixAt(i,pose.matrix);});root.add(mesh);return mesh;
-}

@@ -308,10 +308,9 @@ if(renderer){
   }
   if(stillFree&&!bakeryHost?.ownsPose){const distance=Math.hypot(player.position.x-priorPosition.x,player.position.z-priorPosition.z);if((room.id==='park'||room.id==='courtyard')&&locomotion.verticalMode){const world=collision();if(shouldFallFromSupport(locomotion.vertical,{world,x:player.position.x,z:player.position.z,free:stillFree}))locomotion.fallFromSupport();locomotion.update(dt,{distance,sprinting,world,x:player.position.x,z:player.position.z,yaw:player.rotation.y,canOccupy:(surface,x,z)=>{const clear=canMove(world,x,z,RADIUS,{footY:surface.y,actorHeight:DORMI_BODY_HEIGHT,yaw:player.rotation.y});return clear&&(surface.id!=='courtyard.camp-chair.1.seat'||campChairFeetSupported(x,z,player.rotation.y));}});if(locomotion.vertical.landed)player.position.y=.05+(locomotion.vertical.supportId?locomotion.vertical.surfaceY:0);}else locomotion.update(dt,{distance,sprinting});}
   if(model&&!activity.active&&!homeTools?.robotActive&&!homeTools?.cookingActive&&!cafeActive&&!bakeryHost?.ownsPose){
-   const gait=stillFree&&!reduced&&moving&&!locomotion.airborne;
-   model.position.y=locomotion.height+(gait?Math.abs(Math.sin(locomotion.phase))*.035:0);
+   model.position.y=locomotion.height;
    model.rotation.z=0;
-   if(stillFree&&!libraryQuest?.carrying){poser?.setPose('run',reduced?0:Math.round(locomotion.poseAmount*20)/20,locomotion.phase/8);locomotionPose=true;}
+   if(stillFree&&!libraryQuest?.carrying){poser?.setPose('run',Math.min(reduced?.15:1,locomotion.poseAmount),locomotion.phase/8);locomotionPose=true;}
   }
   contact.scale.setScalar(1-locomotion.height*.3);contact.material.opacity=.15-locomotion.height*.10;
   if(activity.active){
