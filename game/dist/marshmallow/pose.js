@@ -1,3 +1,4 @@
+import {adaptCharacterRig} from '../character-rig-adapter.js';
 import * as THREE from 'three';import {createSportsDeformer} from '../dormi-sports-pose.js';import {createFishingArmSurface} from '../fishing/arm-surface.js';
 const smooth=t=>{t=Math.max(0,Math.min(1,t));return t*t*(3-2*t);},mix=(a,b,u)=>a.map((v,i)=>v+(b[i]-v)*u);
 /** Contact frame in original Dormi coordinates, +Z front. The stick always
@@ -14,6 +15,7 @@ export function marshmallowPoseFrame(state){
 /** Adapter works on the original posed mesh; no replacement actor or shared
  * poser API change. Only rounded arm vertices move during runtime updates. */
 export function createMarshmallowPose(model,poser,{seated=true}={}){
+ if(poser?.poseReference)return adaptCharacterRig(poser,(model,poser)=>createMarshmallowPose(model,poser,{seated}));
  const saved=poser.getState(),savedBuffers=[];model.traverse(o=>{if(o.isMesh&&o.geometry?.attributes.position)savedBuffers.push({o,p:o.geometry.attributes.position.array.slice(),n:o.geometry.attributes.normal?.array.slice()});});
  poser.reset();model.updateWorldMatrix(true,true);const inverse=model.matrixWorld.clone().invert(),records=[],p=new THREE.Vector3();
  model.traverse(o=>{if(!o.isMesh||!['Dormi_body','Navy_belly_spiral','Belly_spiral_rounded_tip'].includes(o.name))return;const geometry=o.geometry,toRoot=new THREE.Matrix4().multiplyMatrices(inverse,o.matrixWorld),a=geometry.attributes.position,rootRest=new Float32Array(a.count*3);for(let i=0;i<a.count;i++){p.fromBufferAttribute(a,i).applyMatrix4(toRoot);rootRest.set(p.toArray(),i*3);}records.push({geometry,toRoot,fromRoot:toRoot.clone().invert(),rootRest});});

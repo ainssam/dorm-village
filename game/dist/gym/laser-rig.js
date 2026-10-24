@@ -1,3 +1,4 @@
+import {adaptCharacterRig} from '../character-rig-adapter.js';
 import * as THREE from 'three';
 import {armCurveWeight,footWeight} from '../dormi-sports-pose.js';
 import {createAimingDeformer,fitPalmPrimitive} from './aiming-deformer.js';
@@ -5,6 +6,7 @@ import {LASER_GEOMETRY as G} from './laser-layout.js';
 const sides=['left','right'],sign=s=>s==='left'?-1:1,copy=x=>structuredClone(x);
 /** Borrows the poser-owned original vertices and calibrates against real palm surfaces. */
 export function createLaserRig({model,poser}={}){
+ if(poser?.poseReference)return adaptCharacterRig(poser,(model,poser)=>createLaserRig({model,poser}));
  if(!model?.isObject3D||!poser?.setPose||!poser?.getState)throw TypeError('Laser requires original actor');
  const pose=poser.getState(),saved=[],records=[],hands={left:[],right:[]},armSurfaces={left:[],right:[]},handRefs={left:[],right:[]},soleRefs={left:[],right:[]},soles={left:[],right:[]},face=[],deformer=createAimingDeformer(),v=new THREE.Vector3();let alive=true,last=null,applications=0;
  model.traverse(mesh=>{if(mesh.isMesh)saved.push({mesh,g:mesh.geometry,p:mesh.geometry.attributes.position.array.slice(),n:mesh.geometry.attributes.normal?.array.slice(),box:mesh.geometry.boundingBox?.clone(),sphere:mesh.geometry.boundingSphere?.clone()});});

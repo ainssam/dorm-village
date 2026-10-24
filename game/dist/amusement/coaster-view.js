@@ -1,3 +1,4 @@
+import {addMeadow} from '../world/landscape-detail.js';
 import * as THREE from 'three';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
 import {signLabel} from '../world/handwriting.js';
@@ -35,6 +36,8 @@ export function buildCoasterView(def){const root=new THREE.Group();root.name=def
  box(1.68,.025,.7,P.rose,C.dock.x,.046,C.dock.z+3.35,.11);box(1.25,.025,.6,P.mint,3.45,.046,0,.1);
  // Low still planting stays outside both track and the full-size support envelope.
  for(const[x,z]of[[-.45,-.95],[.45,-.95],[-.45,.95],[.45,.95]]){cylinder(.23,.27,.16,P.wood,x,.12,z);sphere(.31,P.mint,x,.32,z,1,.65,1);sphere(.10,P.rose,x+.13,.50,z,1,.6,1);}
+ addMeadow(root,{name:'coaster.flower-garden',seed:62,patches:[{x:0,z:0,r:.55,count:40},{x:0,z:1.1,r:.35,count:20},{x:0,z:-1.1,r:.35,count:20}]});
+ box(7.55,.30,9.5,P.wood,.675,-.26,0,.10);
  let disposed=false;function setCoasterFrame(f){if(disposed)return;player.group.position.set(f?.carX??C.dock.x,f?.carY??C.railY+C.railRadius,f?.carZ??C.dock.z);player.group.rotation.set(f?.carPitch??0,f?.carYaw??0,f?.carRoll??0,'YXZ');const amount=Math.max(0,Math.min(1,f?.coasterBridge??1));bridge.visible=amount>0;bridge.position.y=C.railY+C.railRadius-(1-amount)*1.05;player.gate.position.y=.83-.53*Math.max(0,Math.min(1,f?.coasterGate??1));}
  setCoasterFrame();root.updateMatrixWorld(true);return{root,stars:[],occluders:[],camera:def.camera,setCoasterFrame,sync(){},setActivityProgress(){},dispose(){if(disposed)return;disposed=true;disposeToyTree(root);}};
 }

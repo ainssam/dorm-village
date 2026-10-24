@@ -47,10 +47,10 @@ export function createRopeActors({spaceRoot,actors}={}){
   const boxes={left:new THREE.Box3(),right:new THREE.Box3(),body:new THREE.Box3()},counts={left:0,right:0,body:0},triangles={'left-foot':[],'right-foot':[],'lower-body':[]};
   actor.root.traverseVisible(mesh=>{
    if(!mesh.isMesh||!mesh.geometry?.attributes.position)return;
-   const attr=mesh.geometry.attributes.position,role=mesh.parent?.userData.role,foot=/^Foot\.[LR]$/.test(role),body=id==='dormi'&&mesh.name==='Dormi_body';
+   const attr=mesh.geometry.attributes.position,role=mesh.parent?.userData.role,foot=/^Foot\.[LR]$/.test(role),body=id==='dormi'&&(mesh.name==='Dormi_body'||mesh.isSkinnedMesh);
    const toRoot=new THREE.Matrix4().multiplyMatrices(rootInverse,mesh.matrixWorld),toSpace=inSpace(mesh);
    for(let i=0;i<attr.count;i++){
-    local.fromBufferAttribute(attr,i).applyMatrix4(toRoot);point.fromBufferAttribute(attr,i).applyMatrix4(toSpace);
+    mesh.getVertexPosition(i,local).applyMatrix4(toRoot);mesh.getVertexPosition(i,point).applyMatrix4(toSpace);
     if(local.y<=.65+1e-7){boxes.body.expandByPoint(point);counts.body++;}
     const dormiFoot=body&&local.y<=.22&&Math.abs(local.x)>=.10&&Math.abs(local.x)<=.36;
     if(foot||dormiFoot){const side=dormiFoot?(local.x<0?'left':'right'):(role==='Foot.L'?'left':'right');boxes[side].expandByPoint(point);counts[side]++;}
@@ -60,14 +60,14 @@ export function createRopeActors({spaceRoot,actors}={}){
    const index=mesh.geometry.index,a=new THREE.Vector3(),b=new THREE.Vector3(),modelToSpace=inSpace(model);
    const corners=[new THREE.Vector3(),new THREE.Vector3(),new THREE.Vector3()];
    for(let i=0;i<(index?.count??attr.count);i+=3){
-    for(let j=0;j<3;j++)corners[j].fromBufferAttribute(attr,index?index.getX(i+j):i+j).applyMatrix4(toRoot);
+    for(let j=0;j<3;j++)mesh.getVertexPosition(index?index.getX(i+j):i+j,corners[j]).applyMatrix4(toRoot);
     if(corners.some(p=>p.y<=.65+1e-7)){
      let label=role==='Foot.L'?'left-foot':role==='Foot.R'?'right-foot':'lower-body';
      const x=(corners[0].x+corners[1].x+corners[2].x)/3,y=(corners[0].y+corners[1].y+corners[2].y)/3;
      if(body&&Math.abs(x)>=.1&&Math.abs(x)<=.36&&y<=.22)label=x<0?'left-foot':'right-foot';
      // Retain original boundary triangles whole. Each source triangle appears
      // in exactly one group, including ones that straddle the .65 cut plane.
-     for(let j=0;j<3;j++){point.fromBufferAttribute(attr,index?index.getX(i+j):i+j).applyMatrix4(toSpace);triangles[label].push(point.x,point.y,point.z);}
+     for(let j=0;j<3;j++){mesh.getVertexPosition(index?index.getX(i+j):i+j,point).applyMatrix4(toSpace);triangles[label].push(point.x,point.y,point.z);}
     }
     for(let edge=0;edge<3;edge++){
      a.copy(corners[edge]);b.copy(corners[(edge+1)%3]);

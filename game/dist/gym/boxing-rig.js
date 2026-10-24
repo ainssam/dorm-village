@@ -1,3 +1,4 @@
+import {adaptCharacterRig} from '../character-rig-adapter.js';
 import * as THREE from 'three';
 import {armCurveWeight,footWeight} from '../dormi-sports-pose.js';
 import {createRigidArmMapper} from '../dormi-rigid-arms.js';
@@ -5,6 +6,7 @@ import {BOXING_GEOMETRY as G,bagSurfaceGap} from './boxing-layout.js';
 const signOf=side=>side==='left'?-1:1;
 /** The original poser-owned geometry is borrowed in place, then restored byte for byte. */
 export function createBoxingRig({model,poser}={}){
+ if(poser?.poseReference)return adaptCharacterRig(poser,(model,poser)=>createBoxingRig({model,poser}));
  if(!model?.isObject3D||!poser?.setPose||!poser?.getState)throw TypeError('Boxing requires the original model and poser');
  const pose=poser.getState(),saved=[],records=[],hands={left:[],right:[]},soles={left:[],right:[]},face=[],arms=createRigidArmMapper(),source=new THREE.Vector3(),v=new THREE.Vector3();let alive=true,frame=null,applications=0;
  model.traverse(mesh=>{if(mesh.isMesh)saved.push({mesh,g:mesh.geometry,p:mesh.geometry.attributes.position.array.slice(),n:mesh.geometry.attributes.normal?.array.slice(),box:mesh.geometry.boundingBox?.clone(),sphere:mesh.geometry.boundingSphere?.clone()});});

@@ -1,6 +1,6 @@
 import*as T from'three';import{RoundedBoxGeometry}from'three/addons/geometries/RoundedBoxGeometry.js';import{mergeGeometries}from'three/addons/utils/BufferGeometryUtils.js';
 import{PLANE as P,rampHeight}from'./plane-support.js';
-const colors={cream:'#f5e6c8',mint:'#a6c9bd',warm:'#d6ac86',dark:'#667a78',glass:'#c9e3e2',seat:'#e1b4a3'};
+const colors={cream:'#f0e6cf',mint:'#458d88',warm:'#c69758',dark:'#354c50',glass:'#80c2cc',seat:'#bd8064'};
 // A bounded toy plane. The actor is never a child of this disposable root.
 export function createPlaneView(){const root=new T.Group();root.name='plane';const geometries=new Map(),materials=new Map(),surfaces={walk:[],seat:[],foot:[],grip:[]},solids=[],wheels=[],cutaway=[];let disposed=false;
  const material=color=>{if(!materials.has(color))materials.set(color,new T.MeshStandardMaterial({color,roughness:.85}));return materials.get(color);};
@@ -23,19 +23,42 @@ export function createPlaneView(){const root=new T.Group();root.name='plane';con
  for(const side of[-1,1]){const m=tube('grip.'+side,.027,.34,colors.warm,side*.615,P.rootY+.6006884639310953,-.2604383318559132);m.rotation.z=Math.PI/2;surfaces.grip.push(m);solid(box('grip-post.'+side,.05,.39,.05,colors.warm,side*.75,.96,-.26,.012));}
  // Genuine side opening: no opaque shell triangles span z[-1.7,.2].
  solid(sphere('port-rear',.12,.85,.50,colors.cream,-.92,1.49,.70));
- solid(sphere('starboard',.12,.49,1.38,colors.cream,.92,1.14,-.32));
+ solid(sphere('starboard',.12,.80,1.38,colors.cream,.92,1.46,-.32));
  solid(sphere('rear-bulkhead',.99,.94,.13,colors.cream,0,1.50,1.06));
  solid(sphere('tail-body',.64,.64,1.0,colors.cream,0,1.24,1.9));
  solid(sphere('nose',.90,.54,.48,colors.cream,0,1.13,-2.22));solid(sphere('nose-join',.84,.30,.30,colors.cream,0,.995,-1.96));
  for(const side of[-1,1])solid(box('windshield-pillar.'+side,.07,1.64,.07,colors.warm,side*.90,1.48,-1.72,.024));
  const roof=solid(capsule('roof',.99,.86,'z',.17,colors.cream,0,2.685,-.28));cutaway.push(roof);
- solid(capsule('wing',.415,5.57,'x',.17,colors.mint,0,2.745,.65));
+ const wing=solid(capsule('wing',.415,5.57,'x',.17,colors.mint,0,2.745,.65));
+ // Streamlined wing planform with cream tips and inset aileron seams.
+ for(const side of[-1,1]){
+  const tip=box('wing-tip.'+side,.34,.10,.69,colors.cream,side*3.03,2.78,.65,.045);
+  box('aileron.'+side,1.75,.018,.035,colors.dark,side*1.9,2.835,.91,.008);
+  const strut=tube('wing-strut.'+side,.025,1.36,colors.warm,side*1.05,2.05,.61);strut.rotation.z=-side*.24;
+  const light=sphere('navigation-light.'+side,.065,.045,.065,side<0?'#ce7062':'#8abf9a',side*3.18,2.80,.65);light.material=material(side<0?'#ce7062':'#8abf9a');
+ }
+
  solid(capsule('tailwing',.33,1.46,'x',.12,colors.mint,0,1.91,2.28));
  solid(box('tailfin',.13,.75,.84,colors.mint,0,2.16,2.34,.04));
  for(const[x,z]of[[-1.12,.48],[1.12,.48],[0,-1.91]]){const m=tube('wheel.'+wheels.length,.22,.14,colors.dark,x,.27,z);m.rotation.z=Math.PI/2;m.userData.kind='wheel';wheels.push(m);const strut=tube('gear.'+wheels.length,.035,.37,colors.warm,x,.56,z);strut.rotation.z=x?x*.18:0;}
+ // Glazing follows the front opening; keep the port boarding aperture clear.
+ const glazing=new T.MeshStandardMaterial({color:colors.glass,roughness:.18,metalness:.08,transparent:true,opacity:.26,depthWrite:false,side:T.DoubleSide});materials.set('glazing',glazing);
+ const windshield=box('windshield',1.66,1.12,.035,colors.glass,0,1.83,-1.72,.04);windshield.material=glazing;cutaway.push(windshield);
+ box('windshield-divider',.045,1.14,.055,colors.warm,0,1.83,-1.73,.012);
+ for(const z of[-.85,.05,.76]){
+  const rim=sphere('starboard-window-rim.'+z,.026,.27,.31,colors.warm,1.035,1.67,z);
+  const glass=sphere('starboard-window.'+z,.028,.22,.26,colors.glass,1.055,1.67,z);glass.material=glazing;
+ }
+ for(const side of[-1,1]){
+  const stripe=box('livery-stripe.'+side,.022,.095,2.9,colors.mint,side*.955,1.02,-.21,.015);
+  const badge=sphere('roundel.'+side,.026,.19,.19,colors.mint,side*.70,1.43,1.91);
+  sphere('roundel-core.'+side,.029,.105,.105,colors.cream,side*.718,1.43,1.91);
+ }
+ // Twin cowling bands and a rounded spinner give the nose a continuous silhouette.
+ for(const z of[-2.30,-2.46]){const ring=add('cowling-band.'+z,geometry('cowling-band',()=>new T.TorusGeometry(.55,.027,6,28)),colors.mint,0,1.13,z);ring.scale.set(1.5,.95,1);}
  const hub=sphere('propeller-hub',.16,.16,.19,colors.warm,0,1.13,-2.73),propeller=new T.Group();propeller.name='plane.propeller';propeller.position.set(0,1.13,-2.82);root.add(propeller);
  for(let i=0;i<2;i++){const blade=box('propeller-blade.'+i,.14,1.64,.055,colors.dark,0,0,0,.026);root.remove(blade);propeller.add(blade);blade.rotation.z=i*Math.PI/2;}
- const ramp=new T.Group();ramp.name='plane.ramp-carriage';ramp.position.set(P.rampEnd,P.floor,0);root.add(ramp);const v=[],ind=[];for(const x of[P.rampStart,P.rampEnd]){const y=rampHeight(x);v.push(x-P.rampEnd,y-P.floor,-1.7,x-P.rampEnd,y-P.floor,.2,x-P.rampEnd,y-P.floor-.055,-1.7,x-P.rampEnd,y-P.floor-.055,.2);}ind.push(2,6,3,3,6,7,0,4,2,2,4,6,1,3,5,3,7,5,0,2,1,1,2,3,4,5,6,5,7,6);const rampColors=Array.from({length:8},()=>new T.Color(colors.warm).toArray()).flat();for(let i=0;i<11;i++){const a=P.rampStart+(P.rampEnd-P.rampStart)*i/11,b=P.rampStart+(P.rampEnd-P.rampStart)*(i+1)/11;for(const[left,right,color]of[[a,b-.018,i%2?colors.warm:'#dfbb98'],[b-.018,b,'#be9472']]){const n=v.length/3;v.push(left-P.rampEnd,rampHeight(left)-P.floor,-1.7,left-P.rampEnd,rampHeight(left)-P.floor,.2,right-P.rampEnd,rampHeight(right)-P.floor,-1.7,right-P.rampEnd,rampHeight(right)-P.floor,.2);ind.push(n,n+1,n+2,n+1,n+3,n+2);for(let j=0;j<4;j++)rampColors.push(...new T.Color(color).toArray());}}const rg=new T.BufferGeometry();rg.setAttribute('position',new T.Float32BufferAttribute(v,3));rg.setAttribute('color',new T.Float32BufferAttribute(rampColors,3));rg.setIndex(ind);rg.computeVertexNormals();geometries.set('ramp',rg);const rampMesh=add('ramp',rg,'#ffffff',0,0,0,'walk');rampMesh.material.vertexColors=true;root.remove(rampMesh);ramp.add(rampMesh);
+ const ramp=new T.Group();ramp.name='plane.ramp-carriage';ramp.position.set(P.rampEnd,P.floor,0);root.add(ramp);const v=[],ind=[];for(const x of[P.rampStart,P.rampEnd]){const y=rampHeight(x);v.push(x-P.rampEnd,y-P.floor,-1.7,x-P.rampEnd,y-P.floor,.2,x-P.rampEnd,y-P.floor-.055,-1.7,x-P.rampEnd,y-P.floor-.055,.2);}ind.push(2,6,3,3,6,7,0,4,2,2,4,6,1,3,5,3,7,5,0,2,1,1,2,3,4,5,6,5,7,6);const rampColors=Array.from({length:8},()=>new T.Color(colors.warm).toArray()).flat();for(let i=0;i<11;i++){const a=P.rampStart+(P.rampEnd-P.rampStart)*i/11,b=P.rampStart+(P.rampEnd-P.rampStart)*(i+1)/11;for(const[left,right,color]of[[a,b-.018,i%2?colors.warm:'#dfbb98'],[b-.018,b,'#be9472']]){const n=v.length/3;v.push(left-P.rampEnd,rampHeight(left)-P.floor,-1.7,left-P.rampEnd,rampHeight(left)-P.floor,.2,right-P.rampEnd,rampHeight(right)-P.floor,-1.7,right-P.rampEnd,rampHeight(right)-P.floor,.2);ind.push(n,n+1,n+2,n+1,n+3,n+2);for(let j=0;j<4;j++)rampColors.push(...new T.Color(color).toArray());}}const rg=new T.BufferGeometry();rg.setAttribute('position',new T.Float32BufferAttribute(v,3));rg.setAttribute('color',new T.Float32BufferAttribute(rampColors,3));rg.setIndex(ind);rg.computeVertexNormals();geometries.set('ramp',rg);const rampMesh=add('ramp',rg,'#ffffff',0,0,0,'walk');rampMesh.material=rampMesh.material.clone();rampMesh.material.vertexColors=true;materials.set('ramp-vertex-colors',rampMesh.material);root.remove(rampMesh);ramp.add(rampMesh);
  const door=solid(capsule('sliding-door',.87,.16,'z',.065,colors.mint,-.963,1.63,1.15));cutaway.push(door);
  const ghost=new T.MeshStandardMaterial({color:colors.cream,roughness:.85,transparent:true,opacity:.10,depthWrite:false});materials.set('cutaway',ghost);const originalMaterials=cutaway.map(m=>m.material);
  function setRamp(amount){const a=Math.max(0,Math.min(1,Number.isFinite(amount)?amount:1));ramp.scale.set(a,a,1);ramp.visible=a>0;door.position.z=-.75+1.90*a;}

@@ -1,3 +1,4 @@
+import {addMeadow} from '../world/landscape-detail.js';
 import {addObservatoryDock} from '../transport/dock-view.js';
 import * as THREE from 'three';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
@@ -34,6 +35,12 @@ function bench(kit,parent){const g=new THREE.Group();g.name='observatory.bench';
  box(2.04,.57,.14,P.wood,0,.96,-.52,.065,g).name='observatory.bench.back';for(const x of[-.79,.79])for(const z of[-.27,.27])box(.14,.53,.14,P.dark,x,.285,z,.05,g);return g;
 }
 export function buildObservatoryView(def){const root=new THREE.Group();root.name=def.id;const kit=createToyKit(root);buildOutdoorTerrain(root,OBSERVATORY_SHORE,{name:'observatory.island',seasonalRole:'terrain.grass',surface:P.grass,earth:'#afa994',bottom:-.4});dome(kit,root);telescope(kit,root);bench(kit,root);const dock=addObservatoryDock(root);
+ addMeadow(root,{name:'observatory.coastal-garden',shore:OBSERVATORY_SHORE,patches:[[-5.5,-4.5],[-6.5,-.5],[-5,5],[5.6,-4.2],[6.5,-.5],[4,6.7],[-2.6,7.7]].map(([x,z])=>({x,z,r:1.15,count:65}))});
+ // Inlaid compass and concentric brass rings lead to the eyepiece.
+ for(const r of[1.25,1.4]){const m=new THREE.Mesh(new THREE.RingGeometry(r,r+.025,80),kit.mat(P.brass));m.rotation.x=-Math.PI/2;m.position.set(0,.049,4.6);root.add(m);}
+ for(let i=0;i<8;i++){const a=i*Math.PI/4,m=kit.box(.045,.012,i%2?.28:.46,P.brass,Math.sin(a)*1.12,.052,4.6+Math.cos(a)*1.12,.01);m.rotation.y=a;}
+ for(let i=0;i<5;i++){const a=Math.PI+.28+i*(Math.PI-.56)/4,curve=new THREE.Curve();curve.getPoint=(t,out=new THREE.Vector3())=>out.set(Math.sin(a)*Math.cos(t*Math.PI/2)*(DOME.radius+.12),DOME.wallHeight+.1+Math.sin(t*Math.PI/2)*(DOME.radius+.12)*.68,DOME.z+Math.cos(a)*Math.cos(t*Math.PI/2)*(DOME.radius+.12));const rib=new THREE.Mesh(new THREE.TubeGeometry(curve,20,.025,5,false),kit.mat(P.brass));rib.name='observatory.dome-rib.'+i;root.add(rib);}
+
  kit.box(2.65,.012,6.4,P.path,0,.033,4.35,.09).name='observatory.entry-path';kit.box(4.95,.010,1.25,P.path,3.8,.034,4.35,.09).name='observatory.bench-path';kit.box(1.6,.03,.5,P.roof,0,.05,8.4,.12);signLabel('마을로',0,.22,8.7,1.3,P.dark,P.cream,root);
  let disposed=false;return{root,dock,stars:[],occluders:[],camera:def.camera,sync(){},animate(){},setActivityProgress(){},dispose(){if(disposed)return;disposed=true;dock.dispose();disposeToyTree(root);}};
 }

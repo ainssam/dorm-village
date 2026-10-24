@@ -1,0 +1,99 @@
+/* Release shell: calm, legible controls above the miniature world. */
+:root{color-scheme:light;--ink:#233f43;--muted:#53665d}
+*,*::before,*::after{box-sizing:border-box}
+button,a,input,select,summary{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #2c7569;outline-offset:3px}
+button:not(:disabled){cursor:pointer}
+button:disabled{cursor:default}
+.topbar .title{max-width:100%;min-width:0}
+#village-lettering{max-width:100%;object-fit:contain}
+.hud-panel .play-guide{width:100%;margin-top:12px;background:#234d48;color:#fff9eb;border-color:#234d48}
+.scene-tools button{transition:background-color .15s ease}
+.scene-tools button:hover{background:#e5eddf}
+#loading{background:#f7f3e8eF;backdrop-filter:blur(8px)}
+#loading p{font-size:20px;letter-spacing:-.03em}
+.village-welcome,.village-guide{width:min(680px,calc(100vw - 32px));padding:32px;background:#fffaf0;border:1px solid #d5dbc8;border-radius:20px;color:#233f43;max-height:calc(100dvh - 32px);overflow-y:auto}
+.village-welcome h2,.village-guide h2{font-size:clamp(28px,4vw,38px);line-height:1.3;letter-spacing:-.04em;margin:12px 0 16px}
+.village-welcome .welcome-lead{font-size:19px;line-height:1.65;color:#53665d}
+.welcome-routes{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-block:1px solid #d5dbc8;margin:24px 0}
+.welcome-routes button{background:transparent;border:0;border-radius:0;box-shadow:none;text-align:left;padding:18px 12px;min-height:112px;color:#233f43}
+.welcome-routes button+button{border-left:1px solid #d5dbc8}
+.welcome-routes strong{display:block;font-size:18px;line-height:1.45;margin-bottom:8px}.welcome-routes span{display:block;color:#53665d;font-size:14px;line-height:1.6}
+.welcome-routes button:hover{background:#edf1e4}
+.welcome-controls{margin:18px 0}.welcome-controls p{font-size:15px;line-height:1.7;margin:5px 0}.welcome-controls strong{display:inline-block;min-width:68px}
+.village-welcome .caption,.village-guide .caption{font-size:14px;line-height:1.7;color:#53665d}
+.guide-search{display:block;font-size:15px;color:#53665d}.guide-search input{display:block;width:100%;min-height:48px;margin:8px 0 16px;border:1px solid #aabda7;background:#fffdf7;border-radius:8px;padding:10px 14px;font:inherit;color:#233f43}
+.guide-places{display:flex;flex-direction:column;margin:20px 0;border-top:1px solid #d5dbc8}
+.guide-places button{display:grid;grid-template-columns:1fr auto;gap:5px 16px;width:100%;min-height:80px;border:0;border-bottom:1px solid #d5dbc8;border-radius:0;box-shadow:none;background:transparent;text-align:left;padding:16px 4px;color:#233f43}
+.guide-places button:hover{background:#edf1e4}.guide-places strong{font-size:19px}.guide-places span{grid-column:1;font-size:14px;line-height:1.7;color:#53665d}.guide-places small{grid-column:2;grid-row:1/3;align-self:center;font-size:13px;color:#3b6d5f;white-space:nowrap}
+.guide-about{font-size:14px;line-height:1.8}.guide-about summary{cursor:pointer;min-height:44px;padding:10px 0;font-weight:bold}.guide-about a{color:#28675a;text-decoration:underline}
+@media(max-width:620px){.topbar{max-width:calc(100vw - 216px)}.topbar .title{padding:8px 10px}.topbar h1{font-size:22px;line-height:1.3}.topbar .eyebrow{font-size:12px}.topbar #village-lettering{width:100%;max-height:48px}.village-welcome,.village-guide{padding:24px 20px}.welcome-routes{grid-template-columns:1fr}.welcome-routes button{min-height:70px;padding:12px 4px}.welcome-routes button+button{border-left:0;border-top:1px solid #d5dbc8}.welcome-routes strong{font-size:17px;margin:0 0 4px}.welcome-routes span{font-size:13px}.welcome-controls p{font-size:14px}.guide-places button{gap:4px 8px}.guide-places strong{font-size:17px}.guide-places small{font-size:12px}.guide-places span{font-size:13px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important}.scene-tools button{transition:none}}
+
+/* Interface type is separate from the handwritten signs inside the world. */
+:root{font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;font-size:16px;--ui-font:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif}
+body,button,select,input,textarea,.caption,.hints,kbd,#mission,#nearby-hint,#save-status,.map-help,.map-route-description{font-family:var(--ui-font)}
+body{font-weight:400;line-height:1.6;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
+button,select,input,textarea{font-size:16px;line-height:1.45}button,select,.primary,.secondary,.danger,.choice-row button{font-weight:600}
+input,textarea{font-weight:400}strong,b{font-weight:700}
+h1{font-family:'Dormi Gentle Pen',var(--ui-font);font-size:32px;line-height:1.2;letter-spacing:0}
+h2,h3{letter-spacing:-.025em}dialog h2{font-size:24px;font-weight:700;line-height:1.4}dialog h3{font-size:18px;line-height:1.5}
+dialog p,.school-workshop p,.book-page p,.resident-dialogue,.math-lesson-reading p,.daybook-pages p,.map-destination p{font-size:16px;line-height:1.75;font-weight:400}
+dialog .caption,.preview-caption,.village-note,.empty-tray{font-size:14px!important;line-height:1.7;font-weight:400}
+.eyebrow,.map-eyebrow{font-size:12px;font-weight:500;line-height:1.5;letter-spacing:0}
+.scene-tools button,.scene-tools .map-tool-label{font-size:15px;font-weight:650}
+.topbar{max-width:calc(100vw - 280px)}.topbar .title{padding:8px 12px;background:#fffaf0ed;border-radius:4px 12px 12px 4px;text-shadow:none}
+.hud-panel button,.hud-panel .tool-label,.hud-heading strong,.camera-tilt-label{font-size:15px}.hud-help,.camera-tilt p{font-size:13px;line-height:1.75}
+.hud-panel{padding:16px;scrollbar-width:thin}.hud-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+#mission{font-size:14px;font-weight:500;line-height:1.6}.mission-pill{padding:8px 12px}
+.bottom-controls #action,.bottom-controls #action:disabled{font-size:16px;font-weight:650;line-height:1.5;padding:10px 16px}
+.bottom-controls #nearby-hint{font-size:13px;font-weight:500;line-height:1.6;padding:5px 9px}
+.hints,kbd,#save-status,#save-retry,.device-note{font-size:12px;font-weight:500;line-height:1.5}
+.bottom-controls #jump{font-size:14px;font-weight:600}#stick-help{font-size:12px!important;font-weight:500}
+.activity-guide{font-size:14px;font-weight:600}.activity-note strong{font-size:18px}.activity-note p{font-size:15px;line-height:1.7}.activity-note>span{font-size:13px;font-weight:500;line-height:1.6}
+.activity-note{max-width:340px}.activity-note #activity-close{font-size:12px}
+.map-place-name,.school-place .map-place-name,.map-ready:not(.map-list-mode) .map-place-name{font-size:14px;font-weight:650}
+.map-here,.village-map .school-place small{font-size:12px;font-weight:500}
+.map-help,.map-route-description,.map-list-toggle,.village-map .map-location{font-size:14px!important;font-weight:400;line-height:1.6}
+.school-room-list button,.school-tool-row button,.home-step-buttons button,.home-command-buttons button{font-size:15px;font-weight:600}
+.settings-list label,.book-choices strong,.craft-recipes strong{font-size:16px}.book-choices span,.craft-recipes span,.galton-bins{font-size:14px}
+.village-welcome h2,.village-guide h2{font-size:30px}.village-welcome .welcome-lead{font-size:17px;line-height:1.75}
+.welcome-routes strong,.guide-places strong{font-weight:650}.guide-places button{border-radius:0}.guide-search input::placeholder{color:#6b7b70;opacity:1}
+dialog{overscroll-behavior:contain;scrollbar-width:thin}dialog button{word-break:keep-all}dialog input[type=text],dialog textarea{max-width:100%}
+@media(max-width:620px){
+ .topbar{max-width:calc(100vw - 202px);left:12px}.topbar .title{padding:7px 8px}.topbar h1{font-size:25px;white-space:normal;overflow:visible;overflow-wrap:break-word}.topbar .eyebrow{font-size:11px}
+ .scene-tools button,.scene-tools .map-tool-label{font-size:14px}.scene-tools button,.scene-tools #village-map,.scene-tools #bgm-toggle{min-width:54px;padding:6px 8px}
+ .hud-panel{width:300px;max-height:calc(100dvh - 260px)}.hud-panel button{font-size:14px}.hud-help{font-size:12px}
+ .activity-note{max-width:calc(100vw - 28px)}.activity-note strong{font-size:17px}.activity-note p{font-size:14px}.activity-note>span{font-size:12px}
+ .village-welcome h2,.village-guide h2{font-size:27px}.village-welcome .welcome-lead{font-size:16px}.welcome-controls p{font-size:14px}.guide-places span{font-size:14px}
+ dialog p,.school-workshop p{font-size:15px;line-height:1.75}.home-command-buttons button,.home-step-buttons button{font-size:15px}#save-status{font-size:12px}
+}
+/* Keep execution within reach while editing a long program on a phone. */
+@media(max-width:650px){
+ .robot-workshop .robot-panel{padding-bottom:132px}
+ .robot-workshop .robot-run{position:fixed;z-index:6;left:22px;right:22px;bottom:max(20px,env(safe-area-inset-bottom));padding:10px;background:#fffaf0;border:1px solid #b9c8b1;border-radius:12px;box-shadow:0 4px 18px #294c4020;gap:6px}
+ .robot-workshop .robot-run button,.robot-workshop .robot-run select,.robot-workshop .robot-run label{font-size:14px;line-height:1.4}
+ .robot-workshop .robot-run button{padding:6px 9px}.robot-workshop .robot-run label{margin-left:auto}
+ .robot-workshop .robot-viewport{height:210px;scroll-margin-top:64px}
+ .robot-workshop .robot-stages button,.robot-workshop .robot-palette button,.robot-workshop .robot-node-label{font-size:15px}
+ .robot-workshop .robot-heading h3{font-size:22px}.robot-workshop .robot-heading #robot-objective{font-size:16px;line-height:1.6}
+ .robot-workshop .robot-legend,.robot-workshop .robot-position,.robot-workshop .robot-efficiency{font-size:13px;line-height:1.65}
+ .robot-workshop .robot-status{font-size:16px;line-height:1.6}.robot-workshop .robot-goals{font-size:16px}
+}
+
+/* A short performance is chosen in a readable sheet, then plays in the world. */
+#doreumi-open{min-height:44px;padding:10px 17px;border-radius:24px;background:#fff9eb;color:#234d48;border:1px solid #b7c5b1;font:600 14px Pretendard,sans-serif;pointer-events:auto}
+#doreumi-open:disabled{opacity:.45}
+#doreumi-menu{margin:4px 0 12px;width:100%;background:#e4eddc;border:1px solid #b5c5ac;color:#234d48}
+.doreumi-motion-menu{width:min(660px,calc(100vw - 24px))}
+.doreumi-motion-menu .modal-x{min-width:52px;border-radius:12px;font-size:14px}
+.motion-intro{max-width:48ch;padding-right:32px}
+.motion-category{margin:24px 0 0}.motion-category h3{font-size:15px;margin:0 0 10px;color:#426358}
+.motion-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.motion-card{display:flex;flex-direction:column;gap:8px;min-height:92px;padding:14px;text-align:left;background:#fffdf6;border:1px solid #c2cdb8;border-radius:14px;color:#234d48}
+.motion-card:hover{background:#eaf1df;border-color:#77977c}.motion-card:focus-visible{outline:3px solid #d19b33;outline-offset:2px}
+.motion-card-heading{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%}.motion-card strong{font-size:16px}.motion-card>span:last-child{font-size:13px;line-height:1.5;font-weight:400;color:#526a60}.motion-duration{font-size:12px;font-weight:500;color:#687c70;white-space:nowrap}
+.doreumi-performance{position:absolute;z-index:14;right:18px;top:var(--hud-mission-top,88px);display:flex;align-items:center;gap:12px;max-width:calc(100% - 36px);padding:12px 14px;background:#fff9ebf5;border:1px solid #c1cdb9;border-radius:16px;box-shadow:0 3px 16px #243e2815;pointer-events:auto}
+.doreumi-performance[hidden]{display:none}.doreumi-performance>div{display:flex;flex-direction:column;gap:4px}.doreumi-performance strong{font-size:15px}.doreumi-performance span{font-size:11px;color:#526a60}.doreumi-performance button{min-height:44px;padding:9px 12px;border:1px solid #bdc9b3;border-radius:11px;background:#edf2df;color:#234d48;font:600 13px Pretendard,sans-serif}
+@media(max-width:640px){.motion-grid{gap:8px}.motion-card{padding:12px 10px;min-height:100px}.motion-card strong{font-size:15px}.motion-intro{padding-right:20px}.doreumi-performance{right:12px;max-width:calc(100% - 24px);gap:8px;padding:9px 10px}.doreumi-performance strong{font-size:14px}.doreumi-performance span{font-size:10px}#doreumi-open{padding:9px 13px}}
+@media(max-width:640px){.doreumi-performance{top:calc(var(--hud-mission-top,88px) + 48px)}}

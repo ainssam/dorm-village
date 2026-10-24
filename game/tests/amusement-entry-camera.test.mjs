@@ -84,7 +84,7 @@ test('actual game scopes the ride return marker guard to arrival, room changes, 
  const commitArrival=game.match(/rideArrivalInteraction\.arrive\(def\.id==='amusementIsland'&&target\.roomId==='amusementIsland'\?RIDE_RETURN_PORTALS\[target\.spawnId\]:null\);/)?.[0];
  assert(guard&&interactionWorld&&nearby&&instance&&portalMap&&commitArrival,'actual selection and room-commit code remains exercised');
  const room=ROOMS.amusementIsland,player={position:{x:0,z:0}};
- const context=vm.createContext({room,player,view:{interactionWorld:()=>room},findInteraction,gatheringAvailable:()=>true,cafeFoodHost:null,libraryQuest:null,document:{body:{dataset:{}}},collision:()=>room});
+ const context=vm.createContext({doreumiMotions:null,room,player,view:{interactionWorld:()=>room},findInteraction,gatheringAvailable:()=>true,cafeFoodHost:null,libraryQuest:null,document:{body:{dataset:{}}},collision:()=>room});
  vm.runInContext([guard,instance,portalMap,interactionWorld,nearby].join('\n'),context);
  const select=()=>vm.runInContext('nearby()',context),commit=(spawnId,destination=room)=>{context.def=destination;context.target={roomId:destination.id,spawnId};vm.runInContext(commitArrival,context);};
  for(const[spawnId,portalId]of Object.entries({'from-kart':'amusementIsland.kart','from-coaster':'amusementIsland.coaster','from-bumper':'amusementIsland.bumper'})){

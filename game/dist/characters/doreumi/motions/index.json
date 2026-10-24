@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "source": "https://github.com/ainssam/doreumi-desktop-pet",
+  "commit": "4433dba715893d75de60948b1968d21f5c79efcb",
+  "attribution": "도름이 © 아인T · CC BY-NC 4.0",
+  "motions": [
+    {
+      "id": "Wave",
+      "label": "손 흔들기",
+      "category": "인사와 마음",
+      "description": "안녕! 반갑게 손을 흔들어요",
+      "duration": 3.5999999046325684,
+      "url": "./characters/doreumi/motions/Wave.json",
+      "sourceAsset": "doreumi-master.glb#Wave",
+      "sha256": "441ead27ab90b285392a0270a7e6467fc38b23368d2308cbc78afda965c11635"
+    },
+    {
+      "id": "Bow",
+      "label": "꾸벅 인사",
+      "category": "인사와 마음",
+      "description": "마음을 담아 고개를 숙여요",
+      "duration": 4,
+      "url": "./characters/doreumi/motions/Bow.json",
+      "sourceAsset": "doreumi-master.glb#Bow",
+      "sha256": "d95046852f1f7d4059b7c26bdca79025b32f5869ec545dfb4aea26f251c36e0b"
+    },
+    {
+      "id": "meshy:27",
+      "label": "큰 하트",
+      "category": "인사와 마음",
+      "description": "두 팔로 커다란 하트를 만들어요",
+      "duration": 7.733333174387614,
+      "url": "./characters/doreumi/motions/meshy-27.json",
+      "sourceAsset": "motions/meshy-27.json",
+      "sha256": "f71ba7514050e1ec4c5534645ea1aa82d1254515301902116cc9442eb0e0797a"
+    },
+    {
+      "id": "Cheer",
+      "label": "힘차게 응원",
+      "category": "인사와 마음",
+      "description": "도름이가 두 팔로 응원해요",
+      "duration": 4,
+      "url": "./characters/doreumi/motions/Cheer.json",
+      "sourceAsset": "doreumi-master.glb#Cheer",
+      "sha256": "08c4afb5a4112a3ebda571214a8074784e7e5e26e4dd639789c347d14ee7ee4f"
+    },
+    {
+      "id": "meshy:67",
+      "label": "버블 댄스",
+      "category": "춤추기",
+      "description": "통통 튀는 리듬에 몸을 맡겨요",
+      "duration": 9.633333269755045,
+      "url": "./characters/doreumi/motions/meshy-67.json",
+      "sourceAsset": "motions/meshy-67.json",
+      "sha256": "129e059b90b979c0f4af79aa59441c64f1b49da63276a42a4129c6431a24dda2"
+    },
+    {
+      "id": "meshy:591",
+      "label": "힙합 댄스",
+      "category": "춤추기",
+      "description": "어깨와 발을 리듬에 맞춰 움직여요",
+      "duration": 5.699999904632568,
+      "url": "./characters/doreumi/motions/meshy-591.json",
+      "sourceAsset": "motions/meshy-591.json",
+      "sha256": "9eb20405751c0575206f0475e1ed8bcaa623c18692758c4baa036fe660c15a3d"
+    },
+    {
+      "id": "meshy:23",
+      "label": "코믹 댄스",
+      "category": "춤추기",
+      "description": "장난스러운 춤으로 웃음을 전해요",
+      "duration": 9.066666666666666,
+      "url": "./characters/doreumi/motions/meshy-23.json",
+      "sourceAsset": "motions/meshy-23.json",
+      "sha256": "2c2f01212cb1a05480dcf83e8e304aaebec2de65748d4e0f4549c1ae5d9f3eeb"
+    },
+    {
+      "id": "meshy:596",
+      "label": "YMCA 춤",
+      "category": "춤추기",
+      "description": "팔을 쭉 뻗어 모양을 만들어요",
+      "duration": 6.099999968210856,
+      "url": "./characters/doreumi/motions/meshy-596.json",
+      "sourceAsset": "motions/meshy-596.json",
+      "sha256": "f5b42263c62cfe6de3dca4f71b8420b1f324904884d4aef4abb7d450a82d0c20"
+    },
+    {
+      "id": "Jump",
+      "label": "제자리 점프",
+      "category": "신나게 움직이기",
+      "description": "무릎을 굽혔다가 폴짝 뛰어요",
+      "duration": 2.799999952316284,
+      "url": "./characters/doreumi/motions/Jump.json",
+      "sourceAsset": "doreumi-master.glb#Jump",
+      "sha256": "4d898dd2fa56483559faeb4db218bbb6371764a71c9cf8657346733382509eee"
+    },
+    {
+      "id": "Joy",
+      "label": "기뻐하기",
+      "category": "신나게 움직이기",
+      "description": "기쁜 마음을 온몸으로 표현해요",
+      "duration": 4,
+      "url": "./characters/doreumi/motions/Joy.json",
+      "sourceAsset": "doreumi-master.glb#Joy",
+      "sha256": "2730815f4800ff484e4ade38d92fc06d462fbb49fba93aa6e4b42df63c76164f"
+    },
+    {
+      "id": "meshy:326",
+      "label": "팔 벌려 뛰기",
+      "category": "신나게 움직이기",
+      "description": "팔과 다리를 함께 벌려 뛰어요",
+      "duration": 2.800000023841858,
+      "url": "./characters/doreumi/motions/meshy-326.json",
+      "sourceAsset": "motions/meshy-326.json",
+      "sha256": "e6a6277a63a5a37c63928387771389a4326cc4f3f1acfc88cf57605f0a0d0e5b"
+    },
+    {
+      "id": "Showcase",
+      "label": "짜잔 소개",
+      "category": "신나게 움직이기",
+      "description": "여기를 봐요! 자신 있게 소개해요",
+      "duration": 7.800000190734863,
+      "url": "./characters/doreumi/motions/Showcase.json",
+      "sourceAsset": "doreumi-master.glb#Showcase",
+      "sha256": "4d0d51a07b17ea0240d22a0ef86583c6fd0ed5665a69d329263950edbaee2182"
+    },
+    {
+      "id": "Stretch",
+      "label": "기지개",
+      "category": "느긋한 순간",
+      "description": "두 팔을 쭉 뻗고 몸을 풀어요",
+      "duration": 5,
+      "url": "./characters/doreumi/motions/Stretch.json",
+      "sourceAsset": "doreumi-master.glb#Stretch",
+      "sha256": "44a0f96124c89a3cabde82110435cc4652aa24047f360daae9f473de35922b41"
+    },
+    {
+      "id": "HeadTilt",
+      "label": "갸우뚱",
+      "category": "느긋한 순간",
+      "description": "궁금한 마음에 고개를 기울여요",
+      "duration": 4,
+      "url": "./characters/doreumi/motions/HeadTilt.json",
+      "sourceAsset": "doreumi-master.glb#HeadTilt",
+      "sha256": "ce4d55b24d0c8b3a4781025eaf92eb64db99abd2f176612b27d65f52f437128b"
+    },
+    {
+      "id": "Think",
+      "label": "생각하기",
+      "category": "느긋한 순간",
+      "description": "잠깐 멈춰 좋은 생각을 떠올려요",
+      "duration": 6,
+      "url": "./characters/doreumi/motions/Think.json",
+      "sourceAsset": "doreumi-master.glb#Think",
+      "sha256": "978ae6a2e2e3de51bd4ebf1228d36527d614e837d297f56acdb3ae48cef34bfa"
+    },
+    {
+      "id": "NewYearBow",
+      "label": "큰절 인사",
+      "category": "느긋한 순간",
+      "description": "천천히 앉아 정성껏 인사해요",
+      "duration": 7,
+      "url": "./characters/doreumi/motions/NewYearBow.json",
+      "sourceAsset": "doreumi-master.glb#NewYearBow",
+      "sha256": "11d359dae90e268171ec643f2720b03b8a4807b55579d2e156306a5ca5e8dc9a"
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+import {adaptCharacterRig} from '../character-rig-adapter.js';
 import * as THREE from 'three';
 import {footWeight} from '../dormi-sports-pose.js';
 
@@ -6,6 +7,7 @@ import {footWeight} from '../dormi-sports-pose.js';
  * No geometry, actor, material, transform, or scale is replaced on acquisition.
  */
 export function createStairRig({model,poser}={}){
+ if(poser?.poseReference)return adaptCharacterRig(poser,(model,poser)=>createStairRig({model,poser}));
  if(!model?.isObject3D||typeof poser?.setPose!=='function'||typeof poser?.getState!=='function')throw new TypeError('Stair rig requires the original model and its poser');
  const originalPose=poser.getState(),saved=[],records=[],vector=new THREE.Vector3();let soleY=Infinity,released=false,lastKey='',lastFrame=null,applications=0;
  model.traverse(mesh=>{if(!mesh.isMesh||!mesh.geometry?.attributes?.position)return;const geometry=mesh.geometry;saved.push({mesh,geometry,position:geometry.attributes.position.array.slice(),normal:geometry.attributes.normal?.array.slice(),box:geometry.boundingBox?.clone(),sphere:geometry.boundingSphere?.clone()});});

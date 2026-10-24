@@ -4,14 +4,14 @@ import fs from 'node:fs';
 import vm from 'node:vm';
 
 const source=fs.readFileSync(new URL('../dist/game.js',import.meta.url),'utf8');
-const lifecycle=source.split('\n').filter(line=>line.startsWith("window.addEventListener('pagehide',event=>{const persisted=")||line.startsWith(" window.addEventListener('pageshow',")).join('\n');
+const lifecycle=source.split('\n').filter(line=>line.startsWith("window.addEventListener('pagehide',event=>{")||line.startsWith(" window.addEventListener('pageshow',")).join('\n');
 
 function fixture(){
  const handlers=new Map(),calls=[];
  const track=(name,methods)=>Object.fromEntries(Object.entries(methods).map(([method,value])=>[method,typeof value==='function'?value:(...args)=>calls.push([name,method,...args])]));
  const ui=track('ui',{close:true,message:true,toast:true});ui.message=(...args)=>{calls.push(['ui','message',...args]);return false;};
  const ctx=vm.createContext({
-  window:{addEventListener(type,fn){handlers.set(type,fn);}},document:{hidden:false},
+  doreumiMotions:track('doreumiMotions',{cancel:true}),window:{addEventListener(type,fn){handlers.set(type,fn);}},document:{hidden:false},
   view:{clawMachine:{controller:track('claw',{cancel:true})}},fishScoop:track('fishScoop',{dispose:true}),
   amusementFoodHost:track('amusementFood',{dispose:true}),gymTools:track('gym',{cancel:true}),
   resetGeneration:0,resetting:true,lookoutTools:track('lookout',{dispose:true}),boatTools:track('boat',{dispose:true}),
@@ -35,6 +35,7 @@ test('persisted pagehide cancels transient work, keeps reusable owners alive and
  const f=fixture();assert.equal(f.handlers.size,2);
  for(let cycle=0;cycle<2;cycle++){
   f.handlers.get('pagehide')({persisted:true});
+  assert.equal(f.calls.filter(c=>c[0]==='doreumiMotions'&&c[1]==='cancel').length,cycle+1);
   assert.equal(f.calls.filter(c=>c[0]==='campModes'&&c[1]==='cancel').length,cycle+1);
   assert.equal(f.calls.filter(c=>c[0]==='campModes'&&c[1]==='dispose').length,0);
   assert.equal(f.calls.filter(c=>c[0]==='plaza'&&c[1]==='cancel').length,cycle+1);
