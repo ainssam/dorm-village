@@ -20,6 +20,16 @@
 
 Chromium 소프트웨어 WebGL 검증이다. 실제 휴대폰 GPU·Safari 성능 측정은 포함하지 않는다.
 
+## 동작 릴리스 공개 확인
+
+- GitHub `main`: PR #2 병합 완료. 런타임 커밋 `bff7819943f1e4090a746f547a1164edc51c0a25`.
+- 아인2 / `dorm-village`: **READY**, 2026-10-24 18:48:53 UTC (한국 10월 25일 03:48), 별칭 연결 오류 없음.
+- 공개 주소: https://dorm-village.vercel.app/
+- 고정 배포: https://dorm-village-hs51auyqe-ain-b38f.vercel.app/
+- 배포 ID: `dpl_BK4Y9ReWS1NLA2Q85FsGz6LMiHcH`.
+- 외부 공개 요청으로 버전 `2026.10.25.2`, 원본 출처가 있는 16개 목록, 실제 `Wave.json` 응답을 확인했다. 공개 Wave 파일의 바이트와 SHA-256이 로컬 검수 파일/목록과 일치한다. 근거: `qa/motion-public-verification.json`.
+- 고정 커밋·캐릭터 모델·16개 동작의 해시를 확인하고 문법 검사·전체 테스트를 실행하는 빌드로 게시했다. 이후 검수 문서 커밋은 런타임을 변경하지 않는다.
+
 ---
 
 # 도름마을 재검수 · 2026.10.25.1
