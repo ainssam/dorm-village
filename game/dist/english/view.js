@@ -11,7 +11,8 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
  if(!container||!doc?.createElement)throw new TypeError('English learning needs a document and container');
  mounts.get(container)?.();
  let alive=true,tab=TABS.some(([id])=>id===initialTab)?initialTab:'listening',wordIndex=0,shelf='words',pageIndex=0,roleKind='cafe';
- let listening=createListeningSession(),sentences=createSentenceSession(),roleplay=createRoleplaySession();
+ const listening=createListeningSession(),sentences=createSentenceSession(),conversations={cafe:createRoleplaySession('cafe'),directions:createRoleplaySession('directions')};
+ let roleplay=conversations.cafe;
  let generation=0,transcriptOpen=false,audioNodes=null,unsubscribe=()=>{};
  const uid=`english-${++serial}`;
  const el=(tag,text='',attrs={})=>{const node=doc.createElement(tag);if(text)node.textContent=text;for(const[k,v]of Object.entries(attrs))node.setAttribute(k,String(v));return node;};
@@ -26,7 +27,7 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
  sources.append(paragraph('예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.'));
  for(const source of C.sources){const p=paragraph('');p.append(el('a',source.title,{href:source.url,target:'_blank',rel:'noopener noreferrer'}));sources.append(p);}
  sources.append(paragraph(`${C.audioLabel} · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.`));
- footer.append(paragraph('낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히','english-note'),paragraph('닫으면 이번 놀이는 처음부터 다시 시작해요.','english-note'),sources);
+ footer.append(paragraph('낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히','english-note'),paragraph('탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.','english-note'),sources);
  container.setAttribute('class','english-learning learning-workspace');container.setAttribute('data-english-learning','');container.replaceChildren(nav,panel,status,actions,footer);
 
  function say(text,correct=null){status.textContent=text;status.setAttribute('data-outcome',correct===null?'ready':correct?'correct':'retry');}
@@ -132,7 +133,7 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
   audioNodes=null;panel.replaceChildren();actions.replaceChildren();({listening:renderListening,sentences:renderSentences,roleplay:renderRoleplay,dictionary:renderDictionary})[tab]();
   if(focusKey){const target=[...container.querySelectorAll('[data-key]')].find(n=>n.getAttribute('data-key')===focusKey);if(target&&!target.disabled)target.focus();else{const fallback=[actions.querySelector('[data-key="next"]'),actions.querySelector('[data-key="restart"]'),...panel.querySelectorAll('button')].find(n=>n&&!n.disabled);(fallback??panel).focus();}}
  }
- function setTab(value){if(tab===value||!TABS.some(([id])=>id===value))return;stopAudio();transcriptOpen=false;tab=value;listening=createListeningSession();sentences=createSentenceSession();roleKind='cafe';roleplay=createRoleplaySession();wordIndex=0;shelf='words';pageIndex=0;render();if(tab==='sentences')board();}
+ function setTab(value){if(tab===value||!TABS.some(([id])=>id===value))return;stopAudio();transcriptOpen=false;tab=value;render();if(tab==='sentences')board();}
  const activeSession=()=>tab==='listening'?listening:tab==='sentences'?sentences:null;
  function click(event){
   if(!alive)return;const b=event.target?.closest?.('[data-english-action]');if(!b||!container.contains(b)||b.disabled)return;const action=b.dataset.englishAction,value=b.dataset.value;
@@ -148,10 +149,10 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
   else if(action==='retry'&&session){changed=session.retry();updateBoard=tab==='sentences';}
   else if(action==='next'&&session){changed=session.next();updateBoard=tab==='sentences'&&!session.snapshot().done;}
   else if(action==='restart'){if(session){session.reset();updateBoard=tab==='sentences';}else if(tab==='roleplay')roleplay.reset();else return;changed=true;}
-  else if(action==='roleplay-kind'&&tab==='roleplay'&&['cafe','directions'].includes(value)){roleKind=value;roleplay=createRoleplaySession(value);changed=true;}
+  else if(action==='roleplay-kind'&&tab==='roleplay'&&['cafe','directions'].includes(value)){if(roleKind===value)return;roleKind=value;roleplay=conversations[value];changed=true;}
   else if(action==='role-choice'&&tab==='roleplay')changed=roleplay.choose(value);
   else if(action==='role-reset'&&tab==='roleplay'){roleplay.reset();changed=true;}
-  else if(action==='shelf'&&tab==='dictionary'&&['words','book'].includes(value)){shelf=value;pageIndex=0;changed=true;}
+  else if(action==='shelf'&&tab==='dictionary'&&['words','book'].includes(value)){if(shelf===value)return;shelf=value;changed=true;}
   else if(action==='word'&&tab==='dictionary'&&C.words[Number(value)]){wordIndex=Number(value);changed=true;}
   else if(action==='page'&&tab==='dictionary'&&shelf==='book'){const next=pageIndex+Number(value);if(!Number.isInteger(next)||!C.book.pages[next])return;pageIndex=next;changed=true;}
   if(!changed)return;stopAudio();transcriptOpen=false;render();if(updateBoard)board();

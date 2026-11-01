@@ -33,6 +33,7 @@ import {buildHomeRoom} from '../home/fixtures.js';
 import {signLabel} from './handwriting.js';
 import {buildVillageBuilding,VILLAGE_BUILDINGS} from './landmarks.js';
 import {clayMaterial} from './toy-kit.js';
+import {addMeadow} from './landscape-detail.js';
 import {SWING,SEESAW,SLIDE} from './playground-layout.js';
 import {buildSchoolRoom} from './school-builders.js';
 import {LIBRARY_SHELVES,LIBRARY_TABLES,LIBRARY_CHAIRS,LIBRARY_DESK} from './library-layout.js';
@@ -143,7 +144,7 @@ export function buildRoom(def,progress,{shell=true,portals=true}={}){
  }
  function courtyard(){forestTheater=buildVillageScene({root,box,sphere,cylinder,mat,label,feature}).forest;buildIslandLookoutSeat(root);mainHarbor=createMainHarborView(root,ROOMS.villageHarbor);mainAirport=createMainAirportView(root,ROOMS.villageAirport);airportStaff=createAirportStaff({root});const airPad=cylinder(.78,.78,.025,'#d6d9ce',19.4,.0375,-11.6);airPad.name='airfield.guide-standing-pad';buildHarborLighthouse(root);harborStaff=createHarborStaff({root});const pad=cylinder(.78,.78,.025,'#d6d9ce',24.2,.0375,12.45);pad.name='harbor.guide-standing-pad';}
  function playground(){
-  buildOutdoorTerrain(root,OUTDOOR_SHORES.playground,{name:'playground.island',seasonalRole:'terrain.play-sand',earth:'#b79c70',surface:'#e7d5a1'});
+  buildOutdoorTerrain(root,OUTDOOR_SHORES.playground,{name:'playground.island',seasonalRole:'terrain.play-sand',earth:'#b79c70',surface:'#eedfc4'});
   const slide=feature(new THREE.Group(),'playground.slide','slide',{footprint:{...SLIDE.footprint}});root.add(slide);
   for(const dx of [-.83,.83])for(const dz of [-.59,.59])box(.13,SLIDE.platformY,.13,'#ae835e',SLIDE.x+dx,SLIDE.platformY/2,SLIDE.platformZ+dz,.025,slide);
   feature(box(1.85,.16,1.4,'#d6aa71',SLIDE.x,SLIDE.platformY-.08,SLIDE.platformZ,.06,slide),'playground.slide.platform','slide-platform');
@@ -151,26 +152,26 @@ export function buildRoom(def,progress,{shell=true,portals=true}={}){
    for(const dz of [-.60,.60])box(.12,1.94,.12,'#ce9a5e',SLIDE.x+dx,SLIDE.platformY+.97,SLIDE.platformZ+dz,.025,slide);
    box(.10,.1,1.36,'#ecbb77',SLIDE.x+dx,SLIDE.platformY+.76,SLIDE.platformZ,.025,slide);
   }
-  feature(box(2.10,.16,1.72,'#c98772',SLIDE.x,3.64,SLIDE.platformZ,.07,slide),'playground.slide.roof','slide-roof');
+  feature(box(2.10,.16,1.72,'#dca59c',SLIDE.x,3.64,SLIDE.platformZ,.07,slide),'playground.slide.roof','slide-roof');
   for(const [i,step]of SLIDE.steps.entries())feature(box(1.65,step.y,.72,'#ddb478',SLIDE.x,step.y/2,step.z,.025,slide),`playground.slide.step.${i}`,'slide-step');
   for(const dx of [-.88,.88])beam([SLIDE.x+dx,.95,SLIDE.steps[0].z-.33],[SLIDE.x+dx,2.26,SLIDE.platformZ-.13],.065,'#bd8a5a',slide);
   const rampY=(SLIDE.platformY+SLIDE.endY)/2,rampZ=(SLIDE.startZ+SLIDE.endZ)/2,length=Math.hypot(SLIDE.endZ-SLIDE.startZ,SLIDE.platformY-SLIDE.endY),angle=Math.atan2(SLIDE.platformY-SLIDE.endY,SLIDE.endZ-SLIDE.startZ);
-  const chute=feature(box(1.60,.10,length,'#83b6bc',SLIDE.x,rampY-.05/Math.cos(angle),rampZ,.04,slide),'playground.slide.chute','slide-chute');chute.rotation.x=angle;
+  const chute=feature(box(1.60,.10,length,'#9cc9c8',SLIDE.x,rampY-.05/Math.cos(angle),rampZ,.04,slide),'playground.slide.chute','slide-chute');chute.rotation.x=angle;
   for(const dx of [-.80,.80]){const rail=box(.10,.20,length,'#b8dce0',SLIDE.x+dx,rampY+.08,rampZ,.04,slide);rail.rotation.x=angle;}
-  box(1.65,.06,.64,'#83b6bc',SLIDE.x,SLIDE.endY-.03,SLIDE.endZ+.26,.04,slide);
+  box(1.65,.06,.64,'#9cc9c8',SLIDE.x,SLIDE.endY-.03,SLIDE.endZ+.26,.04,slide);
   const swing=feature(new THREE.Group(),'playground.swing','swing',{footprint:{x:1.7,z:-1.85,hx:1.3,hz:.7}});root.add(swing);
   for(const x of [.49,2.91]){beam([x,.08,-2.48],[x,SWING.pivotY+.01,SWING.z],.12,'#73958c',swing);beam([x,.08,-1.22],[x,SWING.pivotY+.01,SWING.z],.12,'#73958c',swing);}
   box(2.72,.15,.17,'#d3a76b',SWING.x,SWING.pivotY+.07,SWING.z,.04,swing);
   swingRig=feature(new THREE.Group(),'playground.swing.pivot','swing-pivot');swingRig.position.set(SWING.x,SWING.pivotY,SWING.z);swing.add(swingRig);
   for(const x of [-SWING.grip.x,SWING.grip.x])cylinder(.025,.025,SWING.pivotY-SWING.seatTop-.03,'#ddcba7',x,(SWING.seatTop-SWING.pivotY-.05)/2,SWING.grip.z,swingRig);
-  feature(box(1.45,.12,.58,'#d89470',0,SWING.seatTop-SWING.pivotY-.06,0,.065,swingRig),'playground.swing.seat','swing-seat');
+  feature(box(1.45,.12,.58,'#e5b497',0,SWING.seatTop-SWING.pivotY-.06,0,.065,swingRig),'playground.swing.seat','swing-seat');
   const seesaw=feature(new THREE.Group(),'playground.seesaw','seesaw',{footprint:{x:SEESAW.x,z:SEESAW.z,hx:2.05,hz:.7}});root.add(seesaw);
   cylinder(.26,.47,SEESAW.pivotY,'#d7b473',SEESAW.x,SEESAW.pivotY/2,SEESAW.z,seesaw);
   seesawRig=feature(new THREE.Group(),'playground.seesaw.pivot','seesaw-pivot');seesawRig.position.set(SEESAW.x,SEESAW.pivotY,SEESAW.z);seesaw.add(seesawRig);
-  feature(box(4.1,.15,.50,'#96b3bf',0,0,0,.065,seesawRig),'playground.seesaw.beam','seesaw-beam');
+  feature(box(4.1,.15,.50,'#b7b8d8',0,0,0,.065,seesawRig),'playground.seesaw.beam','seesaw-beam');
   for(const [side,sign]of [['left',-1],['right',1]]){
    const dx=sign*SEESAW.seatOffset;
-   feature(box(.72,.12,1.22,'#e4a07c',dx,SEESAW.seatTop-SEESAW.pivotY-.06,0,.055,seesawRig),`playground.seesaw.seat.${side}`,'seesaw-seat');
+   feature(box(.72,.12,1.22,'#efbfa8',dx,SEESAW.seatTop-SEESAW.pivotY-.06,0,.055,seesawRig),`playground.seesaw.seat.${side}`,'seesaw-seat');
    const grip=side==='left'?{forward:.26046,halfWidth:.545,height:SEESAW.seatTop-.14111661911010742+.5575935}:{forward:.39,halfWidth:.285,height:SEESAW.gripHeight};
    const handleX=dx-sign*grip.forward,handleY=grip.height-SEESAW.pivotY;
    for(const [hand,h]of [['L',-1],['R',1]]){
@@ -184,6 +185,7 @@ export function buildRoom(def,progress,{shell=true,portals=true}={}){
   for(const y of [.24,.49])box(13.2,.09,.1,'#eddbac',0,y,-7.1,.025);
   for(const [x,z]of[[-6.5,4.75],[6.5,4.75]]){cylinder(.3,.35,.14,'#d7be83',x,.08,z);sphere(.19,'#e6a289',x,.3,z);}
   box(1.84,.045,.5,'#c8b78f',0,.045,5.14,.04);
+  addMeadow(root,{name:'playground.edge-garden',shore:OUTDOOR_SHORES.playground,seed:42,patches:[{x:-5.7,z:-4.6,r:.75,count:30},{x:-5.9,z:.5,r:.65,count:22},{x:5.8,z:-4.8,r:.9,count:36},{x:5.9,z:-1.9,r:.65,count:22}],exclude:(x,z)=>Math.abs(x)<4.7||z>3.2});
   landmark('playground',slide);
   root.userData.environment={kind:'playground',fixtures:['slide','swing','seesaw']};
  }

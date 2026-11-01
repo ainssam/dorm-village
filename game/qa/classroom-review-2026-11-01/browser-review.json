@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "id": "korean-tab-progress",
+      "before": "2 / 8 · 문장에 알맞은 말을 골라요",
+      "after": "1 / 8 · 문장에 알맞은 말을 골라요"
+    },
+    {
+      "id": "english-tab-progress",
+      "before": "2 / 12 · 소리를 듣고 그림을 골라요",
+      "after": "1 / 12 · 소리를 듣고 그림을 골라요"
+    },
+    {
+      "id": "pendulum-measurement",
+      "period": "2.010",
+      "status": "측정 완료! 세 왕복 6.030초 ÷ 3 = 2.010초. 조건을 바꿔 다시 비교해요"
+    },
+    {
+      "id": "quadratic-min",
+      "status": "최솟값 -4를 찾았어요. x=1예요."
+    },
+    {
+      "id": "world-map",
+      "buttons": [
+        "×"
+      ],
+      "selects": 1
+    }
+  ],
+  "errors": [],
+  "failed": [],
+  "consoleErrors": []
+}

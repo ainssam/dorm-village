@@ -1,0 +1,391 @@
+{
+  "results": [
+    {
+      "name": "phone-portrait-piano",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 24,
+            "y": 564.40625,
+            "w": 52,
+            "h": 148
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 314.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도4",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "phone-portrait-harp",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 22,
+            "y": 532.125,
+            "w": 82.75,
+            "h": 69.390625
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 314.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도4",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "phone-portrait-cello",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 22,
+            "y": 458.125,
+            "w": 82.75,
+            "h": 69.390625
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 314.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도3",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "phone-landscape-piano",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": false,
+          "rect": {
+            "x": 32,
+            "y": 280,
+            "w": 52,
+            "h": 148
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 768.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도4",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "phone-landscape-harp",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 26,
+            "y": 268,
+            "w": 93.75,
+            "h": 100.734375
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 768.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도4",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "phone-landscape-cello",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 26,
+            "y": 268,
+            "w": 93.75,
+            "h": 73.734375
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 768.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도3",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "tablet-landscape-piano",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 122,
+            "y": 507.703125,
+            "w": 52,
+            "h": 148
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 948.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도4",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "tablet-landscape-harp",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 26,
+            "y": 497.171875,
+            "w": 116.25,
+            "h": 100.734375
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 948.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도4",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "tablet-landscape-cello",
+      "passed": true,
+      "detail": {
+        "initial": {
+          "visible": true,
+          "rect": {
+            "x": 26,
+            "y": 450.171875,
+            "w": 116.25,
+            "h": 73.734375
+          },
+          "touch": true
+        },
+        "close": {
+          "visible": true,
+          "rect": {
+            "x": 948.328125,
+            "y": 19,
+            "w": 58.671875,
+            "h": 44
+          },
+          "touch": true
+        },
+        "response": "도3",
+        "completed": "touch play → stop/resume → close"
+      }
+    },
+    {
+      "name": "settled-playground",
+      "passed": true,
+      "detail": {
+        "state": {
+          "room": "playground",
+          "ready": true,
+          "failed": false,
+          "locked": false,
+          "phase": "idle",
+          "modal": false,
+          "renderer": {
+            "frame": 298,
+            "calls": 94,
+            "triangles": 94582,
+            "points": 0,
+            "lines": 0
+          }
+        },
+        "waitAfterUnlock": 1200
+      }
+    },
+    {
+      "name": "settled-schoolGym",
+      "passed": true,
+      "detail": {
+        "state": {
+          "room": "schoolGym",
+          "ready": true,
+          "failed": false,
+          "locked": false,
+          "phase": "idle",
+          "modal": false,
+          "renderer": {
+            "frame": 310,
+            "calls": 111,
+            "triangles": 74514,
+            "points": 0,
+            "lines": 0
+          }
+        },
+        "waitAfterUnlock": 1200
+      }
+    },
+    {
+      "name": "settled-korean",
+      "passed": true,
+      "detail": {
+        "state": {
+          "room": "korean",
+          "ready": true,
+          "failed": false,
+          "locked": false,
+          "phase": "idle",
+          "modal": false,
+          "renderer": {
+            "frame": 323,
+            "calls": 189,
+            "triangles": 81184,
+            "points": 0,
+            "lines": 0
+          }
+        },
+        "waitAfterUnlock": 1200
+      }
+    },
+    {
+      "name": "settled-english",
+      "passed": true,
+      "detail": {
+        "state": {
+          "room": "english",
+          "ready": true,
+          "failed": false,
+          "locked": false,
+          "phase": "idle",
+          "modal": false,
+          "renderer": {
+            "frame": 335,
+            "calls": 131,
+            "triangles": 79236,
+            "points": 0,
+            "lines": 0
+          }
+        },
+        "waitAfterUnlock": 1200
+      }
+    },
+    {
+      "name": "settled-bakeryCafe",
+      "passed": true,
+      "detail": {
+        "state": {
+          "room": "bakeryCafe",
+          "ready": true,
+          "failed": false,
+          "locked": false,
+          "phase": "idle",
+          "modal": false,
+          "renderer": {
+            "frame": 348,
+            "calls": 417,
+            "triangles": 142826,
+            "points": 0,
+            "lines": 0
+          }
+        },
+        "waitAfterUnlock": 1200
+      }
+    },
+    {
+      "name": "settled-amusementCircuit",
+      "passed": true,
+      "detail": {
+        "state": {
+          "room": "amusementCircuit",
+          "ready": true,
+          "failed": false,
+          "locked": false,
+          "phase": "idle",
+          "modal": false,
+          "renderer": {
+            "frame": 362,
+            "calls": 117,
+            "triangles": 81768,
+            "points": 0,
+            "lines": 0
+          }
+        },
+        "waitAfterUnlock": 1200
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

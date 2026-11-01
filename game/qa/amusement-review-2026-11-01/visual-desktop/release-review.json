@@ -1,0 +1,770 @@
+{
+  "rendererStride": 1,
+  "results": [
+    {
+      "name": "carousel-01-riding",
+      "state": {
+        "ready": true,
+        "doreumiMotion": {
+          "phase": "idle",
+          "id": null,
+          "label": "",
+          "time": 0,
+          "duration": 0
+        },
+        "clawRuntime": null,
+        "fishScoopRuntime": null,
+        "lookoutRuntime": {
+          "phase": "idle",
+          "elapsed": 0,
+          "paused": false,
+          "mapQueued": false,
+          "scenic": false,
+          "generation": 0,
+          "cover": 0,
+          "disposed": false,
+          "error": null,
+          "ocean": null
+        },
+        "flightRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "frameFailure": null,
+          "disposed": false
+        },
+        "boatRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "disposed": false
+        },
+        "weatherRuntime": {
+          "status": "disabled",
+          "enabled": false,
+          "city": null,
+          "snapshot": null,
+          "freshness": "expired",
+          "error": null,
+          "retryAtUtcMs": 0,
+          "cacheEntries": 0,
+          "selectedCityId": "seoul",
+          "selectedCity": {
+            "id": "seoul",
+            "label": "서울",
+            "latDeg": 37.5665,
+            "lonDegEast": 126.978,
+            "timeZone": "Asia/Seoul",
+            "source": "preset",
+            "isExample": false,
+            "elevationM": 0
+          },
+          "visualsEnabled": true,
+          "reducedMotion": false,
+          "visualError": null
+        },
+        "produceRuntime": null,
+        "produce": {
+          "season": "calendar",
+          "nodes": {
+            "park.produce.strawberry": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.tomato": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pumpkin": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.leafy": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.peach": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pear": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.mandarin": {
+              "harvests": 0,
+              "phase": "seed"
+            }
+          }
+        },
+        "cafeFoodRuntime": {
+          "open": false,
+          "mode": null,
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": false,
+          "seatId": null,
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": null,
+          "barista": null,
+          "carry": null
+        },
+        "amusementFoodRuntime": null,
+        "cafeFood": {
+          "packed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0
+          },
+          "made": {
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "consumed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          }
+        },
+        "bakeryRuntime": null,
+        "squareRuntime": null,
+        "tentRuntime": {
+          "seaCue": null,
+          "active": false,
+          "mode": null,
+          "phase": "idle",
+          "duration": 0.8,
+          "inside": false,
+          "paused": false,
+          "activityId": null,
+          "isolated": false,
+          "width": 1280,
+          "height": 900
+        },
+        "marshmallowRuntime": null,
+        "fishCookingRuntime": null,
+        "plazaRuntime": null,
+        "fishingRuntime": null,
+        "fishing": {
+          "total": 0,
+          "counts": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "consumed": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "meals": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "firstCatch": {
+            "petal-minnow": null,
+            "moon-carp": null,
+            "ribbon-mackerel": null,
+            "star-bream": null
+          }
+        },
+        "musicChairRestRuntime": null,
+        "mathResidentRuntime": null,
+        "saveWritable": true,
+        "materials": {
+          "apple": 0,
+          "shell": 0,
+          "autumnLeaf": 0,
+          "petal": 0,
+          "pondFish": 0,
+          "seaFish": 0,
+          "strawberry": 0,
+          "tomato": 0,
+          "pumpkin": 0,
+          "leafy": 0,
+          "peach": 0,
+          "pear": 0,
+          "mandarin": 0
+        },
+        "gathering": {
+          "epoch": 0,
+          "nodes": {
+            "park.tree.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.tree.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.middle": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.leaves.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            }
+          }
+        },
+        "residentSpaceUse": null,
+        "elevatorRuntime": null,
+        "schoolFloor": null,
+        "locomotion": {
+          "airborne": false,
+          "height": 0,
+          "sprinting": false,
+          "moving": false,
+          "phase": 0
+        },
+        "gymRuntime": null,
+        "baseballRuntime": null,
+        "raceRuntime": null,
+        "passingRuntime": null,
+        "libraryQuestRuntime": null,
+        "buildRuntime": null,
+        "robotRuntime": null,
+        "cookingRuntime": null,
+        "sky": {
+          "id": "night",
+          "label": "밤",
+          "clock": "23:05",
+          "timeZone": "Asia/Seoul"
+        },
+        "cafeRuntime": {
+          "open": false,
+          "running": false,
+          "shop": false,
+          "tab": "bread"
+        },
+        "throwRuntime": null,
+        "musicRuntime": null,
+        "audio": {
+          "enabled": false,
+          "unlocked": false,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "village": {
+          "cafe": {
+            "schemaVersion": 1,
+            "day": 1,
+            "phase": "idle",
+            "activeMs": 0,
+            "nextArrivalMs": 3000,
+            "nextOrdinal": 1,
+            "jobSerial": 0,
+            "orders": [],
+            "settled": [],
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "qualityStock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "dough": null,
+            "oven": null,
+            "drink": null,
+            "upgrades": {
+              "warmOven": false,
+              "wideDisplay": false,
+              "cozyCorner": false
+            },
+            "coins": 0,
+            "ledger": {
+              "sold": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "fastTips": 0,
+              "qualityTips": 0,
+              "cozyTips": 0,
+              "spent": 0
+            },
+            "today": {
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "tips": 0
+            }
+          },
+          "bakery": {
+            "phase": "empty",
+            "decoration": null,
+            "completed": 0,
+            "pastries": 0
+          },
+          "mailbox": {
+            "letters": []
+          },
+          "photos": [],
+          "wallPlacements": {}
+        },
+        "residents": [],
+        "worldResidents": [],
+        "library": {
+          "selectedBookId": "pocket-star",
+          "borrowedBookId": null,
+          "readBookIds": []
+        },
+        "activity": {
+          "id": "amusementIsland.carousel",
+          "kind": "carousel",
+          "phase": "active",
+          "elapsed": 0.14319999999998254
+        },
+        "discoveryIds": [],
+        "pose": {
+          "name": "seesaw",
+          "amount": 1,
+          "time": 0.14319999999998254,
+          "seatContactY": 0.18419277667999268,
+          "anchors": {
+            "leftHand": [
+              -0.543378532024512,
+              0.6008744155266736,
+              0.25874287102196825
+            ],
+            "rightHand": [
+              0.5433775176383276,
+              0.6008745188794871,
+              0.25874192867647966
+            ],
+            "leftFoot": [
+              -0.211,
+              0.40069036406064734,
+              0.4170136515483944
+            ],
+            "rightFoot": [
+              0.211,
+              0.40069036406064734,
+              0.4170136515483944
+            ],
+            "seat": [
+              0,
+              0.18419277667999268,
+              -0.002269461750984192
+            ],
+            "hands": {
+              "left": [
+                -0.543378532024512,
+                0.6008744155266736,
+                0.25874287102196825
+              ],
+              "right": [
+                0.5433775176383276,
+                0.6008745188794871,
+                0.25874192867647966
+              ]
+            },
+            "feet": {
+              "left": [
+                -0.211,
+                0.40069036406064734,
+                0.4170136515483944
+              ],
+              "right": [
+                0.211,
+                0.40069036406064734,
+                0.4170136515483944
+              ]
+            }
+          },
+          "bounds": {
+            "min": [
+              -0.5953607559204102,
+              0.14111661911010742,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.5831665396690369,
+              0.6038740277290344
+            ]
+          },
+          "bodyBounds": {
+            "min": [
+              -0.5953607559204102,
+              0.14111661911010742,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.244211196899414,
+              0.6038740277290344
+            ]
+          },
+          "sleepPitch": -1.5707963267948966,
+          "character": "doreumi-master-rig"
+        },
+        "won": false,
+        "roomId": "amusementIsland",
+        "worldId": "amusementIsland",
+        "localPosition": {
+          "x": 0.0036911215443843843,
+          "z": -0.3500030276416495
+        },
+        "worldPosition": {
+          "x": 0.0036911215443843843,
+          "z": -0.3500030276416495
+        },
+        "transitionPhase": "idle",
+        "inputLocked": false,
+        "starsCollected": 0,
+        "collectedIds": [],
+        "ownedItemIds": [
+          "plant",
+          "picture-frame"
+        ],
+        "rewardClaimIds": [],
+        "completedActivityIds": [],
+        "placements": {},
+        "garden": {
+          "phase": "seed",
+          "moments": [],
+          "petals": 0,
+          "harvests": 0,
+          "harvestedBedIds": []
+        },
+        "saveStatus": "saved",
+        "revision": 1,
+        "position": {
+          "x": 0.004,
+          "y": 0.579,
+          "z": -0.35
+        },
+        "camera": {
+          "mode": "walk",
+          "x": 0,
+          "y": 12.699999999999998,
+          "z": 26.999999999999993,
+          "target": {
+            "x": 0,
+            "y": 1,
+            "z": 0
+          },
+          "zoom": 1
+        },
+        "quality": "low",
+        "renderer": {
+          "frame": 144,
+          "calls": 147,
+          "triangles": 95850,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 259,
+            "textures": 16
+          },
+          "pixelRatio": 1,
+          "buffer": {
+            "width": 1280,
+            "height": 900
+          }
+        },
+        "timings": {
+          "transitionMs": [],
+          "frameIntervals": [
+            416.7,
+            816.6,
+            1533.3,
+            649.9,
+            16.8,
+            399.9,
+            383.4,
+            366.6,
+            516.6,
+            500,
+            500,
+            583.3,
+            533.3,
+            566.6,
+            516.7,
+            516.7,
+            1083.2,
+            16.7,
+            500,
+            566.6,
+            700,
+            550,
+            483.3,
+            500,
+            499.9,
+            483.4,
+            483.3,
+            499.9,
+            416.7,
+            483.3,
+            483.4,
+            449.9,
+            483.4,
+            483.3,
+            516.6,
+            433.4,
+            549.9,
+            500,
+            516.6,
+            500,
+            566.7,
+            916.5,
+            133.4,
+            333.4,
+            549.9,
+            483.3,
+            566.7,
+            450,
+            516.6,
+            450,
+            933.3,
+            33.3,
+            500,
+            500,
+            550,
+            449.9,
+            1383.3,
+            466.7,
+            116.6,
+            116.7,
+            416.6,
+            466.7,
+            466.6,
+            450,
+            483.3,
+            583.4,
+            1999.9,
+            716.6,
+            166.7,
+            549.9,
+            1383.3,
+            1149.9,
+            766.7,
+            1900,
+            966.5,
+            100,
+            1033.3,
+            1033.3,
+            2516.6,
+            1049.9,
+            1266.6,
+            383.4,
+            1999.9,
+            2199.9,
+            3766.6,
+            883.2,
+            550,
+            2616.6,
+            1616.6,
+            100,
+            1716.6,
+            1799.9,
+            1716.6,
+            1550,
+            1549.9,
+            1933.2,
+            2466.6,
+            650,
+            1549.9,
+            2949.9,
+            999.9,
+            966.6,
+            233.4,
+            1299.9,
+            2516.6,
+            1199.9,
+            1533.3,
+            33.3,
+            2533.2,
+            1183.4,
+            816.6,
+            1183.3,
+            1299.9,
+            1416.7,
+            16.7,
+            2516.5,
+            49.9,
+            1166.7,
+            1083.3,
+            2349.9,
+            50,
+            1199.9,
+            1166.7,
+            1350,
+            1633.2,
+            1399.9,
+            1116.6,
+            1250,
+            2549.9,
+            883.3,
+            366.7,
+            3749.8,
+            216.6,
+            616.7,
+            666.7,
+            2883.2,
+            33.2
+          ]
+        }
+      },
+      "rides": {
+        "kartRace": null,
+        "bumper": null,
+        "coaster": null,
+        "viking": null,
+        "carousel": {
+          "activity": {
+            "id": "amusementIsland.carousel",
+            "roomId": "amusementIsland",
+            "type": "pose",
+            "kind": "carousel",
+            "rewardPolicy": "none",
+            "poseName": "seesaw",
+            "label": "회전목마 마차에 앉기",
+            "leaveLabel": "천천히 멈추고 내려오기",
+            "text": "편안한 마차에 앉아 천천히 한 바퀴 돌아요. 내리기를 누르면 타던 곳으로 돌아와 멈춰요. 소리는 켜지지 않아요.",
+            "at": {
+              "x": 0,
+              "z": 2.05
+            },
+            "exit": {
+              "x": 0,
+              "z": 2.05,
+              "yaw": 0
+            },
+            "anchor": {
+              "x": 0,
+              "y": 0.5788833808898926,
+              "z": -0.3500000000000001,
+              "yaw": 0
+            },
+            "radius": 0.7,
+            "requiresClearApproach": true,
+            "enterDuration": 5.7,
+            "ownerRoomId": "amusementIsland"
+          },
+          "from": {
+            "x": 0,
+            "y": 0.05,
+            "z": 2.05,
+            "yaw": 3.141592653589793,
+            "pitch": 0,
+            "roll": 0
+          },
+          "phase": "active",
+          "elapsed": 0.14319999999998254,
+          "activeTime": 0.14319999999998254,
+          "angle": 0.0016404991999996003,
+          "speed": 0.022911999999997205,
+          "reduced": false,
+          "exitRequested": false,
+          "dismount": false,
+          "reverseTime": null,
+          "done": false
+        }
+      },
+      "text": "한국 23:05 · 가을\n구름성 놀이섬\n✦\n\n지도를 열어 다음 장소를 골라요\n\n지도\n소리\n메뉴\n회전목마 마차에 앉기\n안내 접기 ×\n\n편안한 마차에 앉아 천천히 한 바퀴 돌아요. 내리기를 누르면 타던 곳으로 돌아와 멈춰요. 소리는 켜지지 않아요.\n\n마차에서 쉬어요 · 아래 내리기로 타던 곳에 돌아와요\n더 부드럽게 놀 수 있도록 화면을 가볍게 바꿨어요\n✦\n끝까지 밀면 달리기\n\n아래 행동 버튼 또는 E / Esc로 마치기\n\n천천히 멈추고 내려오기\nE\n이 브라우저에 저장했어요"
+    }
+  ],
+  "checks": [],
+  "errors": []
+}

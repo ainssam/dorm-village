@@ -1,0 +1,90 @@
+{
+  "results": [
+    {
+      "name": "motion-picker",
+      "passed": true
+    },
+    {
+      "name": "motion-load-retry",
+      "passed": true
+    },
+    {
+      "name": "motion-pending-cancel",
+      "passed": true
+    },
+    {
+      "name": "play-Wave",
+      "passed": true
+    },
+    {
+      "name": "play-Bow",
+      "passed": true
+    },
+    {
+      "name": "play-meshy-27",
+      "passed": true
+    },
+    {
+      "name": "play-Cheer",
+      "passed": true
+    },
+    {
+      "name": "play-meshy-67",
+      "passed": true
+    },
+    {
+      "name": "play-meshy-591",
+      "passed": true
+    },
+    {
+      "name": "play-meshy-23",
+      "passed": true
+    },
+    {
+      "name": "play-meshy-596",
+      "passed": true
+    },
+    {
+      "name": "play-Jump",
+      "passed": true
+    },
+    {
+      "name": "play-Joy",
+      "passed": true
+    },
+    {
+      "name": "play-meshy-326",
+      "passed": true
+    },
+    {
+      "name": "play-Showcase",
+      "passed": true
+    },
+    {
+      "name": "play-Stretch",
+      "passed": true
+    },
+    {
+      "name": "play-HeadTilt",
+      "passed": true
+    },
+    {
+      "name": "play-Think",
+      "passed": true
+    },
+    {
+      "name": "play-NewYearBow",
+      "passed": true
+    },
+    {
+      "name": "motion-complete-then-walk",
+      "passed": true
+    },
+    {
+      "name": "motion-map-and-seated-return",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "consoleErrors": []
+}

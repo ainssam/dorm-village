@@ -1,28 +1,48 @@
-import {sanitizeNoticeboardFeed} from './noticeboard-feed.js';
-import {createNoticeboardFeedLoader} from './noticeboard-source.js';
-const dateLabel=stamp=>new Intl.DateTimeFormat('ko-KR',{timeZone:'Asia/Seoul',month:'long',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'}).format(new Date(stamp));
-const defaultSource=createNoticeboardFeedLoader();
-let readerGeneration=0;
-// Only a fixed same-origin, pre-sanitized public snapshot reaches this reader.
-// Explicit feed/source inputs support deterministic tests without source access.
-export function openNoticeboard({ui,feed,now=Date.now,source=feed===undefined?defaultSource:null}){
+import {DAILY_DISCOVERIES} from './data/daily-discoveries.js';
+import {seoulDay,archiveDays,discoveryForDay,formatDiscoveryDay} from './daily-discovery-model.js';
+
+export function openNoticeboard({ui,now=Date.now,cards=DAILY_DISCOVERIES}){
  const getNow=typeof now==='function'?now:()=>now;
- return ui.workshop('마을 게시판',`<section class="noticeboard-reader" aria-label="공개 앱 소식"><p class="noticeboard-kicker">도름스 · 공개 앱 소식</p><p id="noticeboard-status" class="noticeboard-status" role="status"></p><p id="noticeboard-explanation"></p><p id="noticeboard-source" class="caption"></p><ol id="noticeboard-items" class="noticeboard-items"></ol><p class="caption">앱의 게시일이 아닌 공개 목록을 확인한 시각이에요. 읽기를 마치면 닫기 또는 Esc로 마을에 돌아가요.</p></section>`,()=>{
-  const generation=++readerGeneration;
-  const status=document.querySelector('#noticeboard-status'),list=document.querySelector('#noticeboard-items'),explanation=document.querySelector('#noticeboard-explanation'),sourceLabel=document.querySelector('#noticeboard-source');
-  let closed=false;
-  function render(state){
-   if(closed||generation!==readerGeneration)return;
-   const at=getNow(),publicFeed=sanitizeNoticeboardFeed(state.feed,{now:at});list.replaceChildren();sourceLabel.textContent='';
-   if(!publicFeed){const loading=state.status==='loading';status.textContent=loading?'공개 목록 확인 중':'공개 목록을 불러오지 못했어요';explanation.textContent=loading?'공개된 제목, 한줄소개와 분류를 확인하고 있어요.':'공개 목록을 불러오지 못했어요. 잠시 뒤 게시판을 다시 열어 주세요.';return;}
-   const old=at-Date.parse(publicFeed.verifiedAt)>36*60*60*1000||state.status==='refresh-failed';
-   status.textContent=`${old?'이전 확인 내용 · ':''}마지막 확인 ${dateLabel(publicFeed.verifiedAt)} (한국 시간)`;
-   explanation.textContent=state.status==='refresh-failed'?'새 목록을 확인하지 못해 이전 확인 내용을 보여드려요.':publicFeed.items.length?'공개 목록에서 확인한 제목, 한줄소개와 분류예요.':'마지막 확인 때 표시할 공개 앱이 없었어요.';
-   sourceLabel.textContent=`출처: ${publicFeed.source.title}`;
-   for(const item of publicFeed.items){const row=document.createElement('li'),title=document.createElement('strong'),tagline=document.createElement('p'),category=document.createElement('small');title.textContent=item.title;tagline.textContent=item.tagline;category.textContent=item.category;row.append(title,tagline,category);list.append(row);}
+ return ui.workshop('오늘의 작은 발견',`<section class="daily-discovery" aria-label="오늘의 작은 발견">
+  <p class="daily-discovery-intro">짧은 읽을거리 · 마을 놀이 · 마음 질문</p>
+  <p class="daily-discovery-note" id="noticeboard-status">검토한 읽을거리를 날짜에 맞춰 골라 드려요.</p>
+  <nav class="daily-discovery-nav" aria-label="날짜 고르기">
+   <button type="button" id="discovery-prev" aria-label="이전 날짜">← 이전</button>
+   <button type="button" id="discovery-today">오늘</button>
+   <button type="button" id="discovery-next" aria-label="다음 날짜">다음 →</button>
+  </nav>
+  <article class="daily-discovery-card" aria-live="polite">
+   <p class="daily-discovery-date" id="discovery-date"></p><p class="daily-discovery-topic" id="discovery-topic"></p>
+   <h3 id="discovery-title"></h3><p class="daily-discovery-reading" id="discovery-reading"></p>
+   <div class="daily-discovery-question"><strong>생각 한 조각</strong><p id="discovery-question"></p></div>
+   <div class="daily-discovery-play"><strong>마을에서 해보기</strong><p id="discovery-play-title"></p><p id="discovery-instruction"></p><button type="button" id="discovery-visit">장소로 가기</button></div>
+   <p class="daily-discovery-reflection" id="discovery-reflection"></p>
+  </article><p class="daily-discovery-footnote">60개의 작은 발견을 날짜에 따라 번갈아 만나요. 최근 7일을 다시 읽을 수 있어요. 떠오른 생각은 마음속에만 간직해도 좋아요.</p>
+ </section>`,()=>{
+  const el=id=>document.querySelector(`#${id}`);
+  const prev=el('discovery-prev'),next=el('discovery-next'),todayButton=el('discovery-today'),visit=el('discovery-visit');
+  let closed=false,today=seoulDay(getNow()),selected=today,card;
+  function render(){
+   if(closed)return;
+   const days=archiveDays(today);if(!days.includes(selected))selected=today;
+   card=discoveryForDay(selected,cards);
+   el('discovery-date').textContent=`${formatDiscoveryDay(selected)} · 한국 시간${selected===today?' · 오늘':''}`;
+   el('discovery-topic').textContent=card?.topic??'';
+   el('discovery-title').textContent=card?.title??'아직 준비된 이야기가 없어요';
+   el('discovery-reading').textContent=card?.reading??'';
+   el('discovery-question').textContent=card?.question??'';
+   el('discovery-play-title').textContent=card?.play?.title??'';
+   el('discovery-instruction').textContent=card?.play?.instruction??'';
+   el('discovery-reflection').textContent=card?.reflection??'';
+   el('discovery-reflection').hidden=!card?.reflection;
+   prev.disabled=selected===days[6];next.disabled=selected===today;todayButton.disabled=selected===today;visit.disabled=!card?.play?.roomId;
   }
-  render({feed:feed??source?.getState().feed??null,status:source?'loading':'ready'});
-  if(source)void source.refresh(render);
-  return()=>{if(closed)return;closed=true;if(generation===readerGeneration){readerGeneration++;source?.cancel();}};
+  prev.onclick=()=>{if(closed)return;const days=archiveDays(today),i=days.indexOf(selected);if(i<6){selected=days[i+1];render();}};
+  next.onclick=()=>{if(closed)return;const days=archiveDays(today),i=days.indexOf(selected);if(i>0){selected=days[i-1];render();}};
+  todayButton.onclick=()=>{if(!closed){selected=today;render();}};
+  visit.onclick=()=>{if(!closed&&card?.play?.roomId)ui.visitPlace(card.play.roomId);};
+  render();
+  const timer=setInterval(()=>{if(closed)return;const current=seoulDay(getNow());if(current!==today){const wasToday=selected===today;today=current;if(wasToday)selected=today;render();}},30000);
+  return()=>{closed=true;clearInterval(timer);prev.onclick=next.onclick=todayButton.onclick=visit.onclick=null;};
  });
 }

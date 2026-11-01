@@ -3,10 +3,10 @@ import {createToyKit} from '../world/toy-kit.js';
 import {ensureHandwriting,handwritingFont} from '../world/font-ready.js';
 import {NOTICEBOARD} from './noticeboard-layout.js';
 export function drawNoticeboardLabel(ctx,kind='title'){
- ctx.clearRect(0,0,768,192);ctx.fillStyle=kind==='title'?'#fff1cf':'#fff8e6';ctx.fillRect(0,0,768,192);ctx.fillStyle='#4e5946';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=handwritingFont(kind==='title'?148:130);ctx.fillText(kind==='title'?'마을 게시판':'공개 앱 소식',384,100,710);
+ ctx.clearRect(0,0,768,192);ctx.fillStyle=kind==='title'?'#fff1cf':'#fff8e6';ctx.fillRect(0,0,768,192);ctx.fillStyle='#4e5946';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font=handwritingFont(kind==='title'?148:130);ctx.fillText(kind==='title'?'마을 게시판':'오늘의 작은 발견',384,100,710);
 }
 function label(root,kind,width,height,x,y,z){
- const canvas=globalThis.document?.createElement?.('canvas');let texture=null;const text=kind==='title'?'마을 게시판':'공개 앱 소식';
+ const canvas=globalThis.document?.createElement?.('canvas');let texture=null;const text=kind==='title'?'마을 게시판':'오늘의 작은 발견';
  if(canvas){canvas.width=768;canvas.height=192;const ctx=canvas.getContext?.('2d');if(ctx){texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;let disposed=false;texture.addEventListener('dispose',()=>disposed=true);const draw=()=>{if(disposed)return;drawNoticeboardLabel(ctx,kind);texture.needsUpdate=true;};draw();ensureHandwriting(text).then(draw).catch(()=>{});}}
  const material=new THREE.MeshBasicMaterial({map:texture,color:texture?'#ffffff':kind==='title'?'#fff1cf':'#fff8e6',toneMapped:false});material.name='noticeboard.paint.'+kind;
  const mesh=new THREE.Mesh(new THREE.PlaneGeometry(width,height),material);mesh.name='noticeboard.'+kind+'-label';mesh.position.set(x,y,z);mesh.userData.label=text;root.add(mesh);return mesh;

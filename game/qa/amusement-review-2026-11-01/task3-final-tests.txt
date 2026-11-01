@@ -1,0 +1,40 @@
+✔ actual unscaled original mesh is at least 48 CSS pixels at phone entry and every ride quadrant (4230.984973ms)
+✔ arrival close-up hands off to the east ride frame without a zoom pop or HUD clipping (823.931827ms)
+✔ manual orbit/zoom and resize retain sole camera ownership throughout ride updates (636.643699ms)
+✔ default castle entry and full carousel orbit keep original upper body clear of actual scene occluders (1430.85875ms)
+✔ architectural fades restore every surface while the vista and resting scoop props stay intentionally hidden (633.212225ms)
+✔ occluding architecture keeps the complete canopy silhouette and gently fades rather than disappearing (327.108661ms)
+✔ seated carousel clears layered foreground surfaces completely and restores them after dismount or overview (430.003886ms)
+✔ controller leases the walking joystick, accepts WASD and Space, then restores the original actor on close (15.264141ms)
+✔ blur and hidden-page events pause without clock catch-up; explicit resume and retry start clean (46.393319ms)
+✔ a room or scene replacement invalidates the live controller and restores the actor immediately (1.348709ms)
+✔ practice is the calm default, can finish while paused, and replays immediately (20.49648ms)
+✔ aimed challenge catches receive a session record that survives immediate replay (19.563491ms)
+✔ holding a direction or touch stick resumes net movement after the scoop without lifting and pressing again (7.806859ms)
+✔ a second touch can scoop while the first finger holds the stick, without a duplicate synthetic click (0.507654ms)
+✔ fish scoop is a deterministic 50-second transient round with bounded moving fish (7.334488ms)
+✔ the net moves with bounded axes and only one scoop can be active at once (0.425831ms)
+✔ a scoop resolves once at the water contact, scores one fish or a miss, and can retry (1.085103ms)
+✔ pause freezes clock and scoop animation; explicit resume is required (0.18658ms)
+✔ the round ends at zero, replay starts clean, and cancel creates no saved reward (4.370808ms)
+✔ practice has no deadline and can finish with a useful session summary (0.854976ms)
+✔ remaining in the middle cannot replace aiming at the fish (10.499751ms)
+✔ every fish remains reachable, and aiming before a scoop records its kind (9.192144ms)
+✔ an upper activity guide never consumes the whole coaster viewport (73.882638ms)
+✔ coaster padding uses stage-relative coordinates and keeps real lower controls reserved (1.156611ms)
+✔ the unchanged original seated actor remains visible at 48 CSS pixels through the coaster loop (601.112158ms)
+✔ a finished lap can restart without boarding and keeps comparable session records (36.198406ms)
+✔ slow practice has no clock pressure and optional steering assistance completes a loop with only forward input (338.443109ms)
+✔ bumper first forward input heads into the court and a voluntary untimed route can finish (59.105307ms)
+✔ the upper-right activity guide does not collapse the driving viewport (0.752533ms)
+✔ native vehicle controls select practice, announce results, and retry without held input (22.959509ms)
+✔ bumper route uses native buttons and returns to free play without affecting movement ownership (6.513351ms)
+✔ a real new kart boarding defaults to calm assisted practice until the user chooses timing (1.259575ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9635.02287

@@ -1,0 +1,3872 @@
+{
+  "results": [
+    {
+      "name": "archery",
+      "passed": false,
+      "error": "page.waitForFunction: Timeout 120000ms exceeded.",
+      "state": {
+        "ready": true,
+        "doreumiMotion": {
+          "phase": "idle",
+          "id": null,
+          "label": "",
+          "time": 0,
+          "duration": 0
+        },
+        "clawRuntime": null,
+        "fishScoopRuntime": null,
+        "lookoutRuntime": {
+          "phase": "idle",
+          "elapsed": 0,
+          "paused": false,
+          "mapQueued": false,
+          "scenic": false,
+          "generation": 0,
+          "cover": 0,
+          "disposed": false,
+          "error": null,
+          "ocean": null
+        },
+        "flightRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "frameFailure": null,
+          "disposed": false
+        },
+        "boatRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "disposed": false
+        },
+        "weatherRuntime": {
+          "status": "disabled",
+          "enabled": false,
+          "city": null,
+          "snapshot": null,
+          "freshness": "expired",
+          "error": null,
+          "retryAtUtcMs": 0,
+          "cacheEntries": 0,
+          "selectedCityId": "seoul",
+          "selectedCity": {
+            "id": "seoul",
+            "label": "서울",
+            "latDeg": 37.5665,
+            "lonDegEast": 126.978,
+            "timeZone": "Asia/Seoul",
+            "source": "preset",
+            "isExample": false,
+            "elevationM": 0
+          },
+          "visualsEnabled": true,
+          "reducedMotion": false,
+          "visualError": null
+        },
+        "produceRuntime": null,
+        "produce": {
+          "season": "calendar",
+          "nodes": {
+            "park.produce.strawberry": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.tomato": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pumpkin": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.leafy": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.peach": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pear": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.mandarin": {
+              "harvests": 0,
+              "phase": "seed"
+            }
+          }
+        },
+        "cafeFoodRuntime": {
+          "open": false,
+          "mode": null,
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": false,
+          "seatId": null,
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": null,
+          "barista": null,
+          "carry": null
+        },
+        "amusementFoodRuntime": null,
+        "cafeFood": {
+          "packed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0
+          },
+          "made": {
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "consumed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          }
+        },
+        "bakeryRuntime": null,
+        "squareRuntime": null,
+        "tentRuntime": {
+          "seaCue": null,
+          "active": false,
+          "mode": null,
+          "phase": "idle",
+          "duration": 0.8,
+          "inside": false,
+          "paused": false,
+          "activityId": null,
+          "isolated": false,
+          "width": 1280,
+          "height": 900
+        },
+        "marshmallowRuntime": null,
+        "fishCookingRuntime": null,
+        "plazaRuntime": null,
+        "fishingRuntime": null,
+        "fishing": {
+          "total": 0,
+          "counts": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "consumed": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "meals": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "firstCatch": {
+            "petal-minnow": null,
+            "moon-carp": null,
+            "ribbon-mackerel": null,
+            "star-bream": null
+          }
+        },
+        "musicChairRestRuntime": null,
+        "mathResidentRuntime": null,
+        "saveWritable": true,
+        "materials": {
+          "apple": 0,
+          "shell": 0,
+          "autumnLeaf": 0,
+          "petal": 0,
+          "pondFish": 0,
+          "seaFish": 0,
+          "strawberry": 0,
+          "tomato": 0,
+          "pumpkin": 0,
+          "leafy": 0,
+          "peach": 0,
+          "pear": 0,
+          "mandarin": 0
+        },
+        "gathering": {
+          "epoch": 0,
+          "nodes": {
+            "park.tree.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.tree.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.middle": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.leaves.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            }
+          }
+        },
+        "residentSpaceUse": null,
+        "elevatorRuntime": null,
+        "schoolFloor": 1,
+        "locomotion": {
+          "airborne": false,
+          "height": 0,
+          "sprinting": false,
+          "moving": false,
+          "phase": 0
+        },
+        "gymRuntime": {
+          "state": "active",
+          "paused": false,
+          "held": false,
+          "draw": 0,
+          "yaw": -0.13,
+          "pitch": 0.14,
+          "shots": 0,
+          "remaining": 5,
+          "score": 0,
+          "results": [],
+          "arrow": null,
+          "impact": null,
+          "elapsed": 40.50833333333333,
+          "reason": "",
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.012,
+              "z": 0
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              }
+            },
+            "guard": 1,
+            "yaw": -0.13,
+            "pitch": 0.14,
+            "draw": 0,
+            "arrow": null,
+            "impact": null
+          },
+          "session": {
+            "phase": "exercise",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": 0
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                }
+              },
+              "guard": 1,
+              "yaw": -0.13,
+              "pitch": 0.14,
+              "draw": 0,
+              "arrow": null,
+              "impact": null
+            },
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "baseballRuntime": null,
+        "raceRuntime": null,
+        "passingRuntime": null,
+        "libraryQuestRuntime": null,
+        "buildRuntime": null,
+        "robotRuntime": null,
+        "cookingRuntime": null,
+        "sky": {
+          "id": "night",
+          "label": "밤",
+          "clock": "23:28",
+          "timeZone": "Asia/Seoul"
+        },
+        "cafeRuntime": {
+          "open": false,
+          "running": false,
+          "shop": false,
+          "tab": "bread"
+        },
+        "throwRuntime": null,
+        "musicRuntime": null,
+        "audio": {
+          "enabled": false,
+          "unlocked": false,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "village": {
+          "cafe": {
+            "schemaVersion": 1,
+            "day": 1,
+            "phase": "idle",
+            "activeMs": 0,
+            "nextArrivalMs": 3000,
+            "nextOrdinal": 1,
+            "jobSerial": 0,
+            "orders": [],
+            "settled": [],
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "qualityStock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "dough": null,
+            "oven": null,
+            "drink": null,
+            "upgrades": {
+              "warmOven": false,
+              "wideDisplay": false,
+              "cozyCorner": false
+            },
+            "coins": 0,
+            "ledger": {
+              "sold": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "fastTips": 0,
+              "qualityTips": 0,
+              "cozyTips": 0,
+              "spent": 0
+            },
+            "today": {
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "tips": 0
+            }
+          },
+          "bakery": {
+            "phase": "empty",
+            "decoration": null,
+            "completed": 0,
+            "pastries": 0
+          },
+          "mailbox": {
+            "letters": []
+          },
+          "photos": [],
+          "wallPlacements": {}
+        },
+        "residents": [
+          {
+            "id": "athletic-turtle",
+            "x": 39.7,
+            "z": -21.5,
+            "yaw": 0,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0
+          }
+        ],
+        "worldResidents": [
+          {
+            "id": "nurse-otter",
+            "x": 5.35,
+            "z": -8.55,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "infirmary"
+          },
+          {
+            "id": "chinchilla",
+            "x": 7.250000000000001,
+            "z": 6.670000001788139,
+            "yaw": 3.2015926521878937,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "armadillo",
+            "x": 10.25,
+            "z": 8.434999978542328,
+            "yaw": 0.7407963474523506,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "capybara",
+            "x": -2.4000000000000017,
+            "z": 14.919999999552964,
+            "yaw": 3.0215926572603626,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "principal-bear",
+            "x": -10.35,
+            "z": 14.38,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "seated",
+            "ownerRoomId": "principalOffice"
+          },
+          {
+            "id": "athletic-rabbit",
+            "x": 19.7,
+            "z": 2.55,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "baseball-tiger",
+            "x": 35.5,
+            "z": 2.599999999999999,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "athletic-turtle",
+            "x": 39.7,
+            "z": -21.5,
+            "yaw": 0,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "schoolGym"
+          }
+        ],
+        "library": {
+          "selectedBookId": "pocket-star",
+          "borrowedBookId": null,
+          "readBookIds": []
+        },
+        "activity": null,
+        "discoveryIds": [],
+        "pose": {
+          "name": "stand",
+          "amount": 0,
+          "time": 0,
+          "seatContactY": 0.11474484205245972,
+          "anchors": {
+            "leftHand": [
+              -0.6760972913011472,
+              0.7151261413509677,
+              0.1616878044599872
+            ],
+            "rightHand": [
+              0.6235771575771594,
+              0.7150856345036055,
+              0.24191046349521628
+            ],
+            "leftFoot": [
+              -0.211,
+              0.135,
+              0.11
+            ],
+            "rightFoot": [
+              0.211,
+              0.135,
+              0.11
+            ],
+            "seat": [
+              0,
+              0.11474484205245972,
+              0.011705340817570686
+            ],
+            "hands": {
+              "left": [
+                -0.6760972913011472,
+                0.7151261413509677,
+                0.1616878044599872
+              ],
+              "right": [
+                0.6235771575771594,
+                0.7150856345036055,
+                0.24191046349521628
+              ]
+            },
+            "feet": {
+              "left": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "right": [
+                0.211,
+                0.135,
+                0.11
+              ]
+            }
+          },
+          "bounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.5831665396690369,
+              0.4671066105365753
+            ]
+          },
+          "bodyBounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.244211196899414,
+              0.4142765998840332
+            ]
+          },
+          "sleepPitch": -1.5707963267948966,
+          "character": "doreumi-master-rig"
+        },
+        "won": false,
+        "roomId": "schoolGym",
+        "worldId": "campus",
+        "localPosition": {
+          "x": -1.875,
+          "z": -8.200000000000003
+        },
+        "worldPosition": {
+          "x": 27.125,
+          "z": -38.2
+        },
+        "transitionPhase": "idle",
+        "inputLocked": true,
+        "starsCollected": 0,
+        "collectedIds": [],
+        "ownedItemIds": [
+          "plant",
+          "picture-frame"
+        ],
+        "rewardClaimIds": [],
+        "completedActivityIds": [],
+        "placements": {},
+        "garden": {
+          "phase": "seed",
+          "moments": [],
+          "petals": 0,
+          "harvests": 0,
+          "harvestedBedIds": []
+        },
+        "saveStatus": "saved",
+        "revision": 1,
+        "position": {
+          "x": 27.125,
+          "y": 0.012,
+          "z": -38.2
+        },
+        "camera": {
+          "mode": "walk",
+          "x": 32.62500000000001,
+          "y": 8.999999999999998,
+          "z": -26.200000000000003,
+          "target": {
+            "x": 27.125,
+            "y": 1.9999999999999998,
+            "z": -36.2
+          },
+          "zoom": 1.5
+        },
+        "quality": "medium",
+        "renderer": {
+          "frame": 101,
+          "calls": 66,
+          "triangles": 69396,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 71,
+            "textures": 10
+          },
+          "pixelRatio": 0.5,
+          "buffer": {
+            "width": 640,
+            "height": 450
+          }
+        },
+        "timings": {
+          "transitionMs": [],
+          "frameIntervals": [
+            4833.2,
+            1766.6,
+            16.6
+          ]
+        }
+      }
+    },
+    {
+      "name": "curling",
+      "passed": true,
+      "wallSeconds": 35,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop curling-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "state": "settled",
+          "paused": false,
+          "aim": 0,
+          "power": 0.8,
+          "held": false,
+          "elapsed": 10.908333333333333,
+          "released": 1,
+          "remaining": 3,
+          "stones": [
+            {
+              "id": 0,
+              "team": "target",
+              "x": -0.106056488749091,
+              "z": 17.06373201804675,
+              "vx": 0,
+              "vz": 0
+            },
+            {
+              "id": 1,
+              "team": "target",
+              "x": 0.8,
+              "z": 17.8,
+              "vx": 0,
+              "vz": 0
+            },
+            {
+              "id": 2,
+              "team": "player",
+              "x": 0.6728158609455915,
+              "z": 17.070397659575633,
+              "vx": 0,
+              "vz": 0
+            }
+          ],
+          "frame": {
+            "delivery": 0,
+            "holding": false,
+            "aim": 0,
+            "lift": 1
+          },
+          "events": [],
+          "lastContact": {
+            "type": "stone",
+            "a": 0,
+            "b": 2,
+            "x": 0.24,
+            "z": 16.85577794898144,
+            "at": 9.266666666666666
+          },
+          "error": "",
+          "results": [
+            {
+              "id": 0,
+              "team": "target",
+              "distance": 0.12373257020727124,
+              "points": 3
+            },
+            {
+              "id": 2,
+              "team": "player",
+              "distance": 0.6764887384234006,
+              "points": 2
+            },
+            {
+              "id": 1,
+              "team": "target",
+              "distance": 1.1313708498984767,
+              "points": 1
+            }
+          ],
+          "session": {
+            "phase": "waiting",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": -0.05000000000000002
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": -0.05000000000000002,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": -0.05000000000000002,
+                  "contact": true
+                }
+              },
+              "holding": false,
+              "delivery": 1,
+              "aidLift": 1,
+              "aim": 0
+            },
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false,
+          "follow": false
+        },
+        "feedback": "가장 가까운 파란 스톤 0.68 m · 하우스 안 1개 · 2점",
+        "retry": {
+          "state": "aiming",
+          "remaining": 4
+        },
+        "coverage": "one physical stone settled; four-stone match not claimed"
+      }
+    },
+    {
+      "name": "baseball",
+      "passed": true,
+      "wallSeconds": 61,
+      "detail": {
+        "surface": {
+          "kind": "baseball-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "phase": "complete",
+          "elapsed": 0,
+          "pitch": 5,
+          "speed": "easy",
+          "paused": false,
+          "complete": true,
+          "results": [
+            "miss",
+            "homeRun",
+            "homeRun",
+            "homeRun",
+            "homeRun"
+          ],
+          "outcome": "homeRun",
+          "ball": [
+            5.6,
+            0.05299999999999905,
+            5.8
+          ],
+          "ballVisible": true,
+          "pitchPhase": null,
+          "swingPhase": 0,
+          "hasSwung": true,
+          "contact": {
+            "distance": 0.1337121006526851,
+            "position": [
+              0.802162393162394,
+              0.6160960716253701,
+              1.1091986034516772
+            ],
+            "phase": 0.4315476190476196,
+            "along": 1
+          },
+          "flightDuration": 1.95
+        },
+        "feedback": "안타 0 · 홈런 4",
+        "retry": {
+          "phase": "windup",
+          "pitch": 1
+        }
+      }
+    },
+    {
+      "name": "laser",
+      "passed": false,
+      "error": "page.waitForFunction: Timeout 120000ms exceeded.",
+      "state": {
+        "ready": true,
+        "doreumiMotion": {
+          "phase": "idle",
+          "id": null,
+          "label": "",
+          "time": 0,
+          "duration": 0
+        },
+        "clawRuntime": null,
+        "fishScoopRuntime": null,
+        "lookoutRuntime": {
+          "phase": "idle",
+          "elapsed": 0,
+          "paused": false,
+          "mapQueued": false,
+          "scenic": false,
+          "generation": 0,
+          "cover": 0,
+          "disposed": false,
+          "error": null,
+          "ocean": null
+        },
+        "flightRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "frameFailure": null,
+          "disposed": false
+        },
+        "boatRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "disposed": false
+        },
+        "weatherRuntime": {
+          "status": "disabled",
+          "enabled": false,
+          "city": null,
+          "snapshot": null,
+          "freshness": "expired",
+          "error": null,
+          "retryAtUtcMs": 0,
+          "cacheEntries": 0,
+          "selectedCityId": "seoul",
+          "selectedCity": {
+            "id": "seoul",
+            "label": "서울",
+            "latDeg": 37.5665,
+            "lonDegEast": 126.978,
+            "timeZone": "Asia/Seoul",
+            "source": "preset",
+            "isExample": false,
+            "elevationM": 0
+          },
+          "visualsEnabled": true,
+          "reducedMotion": false,
+          "visualError": null
+        },
+        "produceRuntime": null,
+        "produce": {
+          "season": "calendar",
+          "nodes": {
+            "park.produce.strawberry": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.tomato": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pumpkin": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.leafy": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.peach": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pear": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.mandarin": {
+              "harvests": 0,
+              "phase": "seed"
+            }
+          }
+        },
+        "cafeFoodRuntime": {
+          "open": false,
+          "mode": null,
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": false,
+          "seatId": null,
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": null,
+          "barista": null,
+          "carry": null
+        },
+        "amusementFoodRuntime": null,
+        "cafeFood": {
+          "packed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0
+          },
+          "made": {
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "consumed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          }
+        },
+        "bakeryRuntime": null,
+        "squareRuntime": null,
+        "tentRuntime": {
+          "seaCue": null,
+          "active": false,
+          "mode": null,
+          "phase": "idle",
+          "duration": 0.8,
+          "inside": false,
+          "paused": false,
+          "activityId": null,
+          "isolated": false,
+          "width": 1280,
+          "height": 900
+        },
+        "marshmallowRuntime": null,
+        "fishCookingRuntime": null,
+        "plazaRuntime": null,
+        "fishingRuntime": null,
+        "fishing": {
+          "total": 0,
+          "counts": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "consumed": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "meals": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "firstCatch": {
+            "petal-minnow": null,
+            "moon-carp": null,
+            "ribbon-mackerel": null,
+            "star-bream": null
+          }
+        },
+        "musicChairRestRuntime": null,
+        "mathResidentRuntime": null,
+        "saveWritable": true,
+        "materials": {
+          "apple": 0,
+          "shell": 0,
+          "autumnLeaf": 0,
+          "petal": 0,
+          "pondFish": 0,
+          "seaFish": 0,
+          "strawberry": 0,
+          "tomato": 0,
+          "pumpkin": 0,
+          "leafy": 0,
+          "peach": 0,
+          "pear": 0,
+          "mandarin": 0
+        },
+        "gathering": {
+          "epoch": 0,
+          "nodes": {
+            "park.tree.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.tree.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.middle": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.leaves.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            }
+          }
+        },
+        "residentSpaceUse": null,
+        "elevatorRuntime": null,
+        "schoolFloor": 1,
+        "locomotion": {
+          "airborne": false,
+          "height": 0,
+          "sprinting": false,
+          "moving": false,
+          "phase": 0
+        },
+        "gymRuntime": {
+          "state": "active",
+          "paused": false,
+          "steady": false,
+          "aimX": 0,
+          "aimY": 0,
+          "aimYaw": 0.025,
+          "aimPitch": 0.035,
+          "yaw": 0.021199562872805586,
+          "pitch": 0.031033280597415062,
+          "shots": 0,
+          "remaining": 5,
+          "hits": 0,
+          "results": [],
+          "cooldown": 0,
+          "beam": null,
+          "elapsed": 90.7,
+          "reason": "",
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.012,
+              "z": 0
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              }
+            },
+            "guard": 1,
+            "yaw": 0.021199562872805586,
+            "pitch": 0.031033280597415062,
+            "targets": [
+              {
+                "id": "plate",
+                "x": -0.409368510513598,
+                "y": 0.905518973533214,
+                "z": 4.7
+              },
+              {
+                "id": "star",
+                "x": 0.12662879409418504,
+                "y": 1.7749669712177871,
+                "z": 4.7
+              }
+            ],
+            "beam": null
+          },
+          "session": {
+            "phase": "exercise",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": 0
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                }
+              },
+              "guard": 1,
+              "yaw": 0.021199562872805586,
+              "pitch": 0.031033280597415062,
+              "targets": [
+                {
+                  "id": "plate",
+                  "x": -0.409368510513598,
+                  "y": 0.905518973533214,
+                  "z": 4.7
+                },
+                {
+                  "id": "star",
+                  "x": 0.12662879409418504,
+                  "y": 1.7749669712177871,
+                  "z": 4.7
+                }
+              ],
+              "beam": null
+            },
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "baseballRuntime": null,
+        "raceRuntime": null,
+        "passingRuntime": null,
+        "libraryQuestRuntime": null,
+        "buildRuntime": null,
+        "robotRuntime": null,
+        "cookingRuntime": null,
+        "sky": {
+          "id": "night",
+          "label": "밤",
+          "clock": "23:32",
+          "timeZone": "Asia/Seoul"
+        },
+        "cafeRuntime": {
+          "open": false,
+          "running": false,
+          "shop": false,
+          "tab": "bread"
+        },
+        "throwRuntime": null,
+        "musicRuntime": null,
+        "audio": {
+          "enabled": false,
+          "unlocked": false,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "village": {
+          "cafe": {
+            "schemaVersion": 1,
+            "day": 1,
+            "phase": "idle",
+            "activeMs": 0,
+            "nextArrivalMs": 3000,
+            "nextOrdinal": 1,
+            "jobSerial": 0,
+            "orders": [],
+            "settled": [],
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "qualityStock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "dough": null,
+            "oven": null,
+            "drink": null,
+            "upgrades": {
+              "warmOven": false,
+              "wideDisplay": false,
+              "cozyCorner": false
+            },
+            "coins": 0,
+            "ledger": {
+              "sold": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "fastTips": 0,
+              "qualityTips": 0,
+              "cozyTips": 0,
+              "spent": 0
+            },
+            "today": {
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "tips": 0
+            }
+          },
+          "bakery": {
+            "phase": "empty",
+            "decoration": null,
+            "completed": 0,
+            "pastries": 0
+          },
+          "mailbox": {
+            "letters": []
+          },
+          "photos": [],
+          "wallPlacements": {}
+        },
+        "residents": [
+          {
+            "id": "athletic-turtle",
+            "x": 39.7,
+            "z": -21.5,
+            "yaw": 0,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0
+          }
+        ],
+        "worldResidents": [
+          {
+            "id": "nurse-otter",
+            "x": 5.35,
+            "z": -8.55,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "infirmary"
+          },
+          {
+            "id": "chinchilla",
+            "x": 7.250000000000001,
+            "z": 6.670000001788139,
+            "yaw": 3.2015926521878937,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "armadillo",
+            "x": 10.25,
+            "z": 8.434999978542328,
+            "yaw": 0.7407963474523506,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "capybara",
+            "x": -2.4000000000000017,
+            "z": 14.919999999552964,
+            "yaw": 3.0215926572603626,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "principal-bear",
+            "x": -10.35,
+            "z": 14.38,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "seated",
+            "ownerRoomId": "principalOffice"
+          },
+          {
+            "id": "athletic-rabbit",
+            "x": 19.7,
+            "z": 2.55,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "baseball-tiger",
+            "x": 35.5,
+            "z": 2.599999999999999,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "athletic-turtle",
+            "x": 39.7,
+            "z": -21.5,
+            "yaw": 0,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "schoolGym"
+          }
+        ],
+        "library": {
+          "selectedBookId": "pocket-star",
+          "borrowedBookId": null,
+          "readBookIds": []
+        },
+        "activity": null,
+        "discoveryIds": [],
+        "pose": {
+          "name": "stand",
+          "amount": 0,
+          "time": 0,
+          "seatContactY": 0.11474484205245972,
+          "anchors": {
+            "leftHand": [
+              -0.648871138969028,
+              0.694231676183788,
+              0.21149137136045937
+            ],
+            "rightHand": [
+              0.6576207714089009,
+              0.6948039693508833,
+              0.19836938197235554
+            ],
+            "leftFoot": [
+              -0.211,
+              0.135,
+              0.11
+            ],
+            "rightFoot": [
+              0.211,
+              0.135,
+              0.11
+            ],
+            "seat": [
+              0,
+              0.11474484205245972,
+              0.011705340817570686
+            ],
+            "hands": {
+              "left": [
+                -0.648871138969028,
+                0.694231676183788,
+                0.21149137136045937
+              ],
+              "right": [
+                0.6576207714089009,
+                0.6948039693508833,
+                0.19836938197235554
+              ]
+            },
+            "feet": {
+              "left": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "right": [
+                0.211,
+                0.135,
+                0.11
+              ]
+            }
+          },
+          "bounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.5831665396690369,
+              0.4671066105365753
+            ]
+          },
+          "bodyBounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.244211196899414,
+              0.4142765998840332
+            ]
+          },
+          "sleepPitch": -1.5707963267948966,
+          "character": "doreumi-master-rig"
+        },
+        "won": false,
+        "roomId": "schoolGym",
+        "worldId": "campus",
+        "localPosition": {
+          "x": 1.875,
+          "z": -8.200000000000003
+        },
+        "worldPosition": {
+          "x": 30.875,
+          "z": -38.2
+        },
+        "transitionPhase": "idle",
+        "inputLocked": true,
+        "starsCollected": 0,
+        "collectedIds": [],
+        "ownedItemIds": [
+          "plant",
+          "picture-frame"
+        ],
+        "rewardClaimIds": [],
+        "completedActivityIds": [],
+        "placements": {},
+        "garden": {
+          "phase": "seed",
+          "moments": [],
+          "petals": 0,
+          "harvests": 0,
+          "harvestedBedIds": []
+        },
+        "saveStatus": "saved",
+        "revision": 3,
+        "position": {
+          "x": 30.875,
+          "y": 0.012,
+          "z": -38.2
+        },
+        "camera": {
+          "mode": "walk",
+          "x": 36.375,
+          "y": 8.999999999999998,
+          "z": -26.200000000000003,
+          "target": {
+            "x": 30.874999999999996,
+            "y": 1.9999999999999996,
+            "z": -36.2
+          },
+          "zoom": 1.5
+        },
+        "quality": "medium",
+        "renderer": {
+          "frame": 504,
+          "calls": 66,
+          "triangles": 69522,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 346,
+            "textures": 13
+          },
+          "pixelRatio": 0.5,
+          "buffer": {
+            "width": 640,
+            "height": 450
+          }
+        },
+        "timings": {
+          "transitionMs": [],
+          "frameIntervals": [
+            4833.2,
+            1766.6,
+            16.6,
+            750,
+            16.5,
+            383.4,
+            33.3,
+            33.3,
+            33.4,
+            483.2,
+            16.6,
+            16.7,
+            16.6,
+            33.4,
+            16.6
+          ]
+        }
+      }
+    },
+    {
+      "name": "climbing",
+      "passed": true,
+      "wallSeconds": 61,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop climbing-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "mode": "manual",
+          "state": "complete",
+          "paused": false,
+          "held": false,
+          "completed": 6,
+          "elapsed": 6.233333333333333,
+          "blocked": false,
+          "stopReason": "",
+          "moving": null,
+          "target": null,
+          "choices": [],
+          "frame": {
+            "root": {
+              "x": 0.06000000000000001,
+              "y": 0.132,
+              "z": 0
+            },
+            "arm": 1,
+            "contacts": {
+              "leftHand": {
+                "id": "left-high",
+                "kind": "hand",
+                "x": -0.57,
+                "y": 0.93,
+                "z": 0.28,
+                "label": "노랑 손잡이 · 조금 높은 길",
+                "hold": "left-high",
+                "supported": true
+              },
+              "rightHand": {
+                "id": "right-finish",
+                "kind": "hand",
+                "x": 0.69,
+                "y": 1,
+                "z": 0.28,
+                "label": "오른손 마지막 손잡이",
+                "hold": "right-finish",
+                "supported": true
+              },
+              "leftFoot": {
+                "id": "left-step",
+                "kind": "foot",
+                "x": -0.09,
+                "y": 0.132,
+                "z": 0,
+                "label": "낮은 발 디딤돌",
+                "hold": "left-step",
+                "supported": true
+              },
+              "rightFoot": {
+                "id": "right-step",
+                "kind": "foot",
+                "x": 0.33,
+                "y": 0.132,
+                "z": 0,
+                "label": "낮은 발 디딤돌",
+                "hold": "right-step",
+                "supported": true
+              }
+            }
+          },
+          "session": {
+            "phase": "ready",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0.06000000000000001,
+                "y": 0.132,
+                "z": 0
+              },
+              "arm": 1,
+              "contacts": {
+                "leftHand": {
+                  "id": "left-high",
+                  "kind": "hand",
+                  "x": -0.57,
+                  "y": 0.93,
+                  "z": 0.28,
+                  "label": "노랑 손잡이 · 조금 높은 길",
+                  "hold": "left-high",
+                  "supported": true
+                },
+                "rightHand": {
+                  "id": "right-finish",
+                  "kind": "hand",
+                  "x": 0.69,
+                  "y": 1,
+                  "z": 0.28,
+                  "label": "오른손 마지막 손잡이",
+                  "hold": "right-finish",
+                  "supported": true
+                },
+                "leftFoot": {
+                  "id": "left-step",
+                  "kind": "foot",
+                  "x": -0.09,
+                  "y": 0.132,
+                  "z": 0,
+                  "label": "낮은 발 디딤돌",
+                  "hold": "left-step",
+                  "supported": true
+                },
+                "rightFoot": {
+                  "id": "right-step",
+                  "kind": "foot",
+                  "x": 0.33,
+                  "y": 0.132,
+                  "z": 0,
+                  "label": "낮은 발 디딤돌",
+                  "hold": "right-step",
+                  "supported": true
+                }
+              }
+            },
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "feedback": "안정되게 옮긴 곳 6 / 6",
+        "retry": {
+          "state": "active",
+          "completed": 0
+        },
+        "retryMethod": "descend and reenter; no in-place replay at complete"
+      }
+    },
+    {
+      "name": "boxing",
+      "passed": false,
+      "error": "manual boxing gave no contact/dodge result",
+      "state": {
+        "ready": true,
+        "doreumiMotion": {
+          "phase": "idle",
+          "id": null,
+          "label": "",
+          "time": 0,
+          "duration": 0
+        },
+        "clawRuntime": null,
+        "fishScoopRuntime": null,
+        "lookoutRuntime": {
+          "phase": "idle",
+          "elapsed": 0,
+          "paused": false,
+          "mapQueued": false,
+          "scenic": false,
+          "generation": 0,
+          "cover": 0,
+          "disposed": false,
+          "error": null,
+          "ocean": null
+        },
+        "flightRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "frameFailure": null,
+          "disposed": false
+        },
+        "boatRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "disposed": false
+        },
+        "weatherRuntime": {
+          "status": "disabled",
+          "enabled": false,
+          "city": null,
+          "snapshot": null,
+          "freshness": "expired",
+          "error": null,
+          "retryAtUtcMs": 0,
+          "cacheEntries": 0,
+          "selectedCityId": "seoul",
+          "selectedCity": {
+            "id": "seoul",
+            "label": "서울",
+            "latDeg": 37.5665,
+            "lonDegEast": 126.978,
+            "timeZone": "Asia/Seoul",
+            "source": "preset",
+            "isExample": false,
+            "elevationM": 0
+          },
+          "visualsEnabled": true,
+          "reducedMotion": false,
+          "visualError": null
+        },
+        "produceRuntime": null,
+        "produce": {
+          "season": "calendar",
+          "nodes": {
+            "park.produce.strawberry": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.tomato": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pumpkin": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.leafy": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.peach": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pear": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.mandarin": {
+              "harvests": 0,
+              "phase": "seed"
+            }
+          }
+        },
+        "cafeFoodRuntime": {
+          "open": false,
+          "mode": null,
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": false,
+          "seatId": null,
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": null,
+          "barista": null,
+          "carry": null
+        },
+        "amusementFoodRuntime": null,
+        "cafeFood": {
+          "packed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0
+          },
+          "made": {
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "consumed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          }
+        },
+        "bakeryRuntime": null,
+        "squareRuntime": null,
+        "tentRuntime": {
+          "seaCue": null,
+          "active": false,
+          "mode": null,
+          "phase": "idle",
+          "duration": 0.8,
+          "inside": false,
+          "paused": false,
+          "activityId": null,
+          "isolated": false,
+          "width": 1280,
+          "height": 900
+        },
+        "marshmallowRuntime": null,
+        "fishCookingRuntime": null,
+        "plazaRuntime": null,
+        "fishingRuntime": null,
+        "fishing": {
+          "total": 0,
+          "counts": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "consumed": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "meals": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "firstCatch": {
+            "petal-minnow": null,
+            "moon-carp": null,
+            "ribbon-mackerel": null,
+            "star-bream": null
+          }
+        },
+        "musicChairRestRuntime": null,
+        "mathResidentRuntime": null,
+        "saveWritable": true,
+        "materials": {
+          "apple": 0,
+          "shell": 0,
+          "autumnLeaf": 0,
+          "petal": 0,
+          "pondFish": 0,
+          "seaFish": 0,
+          "strawberry": 0,
+          "tomato": 0,
+          "pumpkin": 0,
+          "leafy": 0,
+          "peach": 0,
+          "pear": 0,
+          "mandarin": 0
+        },
+        "gathering": {
+          "epoch": 0,
+          "nodes": {
+            "park.tree.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.tree.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.middle": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.leaves.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            }
+          }
+        },
+        "residentSpaceUse": null,
+        "elevatorRuntime": null,
+        "schoolFloor": 1,
+        "locomotion": {
+          "airborne": false,
+          "height": 0,
+          "sprinting": false,
+          "moving": false,
+          "phase": 0
+        },
+        "gymRuntime": {
+          "state": "stopped",
+          "paused": false,
+          "mode": "manual",
+          "rounds": 1,
+          "held": false,
+          "expected": "left",
+          "beat": 0,
+          "cue": 0.75,
+          "elapsed": 7.5,
+          "remaining": 0,
+          "contacts": 4,
+          "attempts": 4,
+          "misses": 0,
+          "dodges": 0,
+          "invalidIntent": 0,
+          "score": 46,
+          "stopReason": "complete",
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.012,
+              "z": 0
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              }
+            },
+            "guard": 1,
+            "strike": null,
+            "bagAngle": 0
+          },
+          "cycle": {
+            "enabled": false,
+            "phase": "idle",
+            "remaining": 0
+          },
+          "session": {
+            "phase": "ready",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": 0
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                }
+              },
+              "guard": 1,
+              "strike": null,
+              "bagAngle": 0
+            },
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "baseballRuntime": null,
+        "raceRuntime": null,
+        "passingRuntime": null,
+        "libraryQuestRuntime": null,
+        "buildRuntime": null,
+        "robotRuntime": null,
+        "cookingRuntime": null,
+        "sky": {
+          "id": "night",
+          "label": "밤",
+          "clock": "23:33",
+          "timeZone": "Asia/Seoul"
+        },
+        "cafeRuntime": {
+          "open": false,
+          "running": false,
+          "shop": false,
+          "tab": "bread"
+        },
+        "throwRuntime": null,
+        "musicRuntime": null,
+        "audio": {
+          "enabled": false,
+          "unlocked": false,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "village": {
+          "cafe": {
+            "schemaVersion": 1,
+            "day": 1,
+            "phase": "idle",
+            "activeMs": 0,
+            "nextArrivalMs": 3000,
+            "nextOrdinal": 1,
+            "jobSerial": 0,
+            "orders": [],
+            "settled": [],
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "qualityStock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "dough": null,
+            "oven": null,
+            "drink": null,
+            "upgrades": {
+              "warmOven": false,
+              "wideDisplay": false,
+              "cozyCorner": false
+            },
+            "coins": 0,
+            "ledger": {
+              "sold": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "fastTips": 0,
+              "qualityTips": 0,
+              "cozyTips": 0,
+              "spent": 0
+            },
+            "today": {
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "tips": 0
+            }
+          },
+          "bakery": {
+            "phase": "empty",
+            "decoration": null,
+            "completed": 0,
+            "pastries": 0
+          },
+          "mailbox": {
+            "letters": []
+          },
+          "photos": [],
+          "wallPlacements": {}
+        },
+        "residents": [
+          {
+            "id": "athletic-turtle",
+            "x": 39.7,
+            "z": -21.5,
+            "yaw": 0,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0
+          }
+        ],
+        "worldResidents": [
+          {
+            "id": "nurse-otter",
+            "x": 5.35,
+            "z": -8.55,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "infirmary"
+          },
+          {
+            "id": "chinchilla",
+            "x": 7.250000000000001,
+            "z": 6.670000001788139,
+            "yaw": 3.2015926521878937,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "armadillo",
+            "x": 10.25,
+            "z": 8.434999978542328,
+            "yaw": 0.7407963474523506,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "capybara",
+            "x": -2.4000000000000017,
+            "z": 14.919999999552964,
+            "yaw": 3.0215926572603626,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "principal-bear",
+            "x": -10.35,
+            "z": 14.38,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "seated",
+            "ownerRoomId": "principalOffice"
+          },
+          {
+            "id": "athletic-rabbit",
+            "x": 19.7,
+            "z": 2.55,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "baseball-tiger",
+            "x": 35.5,
+            "z": 2.599999999999999,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "athletic-turtle",
+            "x": 39.7,
+            "z": -21.5,
+            "yaw": 0,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "schoolGym"
+          }
+        ],
+        "library": {
+          "selectedBookId": "pocket-star",
+          "borrowedBookId": null,
+          "readBookIds": []
+        },
+        "activity": null,
+        "discoveryIds": [],
+        "pose": {
+          "name": "stand",
+          "amount": 0,
+          "time": 0,
+          "seatContactY": 0.11474484205245972,
+          "anchors": {
+            "leftHand": [
+              -0.4603901950245515,
+              0.5093064757314714,
+              0.30858374247191733
+            ],
+            "rightHand": [
+              0.4603490945552764,
+              0.5092993406870777,
+              0.30871804559116356
+            ],
+            "leftFoot": [
+              -0.211,
+              0.135,
+              0.11
+            ],
+            "rightFoot": [
+              0.211,
+              0.135,
+              0.11
+            ],
+            "seat": [
+              0,
+              0.11474484205245972,
+              0.011705340817570686
+            ],
+            "hands": {
+              "left": [
+                -0.4603901950245515,
+                0.5093064757314714,
+                0.30858374247191733
+              ],
+              "right": [
+                0.4603490945552764,
+                0.5092993406870777,
+                0.30871804559116356
+              ]
+            },
+            "feet": {
+              "left": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "right": [
+                0.211,
+                0.135,
+                0.11
+              ]
+            }
+          },
+          "bounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.5831665396690369,
+              0.4671066105365753
+            ]
+          },
+          "bodyBounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.244211196899414,
+              0.4142765998840332
+            ]
+          },
+          "sleepPitch": -1.5707963267948966,
+          "character": "doreumi-master-rig"
+        },
+        "won": false,
+        "roomId": "schoolGym",
+        "worldId": "campus",
+        "localPosition": {
+          "x": 8.5,
+          "z": -10
+        },
+        "worldPosition": {
+          "x": 37.5,
+          "z": -40
+        },
+        "transitionPhase": "idle",
+        "inputLocked": true,
+        "starsCollected": 0,
+        "collectedIds": [],
+        "ownedItemIds": [
+          "plant",
+          "picture-frame"
+        ],
+        "rewardClaimIds": [],
+        "completedActivityIds": [],
+        "placements": {},
+        "garden": {
+          "phase": "seed",
+          "moments": [],
+          "petals": 0,
+          "harvests": 0,
+          "harvestedBedIds": []
+        },
+        "saveStatus": "saved",
+        "revision": 3,
+        "position": {
+          "x": 37.5,
+          "y": 0.012,
+          "z": -40
+        },
+        "camera": {
+          "mode": "walk",
+          "x": 43,
+          "y": 8.999999999999995,
+          "z": -27.85,
+          "target": {
+            "x": 37.5,
+            "y": 1.999999999999999,
+            "z": -37.85
+          },
+          "zoom": 1.5
+        },
+        "quality": "medium",
+        "renderer": {
+          "frame": 701,
+          "calls": 45,
+          "triangles": 69482,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 397,
+            "textures": 16
+          },
+          "pixelRatio": 0.5,
+          "buffer": {
+            "width": 640,
+            "height": 450
+          }
+        },
+        "timings": {
+          "transitionMs": [],
+          "frameIntervals": [
+            4833.2,
+            1766.6,
+            16.6,
+            750,
+            16.5,
+            383.4,
+            33.3,
+            33.3,
+            33.4,
+            483.2,
+            16.6,
+            16.7,
+            16.6,
+            33.4,
+            16.6,
+            149.9,
+            16.7,
+            150,
+            33.4,
+            16.6,
+            16.6,
+            16.7,
+            16.6,
+            33.3,
+            16.7,
+            16.6
+          ]
+        }
+      }
+    },
+    {
+      "name": "stairs",
+      "passed": true,
+      "wallSeconds": 36,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "state": "stopped",
+          "paused": false,
+          "mode": "manual",
+          "tempo": 0.8,
+          "goal": 10,
+          "transfers": 10,
+          "floors": 1,
+          "rise": 0.1,
+          "pitch": 0.4,
+          "climbed": 1,
+          "travel": 10,
+          "elapsed": 13.35,
+          "moving": false,
+          "held": false,
+          "queued": "",
+          "expected": "left",
+          "invalidIntent": 0,
+          "stopReason": "goal",
+          "completed": true,
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.302,
+              "z": -0.31999999999999995
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.252,
+                "z": -0.5199999999999999,
+                "contact": true,
+                "treadId": 12
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.35200000000000004,
+                "z": -0.11999999999999977,
+                "contact": true,
+                "treadId": 13
+              }
+            },
+            "handrail": false
+          },
+          "cycle": {
+            "enabled": false,
+            "phase": "idle",
+            "remaining": 0
+          },
+          "session": {
+            "phase": "ready",
+            "travel": 10,
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.302,
+                "z": -0.31999999999999995
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.252,
+                  "z": -0.5199999999999999,
+                  "contact": true,
+                  "treadId": 12
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.35200000000000004,
+                  "z": -0.11999999999999977,
+                  "contact": true,
+                  "treadId": 13
+                }
+              },
+              "handrail": false
+            },
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "feedback": "10 / 10걸음 · 1연습층 · 올라간 높이 1.00m",
+        "retry": {
+          "state": "active",
+          "transfers": 0
+        }
+      }
+    },
+    {
+      "name": "treadmill",
+      "passed": true,
+      "wallSeconds": 15,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "before": {
+          "state": "active",
+          "paused": false,
+          "mode": "standard",
+          "elapsed": 0.75,
+          "remaining": 29.25,
+          "duration": 30,
+          "targetSpeed": 0.7,
+          "effortSpeed": 0.48999999999999994,
+          "paceMatch": 0.3999999999999999,
+          "stability": 0.5499999999999996,
+          "paceScore": 39.99999999999993,
+          "stabilityScore": 77.24999999999996,
+          "beltSpeed": 0.6749999999999993,
+          "beltDistance": 0.25312500000000004,
+          "gaitDistance": 0.25312500000000004,
+          "beltPhase": 0.25312500000000004,
+          "footPhase": 0.35156250000000006,
+          "strideLength": 0.72,
+          "contactFraction": 0.6,
+          "held": {
+            "slower": false,
+            "faster": false
+          },
+          "stopReason": null,
+          "completed": false,
+          "cycle": {
+            "enabled": false,
+            "phase": "idle",
+            "remaining": 0
+          },
+          "session": {
+            "phase": "exercise",
+            "position": {
+              "x": 0,
+              "z": 0
+            },
+            "exitRequested": false,
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "aligned": {
+          "state": "active",
+          "paused": false,
+          "mode": "standard",
+          "elapsed": 1.9,
+          "remaining": 28.099999999999998,
+          "duration": 30,
+          "targetSpeed": 0.7,
+          "effortSpeed": 0.7,
+          "paceMatch": 1,
+          "stability": 1,
+          "paceScore": 76.31578947368418,
+          "stabilityScore": 82.23684210526314,
+          "beltSpeed": 0.7,
+          "beltDistance": 1.0577708333333364,
+          "gaitDistance": 1.0577708333333364,
+          "beltPhase": 0.057770833333336435,
+          "footPhase": 0.4691261574074117,
+          "strideLength": 0.72,
+          "contactFraction": 0.6,
+          "held": {
+            "slower": false,
+            "faster": false
+          },
+          "stopReason": null,
+          "completed": false,
+          "cycle": {
+            "enabled": false,
+            "phase": "idle",
+            "remaining": 0
+          },
+          "session": {
+            "phase": "exercise",
+            "position": {
+              "x": 0,
+              "z": 0
+            },
+            "exitRequested": false,
+            "actorUUID": "f39f7c15-2f5c-40db-84b2-43cb8de57bd6",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "feedback": "일정한 걸음 76% · 안정 82%",
+        "retry": {
+          "state": "start",
+          "elapsed": 0
+        },
+        "coverage": "pace adjustment, measured feedback, manual stop/retry; full 30-second automatic set not claimed"
+      }
+    },
+    {
+      "name": "passing",
+      "passed": false,
+      "error": "locator.click: Timeout 120000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#passing-restart')\u001b[22m\n\u001b[2m    - locator resolved to <button hidden=\"\" id=\"passing-restart\">다섯 번 다시</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    203 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m        - element is not visible\u001b[22m\n\u001b[2m      - retrying click action\u001b[22m\n\u001b[2m        - waiting 500ms\u001b[22m\n",
+      "state": {
+        "ready": true,
+        "doreumiMotion": {
+          "phase": "idle",
+          "id": null,
+          "label": "",
+          "time": 0,
+          "duration": 0
+        },
+        "clawRuntime": null,
+        "fishScoopRuntime": null,
+        "lookoutRuntime": {
+          "phase": "idle",
+          "elapsed": 0,
+          "paused": false,
+          "mapQueued": false,
+          "scenic": false,
+          "generation": 0,
+          "cover": 0,
+          "disposed": false,
+          "error": null,
+          "ocean": null
+        },
+        "flightRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "frameFailure": null,
+          "disposed": false
+        },
+        "boatRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "disposed": false
+        },
+        "weatherRuntime": {
+          "status": "disabled",
+          "enabled": false,
+          "city": null,
+          "snapshot": null,
+          "freshness": "expired",
+          "error": null,
+          "retryAtUtcMs": 0,
+          "cacheEntries": 0,
+          "selectedCityId": "seoul",
+          "selectedCity": {
+            "id": "seoul",
+            "label": "서울",
+            "latDeg": 37.5665,
+            "lonDegEast": 126.978,
+            "timeZone": "Asia/Seoul",
+            "source": "preset",
+            "isExample": false,
+            "elevationM": 0
+          },
+          "visualsEnabled": true,
+          "reducedMotion": false,
+          "visualError": null
+        },
+        "produceRuntime": null,
+        "produce": {
+          "season": "calendar",
+          "nodes": {
+            "park.produce.strawberry": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.tomato": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pumpkin": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.leafy": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.peach": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pear": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.mandarin": {
+              "harvests": 0,
+              "phase": "seed"
+            }
+          }
+        },
+        "cafeFoodRuntime": {
+          "open": false,
+          "mode": null,
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": false,
+          "seatId": null,
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": null,
+          "barista": null,
+          "carry": null
+        },
+        "amusementFoodRuntime": null,
+        "cafeFood": {
+          "packed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0
+          },
+          "made": {
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "consumed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          }
+        },
+        "bakeryRuntime": null,
+        "squareRuntime": null,
+        "tentRuntime": {
+          "seaCue": null,
+          "active": false,
+          "mode": null,
+          "phase": "idle",
+          "duration": 0.8,
+          "inside": false,
+          "paused": false,
+          "activityId": null,
+          "isolated": false,
+          "width": 1280,
+          "height": 900
+        },
+        "marshmallowRuntime": null,
+        "fishCookingRuntime": null,
+        "plazaRuntime": null,
+        "fishingRuntime": null,
+        "fishing": {
+          "total": 0,
+          "counts": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "consumed": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "meals": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "firstCatch": {
+            "petal-minnow": null,
+            "moon-carp": null,
+            "ribbon-mackerel": null,
+            "star-bream": null
+          }
+        },
+        "musicChairRestRuntime": null,
+        "mathResidentRuntime": null,
+        "saveWritable": true,
+        "materials": {
+          "apple": 0,
+          "shell": 0,
+          "autumnLeaf": 0,
+          "petal": 0,
+          "pondFish": 0,
+          "seaFish": 0,
+          "strawberry": 0,
+          "tomato": 0,
+          "pumpkin": 0,
+          "leafy": 0,
+          "peach": 0,
+          "pear": 0,
+          "mandarin": 0
+        },
+        "gathering": {
+          "epoch": 0,
+          "nodes": {
+            "park.tree.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.tree.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.middle": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.leaves.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            }
+          }
+        },
+        "residentSpaceUse": null,
+        "elevatorRuntime": null,
+        "schoolFloor": 1,
+        "locomotion": {
+          "airborne": false,
+          "height": 0,
+          "sprinting": false,
+          "moving": false,
+          "phase": 0
+        },
+        "gymRuntime": null,
+        "baseballRuntime": null,
+        "raceRuntime": null,
+        "passingRuntime": {
+          "mode": "practice",
+          "pattern": 1,
+          "phase": "aiming",
+          "owner": "player",
+          "player": {
+            "x": -2.65,
+            "z": 3.3
+          },
+          "turtle": {
+            "x": 2.55,
+            "z": 4.65
+          },
+          "turtleHand": {
+            "x": 1.9999999999999998,
+            "y": 0.61,
+            "z": 4.650000000000005
+          },
+          "position": {
+            "x": -2.1044074475556585,
+            "y": 0.9921007576001913,
+            "z": 2.840227019304532
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "settings": {
+            "yawDeg": 6.391589234453625,
+            "power": 57.45801314630433
+          },
+          "clock": 74.70000000000552,
+          "elapsed": 0,
+          "tick": 8964,
+          "attempts": 1,
+          "score": 1,
+          "paused": false,
+          "complete": false,
+          "receiveSpot": null,
+          "hold": 0,
+          "bounces": 0,
+          "reason": "점선을 보고 방향과 힘을 골라요",
+          "success": false,
+          "posts": [
+            {
+              "x": 0,
+              "z": 3.3,
+              "radius": 0.22,
+              "height": 1.65
+            }
+          ],
+          "turtleUUID": "abf8891c-7436-4b89-8702-861a51f88f4a",
+          "partnerId": "athletic-rabbit"
+        },
+        "libraryQuestRuntime": null,
+        "buildRuntime": null,
+        "robotRuntime": null,
+        "cookingRuntime": null,
+        "sky": {
+          "id": "night",
+          "label": "밤",
+          "clock": "23:36",
+          "timeZone": "Asia/Seoul"
+        },
+        "cafeRuntime": {
+          "open": false,
+          "running": false,
+          "shop": false,
+          "tab": "bread"
+        },
+        "throwRuntime": null,
+        "musicRuntime": null,
+        "audio": {
+          "enabled": false,
+          "unlocked": false,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "village": {
+          "cafe": {
+            "schemaVersion": 1,
+            "day": 1,
+            "phase": "idle",
+            "activeMs": 0,
+            "nextArrivalMs": 3000,
+            "nextOrdinal": 1,
+            "jobSerial": 0,
+            "orders": [],
+            "settled": [],
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "qualityStock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "dough": null,
+            "oven": null,
+            "drink": null,
+            "upgrades": {
+              "warmOven": false,
+              "wideDisplay": false,
+              "cozyCorner": false
+            },
+            "coins": 0,
+            "ledger": {
+              "sold": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "fastTips": 0,
+              "qualityTips": 0,
+              "cozyTips": 0,
+              "spent": 0
+            },
+            "today": {
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "tips": 0
+            }
+          },
+          "bakery": {
+            "phase": "empty",
+            "decoration": null,
+            "completed": 0,
+            "pastries": 0
+          },
+          "mailbox": {
+            "letters": []
+          },
+          "photos": [],
+          "wallPlacements": {}
+        },
+        "residents": [
+          {
+            "id": "athletic-rabbit",
+            "x": 18.35,
+            "z": 2.5500000000000003,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0
+          },
+          {
+            "id": "baseball-tiger",
+            "x": 35.5,
+            "z": 2.599999999999999,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0
+          }
+        ],
+        "worldResidents": [
+          {
+            "id": "nurse-otter",
+            "x": 5.35,
+            "z": -8.55,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "infirmary"
+          },
+          {
+            "id": "chinchilla",
+            "x": 7.250000000000001,
+            "z": 6.670000001788139,
+            "yaw": 3.2015926521878937,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "armadillo",
+            "x": 10.25,
+            "z": 8.434999978542328,
+            "yaw": 0.7407963474523506,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "capybara",
+            "x": -2.4000000000000017,
+            "z": 14.919999999552964,
+            "yaw": 3.0215926572603626,
+            "moving": false,
+            "ownerRoomId": "library"
+          },
+          {
+            "id": "principal-bear",
+            "x": -10.35,
+            "z": 14.38,
+            "yaw": 0,
+            "moving": false,
+            "action": "read",
+            "phase": "seated",
+            "ownerRoomId": "principalOffice"
+          },
+          {
+            "id": "athletic-rabbit",
+            "x": 18.35,
+            "z": 2.5500000000000003,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "baseball-tiger",
+            "x": 35.5,
+            "z": 2.599999999999999,
+            "yaw": -1.5707963267948966,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "sportsField"
+          },
+          {
+            "id": "athletic-turtle",
+            "x": 39.7,
+            "z": -21.5,
+            "yaw": 0,
+            "moving": false,
+            "phase": "rest",
+            "distance": 0,
+            "ownerRoomId": "schoolGym"
+          }
+        ],
+        "library": {
+          "selectedBookId": "pocket-star",
+          "borrowedBookId": null,
+          "readBookIds": []
+        },
+        "activity": null,
+        "discoveryIds": [],
+        "pose": {
+          "name": "chalk",
+          "amount": 1,
+          "time": 0,
+          "seatContactY": 0.11474484205245972,
+          "anchors": {
+            "leftHand": [
+              -0.5357513202437545,
+              0.3854309221882831,
+              0.11094520375918915
+            ],
+            "rightHand": [
+              0.45977298069546535,
+              0.9421007576001916,
+              0.26559255244434166
+            ],
+            "leftFoot": [
+              -0.211,
+              0.135,
+              0.11
+            ],
+            "rightFoot": [
+              0.211,
+              0.135,
+              0.11
+            ],
+            "seat": [
+              0,
+              0.11474484205245972,
+              0.011705340817570686
+            ],
+            "hands": {
+              "left": [
+                -0.5357513202437545,
+                0.3854309221882831,
+                0.11094520375918915
+              ],
+              "right": [
+                0.45977298069546535,
+                0.9421007576001916,
+                0.26559255244434166
+              ]
+            },
+            "feet": {
+              "left": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "right": [
+                0.211,
+                0.135,
+                0.11
+              ]
+            }
+          },
+          "bounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.5831665396690369,
+              0.5900052785873413
+            ]
+          },
+          "bodyBounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.244211196899414,
+              0.5900052785873413
+            ]
+          },
+          "sleepPitch": -1.5707963267948966,
+          "character": "doreumi-master-rig"
+        },
+        "won": false,
+        "roomId": "sportsField",
+        "worldId": "campus",
+        "localPosition": {
+          "x": -2.649999999999999,
+          "z": 3.3000000000000007
+        },
+        "worldPosition": {
+          "x": 19.7,
+          "z": -2.649999999999999
+        },
+        "transitionPhase": "idle",
+        "inputLocked": true,
+        "starsCollected": 0,
+        "collectedIds": [],
+        "ownedItemIds": [
+          "plant",
+          "picture-frame"
+        ],
+        "rewardClaimIds": [],
+        "completedActivityIds": [],
+        "placements": {},
+        "garden": {
+          "phase": "seed",
+          "moments": [],
+          "petals": 0,
+          "harvests": 0,
+          "harvestedBedIds": []
+        },
+        "saveStatus": "saved",
+        "revision": 4,
+        "position": {
+          "x": 19.7,
+          "y": 0.05,
+          "z": -2.65
+        },
+        "camera": {
+          "mode": "walk",
+          "x": 26.1,
+          "y": 12,
+          "z": 12.500000000000002,
+          "target": {
+            "x": 18.6,
+            "y": 0.65,
+            "z": -2.4999999999999996
+          },
+          "zoom": 1.5
+        },
+        "quality": "medium",
+        "renderer": {
+          "frame": 1180,
+          "calls": 89,
+          "triangles": 105193,
+          "points": 0,
+          "lines": 201,
+          "memory": {
+            "geometries": 565,
+            "textures": 20
+          },
+          "pixelRatio": 0.5,
+          "buffer": {
+            "width": 640,
+            "height": 450
+          }
+        },
+        "timings": {
+          "transitionMs": [],
+          "frameIntervals": [
+            4833.2,
+            1766.6,
+            16.6,
+            750,
+            16.5,
+            383.4,
+            33.3,
+            33.3,
+            33.4,
+            483.2,
+            16.6,
+            16.7,
+            16.6,
+            33.4,
+            16.6,
+            149.9,
+            16.7,
+            150,
+            33.4,
+            16.6,
+            16.6,
+            16.7,
+            16.6,
+            33.3,
+            16.7,
+            16.6,
+            150,
+            150,
+            16.7,
+            33.4,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            33.3,
+            16.6,
+            16.8,
+            16.6,
+            16.7
+          ]
+        }
+      }
+    },
+    {
+      "name": "throw",
+      "passed": true,
+      "wallSeconds": 6,
+      "detail": {
+        "surface": {
+          "kind": "throw-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "phase": "settled",
+          "paused": false,
+          "pauseReasons": [],
+          "shotId": 1,
+          "generation": 1,
+          "tick": 365,
+          "elapsed": 3.0416666666666585,
+          "accumulator": 0,
+          "origin": {
+            "x": 0.16186202871563715,
+            "y": 0.9921007576001902,
+            "z": -3.1147729806954665
+          },
+          "position": {
+            "x": 1.9489811003937567,
+            "y": 0.205,
+            "z": -2.3606271185343948
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "settings": {
+            "yawDeg": 0,
+            "pitchDeg": 52,
+            "power": 50
+          },
+          "score": 0,
+          "attempts": 1,
+          "scored": false,
+          "contacts": [
+            {
+              "type": "contact",
+              "collider": "rim",
+              "time": 0.7082151391720524,
+              "position": {
+                "x": 2.712583576684835,
+                "y": 1.7991889105507524,
+                "z": -3.1147729806954665
+              },
+              "normal": {
+                "x": -0.952041707742158,
+                "y": -0.2822838302722898,
+                "z": 0.11803569750800295
+              },
+              "incomingVelocity": {
+                "x": 3.601619630655101,
+                "y": -2.3306454552867866,
+                "z": 0
+              },
+              "outgoingVelocity": {
+                "x": -0.5067007093317674,
+                "y": -3.4808066082845603,
+                "z": 0.5004256214166184
+              },
+              "shotId": 1,
+              "generation": 1,
+              "tick": 85
+            },
+            {
+              "type": "contact",
+              "collider": "floor",
+              "time": 1.0249687323287688,
+              "position": {
+                "x": 2.5520843053969062,
+                "y": 0.20500000000000004,
+                "z": -2.956261366886026
+              },
+              "normal": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "incomingVelocity": {
+                "x": -0.5067007093317674,
+                "y": -6.584991821220402,
+                "z": 0.5004256214166184
+              },
+              "outgoingVelocity": {
+                "x": -0.4154945816520492,
+                "y": 3.6875954198834258,
+                "z": 0.41034900956162706
+              },
+              "shotId": 1,
+              "generation": 1,
+              "tick": 123
+            },
+            {
+              "type": "contact",
+              "collider": "floor",
+              "time": 1.7775392264537067,
+              "position": {
+                "x": 2.2393953427767994,
+                "y": 0.20499999999999996,
+                "z": -2.6474448099965384
+              },
+              "normal": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "incomingVelocity": {
+                "x": -0.4154945816520492,
+                "y": -3.6875954225409826,
+                "z": 0.41034900956162706
+              },
+              "outgoingVelocity": {
+                "x": -0.34070555695468036,
+                "y": 2.0650534366229505,
+                "z": 0.3364861878405342
+              },
+              "shotId": 1,
+              "generation": 1,
+              "tick": 214
+            },
+            {
+              "type": "contact",
+              "collider": "floor",
+              "time": 2.198978703799781,
+              "position": {
+                "x": 2.095808570924922,
+                "y": 0.20499999999999996,
+                "z": -2.50563624685886
+              },
+              "normal": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "incomingVelocity": {
+                "x": -0.34070555695468036,
+                "y": -2.0650534413685886,
+                "z": 0.3364861878405342
+              },
+              "outgoingVelocity": {
+                "x": -0.2793785567028379,
+                "y": 1.1564299271664098,
+                "z": 0.27591867402923803
+              },
+              "shotId": 1,
+              "generation": 1,
+              "tick": 264
+            },
+            {
+              "type": "contact",
+              "collider": "floor",
+              "time": 2.4349848122494917,
+              "position": {
+                "x": 2.0298735249731905,
+                "y": 0.205,
+                "z": -2.440517754352615
+              },
+              "normal": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "incomingVelocity": {
+                "x": -0.2793785567028379,
+                "y": -1.1564299356407646,
+                "z": 0.27591867402923803
+              },
+              "outgoingVelocity": {
+                "x": -0.22909041649632705,
+                "y": 0.6476007639588283,
+                "z": 0.22625331270397517
+              },
+              "shotId": 1,
+              "generation": 1,
+              "tick": 293
+            },
+            {
+              "type": "contact",
+              "collider": "floor",
+              "time": 2.5671482350097397,
+              "position": {
+                "x": 1.999596151407462,
+                "y": 0.205,
+                "z": -2.410615342134813
+              },
+              "normal": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "incomingVelocity": {
+                "x": -0.22909041649632705,
+                "y": -0.6476007790916063,
+                "z": 0.22625331270397517
+              },
+              "outgoingVelocity": {
+                "x": -0.18785414152698818,
+                "y": 0.36265643629129957,
+                "z": 0.18552771641725962
+              },
+              "shotId": 1,
+              "generation": 1,
+              "tick": 309
+            },
+            {
+              "type": "contact",
+              "collider": "floor",
+              "time": 2.641159755377639,
+              "position": {
+                "x": 1.9856927807856424,
+                "y": 0.205,
+                "z": -2.3968841537723877
+              },
+              "normal": {
+                "x": 0,
+                "y": 1,
+                "z": 0
+              },
+              "incomingVelocity": {
+                "x": -0.18785414152698818,
+                "y": -0.3626564633141179,
+                "z": 0.18552771641725962
+              },
+              "outgoingVelocity": {
+                "x": -0.1540403960521303,
+                "y": 0.20308761945590603,
+                "z": 0.1521327274621529
+              },
+              "shotId": 1,
+              "generation": 1,
+              "tick": 317
+            }
+          ],
+          "settleReason": "rest",
+          "mode": "practice",
+          "challengeComplete": false,
+          "shotsRemaining": null
+        },
+        "feedback": "괜찮아요. 방향이나 힘을 조금 바꿔 볼까요?",
+        "retry": {
+          "phase": "aiming",
+          "attempts": 1
+        },
+        "coverage": "one actual throw and retry, five-ball challenge not claimed"
+      }
+    },
+    {
+      "name": "race",
+      "passed": true,
+      "wallSeconds": 31,
+      "detail": {
+        "surface": {
+          "kind": "race-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "phase": "result",
+          "countdown": 0,
+          "elapsed": 14.249999999999831,
+          "playerDistance": 10.4,
+          "rabbitDistance": 10.4,
+          "playerSpeed": 0.35000090129327793,
+          "rabbitSpeed": 0.73,
+          "playerFinish": 11.677939841905335,
+          "rabbitFinish": 14.246575342465619,
+          "winner": "player",
+          "paused": false,
+          "complete": true,
+          "held": false
+        },
+        "feedback": "도름이가 먼저 도착했어요! 함께 한 번 더?",
+        "retry": {
+          "phase": "countdown",
+          "playerDistance": 0
+        }
+      }
+    },
+    {
+      "name": "ball",
+      "passed": true,
+      "wallSeconds": 1,
+      "detail": {
+        "entry": {
+          "nearby": "sportsField.ball",
+          "requested": "sportsField.ball"
+        },
+        "snapshot": {
+          "room": "sportsField",
+          "ready": true,
+          "failed": false,
+          "locked": false,
+          "phase": "idle",
+          "modal": false,
+          "renderer": {
+            "frame": 1285,
+            "calls": 207,
+            "triangles": 122398,
+            "points": 0,
+            "lines": 205
+          }
+        },
+        "coverage": "short kick interaction, no aiming/score/result system advertised; visual roll needs screenshot review"
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

@@ -1,0 +1,10 @@
+{
+  "results": [
+    {
+      "device": "desktop-1440x900",
+      "passed": true,
+      "touch": false
+    }
+  ],
+  "errors": []
+}

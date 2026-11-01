@@ -1,0 +1,551 @@
+{
+  "reviewedAt": "2026-11-01",
+  "method": "Current source registry; does not prove runtime entry or completion.",
+  "rooms": [
+    {
+      "id": "courtyard",
+      "label": "도름마을",
+      "targets": [
+        {
+          "id": "courtyard.group-activities",
+          "type": "squareGroup",
+          "label": "친구들과 광장 체조하기"
+        },
+        {
+          "id": "courtyard.noticeboard",
+          "type": "villageTool",
+          "tool": "noticeboard",
+          "label": "마을 게시판 읽기"
+        },
+        {
+          "id": "villageAirport.plane",
+          "type": "flight",
+          "label": "비행기 타기 · 구름성 놀이섬"
+        },
+        {
+          "id": "villageHarbor.boat",
+          "type": "boat",
+          "label": "배 타고 천문대 섬으로"
+        },
+        {
+          "id": "courtyard.island-lookout",
+          "type": "island-lookout",
+          "label": "바다와 구름섬 바라보기"
+        },
+        {
+          "id": "courtyard.night-plaza",
+          "type": "plazaNight",
+          "label": "해변 캠핑 · 모닥불과 불꽃놀이"
+        },
+        {
+          "id": "courtyard.campfire.seat.dormi",
+          "type": "pose",
+          "kind": "sit",
+          "label": "모닥불 옆에 앉기"
+        },
+        {
+          "id": "courtyard.tent.airbed",
+          "type": "pose",
+          "kind": "sleep",
+          "label": "에어침대에 눕기"
+        },
+        {
+          "id": "courtyard.camp-chair.0",
+          "type": "pose",
+          "kind": "sit",
+          "label": "캠핑 의자에 앉기"
+        },
+        {
+          "id": "courtyard.camp-chair.1",
+          "type": "pose",
+          "kind": "sit",
+          "label": "캠핑 의자에 앉기"
+        },
+        {
+          "id": "courtyard.fish-grill",
+          "type": "fishCooking",
+          "label": "물고기 구워 먹기",
+          "mode": "camp"
+        },
+        {
+          "id": "courtyard.fishing",
+          "type": "fishing",
+          "label": "바닷가에서 낚시하기"
+        },
+        {
+          "id": "courtyard.fishing.north",
+          "type": "fishing",
+          "label": "캠핑장 남쪽 물가에서 낚시하기"
+        },
+        {
+          "id": "courtyard.shell.west",
+          "type": "pose",
+          "kind": "gatherShell",
+          "label": "재료 모으기"
+        },
+        {
+          "id": "courtyard.shell.middle",
+          "type": "pose",
+          "kind": "gatherShell",
+          "label": "재료 모으기"
+        },
+        {
+          "id": "courtyard.shell.east",
+          "type": "pose",
+          "kind": "gatherShell",
+          "label": "재료 모으기"
+        },
+        {
+          "id": "courtyard.forest.bench.0",
+          "type": "pose",
+          "kind": "sit",
+          "label": "숲속 벤치에 앉기"
+        },
+        {
+          "id": "courtyard.forest.bench.1",
+          "type": "pose",
+          "kind": "sit",
+          "label": "숲속 벤치에 앉기"
+        },
+        {
+          "id": "courtyard.forest.bench.2",
+          "type": "pose",
+          "kind": "sit",
+          "label": "숲속 벤치에 앉기"
+        },
+        {
+          "id": "courtyard.harbor.lighthouse-chair",
+          "type": "pose",
+          "kind": "sit",
+          "label": "등대 앞 의자에 앉기",
+          "discoveryId": "quiet-seat"
+        },
+        {
+          "id": "courtyard.airfield.plane-bench",
+          "type": "pose",
+          "kind": "sit",
+          "label": "비행장 벤치에 앉기",
+          "discoveryId": "quiet-seat"
+        },
+        {
+          "id": "courtyard.bench",
+          "type": "pose",
+          "kind": "sit",
+          "label": "광장 벤치에 앉기",
+          "discoveryId": "square-breeze"
+        },
+        {
+          "id": "courtyard.island-lookout.seat",
+          "type": "pose",
+          "kind": "sit",
+          "label": "바다와 구름섬을 보는 의자에 앉기",
+          "discoveryId": "quiet-seat"
+        }
+      ]
+    },
+    {
+      "id": "park",
+      "label": "바람 공원",
+      "targets": [
+        {
+          "id": "park.produce.strawberry",
+          "type": "produce",
+          "label": "딸기 돌보기"
+        },
+        {
+          "id": "park.produce.tomato",
+          "type": "produce",
+          "label": "토마토 돌보기"
+        },
+        {
+          "id": "park.produce.pumpkin",
+          "type": "produce",
+          "label": "호박 돌보기"
+        },
+        {
+          "id": "park.produce.leafy",
+          "type": "produce",
+          "label": "잎채소 돌보기"
+        },
+        {
+          "id": "park.produce.peach",
+          "type": "produce",
+          "label": "복숭아 돌보기"
+        },
+        {
+          "id": "park.produce.pear",
+          "type": "produce",
+          "label": "배 돌보기"
+        },
+        {
+          "id": "park.produce.mandarin",
+          "type": "produce",
+          "label": "귤 돌보기"
+        },
+        {
+          "id": "park.rest",
+          "type": "message",
+          "label": "연못 앞에서 쉬기"
+        },
+        {
+          "id": "park.fishing",
+          "type": "fishing",
+          "label": "연못에서 낚시하기"
+        },
+        {
+          "id": "park.fishing.north",
+          "type": "fishing",
+          "label": "연못 북쪽에서 낚시하기"
+        },
+        {
+          "id": "park.tree.west",
+          "type": "pose",
+          "kind": "pickFruit",
+          "label": "재료 모으기"
+        },
+        {
+          "id": "park.tree.east",
+          "type": "pose",
+          "kind": "pickFruit",
+          "label": "재료 모으기"
+        },
+        {
+          "id": "park.leaves.west",
+          "type": "pose",
+          "kind": "gatherShell",
+          "label": "재료 모으기"
+        },
+        {
+          "id": "park.bench",
+          "type": "pose",
+          "kind": "sit",
+          "label": "공원 벤치에 앉기",
+          "discoveryId": "pond-sky"
+        },
+        {
+          "id": "park.flowers",
+          "type": "pose",
+          "kind": "water",
+          "label": "햇살 꽃밭 · 물 주기",
+          "discoveryId": "flower-water"
+        },
+        {
+          "id": "park.flowers-west",
+          "type": "pose",
+          "kind": "water",
+          "label": "들꽃 꽃밭 · 물 주기",
+          "discoveryId": "flower-water"
+        },
+        {
+          "id": "park.flowers-north",
+          "type": "pose",
+          "kind": "water",
+          "label": "나비 꽃밭 · 물 주기",
+          "discoveryId": "flower-water"
+        }
+      ]
+    },
+    {
+      "id": "playground",
+      "label": "구름 놀이터",
+      "targets": [
+        {
+          "id": "playground.swing",
+          "type": "pose",
+          "kind": "swing",
+          "label": "그네에 올라타기",
+          "discoveryId": "cloud-swing"
+        },
+        {
+          "id": "playground.slide",
+          "type": "pose",
+          "kind": "slide",
+          "label": "계단 올라 미끄럼틀 타기",
+          "discoveryId": "cloud-slide"
+        },
+        {
+          "id": "playground.seesaw",
+          "type": "pose",
+          "kind": "seesaw",
+          "label": "모아와 시소 타기",
+          "discoveryId": "together-seesaw"
+        }
+      ]
+    },
+    {
+      "id": "sportsField",
+      "label": "햇살 운동장",
+      "targets": [
+        {
+          "id": "sportsField.pass",
+          "type": "schoolTool",
+          "tool": "passing",
+          "label": "토끼와 공 주고받기"
+        },
+        {
+          "id": "sportsField.throw",
+          "type": "schoolTool",
+          "tool": "throw",
+          "label": "방향과 힘을 골라 공 던지기"
+        },
+        {
+          "id": "sportsField.ball",
+          "type": "schoolTool",
+          "tool": "ball",
+          "label": "공 차서 골 넣기"
+        },
+        {
+          "id": "sportsField.race",
+          "type": "schoolTool",
+          "tool": "race",
+          "label": "토끼와 나란히 달리기"
+        },
+        {
+          "id": "sportsField.baseball",
+          "type": "schoolTool",
+          "tool": "baseball",
+          "label": "야구 · 호랑이와 타격 연습"
+        },
+        {
+          "id": "sportsField.run",
+          "type": "pose",
+          "kind": "run",
+          "label": "트랙 한 바퀴 달리기",
+          "discoveryId": "school-run"
+        },
+        {
+          "id": "sportsField.pullup",
+          "type": "pose",
+          "kind": "pullup",
+          "label": "낮은 철봉에 매달리기",
+          "discoveryId": "school-pullup"
+        },
+        {
+          "id": "sportsField.climb",
+          "type": "pose",
+          "kind": "climb",
+          "label": "정글짐 사다리 오르기",
+          "discoveryId": "school-climb"
+        }
+      ]
+    },
+    {
+      "id": "schoolGym",
+      "label": "햇살 실내체육관",
+      "targets": [
+        {
+          "id": "schoolGym.curling",
+          "type": "gymTool",
+          "tool": "curling",
+          "label": "컬링 · 혼자 스톤 연습"
+        },
+        {
+          "id": "schoolGym.laser",
+          "type": "gymTool",
+          "tool": "laser",
+          "label": "빛 표적 · 혼자 다섯 번 연습"
+        },
+        {
+          "id": "schoolGym.climbing",
+          "type": "gymTool",
+          "tool": "climbing",
+          "label": "클라이밍 · 낮은 벽 혼자 연습"
+        },
+        {
+          "id": "schoolGym.archery",
+          "type": "gymTool",
+          "tool": "archery",
+          "label": "양궁 · 혼자 다섯 발 연습"
+        },
+        {
+          "id": "schoolGym.boxing",
+          "type": "gymTool",
+          "tool": "boxing",
+          "label": "복싱 · 혼자 샌드백 연습"
+        },
+        {
+          "id": "schoolGym.treadmill",
+          "type": "gymTool",
+          "tool": "treadmill",
+          "label": "러닝머신 · 일정한 걸음 연습"
+        },
+        {
+          "id": "schoolGym.stairs",
+          "type": "gymTool",
+          "tool": "stairs",
+          "label": "천국의 계단 · 한 걸음씩 연습"
+        },
+        {
+          "id": "schoolGym.pass",
+          "type": "schoolTool",
+          "tool": "passing",
+          "label": "거북이와 공 주고받기"
+        },
+        {
+          "id": "sportsField.weights",
+          "type": "pose",
+          "kind": "weights",
+          "label": "가벼운 역기 들어 보기",
+          "discoveryId": "school-weights"
+        }
+      ]
+    },
+    {
+      "id": "postOffice",
+      "label": "마음 우체국",
+      "targets": [
+        {
+          "id": "postOffice.table",
+          "type": "villageTool",
+          "tool": "post",
+          "label": "편지 쓰고 답장 받기"
+        }
+      ]
+    },
+    {
+      "id": "photoStudio",
+      "label": "찰칵 사진관",
+      "targets": [
+        {
+          "id": "photoStudio.table",
+          "type": "villageTool",
+          "tool": "photo",
+          "label": "도름이 사진 찍기"
+        }
+      ]
+    },
+    {
+      "id": "workshop",
+      "label": "꽃잎 공방",
+      "targets": [
+        {
+          "id": "workshop.table",
+          "type": "villageTool",
+          "tool": "craft",
+          "label": "작업대에서 꽃·조개 장식 만들기"
+        }
+      ]
+    },
+    {
+      "id": "bakeryCafe",
+      "label": "밀구름 베이커리 카페",
+      "targets": [
+        {
+          "id": "bakeryCafe.table",
+          "type": "villageTool",
+          "tool": "bakery",
+          "label": "반죽하고 빵 굽기"
+        },
+        {
+          "id": "bakeryCafe.chair-left",
+          "type": "pose",
+          "kind": "sit",
+          "label": "빈 카페 의자에 앉기",
+          "discoveryId": "quiet-seat"
+        },
+        {
+          "id": "bakeryCafe.chair-right",
+          "type": "pose",
+          "kind": "sit",
+          "label": "빈 카페 의자에 앉기",
+          "discoveryId": "quiet-seat"
+        }
+      ]
+    },
+    {
+      "id": "observatoryIsland",
+      "label": "고요한 천문대 섬",
+      "targets": [
+        {
+          "id": "observatoryIsland.telescope",
+          "type": "telescope",
+          "label": "망원경 들여다보기"
+        },
+        {
+          "id": "observatoryIsland.boat",
+          "type": "boat",
+          "label": "배 타고 마을 선착장으로"
+        },
+        {
+          "id": "observatoryIsland.bench",
+          "type": "pose",
+          "kind": "sit",
+          "label": "천문대 벤치에 앉기"
+        }
+      ]
+    },
+    {
+      "id": "villageHarbor",
+      "label": "마을 선착장",
+      "targets": [
+        {
+          "id": "villageHarbor.boat",
+          "type": "boat",
+          "label": "배 타고 천문대 섬으로"
+        }
+      ]
+    },
+    {
+      "id": "villageAirport",
+      "label": "별빛 마을 작은 공항",
+      "targets": [
+        {
+          "id": "villageAirport.plane",
+          "type": "flight",
+          "label": "비행기 타기 · 구름성 놀이섬"
+        }
+      ]
+    }
+  ],
+  "additionalTargets": [
+    {
+      "id": "bakeryCafe.pack-bread",
+      "type": "cafeFood",
+      "mode": "pack",
+      "floor": "floor1",
+      "floorY": 0.05,
+      "at": {
+        "x": -4.13,
+        "z": -0.1
+      },
+      "radius": 0.8,
+      "label": "구운 빵 포장하기",
+      "text": "진열대의 빵을 음식주머니에 담아요"
+    },
+    {
+      "id": "bakeryCafe.order-drink",
+      "type": "cafeFood",
+      "mode": "order",
+      "floor": "floor2",
+      "floorY": 3.25,
+      "at": {
+        "x": -2.5,
+        "z": -2.96
+      },
+      "radius": 0.85,
+      "label": "코알라에게 음료 주문하기",
+      "text": "아메리카노 · 라테 · 사과주스"
+    }
+  ],
+  "auxiliary": [
+    "village.bakery.gift",
+    "village.photo.album",
+    "village.photo.wall",
+    "gathering.apple-juice",
+    "gathering.apple-jam",
+    "gathering.shell-frame",
+    "gathering.leaf-frame",
+    "camp.marshmallow",
+    "camp.fireworks",
+    "camp.sea-gaze",
+    "camp.tent-rest",
+    "square.exercise.calm",
+    "square.exercise.timed",
+    "square.rope.calm",
+    "square.rope.timed",
+    "weather.settings",
+    "weather.connection",
+    "sky.observation",
+    "sky.solar-events"
+  ]
+}

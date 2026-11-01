@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "languageRetention": true,
+      "storiesCompleted": 3,
+      "mapObservationsCompleted": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "languageRetention": true,
+      "storiesCompleted": 3,
+      "mapObservationsCompleted": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "languageRetention": true,
+      "storiesCompleted": 3,
+      "mapObservationsCompleted": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "languageRetention": true,
+      "storiesCompleted": 3,
+      "mapObservationsCompleted": 4,
+      "horizontalOverflow": false
+    },
+    {
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "languageRetention": true,
+      "storiesCompleted": 3,
+      "mapObservationsCompleted": 4,
+      "horizontalOverflow": false
+    }
+  ],
+  "errors": [],
+  "failed": [
+    {
+      "url": "http://127.0.0.1:4173/amusement/bumper-play.css",
+      "status": 404
+    }
+  ],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

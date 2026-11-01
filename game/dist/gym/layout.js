@@ -9,7 +9,7 @@ export const GYM_ID='schoolGym';
 export const GYM_ZONE=Object.freeze({x:29,z:-30,yaw:0,floor:Object.freeze({minX:-16,maxX:16,minZ:-16,maxZ:16})});
 export const GYM_CONNECTOR=Object.freeze({id:'gym-walkway',sourceRoomId:'sportsField',targetRoomId:GYM_ID,minX:21.5,maxX:24.5,minZ:-14.2,maxZ:-7});
 export const GYM_DOOR=Object.freeze({id:GYM_ID,sourceRoomId:'sportsField',x:23,z:-14,axis:'z',color:'#709b94'});
-export const GYM_SPAWN=Object.freeze({x:-6,z:13.5,yaw:Math.PI});
+export const GYM_SPAWN=Object.freeze({x:-6,z:11.8,yaw:Math.PI});
 export const GYM_FIELD_RETURN=Object.freeze({x:-7,z:0,yaw:Math.PI});
 export const GYM_WEIGHTS=Object.freeze({x:8,z:8.5,hx:1.3,hz:.7});
 // Full-size machine, rear approach and a separate clear 4×6 operating bay.

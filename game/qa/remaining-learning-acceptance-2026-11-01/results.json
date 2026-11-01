@@ -1,0 +1,126 @@
+{
+  "results": [
+    {
+      "name": "matching-pictures-and-spelling",
+      "passed": true,
+      "detail": {
+        "pictures": {
+          "mode": "pictures",
+          "turns": 10,
+          "misses": 4,
+          "status": "모두 찾았어요! 10번 만에 6쌍 완성"
+        },
+        "spelling": {
+          "mode": "spelling",
+          "turns": 6,
+          "misses": 2,
+          "status": "모두 찾았어요! 6번 만에 4쌍 완성"
+        },
+        "restartedBoth": true
+      }
+    },
+    {
+      "name": "health-quiz-eight-and-retry",
+      "passed": true,
+      "detail": {
+        "questions": 8,
+        "wrongRetry": true,
+        "sourceLinks": true,
+        "restart": true
+      }
+    },
+    {
+      "name": "health-evidence-three",
+      "passed": false,
+      "error": "locator.selectOption: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#health-reason')\u001b[22m\n\u001b[2m    - locator resolved to <select id=\"health-reason\">…</select>\u001b[22m\n\u001b[2m  - attempting select option action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - did not find some options\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m      - did not find some options\u001b[22m\n\u001b[2m    - retrying select option action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    60 × waiting for element to be visible and enabled\u001b[22m\n\u001b[2m       - did not find some options\u001b[22m\n\u001b[2m     - retrying select option action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "snapshot": {
+        "room": "infirmary",
+        "ready": true,
+        "failed": false,
+        "locked": true,
+        "phase": "idle",
+        "modal": true,
+        "renderer": {
+          "frame": 220,
+          "calls": 153,
+          "triangles": 99157,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "name": "rgb-light-and-torque",
+      "passed": true,
+      "detail": {
+        "colors": [
+          "rgb(255, 0, 0)",
+          "rgb(255, 255, 255)",
+          "rgb(0, 0, 0)"
+        ],
+        "balancedMasses": [
+          2,
+          1
+        ],
+        "questionRetry": true,
+        "rangeInput": "native keyboard Home/End; other controls touch"
+      }
+    },
+    {
+      "name": "art-contrast-choice",
+      "passed": true,
+      "detail": {
+        "before": "그림 A: 꽃 #e7aa3d, 배경 짙은 남색 · 어두움",
+        "after": "그림 A: 꽃 #e7aa3d, 배경 연한 청록 · 중간 밝기",
+        "intent": "차분하게 어울리는 꽃",
+        "applied": "A"
+      }
+    },
+    {
+      "name": "art-touch-undo-save-export",
+      "passed": true,
+      "detail": {
+        "stroke": {
+          "width": 334,
+          "height": 204.109375,
+          "points": 6
+        },
+        "savedNotice": "이 브라우저에 저장됨",
+        "undoRedoPixelsMatch": true,
+        "reopenedPixelsMatch": true,
+        "exported": {
+          "file": "art-export.png",
+          "suggestedFilename": "dormi-art-202611011418.png",
+          "bytes": 29760,
+          "width": 720,
+          "height": 440,
+          "sha256": "06dd8fdbca9b7681ad78cc5ebd92be700bf10a0277072107668667e5cc074714"
+        },
+        "scope": "one touch stroke; pencil/color selection; undo/redo; browser-save response; close/reopen; actual PNG download"
+      }
+    },
+    {
+      "name": "math-formula-save-export",
+      "passed": false,
+      "error": "page.waitForFunction: Timeout 90000ms exceeded.",
+      "snapshot": {
+        "room": "math",
+        "ready": true,
+        "failed": false,
+        "locked": true,
+        "phase": "idle",
+        "modal": true,
+        "renderer": {
+          "frame": 402,
+          "calls": 195,
+          "triangles": 102902,
+          "points": 0,
+          "lines": 20
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

@@ -1,0 +1,31 @@
+{
+  "results": [
+    {
+      "device": "phone-390x844",
+      "passed": true,
+      "touch": true
+    },
+    {
+      "device": "phone-844x390",
+      "passed": true,
+      "touch": true
+    },
+    {
+      "device": "tablet-768x1024",
+      "passed": true,
+      "touch": true
+    },
+    {
+      "device": "tablet-1024x768",
+      "passed": true,
+      "touch": true
+    }
+  ],
+  "errors": [
+    {
+      "device": "desktop",
+      "status": 404,
+      "url": "http://127.0.0.1:4173/village/data/daily-discoveries.js"
+    }
+  ]
+}

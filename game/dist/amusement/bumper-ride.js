@@ -1,4 +1,4 @@
-import {BUMPER as C,BUMPER_ACTIVITY} from './bumper-layout.js';
+import {BUMPER as C,BUMPER_ACTIVITY,BUMPER_PRACTICE_POINTS} from './bumper-layout.js';
 import {bumperWalkY,bumperPoseBottom,bumperOutwardWalkY} from './bumper-support.js';
 export {BUMPER,BUMPER_ACTIVITY} from './bumper-layout.js';
 const STEP=1/120,EPS=1e-9,R=2*C.radius,X=C.halfX-C.radius,Z=C.halfZ-C.radius;
@@ -23,8 +23,13 @@ export function bumperBoardFrame(from,time,out={}){const t=clamp(time,0,C.mountD
 export function bumperExitFrame(time){const t=clamp(time,0,C.mountDuration),p={x:C.dock.x,y:C.rootY,z:C.dock.z,yaw:0,pitch:0,roll:0,pose:1,carX:C.dock.x,carZ:C.dock.z,carYaw:0,bumperRamp:ease(t/.3),walk:0,walkTime:0};if(t<.3)return p;if(t<1.3)return {...p,z:C.dock.z+.75*ease(t-.3)};if(t<2.1){const pose=1-ease((t-1.3)/.8);return {...p,z:C.dock.z+.75,y:C.seatTop-bumperPoseBottom(pose),pose};}const q=(t-2.1)/(C.mountDuration-2.1),progress=ease(q),z=.75+2.6*progress,walk=.25*ease(q/.12)*ease((1-q)/.12),walkTime=2.6*progress*1.5,stride=walk*Math.sin(Math.floor(walkTime*20)/20*8);return {...p,z:C.dock.z+z,y:bumperOutwardWalkY(z,stride),pose:0,walk,walkTime};}
 /** ActivitySession is the only time/actor owner. No RAF, listener, timer or mesh lookup. */
 export class BumperRide{
- constructor(activity,from){this.activity={...activity,exit:{...activity.exit}};this.from={...from};this.phase='entering';this.elapsed=0;this.activeTime=0;this.x=C.dock.x;this.z=C.dock.z;this.yaw=0;this.speed=0;this.throttle=0;this.steer=0;this.accumulator=0;this.paused=false;this.exitRequested=false;this.done=false;this.dismount=false;this.reverseTime=null;this.path=null;this.pathIndex=0;this.frame={};this.returnFrom={...this.activity.exit,y:.05};}
+ constructor(activity,from){this.activity={...activity,exit:{...activity.exit}};this.from={...from};this.phase='entering';this.elapsed=0;this.activeTime=0;this.x=C.dock.x;this.z=C.dock.z;this.yaw=Math.PI;this.speed=0;this.throttle=0;this.steer=0;this.accumulator=0;this.paused=false;this.exitRequested=false;this.done=false;this.dismount=false;this.reverseTime=null;this.path=null;this.pathIndex=0;this.frame={};this.returnFrom={...this.activity.exit,y:.05};this.practiceState='free';this.practiceIndex=0;this.notice='';this.noticeTime=0;this.contactPulse=0;}
  setReduced(){} // User-commanded slow driving is unchanged by reduced motion.
+ get practiceTarget(){return this.practiceState==='playing'?BUMPER_PRACTICE_POINTS[this.practiceIndex]:null;}
+ startPractice(){if(this.done||this.exitRequested)return false;this.practiceState='playing';this.practiceIndex=0;this.notice='빛나는 1번 길표시를 찾아가요. 서두르지 않아도 돼요.';this.noticeTime=3;return true;}
+ stopPractice(){this.practiceState='free';this.practiceIndex=0;this.notice='자유롭게 천천히 운전해요.';this.noticeTime=2;}
+ collectPractice(){const target=this.practiceTarget;if(!target||Math.hypot(this.x-target.x,this.z-target.z)>.48)return;this.practiceIndex++;this.noticeTime=3;if(this.practiceIndex===BUMPER_PRACTICE_POINTS.length){this.practiceState='complete';this.notice='길표시 세 곳을 모두 찾았어요! 한 번 더 하거나 자유롭게 달려요.';}else this.notice=`${this.practiceIndex}번 도착! 다음 ${this.practiceIndex+1}번 길표시로 가요.`;}
+ boardSample(time){const f=bumperBoardFrame(this.from,time,this.frame);if(time>4.4){const turn=Math.PI*ease((time-4.4)/(C.mountDuration-4.4)),dx=f.x-C.dock.x,dz=f.z-C.dock.z;f.x=C.dock.x+dx*Math.cos(turn)+dz*Math.sin(turn);f.z=C.dock.z-dx*Math.sin(turn)+dz*Math.cos(turn);f.yaw+=turn;f.carYaw=turn;}return f;}
  setIntent(throttle=0,steer=0){this.throttle=this.paused||this.exitRequested||this.phase!=='active'?0:clamp(Number.isFinite(throttle)?throttle:0,-1,1);this.steer=this.paused||this.exitRequested||this.phase!=='active'?0:clamp(Number.isFinite(steer)?steer:0,-1,1);}
  pause(){this.paused=true;this.throttle=this.steer=this.speed=this.accumulator=0;}
  resume(){if(!this.done)this.paused=false;}
@@ -33,16 +38,16 @@ export class BumperRide{
  advance(dt){if(!Number.isFinite(this.x+this.z+this.speed+this.yaw)){this.x=C.dock.x;this.z=C.dock.z;this.yaw=0;this.pause();return;}if(Math.abs(this.x)>X+EPS||Math.abs(this.z)>Z+EPS||Math.hypot(this.x-C.parked.x,this.z-C.parked.z)<R-1e-7){this.x=C.parked.x+R;this.z=C.parked.z;this.pause();return;}this.elapsed+=dt;if(this.phase==='entering'){if(this.elapsed>=C.mountDuration-EPS){this.elapsed=0;this.phase='active';}return;}
  if(this.dismount){if(this.elapsed>=Math.max(STEP,this.reverseTime??C.mountDuration)-EPS){this.done=true;this.phase='idle';}return;}
  if(this.phase==='exiting'){this.dock(dt);return;}
- this.activeTime+=dt;this.yaw=delta(0,this.yaw+this.steer*C.turnSpeed*dt);
+ this.activeTime+=dt;this.noticeTime=Math.max(0,this.noticeTime-dt);if(!this.noticeTime&&this.practiceState!=='complete')this.notice='';this.contactPulse=Math.max(0,this.contactPulse-dt*3);this.yaw=delta(0,this.yaw+this.steer*C.turnSpeed*dt);
  const opposite=this.speed*this.throttle<0,target=this.throttle===0||opposite?0:this.throttle>0?C.maxSpeed*this.throttle:C.reverseSpeed*this.throttle,rate=this.throttle===0||opposite?C.brake:C.acceleration,change=clamp(target-this.speed,-rate*dt,rate*dt);this.speed+=change;if(Math.abs(this.speed)<1e-12)this.speed=0;
- this.move(Math.sin(this.yaw)*this.speed*dt,Math.cos(this.yaw)*this.speed*dt);
+ this.move(Math.sin(this.yaw)*this.speed*dt,Math.cos(this.yaw)*this.speed*dt);this.collectPractice();
  }
  move(dx,dz){for(let pass=0;pass<3&&Math.abs(dx)+Math.abs(dz)>1e-12;pass++){let t=1,nx=0,nz=0;let q;if(dx>0){q=(X-this.x)/dx;if(q>=-EPS&&q<t){t=Math.max(0,q);nx=-1;}}else if(dx<0){q=(-X-this.x)/dx;if(q>=-EPS&&q<t){t=Math.max(0,q);nx=1;}}if(dz>0){q=(Z-this.z)/dz;if(q>=-EPS&&q<t){t=Math.max(0,q);nx=0;nz=-1;}}else if(dz<0){q=(-Z-this.z)/dz;if(q>=-EPS&&q<t){t=Math.max(0,q);nx=0;nz=1;}}
  const ox=this.x-C.parked.x,oz=this.z-C.parked.z,a=dx*dx+dz*dz,b=ox*dx+oz*dz,c=ox*ox+oz*oz-R*R,disc=b*b-a*c;
  if(a>0&&b<0&&disc>=0){const q=(-b-Math.sqrt(disc))/a;if(q>=-1e-7&&q<t){t=Math.max(0,q);const px=ox+dx*t,pz=oz+dz*t,len=Math.hypot(px,pz)||1;nx=px/len;nz=pz/len;}}
- this.x=clamp(this.x+dx*t,-X,X);this.z=clamp(this.z+dz*t,-Z,Z);if(t===1)return;this.speed=0;dx*=1-t;dz*=1-t;const inward=Math.min(0,dx*nx+dz*nz);dx-=inward*nx;dz-=inward*nz;
+ this.x=clamp(this.x+dx*t,-X,X);this.z=clamp(this.z+dz*t,-Z,Z);if(t===1)return;this.speed=0;this.contactPulse=1;if(this.practiceState!=='complete'){this.notice='퐁! 쿠션에 닿았어요. 좌우로 방향을 돌려 다시 출발해요.';this.noticeTime=1.4;}dx*=1-t;dz*=1-t;const inward=Math.min(0,dx*nx+dz*nz);dx-=inward*nx;dz-=inward*nz;
  }}
  dock(dt){if(this.pathIndex>=this.path.length){const turn=delta(this.yaw,C.dock.yaw);this.yaw+=clamp(turn,-dt,dt);if(Math.abs(turn)<=dt){this.yaw=C.dock.yaw;this.dismount=true;this.elapsed=0;}return;}const p=this.path[this.pathIndex],dx=p.x-this.x,dz=p.z-this.z,d=Math.hypot(dx,dz);if(d<1e-7){this.pathIndex++;return;}const goal=Math.atan2(dx,dz),turn=delta(this.yaw,goal);this.yaw+=clamp(turn,-dt,dt);if(Math.abs(turn)>.02)return;const amount=Math.min(d,.70*dt);this.x+=dx/d*amount;this.z+=dz/d*amount;if(amount===d){this.x=p.x;this.z=p.z;this.pathIndex++;}}
- sample(){if(this.phase==='entering')return bumperBoardFrame(this.from,this.elapsed,this.frame);if(this.dismount)return this.reverseTime!==null?bumperBoardFrame(this.from,Math.max(0,this.reverseTime-this.elapsed),this.frame):bumperExitFrame(this.elapsed);const f=this.frame;f.x=f.carX=this.x;f.y=C.rootY;f.z=f.carZ=this.z;f.yaw=f.carYaw=this.yaw;f.pitch=f.roll=f.bumperRamp=0;f.pose=1;return f;}
+ sample(){if(this.phase==='entering')return this.boardSample(this.elapsed);if(this.dismount)return this.reverseTime!==null?this.boardSample(Math.max(0,this.reverseTime-this.elapsed)):bumperExitFrame(this.elapsed);const f=this.frame;f.x=f.carX=this.x;f.y=C.rootY;f.z=f.carZ=this.z;f.yaw=f.carYaw=this.yaw;f.pitch=f.roll=f.bumperRamp=0;f.pose=1;f.practiceState=this.practiceState;f.practiceIndex=this.practiceIndex;f.contactPulse=this.contactPulse;return f;}
  cancel(){this.done=true;this.phase='idle';this.throttle=this.steer=this.speed=this.accumulator=0;return this.activity.exit;}
 }

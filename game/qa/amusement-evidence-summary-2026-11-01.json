@@ -1,0 +1,115 @@
+{
+  "note": "Assertion summaries. Full frame/state snapshots remain reproducible local QA output. Earlier failures are superseded only by the final paths identified in the release report.",
+  "runs": [
+    {
+      "rawLocalEvidence": "qa/amusement-review-2026-11-01/flow-desktop/release-review.json",
+      "rendererStride": 12,
+      "checks": [
+        {
+          "name": "fish",
+          "passed": true
+        },
+        {
+          "name": "kart",
+          "passed": true
+        },
+        {
+          "name": "bumper",
+          "passed": true
+        },
+        {
+          "name": "coaster",
+          "passed": true
+        },
+        {
+          "name": "carousel",
+          "passed": true
+        },
+        {
+          "name": "viking",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "snapshots": 28
+    },
+    {
+      "rawLocalEvidence": "qa/amusement-review-2026-11-01/fish-phone-final/release-review.json",
+      "rendererStride": 12,
+      "checks": [
+        {
+          "name": "fish",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "snapshots": 9
+    },
+    {
+      "rawLocalEvidence": "qa/amusement-review-2026-11-01/flow-tablet/release-review.json",
+      "rendererStride": 12,
+      "checks": [
+        {
+          "name": "fish",
+          "passed": true
+        },
+        {
+          "name": "kart",
+          "passed": true
+        },
+        {
+          "name": "bumper",
+          "passed": true
+        },
+        {
+          "name": "coaster-visual",
+          "passed": true
+        },
+        {
+          "name": "carousel",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "snapshots": 22
+    },
+    {
+      "rawLocalEvidence": "qa/amusement-review-2026-11-01/release-desktop/release-review.json",
+      "rendererStride": null,
+      "checks": [
+        {
+          "name": "fish",
+          "passed": false,
+          "error": "page.waitForFunction: Timeout 240000ms exceeded.\n    at wait (game/scripts/amusement-release-scenarios-2026-11-01.mjs:10:44)\n    at Module.runAmusementReview (game/scripts/amusement-release-scenarios-2026-11-01.mjs:35:37)\n    at async file://game/scripts/amusement-review-2026-11-01.mjs:17:1"
+        }
+      ],
+      "errors": [],
+      "snapshots": 11
+    },
+    {
+      "rawLocalEvidence": "qa/amusement-review-2026-11-01/flow-phone-small/release-review.json",
+      "rendererStride": 12,
+      "checks": [
+        {
+          "name": "fish",
+          "passed": false,
+          "error": "page.waitForFunction: Timeout 10000ms exceeded.\n    at wait (game/scripts/amusement-release-scenarios-2026-11-01.mjs:10:44)\n    at touchMove (game/scripts/amusement-release-scenarios-2026-11-01.mjs:30:10)\n    at async Module.runAmusementReview (game/scripts/amusement-release-scenarios-2026-11-01.mjs:47:52)\n    at async file://game/scripts/amusement-review-2026-11-01.mjs:21:1"
+        },
+        {
+          "name": "kart",
+          "passed": true
+        },
+        {
+          "name": "bumper",
+          "passed": true
+        },
+        {
+          "name": "coaster-visual",
+          "passed": true
+        }
+      ],
+      "errors": [],
+      "snapshots": 14
+    }
+  ]
+}

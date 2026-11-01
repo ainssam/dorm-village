@@ -1,0 +1,49 @@
+{
+  "results": [
+    {
+      "step": "water-completed",
+      "runtime": {
+        "token": 1,
+        "nodeId": "park.produce.pumpkin",
+        "material": "pumpkin",
+        "label": "호박",
+        "kind": "water",
+        "phase": "done",
+        "elapsed": 2,
+        "committed": true,
+        "notice": "다 자랐어요! 직접 수확할 수 있어요",
+        "action": {
+          "type": "PRODUCE_WATER",
+          "nodeId": "park.produce.pumpkin",
+          "expectedHarvests": 0,
+          "expectedRevision": 2
+        },
+        "ready": true,
+        "canStart": false,
+        "readOnly": false,
+        "capped": false,
+        "season": "autumn",
+        "calendarSeason": "autumn",
+        "allowedSeasons": [
+          "autumn"
+        ]
+      },
+      "button": {
+        "text": "돌보기를 마쳤어요",
+        "disabled": true
+      },
+      "status": "다 자랐어요! 직접 수확할 수 있어요",
+      "overflow": false
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "failed": [
+    {
+      "url": "http://127.0.0.1:4173/amusement/bumper-play.css",
+      "status": 404
+    }
+  ]
+}

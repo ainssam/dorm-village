@@ -11,6 +11,7 @@ import {
   resumeFishScoop,
   cancelFishScoop,
   fishScoopPositions,
+  finishFishScoop,
 } from '../dist/amusement/fish-scoop-model.js';
 
 const run = (state, seconds, dt = 1 / 60) => {
@@ -27,6 +28,8 @@ test('fish scoop is a deterministic 50-second transient round with bounded movin
   const fish = fishScoopPositions(a);
   assert.equal(fish.length, 4);
   for (const p of fish) assert((p.x / 1.05) ** 2 + (p.z / .60) ** 2 <= 1.000001);
+  const nextFish=fishScoopPositions({...a,clock:a.clock+.001});
+  for(let i=0;i<fish.length;i++)assert(Math.cos(fish[i].yaw)*(nextFish[i].x-fish[i].x)-Math.sin(fish[i].yaw)*(nextFish[i].z-fish[i].z)>0,'fish face the direction they swim');
   assert.equal(a.timeLeft, 48);
 });
 
@@ -70,7 +73,7 @@ test('pause freezes clock and scoop animation; explicit resume is required', () 
   state = run(state, .35);
   assert.equal(state.phase, 'playing');
   assert.equal(state.scoop.phase, 'rising');
-  assert.equal(state.scoop.result, 'caught');
+  assert.equal(state.scoop.result, 'miss');
 });
 
 test('the round ends at zero, replay starts clean, and cancel creates no saved reward', () => {
@@ -84,4 +87,37 @@ test('the round ends at zero, replay starts clean, and cancel creates no saved r
   assert.equal(cancelled.phase, 'cancelled');
   assert(!Object.hasOwn(cancelled, 'reward'));
   assert(!Object.hasOwn(cancelled, 'fishLedger'));
+});
+
+test('practice has no deadline and can finish with a useful session summary', () => {
+  let state = run(startFishScoop(createFishScoopState({mode:'practice'})), 80, .05);
+  assert.equal(state.phase, 'playing');
+  assert.equal(state.mode, 'practice');
+  state = finishFishScoop(state);
+  assert.equal(state.phase, 'complete');
+  assert.deepEqual(state.catchesByFish, [0,0,0,0]);
+});
+
+test('remaining in the middle cannot replace aiming at the fish', () => {
+  for (const seed of [.17,.551966,.933932]) {
+    let state = startFishScoop(createFishScoopState({seed}));
+    while (state.phase === 'playing') {
+      if (state.scoop.phase === 'idle') state = triggerFishScoop(state);
+      state = stepFishScoop(state, 1/60);
+    }
+    assert(state.score / state.attempts < .2, 'moving the net must matter');
+  }
+});
+
+test('every fish remains reachable, and aiming before a scoop records its kind', () => {
+  let state = startFishScoop(createFishScoopState({seed:.17,mode:'practice'}));
+  for (let index=0; index<4; index++) {
+    for(let i=0;i<120;i++) {
+      const fish=fishScoopPositions(state)[index],dx=fish.x-state.net.x,dz=fish.z-state.net.z;
+      state=moveFishScoopNet(state,{x:dx*4,z:dz*4},1/60);state=stepFishScoop(state,1/60);
+    }
+    state=run(triggerFishScoop(state),.7);
+    assert(state.catchesByFish[index]>0, `fish ${index} should be reachable by normal movement`);
+  }
+  assert.equal(state.score,4);
 });

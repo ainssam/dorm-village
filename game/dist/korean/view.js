@@ -10,7 +10,7 @@ export function mountKoreanLearning({document:doc=globalThis.document,container,
  if(!container||!doc?.createElement)throw new TypeError('Korean learning needs a document and container');
  mounts.get(container)?.();
  let alive=true,tab=TABS.some(([id])=>id===initialTab)?initialTab:'spelling',wordIndex=0,playing=false;
- let spelling=createChoiceSession(C.spelling.questions),composition=createCompositionSession(),meanings=createChoiceSession(dictionaryQuestions());
+ const spelling=createChoiceSession(C.spelling.questions),composition=createCompositionSession(),meanings=createChoiceSession(dictionaryQuestions());
  const uid=`korean-${++serial}`;
  const el=(tag,text='',attrs={})=>{const node=doc.createElement(tag);if(text)node.textContent=text;for(const[k,v]of Object.entries(attrs))node.setAttribute(k,String(v));return node;};
  const button=(key,text,action,attrs={})=>el('button',text,{'type':'button','data-key':key,'data-korean-action':action,...attrs});
@@ -21,7 +21,7 @@ export function mountKoreanLearning({document:doc=globalThis.document,container,
  const actions=el('div','',{class:'korean-actions'}),sources=el('div','',{class:'korean-sources'}),footer=el('div','',{class:'korean-footer'});
  const tabs=TABS.map(([id,label])=>{const b=button(`tab-${id}`,label,'tab',{'data-value':id,role:'tab',id:`${uid}-tab-${id}`,'aria-controls':`${uid}-panel`});nav.append(b);return b;});
  if(typeof onStory==='function')footer.append(button('story','이야기 잇기','story',{'class':'korean-story'}));
- footer.append(paragraph('시간 제한 없이 천천히 · 이번 놀이는 저장되지 않아요','korean-note'));
+ footer.append(paragraph('탭을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.','korean-note'));
  container.setAttribute('class','korean-learning learning-workspace');container.setAttribute('data-korean-learning','');container.replaceChildren(nav,panel,status,actions,sources,footer);
 
  function sourceDetails(ids,{dictionary=false}={}){
@@ -81,7 +81,7 @@ export function mountKoreanLearning({document:doc=globalThis.document,container,
   panel.append(paragraph(C.dictionary.introduction,'korean-intro'));const words=el('div','',{class:'korean-words',role:'group','aria-label':'순우리말 낱말 선택'});
   C.dictionary.entries.forEach((e,i)=>words.append(button(`word-${i}`,e.word,'word',{'data-value':i,'aria-pressed':wordIndex===i})));panel.append(words);
   panel.append(el('h3',entry.word,{class:'korean-dictionary-word'}));panel.append(paragraph(entry.definition,'korean-definition'));panel.append(paragraph('도름이 예문 · 새로 쓴 문장','korean-note'));panel.append(paragraph(entry.example,'korean-example'));
-  say('다른 낱말도 눌러 읽어 보거나, 뜻 맞히기를 해 봐요.');actions.append(button('dictionary-play','뜻 맞히기','dictionary-play',{class:'primary'}));dictionaryLicense();sources.append(sourceDetails([entry.sourceId,...entry.additionalSourceIds??[]],{dictionary:true}));
+  say('다른 낱말도 눌러 읽어 보거나, 뜻 맞히기를 해 봐요.');actions.append(button('dictionary-play',meanings.snapshot().done?'뜻 맞히기 결과 보기':meanings.snapshot().index||meanings.snapshot().selected!==null?'뜻 맞히기 이어 하기':'뜻 맞히기','dictionary-play',{class:'primary'}));dictionaryLicense();sources.append(sourceDetails([entry.sourceId,...entry.additionalSourceIds??[]],{dictionary:true}));
  }
  function renderHistory(){
   panel.append(paragraph(C.hangulDay.banner,'korean-progress'));
@@ -108,8 +108,7 @@ export function mountKoreanLearning({document:doc=globalThis.document,container,
    }
   }
  }
- function reset(){spelling=createChoiceSession(C.spelling.questions);composition=createCompositionSession();meanings=createChoiceSession(dictionaryQuestions());wordIndex=0;playing=false;}
- function setTab(value){if(tab===value||!TABS.some(([id])=>id===value))return;tab=value;reset();render();if(tab==='spelling')onSpellingQuestion(0);}
+ function setTab(value){if(tab===value||!TABS.some(([id])=>id===value))return;tab=value;render();if(tab==='spelling')onSpellingQuestion(spelling.snapshot().index);}
  const activeSession=()=>tab==='spelling'?spelling:tab==='composition'?composition:tab==='dictionary'&&playing?meanings:null;
  function click(event){
   if(!alive)return;const b=event.target?.closest?.('[data-korean-action]');if(!b||!container.contains(b)||b.disabled)return;
@@ -118,8 +117,8 @@ export function mountKoreanLearning({document:doc=globalThis.document,container,
   if(action==='go-composition'){setTab('composition');return;}
   if(action==='story'){onStory?.();return;}
   if(action==='word'){const i=Number(value);if(!Number.isInteger(i)||!C.dictionary.entries[i])return;wordIndex=i;}
-  else if(action==='dictionary-play'){playing=true;meanings.reset();}
-  else if(action==='dictionary-read'){playing=false;meanings.reset();wordIndex=0;}
+  else if(action==='dictionary-play'){playing=true;}
+  else if(action==='dictionary-read'){playing=false;}
   else if(action==='choice'){if(!session?.choose(value))return;}
   else if(action==='tile'){if(tab!=='composition'||!composition.pick(b.dataset.slot,value))return;}
   else if(action==='check'){if(tab!=='composition')return;composition.check();}

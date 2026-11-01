@@ -1,0 +1,53 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "input": "emulated touch",
+  "drawingEvery": 12,
+  "renderScale": 0.35,
+  "results": [
+    {
+      "name": "observatory-city-date-settings",
+      "passed": true,
+      "elapsedMs": 17748,
+      "evidence": {
+        "selected": {
+          "clock": "런던 · 2026-11-01 21:00\nEurope/London (UTC+00:00) · 선택한 시각",
+          "feedback": "선택한 시각에 머물러요. 지금 보기로 돌아갈 수 있어요.",
+          "zone": "런던 · Europe/London\n미리 정한 도시 좌표 · 높이 0 m (해수면 가정) · 기기 위치는 가져오지 않아요"
+        },
+        "mode": "scientific",
+        "verticalFov": 35,
+        "target": "Saturn",
+        "targetStatus": "토성 · 고도 38.4° · 방위 162.7°\n계산상 지평선 위예요. 날씨·지형·도시 불빛에 따른 실제 가시성은 계산하지 않아요.\n고도: 지평선 0° · 머리 위 90° / 방위: 북 0° · 동 90° · 남 180° · 서 270°",
+        "closed": true,
+        "room": "observatoryIsland"
+      }
+    }
+  ],
+  "travelLog": [
+    {
+      "from": "courtyard",
+      "to": "observatoryIsland",
+      "title": "고요한 천문대 섬",
+      "actual": "observatoryIsland"
+    }
+  ],
+  "setupLog": [
+    {
+      "requested": "observatoryIsland.telescope",
+      "position": {
+        "x": 0,
+        "z": -0.2
+      },
+      "target": {
+        "x": 0,
+        "z": -0.2
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

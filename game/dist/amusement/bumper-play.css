@@ -1,0 +1,15 @@
+#stage .vehicle-play-panel{position:absolute;left:0;bottom:calc(100% + 10px);width:min(330px,calc(100vw - 28px));max-height:calc(100dvh - 290px);overflow:auto;padding:12px;border:1px solid #bfd0bf;border-radius:16px;background:#fffaf0f5;color:#24453d;box-shadow:0 4px 18px #264e351a;display:grid;gap:8px;touch-action:pan-y;font-size:14px;line-height:1.5}
+#stage .vehicle-play-panel>strong{font-size:15px;line-height:1.4}
+#stage .vehicle-play-panel .vehicle-play-status{position:static;min-width:0;max-width:none;padding:0;border:0;background:transparent;white-space:normal;color:inherit;pointer-events:auto;font-size:14px;line-height:1.5}
+#stage .vehicle-play-result{margin:0;padding:8px 10px;border-radius:10px;background:#e6f1df;color:#24453d;font-size:14px;line-height:1.5}
+#stage .vehicle-play-choices{border-top:1px solid #dce4d4;padding-top:6px}
+#stage .vehicle-play-choices summary{min-height:36px;display:list-item;cursor:pointer;font-weight:700;line-height:36px;touch-action:manipulation}
+#stage .vehicle-play-actions{display:flex;flex-wrap:wrap;gap:6px;padding-top:6px}
+#stage .vehicle-play-panel button{min-height:44px;min-width:0;flex:1 1 125px;padding:8px 10px;border:1px solid #a2b9a5;border-radius:10px;background:#fffdf6;color:#24453d;font:inherit;font-weight:650;line-height:1.35;box-shadow:none;touch-action:manipulation}
+#stage .vehicle-play-panel button[aria-pressed=true]{border-color:#547b5d;background:#e0edda}
+#stage .vehicle-play-panel button:focus-visible,#stage .vehicle-play-choices summary:focus-visible{outline:3px solid #376b4f;outline-offset:2px}
+#stage .vehicle-play-panel .vehicle-retry{width:100%;background:#dceac8;border-color:#9db483}
+#stage .vehicle-play-help{margin:8px 0 0;font-size:13px;line-height:1.6;color:#496457}
+#stage .vehicle-play-panel [hidden]{display:none!important}
+@media(max-width:540px){#stage .vehicle-play-panel{width:min(286px,calc(100vw - 28px));padding:10px;font-size:13px;max-height:calc(100dvh - 320px)}}
+@media(max-height:520px) and (min-width:541px){#stage .vehicle-play-panel{left:0;bottom:calc(100% + 6px);width:240px;max-height:calc(100dvh - 255px);padding:8px;font-size:12px}#stage .vehicle-play-panel>strong{font-size:13px}#stage .vehicle-play-panel button{min-height:40px;font-size:13px}}

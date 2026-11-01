@@ -4,7 +4,7 @@ export const QUEST_BOOKS=Object.freeze({
  'pocket-star':{...BOOKS['pocket-star'],shelf:0,topic:'나눔',evidence:'별빛을 꺼내 어두운 꽃을 비추었어요.'},
  'cloud-letter':{...BOOKS['cloud-letter'],shelf:1,topic:'마음',evidence:'연못에 비친 자신을 보고 쉬어 갔어요.'},
  'seed-chair':{...BOOKS['seed-chair'],shelf:2,topic:'친구',evidence:'빈 의자는 찾아올 친구를 위한 자리였어요.'},
- 'shadow-clock':{title:'햇빛과 그림자',color:'#d6b363',shelf:3,topic:'빛',tag:'살펴보는 글',text:'아침에 마당의 막대 그림자를 표시했어요. 점심에 다시 보니 그림자의 길이와 방향이 달라졌지요. 하늘에서 보이는 해의 위치가 달라지면 그림자도 바뀌어요. 그림자는 빛을 가리는 물체의 반대쪽에 생긴답니다.',evidence:'해의 위치가 달라지면 그림자의 길이와 방향이 바뀌어요.'},
+ 'shadow-clock':{title:'햇빛과 그림자',color:'#d6b363',shelf:3,topic:'빛',tag:'살펴보는 글',text:'아침에 마당의 막대 그림자를 표시했어요. 점심에 다시 보니 그림자의 길이와 방향이 달라졌지요. 하늘에서 보이는 해의 위치가 달라지면 그림자도 바뀌어요. 그림자는 물체가 빛을 가려 빛이 오는 방향의 반대쪽에 생긴답니다.',evidence:'해의 위치가 달라지면 그림자의 길이와 방향이 바뀌어요.'},
  'root-water':{title:'뿌리의 물 배달',color:'#92aa70',shelf:4,topic:'식물',tag:'살펴보는 글',text:'화분의 흙이 말라 잎이 축 처졌어요. 도름이는 흙에 물을 천천히 주었지요. 뿌리가 물을 흡수하고 줄기를 통해 잎으로 보내요. 물이 늘 많아야 좋은 것은 아니에요. 식물마다 필요한 양이 다르니 흙을 먼저 살펴요.',evidence:'뿌리가 물을 흡수하고 줄기를 통해 잎으로 보내요.'},
  'rain-circle':{title:'물방울의 여행',color:'#80afbc',shelf:5,topic:'물',tag:'살펴보는 글',text:'햇빛을 받은 물웅덩이가 조금씩 줄었어요. 물의 일부가 눈에 보이지 않는 수증기가 되어 공기 중으로 옮겨 갔지요. 수증기가 식으면 작은 물방울이 될 수 있어요. 구름 속 물방울들이 커져 땅으로 떨어지면 비가 되어요.',evidence:'물은 수증기가 되어 공기 중으로 옮겨 갈 수 있어요.'}
 });

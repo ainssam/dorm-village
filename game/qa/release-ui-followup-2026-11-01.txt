@@ -1,0 +1,15 @@
+PASS: six locations, current focus, selectable details, current-location no-op, center route, asynchronous close/unlock/travel order, cancellation, and all six hints. DOM fixture only; native browser layout and Escape remain unverified.
+PASS: shared modal backdrop tap, drag/capture guards, repeated reopen, reset cancellation, native close cleanup and unlock. DOM event fixture only.
+PASS: sky async close, twenty reopen/dispose cycles, lock and no camera changes. DOM fixture only.
+PASS: noticeboard repeated open/close/backdrop, reading-drag guards and native-event unlock. DOM fixture only.
+PASS: piano chair offers persistent play action only during an active settled seat. DOM fixture only.
+PASS: failed sky import preserves a visible close button and ordinary unlock/focus cleanup. DOM fixture only.
+✔ tests/ui-lifecycle.test.mjs (426.607707ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 1
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 437.239146

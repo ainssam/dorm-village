@@ -1,0 +1,32 @@
+[
+  {
+    "name": "second-tab",
+    "expectedFailure": null,
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedHTTP": [],
+    "requestFailures": []
+  },
+  {
+    "name": "model-failure-and-retry",
+    "expectedFailure": "Intentionally abort the first village.glb request, then remove the route and retry.",
+    "pageErrors": [],
+    "consoleErrors": [
+      {
+        "text": "Failed to load resource: net::ERR_FAILED",
+        "url": "http://127.0.0.1:4173/characters/doreumi/village.glb"
+      },
+      {
+        "text": "World load failed TypeError: Failed to fetch\n    at FileLoader.load (http://127.0.0.1:4173/vendor/three.core.js:44044:3)\n    at GLTFLoader.load (http://127.0.0.1:4173/vendor/addons/loaders/GLTFLoader.js:305:10)\n    at http://127.0.0.1:4173/vendor/three.core.js:43782:10\n    at new Promise (<anonymous>)\n    at GLTFLoader.loadAsync (http://127.0.0.1:4173/vendor/three.core.js:43780:10)\n    at loadDormi (http://127.0.0.1:4173/assets.js:48:54)\n    at http://127.0.0.1:4173/game.js:300:15",
+        "url": "http://127.0.0.1:4173/game.js"
+      }
+    ],
+    "failedHTTP": [],
+    "requestFailures": [
+      {
+        "url": "http://127.0.0.1:4173/characters/doreumi/village.glb",
+        "error": "net::ERR_FAILED"
+      }
+    ]
+  }
+]

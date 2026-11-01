@@ -1,0 +1,239 @@
+{
+  "target": {
+    "x": -5.25,
+    "z": 3.55
+  },
+  "start": {
+    "position": {
+      "x": -6.258275871287736,
+      "z": 3.7042068979616554
+    },
+    "action": "책장에 돌려놓기",
+    "locked": false,
+    "stickDisabled": false,
+    "activeElement": "scene",
+    "probe": {
+      "input": {
+        "axes": {
+          "x": 0,
+          "z": 0
+        },
+        "locked": false,
+        "keys": [],
+        "stick": {
+          "x": 0,
+          "z": 0
+        }
+      },
+      "gameLocked": false,
+      "player": {
+        "x": 10.058275871287737,
+        "z": 6.695793102038346,
+        "yaw": 0.03703643440846305,
+        "local": {
+          "x": -6.258275871287736,
+          "z": 3.7042068979616554
+        }
+      },
+      "nearbyCircles": [
+        {
+          "x": 7.250000000000001,
+          "z": 6.670000001788139,
+          "avoidSlide": false,
+          "radius": 0.62
+        },
+        {
+          "x": 10.25,
+          "z": 8.434999978542328,
+          "avoidSlide": false,
+          "radius": 0.62
+        }
+      ],
+      "nearbyObstacles": [
+        {
+          "x": 10.15,
+          "z": 7.6000000000000005,
+          "hx": 0.6,
+          "hz": 0.22,
+          "ownerRoomId": "library"
+        }
+      ],
+      "residents": [
+        {
+          "id": "chinchilla",
+          "x": 7.250000000000001,
+          "z": 6.670000001788139,
+          "yaw": 3.2015926521878937,
+          "moving": false,
+          "ownerRoomId": "library"
+        },
+        {
+          "id": "armadillo",
+          "x": 10.25,
+          "z": 8.434999978542328,
+          "yaw": 0.7407963474523506,
+          "moving": false,
+          "ownerRoomId": "library"
+        }
+      ],
+      "canMove": true,
+      "canCarry": false,
+      "carryDirections": [
+        {
+          "yaw": 0,
+          "allowed": false
+        },
+        {
+          "yaw": 0.7853981633974483,
+          "allowed": false
+        },
+        {
+          "yaw": 1.5707963267948966,
+          "allowed": true
+        },
+        {
+          "yaw": 2.356194490192345,
+          "allowed": true
+        },
+        {
+          "yaw": 3.141592653589793,
+          "allowed": true
+        },
+        {
+          "yaw": 3.9269908169872414,
+          "allowed": true
+        },
+        {
+          "yaw": 4.71238898038469,
+          "allowed": true
+        },
+        {
+          "yaw": 5.497787143782138,
+          "allowed": false
+        }
+      ],
+      "carryBlockingCircles": [],
+      "carryBlockingObstacles": [
+        {
+          "x": 10.15,
+          "z": 7.6000000000000005,
+          "hx": 0.6,
+          "hz": 0.22,
+          "ownerRoomId": "library"
+        }
+      ]
+    }
+  },
+  "key": "ArrowLeft",
+  "during": {
+    "input": {
+      "axes": {
+        "x": -0.6025921007905413,
+        "z": 0.041313045558022544
+      },
+      "locked": false,
+      "keys": [],
+      "stick": {
+        "x": -0.6025921007905413,
+        "z": 0.041313045558022544
+      }
+    },
+    "gameLocked": false,
+    "player": {
+      "x": 10.058275871287737,
+      "z": 6.695793102038346,
+      "yaw": 0.03703643440846305,
+      "local": {
+        "x": -6.258275871287736,
+        "z": 3.7042068979616554
+      }
+    },
+    "nearbyCircles": [
+      {
+        "x": 7.250000000000001,
+        "z": 6.670000001788139,
+        "avoidSlide": false,
+        "radius": 0.62
+      },
+      {
+        "x": 10.25,
+        "z": 8.434999978542328,
+        "avoidSlide": false,
+        "radius": 0.62
+      }
+    ],
+    "nearbyObstacles": [
+      {
+        "x": 10.15,
+        "z": 7.6000000000000005,
+        "hx": 0.6,
+        "hz": 0.22,
+        "ownerRoomId": "library"
+      }
+    ],
+    "residents": [
+      {
+        "id": "chinchilla",
+        "x": 7.250000000000001,
+        "z": 6.670000001788139,
+        "yaw": 3.2015926521878937,
+        "moving": false,
+        "ownerRoomId": "library"
+      },
+      {
+        "id": "armadillo",
+        "x": 10.25,
+        "z": 8.434999978542328,
+        "yaw": 0.7407963474523506,
+        "moving": false,
+        "ownerRoomId": "library"
+      }
+    ],
+    "canMove": true,
+    "canCarry": false,
+    "carryDirections": [
+      {
+        "yaw": 0,
+        "allowed": false
+      },
+      {
+        "yaw": 0.7853981633974483,
+        "allowed": false
+      },
+      {
+        "yaw": 1.5707963267948966,
+        "allowed": true
+      },
+      {
+        "yaw": 2.356194490192345,
+        "allowed": true
+      },
+      {
+        "yaw": 3.141592653589793,
+        "allowed": true
+      },
+      {
+        "yaw": 3.9269908169872414,
+        "allowed": true
+      },
+      {
+        "yaw": 4.71238898038469,
+        "allowed": true
+      },
+      {
+        "yaw": 5.497787143782138,
+        "allowed": false
+      }
+    ],
+    "carryBlockingCircles": [],
+    "carryBlockingObstacles": [
+      {
+        "x": 10.15,
+        "z": 7.6000000000000005,
+        "hx": 0.6,
+        "hz": 0.22,
+        "ownerRoomId": "library"
+      }
+    ]
+  }
+}
