@@ -1,0 +1,179 @@
+{
+  "date": "2026-11-01",
+  "scope": "5 representative living UI completions; separate fresh contexts, not one full uninterrupted sweep",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "input": "emulated touch; form control input",
+  "productionStateInjected": false,
+  "positionSetupOnly": true,
+  "results": [
+    {
+      "name": "gather-craft-place-home",
+      "passed": true,
+      "source": "mobile-completion/results.json",
+      "evidence": {
+        "gathered": [
+          {
+            "id": "courtyard.shell.west",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "id": "courtyard.shell.middle",
+            "before": 1,
+            "after": 2
+          },
+          {
+            "id": "courtyard.shell.east",
+            "before": 2,
+            "after": 3
+          }
+        ],
+        "steps": [
+          "조개 고르기",
+          "틀에 붙이기",
+          "액자 완성"
+        ],
+        "materialAfter": 0,
+        "owned": true,
+        "placement": "shell-frame",
+        "result": "왼쪽 선반에 놓았어요. 집에서 직접 볼 수 있어요",
+        "preview": "왼쪽 선반에 조개 액자 미리보기"
+      }
+    },
+    {
+      "name": "fish-catch-read-guide",
+      "passed": true,
+      "source": "mobile-final/results.json",
+      "evidence": {
+        "castPower": 0.5094328937982453,
+        "cycles": 4,
+        "trace": [
+          {
+            "phase": "reeling",
+            "progress": 0.00775,
+            "tension": 0.31683702679262327
+          },
+          {
+            "phase": "landing",
+            "progress": 1,
+            "tension": 0.6761431102201764
+          },
+          {
+            "phase": "caught",
+            "progress": 1,
+            "tension": 0.6761431102201764
+          }
+        ],
+        "heldThroughLanding": true,
+        "resultPreservedAfterRelease": true,
+        "explicitRetry": true,
+        "fishId": "ribbon-mackerel",
+        "label": "리본 고등어",
+        "caughtText": "리본 고등어 한 마리 · 재료가방에 보관했어요",
+        "total": 1,
+        "guide": "리본 고등어\n\n푸른 몸에 리본 같은 줄무늬\n\n바다 · 주로 동남쪽 바닷가\n\n지금까지 발견\n1마리\n재료가방\n1마리\n구워 먹은 수\n0마리\n\n처음 만난 날 2026. 11. 1. · 동남쪽 바닷가"
+      }
+    },
+    {
+      "name": "observatory-city-date-settings",
+      "passed": true,
+      "source": "mobile-telescope-verified/results.json",
+      "evidence": {
+        "selected": {
+          "clock": "런던 · 2026-11-01 21:00\nEurope/London (UTC+00:00) · 선택한 시각",
+          "feedback": "선택한 시각에 머물러요. 지금 보기로 돌아갈 수 있어요.",
+          "zone": "런던 · Europe/London\n미리 정한 도시 좌표 · 높이 0 m (해수면 가정) · 기기 위치는 가져오지 않아요"
+        },
+        "mode": "scientific",
+        "verticalFov": 35,
+        "target": "Saturn",
+        "targetStatus": "토성 · 고도 38.4° · 방위 162.7°\n계산상 지평선 위예요. 날씨·지형·도시 불빛에 따른 실제 가시성은 계산하지 않아요.\n고도: 지평선 0° · 머리 위 90° / 방위: 북 0° · 동 90° · 남 180° · 서 270°",
+        "closed": true,
+        "room": "observatoryIsland"
+      }
+    },
+    {
+      "name": "map-travel-elevator-roundtrip",
+      "passed": true,
+      "source": "mobile-completion/results.json",
+      "evidence": {
+        "floors": [
+          {
+            "floor": 3,
+            "room": "schoolHall3",
+            "locked": false
+          },
+          {
+            "floor": 2,
+            "room": "schoolHall2",
+            "locked": false
+          },
+          {
+            "floor": 1,
+            "room": "schoolHall",
+            "locked": false
+          }
+        ],
+        "finalRoom": "courtyard",
+        "mapTrips": [
+          {
+            "from": "courtyard",
+            "to": "workshop",
+            "title": "꽃잎 공방",
+            "actual": "workshop"
+          },
+          {
+            "from": "workshop",
+            "to": "home",
+            "title": "도름이의 집",
+            "actual": "home"
+          },
+          {
+            "from": "home",
+            "to": "observatoryIsland",
+            "title": "고요한 천문대 섬",
+            "actual": "observatoryIsland"
+          },
+          {
+            "from": "observatoryIsland",
+            "to": "schoolHall",
+            "title": "별빛 학교 · 1층",
+            "actual": "schoolHall"
+          },
+          {
+            "from": "schoolHall",
+            "to": "courtyard",
+            "title": "마을 광장",
+            "actual": "courtyard"
+          }
+        ]
+      }
+    },
+    {
+      "name": "boat-return-to-village",
+      "passed": true,
+      "source": "mobile-observatory-final/results.json",
+      "evidence": {
+        "choice": "그대로 있기\n마을 선착장으로\n\n배에 올라 바다를 건너거나, 움직임 없이 바로 갈 수 있어요.\n\n배 타고 가기\n움직임 없이 이동",
+        "mode": "motion-free",
+        "runtimeRoom": "courtyard",
+        "address": {
+          "roomId": "villageHarbor",
+          "spawnId": "from-boat"
+        },
+        "position": {
+          "x": 26.2,
+          "z": 9.500000000000002
+        },
+        "locked": false,
+        "boatTrip": null
+      }
+    }
+  ],
+  "runtimeErrors": 0,
+  "httpFailures": 0,
+  "consoleErrors": 0
+}

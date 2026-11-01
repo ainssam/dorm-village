@@ -23,7 +23,7 @@ readElements(fs.readFileSync(root+'/dist/index.html','utf8'));
 globalThis.window={addEventListener(){}};
 globalThis.document={addEventListener(){},activeElement:ids.get('village-map'),querySelector:s=>selectAll(s)[0]??null,querySelectorAll:selectAll};
 const dialog=ids.get('modal');dialog.open=false;const handlers={};dialog.addEventListener=(event,handler)=>handlers[event]=handler;dialog.showModal=()=>{dialog.open=true;};dialog.close=()=>{dialog.open=false;trace.push('close-request');};
-const source=fs.readFileSync(root+'/dist/ui.js','utf8').replaceAll("'./ui-preferences.js'",`'file://${root}/dist/ui-preferences.js'`).replaceAll("'./bakery/food-bag.js'",`'file://${root}/dist/bakery/food-bag.js'`).replaceAll("'./fishing/nature-guide.js'",`'file://${root}/dist/fishing/nature-guide.js'`).replaceAll("'./fishing/model.js'",`'file://${root}/dist/fishing/model.js'`).replaceAll("'./state/gathering.js'",`'file://${root}/dist/state/gathering.js'`).replaceAll("'./world/school-floor-layout.js'",`'file://${root}/dist/world/school-floor-layout.js'`).replaceAll("'./world/sky-viewer-markup.js'",`'file://${root}/dist/world/sky-viewer-markup.js'`).replaceAll("'./world/time-of-day.js'",`'file://${root}/dist/world/time-of-day.js'`).replaceAll("'./world/map-data.js'",`'file://${root}/dist/world/map-data.js'`).replaceAll("'./world/rooms.js'",`'file://${root}/dist/world/rooms.js'`).replaceAll("'./world/activities.js'",`'file://${root}/dist/world/activities.js'`).replaceAll("'./state/garden.js'",`'file://${root}/dist/state/garden.js'`).replaceAll("'./state/library.js'",`'file://${root}/dist/state/library.js'`).replaceAll("'./state/progress.js'",`'file://${root}/dist/state/progress.js'`);
+const source=fs.readFileSync(root+'/dist/ui.js','utf8').replaceAll("'./play-guide.js'",`'file://${root}/dist/play-guide.js'`).replaceAll("'./ui-preferences.js'",`'file://${root}/dist/ui-preferences.js'`).replaceAll("'./bakery/food-bag.js'",`'file://${root}/dist/bakery/food-bag.js'`).replaceAll("'./fishing/nature-guide.js'",`'file://${root}/dist/fishing/nature-guide.js'`).replaceAll("'./fishing/model.js'",`'file://${root}/dist/fishing/model.js'`).replaceAll("'./state/gathering.js'",`'file://${root}/dist/state/gathering.js'`).replaceAll("'./world/school-floor-layout.js'",`'file://${root}/dist/world/school-floor-layout.js'`).replaceAll("'./world/sky-viewer-markup.js'",`'file://${root}/dist/world/sky-viewer-markup.js'`).replaceAll("'./world/time-of-day.js'",`'file://${root}/dist/world/time-of-day.js'`).replaceAll("'./world/map-data.js'",`'file://${root}/dist/world/map-data.js'`).replaceAll("'./world/rooms.js'",`'file://${root}/dist/world/rooms.js'`).replaceAll("'./world/activities.js'",`'file://${root}/dist/world/activities.js'`).replaceAll("'./state/garden.js'",`'file://${root}/dist/state/garden.js'`).replaceAll("'./state/library.js'",`'file://${root}/dist/state/library.js'`).replaceAll("'./state/progress.js'",`'file://${root}/dist/state/progress.js'`);
 const {setupUI}=await import(`data:text/javascript;base64,${Buffer.from(source).toString('base64')}`);
 let skyLoader=()=>Promise.reject(new Error("No canvas in DOM fixture"));
 let locked=false,mapLoader=()=>Promise.reject(new Error('No WebGL in DOM fixture'));const interactionCalls=[],pianoSeatCalls=[];const progress={collectedIds:[],completedActivityIds:[],ownedItemIds:[],placements:{},settings:{quality:'auto'}};
@@ -85,11 +85,18 @@ console.log('PASS: sky async close, twenty reopen/dispose cycles, lock and no ca
 // The real noticeboard reuses the ordinary modal: no alternate overlay lifecycle.
 const {openNoticeboard}=await import('../dist/village/noticeboard-tools.js');
 for(let i=0;i<4;i++){
- openNoticeboard({ui});assert(dialog.open);assert(locked);assert.equal(ids.get('noticeboard-status').textContent,'공개 목록 확인 중');
+ openNoticeboard({ui});assert(dialog.open);assert(locked);assert.match(ids.get('modal-content').innerHTML,/검토한 읽을거리를 날짜에 맞춰 골라 드려요/);
  pointer('pointerdown',130,140,{target:ids.get('modal-content')});pointer('pointerup');pointer('click');assert(dialog.open,'Reading drag must not dismiss noticeboard');
  if(i%2)ui.close();else tap();assert.equal(dialog.open,false);handlers.close();assert.equal(locked,false);
 }
 console.log('PASS: noticeboard repeated open/close/backdrop, reading-drag guards and native-event unlock. DOM fixture only.');
+
+// A daily-card destination uses the same close/unlock-before-travel contract.
+assert.equal(ui.visitPlace('park'),false,'a closed dialog cannot schedule stale navigation');
+ui.message('오늘의 작은 발견','꽃밭에서 쉬어 보세요');trace.length=0;
+assert.equal(ui.visitPlace('not-a-room'),false);assert(dialog.open);
+assert.equal(ui.visitPlace('park'),true);assert.equal(trace.some(t=>t.startsWith('travel:')),false);
+handlers.close();assert.deepEqual(trace,['close-request','lock:false','travel:park']);
 
 // The rest-only piano seat has a persistent route into the instrument, even with help folded.
 const pianoSeatPlay=ids.get('piano-seat-play');assert(pianoSeatPlay,'piano chair needs an explicit play button');

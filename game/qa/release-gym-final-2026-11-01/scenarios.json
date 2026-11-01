@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "name": "gym-curling",
+      "passed": true
+    },
+    {
+      "name": "gym-laser",
+      "passed": true
+    },
+    {
+      "name": "gym-climbing",
+      "passed": true
+    },
+    {
+      "name": "gym-archery",
+      "passed": true
+    },
+    {
+      "name": "gym-boxing",
+      "passed": true
+    },
+    {
+      "name": "gym-treadmill",
+      "passed": true
+    },
+    {
+      "name": "gym-stairs",
+      "passed": true
+    }
+  ],
+  "errors": []
+}

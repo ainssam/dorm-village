@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as THREE from 'three';
 import {createFishScoopController} from '../dist/amusement/fish-scoop-controller.js';
+import {fishScoopPositions} from '../dist/amusement/fish-scoop-model.js';
 
 class Classes {
  #values=new Set();
@@ -48,12 +49,12 @@ test('controller leases the walking joystick, accepts WASD and Space, then resto
  const f=fixture(),originalPose=f.pose();assert.equal(f.c.open(),true);assert.equal(f.c.open(),false);assert(f.c.active);assert.equal(f.stickEnabled,true);assert.equal(f.player.parent,f.zoneRoot);assert.equal(f.player.position.x,-9);assert.equal(f.player.position.z,-6.9);
  f.click('start');assert.equal(f.c.snapshot().phase,'playing');f.input.stick={x:1,z:0};f.c.tick(.05);const joystickX=f.c.snapshot().net.x;assert(joystickX>0,'the locked walking stick drives the play net');
  f.doc.dispatchEvent(event('keydown',{code:'KeyW',repeat:false}));f.c.tick(.05);f.doc.dispatchEvent(event('keyup',{code:'KeyW'}));assert(f.c.snapshot().net.z<0,'W moves the net toward the far end of the pool');
- f.doc.dispatchEvent(event('keydown',{code:'Space',repeat:false}));assert.equal(f.c.snapshot().attempts,1,'Space starts one scoop');for(let i=0;i<5;i++)f.c.tick(.05);assert.equal(f.c.snapshot().score,1,'the nearby visible fish is caught');
+ f.doc.dispatchEvent(event('keydown',{code:'Space',repeat:false}));assert.equal(f.c.snapshot().attempts,1,'Space starts one scoop');for(let i=0;i<5;i++)f.c.tick(.05);assert.equal(f.c.snapshot().score,0,'a central scoop no longer catches a fish without aiming');
  f.c.close();assert.equal(f.c.active,false);assert.equal(f.stickEnabled,false);assertRestored(f);assert.deepEqual(f.pose(),originalPose);assert.equal(f.siteClears,1);assert.deepEqual(f.activeEvents,[true,false]);assert.equal(f.stage.classList.contains('fish-scoop-open'),false);assert.equal(f.doc.body.classList.contains('fish-scoop-open'),false);
 });
 
 test('blur and hidden-page events pause without clock catch-up; explicit resume and retry start clean',()=>{
- const f=fixture();f.c.open();f.click('start');f.c.tick(.05);f.doc.hidden=true;f.doc.dispatchEvent(new Event('visibilitychange'));assert.equal(f.c.snapshot().phase,'paused','visibility loss pauses an independently playing round');const hiddenElapsed=f.c.snapshot().elapsed;for(let i=0;i<20;i++)f.c.tick(.05);assert.equal(f.c.snapshot().elapsed,hiddenElapsed,'hidden-page time does not accrue');
+ const f=fixture();f.c.open();f.click('challenge');f.click('start');f.c.tick(.05);f.doc.hidden=true;f.doc.dispatchEvent(new Event('visibilitychange'));assert.equal(f.c.snapshot().phase,'paused','visibility loss pauses an independently playing round');const hiddenElapsed=f.c.snapshot().elapsed;for(let i=0;i<20;i++)f.c.tick(.05);assert.equal(f.c.snapshot().elapsed,hiddenElapsed,'hidden-page time does not accrue');
  f.doc.hidden=false;f.c.tick(.05);assert.equal(f.c.snapshot().phase,'paused','visibility return never resumes implicitly');f.click('pause');assert.equal(f.c.snapshot().phase,'playing','resume is explicit');f.win.dispatchEvent(new Event('blur'));assert.equal(f.c.snapshot().phase,'paused','blur independently pauses a playing round');const blurElapsed=f.c.snapshot().elapsed;for(let i=0;i<20;i++)f.c.tick(.05);assert.equal(f.c.snapshot().elapsed,blurElapsed,'blur leaves the round timer frozen');f.click('pause');assert.equal(f.c.snapshot().phase,'playing','a second explicit resume restarts timing');
  for(let i=0;i<1000&&f.c.snapshot()?.phase==='playing';i++)f.c.tick(.05);assert.equal(f.c.snapshot().phase,'complete');assert.equal(f.button('retry').hidden,false);const endedScore=f.c.snapshot().score;assert(Number.isInteger(endedScore));f.click('retry');assert.equal(f.c.snapshot().phase,'playing');assert.equal(f.c.snapshot().elapsed,0);assert.equal(f.c.snapshot().score,0);assert.equal(f.c.snapshot().attempts,0);f.c.cancel();assertRestored(f);assert.equal(f.stickEnabled,false);
 });
@@ -61,4 +62,41 @@ test('blur and hidden-page events pause without clock catch-up; explicit resume 
 test('a room or scene replacement invalidates the live controller and restores the actor immediately',()=>{
  const f=fixture();f.c.open();f.click('start');f.room='courtyard';f.c.tick(.05);assert.equal(f.c.active,false);assert.equal(f.c.snapshot(),null);assertRestored(f);assert.equal(f.stickEnabled,false);assert.equal(f.siteClears,1);
  f.room='amusementIsland';f.c.open();const replacement={root:new THREE.Group(),fishScoopSite:f.site};f.viewRef=replacement;f.c.tick(.05);assert.equal(f.c.active,false);assertRestored(f);assert.equal(f.siteClears,2);f.c.dispose();assert.equal(f.c.open(),false);
+});
+
+test('practice is the calm default, can finish while paused, and replays immediately',()=>{
+ const f=fixture();f.c.open();assert.equal(f.c.snapshot().mode,'practice');f.click('start');
+ for(let i=0;i<1200;i++)f.c.tick(.05);
+ assert.equal(f.c.snapshot().phase,'playing');assert.equal(f.c.snapshot().remainingSeconds,null);
+ f.click('pause');f.click('finish');assert.equal(f.c.snapshot().phase,'complete');assert.equal(f.button('retry').hidden,false);
+ f.click('retry');assert.equal(f.c.snapshot().phase,'playing');assert.equal(f.c.snapshot().mode,'practice');assert.equal(f.c.snapshot().elapsed,0);f.c.close();assertRestored(f);
+});
+
+test('aimed challenge catches receive a session record that survives immediate replay',()=>{
+ const f=fixture();f.c.open();f.click('challenge');f.click('start');
+ for(let i=0;i<80;i++){
+  const s=f.c.snapshot(),fish=fishScoopPositions(s)[0];f.input.stick={x:(fish.x-s.net.x)*4,z:-(fish.z-s.net.z)*4};f.c.tick(.05);
+ }
+ f.click('catch');for(let i=0;i<15;i++)f.c.tick(.05);assert.equal(f.c.snapshot().score,1);
+ for(let i=0;i<1000&&f.c.snapshot().phase==='playing';i++)f.c.tick(.05);
+ assert.equal(f.c.snapshot().phase,'complete');assert.equal(f.c.snapshot().bestScore,1);assert.equal(f.c.snapshot().challengeRounds,1);
+ f.click('retry');assert.equal(f.c.snapshot().score,0);assert.equal(f.c.snapshot().bestScore,1);assert.deepEqual(f.c.snapshot().catchesByFish,[0,0,0,0]);f.c.close();
+});
+
+test('holding a direction or touch stick resumes net movement after the scoop without lifting and pressing again',()=>{
+ for(const kind of ['keyboard','stick']){
+  const f=fixture();f.c.open();f.click('start');
+  if(kind==='keyboard')f.doc.dispatchEvent(event('keydown',{code:'KeyD',repeat:false}));else f.input.stick={x:1,z:0};
+  f.c.tick(.05);const before=f.c.snapshot().net.x;f.click('catch');
+  for(let i=0;i<20;i++)f.c.tick(.05);
+  assert(f.c.snapshot().net.x>before+.1,kind+' stays held until the user releases it');
+  f.click('pause');const paused=f.c.snapshot().net.x;f.click('pause');f.c.tick(.05);assert.equal(f.c.snapshot().net.x,paused,'pause still clears held movement');f.c.close();
+ }
+});
+
+test('a second touch can scoop while the first finger holds the stick, without a duplicate synthetic click',()=>{
+ const f=fixture();f.c.open();f.click('start');f.input.stick={x:1,z:0};
+ f.button('catch').dispatchEvent(event('pointerdown',{button:0,pointerType:'touch',isPrimary:false,pointerId:2}));
+ assert.equal(f.c.snapshot().attempts,1,'secondary touch activates the scoop directly');
+ f.button('catch').dispatchEvent(event('click',{detail:1}));assert.equal(f.c.snapshot().attempts,1,'compatibility click does not activate twice');assert.equal(f.input.stick.x,1,'other finger keeps controlling the stick');f.c.close();
 });

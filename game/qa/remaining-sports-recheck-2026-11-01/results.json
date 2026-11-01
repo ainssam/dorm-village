@@ -1,0 +1,726 @@
+{
+  "results": [
+    {
+      "name": "archery",
+      "passed": true,
+      "wallSeconds": 40,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop archery-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "state": "stopped",
+          "paused": false,
+          "held": false,
+          "draw": 0,
+          "yaw": -0.13,
+          "pitch": 0.14,
+          "shots": 5,
+          "remaining": 0,
+          "score": 40,
+          "results": [
+            {
+              "kind": "target",
+              "score": 8,
+              "point": {
+                "x": 0.1336497643332173,
+                "y": 1.085742848856256,
+                "z": 4.833649764333224
+              },
+              "shot": 1
+            },
+            {
+              "kind": "target",
+              "score": 8,
+              "point": {
+                "x": 0.1336497643332173,
+                "y": 1.085742848856256,
+                "z": 4.833649764333224
+              },
+              "shot": 2
+            },
+            {
+              "kind": "target",
+              "score": 8,
+              "point": {
+                "x": 0.13341139616298747,
+                "y": 1.0804065847949667,
+                "z": 4.833411396162994
+              },
+              "shot": 3
+            },
+            {
+              "kind": "target",
+              "score": 8,
+              "point": {
+                "x": 0.1336497643332173,
+                "y": 1.085742848856256,
+                "z": 4.833649764333224
+              },
+              "shot": 4
+            },
+            {
+              "kind": "target",
+              "score": 8,
+              "point": {
+                "x": 0.1336497643332173,
+                "y": 1.085742848856256,
+                "z": 4.833649764333224
+              },
+              "shot": 5
+            }
+          ],
+          "arrow": null,
+          "impact": {
+            "tip": {
+              "x": 0.1336497643332173,
+              "y": 1.085742848856256,
+              "z": 4.833649764333224
+            },
+            "velocity": {
+              "x": -1.026926413418658,
+              "y": -0.11032174951277374,
+              "z": 7.854883587130224
+            },
+            "kind": "target"
+          },
+          "elapsed": 7.8,
+          "reason": "complete",
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.012,
+              "z": 0
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              }
+            },
+            "guard": 1,
+            "yaw": -0.13,
+            "pitch": 0.14,
+            "draw": 0,
+            "arrow": null,
+            "impact": {
+              "tip": {
+                "x": 0.1336497643332173,
+                "y": 1.085742848856256,
+                "z": 4.833649764333224
+              },
+              "velocity": {
+                "x": -1.026926413418658,
+                "y": -0.11032174951277374,
+                "z": 7.854883587130224
+              },
+              "kind": "target"
+            }
+          },
+          "session": {
+            "phase": "ready",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": 0
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                }
+              },
+              "guard": 1,
+              "yaw": -0.13,
+              "pitch": 0.14,
+              "draw": 0,
+              "arrow": null,
+              "impact": {
+                "tip": {
+                  "x": 0.1336497643332173,
+                  "y": 1.085742848856256,
+                  "z": 4.833649764333224
+                },
+                "velocity": {
+                  "x": -1.026926413418658,
+                  "y": -0.11032174951277374,
+                  "z": 7.854883587130224
+                },
+                "kind": "target"
+              }
+            },
+            "actorUUID": "4f7af51b-619c-491a-86c5-a11566cab20a",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "feedback": "5 / 5발 · 40점",
+        "method": "space",
+        "releaseProof": {
+          "nock": {
+            "x": 0.7534389783761526,
+            "y": 0.7302183625901856,
+            "z": 0.09292826642250418
+          },
+          "direction": {
+            "x": -0.12836580167733225,
+            "y": 0.13954311464423652,
+            "z": 0.981860448391278
+          },
+          "handGap": 0.00005457373422079054,
+          "stringGap": 0.00005456584962935593,
+          "supportGap": 4.76837158203125e-7,
+          "faceClearance": 0.3565496910259693,
+          "draw": 1
+        },
+        "retry": {
+          "state": "active",
+          "shots": 0
+        }
+      }
+    },
+    {
+      "name": "curling",
+      "passed": true,
+      "wallSeconds": 103,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop curling-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "state": "complete",
+          "paused": false,
+          "aim": 0,
+          "power": 0.8,
+          "held": false,
+          "elapsed": 41.78333333333333,
+          "released": 4,
+          "remaining": 0,
+          "stones": [
+            {
+              "id": 0,
+              "team": "target",
+              "x": -0.33435437741187646,
+              "z": 17.19591842470011,
+              "vx": 0,
+              "vz": 0
+            },
+            {
+              "id": 1,
+              "team": "target",
+              "x": 0.832077661584551,
+              "z": 18.080378848987866,
+              "vx": 0,
+              "vz": 0
+            },
+            {
+              "id": 2,
+              "team": "player",
+              "x": 1.0038040076982457,
+              "z": 17.54048352027326,
+              "vx": 0,
+              "vz": 0
+            },
+            {
+              "id": 3,
+              "team": "player",
+              "x": 0.15008126124815913,
+              "z": 17.792279685938993,
+              "vx": 0,
+              "vz": 0
+            },
+            {
+              "id": 4,
+              "team": "player",
+              "x": 0.6045748380886455,
+              "z": 16.35121023111576,
+              "vx": 0,
+              "vz": 0
+            },
+            {
+              "id": 5,
+              "team": "player",
+              "x": 0.47375261282469083,
+              "z": 15.510048990902742,
+              "vx": 0,
+              "vz": 0
+            }
+          ],
+          "frame": {
+            "delivery": 0,
+            "holding": false,
+            "aim": 0,
+            "lift": 1
+          },
+          "events": [],
+          "lastContact": {
+            "type": "stone",
+            "a": 3,
+            "b": 4,
+            "x": 0.44777768952352676,
+            "z": 16.57278833073651,
+            "at": 39.24166666666667
+          },
+          "error": "",
+          "results": [
+            {
+              "id": 0,
+              "team": "target",
+              "distance": 0.3875266169328971,
+              "points": 3
+            },
+            {
+              "id": 3,
+              "team": "player",
+              "distance": 0.8063693234054903,
+              "points": 2
+            },
+            {
+              "id": 4,
+              "team": "player",
+              "distance": 0.8868139032845482,
+              "points": 2
+            },
+            {
+              "id": 2,
+              "team": "player",
+              "distance": 1.1400635603149654,
+              "points": 1
+            },
+            {
+              "id": 1,
+              "team": "target",
+              "distance": 1.3636611354175794,
+              "points": 1
+            },
+            {
+              "id": 5,
+              "team": "player",
+              "distance": 1.563456282621346,
+              "points": 1
+            }
+          ],
+          "session": {
+            "phase": "waiting",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": -0.05000000000000002
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": -0.05000000000000002,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": -0.05000000000000002,
+                  "contact": true
+                }
+              },
+              "holding": false,
+              "delivery": 1,
+              "aidLift": 1,
+              "aim": 0
+            },
+            "actorUUID": "4f7af51b-619c-491a-86c5-a11566cab20a",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false,
+          "follow": false
+        },
+        "feedback": "가장 가까운 파란 스톤 0.81 m · 하우스 안 4개 · 6점",
+        "retry": {
+          "state": "aiming",
+          "remaining": 4
+        },
+        "coverage": "four actual stones settled, final match result and new practice"
+      }
+    },
+    {
+      "name": "laser",
+      "passed": true,
+      "wallSeconds": 21,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop laser-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "state": "stopped",
+          "paused": false,
+          "steady": false,
+          "aimX": 0,
+          "aimY": 0,
+          "aimYaw": 0.025,
+          "aimPitch": 0.035,
+          "yaw": 0.021446053539965548,
+          "pitch": 0.03851638588384115,
+          "shots": 5,
+          "remaining": 0,
+          "hits": 3,
+          "results": [
+            {
+              "kind": "backstop",
+              "target": null,
+              "point": {
+                "x": 0.15933139173566602,
+                "y": 1.0164809910712773,
+                "z": 5.545000000298025
+              },
+              "shot": 1
+            },
+            {
+              "kind": "target",
+              "target": "plate",
+              "point": {
+                "x": 0.10122920621387621,
+                "y": 0.9566432208433231,
+                "z": 4.78285259567798
+              },
+              "shot": 2
+            },
+            {
+              "kind": "target",
+              "target": "plate",
+              "point": {
+                "x": 0.13326369897253088,
+                "y": 0.9876705608429965,
+                "z": 4.787830548536149
+              },
+              "shot": 3
+            },
+            {
+              "kind": "target",
+              "target": "plate",
+              "point": {
+                "x": 0.10416622243466733,
+                "y": 0.9533005039745944,
+                "z": 4.604916653548997
+              },
+              "shot": 4
+            },
+            {
+              "kind": "backstop",
+              "target": null,
+              "point": {
+                "x": 0.11840038309543033,
+                "y": 1.02109690744629,
+                "z": 5.545000000298025
+              },
+              "shot": 5
+            }
+          ],
+          "cooldown": 0.575,
+          "beam": null,
+          "elapsed": 4.516666666666667,
+          "reason": "complete",
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.012,
+              "z": 0
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              }
+            },
+            "guard": 1,
+            "yaw": 0.021446053539965548,
+            "pitch": 0.03851638588384115,
+            "targets": [
+              {
+                "id": "plate",
+                "x": -0.4872187666698756,
+                "y": 0.891628767222684,
+                "z": 4.7
+              },
+              {
+                "id": "star",
+                "x": 0.11018225963128708,
+                "y": 1.7349223561305114,
+                "z": 4.7
+              }
+            ],
+            "beam": null
+          },
+          "session": {
+            "phase": "ready",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": 0
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                }
+              },
+              "guard": 1,
+              "yaw": 0.021446053539965548,
+              "pitch": 0.03851638588384115,
+              "targets": [
+                {
+                  "id": "plate",
+                  "x": -0.4872187666698756,
+                  "y": 0.891628767222684,
+                  "z": 4.7
+                },
+                {
+                  "id": "star",
+                  "x": 0.11018225963128708,
+                  "y": 1.7349223561305114,
+                  "z": 4.7
+                }
+              ],
+              "beam": null
+            },
+            "actorUUID": "4f7af51b-619c-491a-86c5-a11566cab20a",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "feedback": "5 / 5번 · 표적 3번 · 빗나감 2번",
+        "retry": {
+          "state": "active",
+          "shots": 0
+        }
+      }
+    },
+    {
+      "name": "boxing",
+      "passed": true,
+      "wallSeconds": 29,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop boxing-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "state": "stopped",
+          "paused": false,
+          "mode": "manual",
+          "rounds": 1,
+          "held": false,
+          "expected": "left",
+          "beat": 0,
+          "cue": 0.75,
+          "elapsed": 7.5,
+          "remaining": 0,
+          "contacts": 4,
+          "attempts": 4,
+          "misses": 0,
+          "dodges": 1,
+          "invalidIntent": 0,
+          "score": 58,
+          "stopReason": "complete",
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.012,
+              "z": 0
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              }
+            },
+            "guard": 1,
+            "strike": null,
+            "bagAngle": 0
+          },
+          "cycle": {
+            "enabled": false,
+            "phase": "idle",
+            "remaining": 0
+          },
+          "session": {
+            "phase": "ready",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": 0
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                }
+              },
+              "guard": 1,
+              "strike": null,
+              "bagAngle": 0
+            },
+            "actorUUID": "4f7af51b-619c-491a-86c5-a11566cab20a",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "feedback": "샌드백 맞히기 4회 · 박자 58% · 피하고 돌아오기 1회",
+        "retry": {
+          "state": "active",
+          "contacts": 0
+        }
+      }
+    },
+    {
+      "name": "passing",
+      "passed": true,
+      "wallSeconds": 7,
+      "detail": {
+        "surface": {
+          "kind": "passing-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "mode": "practice",
+          "pattern": 0,
+          "phase": "result",
+          "owner": "player",
+          "player": {
+            "x": -2.194999999999998,
+            "z": 4.595000000000005
+          },
+          "turtle": {
+            "x": 2.55,
+            "z": 3.3
+          },
+          "turtleHand": {
+            "x": 1.9999999999999998,
+            "y": 0.61,
+            "z": 3.3000000000000043
+          },
+          "position": {
+            "x": -1.6494074475556566,
+            "y": 0.9921007576001913,
+            "z": 4.135227019304537
+          },
+          "velocity": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+          },
+          "settings": {
+            "yawDeg": 6.391589234453625,
+            "power": 57.45801314630433
+          },
+          "clock": 2.7416666666666596,
+          "elapsed": 1.1999999999999982,
+          "tick": 329,
+          "attempts": 1,
+          "score": 1,
+          "paused": false,
+          "complete": false,
+          "receiveSpot": {
+            "x": -2.15,
+            "z": 4.65
+          },
+          "hold": 0.14166666666666666,
+          "bounces": 0,
+          "reason": "받았어요! 보내고, 빈자리로 움직이고, 다시 받았어요",
+          "success": true,
+          "catchFrom": {
+            "x": -1.458975507989908,
+            "y": 1.2731196174144757,
+            "z": 4.15430781650766
+          },
+          "posts": [],
+          "turtleUUID": "6d1e17e2-5537-44d6-8d0b-980f6bff87cc",
+          "partnerId": "athletic-rabbit"
+        },
+        "feedback": "받았어요! 보내고, 빈자리로 움직이고, 다시 받았어요",
+        "next": {
+          "pattern": 1
+        },
+        "retry": {
+          "score": 0,
+          "pattern": 0
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

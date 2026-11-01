@@ -1,0 +1,97 @@
+{
+  "results": [
+    {
+      "step": "water-completed",
+      "runtime": {
+        "token": 1,
+        "nodeId": "park.produce.pumpkin",
+        "material": "pumpkin",
+        "label": "호박",
+        "kind": "water",
+        "phase": "done",
+        "elapsed": 2,
+        "committed": true,
+        "notice": "다 자랐어요! 직접 수확할 수 있어요",
+        "action": {
+          "type": "PRODUCE_WATER",
+          "nodeId": "park.produce.pumpkin",
+          "expectedHarvests": 0,
+          "expectedRevision": 2
+        },
+        "ready": true,
+        "canStart": true,
+        "canSetSeason": true,
+        "readOnly": false,
+        "capped": false,
+        "season": "autumn",
+        "calendarSeason": "autumn",
+        "allowedSeasons": [
+          "autumn"
+        ]
+      },
+      "button": {
+        "text": "호박 2개 수확하기",
+        "disabled": false
+      },
+      "status": "다 자랐어요! 직접 수확할 수 있어요",
+      "overflow": false
+    },
+    {
+      "step": "harvest-completed",
+      "runtime": {
+        "token": 1,
+        "nodeId": "park.produce.pumpkin",
+        "material": "pumpkin",
+        "label": "호박",
+        "kind": "harvest",
+        "phase": "done",
+        "elapsed": 1.8,
+        "committed": true,
+        "notice": "호박 2개를 재료가방에 넣었어요",
+        "action": {
+          "type": "PRODUCE_HARVEST",
+          "nodeId": "park.produce.pumpkin",
+          "expectedHarvests": 0,
+          "expectedRevision": 3
+        },
+        "ready": false,
+        "canStart": true,
+        "canSetSeason": true,
+        "readOnly": false,
+        "capped": false,
+        "season": "autumn",
+        "calendarSeason": "autumn",
+        "allowedSeasons": [
+          "autumn"
+        ]
+      },
+      "materials": {
+        "apple": 0,
+        "shell": 0,
+        "autumnLeaf": 0,
+        "petal": 0,
+        "pondFish": 0,
+        "seaFish": 0,
+        "strawberry": 0,
+        "tomato": 0,
+        "pumpkin": 2,
+        "leafy": 0,
+        "peach": 0,
+        "pear": 0,
+        "mandarin": 0
+      },
+      "button": {
+        "text": "다시 물 주기",
+        "disabled": false
+      }
+    },
+    {
+      "step": "returned-to-walk",
+      "material": 2,
+      "locked": false
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

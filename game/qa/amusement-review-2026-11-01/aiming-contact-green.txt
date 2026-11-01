@@ -1,0 +1,16 @@
+✔ native archery fires from real supported contacts in the translated and rotated school station (4873.006574ms)
+ℹ {"actorKind":"native","station":"archery","handGap":0.00005457373422079054,"otherHandGap":0.00005456584962935593,"supportGap":4.76837158203125e-7,"shots":1,"result":{"kind":"target","score":8,"point":{"x":0.1336497643332173,"y":1.085742848856256,"z":4.833649764333224},"shot":1}}
+✔ native laser fires from real supported contacts in the translated and rotated school station (3317.951968ms)
+ℹ {"actorKind":"native","station":"laser","handGap":0.000054574864790185584,"otherHandGap":0.00005457138335862588,"supportGap":4.76837158203125e-7,"shots":1,"result":{"kind":"backstop","target":null,"point":{"x":0.13871357251332128,"y":1.0022553109507248,"z":5.545000000298025},"shot":1}}
+✔ legacy archery fires from real supported contacts in the translated and rotated school station (3918.304699ms)
+ℹ {"actorKind":"legacy","station":"archery","handGap":0.00005457373422079054,"otherHandGap":0.00005456584962935593,"supportGap":4.768371582135333e-7,"shots":1,"result":{"kind":"target","score":8,"point":{"x":0.1336497643332173,"y":1.085742848856256,"z":4.833649764333224},"shot":1}}
+✔ legacy laser fires from real supported contacts in the translated and rotated school station (3359.262057ms)
+ℹ {"actorKind":"legacy","station":"laser","handGap":0.000054574864790185584,"otherHandGap":0.00005457138335862588,"supportGap":4.768371582135333e-7,"shots":1,"result":{"kind":"backstop","target":null,"point":{"x":0.13871357251332128,"y":1.0022553109507248,"z":5.545000000298025},"shot":1}}
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15969.69562

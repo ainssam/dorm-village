@@ -1,0 +1,44 @@
+{
+  "selectedCount": 30,
+  "status": "멈춤 · 대기 0 + 내려오는 중 0 + 도착 30 = 30개",
+  "bins": [
+    {
+      "bin": 0,
+      "count": 0
+    },
+    {
+      "bin": 1,
+      "count": 1
+    },
+    {
+      "bin": 2,
+      "count": 5
+    },
+    {
+      "bin": 3,
+      "count": 8
+    },
+    {
+      "bin": 4,
+      "count": 7
+    },
+    {
+      "bin": 5,
+      "count": 5
+    },
+    {
+      "bin": 6,
+      "count": 3
+    },
+    {
+      "bin": 7,
+      "count": 1
+    },
+    {
+      "bin": 8,
+      "count": 0
+    }
+  ],
+  "binsTotal": 30,
+  "timeControl": "Real application frames; no model state injection or time acceleration."
+}

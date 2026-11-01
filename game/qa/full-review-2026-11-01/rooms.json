@@ -1,0 +1,3136 @@
+{
+  "results": [
+    {
+      "id": "classroom",
+      "label": "별빛 교실",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "classroom.chair-left",
+          "type": "pose",
+          "label": "의자에 앉아 쓰기",
+          "kind": "read",
+          "at": {
+            "x": -10.95,
+            "z": -5.2749999999999995
+          }
+        },
+        {
+          "id": "classroom.chair-right",
+          "type": "pose",
+          "label": "의자에 앉아 읽기",
+          "kind": "read",
+          "at": {
+            "x": -5.05,
+            "z": -5.2749999999999995
+          }
+        },
+        {
+          "id": "classroom.board",
+          "type": "pose",
+          "label": "분필로 별 그리기",
+          "kind": "chalk",
+          "at": {
+            "x": -6.82,
+            "z": -8.025
+          }
+        },
+        {
+          "id": "classroom.learning",
+          "type": "schoolTool",
+          "label": "뒤집기 짝 찾기 · 발견 놀이",
+          "at": {
+            "x": -8.65,
+            "z": -7.975
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "classroom",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 20,
+          "calls": 119,
+          "triangles": 77054,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "courtyard",
+      "label": "도름마을",
+      "spawn": "square",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "courtyard.group-activities",
+          "type": "squareGroup",
+          "label": "친구들과 광장 체조하기",
+          "at": {
+            "x": 2.55,
+            "z": 6.05
+          }
+        },
+        {
+          "id": "courtyard.noticeboard",
+          "type": "villageTool",
+          "label": "마을 게시판 읽기",
+          "at": {
+            "x": -2.1,
+            "z": -5.13
+          }
+        },
+        {
+          "id": "villageAirport.plane",
+          "type": "flight",
+          "label": "비행기 타기 · 구름성 놀이섬",
+          "at": {
+            "x": 22.4,
+            "z": -18.75
+          }
+        },
+        {
+          "id": "villageHarbor.boat",
+          "type": "boat",
+          "label": "배 타고 천문대 섬으로",
+          "at": {
+            "x": 28.8,
+            "z": 9.5
+          }
+        },
+        {
+          "id": "courtyard.island-lookout",
+          "type": "island-lookout",
+          "label": "바다와 구름섬 바라보기",
+          "at": {
+            "x": 15.8,
+            "y": 0.05,
+            "z": 6.3
+          }
+        },
+        {
+          "id": "courtyard.night-plaza",
+          "type": "plazaNight",
+          "label": "해변 캠핑 · 모닥불과 불꽃놀이",
+          "at": {
+            "x": -9.85,
+            "z": 24
+          }
+        },
+        {
+          "id": "courtyard.campfire.seat.dormi",
+          "type": "pose",
+          "label": "모닥불 옆에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.791224018360829,
+            "z": 27.88570846356792
+          }
+        },
+        {
+          "id": "courtyard.tent.airbed",
+          "type": "pose",
+          "label": "에어침대에 눕기",
+          "kind": "sleep",
+          "at": {
+            "x": -15.5,
+            "z": 20.608867
+          }
+        },
+        {
+          "id": "courtyard.camp-chair.0",
+          "type": "pose",
+          "label": "캠핑 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -15.45,
+            "z": 21.25
+          }
+        },
+        {
+          "id": "courtyard.camp-chair.1",
+          "type": "pose",
+          "label": "캠핑 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -17.8,
+            "z": 26.65
+          }
+        },
+        {
+          "id": "courtyard.fish-grill",
+          "type": "fishCooking",
+          "label": "물고기 구워 먹기",
+          "at": {
+            "x": -10,
+            "z": 20.55
+          }
+        },
+        {
+          "id": "courtyard.fishing",
+          "type": "fishing",
+          "label": "바닷가에서 낚시하기",
+          "at": {
+            "x": 11.6,
+            "z": 12.3
+          }
+        },
+        {
+          "id": "courtyard.fishing.north",
+          "type": "fishing",
+          "label": "캠핑장 남쪽 물가에서 낚시하기",
+          "at": {
+            "x": -13.6,
+            "z": 34.8
+          }
+        },
+        {
+          "id": "courtyard.shell.west",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": -4,
+            "z": 12.6
+          }
+        },
+        {
+          "id": "courtyard.shell.middle",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": 0,
+            "z": 13.1
+          }
+        },
+        {
+          "id": "courtyard.shell.east",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": 4,
+            "z": 12.6
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.0",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -9.01,
+            "z": -20.32
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.1",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7,
+            "z": -18.75
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.2",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -4.99,
+            "z": -20.32
+          }
+        },
+        {
+          "id": "courtyard.harbor.lighthouse-chair",
+          "type": "pose",
+          "label": "등대 앞 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 21.753198722170026,
+            "z": 12.50087964525221
+          }
+        },
+        {
+          "id": "courtyard.airfield.plane-bench",
+          "type": "pose",
+          "label": "비행장 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 17.961425166793614,
+            "z": -22.400358800376793
+          }
+        },
+        {
+          "id": "courtyard.bench",
+          "type": "pose",
+          "label": "광장 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 6.8,
+            "z": 1.71
+          }
+        },
+        {
+          "id": "courtyard.island-lookout.seat",
+          "type": "pose",
+          "label": "바다와 구름섬을 보는 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 14.5,
+            "z": 6.3
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "courtyard",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 30,
+          "calls": 96,
+          "triangles": 89319,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "home",
+      "label": "도름이의 집",
+      "spawn": "bedroom",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "home.decorate",
+          "type": "decorate",
+          "label": "우리 집 꾸미기",
+          "at": {
+            "x": 0.1,
+            "z": -1.2
+          }
+        },
+        {
+          "id": "home.photo-wall",
+          "type": "villageTool",
+          "label": "벽에 걸린 사진 액자 정리",
+          "at": {
+            "x": 1.35,
+            "z": 1
+          }
+        },
+        {
+          "id": "home.bed",
+          "type": "pose",
+          "label": "침대에 눕기",
+          "kind": "sleep",
+          "at": {
+            "x": -1.52,
+            "z": 0.6
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "home",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 39,
+          "calls": 200,
+          "triangles": 97012,
+          "points": 0,
+          "lines": 12
+        }
+      }
+    },
+    {
+      "id": "playground",
+      "label": "구름 놀이터",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "playground.swing",
+          "type": "pose",
+          "label": "그네에 올라타기",
+          "kind": "swing",
+          "at": {
+            "x": 1.7,
+            "z": -0.3
+          }
+        },
+        {
+          "id": "playground.slide",
+          "type": "pose",
+          "label": "계단 올라 미끄럼틀 타기",
+          "kind": "slide",
+          "at": {
+            "x": -2.65,
+            "z": -5.65
+          }
+        },
+        {
+          "id": "playground.seesaw",
+          "type": "pose",
+          "label": "모아와 시소 타기",
+          "kind": "seesaw",
+          "at": {
+            "x": 1.55,
+            "z": 3.55
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "playground",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 52,
+          "calls": 91,
+          "triangles": 90586,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "park",
+      "label": "바람 공원",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "park.produce.strawberry",
+          "type": "produce",
+          "label": "딸기 돌보기",
+          "at": {
+            "x": 9,
+            "z": -0.95
+          }
+        },
+        {
+          "id": "park.produce.tomato",
+          "type": "produce",
+          "label": "토마토 돌보기",
+          "at": {
+            "x": 12,
+            "z": -0.95
+          }
+        },
+        {
+          "id": "park.produce.pumpkin",
+          "type": "produce",
+          "label": "호박 돌보기",
+          "at": {
+            "x": 9,
+            "z": 0.95
+          }
+        },
+        {
+          "id": "park.produce.leafy",
+          "type": "produce",
+          "label": "잎채소 돌보기",
+          "at": {
+            "x": 12,
+            "z": 0.95
+          }
+        },
+        {
+          "id": "park.produce.peach",
+          "type": "produce",
+          "label": "복숭아 돌보기",
+          "at": {
+            "x": 8.2,
+            "z": -3.95
+          }
+        },
+        {
+          "id": "park.produce.pear",
+          "type": "produce",
+          "label": "배 돌보기",
+          "at": {
+            "x": 11,
+            "z": -3.95
+          }
+        },
+        {
+          "id": "park.produce.mandarin",
+          "type": "produce",
+          "label": "귤 돌보기",
+          "at": {
+            "x": 13.8,
+            "z": -3.95
+          }
+        },
+        {
+          "id": "park.rest",
+          "type": "message",
+          "label": "연못 앞에서 쉬기",
+          "at": {
+            "x": 0.3,
+            "z": 0.1
+          }
+        },
+        {
+          "id": "park.fishing",
+          "type": "fishing",
+          "label": "연못에서 낚시하기",
+          "at": {
+            "x": -1.8,
+            "z": 0.65
+          }
+        },
+        {
+          "id": "park.fishing.north",
+          "type": "fishing",
+          "label": "연못 북쪽에서 낚시하기",
+          "at": {
+            "x": -1.8,
+            "z": -3.12
+          }
+        },
+        {
+          "id": "park.tree.west",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "pickFruit",
+          "at": {
+            "x": -3.65,
+            "z": 2.45
+          }
+        },
+        {
+          "id": "park.tree.east",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "pickFruit",
+          "at": {
+            "x": 5.6,
+            "z": -1.3
+          }
+        },
+        {
+          "id": "park.leaves.west",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": -4.15,
+            "z": 3.65
+          }
+        },
+        {
+          "id": "park.bench",
+          "type": "pose",
+          "label": "공원 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 1.7,
+            "z": 0.19
+          }
+        },
+        {
+          "id": "park.flowers",
+          "type": "pose",
+          "label": "햇살 꽃밭 · 물 주기",
+          "kind": "water",
+          "at": {
+            "x": 4.5,
+            "z": 3.65
+          }
+        },
+        {
+          "id": "park.flowers-west",
+          "type": "pose",
+          "label": "들꽃 꽃밭 · 물 주기",
+          "kind": "water",
+          "at": {
+            "x": -4.25,
+            "z": -2.5
+          }
+        },
+        {
+          "id": "park.flowers-north",
+          "type": "pose",
+          "label": "나비 꽃밭 · 물 주기",
+          "kind": "water",
+          "at": {
+            "x": 1,
+            "z": -3.45
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "park",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 65,
+          "calls": 358,
+          "triangles": 130469,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "library",
+      "label": "별숲 큰 도서관",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "library.shelf.0.books",
+          "type": "books",
+          "label": "책장에서 책 고르기",
+          "at": {
+            "x": 10.2,
+            "z": 14.879999999999999
+          }
+        },
+        {
+          "id": "library.shelf.1.books",
+          "type": "books",
+          "label": "책장에서 책 고르기",
+          "at": {
+            "x": 6.599999999999999,
+            "z": 14.879999999999999
+          }
+        },
+        {
+          "id": "library.shelf.2.books",
+          "type": "books",
+          "label": "책장에서 책 고르기",
+          "at": {
+            "x": 2.9999999999999996,
+            "z": 14.879999999999999
+          }
+        },
+        {
+          "id": "library.shelf.3.books",
+          "type": "books",
+          "label": "책장에서 책 고르기",
+          "at": {
+            "x": -0.6000000000000011,
+            "z": 14.879999999999999
+          }
+        },
+        {
+          "id": "library.shelf.4.books",
+          "type": "books",
+          "label": "책장에서 책 고르기",
+          "at": {
+            "x": 10.2,
+            "z": 10.88
+          }
+        },
+        {
+          "id": "library.shelf.5.books",
+          "type": "books",
+          "label": "책장에서 책 고르기",
+          "at": {
+            "x": 6.6,
+            "z": 10.88
+          }
+        },
+        {
+          "id": "library.loan",
+          "type": "loan",
+          "label": "책 대출 · 반납하기",
+          "at": {
+            "x": 7.25,
+            "z": 8.4
+          }
+        },
+        {
+          "id": "library.guide",
+          "type": "libraryQuest",
+          "label": "친칠라 사서 · 책 찾기 의뢰",
+          "at": {
+            "x": 8.850000000000001,
+            "z": 6.200000000000001
+          }
+        },
+        {
+          "id": "library.chair",
+          "type": "pose",
+          "label": "푹신한 의자에서 책 읽기",
+          "kind": "read",
+          "at": {
+            "x": -2.2,
+            "z": 10.94
+          }
+        },
+        {
+          "id": "library.window-chair",
+          "type": "pose",
+          "label": "푹신한 의자에서 책 읽기",
+          "kind": "read",
+          "at": {
+            "x": -2.1999999999999997,
+            "z": 7.890000000000001
+          }
+        },
+        {
+          "id": "library.table-chair.0",
+          "type": "pose",
+          "label": "독서석에 앉아 책 읽기",
+          "kind": "read",
+          "at": {
+            "x": 4.99,
+            "z": 10.88
+          }
+        },
+        {
+          "id": "library.table-chair.1",
+          "type": "pose",
+          "label": "독서석에 앉아 책 읽기",
+          "kind": "read",
+          "at": {
+            "x": 0.6099999999999998,
+            "z": 10.88
+          }
+        },
+        {
+          "id": "library.study-chair.0",
+          "type": "pose",
+          "label": "독서석에 앉아 책 읽기",
+          "kind": "read",
+          "at": {
+            "x": 2.8400000000000003,
+            "z": 6.17
+          }
+        },
+        {
+          "id": "library.study-chair.1",
+          "type": "pose",
+          "label": "독서석에 앉아 책 읽기",
+          "kind": "read",
+          "at": {
+            "x": -0.8599999999999995,
+            "z": 4.46
+          }
+        },
+        {
+          "id": "library.book",
+          "type": "pose",
+          "label": "탁자의 책 펼치기",
+          "kind": "read",
+          "at": {
+            "x": 2.7999999999999994,
+            "z": 13.58
+          }
+        },
+        {
+          "id": "resident.chinchilla",
+          "type": "resident",
+          "label": "친칠라와 이야기하기",
+          "at": {
+            "x": 8.850000000000001,
+            "z": 6.200000000000001
+          }
+        },
+        {
+          "id": "resident.armadillo",
+          "type": "resident",
+          "label": "아르마딜로와 이야기하기",
+          "at": {
+            "x": 11.5,
+            "z": 9.000000000000002
+          }
+        },
+        {
+          "id": "resident.capybara",
+          "type": "resident",
+          "label": "카피바라와 이야기하기",
+          "at": {
+            "x": -3.7500000000000004,
+            "z": 13.899999999999999
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "library",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 77,
+          "calls": 390,
+          "triangles": 189072,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "principalOffice",
+      "label": "큰나무 교장실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "principalOffice.greeting",
+          "type": "resident",
+          "label": "교장선생님과 이야기하기",
+          "at": {
+            "x": -10.35,
+            "z": 11.25
+          }
+        },
+        {
+          "id": "principalOffice.sofa.back.0",
+          "type": "pose",
+          "label": "큰 소파에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.8999999999999995,
+            "z": 8.030000000000001
+          }
+        },
+        {
+          "id": "principalOffice.sofa.back.1",
+          "type": "pose",
+          "label": "큰 소파에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -9.299999999999999,
+            "z": 8.030000000000001
+          }
+        },
+        {
+          "id": "principalOffice.sofa.back.2",
+          "type": "pose",
+          "label": "큰 소파에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -10.7,
+            "z": 8.030000000000001
+          }
+        },
+        {
+          "id": "principalOffice.sofa.left",
+          "type": "pose",
+          "label": "큰 소파에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.97,
+            "z": 7.1000000000000005
+          }
+        },
+        {
+          "id": "principalOffice.sofa.right",
+          "type": "pose",
+          "label": "큰 소파에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -10.6,
+            "z": 7.1000000000000005
+          }
+        },
+        {
+          "id": "principalOffice.rocking-chair",
+          "type": "pose",
+          "label": "창가 흔들의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -8.65,
+            "z": 4.000000000000001
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "principalOffice",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 87,
+          "calls": 298,
+          "triangles": 115975,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "schoolHall",
+      "label": "별빛 학교 · 1층",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "schoolHall.elevator",
+          "type": "elevator",
+          "label": "엘리베이터 층 선택",
+          "at": {
+            "x": -16,
+            "z": 0
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "schoolHall",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 97,
+          "calls": 270,
+          "triangles": 120066,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "infirmary",
+      "label": "햇살 보건실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "infirmary.quiz",
+          "type": "schoolTool",
+          "label": "보건상식 퀴즈",
+          "at": {
+            "x": 8.65,
+            "z": -4.5
+          }
+        },
+        {
+          "id": "infirmary.bed",
+          "type": "pose",
+          "label": "보건 침대에서 쉬기",
+          "kind": "sleep",
+          "at": {
+            "x": 4.05,
+            "z": -8
+          }
+        },
+        {
+          "id": "infirmary.chair",
+          "type": "pose",
+          "label": "상담 책상 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 7.12,
+            "z": -8.26
+          }
+        },
+        {
+          "id": "infirmary.learning",
+          "type": "schoolTool",
+          "label": "건강정보의 돋보기 · 발견 놀이",
+          "at": {
+            "x": 9.5,
+            "z": -9.600000000000001
+          }
+        },
+        {
+          "id": "resident.nurse-otter",
+          "type": "resident",
+          "label": "수달 보건 선생님와 이야기하기",
+          "at": {
+            "x": 5.35,
+            "z": -8.55
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "infirmary",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 107,
+          "calls": 129,
+          "triangles": 96735,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "music",
+      "label": "작은 음악실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "music.piano",
+          "type": "schoolTool",
+          "label": "그랜드 피아노 연주하기",
+          "at": {
+            "x": -3.85,
+            "z": 6.300000000000001
+          }
+        },
+        {
+          "id": "music.listen",
+          "type": "schoolTool",
+          "label": "헤드셋으로 음악 감상",
+          "at": {
+            "x": -9.85,
+            "z": 5
+          }
+        },
+        {
+          "id": "music.cello",
+          "type": "schoolTool",
+          "label": "첼로 켜기",
+          "at": {
+            "x": -9.1,
+            "z": 9.45
+          }
+        },
+        {
+          "id": "music.harp",
+          "type": "schoolTool",
+          "label": "하프 튕기기",
+          "at": {
+            "x": -10.9,
+            "z": 9.35
+          }
+        },
+        {
+          "id": "music.quiz",
+          "type": "schoolTool",
+          "label": "벽의 음표 퀴즈",
+          "at": {
+            "x": -7,
+            "z": 10.15
+          }
+        },
+        {
+          "id": "music.piano-seat",
+          "type": "pose",
+          "label": "피아노 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -5.3,
+            "z": 6.7
+          }
+        },
+        {
+          "id": "music.listening-seat",
+          "type": "pose",
+          "label": "감상 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -8.44,
+            "z": 6.25
+          }
+        },
+        {
+          "id": "resident.music-bird",
+          "type": "resident",
+          "label": "작은 새 음악 선생님와 이야기하기",
+          "at": {
+            "x": -6.55,
+            "z": 8.05
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "music",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 119,
+          "calls": 240,
+          "triangles": 133819,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "science",
+      "label": "호기심 과학실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "science.observe",
+          "type": "schoolTool",
+          "label": "진자 실험실 열기",
+          "at": {
+            "x": -9.1,
+            "z": -8.4
+          }
+        },
+        {
+          "id": "science.light",
+          "type": "schoolTool",
+          "label": "빛의 색 실험",
+          "at": {
+            "x": -2.8,
+            "z": -9.4
+          }
+        },
+        {
+          "id": "science.lab-stool",
+          "type": "pose",
+          "label": "실험 스툴에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -8.75,
+            "z": -5.1000000000000005
+          }
+        },
+        {
+          "id": "science.learning",
+          "type": "schoolTool",
+          "label": "작은 추, 긴 팔 · 발견 놀이",
+          "at": {
+            "x": -6.1,
+            "z": -9.5
+          }
+        },
+        {
+          "id": "resident.science-fly",
+          "type": "resident",
+          "label": "초파리 선생님와 이야기하기",
+          "at": {
+            "x": -6.3,
+            "z": -7.2
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "science",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 130,
+          "calls": 231,
+          "triangles": 95650,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "art",
+      "label": "물감 미술실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "art.paint",
+          "type": "schoolTool",
+          "label": "색을 골라 그림 그리기",
+          "at": {
+            "x": 8.9,
+            "z": 8.9
+          }
+        },
+        {
+          "id": "art.student-chair.0",
+          "type": "pose",
+          "label": "미술 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 7.949999999999999,
+            "z": 5.8500000000000005
+          }
+        },
+        {
+          "id": "art.student-chair.1",
+          "type": "pose",
+          "label": "미술 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 5.050000000000001,
+            "z": 5.8500000000000005
+          }
+        },
+        {
+          "id": "art.learning",
+          "type": "schoolTool",
+          "label": "같은 꽃, 다른 배경 · 발견 놀이",
+          "at": {
+            "x": 3.2,
+            "z": 9.200000000000001
+          }
+        },
+        {
+          "id": "resident.art-chameleon",
+          "type": "resident",
+          "label": "카멜레온 미술 선생님와 이야기하기",
+          "at": {
+            "x": 6.35,
+            "z": 8.950000000000001
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "art",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 138,
+          "calls": 136,
+          "triangles": 94631,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "math",
+      "label": "초록 분필 수학실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "math.chalk",
+          "type": "schoolTool",
+          "label": "수식과 분필 칠판 열기",
+          "at": {
+            "x": 10.3,
+            "z": 10.150000000000002
+          }
+        },
+        {
+          "id": "math.galton",
+          "type": "schoolTool",
+          "label": "갈톤보드 구동하기",
+          "at": {
+            "x": 2.6999999999999997,
+            "z": 10.149999999999999
+          }
+        },
+        {
+          "id": "math.student-chair.0",
+          "type": "pose",
+          "label": "수학 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 7.85,
+            "z": 6.7700000000000005
+          }
+        },
+        {
+          "id": "math.student-chair.1",
+          "type": "pose",
+          "label": "수학 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 5.15,
+            "z": 6.7700000000000005
+          }
+        },
+        {
+          "id": "math.student-chair.2",
+          "type": "pose",
+          "label": "수학 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 7.85,
+            "z": 4.2700000000000005
+          }
+        },
+        {
+          "id": "math.student-chair.3",
+          "type": "pose",
+          "label": "수학 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 5.15,
+            "z": 4.2700000000000005
+          }
+        },
+        {
+          "id": "math.learning",
+          "type": "schoolTool",
+          "label": "별이 가장 낮은 곳 · 발견 놀이",
+          "at": {
+            "x": 10.9,
+            "z": 8.600000000000001
+          }
+        },
+        {
+          "id": "resident.math-redpanda",
+          "type": "resident",
+          "label": "레서판다 수학 친구와 이야기하기",
+          "at": {
+            "x": 6.7,
+            "z": 10.15
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "math",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 150,
+          "calls": 135,
+          "triangles": 97594,
+          "points": 0,
+          "lines": 20
+        }
+      }
+    },
+    {
+      "id": "sportsField",
+      "label": "햇살 운동장",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "sportsField.pass",
+          "type": "schoolTool",
+          "label": "토끼와 공 주고받기",
+          "at": {
+            "x": 18.6,
+            "z": -2.4999999999999996
+          }
+        },
+        {
+          "id": "sportsField.throw",
+          "type": "schoolTool",
+          "label": "방향과 힘을 골라 공 던지기",
+          "at": {
+            "x": 22.45,
+            "z": 9.85
+          }
+        },
+        {
+          "id": "sportsField.ball",
+          "type": "schoolTool",
+          "label": "공 차서 골 넣기",
+          "at": {
+            "x": 23,
+            "y": 0.3,
+            "z": 2.8
+          }
+        },
+        {
+          "id": "sportsField.race",
+          "type": "schoolTool",
+          "label": "토끼와 나란히 달리기",
+          "at": {
+            "x": 18.35,
+            "z": -5.2
+          }
+        },
+        {
+          "id": "sportsField.baseball",
+          "type": "schoolTool",
+          "label": "야구 · 호랑이와 타격 연습",
+          "at": {
+            "x": 32.65,
+            "z": -1.2000000000000006
+          }
+        },
+        {
+          "id": "sportsField.run",
+          "type": "pose",
+          "label": "트랙 한 바퀴 달리기",
+          "kind": "run",
+          "at": {
+            "x": 19.3,
+            "z": -6.4
+          }
+        },
+        {
+          "id": "sportsField.pullup",
+          "type": "pose",
+          "label": "낮은 철봉에 매달리기",
+          "kind": "pullup",
+          "at": {
+            "x": 22.52,
+            "z": -1.8
+          }
+        },
+        {
+          "id": "sportsField.climb",
+          "type": "pose",
+          "label": "정글짐 사다리 오르기",
+          "kind": "climb",
+          "at": {
+            "x": 20.35,
+            "z": -4.4
+          }
+        },
+        {
+          "id": "resident.athletic-rabbit",
+          "type": "resident",
+          "label": "토끼와 이야기하기",
+          "at": {
+            "x": 19.7,
+            "z": 2.55
+          }
+        },
+        {
+          "id": "resident.baseball-tiger",
+          "type": "resident",
+          "label": "호랑이와 이야기하기",
+          "at": {
+            "x": 35.5,
+            "z": 2.599999999999999
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "sportsField",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 160,
+          "calls": 175,
+          "triangles": 119009,
+          "points": 0,
+          "lines": 205
+        }
+      }
+    },
+    {
+      "id": "korean",
+      "label": "글꽃 국어실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "korean.activity",
+          "type": "schoolTool",
+          "label": "칠판의 맞춤법 골라 보기",
+          "at": {
+            "x": -6.5,
+            "z": -10.100000000000001
+          }
+        },
+        {
+          "id": "korean.letters",
+          "type": "schoolTool",
+          "label": "자모로 글자 만들기",
+          "at": {
+            "x": -9.6,
+            "z": -10.05
+          }
+        },
+        {
+          "id": "korean.dictionary",
+          "type": "schoolTool",
+          "label": "순우리말 사전 펼치기",
+          "at": {
+            "x": -11.2,
+            "z": -9.35
+          }
+        },
+        {
+          "id": "korean.story",
+          "type": "schoolTool",
+          "label": "책의 문장으로 이야기 잇기",
+          "at": {
+            "x": -7.65,
+            "z": -8.05
+          }
+        },
+        {
+          "id": "korean.history",
+          "type": "schoolTool",
+          "label": "훈민정음 액자 살펴보기",
+          "at": {
+            "x": -1.9500000000000002,
+            "z": -10.2
+          }
+        },
+        {
+          "id": "korean.student-chair.0",
+          "type": "pose",
+          "label": "국어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.85,
+            "z": -6.7700000000000005
+          }
+        },
+        {
+          "id": "korean.student-chair.1",
+          "type": "pose",
+          "label": "국어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -5.15,
+            "z": -6.7700000000000005
+          }
+        },
+        {
+          "id": "korean.student-chair.2",
+          "type": "pose",
+          "label": "국어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.85,
+            "z": -4.2700000000000005
+          }
+        },
+        {
+          "id": "korean.student-chair.3",
+          "type": "pose",
+          "label": "국어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -5.15,
+            "z": -4.2700000000000005
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "korean",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 170,
+          "calls": 187,
+          "triangles": 80968,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "english",
+      "label": "소리숲 영어실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "english.activity",
+          "type": "schoolTool",
+          "label": "소리를 듣고 그림 고르기",
+          "at": {
+            "x": 1.7999999999999998,
+            "z": -9.4
+          }
+        },
+        {
+          "id": "english.sentences",
+          "type": "schoolTool",
+          "label": "칠판의 문장 카드 맞추기",
+          "at": {
+            "x": 6.5,
+            "z": -10.100000000000001
+          }
+        },
+        {
+          "id": "english.roleplay",
+          "type": "schoolTool",
+          "label": "카페 주문과 길 묻기",
+          "at": {
+            "x": 3.4,
+            "z": -10.05
+          }
+        },
+        {
+          "id": "english.dictionary",
+          "type": "schoolTool",
+          "label": "그림 사전과 영어 그림책",
+          "at": {
+            "x": 11.2,
+            "z": -9.35
+          }
+        },
+        {
+          "id": "english.words",
+          "type": "schoolTool",
+          "label": "책의 낱말과 뜻 짝 맞추기",
+          "at": {
+            "x": 5.35,
+            "z": -8.05
+          }
+        },
+        {
+          "id": "english.student-chair.0",
+          "type": "pose",
+          "label": "영어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 5.15,
+            "z": -6.7700000000000005
+          }
+        },
+        {
+          "id": "english.student-chair.1",
+          "type": "pose",
+          "label": "영어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 7.85,
+            "z": -6.7700000000000005
+          }
+        },
+        {
+          "id": "english.student-chair.2",
+          "type": "pose",
+          "label": "영어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 5.15,
+            "z": -4.2700000000000005
+          }
+        },
+        {
+          "id": "english.student-chair.3",
+          "type": "pose",
+          "label": "영어 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 7.85,
+            "z": -4.2700000000000005
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "english",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 180,
+          "calls": 130,
+          "triangles": 79128,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "socialStudies",
+      "label": "지구별 사회실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "socialStudies.activity",
+          "type": "schoolTool",
+          "label": "큰 세계지도 살펴보기",
+          "at": {
+            "x": -6.5,
+            "z": 10.100000000000001
+          }
+        },
+        {
+          "id": "socialStudies.student-chair.0",
+          "type": "pose",
+          "label": "사회 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -5.15,
+            "z": 6.7700000000000005
+          }
+        },
+        {
+          "id": "socialStudies.student-chair.1",
+          "type": "pose",
+          "label": "사회 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.85,
+            "z": 6.7700000000000005
+          }
+        },
+        {
+          "id": "socialStudies.student-chair.2",
+          "type": "pose",
+          "label": "사회 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -5.15,
+            "z": 4.2700000000000005
+          }
+        },
+        {
+          "id": "socialStudies.student-chair.3",
+          "type": "pose",
+          "label": "사회 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.85,
+            "z": 4.2700000000000005
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "socialStudies",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 190,
+          "calls": 117,
+          "triangles": 77032,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "computerLab",
+      "label": "반짝코드 컴퓨터실",
+      "spawn": "from-hall",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "computerLab.activity",
+          "type": "homeTool",
+          "label": "로봇 공방 시작하기",
+          "at": {
+            "x": 4.85,
+            "z": -4.6000000000000005
+          }
+        },
+        {
+          "id": "computerLab.chair.0",
+          "type": "pose",
+          "label": "컴퓨터 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 3.35,
+            "z": -8.8
+          }
+        },
+        {
+          "id": "computerLab.chair.1",
+          "type": "pose",
+          "label": "컴퓨터 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 9.65,
+            "z": -8.8
+          }
+        },
+        {
+          "id": "computerLab.chair.2",
+          "type": "pose",
+          "label": "컴퓨터 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 3.35,
+            "z": -6
+          }
+        },
+        {
+          "id": "computerLab.chair.3",
+          "type": "pose",
+          "label": "컴퓨터 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 9.65,
+            "z": -6
+          }
+        },
+        {
+          "id": "computerLab.chair.5",
+          "type": "pose",
+          "label": "컴퓨터 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 9.65,
+            "z": -3.200000000000001
+          }
+        },
+        {
+          "id": "resident.computer-robot-dog",
+          "type": "resident",
+          "label": "로봇강아지와 인사하기",
+          "at": {
+            "x": 7.6,
+            "z": -10.65
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "computerLab",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 200,
+          "calls": 115,
+          "triangles": 101896,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "schoolHall2",
+      "label": "별빛 학교 · 2층",
+      "spawn": "from-elevator",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "schoolHall2.elevator",
+          "type": "elevator",
+          "label": "엘리베이터 층 선택",
+          "at": {
+            "x": -16,
+            "z": 0
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "schoolHall2",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 211,
+          "calls": 131,
+          "triangles": 76988,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "schoolHall3",
+      "label": "별빛 학교 · 3층",
+      "spawn": "from-elevator",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "schoolHall3.elevator",
+          "type": "elevator",
+          "label": "엘리베이터 층 선택",
+          "at": {
+            "x": -16,
+            "z": 0
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "schoolHall3",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 221,
+          "calls": 157,
+          "triangles": 82372,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "schoolGym",
+      "label": "햇살 실내체육관",
+      "spawn": "from-field",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "schoolGym.curling",
+          "type": "gymTool",
+          "label": "컬링 · 혼자 스톤 연습",
+          "at": {
+            "x": 17,
+            "z": -21.7
+          }
+        },
+        {
+          "id": "schoolGym.laser",
+          "type": "gymTool",
+          "label": "빛 표적 · 혼자 다섯 번 연습",
+          "at": {
+            "x": 30.875,
+            "z": -36.2
+          }
+        },
+        {
+          "id": "schoolGym.climbing",
+          "type": "gymTool",
+          "label": "클라이밍 · 낮은 벽 혼자 연습",
+          "at": {
+            "x": 42.5,
+            "z": -36.2
+          }
+        },
+        {
+          "id": "schoolGym.archery",
+          "type": "gymTool",
+          "label": "양궁 · 혼자 다섯 발 연습",
+          "at": {
+            "x": 27.125,
+            "z": -36.2
+          }
+        },
+        {
+          "id": "schoolGym.boxing",
+          "type": "gymTool",
+          "label": "복싱 · 혼자 샌드백 연습",
+          "at": {
+            "x": 37.5,
+            "z": -37.85
+          }
+        },
+        {
+          "id": "schoolGym.treadmill",
+          "type": "gymTool",
+          "label": "러닝머신 · 일정한 걸음 연습",
+          "at": {
+            "x": 27.5,
+            "z": -17.35
+          }
+        },
+        {
+          "id": "schoolGym.stairs",
+          "type": "gymTool",
+          "label": "천국의 계단 · 한 걸음씩 연습",
+          "at": {
+            "x": 31.5,
+            "z": -17.35
+          }
+        },
+        {
+          "id": "schoolGym.pass",
+          "type": "schoolTool",
+          "label": "거북이와 공 주고받기",
+          "at": {
+            "x": 28.5,
+            "z": -27.6
+          }
+        },
+        {
+          "id": "sportsField.weights",
+          "type": "pose",
+          "label": "가벼운 역기 들어 보기",
+          "kind": "weights",
+          "at": {
+            "x": 37,
+            "z": -20
+          }
+        },
+        {
+          "id": "resident.athletic-turtle",
+          "type": "resident",
+          "label": "거북이와 이야기하기",
+          "at": {
+            "x": 39.7,
+            "z": -21.5
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "schoolGym",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 232,
+          "calls": 78,
+          "triangles": 71494,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "homeKitchen",
+      "label": "달콤한 주방",
+      "spawn": "from-home",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "homeKitchen.cook",
+          "type": "homeTool",
+          "label": "레시피 실험실 열기",
+          "at": {
+            "x": 11.2125,
+            "z": -0.75
+          }
+        },
+        {
+          "id": "homeKitchen.fish-cooking",
+          "type": "fishCooking",
+          "label": "잡은 물고기로 요리하기",
+          "at": {
+            "x": 13.2125,
+            "z": -0.75
+          }
+        },
+        {
+          "id": "homeKitchen.apple-keepsakes",
+          "type": "gatheredKitchen",
+          "label": "수확한 사과로 주스·잼 장식 만들기",
+          "at": {
+            "x": 9.2125,
+            "z": -0.75
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "homeKitchen",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 241,
+          "calls": 97,
+          "triangles": 75470,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "homeStudy",
+      "label": "꼬마 컴퓨터방",
+      "spawn": "from-home",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "homeStudy.code",
+          "type": "homeTool",
+          "label": "로봇 공방 열기",
+          "at": {
+            "x": 0.1,
+            "z": 10.35
+          }
+        },
+        {
+          "id": "homeStudy.chair",
+          "type": "pose",
+          "label": "컴퓨터 책상에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -1.13,
+            "z": 11.67
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "homeStudy",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 250,
+          "calls": 171,
+          "triangles": 79090,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "homePlayroom",
+      "label": "알록달록 놀이방",
+      "spawn": "from-home",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "homePlayroom.blocks",
+          "type": "homeTool",
+          "label": "균형 건축 놀이터",
+          "at": {
+            "x": 11.2125,
+            "z": 10.549999999999999
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "homePlayroom",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 262,
+          "calls": 85,
+          "triangles": 75179,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "postOffice",
+      "label": "마음 우체국",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "postOffice.table",
+          "type": "villageTool",
+          "label": "편지 쓰고 답장 받기",
+          "at": {
+            "x": 0,
+            "z": 0.6
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "postOffice",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 275,
+          "calls": 96,
+          "triangles": 90670,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "photoStudio",
+      "label": "찰칵 사진관",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "photoStudio.table",
+          "type": "villageTool",
+          "label": "도름이 사진 찍기",
+          "at": {
+            "x": 0,
+            "z": 0.6
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "photoStudio",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 286,
+          "calls": 149,
+          "triangles": 102282,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "workshop",
+      "label": "꽃잎 공방",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "workshop.table",
+          "type": "villageTool",
+          "label": "작업대에서 꽃·조개 장식 만들기",
+          "at": {
+            "x": 0,
+            "z": 0.6
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "workshop",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 297,
+          "calls": 118,
+          "triangles": 96607,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "bakeryCafe",
+      "label": "밀구름 베이커리 카페",
+      "spawn": "from-courtyard",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "bakeryCafe.table",
+          "type": "villageTool",
+          "label": "반죽하고 빵 굽기",
+          "at": {
+            "x": -0.7,
+            "z": -3.9
+          }
+        },
+        {
+          "id": "resident.cafe-dog",
+          "type": "resident",
+          "label": "밀구름 강아지와 이야기하기",
+          "at": {
+            "x": 1.15,
+            "z": -3.8000000000000003
+          }
+        },
+        {
+          "id": "bakeryCafe.pack-bread",
+          "type": "cafeFood",
+          "label": "구운 빵 포장하기",
+          "at": {
+            "x": -4.13,
+            "z": -0.1
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "bakeryCafe",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 307,
+          "calls": 417,
+          "triangles": 142826,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "amusementIsland",
+      "label": "구름성 놀이섬",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "amusementIsland.carousel",
+          "type": "pose",
+          "label": "회전목마 마차에 앉기",
+          "kind": "carousel",
+          "at": {
+            "x": 0,
+            "z": 2.05
+          }
+        },
+        {
+          "id": "amusementIsland.viking",
+          "type": "pose",
+          "label": "바이킹 배에 앉기",
+          "kind": "viking",
+          "at": {
+            "x": 9.6,
+            "z": 6.1
+          }
+        },
+        {
+          "id": "amusementIsland.claw",
+          "type": "claw",
+          "label": "작은 인형뽑기",
+          "at": {
+            "x": 4.95,
+            "z": -1.07
+          }
+        },
+        {
+          "id": "amusementIsland.fish-scoop",
+          "type": "fishScoop",
+          "label": "물고기 뜰채 잡기",
+          "at": {
+            "x": -9,
+            "z": -6.9
+          }
+        },
+        {
+          "id": "amusementIsland.food-cart.cold",
+          "type": "amusementFood",
+          "label": "아이스크림 · 슬러시 주문하기",
+          "at": {
+            "x": -4.9,
+            "z": -1.2
+          }
+        },
+        {
+          "id": "amusementIsland.food-cart.warm",
+          "type": "amusementFood",
+          "label": "핫도그 · 츄러스 주문하기",
+          "at": {
+            "x": -5.5,
+            "z": 4.1
+          }
+        },
+        {
+          "id": "amusementAirport.plane",
+          "type": "flight",
+          "label": "비행기 타기 · 별빛 마을",
+          "at": {
+            "x": 20.75,
+            "z": -7.5
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "amusementIsland",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 322,
+          "calls": 254,
+          "triangles": 106520,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "observatoryIsland",
+      "label": "고요한 천문대 섬",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "observatoryIsland.telescope",
+          "type": "telescope",
+          "label": "망원경 들여다보기",
+          "at": {
+            "x": 0,
+            "z": -0.2
+          }
+        },
+        {
+          "id": "observatoryIsland.boat",
+          "type": "boat",
+          "label": "배 타고 마을 선착장으로",
+          "at": {
+            "x": -9.2,
+            "z": 4.5
+          }
+        },
+        {
+          "id": "observatoryIsland.bench",
+          "type": "pose",
+          "label": "천문대 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 5.2,
+            "z": 4.35
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "observatoryIsland",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 333,
+          "calls": 86,
+          "triangles": 95965,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "villageHarbor",
+      "label": "마을 선착장",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "courtyard.group-activities",
+          "type": "squareGroup",
+          "label": "친구들과 광장 체조하기",
+          "at": {
+            "x": 2.55,
+            "z": 6.05
+          }
+        },
+        {
+          "id": "courtyard.noticeboard",
+          "type": "villageTool",
+          "label": "마을 게시판 읽기",
+          "at": {
+            "x": -2.1,
+            "z": -5.13
+          }
+        },
+        {
+          "id": "villageAirport.plane",
+          "type": "flight",
+          "label": "비행기 타기 · 구름성 놀이섬",
+          "at": {
+            "x": 22.4,
+            "z": -18.75
+          }
+        },
+        {
+          "id": "villageHarbor.boat",
+          "type": "boat",
+          "label": "배 타고 천문대 섬으로",
+          "at": {
+            "x": 28.8,
+            "z": 9.5
+          }
+        },
+        {
+          "id": "courtyard.island-lookout",
+          "type": "island-lookout",
+          "label": "바다와 구름섬 바라보기",
+          "at": {
+            "x": 15.8,
+            "y": 0.05,
+            "z": 6.3
+          }
+        },
+        {
+          "id": "courtyard.night-plaza",
+          "type": "plazaNight",
+          "label": "해변 캠핑 · 모닥불과 불꽃놀이",
+          "at": {
+            "x": -9.85,
+            "z": 24
+          }
+        },
+        {
+          "id": "courtyard.campfire.seat.dormi",
+          "type": "pose",
+          "label": "모닥불 옆에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.791224018360829,
+            "z": 27.88570846356792
+          }
+        },
+        {
+          "id": "courtyard.tent.airbed",
+          "type": "pose",
+          "label": "에어침대에 눕기",
+          "kind": "sleep",
+          "at": {
+            "x": -15.5,
+            "z": 20.608867
+          }
+        },
+        {
+          "id": "courtyard.camp-chair.0",
+          "type": "pose",
+          "label": "캠핑 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -15.45,
+            "z": 21.25
+          }
+        },
+        {
+          "id": "courtyard.camp-chair.1",
+          "type": "pose",
+          "label": "캠핑 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -17.8,
+            "z": 26.65
+          }
+        },
+        {
+          "id": "courtyard.fish-grill",
+          "type": "fishCooking",
+          "label": "물고기 구워 먹기",
+          "at": {
+            "x": -10,
+            "z": 20.55
+          }
+        },
+        {
+          "id": "courtyard.fishing",
+          "type": "fishing",
+          "label": "바닷가에서 낚시하기",
+          "at": {
+            "x": 11.6,
+            "z": 12.3
+          }
+        },
+        {
+          "id": "courtyard.fishing.north",
+          "type": "fishing",
+          "label": "캠핑장 남쪽 물가에서 낚시하기",
+          "at": {
+            "x": -13.6,
+            "z": 34.8
+          }
+        },
+        {
+          "id": "courtyard.shell.west",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": -4,
+            "z": 12.6
+          }
+        },
+        {
+          "id": "courtyard.shell.middle",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": 0,
+            "z": 13.1
+          }
+        },
+        {
+          "id": "courtyard.shell.east",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": 4,
+            "z": 12.6
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.0",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -9.01,
+            "z": -20.32
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.1",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7,
+            "z": -18.75
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.2",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -4.99,
+            "z": -20.32
+          }
+        },
+        {
+          "id": "courtyard.harbor.lighthouse-chair",
+          "type": "pose",
+          "label": "등대 앞 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 21.753198722170026,
+            "z": 12.50087964525221
+          }
+        },
+        {
+          "id": "courtyard.airfield.plane-bench",
+          "type": "pose",
+          "label": "비행장 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 17.961425166793614,
+            "z": -22.400358800376793
+          }
+        },
+        {
+          "id": "courtyard.bench",
+          "type": "pose",
+          "label": "광장 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 6.8,
+            "z": 1.71
+          }
+        },
+        {
+          "id": "courtyard.island-lookout.seat",
+          "type": "pose",
+          "label": "바다와 구름섬을 보는 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 14.5,
+            "z": 6.3
+          }
+        },
+        {
+          "id": "resident.harbor-seal",
+          "type": "resident",
+          "label": "물범 안내원과 이야기하기",
+          "at": {
+            "x": 24.2,
+            "z": 10.8
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "courtyard",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 347,
+          "calls": 102,
+          "triangles": 116257,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "villageAirport",
+      "label": "별빛 마을 작은 공항",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "courtyard.group-activities",
+          "type": "squareGroup",
+          "label": "친구들과 광장 체조하기",
+          "at": {
+            "x": 2.55,
+            "z": 6.05
+          }
+        },
+        {
+          "id": "courtyard.noticeboard",
+          "type": "villageTool",
+          "label": "마을 게시판 읽기",
+          "at": {
+            "x": -2.1,
+            "z": -5.13
+          }
+        },
+        {
+          "id": "villageAirport.plane",
+          "type": "flight",
+          "label": "비행기 타기 · 구름성 놀이섬",
+          "at": {
+            "x": 22.4,
+            "z": -18.75
+          }
+        },
+        {
+          "id": "villageHarbor.boat",
+          "type": "boat",
+          "label": "배 타고 천문대 섬으로",
+          "at": {
+            "x": 28.8,
+            "z": 9.5
+          }
+        },
+        {
+          "id": "courtyard.island-lookout",
+          "type": "island-lookout",
+          "label": "바다와 구름섬 바라보기",
+          "at": {
+            "x": 15.8,
+            "y": 0.05,
+            "z": 6.3
+          }
+        },
+        {
+          "id": "courtyard.night-plaza",
+          "type": "plazaNight",
+          "label": "해변 캠핑 · 모닥불과 불꽃놀이",
+          "at": {
+            "x": -9.85,
+            "z": 24
+          }
+        },
+        {
+          "id": "courtyard.campfire.seat.dormi",
+          "type": "pose",
+          "label": "모닥불 옆에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7.791224018360829,
+            "z": 27.88570846356792
+          }
+        },
+        {
+          "id": "courtyard.tent.airbed",
+          "type": "pose",
+          "label": "에어침대에 눕기",
+          "kind": "sleep",
+          "at": {
+            "x": -15.5,
+            "z": 20.608867
+          }
+        },
+        {
+          "id": "courtyard.camp-chair.0",
+          "type": "pose",
+          "label": "캠핑 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -15.45,
+            "z": 21.25
+          }
+        },
+        {
+          "id": "courtyard.camp-chair.1",
+          "type": "pose",
+          "label": "캠핑 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -17.8,
+            "z": 26.65
+          }
+        },
+        {
+          "id": "courtyard.fish-grill",
+          "type": "fishCooking",
+          "label": "물고기 구워 먹기",
+          "at": {
+            "x": -10,
+            "z": 20.55
+          }
+        },
+        {
+          "id": "courtyard.fishing",
+          "type": "fishing",
+          "label": "바닷가에서 낚시하기",
+          "at": {
+            "x": 11.6,
+            "z": 12.3
+          }
+        },
+        {
+          "id": "courtyard.fishing.north",
+          "type": "fishing",
+          "label": "캠핑장 남쪽 물가에서 낚시하기",
+          "at": {
+            "x": -13.6,
+            "z": 34.8
+          }
+        },
+        {
+          "id": "courtyard.shell.west",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": -4,
+            "z": 12.6
+          }
+        },
+        {
+          "id": "courtyard.shell.middle",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": 0,
+            "z": 13.1
+          }
+        },
+        {
+          "id": "courtyard.shell.east",
+          "type": "pose",
+          "label": "재료 모으기",
+          "kind": "gatherShell",
+          "at": {
+            "x": 4,
+            "z": 12.6
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.0",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -9.01,
+            "z": -20.32
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.1",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -7,
+            "z": -18.75
+          }
+        },
+        {
+          "id": "courtyard.forest.bench.2",
+          "type": "pose",
+          "label": "숲속 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": -4.99,
+            "z": -20.32
+          }
+        },
+        {
+          "id": "courtyard.harbor.lighthouse-chair",
+          "type": "pose",
+          "label": "등대 앞 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 21.753198722170026,
+            "z": 12.50087964525221
+          }
+        },
+        {
+          "id": "courtyard.airfield.plane-bench",
+          "type": "pose",
+          "label": "비행장 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 17.961425166793614,
+            "z": -22.400358800376793
+          }
+        },
+        {
+          "id": "courtyard.bench",
+          "type": "pose",
+          "label": "광장 벤치에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 6.8,
+            "z": 1.71
+          }
+        },
+        {
+          "id": "courtyard.island-lookout.seat",
+          "type": "pose",
+          "label": "바다와 구름섬을 보는 의자에 앉기",
+          "kind": "sit",
+          "at": {
+            "x": 14.5,
+            "z": 6.3
+          }
+        },
+        {
+          "id": "resident.airport-sugar-glider",
+          "type": "resident",
+          "label": "슈가글라이더 안내원과 이야기하기",
+          "at": {
+            "x": 21,
+            "z": -11.6
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "courtyard",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 356,
+          "calls": 87,
+          "triangles": 102131,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "amusementAirport",
+      "label": "구름성 놀이섬 작은 공항",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "amusementIsland.carousel",
+          "type": "pose",
+          "label": "회전목마 마차에 앉기",
+          "kind": "carousel",
+          "at": {
+            "x": 0,
+            "z": 2.05
+          }
+        },
+        {
+          "id": "amusementIsland.viking",
+          "type": "pose",
+          "label": "바이킹 배에 앉기",
+          "kind": "viking",
+          "at": {
+            "x": 9.6,
+            "z": 6.1
+          }
+        },
+        {
+          "id": "amusementIsland.claw",
+          "type": "claw",
+          "label": "작은 인형뽑기",
+          "at": {
+            "x": 4.95,
+            "z": -1.07
+          }
+        },
+        {
+          "id": "amusementIsland.fish-scoop",
+          "type": "fishScoop",
+          "label": "물고기 뜰채 잡기",
+          "at": {
+            "x": -9,
+            "z": -6.9
+          }
+        },
+        {
+          "id": "amusementIsland.food-cart.cold",
+          "type": "amusementFood",
+          "label": "아이스크림 · 슬러시 주문하기",
+          "at": {
+            "x": -4.9,
+            "z": -1.2
+          }
+        },
+        {
+          "id": "amusementIsland.food-cart.warm",
+          "type": "amusementFood",
+          "label": "핫도그 · 츄러스 주문하기",
+          "at": {
+            "x": -5.5,
+            "z": 4.1
+          }
+        },
+        {
+          "id": "amusementAirport.plane",
+          "type": "flight",
+          "label": "비행기 타기 · 별빛 마을",
+          "at": {
+            "x": 20.75,
+            "z": -7.5
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "amusementIsland",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 370,
+          "calls": 153,
+          "triangles": 90892,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "amusementCircuit",
+      "label": "구름 카트 코스",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "amusementCircuit.kart",
+          "type": "pose",
+          "label": "구름 카트 · 한 바퀴 도전",
+          "kind": "kartRace",
+          "at": {
+            "x": 3.35,
+            "z": 6
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "amusementCircuit",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 384,
+          "calls": 115,
+          "triangles": 81648,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "bumperCourt",
+      "label": "구름성 작은 범퍼카장",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "bumperCourt.car",
+          "type": "pose",
+          "label": "범퍼카 천천히 타기",
+          "kind": "bumper",
+          "at": {
+            "x": 1.25,
+            "z": 4.65
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "bumperCourt",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 395,
+          "calls": 92,
+          "triangles": 77256,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    },
+    {
+      "id": "coasterGarden",
+      "label": "구름성 작은 코스터",
+      "spawn": "entry",
+      "result": "entered",
+      "targets": [
+        {
+          "id": "coasterGarden.car",
+          "type": "pose",
+          "label": "작은 코스터에 앉기",
+          "kind": "coaster",
+          "at": {
+            "x": 1.8,
+            "z": 2.3
+          }
+        }
+      ],
+      "errors": [],
+      "snapshot": {
+        "room": "coasterGarden",
+        "ready": true,
+        "failed": false,
+        "locked": false,
+        "phase": "idle",
+        "modal": false,
+        "renderer": {
+          "frame": 404,
+          "calls": 47,
+          "triangles": 105788,
+          "points": 0,
+          "lines": 0
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

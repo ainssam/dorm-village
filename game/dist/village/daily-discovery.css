@@ -1,0 +1,17 @@
+.daily-discovery{color:#354a43;max-width:42rem;margin:auto;line-height:1.7;overflow-wrap:anywhere}
+.daily-discovery-intro{font-weight:750;color:#675778;margin:.2rem 0}
+.daily-discovery-note,.daily-discovery-footnote{font-size:.9rem;color:#53665e}
+.daily-discovery-nav{display:flex;gap:.5rem;margin:1rem 0;justify-content:space-between}
+.daily-discovery-nav button,.daily-discovery-play button{min-height:44px;padding:.6rem 1rem;border:1px solid #b8cbbd;border-radius:12px;background:#f6fbf5;color:#304d40;font:inherit;font-weight:700;cursor:pointer}
+.daily-discovery-nav button:disabled{opacity:.55;cursor:default}
+.daily-discovery button:focus-visible{outline:3px solid #765a91;outline-offset:2px}
+.daily-discovery-card{padding:clamp(1rem,4vw,1.6rem);border:1px solid #e6dccc;border-radius:20px;background:#fffaf0;box-shadow:0 5px 20px #80736716}
+.daily-discovery-date{font-size:.9rem;color:#596c60;margin:0}
+.daily-discovery-topic{display:inline-block;margin:.7rem 0 0;padding:.12rem .65rem;border-radius:99px;background:#e9e1f3;color:#5f4e73;font-size:.85rem;font-weight:700}
+.daily-discovery-card h3{font-size:1.35rem;margin:.4rem 0}
+.daily-discovery-reading{white-space:pre-line}
+.daily-discovery-question,.daily-discovery-play{padding:1rem;margin-top:1rem;border-radius:14px;background:#e7f3e9}
+.daily-discovery-play{background:#fae9e9}
+.daily-discovery-question p,.daily-discovery-play p{margin:.3rem 0}
+.daily-discovery-play button{margin-top:.65rem;background:#fff;color:#554454;border-color:#d8beca}
+.daily-discovery-reflection{color:#62536e;margin-bottom:0}

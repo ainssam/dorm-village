@@ -1,0 +1,695 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "input": "emulated touch",
+  "drawingEvery": 12,
+  "renderScale": 0.35,
+  "results": [
+    {
+      "name": "fish-catch-read-guide",
+      "passed": true,
+      "elapsedMs": 61587,
+      "evidence": {
+        "castPower": 0.5094328937982453,
+        "cycles": 4,
+        "trace": [
+          {
+            "phase": "reeling",
+            "progress": 0.00775,
+            "tension": 0.31683702679262327
+          },
+          {
+            "phase": "landing",
+            "progress": 1,
+            "tension": 0.6761431102201764
+          },
+          {
+            "phase": "caught",
+            "progress": 1,
+            "tension": 0.6761431102201764
+          }
+        ],
+        "heldThroughLanding": true,
+        "resultPreservedAfterRelease": true,
+        "explicitRetry": true,
+        "fishId": "ribbon-mackerel",
+        "label": "리본 고등어",
+        "caughtText": "리본 고등어 한 마리 · 재료가방에 보관했어요",
+        "total": 1,
+        "guide": "리본 고등어\n\n푸른 몸에 리본 같은 줄무늬\n\n바다 · 주로 동남쪽 바닷가\n\n지금까지 발견\n1마리\n재료가방\n1마리\n구워 먹은 수\n0마리\n\n처음 만난 날 2026. 11. 1. · 동남쪽 바닷가"
+      }
+    },
+    {
+      "name": "observatory-city-date-settings",
+      "passed": false,
+      "elapsedMs": 7704,
+      "error": "locator.selectOption: Error: Element is not a <select> element\nCall log:\n\u001b[2m  - waiting for locator('[data-sky-mode]')\u001b[22m\n\u001b[2m    - locator resolved to <div id=\"sky-content\" data-sky-mood=\"night\" data-sky-horizon=\"false\" data-sky-mode=\"scientific\" class=\"sky-vista sky-scientific-vista sky-telescope-vista\">…</div>\u001b[22m\n\u001b[2m  - attempting select option action\u001b[22m\n\u001b[2m    - waiting for element to be visible and enabled\u001b[22m\n",
+      "state": {
+        "ready": true,
+        "doreumiMotion": {
+          "phase": "idle",
+          "id": null,
+          "label": "",
+          "time": 0,
+          "duration": 0
+        },
+        "clawRuntime": null,
+        "fishScoopRuntime": null,
+        "lookoutRuntime": {
+          "phase": "idle",
+          "elapsed": 0,
+          "paused": false,
+          "mapQueued": false,
+          "scenic": false,
+          "generation": 0,
+          "cover": 0,
+          "disposed": false,
+          "error": null,
+          "ocean": null
+        },
+        "flightRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "frameFailure": null,
+          "disposed": false
+        },
+        "boatRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "disposed": false
+        },
+        "weatherRuntime": {
+          "status": "disabled",
+          "enabled": false,
+          "city": null,
+          "snapshot": null,
+          "freshness": "expired",
+          "error": null,
+          "retryAtUtcMs": 0,
+          "cacheEntries": 0,
+          "selectedCityId": "seoul",
+          "selectedCity": {
+            "id": "seoul",
+            "label": "서울",
+            "latDeg": 37.5665,
+            "lonDegEast": 126.978,
+            "timeZone": "Asia/Seoul",
+            "source": "preset",
+            "isExample": false,
+            "elevationM": 0
+          },
+          "visualsEnabled": true,
+          "reducedMotion": false,
+          "visualError": null
+        },
+        "produceRuntime": null,
+        "produce": {
+          "season": "calendar",
+          "nodes": {
+            "park.produce.strawberry": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.tomato": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pumpkin": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.leafy": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.peach": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pear": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.mandarin": {
+              "harvests": 0,
+              "phase": "seed"
+            }
+          }
+        },
+        "cafeFoodRuntime": {
+          "open": false,
+          "mode": null,
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": false,
+          "seatId": null,
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 1,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": null,
+          "barista": null,
+          "carry": null
+        },
+        "amusementFoodRuntime": null,
+        "cafeFood": {
+          "packed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0
+          },
+          "made": {
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "consumed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          }
+        },
+        "bakeryRuntime": null,
+        "squareRuntime": null,
+        "tentRuntime": {
+          "seaCue": null,
+          "active": false,
+          "mode": null,
+          "phase": "idle",
+          "duration": 0.8,
+          "inside": false,
+          "paused": false,
+          "activityId": null,
+          "isolated": false,
+          "width": 390,
+          "height": 844
+        },
+        "marshmallowRuntime": null,
+        "fishCookingRuntime": null,
+        "plazaRuntime": null,
+        "fishingRuntime": null,
+        "fishing": {
+          "total": 1,
+          "counts": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 1,
+            "star-bream": 0
+          },
+          "consumed": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "meals": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "firstCatch": {
+            "petal-minnow": null,
+            "moon-carp": null,
+            "ribbon-mackerel": {
+              "at": "2026-11-01T14:24:27.386Z",
+              "spotId": "sea"
+            },
+            "star-bream": null
+          }
+        },
+        "musicChairRestRuntime": null,
+        "mathResidentRuntime": null,
+        "saveWritable": true,
+        "materials": {
+          "apple": 0,
+          "shell": 0,
+          "autumnLeaf": 0,
+          "petal": 0,
+          "pondFish": 0,
+          "seaFish": 1,
+          "strawberry": 0,
+          "tomato": 0,
+          "pumpkin": 0,
+          "leafy": 0,
+          "peach": 0,
+          "pear": 0,
+          "mandarin": 0
+        },
+        "gathering": {
+          "epoch": 1,
+          "nodes": {
+            "park.tree.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.tree.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.middle": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.leaves.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            }
+          }
+        },
+        "residentSpaceUse": null,
+        "elevatorRuntime": null,
+        "schoolFloor": null,
+        "locomotion": {
+          "airborne": false,
+          "height": 0,
+          "sprinting": false,
+          "moving": false,
+          "phase": 0
+        },
+        "gymRuntime": null,
+        "baseballRuntime": null,
+        "raceRuntime": null,
+        "passingRuntime": null,
+        "libraryQuestRuntime": null,
+        "buildRuntime": null,
+        "robotRuntime": null,
+        "cookingRuntime": null,
+        "sky": {
+          "id": "night",
+          "label": "밤",
+          "clock": "23:24",
+          "timeZone": "Asia/Seoul"
+        },
+        "cafeRuntime": {
+          "open": false,
+          "running": false,
+          "shop": false,
+          "tab": "bread"
+        },
+        "throwRuntime": null,
+        "musicRuntime": null,
+        "audio": {
+          "enabled": false,
+          "unlocked": false,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "village": {
+          "cafe": {
+            "schemaVersion": 1,
+            "day": 1,
+            "phase": "idle",
+            "activeMs": 0,
+            "nextArrivalMs": 3000,
+            "nextOrdinal": 1,
+            "jobSerial": 0,
+            "orders": [],
+            "settled": [],
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "qualityStock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "dough": null,
+            "oven": null,
+            "drink": null,
+            "upgrades": {
+              "warmOven": false,
+              "wideDisplay": false,
+              "cozyCorner": false
+            },
+            "coins": 0,
+            "ledger": {
+              "sold": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "fastTips": 0,
+              "qualityTips": 0,
+              "cozyTips": 0,
+              "spent": 0
+            },
+            "today": {
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "tips": 0
+            }
+          },
+          "bakery": {
+            "phase": "empty",
+            "decoration": null,
+            "completed": 0,
+            "pastries": 0
+          },
+          "mailbox": {
+            "letters": []
+          },
+          "photos": [],
+          "wallPlacements": {}
+        },
+        "residents": [],
+        "worldResidents": [],
+        "library": {
+          "selectedBookId": "pocket-star",
+          "borrowedBookId": null,
+          "readBookIds": []
+        },
+        "activity": null,
+        "discoveryIds": [
+          "sea-catch"
+        ],
+        "pose": {
+          "name": "stand",
+          "amount": 0,
+          "time": 0,
+          "seatContactY": 0.11474484205245972,
+          "anchors": {
+            "leftHand": [
+              -0.6125609400080781,
+              0.43278150436692664,
+              0.059183792574516725
+            ],
+            "rightHand": [
+              0.612543566284419,
+              0.43278150436692664,
+              0.05918379257451678
+            ],
+            "leftFoot": [
+              -0.211,
+              0.135,
+              0.11
+            ],
+            "rightFoot": [
+              0.211,
+              0.135,
+              0.11
+            ],
+            "seat": [
+              0,
+              0.11474484205245972,
+              0.011705340817570686
+            ],
+            "hands": {
+              "left": [
+                -0.6125609400080781,
+                0.43278150436692664,
+                0.059183792574516725
+              ],
+              "right": [
+                0.612543566284419,
+                0.43278150436692664,
+                0.05918379257451678
+              ]
+            },
+            "feet": {
+              "left": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "right": [
+                0.211,
+                0.135,
+                0.11
+              ]
+            }
+          },
+          "bounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.5831665396690369,
+              0.4671066105365753
+            ]
+          },
+          "bodyBounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.244211196899414,
+              0.4142765998840332
+            ]
+          },
+          "sleepPitch": -1.5707963267948966,
+          "character": "doreumi-master-rig"
+        },
+        "won": false,
+        "roomId": "observatoryIsland",
+        "worldId": "observatoryIsland",
+        "localPosition": {
+          "x": 0,
+          "z": -0.2
+        },
+        "worldPosition": {
+          "x": 0,
+          "z": -0.2
+        },
+        "transitionPhase": "idle",
+        "inputLocked": true,
+        "starsCollected": 0,
+        "collectedIds": [],
+        "ownedItemIds": [
+          "plant",
+          "picture-frame"
+        ],
+        "rewardClaimIds": [],
+        "completedActivityIds": [],
+        "placements": {},
+        "garden": {
+          "phase": "seed",
+          "moments": [],
+          "petals": 0,
+          "harvests": 0,
+          "harvestedBedIds": []
+        },
+        "saveStatus": "saved",
+        "revision": 2,
+        "position": {
+          "x": 0,
+          "y": 0.05,
+          "z": -0.2
+        },
+        "camera": {
+          "mode": "walk",
+          "x": 0,
+          "y": 12.699999999999998,
+          "z": 26.799999999999994,
+          "target": {
+            "x": 0,
+            "y": 1,
+            "z": -0.2000000000000006
+          },
+          "zoom": 1
+        },
+        "quality": "medium",
+        "renderer": {
+          "frame": 98,
+          "calls": 68,
+          "triangles": 94021,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 76,
+            "textures": 9
+          },
+          "pixelRatio": 0.3499999940395355,
+          "buffer": {
+            "width": 136,
+            "height": 295
+          }
+        },
+        "timings": {
+          "transitionMs": [
+            571
+          ],
+          "frameIntervals": [
+            16.7,
+            50,
+            16.7,
+            100,
+            16.7,
+            16.6,
+            83.4,
+            16.6,
+            66.7,
+            16.7,
+            16.7,
+            50,
+            16.6,
+            83.3,
+            16.8,
+            333.2,
+            16.7,
+            33.4,
+            16.7,
+            83.2,
+            16.7,
+            16.7,
+            16.6,
+            16.6,
+            550,
+            33.4,
+            16.6,
+            483.3,
+            16.7,
+            1133.3,
+            333.3,
+            450,
+            16.7,
+            350,
+            316.7,
+            33.3,
+            716.6,
+            33.3,
+            16.7,
+            16.7
+          ]
+        }
+      },
+      "text": "한국 23:24 · 가을\n고요한 천문대 섬\n\n열린 문 안 망원경에서 하늘 보기 · 바닷가 벤치에서 쉬기\n\n지도\n소리\n메뉴\n✦\n끝까지 밀면 달리기\n망원경 들여다보기\n이 브라우저에 저장했어요\n장소와 시각을 따라 우주를 보아요\n천문대 망원경\n\n런던 · 2026-11-01 21:00\nEurope/London (UTC+00:00) · 선택한 시각\n\n×\n망원경 · 장소·시각\n⌄\n어디를 바라볼까요?\n화면의 세로 시야각\n75° · 넓게\n35° · 가까이\n10° · 좁게\n\n75° · 35° · 10°는 화면의 세로 시야각이에요. 실제 망원경의 광학 배율이나 촬영 화면이 아니에요.\n\n관측 대상 · 선택 사항\n직접 둘러보기\n달 · 지평선 아래\n수성 · 지평선 아래\n금성 · 지평선 아래\n화성 · 지평선 아래\n목성 · 지평선 아래\n토성 · 지평선 위\n천왕성 · 지평선 위\n해왕성 · 지평선 위\n이 방향으로 보기\n\n대상을 골라도 시점은 움직이지 않아요. 방향 버튼을 눌러 둘러보세요.\n고도: 지평선 0° · 머리 위 90° / 방위: 북 0° · 동 90° · 남 180° · 서 270°\n\n어디의 하늘을 볼까요?\n\n선택한 도시와 날짜·시각에 따라 별·태양·달·행성이 하늘의 어느 방향에 있는지 계산해 그려요. 처음 장소는 서울(예시)이며, 기기 위치나 실제 날씨는 가져오지 않아요.\n\n관측 기준 장소\n서울\n부산\n제주시\n시드니\n트롬쇠\n런던\n뉴욕\n카트만두\n키토\n\n런던 · Europe/London\n미리 정한 도시 좌표 · 높이 0 m (해수면 가정) · 기기 위치는 가져오지 않아요\n\n지금 보기\n런던에서 선택한 시각에 머물러요\n도시의 현지 날짜·시각 미리보기\n이 시각으로 보기\n\n선택한 시각에 머물러요. 지금 보기로 돌아갈 수 있어요.\n\n천체의 방향은 계산하지만, 구름·하늘색은 연출이에요. 실제 날씨나 맨눈으로 보이는지는 알려 주지 않아요.\n\n계산과 출처 알아보기\n\nNASA · 태양 관측 안전\nNASA · 달의 위상 알아보기\n\n접고 하늘 보기\n\n가만히 머물러도 좋아요 · 드래그 / 방향키로 둘러보기\n\n별자리 선\n구름 멈추기\n남쪽으로\n\n화면 세로 시야 75° · 숫자가 작을수록 좁게 보여요. 망원경 배율은 아니에요.\n선택한 장소·시각의 계산 하늘 · 구름·색감은 연출이에요\n\n실제 망원경으로 태양을 직접 보지 마세요. 태양 관측에는 전용 장비와 전문가의 안내가 필요해요. NASA 안전 안내"
+    }
+  ],
+  "travelLog": [
+    {
+      "from": "courtyard",
+      "to": "observatoryIsland",
+      "title": "고요한 천문대 섬",
+      "actual": "observatoryIsland"
+    }
+  ],
+  "setupLog": [
+    {
+      "requested": "courtyard.fishing",
+      "position": {
+        "x": 11.6,
+        "z": 12.3
+      },
+      "target": {
+        "x": 11.6,
+        "z": 12.3
+      }
+    },
+    {
+      "requested": "observatoryIsland.telescope",
+      "position": {
+        "x": 0,
+        "z": -0.2
+      },
+      "target": {
+        "x": 0,
+        "z": -0.2
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

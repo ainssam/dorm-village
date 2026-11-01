@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
 import {signLabel} from '../world/handwriting.js';
 import {FISH_SCOOP_POOL,FISH_SCOOP_ACTIVITY} from './layout.js';
-import {fishScoopPositions,FISH_SCOOP_HIT_TIME,FISH_SCOOP_RISE_TIME} from './fish-scoop-model.js';
+import {fishScoopPositions,fishScoopAim,FISH_SCOOP_CATCH_RADIUS,FISH_SCOOP_HIT_TIME,FISH_SCOOP_RISE_TIME} from './fish-scoop-model.js';
 
 const Y=new THREE.Vector3(0,1,0),PALETTE=['#e89a78','#83aeb0','#e0c778','#bb93ae'];
 function triangleGeometry(points){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(points.flat(),3));g.computeVertexNormals();return g;}
@@ -39,6 +39,12 @@ export function buildFishScoopSite(parent){
  const netMat=mat('#d0baa0');
  for(let i=0;i<6;i++){const a=i*Math.PI/3,spoke=new THREE.Mesh(new THREE.CylinderGeometry(.008,.008,.20,4),netMat);spoke.position.set(Math.cos(a)*.11,-.045,Math.sin(a)*.11);spoke.name='fish-scoop.net.mesh.'+i;net.add(spoke);}
  const handle=new THREE.Mesh(new THREE.CylinderGeometry(.012,.015,.57,5),mat('#9d795d'));handle.position.set(0,.36,.16);handle.rotation.x=.34;handle.name='fish-scoop.net.handle';net.add(handle);
+ // The water-level ring explains depth in the oblique camera. It shares the
+ // net's visibility and marks the real catch radius, rather than guessing it.
+ const aimRing=new THREE.Mesh(new THREE.RingGeometry(FISH_SCOOP_CATCH_RADIUS-.015,FISH_SCOOP_CATCH_RADIUS+.012,24),new THREE.MeshBasicMaterial({color:'#fff7d2',transparent:true,opacity:.8,side:THREE.DoubleSide,depthWrite:false}));aimRing.name='fish-scoop.aim-ring';aimRing.rotation.x=-Math.PI/2;net.add(aimRing);
+ for(const [x,z,size] of [[-1.1,-.7,.12],[1.1,.7,.14],[-1.05,.65,.09]]){
+  const leaf=new THREE.Mesh(new THREE.CylinderGeometry(size,size*.95,.012,8),mat('#769d80'));leaf.position.set(x,.219,z);leaf.name='fish-scoop.water-leaf';root.add(leaf);
+ }
  const ripple=new THREE.Mesh(new THREE.RingGeometry(.25,.29,8),new THREE.MeshBasicMaterial({color:'#eaf4db',transparent:true,opacity:.62,side:THREE.DoubleSide,depthWrite:false}));ripple.rotation.x=-Math.PI/2;ripple.position.y=.213;ripple.visible=false;ripple.name='fish-scoop.ripple';root.add(ripple);
 
  // Five quiet planks give the narrow lobe a visible, continuous walk route.
@@ -51,24 +57,29 @@ export function buildFishScoopSite(parent){
  const board=new THREE.Mesh(new THREE.BoxGeometry(.65,.34,.08),mat('#d9c2a0'));board.position.set(0,.55,0);board.name='fish-scoop.sign.board';sign.add(board);
  signLabel('뜰채 연못',0,.55,.044,.57,'#657d79','transparent',sign);
  let state=null,time=0,disposed=false;
- function update(next,{reduced=false}={}){
-  if(disposed)return;state=next;
-  if(!next){net.visible=false;ripple.visible=false;return;}
-  net.visible=next.phase==='playing'||next.phase==='paused'||next.phase==='complete';
-  const fishPositions=fishScoopPositions(next);
+ const idleState=()=>({seed:.17,clock:time,elapsed:time,fishCooldowns:[0,0,0,0]});
+ function poseFish(next,reduced){
+  const positions=fishScoopPositions(next);
   for(let i=0;i<fish.length;i++){
-   const p=fishPositions[i],mesh=fish[i];mesh.position.set(p.x,.285+(reduced?0:Math.sin(next.clock*3+i*2)*.025),p.z);mesh.rotation.y=p.yaw;mesh.visible=p.visible;
+   const p=positions[i],mesh=fish[i];mesh.position.set(p.x,.285+(reduced?0:Math.sin(next.clock*3+i*2)*.025),p.z);mesh.rotation.y=p.yaw;mesh.visible=p.visible;
    if(!reduced)mesh.userData.tail.rotation.y=Math.sin(next.clock*9+i)*.20;
   }
+ }
+ function update(next,{reduced=false}={}){
+  if(disposed)return;state=next;
+  if(!next){net.visible=false;ripple.visible=false;poseFish(idleState(),reduced);return;}
+  net.visible=next.phase==='playing'||next.phase==='paused'||next.phase==='complete';
+  poseFish(next,reduced);
   net.position.set(next.net.x,0,next.net.z);
   const action=next.scoop,lower=action.phase==='lowering'?smooth(action.elapsed/FISH_SCOOP_HIT_TIME):action.phase==='rising'?1-smooth(action.elapsed/FISH_SCOOP_RISE_TIME):0;
   net.position.y=action.phase==='idle'?.72:.72-.50*lower;
+  aimRing.position.y=.218-net.position.y;aimRing.material.color.set(fishScoopAim(next)?.ready?'#477b57':'#fff7d2');
   if(action.phase==='rising'&&action.result==='caught'){ripple.visible=true;ripple.position.x=next.net.x;ripple.position.z=next.net.z;ripple.scale.setScalar(reduced?1:1.05+.16*Math.sin(next.clock*8));ripple.material.opacity=reduced?.35:.42+.18*Math.sin(next.clock*8);}
   else ripple.visible=false;
  }
- function animate(dt=0,{reduced=false}={}){if(disposed||!Number.isFinite(dt)||dt<=0||reduced)return;time+=Math.min(dt,.05);if(!state){for(let i=0;i<fish.length;i++)fish[i].position.y=.285+Math.sin(time*2.4+i*1.7)*.022;}}
+ function animate(dt=0,{reduced=false}={}){if(disposed||!Number.isFinite(dt)||dt<=0||reduced)return;time+=Math.min(dt,.05);if(!state)poseFish(idleState(),false);}
  function dispose(){if(disposed)return;disposed=true;disposeToyTree(root);}
- root.updateMatrixWorld(true);
+ update(null,{reduced:true});root.updateMatrixWorld(true);
  return{root,fish,net,ripple,boardwalk,sign,update,animate,dispose,get state(){return state;}};
 }
 

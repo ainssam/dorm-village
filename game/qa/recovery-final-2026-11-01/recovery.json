@@ -1,0 +1,14 @@
+[
+  {
+    "name": "saved-loan-survives-reload",
+    "passed": true
+  },
+  {
+    "name": "second-tab-is-read-only",
+    "passed": true
+  },
+  {
+    "name": "model-load-failure-is-recoverable",
+    "passed": true
+  }
+]

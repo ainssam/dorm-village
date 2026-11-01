@@ -1,0 +1,25 @@
+{
+  "art-before-reload.png": {
+    "width": 720,
+    "height": 440,
+    "markedPixels": 3012,
+    "bounds": [
+      143,
+      153,
+      563,
+      287
+    ]
+  },
+  "art-after-reload.png": {
+    "width": 720,
+    "height": 440,
+    "markedPixels": 3012,
+    "bounds": [
+      143,
+      153,
+      563,
+      287
+    ]
+  },
+  "method": "Read-only PNG pixel analysis; mark differs by more than 2 from paper RGB(255,247,223). Canvas PNG alpha conversion may round one channel value."
+}

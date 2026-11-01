@@ -1,0 +1,252 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "input": "touch",
+  "renderEvery": 12,
+  "results": [
+    {
+      "name": "library-read-carry-deliver",
+      "passed": true,
+      "evidence": {
+        "shelf": {
+          "target": {
+            "x": -6.4,
+            "z": -4.16
+          },
+          "start": {
+            "position": {
+              "x": -6.245793102038346,
+              "z": -3.151724128712261
+            },
+            "action": "친칠라의 의뢰 듣기",
+            "locked": false,
+            "stickDisabled": false,
+            "activeElement": "scene",
+            "probe": {
+              "input": {
+                "axes": {
+                  "x": 0,
+                  "z": 0
+                },
+                "locked": false,
+                "keys": [],
+                "stick": {
+                  "x": 0,
+                  "z": 0
+                }
+              },
+              "gameLocked": false,
+              "player": {
+                "x": 10.045793102038346,
+                "z": 13.551724128712262,
+                "yaw": 4.998102012639461,
+                "local": {
+                  "x": -6.245793102038346,
+                  "z": -3.151724128712261
+                }
+              },
+              "nearbyCircles": [],
+              "nearbyObstacles": [
+                {
+                  "x": 10.2,
+                  "z": 12,
+                  "hx": 1.075,
+                  "hz": 0.34,
+                  "ownerRoomId": "library"
+                }
+              ],
+              "residents": [],
+              "canMove": true,
+              "canCarry": true,
+              "carryDirections": [
+                {
+                  "yaw": 0,
+                  "allowed": true
+                },
+                {
+                  "yaw": 0.7853981633974483,
+                  "allowed": true
+                },
+                {
+                  "yaw": 1.5707963267948966,
+                  "allowed": true
+                },
+                {
+                  "yaw": 2.356194490192345,
+                  "allowed": true
+                },
+                {
+                  "yaw": 3.141592653589793,
+                  "allowed": true
+                },
+                {
+                  "yaw": 3.9269908169872414,
+                  "allowed": true
+                },
+                {
+                  "yaw": 4.71238898038469,
+                  "allowed": true
+                },
+                {
+                  "yaw": 5.497787143782138,
+                  "allowed": true
+                }
+              ],
+              "carryBlockingCircles": [],
+              "carryBlockingObstacles": []
+            }
+          },
+          "end": {
+            "position": {
+              "x": -6.329565985579656,
+              "z": -3.6994699057131504
+            },
+            "action": "1 · 나눔 책장 살펴보기"
+          },
+          "distance": 0.4658850911235732,
+          "input": "touch stick"
+        },
+        "handover": {
+          "target": {
+            "x": -5.25,
+            "z": 3.55
+          },
+          "start": {
+            "position": {
+              "x": -5.095793102038346,
+              "z": 4.558275871287738
+            },
+            "action": "천천히 둘러보기E",
+            "locked": false,
+            "stickDisabled": false,
+            "activeElement": "scene",
+            "probe": {
+              "input": {
+                "axes": {
+                  "x": 0,
+                  "z": 0
+                },
+                "locked": false,
+                "keys": [],
+                "stick": {
+                  "x": 0,
+                  "z": 0
+                }
+              },
+              "gameLocked": false,
+              "player": {
+                "x": 8.895793102038347,
+                "z": 5.841724128712263,
+                "yaw": 0.03704324131760339,
+                "local": {
+                  "x": -5.095793102038346,
+                  "z": 4.558275871287738
+                }
+              },
+              "nearbyCircles": [
+                {
+                  "x": 7.250000000000001,
+                  "z": 6.670000001788139,
+                  "avoidSlide": false,
+                  "radius": 0.62
+                },
+                {
+                  "x": 10.25,
+                  "z": 8.434999978542328,
+                  "avoidSlide": false,
+                  "radius": 0.62
+                }
+              ],
+              "nearbyObstacles": [
+                {
+                  "x": 7.25,
+                  "z": 6.977,
+                  "hx": 0.75,
+                  "hz": 0.675,
+                  "ownerRoomId": "library"
+                },
+                {
+                  "x": 10.15,
+                  "z": 7.6000000000000005,
+                  "hx": 0.6,
+                  "hz": 0.22,
+                  "ownerRoomId": "library"
+                }
+              ],
+              "residents": [
+                {
+                  "id": "chinchilla",
+                  "x": 7.250000000000001,
+                  "z": 6.670000001788139,
+                  "yaw": 3.2015926521878937,
+                  "moving": false,
+                  "ownerRoomId": "library"
+                },
+                {
+                  "id": "armadillo",
+                  "x": 10.25,
+                  "z": 8.434999978542328,
+                  "yaw": 0.7407963474523506,
+                  "moving": false,
+                  "ownerRoomId": "library"
+                }
+              ],
+              "canMove": true,
+              "canCarry": true,
+              "carryDirections": [
+                {
+                  "yaw": 0,
+                  "allowed": true
+                },
+                {
+                  "yaw": 0.7853981633974483,
+                  "allowed": true
+                },
+                {
+                  "yaw": 1.5707963267948966,
+                  "allowed": true
+                },
+                {
+                  "yaw": 2.356194490192345,
+                  "allowed": true
+                },
+                {
+                  "yaw": 3.141592653589793,
+                  "allowed": true
+                },
+                {
+                  "yaw": 3.9269908169872414,
+                  "allowed": true
+                },
+                {
+                  "yaw": 4.71238898038469,
+                  "allowed": true
+                },
+                {
+                  "yaw": 5.497787143782138,
+                  "allowed": true
+                }
+              ],
+              "carryBlockingCircles": [],
+              "carryBlockingObstacles": []
+            }
+          },
+          "end": {
+            "position": {
+              "x": -5.184387200509995,
+              "z": 3.9790067658961967
+            },
+            "action": "친칠라에게 책 건네기"
+          },
+          "distance": 0.43399521269436814,
+          "input": "touch stick"
+        },
+        "stamp": "1. 꽃에게 빌려 준 빛\n도장 있음 · 다시 놀이\n친칠라: 어두운 길의 꽃에게 빛을 나누어 준 이야기를 찾고 있어요. 제목만 보지 말고 책 속 행동을 확인해 주세요."
+      }
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

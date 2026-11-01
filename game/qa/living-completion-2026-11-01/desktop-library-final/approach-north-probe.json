@@ -1,0 +1,168 @@
+{
+  "target": {
+    "x": -6.4,
+    "z": -4.16
+  },
+  "start": {
+    "position": {
+      "x": -5.943842132590043,
+      "z": -3.2476842651800846
+    },
+    "action": "친칠라의 의뢰 듣기\nE",
+    "locked": false,
+    "stickDisabled": false,
+    "activeElement": "scene",
+    "probe": {
+      "input": {
+        "axes": {
+          "x": 0,
+          "z": 0
+        },
+        "locked": false,
+        "keys": [],
+        "stick": {
+          "x": 0,
+          "z": 0
+        }
+      },
+      "gameLocked": false,
+      "player": {
+        "x": 9.743842132590043,
+        "z": 13.647684265180086,
+        "yaw": 4.998102012639461,
+        "local": {
+          "x": -5.943842132590043,
+          "z": -3.2476842651800846
+        }
+      },
+      "nearbyCircles": [],
+      "nearbyObstacles": [
+        {
+          "x": 10.2,
+          "z": 12,
+          "hx": 1.075,
+          "hz": 0.34,
+          "ownerRoomId": "library"
+        }
+      ],
+      "residents": [],
+      "canMove": true,
+      "canCarry": true,
+      "carryDirections": [
+        {
+          "yaw": 0,
+          "allowed": true
+        },
+        {
+          "yaw": 0.7853981633974483,
+          "allowed": true
+        },
+        {
+          "yaw": 1.5707963267948966,
+          "allowed": true
+        },
+        {
+          "yaw": 2.356194490192345,
+          "allowed": true
+        },
+        {
+          "yaw": 3.141592653589793,
+          "allowed": true
+        },
+        {
+          "yaw": 3.9269908169872414,
+          "allowed": true
+        },
+        {
+          "yaw": 4.71238898038469,
+          "allowed": true
+        },
+        {
+          "yaw": 5.497787143782138,
+          "allowed": true
+        }
+      ],
+      "carryBlockingCircles": [],
+      "carryBlockingObstacles": []
+    }
+  },
+  "key": "ArrowDown",
+  "during": {
+    "input": {
+      "axes": {
+        "x": 0,
+        "z": -1
+      },
+      "locked": false,
+      "keys": [
+        [
+          "ArrowDown",
+          "down"
+        ]
+      ],
+      "stick": {
+        "x": 0,
+        "z": 0
+      }
+    },
+    "gameLocked": false,
+    "player": {
+      "x": 9.743842132590043,
+      "z": 13.647684265180086,
+      "yaw": 4.998102012639461,
+      "local": {
+        "x": -5.943842132590043,
+        "z": -3.2476842651800846
+      }
+    },
+    "nearbyCircles": [],
+    "nearbyObstacles": [
+      {
+        "x": 10.2,
+        "z": 12,
+        "hx": 1.075,
+        "hz": 0.34,
+        "ownerRoomId": "library"
+      }
+    ],
+    "residents": [],
+    "canMove": true,
+    "canCarry": true,
+    "carryDirections": [
+      {
+        "yaw": 0,
+        "allowed": true
+      },
+      {
+        "yaw": 0.7853981633974483,
+        "allowed": true
+      },
+      {
+        "yaw": 1.5707963267948966,
+        "allowed": true
+      },
+      {
+        "yaw": 2.356194490192345,
+        "allowed": true
+      },
+      {
+        "yaw": 3.141592653589793,
+        "allowed": true
+      },
+      {
+        "yaw": 3.9269908169872414,
+        "allowed": true
+      },
+      {
+        "yaw": 4.71238898038469,
+        "allowed": true
+      },
+      {
+        "yaw": 5.497787143782138,
+        "allowed": true
+      }
+    ],
+    "carryBlockingCircles": [],
+    "carryBlockingObstacles": []
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "input": "keyboard and mouse",
+  "renderEvery": 12,
+  "results": [
+    {
+      "name": "library-read-carry-deliver",
+      "passed": false,
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "state": {
+        "room": "library",
+        "localPosition": {
+          "x": -6.162315734819913,
+          "z": 4.006157867409958
+        },
+        "library": {
+          "index": 0,
+          "missionId": "kind-light",
+          "phase": "carrying",
+          "held": "pocket-star",
+          "source": 0,
+          "inspected": [
+            "pocket-star"
+          ],
+          "feedback": "책을 손에 들었어요. 도름이를 움직여 직접 가져다주세요",
+          "savePending": false,
+          "busy": false
+        },
+        "text": "한국 22:47 · 가을\n1층 · 별숲 큰 도서관\n지도\n소리\n메뉴\n\n왼쪽 드래그 이동 · 우클릭 드래그 회전·기울기 · 휠 확대 (Shift+드래그도 회전)\n\n사서 도우미 1 / 4 · 꽃에게 빌려 준 빛\n\n손에 든 책: 별을 담은 주머니 · 친칠라 앞 금빛 원으로\n\n의뢰 다시 읽기\n도우미 그만하기\n더 부드럽게 놀 수 있도록 화면을 가볍게 바꿨어요\n✦\n끝까지 밀면 달리기\n이 브라우저에 저장했어요"
+      }
+    },
+    {
+      "name": "bake-gift-reply",
+      "passed": true,
+      "evidence": {
+        "reply": "친칠라의 답장\n\n편지가 도착해서 책장 사이까지 환해졌어요. 도서관에서 또 만나요!\n\n케이크 고마워! 작은 꽃 책갈피를 동봉할게. ❀",
+        "mailbox": {
+          "letters": [
+            {
+              "id": "chinchilla.hello",
+              "recipient": "chinchilla",
+              "template": "hello",
+              "gift": true,
+              "read": true
+            }
+          ]
+        },
+        "pastries": 0
+      }
+    },
+    {
+      "name": "photo-capture-frame-display",
+      "passed": true,
+      "evidence": {
+        "captured": {
+          "width": 640,
+          "height": 480
+        },
+        "album": "×\n우리 집 · 벽의 작은 기억\n\n내 사진 액자 1 / 6\n1. 초록 정원 · 도름이 혼자\n\n고른 액자: 1. 초록 정원 · 도름이 혼자\n\n걸어 둘 벽\n창문 왼쪽 벽\n창문 오른쪽 벽\n창문 왼쪽 벽 비우기\n창문 오른쪽 벽 비우기\n사진 파일로 보관\n사진첩에서 빼기\n\n사진첩은 최대 6장이에요. 사진과 배치는 이 브라우저에만 저장되고 밖으로 전송되지 않아요. 사이트 데이터를 지우거나 비공개 탐색을 닫으면 사라질 수 있어요. 사진 파일로 보관하면 기기에 JPEG가 내려받아져요. 이 파일은 게임 배치 복원용 백업은 아니에요.\n\n마을로 돌아가기",
+        "photos": [
+          {
+            "id": "photo_f7d005434ec4492f87e6d1d1991dac6b",
+            "background": "mint",
+            "pose": "stand",
+            "companion": "none",
+            "createdAt": "2026-11-01T13:47:26.415Z"
+          }
+        ],
+        "wallPlacements": {
+          "home.wall-left": "photo_f7d005434ec4492f87e6d1d1991dac6b"
+        }
+      }
+    },
+    {
+      "name": "cafe-first-service",
+      "passed": true,
+      "evidence": {
+        "cafe": {
+          "schemaVersion": 1,
+          "day": 1,
+          "phase": "running",
+          "activeMs": 10770,
+          "nextArrivalMs": 29160,
+          "nextOrdinal": 2,
+          "jobSerial": 2,
+          "orders": [],
+          "settled": [
+            {
+              "id": "cafe:1:1",
+              "ordinal": 1,
+              "residentId": "chinchilla",
+              "items": {
+                "milkRoll": 1,
+                "herbTea": 1
+              },
+              "admittedMs": 3160,
+              "shownMs": 6160,
+              "slot": 0,
+              "servedMs": 10647
+            }
+          ],
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "qualityStock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "dough": null,
+          "oven": null,
+          "drink": null,
+          "upgrades": {
+            "warmOven": false,
+            "wideDisplay": false,
+            "cozyCorner": false
+          },
+          "coins": 14,
+          "ledger": {
+            "sold": {
+              "milkRoll": 1,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 1,
+              "cocoa": 0
+            },
+            "served": 1,
+            "revenue": 14,
+            "materials": 3,
+            "fastTips": 1,
+            "qualityTips": 1,
+            "cozyTips": 0,
+            "spent": 0
+          },
+          "today": {
+            "served": 1,
+            "revenue": 14,
+            "materials": 3,
+            "tips": 3
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

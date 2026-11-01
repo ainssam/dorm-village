@@ -1,0 +1,111 @@
+{
+  "results": [
+    {
+      "kind": "music-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "throw-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "gym-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "race-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "passing-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "baseball-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "fish-cooking-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "preparation-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "square-workshop",
+      "background": "rgba(0, 0, 0, 0)",
+      "shadow": "none",
+      "expected": "rgba(0, 0, 0, 0)",
+      "passed": true
+    },
+    {
+      "kind": "school-workshop",
+      "background": "rgb(255, 250, 242)",
+      "shadow": "rgba(41, 76, 64, 0.17) 0px 20px 70px 0px",
+      "expected": "rgb(255, 250, 242)",
+      "passed": true
+    }
+  ],
+  "stylesheets": [
+    "font-faces.css",
+    "style.css",
+    "gathering/gathering.css",
+    "fishing/fishing.css",
+    "fishing/cooking.css",
+    "plaza/plaza.css",
+    "square/square.css",
+    "marshmallow/marshmallow.css",
+    "village/cafe.css",
+    "bakery/food.css",
+    "school/art.css",
+    "home/robot.css",
+    "home/cooking.css",
+    "home/balance.css",
+    "library/quest.css",
+    "school/passing.css",
+    "school/race.css",
+    "gym/gym.css",
+    "school/math-board.css",
+    "./school/matching-game.css",
+    "hud.css",
+    "transport/controls.css",
+    "weather/weather.css",
+    "school/pendulum.css",
+    "./school/baseball.css",
+    "./produce/produce.css",
+    "./aviation/flight-controls.css",
+    "island-connections/controls.css",
+    "./amusement/claw.css",
+    "./amusement/fish-scoop.css",
+    "./amusement/food-cart-order.css",
+    "school/subject-explorations.css",
+    "amusement/bumper-play.css",
+    "village/daily-discovery.css",
+    "release.css"
+  ]
+}

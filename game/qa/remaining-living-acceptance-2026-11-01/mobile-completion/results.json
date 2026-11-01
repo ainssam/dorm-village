@@ -1,0 +1,1255 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "input": "emulated touch",
+  "drawingEvery": 12,
+  "renderScale": 0.35,
+  "results": [
+    {
+      "name": "gather-craft-place-home",
+      "passed": true,
+      "elapsedMs": 64546,
+      "evidence": {
+        "gathered": [
+          {
+            "id": "courtyard.shell.west",
+            "before": 0,
+            "after": 1
+          },
+          {
+            "id": "courtyard.shell.middle",
+            "before": 1,
+            "after": 2
+          },
+          {
+            "id": "courtyard.shell.east",
+            "before": 2,
+            "after": 3
+          }
+        ],
+        "steps": [
+          "조개 고르기",
+          "틀에 붙이기",
+          "액자 완성"
+        ],
+        "materialAfter": 0,
+        "owned": true,
+        "placement": "shell-frame",
+        "result": "왼쪽 선반에 놓았어요. 집에서 직접 볼 수 있어요",
+        "preview": "왼쪽 선반에 조개 액자 미리보기"
+      }
+    },
+    {
+      "name": "observatory-city-date-settings",
+      "passed": false,
+      "elapsedMs": 39735,
+      "error": "page.waitForSelector: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-sky-city]') to be visible\u001b[22m\n\u001b[2m    52 × locator resolved to hidden <select data-sky-city=\"\">…</select>\u001b[22m\n",
+      "state": {
+        "ready": true,
+        "doreumiMotion": {
+          "phase": "idle",
+          "id": null,
+          "label": "",
+          "time": 0,
+          "duration": 0
+        },
+        "clawRuntime": null,
+        "fishScoopRuntime": null,
+        "lookoutRuntime": {
+          "phase": "idle",
+          "elapsed": 0,
+          "paused": false,
+          "mapQueued": false,
+          "scenic": false,
+          "generation": 0,
+          "cover": 0,
+          "disposed": false,
+          "error": null,
+          "ocean": null
+        },
+        "flightRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "frameFailure": null,
+          "disposed": false
+        },
+        "boatRuntime": {
+          "trip": null,
+          "presentation": null,
+          "settlement": {
+            "preparedRoom": null,
+            "cameraSize": null,
+            "syncedRoom": null,
+            "errors": []
+          },
+          "blocked": false,
+          "disposed": false
+        },
+        "weatherRuntime": {
+          "status": "disabled",
+          "enabled": false,
+          "city": null,
+          "snapshot": null,
+          "freshness": "expired",
+          "error": null,
+          "retryAtUtcMs": 0,
+          "cacheEntries": 0,
+          "selectedCityId": "seoul",
+          "selectedCity": {
+            "id": "seoul",
+            "label": "서울",
+            "latDeg": 37.5665,
+            "lonDegEast": 126.978,
+            "timeZone": "Asia/Seoul",
+            "source": "preset",
+            "isExample": false,
+            "elevationM": 0
+          },
+          "visualsEnabled": true,
+          "reducedMotion": false,
+          "visualError": null
+        },
+        "produceRuntime": null,
+        "produce": {
+          "season": "calendar",
+          "nodes": {
+            "park.produce.strawberry": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.tomato": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pumpkin": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.leafy": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.peach": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.pear": {
+              "harvests": 0,
+              "phase": "seed"
+            },
+            "park.produce.mandarin": {
+              "harvests": 0,
+              "phase": "seed"
+            }
+          }
+        },
+        "cafeFoodRuntime": {
+          "open": false,
+          "mode": null,
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": false,
+          "seatId": null,
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": null,
+          "barista": null,
+          "carry": null
+        },
+        "amusementFoodRuntime": null,
+        "cafeFood": {
+          "packed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0
+          },
+          "made": {
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          },
+          "consumed": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0
+          }
+        },
+        "bakeryRuntime": null,
+        "squareRuntime": null,
+        "tentRuntime": {
+          "seaCue": null,
+          "active": false,
+          "mode": null,
+          "phase": "idle",
+          "duration": 0.8,
+          "inside": false,
+          "paused": false,
+          "activityId": null,
+          "isolated": false,
+          "width": 390,
+          "height": 844
+        },
+        "marshmallowRuntime": null,
+        "fishCookingRuntime": null,
+        "plazaRuntime": null,
+        "fishingRuntime": null,
+        "fishing": {
+          "total": 0,
+          "counts": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "consumed": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "meals": {
+            "petal-minnow": 0,
+            "moon-carp": 0,
+            "ribbon-mackerel": 0,
+            "star-bream": 0
+          },
+          "firstCatch": {
+            "petal-minnow": null,
+            "moon-carp": null,
+            "ribbon-mackerel": null,
+            "star-bream": null
+          }
+        },
+        "musicChairRestRuntime": null,
+        "mathResidentRuntime": null,
+        "saveWritable": true,
+        "preparationRuntime": null,
+        "materials": {
+          "apple": 0,
+          "shell": 0,
+          "autumnLeaf": 0,
+          "petal": 0,
+          "pondFish": 0,
+          "seaFish": 0,
+          "strawberry": 0,
+          "tomato": 0,
+          "pumpkin": 0,
+          "leafy": 0,
+          "peach": 0,
+          "pear": 0,
+          "mandarin": 0
+        },
+        "gathering": {
+          "epoch": 0,
+          "nodes": {
+            "park.tree.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.tree.east": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.west": {
+              "harvests": 1,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.middle": {
+              "harvests": 1,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "courtyard.shell.east": {
+              "harvests": 1,
+              "pickedAt": 0,
+              "moments": []
+            },
+            "park.leaves.west": {
+              "harvests": 0,
+              "pickedAt": 0,
+              "moments": []
+            }
+          }
+        },
+        "residentSpaceUse": null,
+        "elevatorRuntime": null,
+        "schoolFloor": null,
+        "locomotion": {
+          "airborne": false,
+          "height": 0,
+          "sprinting": false,
+          "moving": false,
+          "phase": 0
+        },
+        "gymRuntime": null,
+        "baseballRuntime": null,
+        "raceRuntime": null,
+        "passingRuntime": null,
+        "libraryQuestRuntime": null,
+        "buildRuntime": null,
+        "robotRuntime": null,
+        "cookingRuntime": null,
+        "sky": {
+          "id": "night",
+          "label": "밤",
+          "clock": "23:21",
+          "timeZone": "Asia/Seoul"
+        },
+        "cafeRuntime": {
+          "open": false,
+          "running": false,
+          "shop": false,
+          "tab": "bread"
+        },
+        "throwRuntime": null,
+        "musicRuntime": null,
+        "audio": {
+          "enabled": false,
+          "unlocked": false,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "village": {
+          "cafe": {
+            "schemaVersion": 1,
+            "day": 1,
+            "phase": "idle",
+            "activeMs": 0,
+            "nextArrivalMs": 3000,
+            "nextOrdinal": 1,
+            "jobSerial": 0,
+            "orders": [],
+            "settled": [],
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "qualityStock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "dough": null,
+            "oven": null,
+            "drink": null,
+            "upgrades": {
+              "warmOven": false,
+              "wideDisplay": false,
+              "cozyCorner": false
+            },
+            "coins": 0,
+            "ledger": {
+              "sold": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "fastTips": 0,
+              "qualityTips": 0,
+              "cozyTips": 0,
+              "spent": 0
+            },
+            "today": {
+              "served": 0,
+              "revenue": 0,
+              "materials": 0,
+              "tips": 0
+            }
+          },
+          "bakery": {
+            "phase": "empty",
+            "decoration": null,
+            "completed": 0,
+            "pastries": 0
+          },
+          "mailbox": {
+            "letters": []
+          },
+          "photos": [],
+          "wallPlacements": {}
+        },
+        "residents": [],
+        "worldResidents": [],
+        "library": {
+          "selectedBookId": "pocket-star",
+          "borrowedBookId": null,
+          "readBookIds": []
+        },
+        "activity": null,
+        "discoveryIds": [],
+        "pose": {
+          "name": "stand",
+          "amount": 0,
+          "time": 0,
+          "seatContactY": 0.11474484205245972,
+          "anchors": {
+            "leftHand": [
+              -0.6125609400080781,
+              0.43278150436692664,
+              0.059183792574516725
+            ],
+            "rightHand": [
+              0.612543566284419,
+              0.43278150436692664,
+              0.05918379257451678
+            ],
+            "leftFoot": [
+              -0.211,
+              0.135,
+              0.11
+            ],
+            "rightFoot": [
+              0.211,
+              0.135,
+              0.11
+            ],
+            "seat": [
+              0,
+              0.11474484205245972,
+              0.011705340817570686
+            ],
+            "hands": {
+              "left": [
+                -0.6125609400080781,
+                0.43278150436692664,
+                0.059183792574516725
+              ],
+              "right": [
+                0.612543566284419,
+                0.43278150436692664,
+                0.05918379257451678
+              ]
+            },
+            "feet": {
+              "left": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "right": [
+                0.211,
+                0.135,
+                0.11
+              ]
+            }
+          },
+          "bounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.5831665396690369,
+              0.4671066105365753
+            ]
+          },
+          "bodyBounds": {
+            "min": [
+              -0.5953607559204102,
+              0,
+              -0.4142390787601471
+            ],
+            "max": [
+              0.5953607559204102,
+              1.244211196899414,
+              0.4142765998840332
+            ]
+          },
+          "sleepPitch": -1.5707963267948966,
+          "character": "doreumi-master-rig"
+        },
+        "won": false,
+        "roomId": "observatoryIsland",
+        "worldId": "observatoryIsland",
+        "localPosition": {
+          "x": 0,
+          "z": -0.2
+        },
+        "worldPosition": {
+          "x": 0,
+          "z": -0.2
+        },
+        "transitionPhase": "idle",
+        "inputLocked": true,
+        "starsCollected": 0,
+        "collectedIds": [],
+        "ownedItemIds": [
+          "plant",
+          "picture-frame",
+          "shell-frame"
+        ],
+        "rewardClaimIds": [],
+        "completedActivityIds": [],
+        "placements": {
+          "home.shelf-left": "shell-frame"
+        },
+        "garden": {
+          "phase": "seed",
+          "moments": [],
+          "petals": 0,
+          "harvests": 0,
+          "harvestedBedIds": []
+        },
+        "saveStatus": "saved",
+        "revision": 8,
+        "position": {
+          "x": 0,
+          "y": 0.05,
+          "z": -0.2
+        },
+        "camera": {
+          "mode": "walk",
+          "x": 0,
+          "y": 12.699999999999998,
+          "z": 26.799999999999994,
+          "target": {
+            "x": 0,
+            "y": 1,
+            "z": -0.20000000000000037
+          },
+          "zoom": 1
+        },
+        "quality": "low",
+        "renderer": {
+          "frame": 94,
+          "calls": 68,
+          "triangles": 94021,
+          "points": 0,
+          "lines": 0,
+          "memory": {
+            "geometries": 69,
+            "textures": 9
+          },
+          "pixelRatio": 0.3499999940395355,
+          "buffer": {
+            "width": 136,
+            "height": 295
+          }
+        },
+        "timings": {
+          "transitionMs": [
+            560,
+            1400,
+            395
+          ],
+          "frameIntervals": [
+            16.6,
+            16.7,
+            83.3,
+            16.7,
+            33.4,
+            16.6,
+            16.6,
+            66.7,
+            16.7,
+            783.3,
+            16.7,
+            16.7,
+            16.6,
+            50,
+            300,
+            16.7,
+            33.3,
+            50,
+            33.3,
+            83.4,
+            733.3,
+            16.6,
+            33.3,
+            16.7,
+            16.6,
+            16.8,
+            16.6,
+            50,
+            33.4,
+            50,
+            33.3,
+            66.7,
+            533.2,
+            16.8,
+            16.5,
+            33.4,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            33.4,
+            16.7,
+            16.6,
+            16.7,
+            483.3,
+            16.7,
+            16.6,
+            33.4,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            33.3,
+            16.7,
+            16.7,
+            16.7,
+            583.3,
+            16.6,
+            16.7,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            33.3,
+            16.7,
+            16.7,
+            16.7,
+            16.7,
+            533.2,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            16.7,
+            16.6,
+            16.6,
+            583.4,
+            16.7,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            516.6,
+            33.4,
+            16.6,
+            116.7,
+            66.7,
+            16.6,
+            16.6,
+            66.7,
+            16.8,
+            16.6,
+            16.7,
+            16.7,
+            533.3,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            33.3,
+            16.6,
+            16.8,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            466.7,
+            33.3,
+            16.7,
+            16.6,
+            33.3,
+            16.8,
+            16.6,
+            16.7,
+            16.7,
+            50,
+            16.6,
+            433.4,
+            49.9,
+            33.4,
+            33.3,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            50,
+            16.7,
+            33.3,
+            16.7,
+            550,
+            100,
+            16.7,
+            49.9,
+            33.3,
+            100.1,
+            33.3,
+            33.3,
+            50,
+            16.7,
+            100,
+            566.6,
+            33.3,
+            50.1,
+            33.3,
+            50,
+            33.3,
+            16.7,
+            16.7,
+            49.9,
+            33.4,
+            66.7,
+            33.3,
+            383.2,
+            16.7,
+            16.7,
+            33.4,
+            16.6,
+            16.6,
+            16.8,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            383.3,
+            16.7,
+            33.3,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            483.3,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            33.3,
+            16.6,
+            16.7,
+            366.7,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            33.4,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            33.4,
+            16.6,
+            16.7,
+            400,
+            16.6,
+            16.7,
+            33.4,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            50,
+            16.7,
+            16.7,
+            583.2,
+            16.7,
+            16.7,
+            33.4,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            366.6,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            33.3,
+            66.6,
+            33.4,
+            66.6,
+            16.8,
+            399.9,
+            16.7,
+            50,
+            16.7,
+            33.3,
+            50,
+            16.6,
+            33.4,
+            16.7,
+            33.3,
+            16.6,
+            450,
+            33.3,
+            16.7,
+            16.7,
+            16.6,
+            66.7,
+            16.7,
+            16.7,
+            199.9,
+            50,
+            33.3,
+            33.4,
+            600,
+            50,
+            33.3,
+            50,
+            33.4,
+            33.2,
+            33.4,
+            16.6,
+            33.4,
+            16.6,
+            33.4,
+            16.6,
+            16.8,
+            466.5,
+            16.7,
+            16.7,
+            33.3,
+            33.4,
+            16.7,
+            16.6,
+            16.6,
+            16.8,
+            33.3,
+            16.6,
+            450.1,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            416.6,
+            33.5,
+            16.6,
+            16.7,
+            16.6,
+            16.6,
+            16.8,
+            16.6,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            483.3,
+            16.7,
+            33.3,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            33.3,
+            16.8,
+            16.7,
+            16.6,
+            16.6,
+            466.7,
+            16.6,
+            16.8,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            16.6,
+            16.7,
+            33.4,
+            16.6,
+            16.7,
+            366.6,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            16.6,
+            50.1,
+            16.7,
+            16.6,
+            33.4,
+            33.2,
+            16.7,
+            383.4,
+            16.6,
+            16.7,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            16.7,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            383.3,
+            16.7,
+            50,
+            33.3,
+            33.4,
+            49.9,
+            16.7,
+            16.7,
+            16.7,
+            33.3,
+            16.6,
+            16.7,
+            466.6,
+            50.1,
+            16.6,
+            33.4,
+            16.7,
+            16.5,
+            16.8,
+            49.9,
+            16.8,
+            16.6,
+            16.6,
+            50.1,
+            16.7,
+            499.9,
+            50,
+            33.4,
+            416.5,
+            950.1,
+            483.2,
+            16.7,
+            650,
+            50,
+            33.3,
+            316.7,
+            16.7,
+            316.7,
+            16.6,
+            1016.6,
+            16.7,
+            66.7,
+            16.7,
+            16.6,
+            16.7,
+            33.3,
+            33.3,
+            16.7,
+            16.6,
+            16.7,
+            33.3,
+            450,
+            16.7,
+            16.6,
+            16.7,
+            33.4,
+            16.6,
+            783.4,
+            16.6,
+            50,
+            33.3,
+            550,
+            1366.6,
+            1749.9,
+            433.4,
+            233.2,
+            16.8,
+            49.9,
+            16.7,
+            33.3,
+            16.7,
+            50,
+            33.4,
+            966.6,
+            1383.2,
+            16.8,
+            199.9,
+            1866.6,
+            683.4,
+            16.6,
+            166.7,
+            16.6,
+            683.4,
+            49.9,
+            16.7,
+            16.7,
+            83.3,
+            16.7,
+            16.7,
+            16.7,
+            16.6,
+            16.7,
+            16.6,
+            116.7,
+            16.7
+          ]
+        }
+      },
+      "text": "한국 23:21 · 가을\n고요한 천문대 섬\n\n열린 문 안 망원경에서 하늘 보기 · 바닷가 벤치에서 쉬기\n\n지도\n소리\n메뉴\n조개 1개를 재료가방에 넣었어요!\n✦\n끝까지 밀면 달리기\n망원경 들여다보기\n이 브라우저에 저장했어요\n장소와 시각을 따라 우주를 보아요\n천문대 망원경\n\n서울 (예시) · 2026-11-01 23:21\nAsia/Seoul (UTC+09:00) · 지금\n\n×\n망원경 · 장소·시각\n⌄\n\n가만히 머물러도 좋아요 · 드래그 / 방향키로 둘러보기\n\n별자리 선\n구름 멈추기\n남쪽으로\n\n화면 세로 시야 75° · 숫자가 작을수록 좁게 보여요. 망원경 배율은 아니에요.\n선택한 장소·시각의 계산 하늘 · 구름·색감은 연출이에요\n\n실제 망원경으로 태양을 직접 보지 마세요. 태양 관측에는 전용 장비와 전문가의 안내가 필요해요. NASA 안전 안내"
+    },
+    {
+      "name": "map-travel-elevator-roundtrip",
+      "passed": true,
+      "elapsedMs": 59002,
+      "evidence": {
+        "floors": [
+          {
+            "floor": 3,
+            "room": "schoolHall3",
+            "locked": false
+          },
+          {
+            "floor": 2,
+            "room": "schoolHall2",
+            "locked": false
+          },
+          {
+            "floor": 1,
+            "room": "schoolHall",
+            "locked": false
+          }
+        ],
+        "finalRoom": "courtyard",
+        "mapTrips": [
+          {
+            "from": "courtyard",
+            "to": "workshop",
+            "title": "꽃잎 공방",
+            "actual": "workshop"
+          },
+          {
+            "from": "workshop",
+            "to": "home",
+            "title": "도름이의 집",
+            "actual": "home"
+          },
+          {
+            "from": "home",
+            "to": "observatoryIsland",
+            "title": "고요한 천문대 섬",
+            "actual": "observatoryIsland"
+          },
+          {
+            "from": "observatoryIsland",
+            "to": "schoolHall",
+            "title": "별빛 학교 · 1층",
+            "actual": "schoolHall"
+          },
+          {
+            "from": "schoolHall",
+            "to": "courtyard",
+            "title": "마을 광장",
+            "actual": "courtyard"
+          }
+        ]
+      }
+    }
+  ],
+  "travelLog": [
+    {
+      "from": "courtyard",
+      "to": "workshop",
+      "title": "꽃잎 공방",
+      "actual": "workshop"
+    },
+    {
+      "from": "workshop",
+      "to": "home",
+      "title": "도름이의 집",
+      "actual": "home"
+    },
+    {
+      "from": "home",
+      "to": "observatoryIsland",
+      "title": "고요한 천문대 섬",
+      "actual": "observatoryIsland"
+    },
+    {
+      "from": "observatoryIsland",
+      "to": "schoolHall",
+      "title": "별빛 학교 · 1층",
+      "actual": "schoolHall"
+    },
+    {
+      "from": "schoolHall",
+      "to": "courtyard",
+      "title": "마을 광장",
+      "actual": "courtyard"
+    }
+  ],
+  "setupLog": [
+    {
+      "requested": "courtyard.shell.west",
+      "position": {
+        "x": -4,
+        "z": 12.6
+      },
+      "target": {
+        "x": -4,
+        "z": 12.6
+      }
+    },
+    {
+      "requested": "courtyard.shell.middle",
+      "position": {
+        "x": 0,
+        "z": 13.1
+      },
+      "target": {
+        "x": 0,
+        "z": 13.1
+      }
+    },
+    {
+      "requested": "courtyard.shell.east",
+      "position": {
+        "x": 4,
+        "z": 12.6
+      },
+      "target": {
+        "x": 4,
+        "z": 12.6
+      }
+    },
+    {
+      "requested": "workshop.table",
+      "position": {
+        "x": 0,
+        "z": 0.6
+      },
+      "target": {
+        "x": 0,
+        "z": 0.6
+      }
+    },
+    {
+      "requested": "home.decorate",
+      "position": {
+        "x": 0.1,
+        "z": -1.2
+      },
+      "target": {
+        "x": 0.1,
+        "z": -1.2
+      }
+    },
+    {
+      "requested": "observatoryIsland.telescope",
+      "position": {
+        "x": 0,
+        "z": -0.2
+      },
+      "target": {
+        "x": 0,
+        "z": -0.2
+      }
+    },
+    {
+      "requested": "schoolHall.elevator",
+      "position": {
+        "x": -16,
+        "z": 0
+      },
+      "target": {
+        "x": -16,
+        "z": 0
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

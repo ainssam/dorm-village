@@ -4,20 +4,21 @@ export const FISH_SCOOP_SECONDS=50;
 export const FISH_SCOOP_HIT_TIME=.20;
 export const FISH_SCOOP_LOWER_TIME=.20;
 export const FISH_SCOOP_RISE_TIME=.38;
-export const FISH_SCOOP_CATCH_RADIUS=.34;
+export const FISH_SCOOP_CATCH_RADIUS=.23;
 export const FISH_SCOOP_NET_SPEED=1.25;
+export const FISH_SCOOP_NAMES=Object.freeze(['살구빛 물고기','민트빛 물고기','햇살빛 물고기','보랏빛 물고기']);
 const NET_X=.92,NET_Z=.50,POOL_X=1.05,POOL_Z=.60,MAX_DT=.05;
 const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
 const SPECS=Object.freeze([
- {id:'petal-minnow',cx:0,cz:0,rx:.25,rz:.16,speed:.84,phase:0},
- {id:'moon-carp',cx:.42,cz:.08,rx:.25,rz:.18,speed:-.62,phase:Math.PI*.83},
- {id:'ribbon-mackerel',cx:-.38,cz:-.08,rx:.23,rz:.16,speed:.72,phase:Math.PI*1.48},
- {id:'star-bream',cx:.03,cz:.24,rx:.25,rz:.12,speed:-.55,phase:Math.PI*.2}
+ {id:'petal-minnow',cx:-.50,cz:-.23,rx:.20,rz:.10,speed:.45,phase:0},
+ {id:'moon-carp',cx:.50,cz:-.23,rx:.20,rz:.10,speed:-.38,phase:Math.PI*.83},
+ {id:'ribbon-mackerel',cx:-.50,cz:.23,rx:.20,rz:.10,speed:.42,phase:Math.PI*1.48},
+ {id:'star-bream',cx:.50,cz:.23,rx:.20,rz:.10,speed:-.35,phase:Math.PI*.2}
 ]);
 
-export function createFishScoopState({seed=.5}={}){
+export function createFishScoopState({seed=.5,mode='challenge'}={}){
  const n=Number.isFinite(seed)?((seed%1)+1)%1:.5;
- return {phase:'ready',seed:n,elapsed:0,timeLeft:FISH_SCOOP_SECONDS,clock:0,score:0,attempts:0,net:{x:0,z:0},fishCooldowns:[0,0,0,0],scoop:{phase:'idle',elapsed:0,result:null,fishIndex:null},feedback:null};
+ return {phase:'ready',mode:mode==='practice'?'practice':'challenge',seed:n,elapsed:0,timeLeft:FISH_SCOOP_SECONDS,clock:0,score:0,attempts:0,catchesByFish:[0,0,0,0],net:{x:0,z:0},fishCooldowns:[0,0,0,0],scoop:{phase:'idle',elapsed:0,result:null,fishIndex:null},feedback:null};
 }
 
 export function startFishScoop(state){
@@ -42,8 +43,13 @@ export function fishScoopPositions(state){
   const a=spec.phase+phaseOffset+state.clock*spec.speed;
   const x=spec.cx+Math.sin(a)*spec.rx,z=spec.cz+Math.sin(a*1.12)*spec.rz;
   return {index,id:spec.id,x,z,visible:state.elapsed+1e-7>=state.fishCooldowns[index],
-   yaw:Math.atan2(Math.cos(a*1.12)*spec.rz*1.12,Math.cos(a)*spec.rx*spec.speed)};
+   yaw:-Math.atan2(Math.cos(a*1.12)*spec.rz*1.12*spec.speed,Math.cos(a)*spec.rx*spec.speed)};
  });
+}
+
+export function fishScoopAim(state){
+ const nearest=fishScoopPositions(state).filter(p=>p.visible).map(p=>({...p,distance:Math.hypot(p.x-state.net.x,p.z-state.net.z)})).sort((a,b)=>a.distance-b.distance)[0];
+ return nearest?{index:nearest.index,distance:nearest.distance,ready:nearest.distance<=FISH_SCOOP_CATCH_RADIUS}:null;
 }
 
 export function triggerFishScoop(state){
@@ -55,8 +61,8 @@ function resolveScoop(state){
  const fish=fishScoopPositions(state);let best=-1,bestDistance=Infinity;
  for(const item of fish){if(!item.visible)continue;const distance=Math.hypot(item.x-state.net.x,item.z-state.net.z);if(distance<bestDistance){bestDistance=distance;best=item.index;}}
  if(best>=0&&bestDistance<=FISH_SCOOP_CATCH_RADIUS){
-  const fishCooldowns=[...state.fishCooldowns];fishCooldowns[best]=state.elapsed+1.05;
-  return {...state,score:state.score+1,fishCooldowns,scoop:{phase:'rising',elapsed:0,result:'caught',fishIndex:best},feedback:{type:'caught',fishIndex:best,time:.85}};
+  const fishCooldowns=[...state.fishCooldowns],catchesByFish=[...state.catchesByFish];fishCooldowns[best]=state.elapsed+1.8;catchesByFish[best]++;
+  return {...state,score:state.score+1,fishCooldowns,catchesByFish,scoop:{phase:'rising',elapsed:0,result:'caught',fishIndex:best},feedback:{type:'caught',fishIndex:best,time:.95}};
  }
  return {...state,scoop:{phase:'rising',elapsed:0,result:'miss',fishIndex:null},feedback:{type:'miss',fishIndex:null,time:.75}};
 }
@@ -65,8 +71,8 @@ export function stepFishScoop(state,dt){
  if(!state||state.phase!=='playing'||!Number.isFinite(dt)||dt<=0)return state;
  let left=clamp(dt,0,MAX_DT),next={...state,elapsed:state.elapsed,timeLeft:state.timeLeft,clock:state.clock,scoop:{...state.scoop},feedback:state.feedback?{...state.feedback}:null};
  while(left>1e-8&&next.phase==='playing'){
-  const slice=Math.min(left,Math.max(1e-8,next.timeLeft));left-=slice;
-  next.elapsed+=slice;next.clock+=slice;next.timeLeft=Math.max(0,FISH_SCOOP_SECONDS-next.elapsed);
+  const slice=next.mode==='practice'?left:Math.min(left,Math.max(1e-8,next.timeLeft));left-=slice;
+  next.elapsed+=slice;next.clock+=slice;if(next.mode!=='practice')next.timeLeft=Math.max(0,FISH_SCOOP_SECONDS-next.elapsed);
   if(next.feedback)next.feedback.time=Math.max(0,next.feedback.time-slice);
   if(next.scoop.phase!=='idle'){
    next.scoop.elapsed+=slice;
@@ -76,7 +82,7 @@ export function stepFishScoop(state,dt){
     next.scoop={phase:'idle',elapsed:0,result:next.scoop.result,fishIndex:next.scoop.fishIndex};
    }
   }
-  if(next.timeLeft<=0){next.phase='complete';next.timeLeft=0;next.scoop={phase:'idle',elapsed:0,result:next.scoop.result,fishIndex:next.scoop.fishIndex};}
+  if(next.mode!=='practice'&&next.timeLeft<=0){next.phase='complete';next.timeLeft=0;next.scoop={phase:'idle',elapsed:0,result:next.scoop.result,fishIndex:next.scoop.fishIndex};}
  }
  if(next.feedback?.time===0)next.feedback=null;
  return next;
@@ -85,3 +91,4 @@ export function stepFishScoop(state,dt){
 export function pauseFishScoop(state){return state?.phase==='playing'?{...state,phase:'paused'}:state;}
 export function resumeFishScoop(state){return state?.phase==='paused'?{...state,phase:'playing'}:state;}
 export function cancelFishScoop(state){return state&&state.phase!=='cancelled'?{...state,phase:'cancelled',feedback:null}:state;}
+export function finishFishScoop(state){return state&&['playing','paused'].includes(state.phase)?{...state,phase:'complete',scoop:{...state.scoop,phase:'idle',elapsed:0},feedback:null}:state;}

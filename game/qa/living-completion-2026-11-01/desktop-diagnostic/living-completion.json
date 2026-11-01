@@ -1,0 +1,69 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  },
+  "input": "keyboard and mouse",
+  "renderEvery": 12,
+  "results": [
+    {
+      "name": "library-read-carry-deliver",
+      "passed": false,
+      "error": "page.waitForFunction: Timeout 30000ms exceeded.",
+      "state": {
+        "room": "library",
+        "localPosition": {
+          "x": -6.162315734819913,
+          "z": 4.006157867409958
+        },
+        "library": {
+          "index": 0,
+          "missionId": "kind-light",
+          "phase": "carrying",
+          "held": "pocket-star",
+          "source": 0,
+          "inspected": [
+            "pocket-star"
+          ],
+          "feedback": "책을 손에 들었어요. 도름이를 움직여 직접 가져다주세요",
+          "savePending": false,
+          "busy": false
+        },
+        "locked": false,
+        "stickDisabled": false,
+        "camera": {
+          "mode": "walk",
+          "x": 11.299999999999999,
+          "y": 12,
+          "z": 24.9,
+          "target": {
+            "x": 3.7999999999999994,
+            "y": 0.65,
+            "z": 9.9
+          },
+          "zoom": 2.5
+        },
+        "text": "한국 22:53 · 가을\n1층 · 별숲 큰 도서관\n지도\n소리\n메뉴\n\n왼쪽 드래그 이동 · 우클릭 드래그 회전·기울기 · 휠 확대 (Shift+드래그도 회전)\n\n사서 도우미 1 / 4 · 꽃에게 빌려 준 빛\n\n손에 든 책: 별을 담은 주머니 · 친칠라 앞 금빛 원으로\n\n의뢰 다시 읽기\n도우미 그만하기\n더 부드럽게 놀 수 있도록 화면을 가볍게 바꿨어요\n✦\n끝까지 밀면 달리기\n이 브라우저에 저장했어요"
+      }
+    },
+    {
+      "name": "daily-discovery-visit",
+      "passed": true,
+      "evidence": {
+        "title": "같이 있어도 말없이",
+        "today": "2026년 11월 1일 · 한국 시간 · 오늘",
+        "previous": {
+          "title": "배경이 들려주는 이야기",
+          "date": "2026년 10월 31일 · 한국 시간"
+        },
+        "expected": "library",
+        "arrived": {
+          "room": "library",
+          "locked": false
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

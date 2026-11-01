@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import {createToyKit,disposeToyTree} from '../world/toy-kit.js';
 import {signLabel} from '../world/handwriting.js';
-import {BUMPER as C,BUMPER_ENTRANCE} from './bumper-layout.js';
+import {BUMPER as C,BUMPER_ENTRANCE,BUMPER_PRACTICE_POINTS} from './bumper-layout.js';
 import {bumperFloor} from './bumper-support.js';
 const P={cream:'#f8e9ce',rose:'#dca5ae',mint:'#a7c9bd',gold:'#d4b97e',wood:'#c5a284',ink:'#657d79',rubber:'#778784',floor:'#cdd9ce'};
 function seatTop(kit,parent,name,color){const width=1.38,back=-.37,front=.145,high=C.rootY+.18419277667999268,low=C.seatTop,bottom=C.seatTop-.002,vertices=[],indices=[];
@@ -21,6 +21,7 @@ function car(kit,parent,name,color){const{box,cylinder,sphere,feature}=kit,g=new
 function ramp(kit,parent){const w=1.72,z0=1.15,z1=2.65,y0=bumperFloor(z0),y1=bumperFloor(z1),bottom=.012,vertices=[[-w/2,bottom,z0],[w/2,bottom,z0],[-w/2,bottom,z1],[w/2,bottom,z1],[-w/2,y0,z0],[w/2,y0,z0],[-w/2,y1,z1],[w/2,y1,z1]],g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(vertices.flat(),3));g.setIndex([4,6,5,5,6,7,0,1,2,1,3,2,0,4,1,1,4,5,2,3,6,3,7,6,0,2,4,2,6,4,1,5,3,3,5,7]);g.computeVertexNormals();const m=new THREE.Mesh(g,kit.mat(P.cream));m.name='bumper.ramp';m.userData.bumperRamp={z0,z1,w,bottom};m.castShadow=m.receiveShadow=true;parent.add(m);}
 export function buildBumperView(def){const root=new THREE.Group();root.name=def.id;const kit=createToyKit(root),{box,cylinder,feature}=kit;
  feature(box(7.5,.14,8.6,P.cream,0,-.025,1.35,.15),'bumper.apron','ground');feature(box(C.halfX*2,.06,C.halfZ*2,P.floor,0,.02,0,.025),'bumper.floor','ground');
+ const routeMarkers=BUMPER_PRACTICE_POINTS.map((p,i)=>{const group=new THREE.Group();group.name='bumper.practice.'+(i+1);root.add(group);const ring=new THREE.Mesh(new THREE.TorusGeometry(.40,.055,8,32),new THREE.MeshStandardMaterial({color:P.gold,roughness:1}));ring.rotation.x=Math.PI/2;ring.position.set(p.x,.085,p.z);group.add(ring);signLabel(String(i+1),p.x,.28,p.z,.42,P.ink,P.cream,group);return{group,ring};});
  const player=car(kit,root,'bumper.player',P.rose),parked=car(kit,root,'bumper.parked',P.gold);parked.position.set(C.parked.x,0,C.parked.z);parked.rotation.y=C.parked.yaw;
  // Empty stationary car, with its parking brake and a visible practice label.
  box(.05,.31,.05,P.ink,.47,1.29,-.4,.02,parked);box(.27,.08,.08,P.ink,.47,1.44,-.4,.035,parked);signLabel('연습차',0,1.49,-.53,1.2,P.ink,P.cream,parked);
@@ -40,7 +41,8 @@ export function buildBumperView(def){const root=new THREE.Group();root.name=def.
  box(7.3,.25,8.4,P.wood,0,-.22,1.35,.10);
  for(const z of[-2.92,2.92])for(let i=-5;i<=5;i++)kit.sphere(.055,P.gold,i*.62,4.44,z,1,1,1);
  let disposed=false;
- function setBumperFrame(f){if(disposed)return;player.position.set(f?.carX??C.dock.x,0,f?.carZ??C.dock.z);player.rotation.y=f?.carYaw??0;const amount=Math.max(0,Math.min(1,f?.bumperRamp??1));gangway.visible=amount>0;gangway.position.y=-.75*(1-amount);gate.position.y=.3-amount*.62;}
+ function setBumperFrame(f){if(disposed)return;player.position.set(f?.carX??C.dock.x,0,f?.carZ??C.dock.z);player.rotation.y=f?.carYaw??0;const pulse=f?.contactPulse??0;player.getObjectByName('bumper.player.bumper').scale.set(1+pulse*.05,1+pulse*.05,1-pulse*.08);for(const[i,marker]of routeMarkers.entries()){marker.group.visible=['playing','complete'].includes(f?.practiceState);marker.ring.material.color.set(i<(f?.practiceIndex??0)?'#84b68c':i===f?.practiceIndex?'#e9bd52':'#b9c9bc');marker.ring.scale.setScalar(i===f?.practiceIndex?1.12:1);}
+ const amount=Math.max(0,Math.min(1,f?.bumperRamp??1));gangway.visible=amount>0;gangway.position.y=-.75*(1-amount);gate.position.y=.3-amount*.62;}
  setBumperFrame();root.updateMatrixWorld(true);return{root,stars:[],occluders:[],camera:def.camera,setBumperFrame,sync(){},setActivityProgress(){},dispose(){if(disposed)return;disposed=true;disposeToyTree(root);}};
 }
 export function buildBumperEntrance(kit,parent){const{box,cylinder}=kit,{x,z}=BUMPER_ENTRANCE.at;const g=new THREE.Group();g.name='amusement.bumper-entrance';parent.add(g);kit.feature(box(1.55,.04,.72,P.mint,x,.05,z,.14,g),'amusement.bumper-entrance.pad','portal-marker');const signX=x,signZ=z-.55;for(const[side,dx]of[['left',-.54],['right',.54]]){const post=cylinder(.055,.07,1.18,P.wood,signX+dx,.60,signZ,g);post.name='amusement.bumper-entrance.post.'+side;}kit.feature(box(1.36,.54,.12,P.cream,signX,1.44,signZ,.07,g),'amusement.bumper-entrance.sign','portal-sign');box(1.14,.09,.10,P.rose,signX,1.64,signZ+.07,.03,g);box(.22,.12,.10,P.mint,signX-.38,1.42,signZ+.075,.02,g);box(.22,.12,.10,P.mint,signX+.38,1.42,signZ+.075,.02,g);const label=signLabel('범퍼카',signX,1.45,signZ+.07,1.08,P.ink,P.cream,g);if(label)label.name='amusement.bumper-entrance.label';return g;}

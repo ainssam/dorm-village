@@ -1,0 +1,166 @@
+{
+  "results": [
+    {
+      "name": "archery",
+      "passed": true,
+      "wallSeconds": 66,
+      "detail": {
+        "surface": {
+          "kind": "gym-workshop archery-workshop",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "result": {
+          "state": "active",
+          "paused": false,
+          "held": false,
+          "draw": 0,
+          "yaw": -0.13,
+          "pitch": 0.14,
+          "shots": 1,
+          "remaining": 4,
+          "score": 8,
+          "results": [
+            {
+              "kind": "target",
+              "score": 8,
+              "point": {
+                "x": 0.13341139616298747,
+                "y": 1.0804065847949667,
+                "z": 4.833411396162994
+              },
+              "shot": 1
+            }
+          ],
+          "arrow": null,
+          "impact": {
+            "tip": {
+              "x": 0.13341139616298747,
+              "y": 1.0804065847949667,
+              "z": 4.833411396162994
+            },
+            "velocity": {
+              "x": -1.0174678806634874,
+              "y": -0.12060387374971648,
+              "z": 7.7825359751435075
+            },
+            "kind": "target"
+          },
+          "elapsed": 1.5666666666666667,
+          "reason": "",
+          "frame": {
+            "root": {
+              "x": 0,
+              "y": 0.012,
+              "z": 0
+            },
+            "feet": {
+              "left": {
+                "x": -0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              },
+              "right": {
+                "x": 0.21,
+                "y": 0.012,
+                "z": 0,
+                "contact": true
+              }
+            },
+            "guard": 1,
+            "yaw": -0.13,
+            "pitch": 0.14,
+            "draw": 0,
+            "arrow": null,
+            "impact": {
+              "tip": {
+                "x": 0.13341139616298747,
+                "y": 1.0804065847949667,
+                "z": 4.833411396162994
+              },
+              "velocity": {
+                "x": -1.0174678806634874,
+                "y": -0.12060387374971648,
+                "z": 7.7825359751435075
+              },
+              "kind": "target"
+            }
+          },
+          "session": {
+            "phase": "exercise",
+            "exitRequested": false,
+            "frame": {
+              "root": {
+                "x": 0,
+                "y": 0.012,
+                "z": 0
+              },
+              "feet": {
+                "left": {
+                  "x": -0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                },
+                "right": {
+                  "x": 0.21,
+                  "y": 0.012,
+                  "z": 0,
+                  "contact": true
+                }
+              },
+              "guard": 1,
+              "yaw": -0.13,
+              "pitch": 0.14,
+              "draw": 0,
+              "arrow": null,
+              "impact": {
+                "tip": {
+                  "x": 0.13341139616298747,
+                  "y": 1.0804065847949667,
+                  "z": 4.833411396162994
+                },
+                "velocity": {
+                  "x": -1.0174678806634874,
+                  "y": -0.12060387374971648,
+                  "z": 7.7825359751435075
+                },
+                "kind": "target"
+              }
+            },
+            "actorUUID": "eced6612-e4c2-42ce-a081-6ca23fa04696",
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "exiting": false
+        },
+        "feedback": "1 / 5발 · 8점",
+        "method": "pointer",
+        "releaseProof": {
+          "nock": {
+            "x": 0.7526619133345136,
+            "y": 0.730775012638739,
+            "z": 0.09681035046618547
+          },
+          "direction": {
+            "x": -0.12836580167733225,
+            "y": 0.13954311464423652,
+            "z": 0.981860448391278
+          },
+          "handGap": 0.00005457373422079054,
+          "stringGap": 0.00005456651621752254,
+          "supportGap": 4.76837158203125e-7,
+          "faceClearance": 0.3565496910259693,
+          "draw": 0.9824561403508795
+        },
+        "retry": null
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

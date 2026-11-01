@@ -1,21 +1,13 @@
 import {englishLearningMarkup,mountEnglishLearning} from '../english/view.js';
 import {createEnglishAudio} from '../english/audio.js';
 import {koreanLearningMarkup,mountKoreanLearning} from '../korean/view.js';
-export const STORY_SENTENCES=Object.freeze(['도름이가 흙에 작은 씨앗을 심었어요.','물을 주고 햇볕이 드는 곳에서 기다렸어요.','며칠 뒤 초록 새싹이 고개를 내밀었어요.']);
+import {openStoryWorkshop,openMapWorkshop} from './subject-explorations.js';
+export {STORY_SENTENCES} from './subject-exploration-model.js';
 export const ENGLISH_WORDS=Object.freeze([{word:'book',meaning:'책'},{word:'tree',meaning:'나무'},{word:'water',meaning:'물'},{word:'window',meaning:'창문'},{word:'sun',meaning:'해'},{word:'chair',meaning:'의자'}]);
 const shuffle=(items,random)=>{const a=[...items];for(let i=a.length-1;i>0;i--){const j=Math.max(0,Math.min(i,Math.floor(random()*(i+1))));[a[i],a[j]]=[a[j],a[i]];}return a;};
 export function createSubjectTools({ui,document:doc=globalThis.document,random=Math.random,onKoreanQuestion=()=>{},onEnglishQuestion=()=>{},speechAudio=null}){
  let englishCleanup=null;
- function story(){
-  let alive=true,index=0;const order=shuffle([0,1,2],random);
-  return ui.workshop('문장으로 이야기 잇기',`<p>처음부터 마지막까지 이어지는 문장을 골라요</p><ol id="story-complete" class="story-complete"></ol><div class="subject-choices">${order.map(i=>`<button data-story="${i}">${STORY_SENTENCES[i]}</button>`).join('')}</div><p id="subject-feedback" role="status">어떤 일이 먼저 일어났을까요?</p><button id="story-restart" class="primary" hidden>다시 이어 보기</button>`,()=>{
-   const listeners=[],feedback=doc.querySelector('#subject-feedback'),restart=doc.querySelector('#story-restart'),choices=[...doc.querySelectorAll('[data-story]')];
-   const render=()=>{doc.querySelector('#story-complete').innerHTML=STORY_SENTENCES.slice(0,index).map(s=>'<li>'+s+'</li>').join('');for(const b of choices)b.disabled=Number(b.dataset.story)<index;restart.hidden=index!==3;};
-   for(const b of choices){const fn=()=>{if(!alive||b.disabled)return;if(Number(b.dataset.story)!==index){feedback.textContent='앞뒤 문장을 생각하며 다시 골라요';return;}index++;render();feedback.textContent=index===3?'처음 · 다음 · 마지막, 이야기가 이어졌어요!':'그다음에는 어떤 일이 있었나요?';};b.addEventListener('click',fn);listeners.push([b,fn]);}
-   const reset=()=>{if(!alive)return;index=0;render();feedback.textContent='어떤 일이 먼저 일어났을까요?';choices[0]?.focus();};restart.addEventListener('click',reset);listeners.push([restart,reset]);
-   return()=>{alive=false;for(const[b,fn]of listeners)b.removeEventListener('click',fn);};
-  },{kind:'school-workshop'});
- }
+ function story(){return openStoryWorkshop({ui,document:doc,random});}
 
  function words(){
   let alive=true,round=0,answered=false;const order=shuffle(ENGLISH_WORDS,random);
@@ -30,7 +22,7 @@ export function createSubjectTools({ui,document:doc=globalThis.document,random=M
   },{kind:'school-workshop'});
  }
 
- function map(){return ui.workshop('벽의 큰 세계지도','<div class="map-study-tools"><label>지도 크기 <select id="world-map-scale"><option value="100">100%</option><option value="150">150%</option><option value="200">200%</option></select></label><span>북쪽은 위 · 점선은 적도</span></div><div class="world-map-study" tabindex="0" aria-label="확대한 지도는 옆과 아래로 스크롤할 수 있어요"><img id="world-map-study-image" src="./school/maps/world-map-ko-2048.png" alt="북쪽이 위인 세계의 육지 지도. 아시아·유럽·아프리카·북아메리카·남아메리카·오세아니아·남극과 적도를 표시해요"></div><p class="caption">육지와 바다의 모습이에요. 나라의 경계선은 표시하지 않았어요.</p><details><summary>지도 자료</summary><p>Natural Earth 육지 자료 · Equal Earth 도법</p><a href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">공개 도메인 자료 안내</a></details>',()=>{const select=doc.querySelector('#world-map-scale'),image=doc.querySelector('#world-map-study-image');const change=()=>{image.style.width=select.value+'%';};select.addEventListener('change',change);return()=>select.removeEventListener('change',change);},{kind:'school-workshop world-map-workshop'});}
+ function map(){return openMapWorkshop({ui,document:doc});}
  function korean(initialTab){return ui.workshop('글꽃 국어실',koreanLearningMarkup(),()=>{const stop=mountKoreanLearning({document:doc,container:doc.querySelector('[data-korean-learning]'),initialTab,onSpellingQuestion:onKoreanQuestion});return()=>{stop();onKoreanQuestion(0);};},{kind:'school-workshop korean-workshop'});}
  function english(initialTab){return ui.workshop('소리숲 영어실',englishLearningMarkup(),()=>{const engine=createEnglishAudio({getAudio:()=>speechAudio?.unlock?.()??Promise.resolve(null)});let stop,alive=true;const clean=()=>{if(!alive)return;alive=false;stop?.();engine.dispose();onEnglishQuestion(undefined);if(englishCleanup===clean)englishCleanup=null;};try{stop=mountEnglishLearning({document:doc,container:doc.querySelector('[data-english-learning]'),initialTab,onBoardSentence:onEnglishQuestion,audio:engine});}catch(error){clean();throw error;}englishCleanup=clean;return clean;},{kind:'school-workshop english-workshop'});}
  return{cancel(){englishCleanup?.();},open(tool){const englishTab=({englishListening:'listening',englishSentences:'sentences',englishRoleplay:'roleplay',englishDictionary:'dictionary'})[tool];if(englishTab)return english(englishTab);const tab=({koreanSpelling:'spelling',koreanComposition:'composition',koreanDictionary:'dictionary',koreanHistory:'history'})[tool];if(tab)return korean(tab);if(tool==='storyOrder')return story();if(tool==='wordMatch')return words();if(tool==='worldMap')return map();return false;}};

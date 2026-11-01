@@ -1,0 +1,57 @@
+{
+  "results": [
+    {
+      "name": "art-touch-undo-save-export",
+      "passed": true,
+      "detail": {
+        "stroke": {
+          "width": 334,
+          "height": 204.109375,
+          "points": 6
+        },
+        "savedNotice": "이 브라우저에 저장됨",
+        "undoRedoPixelsMatch": true,
+        "reloadPixels": {
+          "maxDifference": 1,
+          "differentChannels": 434,
+          "totalChannels": 1267200,
+          "meanDifference": 0.0003424873737373737
+        },
+        "afterFullReload": true,
+        "exported": {
+          "file": "art-export.png",
+          "suggestedFilename": "dormi-art-202611011425.png",
+          "bytes": 22259,
+          "width": 720,
+          "height": 440,
+          "sha256": "06c36b8fab49f72cc4d26e7ece6d2c86cad5c91dae800f0d81f033fd4571eae9"
+        },
+        "scope": "one touch stroke; pencil/color selection; undo/redo; browser-save response; close/reopen; actual PNG download"
+      }
+    },
+    {
+      "name": "math-formula-save-export",
+      "passed": true,
+      "detail": {
+        "latex": "y=\\frac{x^2+1}{2}",
+        "formulaLabel": "1. y=\\frac{x^2+1}{2}",
+        "renderedPreview": true,
+        "reopenedFormulaCount": 1,
+        "reopenedPixelsMatch": true,
+        "afterFullReload": true,
+        "exported": {
+          "file": "math-export.png",
+          "suggestedFilename": "dormi-math-board.png",
+          "bytes": 49684,
+          "width": 720,
+          "height": 440,
+          "sha256": "02e4face267b48eadeae6a2e3643f8489f3c1d307e4975f58bf6a229837579b8"
+        },
+        "scope": "LaTeX source form → editor → real renderer → board; browser-save response; close/reopen; actual PNG download"
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}
