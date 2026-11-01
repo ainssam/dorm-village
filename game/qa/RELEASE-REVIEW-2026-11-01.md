@@ -50,8 +50,18 @@
 
 ## 공개 및 등록
 
-- 목표: 아인2 Vercel `dorm-village`, https://dorm-village.vercel.app/ . 최종 배포 결과는 확정 후 아래에 기록한다.
-- GitHub: 기능 브랜치에서 검수 후 PR 생성·병합한다. Git push와 Vercel 배포는 별도 작업이다.
+- 아인2 Vercel `dorm-village` 프로덕션 **READY**, 공개 주소 https://dorm-village.vercel.app/ . 외부 공개 요청에서 버전 `2026.11.01.1` 확인.
+- GitHub: [PR #3](https://github.com/ainssam/dorm-village/pull/3) 병합 완료. 검수한 코드와 동일한 병합 커밋 `fca56c1116a8f30509f9d9bed1d272ba2abeaac7`을 별도로 배포했다.
 - 도름스: 앱 소개·사용법·저장 안내·홍보 자료는 `dorms-publishing-kit-2026-11-01.md`에 준비했다. 현재 교사 인증 로그인 세션이 없어 도름스 커뮤니티 등록은 완료하지 않았다. 사용자의 게시판 내용 선택을 로그인 승인으로 해석하지 않았다.
 
 대표 이미지·실행 JSON·검사 로그는 저장소에 함께 보관한다. 그 외 상세 PNG는 재현 스크립트로 다시 만들 수 있는 로컬 검수 자료다. 실패 기록의 실행 머신 절대 경로는 저장소 상대 경로로 정리하며 실패 판정과 원인은 유지한다.
+
+## 최종 공개 확인
+
+- 배포 ID: `dpl_FtdbWDc2Bi1pDYninLJLStQ8SRxW`, 상태 **READY**, 대상 **production**.
+- 고정 배포: https://dorm-village-6wfbpzori-ain-b38f.vercel.app/
+- 공개 별칭: `dorm-village.vercel.app`, `dorm-village-ain-b38f.vercel.app` 모두 새 배포에 연결.
+- 2026-11-01 14:59:29 UTC의 외부 요청으로 새 버전, OG/Twitter 이미지 주소, 1200×630 홍보 PNG, favicon 64px 응답, manifest의 192/512 아이콘을 확인했다. 공개 manifest/브랜드 출처·해시 목록은 로컬 검수 파일과 정확히 일치한다.
+- 고정 Git 커밋·모델·16동작·브랜드 해시 확인과 `npm run check && npm test`를 빌드 명령으로 구성했다. 빌드 READY를 확인했으며 원격 세부 빌드 로그는 권한 제한(403)으로 읽지 못했다. 로그를 직접 확인했다고 주장하지 않는다.
+- 공개 페이지 검증은 HTML 메타/정적 자산 응답이다. 실제 상호작용·WebGL 검증은 동일한 로컬 코드에서 수행했다. 공개 추출기는 숨겨진 오류 안내도 텍스트로 반환하므로 이를 실제 화면의 실패나 성공 판정으로 사용하지 않는다.
+- 근거: `public-verification-2026-11-01.json`. 이 기록을 추가하는 후속 커밋은 제품 코드를 바꾸지 않는다.

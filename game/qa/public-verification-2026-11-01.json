@@ -1,0 +1,194 @@
+{
+  "checkedAt": "2026-11-01T14:59:29Z",
+  "project": "dorm-village",
+  "account": "아인2",
+  "releaseVersion": "2026.11.01.1",
+  "commit": "fca56c1116a8f30509f9d9bed1d272ba2abeaac7",
+  "deployment": {
+    "id": "dpl_FtdbWDc2Bi1pDYninLJLStQ8SRxW",
+    "url": "https://dorm-village-6wfbpzori-ain-b38f.vercel.app",
+    "state": "READY",
+    "aliases": [
+      "dorm-village.vercel.app",
+      "dorm-village-ain-b38f.vercel.app"
+    ]
+  },
+  "publicPages": [
+    {
+      "url": "https://dorm-village.vercel.app/",
+      "finalUrl": "https://dorm-village.vercel.app/",
+      "title": "도름마을 · Dorm Village",
+      "error": null,
+      "metadata": {
+        "canonical": "https://dorm-village.vercel.app/",
+        "favicon": "https://dorm-village.vercel.app/favicon.ico",
+        "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+        "theme_color": "#234d48",
+        "og": {
+          "title": "도름마을 · Dorm Village",
+          "description": "도름이와 걷고, 만들고, 쉬어 가는 작은 세계. 학교와 마을, 구름섬에서 나만의 하루를 보내요.",
+          "type": "website",
+          "url": "https://dorm-village.vercel.app/",
+          "site_name": "도름마을",
+          "locale": "ko_KR",
+          "image": [
+            "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png"
+          ],
+          "image:width": "1200",
+          "image:height": "630",
+          "image:type": "image/png",
+          "image:alt": "파스텔 마을에서 손을 흔드는 도름이와 도름마을 제목 — 홍보 일러스트"
+        },
+        "twitter": {
+          "card": "summary_large_image",
+          "title": "도름마을 · 잠깐 놀고, 만들고, 쉬어 가요",
+          "description": "가입 없이 도름이와 산책하고, 만들고, 가볍게 놀아요. 휴대폰·태블릿·컴퓨터에서 만나는 작은 마을.",
+          "image": "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png"
+        },
+        "other": {
+          "application-version": "2026.11.01.1"
+        }
+      },
+      "imageLinks": [
+        "https://dorm-village.vercel.app/lettering/byeolbit-village-retina.webp"
+      ]
+    },
+    {
+      "url": "https://dorm-village.vercel.app/manifest.webmanifest",
+      "finalUrl": "https://dorm-village.vercel.app/manifest.webmanifest",
+      "title": null,
+      "error": null,
+      "metadata": null,
+      "imageLinks": []
+    },
+    {
+      "url": "https://dorm-village.vercel.app/brand/source.json",
+      "finalUrl": "https://dorm-village.vercel.app/brand/source.json",
+      "title": null,
+      "error": null,
+      "metadata": null,
+      "imageLinks": []
+    },
+    {
+      "url": "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png",
+      "finalUrl": "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png",
+      "title": "dorm-village-kakao-1200x630.png (1200×630)",
+      "error": null,
+      "metadata": {
+        "viewport": "width=device-width, minimum-scale=0.1"
+      },
+      "imageLinks": [
+        "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png"
+      ]
+    },
+    {
+      "url": "https://dorm-village.vercel.app/favicon.ico",
+      "finalUrl": "https://dorm-village.vercel.app/favicon.ico",
+      "title": "favicon.ico (64×64)",
+      "error": null,
+      "metadata": {
+        "viewport": "width=device-width, minimum-scale=0.1"
+      },
+      "imageLinks": [
+        "https://dorm-village.vercel.app/favicon.ico"
+      ]
+    }
+  ],
+  "manifest": {
+    "id": "/",
+    "name": "도름마을 · Dorm Village",
+    "short_name": "도름마을",
+    "lang": "ko",
+    "description": "도름이와 걷고, 만들고, 쉬어 가는 작은 세계",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#fffaf0",
+    "theme_color": "#e5f1e8",
+    "icons": [
+      {
+        "src": "brand/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "brand/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ]
+  },
+  "brandSource": {
+    "created": "2026-11-01",
+    "kind": "Promotional illustration; not a gameplay screenshot",
+    "generator": "OpenAI image_gen",
+    "reference": {
+      "asset": "characters/doreumi/village.glb",
+      "source": "https://github.com/ainssam/doreumi-desktop-pet",
+      "commit": "4433dba715893d75de60948b1968d21f5c79efcb",
+      "attribution": "도름이 © 아인T · CC BY-NC 4.0"
+    },
+    "files": [
+      {
+        "path": "brand/dorm-village-promo-original.png",
+        "bytes": 1601898,
+        "sha256": "3cc5afc777be6a81fcddf83d1d4e77a07fdff92e1802373d003e6b05d96666c8"
+      },
+      {
+        "path": "brand/doreumi-icon-original.png",
+        "bytes": 1576281,
+        "sha256": "75c7f35eb9239f9858a036537cdf2e3e4aba55499b18f769b3e3aa8015b07f87"
+      },
+      {
+        "path": "brand/dorm-village-kakao-1200x630.png",
+        "bytes": 771091,
+        "sha256": "ad822b8752eb9e946f26404de782af7ee19b289e567ea6493202749effcc0bf0"
+      },
+      {
+        "path": "brand/dorm-village-share.webp",
+        "bytes": 56410,
+        "sha256": "a08013411c339ba8f94161e911187e252014d9ff5ad2d1cfc7f5ea2421874a41"
+      },
+      {
+        "path": "brand/icon-192.png",
+        "bytes": 31436,
+        "sha256": "33ee0ceb79f997b954015c11e3dfa6afc633ba16aedf4b3219a4157214a05c48"
+      },
+      {
+        "path": "brand/icon-512.png",
+        "bytes": 225578,
+        "sha256": "6f33463db9a8c36f55c7e77e1e0e0e57472a4f6c99e789f711e44fbe802d726f"
+      },
+      {
+        "path": "brand/favicon-32.png",
+        "bytes": 1771,
+        "sha256": "816b27a77216a9d1b62e02768c6e33f9c271e9f4e5b27ae2d0c852e06c874655"
+      },
+      {
+        "path": "apple-touch-icon.png",
+        "bytes": 28085,
+        "sha256": "6d8cc70b632f60a436001917f38d24e5a4de9f2697a7b2374ee3bec2a9977d8e"
+      },
+      {
+        "path": "favicon.ico",
+        "bytes": 32038,
+        "sha256": "f673e555ce9284742470ed51f19b2443ce426ed73e618b9b681a36ef13200831"
+      },
+      {
+        "path": "icon.svg",
+        "bytes": 42075,
+        "sha256": "c3d16e850aaf412ce90a662246cfefa3f0dee4ba4f3feffa4663c3af4057046d"
+      }
+    ]
+  },
+  "verificationBoundary": "Public HTML metadata, manifest and image/icon availability were fetched without sign-in. Functional and WebGL checks used the identical local source. The extractor includes hidden fallback text; this is not a public WebGL playthrough. Remote build event logs were unavailable (403), so no build-log inspection is claimed.",
+  "buildCommand": "node scripts/bootstrap-vercel.mjs && npm run check && npm test",
+  "localTests": {
+    "tests": 255,
+    "pass": 255,
+    "fail": 0
+  },
+  "pullRequest": "https://github.com/ainssam/dorm-village/pull/3"
+}
