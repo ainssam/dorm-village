@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#234d48"><meta name="description" content="도름이와 걷고, 만들고, 쉬어 가는 작은 세계. 학교와 마을, 구름섬에서 나만의 하루를 보내요.">
 <title>도름마을 · Dorm Village</title>
-<meta name="application-version" content="2026.11.01.1">
+<meta name="application-version" content="2026.11.06.1">
 <meta property="og:title" content="도름마을 · Dorm Village"><meta property="og:description" content="도름이와 걷고, 만들고, 쉬어 가는 작은 세계. 학교와 마을, 구름섬에서 나만의 하루를 보내요."><meta property="og:type" content="website">
 <meta property="og:url" content="https://dorm-village.vercel.app/">
 <meta property="og:site_name" content="도름마을">
@@ -83,7 +83,7 @@
 <p id="camera-mouse-help" class="camera-mouse-help">왼쪽 드래그 이동 · 우클릭 드래그 회전·기울기 · 휠 확대 <span>(Shift+드래그도 회전)</span></p>
 <div class="loading" id="loading" role="status"><span class="loader-star" aria-hidden="true">✦</span><p>도름이가 오는 중…</p></div>
 <section id="activity-note" class="activity-note" hidden aria-live="polite"><div class="activity-heading"><strong id="activity-title"></strong><button id="activity-close" type="button" aria-label="안내만 접기. 활동은 계속돼요">안내 접기 <span aria-hidden="true">×</span></button></div><p id="activity-text" tabindex="0" role="region" aria-label="활동 이야기 · 길면 스크롤해서 읽기"></p><span id="activity-status">잠깐 머물러 볼까요?</span></section>
-<section id="library-quest" class="library-quest" hidden aria-label="사서 도우미 의뢰"><strong id="quest-title"></strong><p id="quest-status" role="status"></p><div><button id="quest-clue">의뢰 다시 읽기</button><button id="quest-next" hidden>다음 의뢰</button><button id="quest-stop">도우미 그만하기</button></div></section>
+<section id="library-quest" class="library-quest" hidden aria-label="사서 도우미 의뢰"><div class="quest-toolbar"><span id="quest-progress" role="status" aria-live="polite" aria-atomic="true"></span><button id="quest-toggle" type="button" aria-controls="quest-details" aria-expanded="true">안내 접기</button><button id="quest-clue" type="button" aria-label="의뢰 다시 읽기">다시 읽기</button><button id="quest-next" type="button" hidden>다음 의뢰</button><button id="quest-stop" type="button" aria-label="사서 도우미 그만하기">그만하기</button></div><div id="quest-details"><strong id="quest-title"></strong><p id="quest-status"></p></div></section>
 <div class="message" id="message" role="status" aria-live="polite"></div>
 <p id="elevator-status" class="elevator-status" role="status" aria-live="polite" hidden></p>
 <div id="fade" aria-hidden="true"></div>

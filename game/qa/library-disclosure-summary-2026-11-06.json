@@ -1,0 +1,1493 @@
+{
+  "date_kst": "2026-11-06",
+  "scope": "Library guidance disclosure follow-up",
+  "unique_viewports": [
+    [
+      844,
+      390
+    ],
+    [
+      667,
+      375
+    ],
+    [
+      844,
+      320
+    ],
+    [
+      568,
+      320
+    ]
+  ],
+  "completed_touch_flows": 5,
+  "runs": [
+    {
+      "source": "qa/library-disclosure-2026-11-06/final/library-deep.json",
+      "flows": [
+        {
+          "size": {
+            "width": 844,
+            "height": 390
+          },
+          "initial": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 275.9375,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n책 찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 224,
+                "y": 100,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 281.5,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 358.625,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 197.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 194,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 245,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 631.875,
+                "y": 300,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "expanded": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 455,
+              "height": 153.1875
+            },
+            "collapsed": "false",
+            "expanded": "true",
+            "detailsHidden": false,
+            "progress": "2/4\n책 찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "접기 ▴",
+                "x": 403.0625,
+                "y": 102,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 460.5625,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 537.6875,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 197.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 194,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 245,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 631.875,
+                "y": 300,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "carried": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 275.9375,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n책 운반",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 224,
+                "y": 100,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 281.5,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 358.625,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 197.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "action",
+                "x": 649.453125,
+                "y": 300,
+                "width": 176.546875,
+                "height": 48
+              }
+            ]
+          },
+          "complete": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 360.703125,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n도장 완료",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 231.640625,
+                "y": 100,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "근거 보기",
+                "x": 289.140625,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-next",
+                "text": "다음 의뢰",
+                "x": 366.265625,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 443.390625,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 197.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 249,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 300,
+                "width": 48,
+                "height": 48
+              }
+            ]
+          },
+          "nextQuestOpened": true,
+          "cancelledFrom": "next quest",
+          "cancelled": true
+        },
+        {
+          "size": {
+            "width": 667,
+            "height": 375
+          },
+          "initial": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 275.9375,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n책 찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 224,
+                "y": 100,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 281.5,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 358.625,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 182.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 588.796875,
+                "y": 179,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 601,
+                "y": 230,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 454.875,
+                "y": 285,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "expanded": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 393,
+              "height": 153.1875
+            },
+            "collapsed": "false",
+            "expanded": "true",
+            "detailsHidden": false,
+            "progress": "2/4\n책 찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "접기 ▴",
+                "x": 341.0625,
+                "y": 102,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 398.5625,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 475.6875,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 182.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 588.796875,
+                "y": 179,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 601,
+                "y": 230,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 454.875,
+                "y": 285,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "carried": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 275.9375,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n책 운반",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 224,
+                "y": 100,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 281.5,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 358.625,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 182.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "action",
+                "x": 472.453125,
+                "y": 285,
+                "width": 176.546875,
+                "height": 48
+              }
+            ]
+          },
+          "complete": {
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 360.703125,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n도장 완료",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 231.640625,
+                "y": 100,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "근거 보기",
+                "x": 289.140625,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-next",
+                "text": "다음 의뢰",
+                "x": 366.265625,
+                "y": 100,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 443.390625,
+                "y": 100,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 182.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 588.796875,
+                "y": 234,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 601,
+                "y": 285,
+                "width": 48,
+                "height": 48
+              }
+            ]
+          },
+          "nextQuestOpened": true,
+          "cancelledFrom": "next quest",
+          "cancelled": true
+        },
+        {
+          "size": {
+            "width": 844,
+            "height": 320
+          },
+          "initial": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 275.9375,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n책 찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 224,
+                "y": 93,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 281.5,
+                "y": 93,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 358.625,
+                "y": 93,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 124,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 175,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 631.875,
+                "y": 230,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "expanded": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 455,
+              "height": 132.390625
+            },
+            "collapsed": "false",
+            "expanded": "true",
+            "detailsHidden": false,
+            "progress": "2/4\n책 찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "접기 ▴",
+                "x": 403.0625,
+                "y": 95,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 460.5625,
+                "y": 93,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 537.6875,
+                "y": 93,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 124,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 175,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 631.875,
+                "y": 230,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "carried": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 275.9375,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n책 운반",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 224,
+                "y": 93,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "다시 읽기",
+                "x": 281.5,
+                "y": 93,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 358.625,
+                "y": 93,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "action",
+                "x": 649.453125,
+                "y": 230,
+                "width": 176.546875,
+                "height": 48
+              }
+            ]
+          },
+          "complete": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 360.703125,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n도장 완료",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내 ▾",
+                "x": 231.640625,
+                "y": 93,
+                "width": 53.5,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "근거 보기",
+                "x": 289.140625,
+                "y": 93,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-next",
+                "text": "다음 의뢰",
+                "x": 366.265625,
+                "y": 93,
+                "width": 73.125,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만하기",
+                "x": 443.390625,
+                "y": 93,
+                "width": 69.3125,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 179,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 230,
+                "width": 48,
+                "height": 48
+              }
+            ]
+          },
+          "nextQuestOpened": false,
+          "cancelledFrom": "completion",
+          "cancelled": true
+        }
+      ],
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": []
+      }
+    },
+    {
+      "source": "qa/library-disclosure-2026-11-06/narrow/library-deep.json",
+      "flows": [
+        {
+          "size": {
+            "width": 568,
+            "height": 320
+          },
+          "initial": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 224,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내",
+                "x": 224,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "읽기",
+                "x": 276,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 328,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 497.796875,
+                "y": 124,
+                "width": 52.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 502,
+                "y": 175,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 355.875,
+                "y": 230,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "expanded": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 294,
+              "height": 157.984375
+            },
+            "collapsed": "false",
+            "expanded": "true",
+            "detailsHidden": false,
+            "progress": "2/4\n찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "접기",
+                "x": 294,
+                "y": 95,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "읽기",
+                "x": 346,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 398,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 497.796875,
+                "y": 124,
+                "width": 52.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 502,
+                "y": 175,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 355.875,
+                "y": 230,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "carried": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 224,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n운반",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내",
+                "x": 224,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "읽기",
+                "x": 276,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 328,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "action",
+                "x": 373.453125,
+                "y": 230,
+                "width": 176.546875,
+                "height": 48
+              }
+            ]
+          },
+          "complete": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 276,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n완료",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내",
+                "x": 224,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "근거",
+                "x": 276,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-next",
+                "text": "다음",
+                "x": 328,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 380,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 497.796875,
+                "y": 179,
+                "width": 52.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 502,
+                "y": 230,
+                "width": 48,
+                "height": 48
+              }
+            ]
+          },
+          "nextQuestOpened": false,
+          "cancelledFrom": "completion",
+          "cancelled": true
+        }
+      ],
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": []
+      }
+    },
+    {
+      "source": "qa/library-disclosure-2026-11-06/narrow-save-final/library-deep.json",
+      "flows": [
+        {
+          "size": {
+            "width": 568,
+            "height": 320
+          },
+          "initial": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 224,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내",
+                "x": 224,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "읽기",
+                "x": 276,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 328,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 497.796875,
+                "y": 124,
+                "width": 52.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 502,
+                "y": 175,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 355.875,
+                "y": 230,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "expanded": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 294,
+              "height": 157.984375
+            },
+            "collapsed": "false",
+            "expanded": "true",
+            "detailsHidden": false,
+            "progress": "2/4\n찾기",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "접기",
+                "x": 294,
+                "y": 95,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "읽기",
+                "x": 346,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 398,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 497.796875,
+                "y": 124,
+                "width": 52.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 502,
+                "y": 175,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 355.875,
+                "y": 230,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          "carried": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 224,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n운반",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내",
+                "x": 224,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "읽기",
+                "x": 276,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 328,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "action",
+                "x": 373.453125,
+                "y": 230,
+                "width": 176.546875,
+                "height": 48
+              }
+            ]
+          },
+          "complete": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 276,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n완료",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내",
+                "x": 224,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "근거",
+                "x": 276,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-next",
+                "text": "다음",
+                "x": 328,
+                "y": 95,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 380,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 497.796875,
+                "y": 179,
+                "width": 52.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 502,
+                "y": 230,
+                "width": 48,
+                "height": 48
+              }
+            ]
+          },
+          "failedSave": {
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 283.484375,
+              "height": 66
+            },
+            "collapsed": "true",
+            "expanded": "false",
+            "detailsHidden": true,
+            "progress": "2/4\n미저장",
+            "buttons": [
+              {
+                "id": "quest-toggle",
+                "text": "안내",
+                "x": 224,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-clue",
+                "text": "근거",
+                "x": 276,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "quest-next",
+                "text": "재시도",
+                "x": 328,
+                "y": 93,
+                "width": 55.484375,
+                "height": 48
+              },
+              {
+                "id": "quest-stop",
+                "text": "그만",
+                "x": 387.484375,
+                "y": 93,
+                "width": 48,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 106.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 497.796875,
+                "y": 158,
+                "width": 52.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 502,
+                "y": 209,
+                "width": 48,
+                "height": 48
+              }
+            ]
+          },
+          "nextQuestOpened": false,
+          "cancelledFrom": "completion",
+          "cancelled": true
+        }
+      ],
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": []
+      }
+    }
+  ],
+  "method": {
+    "deviceScaleFactor": 1,
+    "renderEvery": 12,
+    "nativeTouch": true,
+    "acceleratedTime": false,
+    "completionOrScoreInjection": false,
+    "storage_failure_fixture": "Only localStorage writes for save and backup keys throw QuotaExceededError, after the book was read and carried. The original API is restored before the user clicks retry. No completion state is injected.",
+    "setup": "QA room and legal near-position bridge; actual touch enters shelf and handover interaction radius."
+  },
+  "related_tests": {
+    "command": "node --test tests/library-quest-disclosure.test.mjs tests/library-quest-reach.test.mjs",
+    "passed": 4
+  },
+  "sha256": {
+    "dist/library/quest-controller.js": "b5413fa0fd3476e24d1e27959d0200f1ab357f557f4eb4feff8639470362ba40",
+    "dist/library/quest.css": "74434caf2a204b7d52024f17547e46932c74091d682270b722e5b5ce47eff43a",
+    "scripts/library-deep-browser.mjs": "ee7f7cfc8ebcb7f3bf239489313f75421d9ae9539ca7589fa2ae79cbbb8bf304",
+    "scripts/library-deep-scenarios.mjs": "aa0503000410b53e89fc12a0458c23397398891db630bcae1b0afcf6f01b4abf",
+    "tests/library-quest-disclosure.test.mjs": "0410ca6c0d45218fb4484b66a99e31d7c03dc3d0fa15048a01492dea52016275",
+    "tests/library-quest-reach.test.mjs": "791482f06d9e0402528655b11feb25ac5582772f91ba88b94c6184b94caccaf9"
+  },
+  "library_html_block_sha256": "f8e9979a4c0f52ce37dd0a4be47833a78ed90be4c8d358b14612c8f0ebf0833f",
+  "limitations": [
+    "Chromium emulation, not physical hardware or Safari.",
+    "Screen-reader metadata and persistent live message are verified in code; no physical screen-reader session.",
+    "Near-position setup does not test a complete path from the map entrance.",
+    "The three larger viewports were completed before the extra narrow-label branch was added; their labels and geometry remain unchanged.",
+    "Failure injection is a controlled QA fixture, not a real device storage exhaustion test."
+  ]
+}

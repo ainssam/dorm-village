@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {createAmusementFoodCamera} from './food-cart-camera.js';
 import {FOOD_CARTS,FOOD_CART_TARGETS} from './food-cart-layout.js';
 import {createFoodProp,disposeFoodDisplay} from './food-props.js';
 import {createMarshmallowPose,marshmallowPoseFrame} from '../marshmallow/pose.js';
@@ -41,7 +42,7 @@ export function createAmusementFoodController({getRoom,getView,getActors,isAllow
   // Match the existing marshmallow bite pose: the arm carries the prop along
   // its authored contact vector, then both move together toward the mouth.
   position.copy(hand).addScaledVector(direction,.055);session.held.position.copy(position);
-  session.held.quaternion.setFromUnitVectors(up,direction);
+  session.held.quaternion.setFromUnitVectors(up,['ice-cream','slush'].includes(session.itemId)?up.clone().lerp(direction,session.phase==='eating'?.32*smooth(session.elapsed/.85):0).normalize():direction);
   session.held.scale.setScalar(.56*(frame.foodScale??1));
   return true;
  }
@@ -117,7 +118,7 @@ export function createAmusementFoodOrderUI({stage,controller,getRoom,doc=globalT
 
 /** Main-frame facade used by game.js; deliberately does not create a RAF. */
 export function createAmusementFoodHost({stage,getRoom,getView,getActors,isAllowed=()=>true,onChange=()=>{},doc=globalThis.document,win=globalThis.window,makeFood,makeEatingPose,makePoseFrame}={}){
- let ui=null,disposed=false,lastBusy=false;
+ let ui=null,disposed=false,lastBusy=false;const closeup=createAmusementFoodCamera({stage,getActors});
  const controller=createAmusementFoodController({getRoom,getView,getActors,isAllowed,onChange:()=>{ui?.render();const next=controller.busy;if(next!==lastBusy){lastBusy=next;onChange(controller.snapshot());}},makeFood,makeEatingPose,makePoseFrame});
  ui=createAmusementFoodOrderUI({stage,controller,getRoom,doc,win});
  return{
@@ -128,7 +129,7 @@ export function createAmusementFoodHost({stage,getRoom,getView,getActors,isAllow
   order:itemId=>controller.order(itemId),eat:()=>controller.eat(),
   cancel:()=>controller.cancel(),sceneChanged:()=>controller.sceneChanged(),
   frame(dt){if(disposed)return;if(getRoom?.()!=='amusementIsland'){controller.sceneChanged();ui.render();return;}controller.tick(dt);ui.update();},
-  get busy(){return controller.busy;},get active(){return controller.active;},snapshot:()=>controller.snapshot(),
-  dispose(){if(disposed)return;controller.dispose();ui.dispose();disposed=true;}
+  get busy(){return controller.busy;},get active(){return controller.active;},get camera(){if(!disposed&&controller.active&&!doc.hidden&&getRoom?.()==='amusementIsland')return closeup.fit();closeup.reset();return null;},snapshot:()=>controller.snapshot(),
+  dispose(){if(disposed)return;controller.dispose();ui.dispose();closeup.dispose();disposed=true;}
  };
 }

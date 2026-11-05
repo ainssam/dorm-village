@@ -1,0 +1,779 @@
+{
+  "date": "2026-11-06",
+  "input": "Chromium emulated touch, 390 x 844",
+  "rendering": "SwiftShader, DPR .35, drawing sampled every 12 frames; screenshots resume continuous drawing, no simulation clock or outcomes altered",
+  "scenarios": [
+    {
+      "name": "boat-full-outbound",
+      "passed": true,
+      "evidence": {
+        "from": "villageHarbor",
+        "to": "observatoryIsland",
+        "trace": [
+          {
+            "phase": "boarding",
+            "elapsed": 0.06160000000000036,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "retracting",
+            "elapsed": 0.10009999999999855,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "departing",
+            "elapsed": 0.05,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "departing",
+            "elapsed": 0.3467000000000007,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "cruise",
+            "elapsed": 0.14500000000000002,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "arriving",
+            "elapsed": 0.05,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "deploying",
+            "elapsed": 0.17820000000000435,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "disembarking",
+            "elapsed": 0.045,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "walkoff",
+            "elapsed": 0.1283000000000029,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "released",
+            "elapsed": null,
+            "room": "observatoryIsland",
+            "paused": false
+          }
+        ],
+        "arrival": {
+          "room": "observatoryIsland",
+          "address": {
+            "roomId": "observatoryIsland",
+            "spawnId": "from-boat"
+          },
+          "locked": false
+        },
+        "fullAnimation": true,
+        "pause": true
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile/results.json",
+      "elapsedMs": 54570
+    },
+    {
+      "name": "boat-full-return",
+      "passed": true,
+      "evidence": {
+        "from": "observatoryIsland",
+        "to": "villageHarbor",
+        "trace": [
+          {
+            "phase": "boarding",
+            "elapsed": 0.06170000000000436,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "retracting",
+            "elapsed": 0.06660000000000582,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "departing",
+            "elapsed": 0.295,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "departing",
+            "elapsed": 0.5133000000000029,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "cruise",
+            "elapsed": 0.18340000000000872,
+            "room": "observatoryIsland",
+            "paused": false
+          },
+          {
+            "phase": "arriving",
+            "elapsed": 0,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "deploying",
+            "elapsed": 0.03339999999999418,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "disembarking",
+            "elapsed": 0.016600000000005822,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "walkoff",
+            "elapsed": 0.05010000000000582,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "released",
+            "elapsed": null,
+            "room": "courtyard",
+            "paused": false
+          }
+        ],
+        "arrival": {
+          "room": "courtyard",
+          "address": {
+            "roomId": "villageHarbor",
+            "spawnId": "from-boat"
+          },
+          "locked": false
+        },
+        "fullAnimation": true,
+        "pause": false
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile/results.json",
+      "elapsedMs": 54424
+    },
+    {
+      "name": "flight-full-outbound",
+      "passed": true,
+      "evidence": {
+        "from": "villageAirport",
+        "to": "amusementAirport",
+        "trace": [
+          {
+            "phase": "boarding-camera",
+            "elapsed": 0.061700000000000726,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "boarding",
+            "elapsed": 0.06660000000000037,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "seated",
+            "elapsed": 0.11660000000000219,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "seal",
+            "elapsed": 0,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "taxi-out",
+            "elapsed": 0.16659999999999853,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "taxi-out",
+            "elapsed": 0.4349999999999999,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "takeoff-roll",
+            "elapsed": 0.1333999999999942,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "climb",
+            "elapsed": 0.08330000000000291,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "cruise",
+            "elapsed": 0.06169999999999709,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "awaiting-commit",
+            "elapsed": 0.03330000000000291,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "destination-establish",
+            "elapsed": 0.21169999999999708,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "approach",
+            "elapsed": 0.08330000000000293,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "landing-roll",
+            "elapsed": 0.2783000000000029,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "taxi-in",
+            "elapsed": 0.05,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "open",
+            "elapsed": 0,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "dismount",
+            "elapsed": 0.11669999999999708,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "return-camera",
+            "elapsed": 0.15000000000000002,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "released",
+            "elapsed": null,
+            "room": "amusementIsland",
+            "paused": false
+          }
+        ],
+        "arrival": {
+          "room": "amusementIsland",
+          "address": {
+            "roomId": "amusementAirport",
+            "spawnId": "from-plane"
+          },
+          "locked": false
+        },
+        "fullAnimation": true,
+        "pause": true
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile-flight/results.json",
+      "elapsedMs": 126805
+    },
+    {
+      "name": "boat-cancel-reboard-paused-arrival-map",
+      "passed": true,
+      "evidence": {
+        "mapFocus": {
+          "tag": "BUTTON",
+          "id": "",
+          "inDialog": true
+        },
+        "cancelledBeforeDeparture": true,
+        "reboarded": true,
+        "pausedSkipStatus": "계속하기를 누르면 마무리해요 · 고요한 천문대 섬",
+        "mapAfterCancel": true,
+        "finalRoom": "observatoryIsland"
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile-final/results.json",
+      "elapsedMs": 22602
+    },
+    {
+      "name": "flight-full-return",
+      "passed": true,
+      "evidence": {
+        "from": "amusementAirport",
+        "to": "villageAirport",
+        "trace": [
+          {
+            "phase": "boarding-camera",
+            "elapsed": 0.061700000000000726,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "boarding",
+            "elapsed": 0.05,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "seated",
+            "elapsed": 0.15000000000000002,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "seal",
+            "elapsed": 0,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "taxi-out",
+            "elapsed": 0.12840000000000146,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "taxi-out",
+            "elapsed": 0.3300999999999985,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "takeoff-roll",
+            "elapsed": 0,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "climb",
+            "elapsed": 0.09499999999999999,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "cruise",
+            "elapsed": 0.05,
+            "room": "amusementIsland",
+            "paused": false
+          },
+          {
+            "phase": "destination-establish",
+            "elapsed": 0.016600000000005822,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "arrival-camera",
+            "elapsed": 0.1,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "approach",
+            "elapsed": 0.16180000000001746,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "landing-roll",
+            "elapsed": 0.18330000000000293,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "taxi-in",
+            "elapsed": 0.1166999999999971,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "open",
+            "elapsed": 0.16159999999997673,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "dismount",
+            "elapsed": 0.16669999999998253,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "return-camera",
+            "elapsed": 0.24500000000000005,
+            "room": "courtyard",
+            "paused": false
+          },
+          {
+            "phase": "released",
+            "elapsed": null,
+            "room": "courtyard",
+            "paused": false
+          }
+        ],
+        "arrival": {
+          "room": "courtyard",
+          "address": {
+            "roomId": "villageAirport",
+            "spawnId": "from-plane"
+          },
+          "locked": false
+        },
+        "fullAnimation": true,
+        "pause": false
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile-final/results.json",
+      "elapsedMs": 136933
+    },
+    {
+      "name": "playground-companion-slide",
+      "passed": true,
+      "evidence": {
+        "seesawJoinedActiveSeconds": 6.0027999999999775,
+        "slideAutomaticFinish": true,
+        "reboardAndEarlyExit": true
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile-final/results.json",
+      "elapsedMs": 31612
+    },
+    {
+      "name": "weather-real-connection-disable",
+      "passed": true,
+      "evidence": {
+        "source": "real external request, no response fixture",
+        "status": "unavailable",
+        "error": {
+          "code": "network",
+          "status": null,
+          "atUtcMs": 1793892664114
+        },
+        "display": "날씨 연결 실패 · 자료를 가져오지 못했어요",
+        "receivedData": false,
+        "disabledAndCleared": true
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile-final/results.json",
+      "elapsedMs": 2979
+    },
+    {
+      "name": "weather-fixture-success-and-invalid-response",
+      "passed": true,
+      "evidence": {
+        "source": "explicit response fixtures, production controls/provider/host",
+        "calls": 2,
+        "readyCity": "busan",
+        "temperature": 12.2,
+        "invalidFeedback": "날씨 연결 실패 · 자료를 가져오지 못했어요",
+        "disabledAfterFailure": true
+      },
+      "source": "qa/journey-quality-2026-11-06/mobile-final/results.json",
+      "elapsedMs": 25073
+    },
+    {
+      "name": "flight-controls-five-viewports",
+      "passed": true,
+      "evidence": {
+        "layouts": [
+          {
+            "width": 390,
+            "height": 844,
+            "box": {
+              "x": 168,
+              "y": 12,
+              "width": 210,
+              "height": 165.1875
+            },
+            "statusFont": "14px",
+            "buttons": [
+              {
+                "text": "비행 출발",
+                "x": 177,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "계속하기",
+                "x": 276,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "내려오기",
+                "x": 177,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "지도",
+                "x": 276,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              }
+            ]
+          },
+          {
+            "width": 844,
+            "height": 390,
+            "box": {
+              "x": 622,
+              "y": 12,
+              "width": 210,
+              "height": 165.1875
+            },
+            "statusFont": "14px",
+            "buttons": [
+              {
+                "text": "비행 출발",
+                "x": 631,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "계속하기",
+                "x": 730,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "내려오기",
+                "x": 631,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "지도",
+                "x": 730,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              }
+            ]
+          },
+          {
+            "width": 768,
+            "height": 1024,
+            "box": {
+              "x": 546,
+              "y": 12,
+              "width": 210,
+              "height": 165.1875
+            },
+            "statusFont": "14px",
+            "buttons": [
+              {
+                "text": "비행 출발",
+                "x": 555,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "계속하기",
+                "x": 654,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "내려오기",
+                "x": 555,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "지도",
+                "x": 654,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              }
+            ]
+          },
+          {
+            "width": 1024,
+            "height": 768,
+            "box": {
+              "x": 802,
+              "y": 12,
+              "width": 210,
+              "height": 165.1875
+            },
+            "statusFont": "14px",
+            "buttons": [
+              {
+                "text": "비행 출발",
+                "x": 811,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "계속하기",
+                "x": 910,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "내려오기",
+                "x": 811,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "지도",
+                "x": 910,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              }
+            ]
+          },
+          {
+            "width": 1440,
+            "height": 900,
+            "box": {
+              "x": 1218,
+              "y": 12,
+              "width": 210,
+              "height": 165.1875
+            },
+            "statusFont": "14px",
+            "buttons": [
+              {
+                "text": "비행 출발",
+                "x": 1227,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "계속하기",
+                "x": 1326,
+                "y": 66.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "내려오기",
+                "x": 1227,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              },
+              {
+                "text": "지도",
+                "x": 1326,
+                "y": 120.1875,
+                "width": 93,
+                "height": 48,
+                "font": "14px"
+              }
+            ]
+          }
+        ],
+        "cancelledFromPausedSeat": true
+      },
+      "source": "qa/journey-quality-2026-11-06/final-layout-sky/results.json",
+      "elapsedMs": 35688
+    },
+    {
+      "name": "sky-city-horizon-and-free-view",
+      "passed": true,
+      "evidence": {
+        "solar": "일출 약 07:02 · 일몰 약 17:29",
+        "scenes": [
+          {
+            "name": "morning",
+            "clock": "서울 · 2026-11-06 07:06\nAsia/Seoul (UTC+09:00) · 선택한 시각",
+            "selected": "true"
+          },
+          {
+            "name": "evening",
+            "clock": "서울 · 2026-11-06 17:24\nAsia/Seoul (UTC+09:00) · 선택한 시각",
+            "selected": "true"
+          }
+        ],
+        "freeViewGuidesAndPause": true,
+        "closed": true
+      },
+      "source": "qa/journey-quality-2026-11-06/final-layout-sky/results.json",
+      "elapsedMs": 3147
+    }
+  ],
+  "initialHarnessCorrections": [
+    "Connected amusement airport is reached via the actual amusement island map destination; the airport is not an independent destination in that list.",
+    "Use select[data-sky-mode] because the presentation root also has a data-sky-mode state attribute."
+  ],
+  "externalWeather": "One real API request failed with environment ERR_TUNNEL_CONNECTION_FAILED; UI failure and disconnect verified. Success and invalid response were separately tested using explicit response fixtures.",
+  "passedScenarios": 10,
+  "sourceSha256": {
+    "dist/transport/controls.js": "19230ebbdb00aad317320fb46b25859e6b8851d46490adc0b96f5b08a5fa797c",
+    "dist/transport/controls.css": "a8b823ebe1b9ddaf69d2e53dd0da775fcba4b42e754fe4cbab2b4ff1b671f970",
+    "dist/aviation/flight-controls.css": "95cb991852da9450bfd71de5bc07230655a157364c5db61d3ce3d77f32cc6b78",
+    "scripts/journey-quality-browser.mjs": "930cd1d0f3758aeb749a2ff0657c29296711d2e9def1b835740de94d59574142",
+    "tests/boat-controls-accessibility.test.mjs": "f6d79c31657e7f8a012cbabccc330d748e94cbb1971197ee5bc7ad9f1e465c3b"
+  },
+  "visualReview": {
+    "openedImages": [
+      "mobile/boat-underway.png",
+      "mobile-flight/flight-underway.png",
+      "final-layout-sky/flight-controls-390x844.png",
+      "final-layout-sky/flight-controls-844x390.png",
+      "final-layout-sky/flight-controls-768x1024.png",
+      "final-layout-sky/flight-controls-1024x768.png",
+      "final-layout-sky/flight-controls-1440x900.png",
+      "final-layout-sky/sky-morning.png",
+      "final-layout-sky/sky-evening.png",
+      "final-layout-sky/sky-free-view-paused.png"
+    ],
+    "assessment": "Control text and buttons remain within all five viewports; avatar visible; sky state, labels, close and settings controls readable. Low raster resolution is a declared QA setting, not a shipped asset resolution claim."
+  }
+}

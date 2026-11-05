@@ -1,0 +1,549 @@
+{
+  "review_date_kst": "2026-11-06",
+  "scope": "Three remaining library quests, stamp persistence, three landscape sizes, principal conversation and two seats, infirmary bed and chair",
+  "passed_scenarios": 6,
+  "scenarios": [
+    {
+      "source": "qa/library-deep-2026-11-06/final/library-deep.json",
+      "name": "library-quest-1",
+      "passed": true,
+      "evidence": {
+        "index": 1,
+        "clue": "×\n그림자가 달라진 까닭\n\n아르마딜로: 아침과 점심에 막대 그림자가 왜 달라지는지 알고 싶어요. 이유를 설명하는 글을 찾아 가져다주세요.\n\n책장 앞 초록 원 가까이에서 살펴봐요. 건넬 때는 친구 앞 금빛 원으로 가요. E / 행동으로 가까운 책장을 읽고, 이동키나 방향 버튼으로 직접 가져가요.\n\n찾으러 가기",
+        "buttons": [
+          {
+            "text": "의뢰 다시 읽기",
+            "height": 48
+          },
+          {
+            "text": "도우미 그만하기",
+            "height": 48
+          }
+        ],
+        "wrongBook": null,
+        "read": {
+          "moved": {
+            "target": {
+              "x": 4.32,
+              "z": -4.16
+            },
+            "start": {
+              "position": {
+                "x": 4.474206897961654,
+                "z": -3.1517241287122624
+              },
+              "action": "친칠라의 의뢰 듣기",
+              "locked": false,
+              "stickDisabled": false,
+              "activeElement": "scene"
+            },
+            "end": {
+              "position": {
+                "x": 4.390451110927189,
+                "z": -3.6993581208607
+              },
+              "action": "4 · 빛 책장 살펴보기"
+            },
+            "distance": 0.4659981757988552,
+            "input": "touch stick"
+          },
+          "passage": "햇빛과 그림자\n\n아침에 마당의 막대 그림자를 표시했어요. 점심에 다시 보니 그림자의 길이와 방향이 달라졌지요. 하늘에서 보이는 해의 위치가 달라지면 그림자도 바뀌어요. 그림자는 물체가 빛을 가려 빛이 오는 방향의 반대쪽에 생긴답니다."
+        },
+        "hint": "손에 든 책: 햇빛과 그림자 · 아르마딜로 앞 금빛 원으로",
+        "delivered": {
+          "target": {
+            "x": -7.7,
+            "z": 1.4
+          },
+          "start": {
+            "position": {
+              "x": -7.854206897961654,
+              "z": 0.3917241287122613
+            },
+            "action": "천천히 둘러보기E",
+            "locked": false,
+            "stickDisabled": false,
+            "activeElement": "scene"
+          },
+          "end": {
+            "position": {
+              "x": -7.768550283687882,
+              "z": 0.9517866066560919
+            },
+            "action": "아르마딜로에게 책 건네기"
+          },
+          "distance": 0.45342517284172684,
+          "input": "touch stick"
+        },
+        "reason": "×\n책 속 근거를 찾았어요\n\n「햇빛과 그림자」는 해의 위치가 달라지면 그림자의 길이와 방향이 바뀐다고 설명해요. 질문에 대한 이유가 글에 있어요.\n\n도장은 의뢰마다 한 번만 남아요. 같은 의뢰도 다시 놀 수 있어요.\n\n계속",
+        "stamp": "2. 그림자가 달라진 까닭\n도장 있음 · 다시 놀이\n아르마딜로: 아침과 점심에 막대 그림자가 왜 달라지는지 알고 싶어요. 이유를 설명하는 글을 찾아 가져다주세요."
+      }
+    },
+    {
+      "source": "qa/library-deep-2026-11-06/final/library-deep.json",
+      "name": "library-quest-2",
+      "passed": true,
+      "evidence": {
+        "index": 2,
+        "clue": "×\n구름의 쉬어 갈 곳\n\n카피바라: 물이 나오는 책이 모두 같은 내용은 아니에요. 연못에 비친 자신을 보고 웃는 친구의 이야기를 읽고 싶어요.\n\n책장 앞 초록 원 가까이에서 살펴봐요. 건넬 때는 친구 앞 금빛 원으로 가요. E / 행동으로 가까운 책장을 읽고, 이동키나 방향 버튼으로 직접 가져가요.\n\n찾으러 가기",
+        "buttons": [
+          {
+            "text": "의뢰 다시 읽기",
+            "height": 48
+          },
+          {
+            "text": "도우미 그만하기",
+            "height": 48
+          }
+        ],
+        "wrongBook": {
+          "moved": {
+            "target": {
+              "x": -2.8,
+              "z": -0.16000000000000014
+            },
+            "start": {
+              "position": {
+                "x": -2.645793102038346,
+                "z": 0.8482758712877384
+              },
+              "action": "천천히 둘러보기E",
+              "locked": false,
+              "stickDisabled": false,
+              "activeElement": "scene"
+            },
+            "end": {
+              "position": {
+                "x": -2.729565985579657,
+                "z": 0.30053009428685795
+              },
+              "action": "6 · 물 책장 살펴보기"
+            },
+            "distance": 0.4658850911235811,
+            "input": "touch stick"
+          },
+          "passage": "물방울의 여행\n\n햇빛을 받은 물웅덩이가 조금씩 줄었어요. 물의 일부가 눈에 보이지 않는 수증기가 되어 공기 중으로 옮겨 갔지요. 수증기가 식으면 작은 물방울이 될 수 있어요. 구름 속 물방울들이 커져 땅으로 떨어지면 비가 되어요.",
+          "feedback": "×\n단서를 다시 살펴봐요\n\n「물방울의 여행」: 물은 수증기가 되어 공기 중으로 옮겨 갈 수 있어요. 이번 의뢰의 단서와 달라요. 물 책장에 돌려놓고 다시 찾아봐요\n\n다시 찾아볼게요",
+          "returned": true
+        },
+        "read": {
+          "moved": {
+            "target": {
+              "x": -3.15,
+              "z": -4.16
+            },
+            "start": {
+              "position": {
+                "x": -2.995793102038346,
+                "z": -3.1517241287122615
+              },
+              "action": "6 · 물 책장 살펴보기",
+              "locked": false,
+              "stickDisabled": false,
+              "activeElement": "scene"
+            },
+            "end": {
+              "position": {
+                "x": -3.0795488890728193,
+                "z": -3.699358120860683
+              },
+              "action": "2 · 마음 책장 살펴보기"
+            },
+            "distance": 0.46599817579887076,
+            "input": "touch stick"
+          },
+          "passage": "구름에게 보낸 편지\n\n작은 구름은 오늘 어디로 갈지 몰랐어요. 도름이는 종이 위에 동그란 연못을 그려 보냈지요. 구름은 연못 위에 잠깐 머물렀어요. 물속에 비친 자신을 보고 처음으로 웃었답니다. 목적지가 없어도 쉬어 갈 곳은 있어요."
+        },
+        "hint": "손에 든 책: 구름에게 보낸 편지 · 카피바라 앞 금빛 원으로",
+        "delivered": {
+          "target": {
+            "x": 7.8,
+            "z": -3.6
+          },
+          "start": {
+            "position": {
+              "x": 7.954206897961654,
+              "z": -2.5917241287122623
+            },
+            "action": "천천히 둘러보기E",
+            "locked": false,
+            "stickDisabled": false,
+            "activeElement": "scene"
+          },
+          "end": {
+            "position": {
+              "x": 7.870434014420335,
+              "z": -3.1394699057131445
+            },
+            "action": "카피바라에게 책 건네기"
+          },
+          "distance": 0.4658850911235774,
+          "input": "touch stick"
+        },
+        "reason": "×\n책 속 근거를 찾았어요\n\n「구름에게 보낸 편지」의 구름은 연못에 비친 자신을 보고 웃어요. 「물방울의 여행」은 물의 변화에 관한 설명이라 내용이 달라요.\n\n도장은 의뢰마다 한 번만 남아요. 같은 의뢰도 다시 놀 수 있어요.\n\n계속",
+        "stamp": "3. 구름의 쉬어 갈 곳\n도장 있음 · 다시 놀이\n카피바라: 물이 나오는 책이 모두 같은 내용은 아니에요. 연못에 비친 자신을 보고 웃는 친구의 이야기를 읽고 싶어요."
+      }
+    },
+    {
+      "source": "qa/library-deep-2026-11-06/final/library-deep.json",
+      "name": "library-quest-3",
+      "passed": true,
+      "evidence": {
+        "index": 3,
+        "clue": "×\n책도 제자리가 있어요\n\n물 책장에 다른 주제의 책이 섞였어요. 빈 의자에 친구를 기다리는 이야기를 찾아, 「친구」 책장으로 직접 옮겨 주세요.\n\n책장 앞 초록 원에서 책을 읽고 손에 들어요. 3 · 친구 책장 앞 금빛 원으로 옮겨 E / 행동을 누르면 제자리에 꽂아요.\n\n찾으러 가기",
+        "buttons": [
+          {
+            "text": "의뢰 다시 읽기",
+            "height": 48
+          },
+          {
+            "text": "도우미 그만하기",
+            "height": 48
+          }
+        ],
+        "wrongBook": null,
+        "read": {
+          "moved": {
+            "target": {
+              "x": -2.8,
+              "z": -0.16000000000000014
+            },
+            "start": {
+              "position": {
+                "x": -2.645793102038346,
+                "z": 0.8482758712877384
+              },
+              "action": "천천히 둘러보기E",
+              "locked": false,
+              "stickDisabled": false,
+              "activeElement": "scene"
+            },
+            "end": {
+              "position": {
+                "x": -2.729565985579664,
+                "z": 0.3005300942868615
+              },
+              "action": "6 · 물 책장 살펴보기"
+            },
+            "distance": 0.46588509112358356,
+            "input": "touch stick"
+          },
+          "passage": "씨앗의 빈 의자\n\n씨앗은 매일 빈 의자를 하나 놓았어요. 누가 올지는 몰랐지만 따뜻한 차도 준비했지요. 어느 날 바람이 앉아 쉬었고, 다음 날에는 나비가 찾아왔어요. 기다림은 혼자 있는 시간이 아니라, 누군가를 위한 자리를 만드는 일이었답니다."
+        },
+        "hint": "손에 든 책: 씨앗의 빈 의자 · 3 · 친구 책장 앞 금빛 원으로",
+        "delivered": {
+          "target": {
+            "x": 0.8,
+            "z": -4.16
+          },
+          "start": {
+            "position": {
+              "x": 0.9542068979616537,
+              "z": -3.151724128712262
+            },
+            "action": "이 책장에 꽂기",
+            "locked": false,
+            "stickDisabled": false,
+            "activeElement": "scene"
+          },
+          "end": {
+            "position": {
+              "x": 0.8704169179134977,
+              "z": -3.69958169056558
+            },
+            "action": "이 책장에 꽂기"
+          },
+          "distance": 0.4657720064483112,
+          "input": "touch stick"
+        },
+        "reason": "×\n책 속 근거를 찾았어요\n\n씨앗이 주인공이지만 식물을 기르는 방법을 설명하는 글은 아니에요. 찾아올 친구를 위해 자리를 마련하는 이야기라 「친구」 책장에 놓았어요.\n\n도장은 의뢰마다 한 번만 남아요. 같은 의뢰도 다시 놀 수 있어요.\n\n계속",
+        "stamp": "4. 책도 제자리가 있어요\n도장 있음 · 다시 놀이\n물 책장에 다른 주제의 책이 섞였어요. 빈 의자에 친구를 기다리는 이야기를 찾아, 「친구」 책장으로 직접 옮겨 주세요."
+      }
+    },
+    {
+      "source": "qa/library-deep-2026-11-06/final/library-deep.json",
+      "name": "library-stamps-reload-and-landscape",
+      "passed": true,
+      "evidence": {
+        "stamps": [
+          "2. 그림자가 달라진 까닭\n도장 있음 · 다시 놀이\n아르마딜로: 아침과 점심에 막대 그림자가 왜 달라지는지 알고 싶어요. 이유를 설명하는 글을 찾아 가져다주세요.",
+          "3. 구름의 쉬어 갈 곳\n도장 있음 · 다시 놀이\n카피바라: 물이 나오는 책이 모두 같은 내용은 아니에요. 연못에 비친 자신을 보고 웃는 친구의 이야기를 읽고 싶어요.",
+          "4. 책도 제자리가 있어요\n도장 있음 · 다시 놀이\n물 책장에 다른 주제의 책이 섞였어요. 빈 의자에 친구를 기다리는 이야기를 찾아, 「친구」 책장으로 직접 옮겨 주세요."
+        ],
+        "layouts": [
+          {
+            "size": {
+              "width": 844,
+              "height": 390
+            },
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 455,
+              "height": 145.1875
+            },
+            "buttons": [
+              {
+                "x": 176,
+                "y": 179.1875,
+                "width": 116.25,
+                "height": 48
+              },
+              {
+                "x": 298.25,
+                "y": 179.1875,
+                "width": 126.890625,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 197.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 194,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 245,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 631.875,
+                "y": 300,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          {
+            "size": {
+              "width": 667,
+              "height": 375
+            },
+            "hud": {
+              "x": 164,
+              "y": 91,
+              "width": 393,
+              "height": 145.1875
+            },
+            "buttons": [
+              {
+                "x": 176,
+                "y": 179.1875,
+                "width": 116.25,
+                "height": 48
+              },
+              {
+                "x": 298.25,
+                "y": 179.1875,
+                "width": 126.890625,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 182.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 588.796875,
+                "y": 179,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 601,
+                "y": 230,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 454.875,
+                "y": 285,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          },
+          {
+            "size": {
+              "width": 844,
+              "height": 320
+            },
+            "hud": {
+              "x": 164,
+              "y": 84,
+              "width": 455,
+              "height": 124.390625
+            },
+            "buttons": [
+              {
+                "x": 176,
+                "y": 151.390625,
+                "width": 116.25,
+                "height": 48
+              },
+              {
+                "x": 298.25,
+                "y": 151.390625,
+                "width": 126.890625,
+                "height": 48
+              }
+            ],
+            "controls": [
+              {
+                "id": "move-stick",
+                "x": 18,
+                "y": 127.40625,
+                "width": 124,
+                "height": 124
+              },
+              {
+                "id": "doreumi-open",
+                "x": 765.796875,
+                "y": 124,
+                "width": 60.203125,
+                "height": 44
+              },
+              {
+                "id": "jump",
+                "x": 778,
+                "y": 175,
+                "width": 48,
+                "height": 48
+              },
+              {
+                "id": "action",
+                "x": 631.875,
+                "y": 230,
+                "width": 194.125,
+                "height": 48
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source": "qa/library-deep-2026-11-06/quiet-final/library-deep.json",
+      "name": "principal-quiet-conversation-and-seats",
+      "passed": true,
+      "evidence": {
+        "conversation": "×\n큰나무 교장실\n곰 교장선생님\n\n어서 와요. 넓은 소파에 잠깐 앉아 쉬어도 좋아요. 창가 의자도 천천히 흔들어 보세요. 오늘 마을에서 찾은 재미있는 이야기가 있나요?\n\n이야기 마치기",
+        "poses": [
+          {
+            "id": "principalOffice.sofa.back.1",
+            "active": {
+              "id": "principalOffice.sofa.back.1",
+              "kind": "sit",
+              "phase": "active",
+              "elapsed": 0.9131999999999977
+            },
+            "closed": true
+          },
+          {
+            "id": "principalOffice.rocking-chair",
+            "active": {
+              "id": "principalOffice.rocking-chair",
+              "kind": "sit",
+              "phase": "active",
+              "elapsed": 0.8683000000000025
+            },
+            "closed": true
+          }
+        ]
+      }
+    },
+    {
+      "source": "qa/library-deep-2026-11-06/quiet-final/library-deep.json",
+      "name": "infirmary-quiet-bed-and-chair",
+      "passed": true,
+      "evidence": {
+        "poses": [
+          {
+            "id": "infirmary.bed",
+            "active": {
+              "id": "infirmary.bed",
+              "kind": "sleep",
+              "phase": "active",
+              "elapsed": 1.1414000000000013
+            },
+            "closed": true
+          },
+          {
+            "id": "infirmary.chair",
+            "active": {
+              "id": "infirmary.chair",
+              "kind": "sit",
+              "phase": "active",
+              "elapsed": 1.1417999999999953
+            },
+            "closed": true
+          }
+        ]
+      }
+    }
+  ],
+  "method": {
+    "browser": "Chromium, emulated touch",
+    "primary_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "render_scale": 0.35,
+    "render_every": 12,
+    "time_acceleration": false,
+    "award_injection": false,
+    "setup": "QA bridge changes room and places player at a collision-free near approach. Library movement across the final interaction radius uses native touch input. Quiet-room setup verifies the actual nearby target before activating the real action button."
+  },
+  "health": {
+    "library_final": {
+      "errors": [],
+      "failed": []
+    },
+    "quiet_final": {
+      "errors": [],
+      "consoleErrors": [],
+      "failed": []
+    }
+  },
+  "limitations": [
+    "The first library quest was covered by the earlier living review; this run covers the remaining three.",
+    "Near-position setup does not prove a complete walking route from the map entrance.",
+    "Quiet-room coverage is principal greeting, one sofa, rocking chair, infirmary bed and chair; other sofa variants were not enumerated.",
+    "No physical phone, Safari, screen reader or sustained quiet-rest effect test.",
+    "Library landscape screenshots follow quest setup and a viewport rotation; they do not establish first-entry camera quality.",
+    "Render sampling lowers screenshot raster quality without accelerating the activity clock."
+  ],
+  "visual_reviewed": [
+    "qa/library-deep-2026-11-06/final/library-hud-844x390.png",
+    "qa/library-deep-2026-11-06/final/library-hud-667x375.png",
+    "qa/library-deep-2026-11-06/final/library-hud-844x320.png",
+    "qa/library-deep-2026-11-06/quiet-final/infirmary-bed-resting.png",
+    "qa/library-deep-2026-11-06/quiet-final/principalOffice-rocking-chair-resting.png"
+  ],
+  "runtime_and_harness_sha256": {
+    "dist/library/quest-controller.js": "da6190bceabadc1e177413bff3cf7f22ee961d4e36702edf4e8ce6164896bec1",
+    "dist/library/quest.css": "d63433732c41409db238ffd75e53512cb1d2881276fc778ee75b367335b4737c",
+    "scripts/library-deep-browser.mjs": "ee7f7cfc8ebcb7f3bf239489313f75421d9ae9539ca7589fa2ae79cbbb8bf304",
+    "scripts/library-deep-scenarios.mjs": "3c97281578e8b15a918e832de9f42d0cd0de275ce0edd9908909c374e86cbfcb"
+  }
+}
