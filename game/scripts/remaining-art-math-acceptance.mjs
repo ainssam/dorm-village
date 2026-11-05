@@ -3,7 +3,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 
 /** Real touch/form UI acceptance checks. The host supplies scene setup only. */
-export async function runArtMath({page,out,open,tap,run,capture}){
+export async function runArtMath({page,out,open,tap,run,capture,touchSession}){
  const png=async(selector,name)=>{
   const waiting=page.waitForEvent('download',{timeout:60000});await tap(selector);const download=await waiting;
   assert.equal(await download.failure(),null);const path=out+'/'+name+'.png';await download.saveAs(path);const bytes=await readFile(path);
@@ -19,18 +19,19 @@ export async function runArtMath({page,out,open,tap,run,capture}){
  const close=async()=>{await tap('dialog[open] .modal-x');await page.waitForFunction(()=>!window.__audit.snapshot().locked,null,{timeout:60000});};
  const touchStroke=async selector=>{
   const canvas=page.locator(selector);await canvas.scrollIntoViewIfNeeded();await settle();const box=await canvas.boundingBox();assert.ok(box&&box.width>100&&box.height>60,'drawing surface is usable');
-  const points=[[.2,.65],[.3,.35],[.4,.65],[.5,.35],[.65,.65],[.78,.4]].map(([x,y])=>({x:box.x+box.width*x,y:box.y+box.height*y,id:7,radiusX:2,radiusY:2,force:.6}));
-  const cdp=await page.context().newCDPSession(page);
-  try{await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[points[0]]});for(const point of points.slice(1))await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[point]});}
-  finally{await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await cdp.detach();}
-  await settle();return{width:box.width,height:box.height,points:points.length};
+  const path=[[.2,.65],[.3,.35],[.4,.65],[.5,.35],[.65,.65],[.78,.4]],samples=[path[0]];for(let i=1;i<path.length;i++){samples.push([(path[i-1][0]+path[i][0])/2,(path[i-1][1]+path[i][1])/2],path[i]);}
+  const points=samples.map(([x,y])=>({x:box.x+box.width*x,y:box.y+box.height*y,id:7,radiusX:2,radiusY:2,force:.6})),moveDelay=Number(process.env.QA_STROKE_MOVE_MS??20),releaseDelay=Number(process.env.QA_STROKE_RELEASE_MS??20);
+  const cdp=touchSession??await page.context().newCDPSession(page);
+  try{await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[points[0]]});for(const point of points.slice(1)){if(moveDelay)await page.waitForTimeout(moveDelay);await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[point]});}if(releaseDelay)await page.waitForTimeout(releaseDelay);}
+  finally{await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});if(!touchSession)await cdp.detach();}
+  await settle();return{width:box.width,height:box.height,points:points.length,moveDelayMs:moveDelay,releaseDelayMs:releaseDelay};
  };
  await run('art-touch-undo-save-export',async()=>{
   await open('art','art.paint');await page.waitForSelector('#art-canvas');await page.waitForFunction(()=>/저장 전|저장됨/.test(document.querySelector('#art-status')?.textContent),null,{timeout:60000});
-  await tap('[data-art-tool="pencil"]');await tap('[data-art-color="#c67566"]');const before=await pixels('#art-canvas');const stroke=await touchStroke('#art-canvas');
+  await tap('[data-art-tool="pencil"]');await tap('[data-art-color="#c67566"]');await settle();const before=await pixels('#art-canvas');const stroke=await touchStroke('#art-canvas');
   await page.waitForFunction(before=>document.querySelector('#art-canvas').toDataURL('image/png')!==before,before,{timeout:30000});const drawing=await pixels('#art-canvas');
-  assert.ok(await page.locator('#art-undo').isEnabled());await tap('#art-undo');await settle();assert.ok(await pixels('#art-canvas')===before,'undo restores the previous pixels');
-  await tap('#art-redo');await settle();assert.ok(await pixels('#art-canvas')===drawing,'redo restores the actual touch stroke');
+  assert.ok(await page.locator('#art-undo').isEnabled());await tap('#art-undo');await page.waitForFunction(()=>!document.querySelector('#art-redo')?.disabled,null,{timeout:10000});await settle();assert.ok(await pixels('#art-canvas')===before,'undo restores the previous pixels');
+  await tap('#art-redo');await page.waitForFunction(()=>document.querySelector('#art-redo')?.disabled&& !document.querySelector('#art-undo')?.disabled,null,{timeout:10000});await settle();assert.ok(await pixels('#art-canvas')===drawing,'redo restores the actual touch stroke');
   await tap('#art-save');await page.waitForFunction(()=>document.querySelector('#art-status')?.textContent==='이 브라우저에 저장됨',null,{timeout:60000});
   const savedNotice=await page.locator('#art-status').innerText();await page.locator('#art-canvas').scrollIntoViewIfNeeded();await capture('art-drawing-saved');
   await dumpPixels('art-before-reload',drawing);await close();await reloadDraft();await open('art','art.paint');await page.waitForSelector('#art-canvas');await page.waitForFunction(()=>document.querySelector('#art-status')?.textContent==='이 브라우저에 저장됨',null,{timeout:60000});await settle();const restored=await pixels('#art-canvas');await dumpPixels('art-after-reload',restored);const reloadPixels=await comparePixels('#art-canvas',drawing);assert.ok(reloadPixels.maxDifference<=2,'saved PNG layer restores within Canvas alpha-rounding tolerance: '+JSON.stringify(reloadPixels));

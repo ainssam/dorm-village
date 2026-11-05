@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-06 KST",
+  "runtimeChanged": false,
+  "report": "qa/amusement-challenge-review-2026-11-06.md",
+  "sources": [
+    "qa/2026-11-06-amusement-challenge-phone/results.json",
+    "qa/2026-11-06-amusement-rest-contrast/results.json"
+  ],
+  "touchFlow": {
+    "passed": true,
+    "viewport": [
+      390,
+      844
+    ],
+    "landscape": [
+      844,
+      390
+    ],
+    "scenarioWallSeconds": 83,
+    "roundWallSecondsIncludingPauseAndCapture": 62.34,
+    "defaultMode": "practice",
+    "defaultCountdown": null,
+    "practiceAttempts": 5,
+    "practiceMeetings": 4,
+    "practiceColors": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "pauseDuringScoop": {
+      "phase": "lowering",
+      "elapsed": 0.095,
+      "result": null,
+      "fishIndex": null
+    },
+    "pausedStateIdenticalAfterTouchAndWait": true,
+    "complete": {
+      "elapsed": 50,
+      "timeLeft": 0,
+      "score": 4,
+      "attempts": 4,
+      "catchesByFish": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "bestScore": 4,
+      "challengeRounds": 1
+    },
+    "retry": {
+      "phase": "playing",
+      "score": 0,
+      "attempts": 0,
+      "bestScore": 4,
+      "challengeRounds": 1
+    },
+    "reopenMode": "practice",
+    "zeroMeetingsAccepted": true,
+    "overflow": false
+  },
+  "restContrast": {
+    "passed": true,
+    "activity": "carousel",
+    "beforeElapsed": 0.01166666666666667,
+    "afterElapsed": 3.161466666666652,
+    "challengeShown": false,
+    "exitDisabled": false
+  },
+  "errors": {
+    "js": [],
+    "console": [],
+    "http": []
+  },
+  "limits": [
+    "Chromium touch emulation/software WebGL; no physical mobile or Safari performance claim",
+    "Read-only coordinates guided real touch inputs; 4/4 is not a human difficulty result",
+    "Short repeatable observation game; no long-term retention or learning-outcome claim",
+    "Carousel short stay and voluntary exit, not whole-cycle or motion-comfort proof"
+  ]
+}

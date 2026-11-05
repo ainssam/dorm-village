@@ -13,5 +13,8 @@
 .amusement-food-panel header button{min-width:68px;padding:7px 10px;touch-action:manipulation}
 .amusement-food-panel small{display:block;margin-top:8px;font-size:11px;line-height:1.4;color:#58716a}
 .amusement-food-panel button:focus-visible,.amusement-food-panel select:focus-visible{outline:3px solid #317c72;outline-offset:2px}
-@media (orientation:landscape) and (max-height:520px){.amusement-food-overlay{align-items:center}.amusement-food-panel{width:min(440px,calc(100% - 16px));margin-bottom:0;padding:8px 10px}.amusement-food-panel header{margin-bottom:4px}.amusement-food-panel p{margin-bottom:5px}.amusement-food-panel select,.amusement-food-panel button{min-height:42px}.amusement-food-panel select{margin-bottom:5px}.amusement-food-panel small{margin-top:4px}}
+@media (orientation:landscape) and (max-height:520px){.amusement-food-overlay{align-items:center;justify-items:end}.amusement-food-panel{width:min(340px,44vw);max-height:calc(100% - 16px);overflow:auto;margin-bottom:0;padding:8px 10px}.amusement-food-panel header{margin-bottom:4px}.amusement-food-panel p{margin-bottom:5px}.amusement-food-panel select,.amusement-food-panel button{min-height:42px}.amusement-food-panel select{margin-bottom:5px}.amusement-food-panel small{margin-top:4px}}
 @media (prefers-reduced-motion:reduce){.amusement-food-overlay *{scroll-behavior:auto}}
+
+/* These walking controls cannot act while the snack dialog owns input. */
+#stage:has(.amusement-food-overlay:not([hidden])) :is(.bottom-controls,.scene-tools,.camera-mouse-help){visibility:hidden!important;pointer-events:none!important}

@@ -1,6 +1,6 @@
 /* Native compact transport controls keep sound and save warnings reachable. */
 .boat-controls{position:absolute;z-index:7;left:max(12px,env(safe-area-inset-left));right:max(12px,env(safe-area-inset-right));bottom:calc(30px + env(safe-area-inset-bottom));padding:4px;background:#fff9ebf5;border:1px solid #aabdb6;border-radius:12px;max-width:540px;margin:0 auto;pointer-events:auto}
-.boat-status{font-size:16px;line-height:20px;margin:0 4px 4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#314e52}
+.boat-status{font-size:16px;line-height:20px;margin:0 4px 4px;white-space:normal;word-break:keep-all;overflow-wrap:anywhere;color:#314e52}
 .boat-buttons{display:grid;grid-template-columns:minmax(48px,.7fr) minmax(48px,1fr) minmax(48px,1.2fr);gap:6px}
 .boat-buttons button{min-width:0;min-height:48px;padding:2px 5px;border-radius:8px;font-size:18px;line-height:1.12;white-space:normal;touch-action:manipulation;background:#e7eddf;color:#203c41;border:1px solid #96aaa0}
 .boat-buttons button:focus-visible{outline:3px solid #315f58;outline-offset:2px}.boat-buttons button:disabled{opacity:.7}

@@ -50,3 +50,20 @@ test('actual cart E interaction can reopen after persisted pagehide/pageshow cle
  assert.equal(f.ctx.amusementFoodHost.snapshot().phase,'holding');
  f.ctx.amusementFoodHost.dispose();
 });
+
+test('snack close-up uses a separate camera and releases it on cancel, hidden page, and scene replacement',async t=>{
+ const f=await foodGame(t),source=f.ctx.camera,sourceFrame=()=>({p:source.position.toArray(),q:source.quaternion.toArray(),projection:source.projectionMatrix.toArray(),zoom:source.zoom}),before=sourceFrame(),position=f.player.position.toArray(),yaw=f.player.quaternion.toArray();
+ f.pressE();const host=f.ctx.amusementFoodHost;assert(host.camera?.isOrthographicCamera);assert.notEqual(host.camera,source);host.order('ice-cream');host.frame(.05);assert(host.camera);assert.deepEqual(sourceFrame(),before);assert.deepEqual(f.player.position.toArray(),position);assert.deepEqual(f.player.quaternion.toArray(),yaw);
+ host.cancel();assert.equal(host.camera,null);assert.deepEqual(sourceFrame(),before);
+ host.open(f.target);host.order('slush');f.doc.hidden=true;assert.equal(host.camera,null);f.doc.hidden=false;host.sceneChanged();assert.equal(host.camera,null);assert.deepEqual(sourceFrame(),before);
+ host.open(f.target);host.dispose();assert.equal(host.camera,null);assert.equal(host.active,false);
+});
+
+test('cups and cones stay upright in the hand and tilt gently for the bite',async t=>{
+ const f=await foodGame(t);f.pressE();const host=f.ctx.amusementFoodHost;
+ for(const item of ['ice-cream','slush']){
+  if(!host.active)host.open(f.target);host.order(item);host.frame(.05);const prop=f.player.getObjectByName('amusement.food-held.'+item);assert(prop,'original snack is attached to the player');
+  const upright=f.player.up.clone().applyQuaternion(prop.quaternion);assert(upright.y>.999,'holding the cup or cone never tips it sideways');const handPosition=prop.position.clone();host.eat();for(let i=0;i<17;i++)host.frame(.05);const tilted=f.player.up.clone().applyQuaternion(prop.quaternion);assert(tilted.y>.88&&tilted.y<.99,'the bite tilts gently rather than laying the cup flat');assert(prop.position.distanceTo(handPosition)<.4,'food keeps following the existing hand path');host.cancel();assert(!f.player.getObjectByName('amusement.food-held.'+item));
+ }
+ host.dispose();
+});

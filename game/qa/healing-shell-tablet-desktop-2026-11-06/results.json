@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "device": "tablet-768x1024",
+      "passed": true,
+      "realTravel": [
+        "homeStudy",
+        "music",
+        "park"
+      ],
+      "input": "touch + Escape"
+    },
+    {
+      "device": "tablet-1024x768",
+      "passed": true,
+      "realTravel": [
+        "homeStudy",
+        "music",
+        "park"
+      ],
+      "input": "touch + Escape"
+    },
+    {
+      "device": "desktop-1440x900",
+      "passed": true,
+      "realTravel": [
+        "homeStudy",
+        "music",
+        "park"
+      ],
+      "input": "pointer + keyboard"
+    }
+  ],
+  "errors": [],
+  "scope": "Full game UI navigation; QA bridge only prepares a resting-seat approach; half DPR software WebGL, not hardware performance"
+}

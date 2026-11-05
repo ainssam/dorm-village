@@ -5,9 +5,9 @@
 
 /* Flight gets a compact, safe-area-aware corner HUD instead of covering the rider. */
 .flight-controls{inset:calc(12px + env(safe-area-inset-top)) calc(12px + env(safe-area-inset-right)) auto auto;width:min(210px,calc(100vw - 24px));max-width:210px;margin:0;padding:8px;border-radius:14px;box-sizing:border-box}
-.flight-status{margin-bottom:6px;font-size:12px;line-height:1.35}
+.flight-status{margin-bottom:6px;font-size:14px;line-height:1.4}
 .flight-buttons{gap:6px}
-.flight-buttons button{min-height:48px;padding:6px 8px;font-size:13px}
+.flight-buttons button{min-height:48px;padding:6px 8px;font-size:14px}
 .flight-mode-choices button{min-height:48px;padding:8px 12px;font-size:16px;line-height:1.3}
 dialog.flight-choice{width:min(410px,calc(100vw - 28px));max-width:calc(100vw - 28px);max-height:calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 24px);padding:18px 18px 16px;overflow:auto}
 dialog.flight-choice h2{margin:0 0 10px;font-size:21px;line-height:1.35}

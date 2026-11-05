@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "device": "phone-390x844",
+      "passed": true,
+      "realTravel": [
+        "homeStudy",
+        "music",
+        "park"
+      ],
+      "input": "touch + Escape"
+    },
+    {
+      "device": "phone-844x390",
+      "passed": true,
+      "realTravel": [
+        "homeStudy",
+        "music",
+        "park"
+      ],
+      "input": "touch + Escape"
+    }
+  ],
+  "errors": [],
+  "scope": "Full game UI navigation; QA bridge only prepares a resting-seat approach; half DPR software WebGL, not hardware performance"
+}

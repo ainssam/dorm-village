@@ -1,0 +1,1078 @@
+{
+  "scope": "Bare HTML control: no application code, storage, modal, pointer listener or programmatic scrolling. Native CDP touch and trusted browser events. No click() injection. This isolates harness gesture behavior and does not prove real-device compatibility.",
+  "browser": "Chromium 154.0.8037.57 Debian",
+  "playwright": "1.56.1",
+  "results": [
+    {
+      "mode": "tap-only",
+      "firstTap": 12,
+      "total": 12,
+      "source": "qa/touch-gesture-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 2,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 3,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 4,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 5,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 6,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 7,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 8,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 9,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 10,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 11,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 12,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        }
+      ]
+    },
+    {
+      "mode": "stroke-direct",
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-gesture-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.9
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.3
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        }
+      ]
+    },
+    {
+      "mode": "stroke-native-tap",
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-gesture-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 82.9
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.2
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.8
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.8
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.8
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.5
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.7
+        }
+      ]
+    },
+    {
+      "mode": "stroke-settled",
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-gesture-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 542.5
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 539.9
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 541.6
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 539.9
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.5
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 539.9
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.5
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 539.2
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 539.6
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 548.2
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 539.4
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.2
+        }
+      ]
+    },
+    {
+      "mode": "tap-only",
+      "uniqueTouchIdentifiers": false,
+      "firstTap": 12,
+      "total": 12,
+      "source": "qa/touch-vanilla-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 2,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 3,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 4,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 5,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 6,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 7,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 8,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 9,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 10,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 11,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        },
+        {
+          "round": 12,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": null
+        }
+      ]
+    },
+    {
+      "mode": "stroke-direct",
+      "uniqueTouchIdentifiers": false,
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-vanilla-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.6
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 57.3
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.5
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.6
+        }
+      ]
+    },
+    {
+      "mode": "stroke-native-tap",
+      "uniqueTouchIdentifiers": false,
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-vanilla-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 84
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 65.3
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.8
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 65.7
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 65.7
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.9
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.9
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.9
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.9
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        }
+      ]
+    },
+    {
+      "mode": "stroke-settled",
+      "uniqueTouchIdentifiers": false,
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-vanilla-control-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 542.7
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 542.0
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 541.0
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 541.8
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 542.3
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.2
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 541.2
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.4
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.9
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.7
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 541.9
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 540.6
+        }
+      ]
+    },
+    {
+      "mode": "stroke-direct",
+      "uniqueTouchIdentifiers": false,
+      "strokeSteps": 10,
+      "strokeInterval": 20,
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-gesture-paced-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.7
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.3
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.5
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        }
+      ]
+    },
+    {
+      "mode": "stroke-direct",
+      "uniqueTouchIdentifiers": false,
+      "strokeSteps": 10,
+      "strokeInterval": 20,
+      "tapHold": 80,
+      "tapDelay": 0,
+      "tapDefaults": false,
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-gesture-paced-held-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.0
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.5
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.5
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.3
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.2
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.3
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.4
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 56.5
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 63.9
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 50.1
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 51.1
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 49.4
+        }
+      ]
+    },
+    {
+      "mode": "stroke-direct",
+      "uniqueTouchIdentifiers": false,
+      "strokeSteps": 10,
+      "strokeInterval": 20,
+      "tapHold": 80,
+      "tapDelay": 600,
+      "tapDefaults": false,
+      "firstTap": 12,
+      "total": 12,
+      "source": "qa/touch-gesture-paced-held-settled-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 642.8
+        },
+        {
+          "round": 2,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 642.1
+        },
+        {
+          "round": 3,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 643.4
+        },
+        {
+          "round": 4,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 659.1
+        },
+        {
+          "round": 5,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 650.7
+        },
+        {
+          "round": 6,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 664.6
+        },
+        {
+          "round": 7,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 642.4
+        },
+        {
+          "round": 8,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 644.3
+        },
+        {
+          "round": 9,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 642.6
+        },
+        {
+          "round": 10,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 641.3
+        },
+        {
+          "round": 11,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 640.8
+        },
+        {
+          "round": 12,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 641.0
+        }
+      ]
+    },
+    {
+      "mode": "stroke-direct",
+      "uniqueTouchIdentifiers": false,
+      "strokeSteps": 1,
+      "strokeInterval": 0,
+      "tapHold": 80,
+      "tapDelay": 600,
+      "tapDefaults": false,
+      "firstTap": 0,
+      "total": 12,
+      "source": "qa/touch-gesture-unpaced-held-settled-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 645.9
+        },
+        {
+          "round": 2,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 645.6
+        },
+        {
+          "round": 3,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 649.6
+        },
+        {
+          "round": 4,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 643.0
+        },
+        {
+          "round": 5,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 643.1
+        },
+        {
+          "round": 6,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 641.6
+        },
+        {
+          "round": 7,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 642.3
+        },
+        {
+          "round": 8,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 646.4
+        },
+        {
+          "round": 9,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 644.3
+        },
+        {
+          "round": 10,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 647.6
+        },
+        {
+          "round": 11,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 643.1
+        },
+        {
+          "round": 12,
+          "firstTap": false,
+          "buttonNativeClicks": 0,
+          "strokeUpToButtonDownMs": 643.3
+        }
+      ]
+    },
+    {
+      "mode": "stroke-direct",
+      "uniqueTouchIdentifiers": false,
+      "strokeSteps": 10,
+      "strokeInterval": 20,
+      "tapHold": 0,
+      "tapDelay": 600,
+      "tapDefaults": false,
+      "firstTap": 12,
+      "total": 12,
+      "source": "qa/touch-gesture-paced-settled-2026-11-06/results.json",
+      "rounds": [
+        {
+          "round": 1,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 643.4
+        },
+        {
+          "round": 2,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 645.0
+        },
+        {
+          "round": 3,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 643.2
+        },
+        {
+          "round": 4,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 643.4
+        },
+        {
+          "round": 5,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 642.7
+        },
+        {
+          "round": 6,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 651.9
+        },
+        {
+          "round": 7,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 645.6
+        },
+        {
+          "round": 8,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 643.8
+        },
+        {
+          "round": 9,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 650.0
+        },
+        {
+          "round": 10,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 654.9
+        },
+        {
+          "round": 11,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 642.9
+        },
+        {
+          "round": 12,
+          "firstTap": true,
+          "buttonNativeClicks": 1,
+          "strokeUpToButtonDownMs": 648.3
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,16 @@
 import * as THREE from 'three';
 import {BAKERY as B} from './layout.js';
 
-// Uses the existing camera owner and its resize/interruption-safe transition.
-// No camera transform, yaw, tilt, zoom, controls, or persistence is written here.
+// Orient a first-time visitor around the usable downstairs room, rather than
+// fitting two storeys and shrinking the character. Walking then restores the
+// usual close view; a visitor's manual camera choice always takes priority.
 export function createBakeryEntryFrame(){
  let pending=null;
  function begin(cam,def,position){
   pending=null;
   if(cam.getRoomId()!==B.id||cam.hasManualFrame())return false;
-  const bounds=new THREE.Box3(new THREE.Vector3(B.bounds.minX-.15,-.15,B.bounds.minZ-.15),new THREE.Vector3(B.bounds.maxX+.15,B.roofUnderY+.25,B.bounds.maxZ+.15));
+  const viewport=cam.getRestorationViewport?.(),portrait=viewport&&viewport.width<600&&viewport.height>viewport.width;
+  const bounds=new THREE.Box3(new THREE.Vector3(portrait?-2.7:-5.8,-.1,-6.1),new THREE.Vector3(portrait?4.9:5.95,2.2,5.8));
   cam.reframe(def,position,bounds,{smooth:false});
   pending={cam,def,x:position.x,z:position.z};return true;
  }
