@@ -1,0 +1,19 @@
+{
+  "date_kst": "2026-11-06",
+  "command": "node --test tests/harvest-meal-state.test.mjs tests/harvest-meal-controller.test.mjs",
+  "tests": 30,
+  "passed": 30,
+  "failed": 0,
+  "state_tests": 13,
+  "controller_tests": 17,
+  "runtime_modified_by_test_author": false,
+  "browser_or_physical_3d_coverage": false,
+  "fixtures": "Synthetic historical records accepted by the pre-change schema6/v5 validators before capture; not user data. v1-v4 are derived field-shape cases.",
+  "sha256": {
+    "tests/harvest-meal-state.test.mjs": "b20bca1ae34d8307105246e26da5bccb9dcc255df7e2163c2398f404ed12f209",
+    "tests/harvest-meal-controller.test.mjs": "9d42d08264b5823c3a237d6b40e5efe482a83c5f853d150b7b05363f2f3fb14f",
+    "tests/fixtures/harvest-meal-v5.json": "9d1efdae1b2977a5737605d18fd59ea218747f22f4b0c1b8b20cb81f537aa1e1",
+    "tests/fixtures/harvest-meal-v6.json": "e5950f9ddfd549a43dfa746505d7dca27b8885d810a4158b8ea4f684f21cb0cc",
+    "tests/fixtures/harvest-meal-history.md": "d3365ee45e6d5a40c74df11b484f3b7b9c7f4fd8f9db5d9af5e63586588b522b"
+  }
+}

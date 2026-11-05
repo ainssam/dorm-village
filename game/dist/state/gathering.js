@@ -1,4 +1,4 @@
-import {fruitDrinkCost} from './food-catalog.js';
+import {preparedFoodCost} from './food-catalog.js';
 import {produceMaterials} from './produce.js';
 import {fishMaterials} from './fishing.js';
 import {DISCOVERIES} from '../world/activities.js';
@@ -25,7 +25,7 @@ const record=x=>!!x&&typeof x==='object'&&!Array.isArray(x);
 const integer=(n,max)=>Number.isSafeInteger(n)&&n>=0&&n<=max;
 export const initialGathering=()=>({epoch:0,nodes:Object.fromEntries(Object.keys(MATERIAL_NODES).map(id=>[id,{harvests:0,pickedAt:0,moments:[]}]))});
 export function gatheringReady(node){return !!node&&(node.harvests===0||node.moments.length===REGROW_MOMENTS);}
-export function materialBag(progress){const counts={apple:0,shell:0,autumnLeaf:0,petal:progress.garden?.petals??0,...fishMaterials(progress.fishing),...produceMaterials(progress)};for(const[id,rule]of Object.entries(MATERIAL_NODES))counts[rule.material]+=(progress.gathering?.nodes?.[id]?.harvests??0)*rule.yield;for(const[id,r]of Object.entries(GATHERING_RECIPES))if(progress.ownedItemIds.includes(id))counts[r.material]-=r.cost;counts.apple-=fruitDrinkCost(progress.cafeFood,'apple');return counts;}
+export function materialBag(progress){const counts={apple:0,shell:0,autumnLeaf:0,petal:progress.garden?.petals??0,...fishMaterials(progress.fishing),...produceMaterials(progress)};for(const[id,rule]of Object.entries(MATERIAL_NODES))counts[rule.material]+=(progress.gathering?.nodes?.[id]?.harvests??0)*rule.yield;for(const[id,r]of Object.entries(GATHERING_RECIPES))if(progress.ownedItemIds.includes(id))counts[r.material]-=r.cost;counts.apple-=preparedFoodCost(progress.cafeFood,'apple');return counts;}
 export function validateGathering(raw,ownedItemIds,discoveryIds,{legacy=false}={}){
  const expected=legacy?LEGACY_MATERIAL_NODE_IDS:Object.keys(MATERIAL_NODES);
  if(!record(raw)||!integer(raw.epoch,MAX_GATHERING_EPOCH)||!record(raw.nodes)||Object.keys(raw.nodes).length!==expected.length)return null;

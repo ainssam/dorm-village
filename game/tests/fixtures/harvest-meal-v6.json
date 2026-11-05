@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 6,
+  "cafeFood": {
+    "packed": {
+      "milkRoll": 2,
+      "croissant": 0,
+      "miniCake": 0
+    },
+    "made": {
+      "americano": 0,
+      "latte": 2,
+      "appleJuice": 1,
+      "strawberryJuice": 1,
+      "peachJuice": 1,
+      "pearJuice": 0,
+      "mandarinJuice": 0
+    },
+    "consumed": {
+      "milkRoll": 1,
+      "croissant": 0,
+      "miniCake": 0,
+      "americano": 0,
+      "latte": 1,
+      "appleJuice": 1,
+      "strawberryJuice": 0,
+      "peachJuice": 0,
+      "pearJuice": 0,
+      "mandarinJuice": 0
+    }
+  },
+  "produce": {
+    "season": "calendar",
+    "nodes": {
+      "park.produce.strawberry": {
+        "harvests": 2,
+        "phase": "seed"
+      },
+      "park.produce.tomato": {
+        "harvests": 1,
+        "phase": "seed"
+      },
+      "park.produce.pumpkin": {
+        "harvests": 2,
+        "phase": "seed"
+      },
+      "park.produce.leafy": {
+        "harvests": 1,
+        "phase": "seed"
+      },
+      "park.produce.peach": {
+        "harvests": 1,
+        "phase": "seed"
+      },
+      "park.produce.pear": {
+        "harvests": 0,
+        "phase": "seed"
+      },
+      "park.produce.mandarin": {
+        "harvests": 0,
+        "phase": "seed"
+      }
+    }
+  },
+  "revision": 47,
+  "savedAt": "2026-11-01T03:04:05.000Z",
+  "location": {
+    "roomId": "courtyard",
+    "spawnId": "square"
+  },
+  "collectedIds": [],
+  "ownedItemIds": [
+    "plant",
+    "picture-frame",
+    "apple-jam",
+    "leaf-frame"
+  ],
+  "rewardClaimIds": [],
+  "completedActivityIds": [],
+  "discoveryIds": [],
+  "libraryQuest": {
+    "completed": []
+  },
+  "homeCooking": {
+    "version": 1,
+    "draft": {
+      "recipe": "salad",
+      "phase": "measure",
+      "amounts": [
+        0,
+        0,
+        0
+      ],
+      "order": [],
+      "turns": 0,
+      "circuits": 0,
+      "rotation": 0,
+      "quadrant": null,
+      "level": 2,
+      "seconds": 0,
+      "energy": 0,
+      "flipEnergy": null,
+      "running": false
+    },
+    "previous": null
+  },
+  "homeBuild": {
+    "schemaVersion": 1,
+    "selected": "tower",
+    "completed": [],
+    "builds": {}
+  },
+  "homeRobot": {
+    "schemaVersion": 1,
+    "selected": "first-route",
+    "completed": [],
+    "programs": {},
+    "best": {}
+  },
+  "garden": {
+    "phase": "seed",
+    "moments": [],
+    "petals": 0,
+    "harvests": 0,
+    "harvestedBedIds": []
+  },
+  "gathering": {
+    "epoch": 0,
+    "nodes": {
+      "park.tree.west": {
+        "harvests": 3,
+        "pickedAt": 0,
+        "moments": []
+      },
+      "park.tree.east": {
+        "harvests": 0,
+        "pickedAt": 0,
+        "moments": []
+      },
+      "courtyard.shell.west": {
+        "harvests": 0,
+        "pickedAt": 0,
+        "moments": []
+      },
+      "courtyard.shell.middle": {
+        "harvests": 0,
+        "pickedAt": 0,
+        "moments": []
+      },
+      "courtyard.shell.east": {
+        "harvests": 0,
+        "pickedAt": 0,
+        "moments": []
+      },
+      "park.leaves.west": {
+        "harvests": 1,
+        "pickedAt": 0,
+        "moments": []
+      }
+    }
+  },
+  "fishing": {
+    "total": 0,
+    "counts": {
+      "petal-minnow": 0,
+      "moon-carp": 0,
+      "ribbon-mackerel": 0,
+      "star-bream": 0
+    },
+    "consumed": {
+      "petal-minnow": 0,
+      "moon-carp": 0,
+      "ribbon-mackerel": 0,
+      "star-bream": 0
+    },
+    "meals": {
+      "petal-minnow": 0,
+      "moon-carp": 0,
+      "ribbon-mackerel": 0,
+      "star-bream": 0
+    },
+    "firstCatch": {
+      "petal-minnow": null,
+      "moon-carp": null,
+      "ribbon-mackerel": null,
+      "star-bream": null
+    }
+  },
+  "library": {
+    "selectedBookId": "pocket-star",
+    "borrowedBookId": null,
+    "readBookIds": []
+  },
+  "village": {
+    "cafe": {
+      "schemaVersion": 1,
+      "day": 1,
+      "phase": "idle",
+      "activeMs": 0,
+      "nextArrivalMs": 3000,
+      "nextOrdinal": 1,
+      "jobSerial": 0,
+      "orders": [],
+      "settled": [],
+      "stock": {
+        "milkRoll": 0,
+        "croissant": 0,
+        "miniCake": 0,
+        "herbTea": 0,
+        "cocoa": 0
+      },
+      "qualityStock": {
+        "milkRoll": 0,
+        "croissant": 0,
+        "miniCake": 0,
+        "herbTea": 0,
+        "cocoa": 0
+      },
+      "dough": null,
+      "oven": null,
+      "drink": null,
+      "upgrades": {
+        "warmOven": false,
+        "wideDisplay": false,
+        "cozyCorner": false
+      },
+      "coins": 0,
+      "ledger": {
+        "sold": {
+          "milkRoll": 0,
+          "croissant": 0,
+          "miniCake": 0,
+          "herbTea": 0,
+          "cocoa": 0
+        },
+        "served": 0,
+        "revenue": 0,
+        "materials": 0,
+        "fastTips": 0,
+        "qualityTips": 0,
+        "cozyTips": 0,
+        "spent": 0
+      },
+      "today": {
+        "served": 0,
+        "revenue": 0,
+        "materials": 0,
+        "tips": 0
+      }
+    },
+    "bakery": {
+      "phase": "complete",
+      "decoration": "berry",
+      "completed": 1,
+      "pastries": 0
+    },
+    "mailbox": {
+      "letters": [
+        {
+          "id": "capybara.thanks",
+          "recipient": "capybara",
+          "template": "thanks",
+          "gift": true,
+          "read": true
+        }
+      ]
+    },
+    "photos": [
+      {
+        "id": "photo_harvest01",
+        "background": "mint",
+        "pose": "sit",
+        "companion": "koala-barista",
+        "createdAt": "2026-11-01T03:02:00.000Z"
+      }
+    ],
+    "wallPlacements": {
+      "home.wall-left": "photo_harvest01"
+    }
+  },
+  "placements": {},
+  "settings": {
+    "quality": "high"
+  }
+}

@@ -44,7 +44,7 @@ try{
    await near('park.produce.'+material);await page.waitForSelector('.produce-use > summary');
    assert.equal(await page.locator('.produce-use').getAttribute('open'),null);
    await press('.produce-use > summary');const text=await page.locator('[data-produce-use]').innerText();
-   assert.ok(text.length>15);const typeSize=await page.locator('[data-produce-use]').evaluate(e=>Number.parseFloat(getComputedStyle(e).fontSize));assert.ok(typeSize>=15);assert.ok((await page.locator('.produce-use > summary').boundingBox()).height>=48);if(['tomato','pumpkin','leafy'].includes(material))assert.match(text,/지금은 요리·장식에 쓰지 않고/);else assert.match(text,/2개로 밀구름 카페 2층/);
+   assert.ok(text.length>15);const typeSize=await page.locator('[data-produce-use]').evaluate(e=>Number.parseFloat(getComputedStyle(e).fontSize));assert.ok(typeSize>=15);assert.ok((await page.locator('.produce-use > summary').boundingBox()).height>=48);if(['tomato','pumpkin','leafy'].includes(material))assert.match(text,/1개로 밀구름 카페 2층에서 수확 한 그릇을 준비해요/);else assert.match(text,/2개로 밀구름 카페 2층/);
    assert.ok(await page.locator('.produce-controls').evaluate(e=>e.scrollWidth<=e.clientWidth+1));
    await page.locator('[data-produce-start]').scrollIntoViewIfNeeded();assert.ok(await page.locator('[data-produce-start]').isVisible());
    await page.locator('[data-produce-close]').scrollIntoViewIfNeeded();await shot('crop-use-'+material);await press('[data-produce-close]');

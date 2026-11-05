@@ -12,8 +12,9 @@ import {GARDEN_BED_IDS} from '../world/garden-layout.js';
 import {initialGarden,gardenCanHarvest,validateGarden,growGarden,FLOWER_RECIPES,HARVEST_PETALS} from './garden.js';
 import {DISCOVERIES} from '../world/activities.js';
 import {STAR_IDS,SLOTS,ITEM_LABELS,safeLocation} from '../world/rooms.js';
+export const PROGRESS_SCHEMA_VERSION=7;
 const CLAIM='first-stars.star-lamp.v1';
-export function initialProgress(){return {schemaVersion:6,cafeFood:initialCafeFood(),produce:initialProduce(),revision:0,savedAt:null,location:{roomId:'courtyard',spawnId:'square'},collectedIds:[],ownedItemIds:['plant','picture-frame'],rewardClaimIds:[],completedActivityIds:[],discoveryIds:[],libraryQuest:initialQuestSave(),homeCooking:cookingSave(initialCooking()),homeBuild:initialBuildSave(),homeRobot:initialRobotSave(),garden:initialGarden(),gathering:initialGathering(),fishing:initialFishingSave(),library:initialLibrary(),village:initialVillage(),placements:{},settings:{quality:'auto'}};}
+export function initialProgress(){return {schemaVersion:PROGRESS_SCHEMA_VERSION,cafeFood:initialCafeFood(),produce:initialProduce(),revision:0,savedAt:null,location:{roomId:'courtyard',spawnId:'square'},collectedIds:[],ownedItemIds:['plant','picture-frame'],rewardClaimIds:[],completedActivityIds:[],discoveryIds:[],libraryQuest:initialQuestSave(),homeCooking:cookingSave(initialCooking()),homeBuild:initialBuildSave(),homeRobot:initialRobotSave(),garden:initialGarden(),gathering:initialGathering(),fishing:initialFishingSave(),library:initialLibrary(),village:initialVillage(),placements:{},settings:{quality:'auto'}};}
 const uniqueAllowed=(xs,allowed)=>Array.isArray(xs)&&xs.every(x=>typeof x==='string'&&allowed.includes(x))&&new Set(xs).size===xs.length;
 function validateVersion(raw,version){
  if(!raw||typeof raw!=='object'||Array.isArray(raw)||raw.schemaVersion!==version)return {valid:false};
@@ -36,22 +37,22 @@ function validateVersion(raw,version){
  const libraryQuest=validateQuestSave(s.libraryQuest);if(!libraryQuest)return {valid:false};
  const library=validateLibrary(s.library);if(!library)return {valid:false};
  const village=validateVillage(s.village);if(!village)return {valid:false};
- const cafeFood=version<5?initialCafeFood():validateCafeFood(s.cafeFood),produce=version<5?initialProduce():validateProduce(s.produce);if(!cafeFood||!produce)return {valid:false};
+ const cafeFood=version<5?initialCafeFood():validateCafeFood(s.cafeFood,{legacy:version<7}),produce=version<5?initialProduce():validateProduce(s.produce);if(!cafeFood||!produce)return {valid:false};
  if(Object.values(materialBag({gathering,garden,fishing,ownedItemIds:s.ownedItemIds,cafeFood,produce})).some(n=>!Number.isSafeInteger(n)||n<0))return {valid:false};
  const homeCooking=validateCookingSave(s.homeCooking);if(!homeCooking)return {valid:false};
  const homeBuild=validateBuildSave(s.homeBuild);if(!homeBuild)return {valid:false};
  const homeRobot=validateRobotSave(s.homeRobot);if(!homeRobot)return {valid:false};
  if(!s.settings||!['auto','low','medium','high'].includes(s.settings.quality))return {valid:false};
- return {valid:true,state:{schemaVersion:6,cafeFood,produce,revision:s.revision,savedAt:s.savedAt,location:safeLocation(s.location),collectedIds:[...s.collectedIds],ownedItemIds:[...s.ownedItemIds],rewardClaimIds:[...s.rewardClaimIds],completedActivityIds:[...s.completedActivityIds],discoveryIds:[...(s.discoveryIds??[])],garden,gathering,fishing,library,libraryQuest,village,homeRobot,homeBuild,homeCooking,placements:{...s.placements},settings:{quality:s.settings.quality}}};
+ return {valid:true,state:{schemaVersion:PROGRESS_SCHEMA_VERSION,cafeFood,produce,revision:s.revision,savedAt:s.savedAt,location:safeLocation(s.location),collectedIds:[...s.collectedIds],ownedItemIds:[...s.ownedItemIds],rewardClaimIds:[...s.rewardClaimIds],completedActivityIds:[...s.completedActivityIds],discoveryIds:[...(s.discoveryIds??[])],garden,gathering,fishing,library,libraryQuest,village,homeRobot,homeBuild,homeCooking,placements:{...s.placements},settings:{quality:s.settings.quality}}};
 }
-export function validateProgress(raw){return validateVersion(raw,6);}
-export function migrateProgress(raw){return [1,2,3,4,5].includes(raw?.schemaVersion)?validateVersion(raw,raw.schemaVersion):validateProgress(raw);}
+export function validateProgress(raw){return validateVersion(raw,PROGRESS_SCHEMA_VERSION);}
+export function migrateProgress(raw){return [1,2,3,4,5,6].includes(raw?.schemaVersion)?validateVersion(raw,raw.schemaVersion):validateProgress(raw);}
 export function reduceProgress(state,action,context){
  let next;
  switch(action.type){
-  case 'FOOD_PACK_BREAD':case 'FOOD_MAKE_DRINK':case 'FOOD_CONSUME':
+  case 'FOOD_PACK_BREAD':case 'FOOD_MAKE_DRINK':case 'FOOD_PREPARE_MEAL':case 'FOOD_CONSUME':
   case 'PRODUCE_WATER':case 'PRODUCE_HARVEST':case 'PRODUCE_SET_SEASON':
-   if(state.schemaVersion!==6||!Number.isSafeInteger(action.expectedRevision)||action.expectedRevision<0||action.expectedRevision!==state.revision)return state;
+   if(state.schemaVersion!==PROGRESS_SCHEMA_VERSION||!Number.isSafeInteger(action.expectedRevision)||action.expectedRevision<0||action.expectedRevision!==state.revision)return state;
    return action.type.startsWith('FOOD_')?reduceCafeFood(state,action):reduceProduce(state,action,context);
  }
  const village=reduceVillage(state.village,action);if(village!==state.village)return {...state,village};

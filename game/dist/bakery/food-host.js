@@ -8,12 +8,12 @@ import {createCafeDrinkPresentation} from './drink-presentation.js';
 import {mountKoalaBarista} from '../residents/koala-barista.js';
 /** Main-frame facade: existing ActivitySession/root, stair owner and source camera
  * stay authoritative. getView identity is the scene-epoch token. */
-export function createCafeFoodHost({stage,getProgress,transact,canSave,getRoom,getView,getActors,getSupport,getActivity,getNearby=()=>null,getTea=()=>getView()?.teaTime,getEnabledDrinks,isAllowed=()=>true,isVisible=isAllowed,onOpenChange=()=>{},reduced=false}){
+export function createCafeFoodHost({stage,getProgress,transact,canSave,getRoom,getView,getActors,getSupport,getActivity,getNearby=()=>null,getTea=()=>getView()?.teaTime,getEnabledDrinks,getEnabledMeals,isAllowed=()=>true,isVisible=isAllowed,onOpenChange=()=>{},reduced=false}){
  let sceneView=null,koala=null,carry=null,carryPlayer=null,readySeen=null,releaseOccupancy=null,disposed=false;
  function clearScene(){releaseOccupancy?.();releaseOccupancy=null;controller.suspend('scene');controller.close();koala?.dispose();koala=null;readySeen=null;carry?.dispose();carry=null;carryPlayer=null;sceneView=null;}
  function getHost(){const v=getView();if(getRoom()!=='bakeryCafe'||!v?.construction?.groups.upperFurniture)return null;if(sceneView!==v){releaseOccupancy?.();releaseOccupancy=attachCafeFoodOccupancy(v);koala?.dispose();koala=null;sceneView=v;}koala??=mountKoalaBarista({parent:v.construction.groups.upperFurniture,enabled:false});return koala;}
  const presentation=createCafeDrinkPresentation({getHost,getFixtures:()=>getView()?.construction?.koalaWorktop,isAllowed,reduced});
- const controller=createCafeFoodController({getProgress,transact,canSave,getRoom,getSceneEpoch:getView,getSupport,getActivity,isAllowed,presentation,reduced,getEnabledDrinks,createDiningView:({itemId,seat})=>createCafeDiningView({...getActors(),zoneRoot:getView().root,itemId,seat})});
+ const controller=createCafeFoodController({getProgress,transact,canSave,getRoom,getSceneEpoch:getView,getSupport,getActivity,isAllowed,presentation,reduced,getEnabledDrinks,getEnabledMeals,createDiningView:({itemId,seat})=>createCafeDiningView({...getActors(),zoneRoot:getView().root,itemId,seat})});
  const ui=createCafeFoodUI({stage,controller,getRoom,getTea,isAllowed,isVisible,onOpenChange});
  return {controller,armConsumption:controller.armConsumption,
   open(mode){if(!isAllowed())return false;const ok=controller.open(mode);ui.render();return ok;},
