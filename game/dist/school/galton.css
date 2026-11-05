@@ -1,0 +1,26 @@
+.galton-workspace{min-width:0;color:var(--ink,#253e46)}
+.galton-workspace .galton-intro{font-size:17px;line-height:1.7;margin:8px 0 16px}
+.galton-workspace .galton-controls{display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin:12px 0}
+.galton-controls label{display:grid;gap:4px;font-size:15px}
+.galton-workspace .galton-controls button,.galton-workspace select,.galton-workspace #galton-reset{min-height:48px;font-size:16px;padding:10px 13px;border:1px solid #afc4b8;border-radius:10px;background:#e9f0e6;color:#264f47}
+.galton-workspace .galton-controls .primary{background:#376a5d;color:#fffdf4;border-color:#376a5d}
+.galton-workspace .galton-status{font-size:17px;font-weight:650;line-height:1.6;margin:14px 0 4px}
+.galton-workspace .galton-progress{font-size:15px;line-height:1.65;font-variant-numeric:tabular-nums;margin:0 0 12px}
+.galton-workspace .galton-figure{margin:14px 0}
+.galton-workspace .galton-canvas{width:min(100%,540px);height:auto;margin:0 auto;touch-action:pan-y;border-width:5px}
+.galton-workspace figcaption{font-size:15px;line-height:1.7;margin:10px 0;color:#3a5951;text-align:center}
+.galton-workspace .galton-motion{display:flex;align-items:center;gap:9px;min-height:48px;font-size:15px;line-height:1.5;cursor:pointer}
+.galton-workspace .galton-motion input{width:22px;height:22px;accent-color:#376a5d;flex:none}
+.galton-workspace .galton-observation{font-size:16px;line-height:1.75;padding:12px 14px;background:#edf2e7;border-radius:12px}
+.galton-workspace details{border-top:1px solid #cad7c9;margin-top:14px;padding-top:4px}
+.galton-workspace summary{min-height:48px;padding:12px 0;font-size:16px;font-weight:600;line-height:1.5;cursor:pointer}
+.galton-workspace #galton-table-note,.galton-workspace .galton-explanation p{font-size:15px;line-height:1.75}
+.galton-workspace #galton-bins{border-collapse:collapse;table-layout:fixed;width:100%;font-size:16px;line-height:1.55;color:var(--ink,#253e46);font-variant-numeric:tabular-nums}
+.galton-workspace #galton-bins caption{text-align:left;font-size:15px;padding:4px 0 10px}
+.galton-workspace #galton-bins th,.galton-workspace #galton-bins td{padding:10px 5px;border-bottom:1px solid #d6dfd2;text-align:center;overflow-wrap:normal;word-break:normal}
+.galton-workspace #galton-bins thead{background:#eee9d9}
+.galton-workspace #galton-bins th:first-child{width:20%}
+.galton-workspace .galton-bottom{display:flex;align-items:start;gap:12px;margin:18px 0 6px}
+.galton-workspace .galton-bottom button{flex:none}
+.galton-workspace .galton-bottom p{font-size:14px;line-height:1.7;margin:0;color:#3a5951}
+@media(max-width:540px){.galton-workspace .galton-controls label{flex:1 1 100%}.galton-workspace .galton-controls button{flex:1 1 120px}.galton-workspace .galton-bottom{display:block}.galton-workspace .galton-bottom p{margin-top:10px}.galton-workspace #galton-bins th,.galton-workspace #galton-bins td{padding:9px 3px}}

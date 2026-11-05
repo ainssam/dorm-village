@@ -1,0 +1,67 @@
+{
+  "kind": "production Galton DOM/canvas + actual model with real-time component clock; no 3D game/browser travel proof",
+  "before": {
+    "dist/school/galton.js": "578e5c5cee482893a385f752819c2a0ea4da4a83d0dadb312c0f726b446f49d6",
+    "dist/school/galton-discovery.js": "cf3afa33fea240a0398fddd00a8a4f8bbd1d1d5184fdac965b4a6f87648ff4ff",
+    "dist/school/galton-workshop.js": "1e2286f05e7518d0fa4179ecfed7ead268432cca3cade39a21854fa5607f7331",
+    "dist/school/galton.css": "3ffeb946b05242f314860b3c2565a899b9cd2090f3795e93ddfc56e913898d7a",
+    "dist/style.css": "971621968f4fa5c6f71a23da4781914758cbbc9880006dfbcb6459ee5ecf1a2f",
+    "dist/release.css": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf"
+  },
+  "after": {
+    "dist/school/galton.js": "578e5c5cee482893a385f752819c2a0ea4da4a83d0dadb312c0f726b446f49d6",
+    "dist/school/galton-discovery.js": "cf3afa33fea240a0398fddd00a8a4f8bbd1d1d5184fdac965b4a6f87648ff4ff",
+    "dist/school/galton-workshop.js": "1e2286f05e7518d0fa4179ecfed7ead268432cca3cade39a21854fa5607f7331",
+    "dist/school/galton.css": "3ffeb946b05242f314860b3c2565a899b9cd2090f3795e93ddfc56e913898d7a",
+    "dist/style.css": "971621968f4fa5c6f71a23da4781914758cbbc9880006dfbcb6459ee5ecf1a2f",
+    "dist/release.css": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf"
+  },
+  "sourceUnchanged": true,
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "touch": true,
+      "reduced": false,
+      "randomFixture": "all-left RNG boundary for100.0% table width",
+      "passed": true,
+      "style": {
+        "touchAction": "pan-y",
+        "binFont": "16px",
+        "overflow": false,
+        "buttons": [
+          48,
+          66.78125,
+          48
+        ]
+      },
+      "pan": {
+        "before": 79,
+        "after": 191
+      },
+      "completed30": [
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "partial100": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": []
+    }
+  ]
+}
