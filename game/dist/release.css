@@ -8,6 +8,16 @@
 .guide-starts h3{margin:0 0 12px;font-size:17px}.guide-starts button{display:flex;flex-direction:column;gap:6px;text-align:left;width:100%;min-height:78px;padding:12px 0;border:0;border-radius:0;box-shadow:none;border-top:1px solid #c9d5bf;background:transparent;color:#233f43}
 .guide-starts button>span:first-child{display:flex;justify-content:space-between;align-items:center;gap:12px}.guide-starts strong{font-size:16px}.guide-starts small{font-size:12px;white-space:nowrap;color:#53665d}.guide-starts button>span:last-child{font-size:14px;line-height:1.65;color:#53665d}.guide-starts .caption{margin-bottom:0}
 .guide-starts[hidden]{display:none}.village-guide #guide-count{margin-bottom:0}.village-guide .guide-places{margin-top:8px}
+.guide-starts button[hidden]{display:none}
+.hud-camera-tools{margin-top:14px;border-block:1px solid #c9d5bf;padding-block:4px}
+.hud-camera-tools summary{min-height:48px;padding:12px 3px;cursor:pointer;color:#345a50;font-size:15px;line-height:1.6}
+.hud-camera-tools[open] summary{margin-bottom:8px}
+.hud-camera-tools .camera-tilt{border-bottom:0;margin-bottom:0}
+.hud-panel #sky-open{font-size:1rem}
+.daybook-empty{padding:18px;background:var(--village-mint);border:1px solid #c4d4c7;border-radius:14px}
+.daybook-empty h3{margin-top:0}.daybook-empty button{min-height:48px}
+.daybook-possibilities{margin:20px 0;border-block:1px solid #c9d5bf;padding-block:6px}
+.daybook-possibilities summary{min-height:48px;padding:12px 0;cursor:pointer;line-height:1.6}
 .hud-panel .hud-heading{position:sticky;top:-16px;background:#fff9eb;z-index:1;padding-block:8px}
 .hud-panel #play-guide{margin:4px 0 10px;min-height:48px}.hud-panel #doreumi-menu{margin:0 0 12px}
 /* The driving stick is absolutely positioned; reserve the opposite side for exit. */
@@ -53,7 +63,7 @@ button:disabled{cursor:default}
 .hud-panel .play-guide{width:100%;margin-top:12px;background:#234d48;color:#fff9eb;border-color:#234d48}
 .scene-tools button{transition:background-color .15s ease}
 .scene-tools button:hover{background:#e5eddf}
-.scene-tools #village-map{background:#e0eee5;border-color:#adc3b1}.scene-tools #bgm-toggle{background:#fbebd8;border-color:#d7c3a5}.scene-tools #hud-menu{background:#eee7f4;border-color:#c9bfd8}
+.scene-tools #village-map{background:#e0eee5;border-color:#adc3b1;color:#234d48}.scene-tools #bgm-toggle{background:#fbebd8;border-color:#d7c3a5}.scene-tools #hud-menu{background:#eee7f4;border-color:#c9bfd8}
 #loading{background:#f7f3e8eF;backdrop-filter:blur(8px)}
 #loading p{font-size:20px;letter-spacing:-.03em}
 .village-welcome,.village-guide{width:min(680px,calc(100vw - 32px));padding:32px;background:#fffaf0;border:1px solid #d5dbc8;border-radius:20px;color:#233f43;max-height:calc(100dvh - 32px);overflow-y:auto}

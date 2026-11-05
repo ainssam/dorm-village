@@ -1,0 +1,191 @@
+{
+  "scope": "UI-only production modules and CSS, game.js blocked; callbacks and saved-data rendering fixtures, not 3D gameplay or persistence evidence",
+  "results": [
+    {
+      "name": "phone",
+      "width": 390,
+      "height": 844,
+      "touch": true,
+      "passed": true,
+      "mapContrast": 7.873334413727736,
+      "geometry": {
+        "panel": {
+          "top": 68,
+          "bottom": 652,
+          "width": 300,
+          "height": 584
+        },
+        "settings": {
+          "top": 389,
+          "bottom": 437,
+          "width": 129.5,
+          "height": 48
+        },
+        "color": "rgb(35, 77, 72)",
+        "background": "rgb(224, 238, 229)"
+      },
+      "checks": [
+        "welcome learn intent",
+        "four mood recommendations",
+        "empty search recovery",
+        "recommendation callback and modal close",
+        "menu order",
+        "camera disclosure keyboard and callback",
+        "Escape focus restoration",
+        "menu reopens at top retaining camera disclosure choice",
+        "empty record rest guide",
+        "earned and retired record rendering fixtures",
+        "horizontal overflow"
+      ]
+    },
+    {
+      "name": "phone-landscape",
+      "width": 844,
+      "height": 390,
+      "touch": true,
+      "passed": true,
+      "mapContrast": 7.873334413727736,
+      "geometry": {
+        "panel": {
+          "top": 72,
+          "bottom": 374,
+          "width": 310,
+          "height": 302
+        },
+        "settings": {
+          "top": 393,
+          "bottom": 441,
+          "width": 134.5,
+          "height": 48
+        },
+        "color": "rgb(35, 77, 72)",
+        "background": "rgb(224, 238, 229)"
+      },
+      "checks": [
+        "welcome learn intent",
+        "four mood recommendations",
+        "empty search recovery",
+        "recommendation callback and modal close",
+        "menu order",
+        "camera disclosure keyboard and callback",
+        "Escape focus restoration",
+        "menu reopens at top retaining camera disclosure choice",
+        "empty record rest guide",
+        "earned and retired record rendering fixtures",
+        "horizontal overflow"
+      ]
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "touch": true,
+      "passed": true,
+      "mapContrast": 7.873334413727736,
+      "geometry": {
+        "panel": {
+          "top": 72,
+          "bottom": 768.796875,
+          "width": 310,
+          "height": 696.796875
+        },
+        "settings": {
+          "top": 393,
+          "bottom": 441,
+          "width": 134.5,
+          "height": 48
+        },
+        "color": "rgb(35, 77, 72)",
+        "background": "rgb(224, 238, 229)"
+      },
+      "checks": [
+        "welcome learn intent",
+        "four mood recommendations",
+        "empty search recovery",
+        "recommendation callback and modal close",
+        "menu order",
+        "camera disclosure keyboard and callback",
+        "Escape focus restoration",
+        "menu reopens at top retaining camera disclosure choice",
+        "empty record rest guide",
+        "earned and retired record rendering fixtures",
+        "horizontal overflow"
+      ]
+    },
+    {
+      "name": "tablet-landscape",
+      "width": 1024,
+      "height": 768,
+      "touch": true,
+      "passed": true,
+      "mapContrast": 7.873334413727736,
+      "geometry": {
+        "panel": {
+          "top": 72,
+          "bottom": 540,
+          "width": 310,
+          "height": 468
+        },
+        "settings": {
+          "top": 393,
+          "bottom": 441,
+          "width": 134.5,
+          "height": 48
+        },
+        "color": "rgb(35, 77, 72)",
+        "background": "rgb(224, 238, 229)"
+      },
+      "checks": [
+        "welcome learn intent",
+        "four mood recommendations",
+        "empty search recovery",
+        "recommendation callback and modal close",
+        "menu order",
+        "camera disclosure keyboard and callback",
+        "Escape focus restoration",
+        "menu reopens at top retaining camera disclosure choice",
+        "empty record rest guide",
+        "earned and retired record rendering fixtures",
+        "horizontal overflow"
+      ]
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "touch": false,
+      "passed": true,
+      "mapContrast": 7.873334413727736,
+      "geometry": {
+        "panel": {
+          "top": 72,
+          "bottom": 672,
+          "width": 310,
+          "height": 600
+        },
+        "settings": {
+          "top": 393,
+          "bottom": 441,
+          "width": 134.5,
+          "height": 48
+        },
+        "color": "rgb(35, 77, 72)",
+        "background": "rgb(224, 238, 229)"
+      },
+      "checks": [
+        "welcome learn intent",
+        "four mood recommendations",
+        "empty search recovery",
+        "recommendation callback and modal close",
+        "menu order",
+        "camera disclosure keyboard and callback",
+        "Escape focus restoration",
+        "menu reopens at top retaining camera disclosure choice",
+        "empty record rest guide",
+        "earned and retired record rendering fixtures",
+        "horizontal overflow"
+      ]
+    }
+  ],
+  "errors": []
+}
