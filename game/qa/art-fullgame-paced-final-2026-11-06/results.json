@@ -1,0 +1,85 @@
+{
+  "results": [
+    {
+      "name": "art-touch-undo-save-export",
+      "passed": true,
+      "detail": {
+        "stroke": {
+          "width": 334,
+          "height": 204.109375,
+          "points": 11,
+          "moveDelayMs": 20,
+          "releaseDelayMs": 20
+        },
+        "savedNotice": "이 브라우저에 저장됨",
+        "undoRedoPixelsMatch": true,
+        "reloadPixels": {
+          "maxDifference": 1,
+          "differentChannels": 433,
+          "totalChannels": 1267200,
+          "meanDifference": 0.0003416982323232323
+        },
+        "afterFullReload": true,
+        "exported": {
+          "file": "art-export.png",
+          "suggestedFilename": "dormi-art-202611051705.png",
+          "bytes": 22255,
+          "width": 720,
+          "height": 440,
+          "sha256": "cacf6a0630705055ec18decdd2bb66fa4d18c035cb86dfa0c48adf1f9ad7d5d8"
+        },
+        "scope": "one touch stroke; pencil/color selection; undo/redo; browser-save response; close/reopen; actual PNG download"
+      }
+    },
+    {
+      "name": "art-delayed-existing-draft",
+      "passed": true,
+      "detail": {
+        "existingDraftFromRealUi": true,
+        "delayedReadBlocksTouchAndDestructiveActions": true,
+        "priorPictureRestoredExactly": true,
+        "newStrokeSavedAfterReload": true,
+        "firstTapSaves": [
+          {
+            "round": 1,
+            "status": "이 브라우저에 저장됨"
+          },
+          {
+            "round": 2,
+            "status": "이 브라우저에 저장됨"
+          },
+          {
+            "round": 3,
+            "status": "이 브라우저에 저장됨"
+          },
+          {
+            "round": 4,
+            "status": "이 브라우저에 저장됨"
+          },
+          {
+            "round": 5,
+            "status": "이 브라우저에 저장됨"
+          },
+          {
+            "round": 6,
+            "status": "이 브라우저에 저장됨"
+          }
+        ],
+        "reloadPixels": {
+          "maxDifference": 1,
+          "differentChannels": 1825,
+          "totalChannels": 1267200
+        },
+        "exported": "art-delayed-export.png",
+        "strokeMoveMs": 20,
+        "strokeReleaseMs": 20,
+        "tapHoldMs": 80,
+        "nativeTapGesture": false,
+        "tapPreDelayMs": 600
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": []
+}

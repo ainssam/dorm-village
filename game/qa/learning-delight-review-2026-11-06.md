@@ -2,6 +2,10 @@
 
 힐링·휴식·즐거움을 기준으로, 과제를 늘리기보다 첫 결과물이 깨끗하게 보이고 잘못 눌러도 고칠 수 있으며 만든 것이 안전하게 남는지를 검토했다.
 
+## 최종 판정 · 검증한 범위
+
+학습·창작 변경은 아래에 명시한 입력 조건과 범위에서 통과했다. 미술 저장 보호의 마지막 지연 복원→추가 저장→재열기→PNG도 `art-fullgame-paced-final-2026-11-06/results.json`에서 통과했다. 빠른 합성 터치의 이전 실패는 보존하며, 브라우저 내부 원인이나 실물 기기 전체의 무결성을 확정한 것으로 확대하지 않는다. 아래의 ‘당시 보류’는 진단 과정 기록이다.
+
 ## 제품 변경
 
 - **수식 칠판 첫 산출물:** 새 초안은 빈 칠판으로 시작한다. 복잡한 수업 예시와 새 수식이 겹치던 문제를 없앴다. ‘예시 밑그림 보기’로 직접 켤 수 있고 되돌리기도 된다. 기존 저장본의 예시 표시 설정은 유지한다.
@@ -47,7 +51,57 @@ Chromium, 390×844 터치 에뮬레이션에서 확인했다. 방/시작점 준�
 
 - **수학 최종 정상/복구 두 흐름 통과:** `learning-storage-final-2026-11-06/results.json`의 `math-formula-save-export`, `math-unavailable-store-preserves-temporary-work`. 실제 UI로 저장한 기존 수식이 있는 상태에서 저장소의 `read` 실패만 주입했다. 새 `x+5`를 칠판에 놓고 `z+2`를 입력기에 남긴 뒤 읽기를 복구해 재입장했다. 두 임시 작업이 유지되고 기존 저장본을 덮지 않으며, 임시 칠판의 실제 PNG를 내려받았다. 전체 새로고침하면 원래 저장 수식이 그대로 복원된다. 임시 PNG를 직접 열어 `x+5`가 그려졌음을 확인했다. 레코드·점수·진행 상태는 주입하지 않았다.
 - **미술 정상 저장/PNG 통과:** 저장 보호 수정 뒤 `learning-art-single-input-2026-11-06/results.json`의 `art-touch-undo-save-export`가 실제 터치 획·undo/redo·저장·전체 새로고침·PNG를 통과했다. 앞선 `learning-art-storage-final-2026-11-06/`의 같은 정상 흐름도 통과한다.
-- **미술 지연 저장 전체 흐름은 아직 보류:** 기존 저장 그림이 있다는 전제를 확인하고 읽기를 지연하는 동안 새 획/새 종이/저장/내보내기가 막히는지, 지연 해제 후 기존 픽셀이 정확히 돌아오는지는 확인됐다. 이후 새 획을 더하고 저장하는 터치에서 `pointerdown`/`pointerup`은 왔지만 `click`이 발생하지 않아 저장 상태 대기가 실패하는 실행이 있다. 실제 UI 상태를 성공으로 주입하거나 버튼 이벤트를 강제 호출하지 않았다.
+- **미술 지연 저장 전체 흐름은 당시 보류:** 기존 저장 그림이 있다는 전제를 확인하고 읽기를 지연하는 동안 새 획/새 종이/저장/내보내기가 막히는지, 지연 해제 후 기존 픽셀이 정확히 돌아오는지는 확인됐다. 이후 새 획을 더하고 저장하는 터치에서 `pointerdown`/`pointerup`은 왔지만 `click`이 발생하지 않아 저장 상태 대기가 실패하는 실행이 있다. 실제 UI 상태를 성공으로 주입하거나 버튼 이벤트를 강제 호출하지 않았다.
 - **입력 원인 분리:** 처음에는 CDP 획 입력과 Playwright 버튼 입력의 세션 혼합을 의심했다. 한 CDP 세션으로 양쪽을 보낸 대조(`learning-art-single-input-2026-11-06`)에서도 지연 흐름의 저장 터치가 실패했으므로, 세션 혼합을 원인으로 확정하지 않는다. 초기 `learning-art-storage-proof-2026-11-06/`의 undo 터치 역시 down/up 뒤 click 누락을 기록했다. 제품의 저장/undo 로직을 바꾸거나 무조건 pointerup에서 실행하는 우회 코드는 넣지 않았다. 최신 원시 결과의 `artEvents`에 실제 이벤트 기록을 보존했다.
-- `art-draft-loading.test.mjs` 6/6와 `math-board-start.test.mjs` 5/5를 독립 교차 실행했다. 이는 저장소 지연/실패 상태의 컨트롤러 회귀 통과이며, 위의 아직 분리되지 않은 네이티브 터치 클릭 누락을 대신해 합격시키는 근거가 아니다.
+- `art-draft-loading.test.mjs` 6/6와 `math-board-start.test.mjs` 5/5를 독립 교차 실행했다. 이는 저장소 지연/실패 상태의 컨트롤러 회귀 통과이며, 위의 당시 분리되지 않은 네이티브 터치 클릭 누락을 대신해 합격시키는 근거가 아니다.
 - 미술 종이 내부에는 `aria-busy=true` 동안에만 ‘저장된 그림을 불러오는 중이에요…’ 시각 안내를 표시한다. 기존 live status는 유지하며 안내 자체는 포인터를 받지 않는다.
+
+## 미술 첫 터치 진단 · 원인을 확정하지 않은 비교
+
+`art-native-dom-diagnostic.mjs`는 실제 `index.html`/CSS/UI/미술 모듈/IndexedDB를 쓰되 `game.js`를 빈 모듈로 응답해 Three와 마을 입력을 실행하지 않는다. 새 브라우저 문맥에서 실제 획을 그려 저장한 뒤 읽기 지연만 조절한다. 초기 저장의 첫 터치가 실패한 경우 실제 Enter 저장으로 준비하되 `baselineTap:false`를 그대로 남긴다. 반복마다 새 획의 epoch와 저장 전 상태를 확인하며 첫 터치와 재터치를 분리한다.
+
+| 독립 조건 | 첫 저장 tap 성공 / 12 | 근거 폴더 |
+| --- | ---: | --- |
+| DPR1 원본, 추가 대기 없음 | 6/12 | `art-native-dom-baseline12-2026-11-06` |
+| canvas pointerdown/move preventDefault만 QA 응답에서 제거 | 6/12 | `art-native-dom-no-prevent-2026-11-06` |
+| 원본, 버튼 누름 80ms | 10/12 | `art-native-dom-hold80-2026-11-06` |
+| 원본, 버튼 누르기 전 추가 500ms | 12/12 | `art-native-dom-delay500-2026-11-06` |
+| DPR2 원본 | 7/12 | `art-native-dom-dpr2-2026-11-06` |
+| explicit releasePointerCapture만 QA 응답에서 생략 | 5/12 | `art-native-dom-implicit-release-2026-11-06` |
+| canvas.focus만 QA 응답에서 생략 | 8/12 | `art-native-dom-no-focus-2026-11-06` |
+| 높이1600, programmatic scroll 호출 없음 | 12/12 | `art-native-dom-no-scroll-2026-11-06` |
+| 높이844, ready 때 scrollTop347 한 번 뒤 고정, 반복 중 scroll 호출 없음 | 4/12 | `art-native-dom-fixed-scroll-2026-11-06` |
+
+실패 시 같은 활성·연결 버튼에 pointerdown/up 및 touchstart/end가 도착하지만 compat mousedown/up/click이 없다. 전체 DOM target을 기록한 DPR2 실행에서도 다른 대상 click/dblclick은 없었다. 후속 터치는 모두 성공했다. 따라서 세션 혼합·Three 부하·낮은 DPR·preventDefault·명시적 capture 해제·canvas focus 중 하나를 원인으로 단정하거나 해당 제품 코드를 제거할 근거가 없다. 500ms 후 성공도 제품 결함 부재의 증명으로 취급하지 않는다. 최초 실패 기록은 보존하고 프로그램 스크롤/브라우저 제스처를 계속 분리한다.
+
+`art-native-dom-delay500-2026-11-06/loading.png`를 직접 열어 로딩 안내가 종이 안에서 보이고 입력 버튼이 대기 상태임을 확인했다. 비활성 상태가 끝나면 기존 픽셀이 정확히 복원됐다. 위 표는 Chromium 터치 합성 진단이며 실물 휴대폰의 동작이나 최종 합격을 뜻하지 않는다.
+
+도서관 후속 접기 기능은 코드의 aria-expanded/controls, hidden details, 항상 남는 진행 상태, 명시적 선택 유지와 모델 기반 책장 문구를 교차 검토했다. `library-disclosure-2026-11-06/narrow-save-final/`의 568×320 미저장·완료 PNG를 실제 열어 48px 버튼 한 줄과 재시도→다음 전환, 책장 시야를 확인했다. 해당 범위 차단 문제는 없었다.
+
+- 좁은 화면 고정 스크롤 조건도 실패하므로 매회 `scrollIntoViewIfNeeded` 호출만의 문제라고 볼 수 없다. 두 스크롤 대조 모두 반복 중 실제 scroll/scrollend 이벤트 0이었다.
+- 통합 담당의 추가 최소 대조 `art-bare-touch-control-2026-11-06/results.json`에서는 앱·모달·IDB·포인터 핸들러가 전혀 없는 HTML(canvas touch-action:none + onclick 카운터 버튼)에도 동일 CDP 획→두 프레임→터치가 0/12 첫 click으로 재현됐다. 따라서 앱의 저장 보호 코드만으로 설명할 수 없는 같은 현상이 별도 화면에도 있다는 직접 근거가 생겼다. Chromium 버전·프로토콜·입력 합성 중 특정 원인은 아직 확정하지 않았다. 입력 API 대조를 진행하며 제품 pointerup 우회를 추가하지 않는다. 실물 기기의 보편적 무결성을 증명한 것은 아니다.
+
+- 실제390px 로딩 이미지에서 불투명도 `100%`가 줄바꿈되는 표시 결함을 발견해 출력열을60px로 넓히고 nowrap을 적용했다. `art-controls-final-2026-11-06/layouts.json`과320/390px PNG를 직접 확인했다. 두 화면 모두 숫자+% 한줄이고 모달 scrollWidth/clientWidth가 각각298/298,368/368로 가로 넘침이 없다. 같은 실행의 지연 복원→새획→첫 저장은 추가500ms 터치 조건으로1/1이며 입력 진단 제한과 구분한다.
+
+- `art-fullgame-final-2026-11-06`는 DPR 1, tap 전 500ms 조건으로 정상 미술 undo/redo·저장·전체 새로고침·PNG를 통과했지만, 지연 복원 후 첫 저장은 down/up만 오고 click 없이 실패했다. 실제 획 종료→button down 간격이 875ms이므로 500ms 대기가 일반적 해결이라고 주장하지 않는다.
+- 같은 실제 DOM의 `Input.synthesizeTapGesture(touch,80ms)` 대조는 첫 tap 0/12, 두 번째 tap 0/12였다(`art-native-dom-synthesize-2026-11-06`). 각 경우 실제 Enter 저장은 12/12였다. 브라우저/자동화 프로토콜 호환성을 추가 확인하며 제품 입력 코드는 유지한다. 이 원시 실패는 최종 성공 기록으로 덮지 않는다.
+
+- 독립 검토자가 최신 미술 CSS와 320·390px PNG 및 layout 수치를 교차 확인했다. 60px 출력열은 해당 조절부에만 적용되며 slider와 모바일 wrapping을 유지한다. 보고서의 정상 저장/지연 보호 성공과 아직 미합격인 첫 native tap 범위를 구별한 기록도 확인했다.
+
+## 검수 브라우저 실행·입력 대조 후속
+
+- Playwright와 설치 Chromium의 버전 차이는 관찰했지만 원인으로 확정하지 않았다. 호환 브라우저 설치는 네트워크의 403 Domain forbidden으로 실패했고 다른 CDN으로 우회하지 않았다. 제품 의존성이나 런타임은 바꾸지 않았다.
+- Playwright 기본 실행 옵션을 제거한 vanilla Chromium 154, 별도의 임시 프로필과 localhost CDP에서도 tap-only 12/12, 획 직후 tap 0/12, native tap API 0/12, 500ms 대기 0/12였다(`touch-vanilla-control-2026-11-06/results.json`). 따라서 Playwright 기본 launch flags만의 문제라는 설명은 지지되지 않는다.
+- 통합 담당의 동일 최소 HTML 대조에서 실제 시간으로 10번×20ms 이동하고 종료 전 20ms를 두는 획과 tap 전 600ms 대기를 함께 적용한 조건은 12/12였다. pacing만 또는 pacing+80ms 누름만은 0/12였으므로, 한 변수를 원인/해결로 단정하지 않는다. 제품 핸들러는 바꾸지 않았다.
+- 실제 아트 DOM·UI·IDB에서 같은 조합에 80ms 누름을 포함한 검수는 최초 저장 성공, 이후 새 획→첫 저장 12/12, 재터치·Enter 대체 0회, 페이지 오류 0이었다(`art-dom-paced-held-settled-2026-11-06/results.json`). 저장 전 상태와 새로운 epoch, native click 이벤트를 각 회에 남겼다. 이 조건을 그대로 실제 마을 검수에 적용한다.
+
+## 미술 최종 실제 마을 검수
+
+`art-fullgame-paced-final-2026-11-06/results.json`의 두 시나리오가 모두 통과했다. 브라우저는 Chromium 154, 390×844, DPR 1이며 획은 10번의 실제 이동에 각20ms, 종료 전에20ms를 둔다. 버튼 입력은 기존 `dispatchTouchEvent`로 600ms 뒤 누르고80ms 뒤 떼었다. 입력·저장·완료를 강제 주입하지 않았고 재터치를 통한 성공 처리도 없다. 게임 시간과 기능 코드는 그대로다.
+
+1. 연필/색 선택→11점 터치 획→undo/redo 픽셀 일치→저장→전체 새로고침→재열기→실제720×440 PNG 다운로드. 복원 최대 채널 차이는1/255였다.
+2. UI로 만든 실제 저장 그림을 읽는 동안 새 획·새 종이·저장·내보내기 입력을 기다리게 한다. 지연 해제 후 원래 그림의 픽셀이 정확히 복원된다.
+3. 새 획과 첫 저장 버튼 입력을6회 반복해6/6 저장 응답을 확인했다. 전체 새로고침 후 합쳐진 그림은 최대 채널 차이1/255로 유지됐다. 실제 PNG를 내려받았고 직접 열어 기존 빨간 지그재그와 새 검정6줄이 함께 남았음을 확인했다.
+4. 로딩 안내·복원 후 실제 마을 화면도 정상 렌더로 직접 열어 확인했다. JS 예외·콘솔 오류·HTTP 실패는 모두0이다.
+
+이 결과는 저장 보호 및 정의한 실사용 흐름을 검증한다. 합성 터치의 극단적인 속도 조건에서 관찰한 클릭 누락의 내부 원인을 확정하거나 실제 휴대폰·Safari/전체 터치 속도 조합까지 합격시키지 않는다. 해당 진단 때문에 제품 pointerup 우회나 preventDefault 제거를 넣지 않았다.

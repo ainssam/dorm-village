@@ -1,0 +1,58 @@
+[
+  {
+    "width": 320,
+    "modalClient": 298,
+    "modalScroll": 298,
+    "outputText": "100%",
+    "outputWhiteSpace": "nowrap",
+    "outputBox": {
+      "x": 237,
+      "y": 63.59375,
+      "width": 60,
+      "height": 32,
+      "top": 63.59375,
+      "right": 297,
+      "bottom": 95.59375,
+      "left": 237
+    },
+    "textLines": 1,
+    "labelBox": {
+      "x": 23,
+      "y": 56.59375,
+      "width": 274,
+      "height": 46,
+      "top": 56.59375,
+      "right": 297,
+      "bottom": 102.59375,
+      "left": 23
+    }
+  },
+  {
+    "width": 390,
+    "modalClient": 368,
+    "modalScroll": 368,
+    "outputText": "100%",
+    "outputWhiteSpace": "nowrap",
+    "outputBox": {
+      "x": 307,
+      "y": 63.59375,
+      "width": 60,
+      "height": 32,
+      "top": 63.59375,
+      "right": 367,
+      "bottom": 95.59375,
+      "left": 307
+    },
+    "textLines": 1,
+    "labelBox": {
+      "x": 23,
+      "y": 56.59375,
+      "width": 344,
+      "height": 46,
+      "top": 56.59375,
+      "right": 367,
+      "bottom": 102.59375,
+      "left": 23
+    }
+  }
+]

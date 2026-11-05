@@ -19,11 +19,12 @@ export async function runArtMath({page,out,open,tap,run,capture,touchSession}){
  const close=async()=>{await tap('dialog[open] .modal-x');await page.waitForFunction(()=>!window.__audit.snapshot().locked,null,{timeout:60000});};
  const touchStroke=async selector=>{
   const canvas=page.locator(selector);await canvas.scrollIntoViewIfNeeded();await settle();const box=await canvas.boundingBox();assert.ok(box&&box.width>100&&box.height>60,'drawing surface is usable');
-  const points=[[.2,.65],[.3,.35],[.4,.65],[.5,.35],[.65,.65],[.78,.4]].map(([x,y])=>({x:box.x+box.width*x,y:box.y+box.height*y,id:7,radiusX:2,radiusY:2,force:.6}));
+  const path=[[.2,.65],[.3,.35],[.4,.65],[.5,.35],[.65,.65],[.78,.4]],samples=[path[0]];for(let i=1;i<path.length;i++){samples.push([(path[i-1][0]+path[i][0])/2,(path[i-1][1]+path[i][1])/2],path[i]);}
+  const points=samples.map(([x,y])=>({x:box.x+box.width*x,y:box.y+box.height*y,id:7,radiusX:2,radiusY:2,force:.6})),moveDelay=Number(process.env.QA_STROKE_MOVE_MS??20),releaseDelay=Number(process.env.QA_STROKE_RELEASE_MS??20);
   const cdp=touchSession??await page.context().newCDPSession(page);
-  try{await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[points[0]]});for(const point of points.slice(1))await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[point]});}
+  try{await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[points[0]]});for(const point of points.slice(1)){if(moveDelay)await page.waitForTimeout(moveDelay);await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[point]});}if(releaseDelay)await page.waitForTimeout(releaseDelay);}
   finally{await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});if(!touchSession)await cdp.detach();}
-  await settle();return{width:box.width,height:box.height,points:points.length};
+  await settle();return{width:box.width,height:box.height,points:points.length,moveDelayMs:moveDelay,releaseDelayMs:releaseDelay};
  };
  await run('art-touch-undo-save-export',async()=>{
   await open('art','art.paint');await page.waitForSelector('#art-canvas');await page.waitForFunction(()=>/저장 전|저장됨/.test(document.querySelector('#art-status')?.textContent),null,{timeout:60000});

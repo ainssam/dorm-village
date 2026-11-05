@@ -1,0 +1,65 @@
+{
+  "date_kst": "2026-11-06",
+  "scope": "Learning and creation quality; tested flows only",
+  "changes": [
+    "Fresh math board without decorative example overlap; explicit saved states preserved",
+    "Decorative classroom example preserved until a personal board exists",
+    "Math temporary chalk and unplaced expression preserved after failed read and later restoration",
+    "Art initial read/decode blocks accidental overwriting; late existing record protects temporary work",
+    "Art footer return and busy paper notice; single-line 100% at 320/390px",
+    "Health-information choices distinguish traceable source from missing source"
+  ],
+  "tests": {
+    "math_controller": 5,
+    "art_controller": 6,
+    "command": "node --test tests/math-board-start.test.mjs tests/art-draft-loading.test.mjs",
+    "passed": 11,
+    "independently_reviewed": true
+  },
+  "browser": {
+    "robot_stages_completed": 9,
+    "robot_actual_ui_programs": "qa/learning-delight-2026-11-06/robot-stages.json",
+    "balance_bridge_and_counterweight": "qa/learning-delight-2026-11-06/results.json",
+    "math_failed_store_recovery": "qa/learning-storage-final-2026-11-06/results.json",
+    "art_final": "qa/art-fullgame-paced-final-2026-11-06/results.json",
+    "art_final_passed": 2,
+    "art_delayed_first_tap_saves": 6,
+    "art_reload_max_channel_difference": 1,
+    "health_three_cards": "qa/learning-final-2026-11-06/results.json",
+    "art_layout": "qa/art-controls-final-2026-11-06/layouts.json",
+    "art_final_errors": {
+      "js": 0,
+      "console": 0,
+      "http": 0
+    }
+  },
+  "art_final_input": {
+    "browser": "Chromium154",
+    "viewport": [
+      390,
+      844
+    ],
+    "deviceScaleFactor": 1,
+    "moves": 10,
+    "moveIntervalMs": 20,
+    "beforeTouchEndMs": 20,
+    "beforeTapMs": 600,
+    "tapHoldMs": 80,
+    "input": "CDP dispatchTouchEvent; first tap only",
+    "product_input_handler_changed": false,
+    "timeOrCompletionInjection": false
+  },
+  "diagnostic_limit": "Earlier immediate synthesized stroke-to-tap click omissions are preserved, including reproduction without app code. A browser-internal cause and physical-device behavior are not established. Verified input timing is explicitly scoped.",
+  "sha256": {
+    "dist/school/art-view.js": "65b62151d72d5bdcdb5a8206ce75f039b9a0a0e5e53df49eb43e1179a983c388",
+    "dist/school/art.css": "a95290d91413e253ef9de8c48ed81dab019343dd3b6fca29fcaf3f75dacfc5bb",
+    "dist/school/math-board-model.js": "015c4095f21b7417cf3abef873260eca04314bf6c2796b19718dfa5ebbae460b",
+    "dist/school/math-board-view.js": "96775fce5533b3ee784de1214594aff37db25430cb7179e22c836176c381ec5c",
+    "dist/school/learning-view.js": "8c317c63d14a421d09a3f1163e837a9c9e0de37645bdec3041099ffdf6d52146",
+    "tests/math-board-start.test.mjs": "08342fc67670d1f1f3e68363ebf21c58aa3ba343ce355b19f7d96182952d3428",
+    "tests/art-draft-loading.test.mjs": "a052db6c4375a68f4085414c205ddd489612f3a3e00b74ca4ccec07620560b46",
+    "scripts/learning-delight-acceptance.mjs": "77c0cc33bf25eb18f5ac0b29df5e5cb95163678f324db12e50b87fc2931cec0b",
+    "scripts/remaining-art-math-acceptance.mjs": "45e102385bdcf1fa97c0dc44ceea56a93f949a5800efa86538704ccf4a2375e6",
+    "scripts/art-native-dom-diagnostic.mjs": "48bf46281f11f4689039a811241514a0122cc80395bd0a99970076926e6997b1"
+  }
+}

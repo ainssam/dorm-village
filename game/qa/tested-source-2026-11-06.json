@@ -4,7 +4,10 @@
     "syntax": "passed",
     "tests": 297,
     "passed": 297,
-    "failed": 0
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMs": 98397.805748
   },
   "sourceUnchangedDuringChecks": true,
   "files": {
@@ -571,7 +574,7 @@
     "dist/school/art-document.js": "f6e1ac3889b296d43ac193170fbbecb4c804e54ac124bd4b131359171e2614bd",
     "dist/school/art-storage.js": "1ccd60a05ca0d306ec0e1f9b878d1ed95454aec0faacc2a2cd7aca3dc5441aad",
     "dist/school/art-view.js": "65b62151d72d5bdcdb5a8206ce75f039b9a0a0e5e53df49eb43e1179a983c388",
-    "dist/school/art.css": "cc1032aabac4d93bc7aa0190bc4d6498ae04bacb2318bfdea8afc66a5c93b828",
+    "dist/school/art.css": "a95290d91413e253ef9de8c48ed81dab019343dd3b6fca29fcaf3f75dacfc5bb",
     "dist/school/baseball-controller.js": "2f0276118dbd7124dab4521a97bc450f0822a9e9ff1fc17217311a7876a3afa0",
     "dist/school/baseball-court.js": "7066f5029f98588ba748421e350e6de280d248c324b9a7bdd0c8fdf8943d9b5d",
     "dist/school/baseball-frame.js": "e60d7dfbfb1e5f57797cfa43a2eb48bc0325b16877dbb75175a0ce0227fd8b2f",
