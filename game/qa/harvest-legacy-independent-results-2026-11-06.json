@@ -1,0 +1,73 @@
+{
+  "baseline": "fe86624",
+  "scope": "model modules with memory storage; not two browser tabs",
+  "modulesRead": 107,
+  "externalPackages": [
+    "three",
+    "three/examples/jsm/geometries/RoundedBoxGeometry.js",
+    "three/examples/jsm/utils/BufferGeometryUtils.js",
+    "three/addons/loaders/GLTFLoader.js"
+  ],
+  "sourceSha256": {
+    "dist/state/food-catalog.js": {
+      "old": "5148247fe02df6736c020490abd08a7cfe447262d71fcb7371e330d52bbf9efa",
+      "current": "625ae2232bd87a71aaf924dbc3b891059bedf0015db9506a071648c466cbae00"
+    },
+    "dist/state/cafe-food.js": {
+      "old": "6c1da7153e79c1d7c2b035aa053029fb7aedd28747d0f96d5085d62803e2f69d",
+      "current": "4d65de6e9a5fb337e64741c63c1d5c21bfaaa0cfc77754bcc535a895b35ef2c8"
+    },
+    "dist/state/produce.js": {
+      "old": "93c348c7777a59ada434d62d29e457fc05cf0c0bae608e8c8ca61f0ac7c15f92",
+      "current": "9550d40633d0b391c06c072e98041b6db78b85325d60e83ed5d5002f0d617fac"
+    },
+    "dist/state/gathering.js": {
+      "old": "e0deb2fb34326700d8fcef7f932198ee38ba1cd90a9132e35b8e69b154cd54be",
+      "current": "f9704937ef4f46311619c008a38ea797af48b9a048675ccf8cfcf4dad913aa27"
+    },
+    "dist/state/progress.js": {
+      "old": "0b443c6244c0c7ea4863add380e2f4127d2c596c41bfb1d0bc4127b24363291d",
+      "current": "8375c63c39261fbe5978347f00606a097048c3480fdc299079058879bd4ff28e"
+    },
+    "dist/state/save.js": {
+      "old": "4d62a9c319f249e5fe59abfa6cc3115c0465ccfa288d39d90bb03029194fb4e6",
+      "current": "ce63ccc05adfb484ff9ff9dd220b1be42aceec5ab966043dde731e97b17c8a47"
+    }
+  },
+  "results": [
+    {
+      "version": 5,
+      "oldAccepted": true,
+      "newAccepted": true,
+      "allHistoricalFieldsEquivalent": true,
+      "onlyAdditions": [
+        "schemaVersion:7",
+        "made new3 zeros",
+        "consumed new3 zeros"
+      ]
+    },
+    {
+      "version": 6,
+      "oldAccepted": true,
+      "newAccepted": true,
+      "allHistoricalFieldsEquivalent": true,
+      "onlyAdditions": [
+        "schemaVersion:7",
+        "made new3 zeros",
+        "consumed new3 zeros"
+      ]
+    },
+    {
+      "oldReleaseReadsSchema7At": "dormi.world.save.v2",
+      "status": "future-version",
+      "writeBlocked": true,
+      "bytesUnchanged": true
+    },
+    {
+      "oldReleaseReadsSchema7At": "dormi.world.backup.v2",
+      "status": "future-version",
+      "writeBlocked": true,
+      "bytesUnchanged": true
+    }
+  ]
+}

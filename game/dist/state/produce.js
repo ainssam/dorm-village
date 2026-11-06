@@ -1,4 +1,4 @@
-import {PRODUCE_NODES,PRODUCE_NODE_IDS,PRODUCE_MATERIAL_IDS,PRODUCE_SEASONS,PLAY_SEASONS,MAX_PRODUCE_HARVESTS,exactFoodRecord,foodInteger,fruitDrinkCost} from './food-catalog.js';
+import {PRODUCE_NODES,PRODUCE_NODE_IDS,PRODUCE_MATERIAL_IDS,PRODUCE_SEASONS,PLAY_SEASONS,MAX_PRODUCE_HARVESTS,exactFoodRecord,foodInteger,preparedFoodCost} from './food-catalog.js';
 export const initialProduce=()=>({season:'calendar',nodes:Object.fromEntries(PRODUCE_NODE_IDS.map(id=>[id,{harvests:0,phase:'seed'}]))});
 export function validateProduce(raw){
  if(!exactFoodRecord(raw,['season','nodes'])||!PRODUCE_SEASONS.includes(raw.season)||!exactFoodRecord(raw.nodes,PRODUCE_NODE_IDS))return null;
@@ -6,7 +6,7 @@ export function validateProduce(raw){
  return {season:raw.season,nodes};
 }
 export function produceMaterials(progress){
- const bag=Object.fromEntries(PRODUCE_MATERIAL_IDS.map(id=>[id,-fruitDrinkCost(progress.cafeFood,id)]));
+ const bag=Object.fromEntries(PRODUCE_MATERIAL_IDS.map(id=>[id,-preparedFoodCost(progress.cafeFood,id)]));
  for(const id of PRODUCE_NODE_IDS){const r=PRODUCE_NODES[id];bag[r.material]+=(progress.produce?.nodes?.[id]?.harvests??0)*r.yield;}
  return bag;
 }

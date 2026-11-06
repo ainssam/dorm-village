@@ -5,7 +5,8 @@
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {clone as cloneSkeleton} from 'three/addons/utils/SkeletonUtils.js';
-export const KOALA_BARISTA_SPEC=Object.freeze({name:'코알라 바리스타',species:'koala',floor:'floor2',position:Object.freeze({x:-2.5,y:3.25,z:-5.65}),yaw:0,scale:1,counterTop:1.12,phases:Object.freeze(['idle','cup','pour','steam','blend','handover'])});
+import {isHarvestMeal,createHarvestBowl,createHarvestSpoon} from '../bakery/harvest-serving.js';
+export const KOALA_BARISTA_SPEC=Object.freeze({name:'코알라 바리스타',species:'koala',floor:'floor2',position:Object.freeze({x:-2.5,y:3.25,z:-5.65}),yaw:0,scale:1,counterTop:1.12,phases:Object.freeze(['idle','cup','pour','steam','blend','handover','bowl','fill'])});
 const clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,Number.isFinite(v)?v:a)),smooth=t=>{t=clamp(t);return t*t*(3-2*t);},V=(x=0,y=0,z=0)=>new THREE.Vector3(x,y,z);
 function releaseSource(gltf){const gs=new Set(),ms=new Set(),ss=new Set(),ts=new Set();gltf.scene.traverse(o=>{if(o.geometry)gs.add(o.geometry);for(const m of [].concat(o.material??[]))ms.add(m);if(o.skeleton)ss.add(o.skeleton);});for(const m of ms)for(const t of Object.values(m))if(t?.isTexture)ts.add(t);for(const t of ts){t.image?.close?.();t.dispose();}for(const s of ss)s.dispose();for(const m of ms)m.dispose();for(const g of gs)g.dispose();}
 export class KoalaBaristaAssetPool{
@@ -18,8 +19,19 @@ export const koalaBaristaAssetStats=()=>defaultPool.snapshot();
 const normalPhase=phase=>KOALA_BARISTA_SPEC.phases.includes(phase)?phase:'idle';
 // Optional provider hint affects only actor-owned liquid colors, never recipe availability.
 const drinkPalettes={americano:[0x5b3929,0x5b3929],latte:[0xe8d8b8,0xd2a879],appleJuice:[0xe9b352,0xe9b352],strawberryJuice:[0xdc7773,0xdc7773],peachJuice:[0xefb18c,0xefb18c],pearJuice:[0xe7d9a0,0xe7d9a0],mandarinJuice:[0xeda246,0xeda246]};
-const normalRecipe=recipeId=>typeof recipeId==='string'&&Object.hasOwn(drinkPalettes,recipeId)?recipeId:null;
-function controls(phase,progress,time,reduced,cupVisible=true){
+const normalRecipe=recipeId=>typeof recipeId==='string'&&(Object.hasOwn(drinkPalettes,recipeId)||isHarvestMeal(recipeId))?recipeId:null;
+function harvestControls(phase,progress,time,reduced,visible){
+ const c=controls(phase==='bowl'||phase==='fill'?'cup':phase,progress,time,reduced,visible),p=smooth(progress),filling=phase==='fill',handover=phase==='handover';
+ if(!handover){c.cup=[0,1.125+(phase==='bowl'?.06*(1-p):0),.641];c.leftPaw=[-.244,c.cup[1]+.12,.641];c.rightPaw=[.244,c.cup[1]+.12,.641];}
+ else c.cup[1]=1.125;
+ // One short scoop from the nearby prepared vegetables, then back to rest.
+ const scoop=filling?Math.sin(Math.PI*progress):0;
+ c.ladle=[.43*(1-scoop),1.35+.055*scoop,.38+.261*scoop];
+ if(filling)c.rightPaw=[c.ladle[0]+.20,c.ladle[1],c.ladle[2]+.008];
+ c.pitcherVisible=c.pour=c.blend=false;c.steam=false;c.meal=true;c.fill=phase==='bowl'?0:filling?smooth((progress-.25)/.5):1;c.ladleVisible=filling;c.sourceVisible=phase==='bowl'||filling;c.headX=filling?.06:handover?-.018*p:0;c.headY=reduced?0:.006*Math.sin(time*.8);return c;
+}
+function controls(phase,progress,time,reduced,cupVisible=true,recipeId=null){
+ if(isHarvestMeal(recipeId))return harvestControls(phase,progress,time,reduced,cupVisible);
  const p=smooth(progress),pulse=reduced?0:Math.sin(time*1.4),pour=phase==='pour',steam=phase==='steam',blend=phase==='blend',handover=phase==='handover';
  const cup=V(steam?.20:pour||blend?-.08:0,1.17+(phase==='idle'?.004*pulse:0),.641);
  const pitcher=V(.31,1.355,.63),pitcherTilt=pour?.65*Math.sin(Math.PI*progress):0;
@@ -59,6 +71,8 @@ export async function createKoalaBarista({pool=defaultPool,scale=1}={}){
  const legacyLiquidColor=liquid.material.color.clone();liquid.material=liquid.material.clone();
  const steam=new THREE.Group();steam.name='KoalaSteam';model.add(steam);const steamMat=new THREE.MeshStandardMaterial({color:'#f4e7d0',transparent:true,opacity:.42,roughness:1,depthWrite:false});for(let i=0;i<3;i++){const ps=Array.from({length:8},(_,j)=>V(Math.sin(j*.65+i)*.012,j*.024,0)),g=new THREE.TubeGeometry(new THREE.CatmullRomCurve3(ps),12,.007,4,false),o=new THREE.Mesh(g,steamMat);o.position.x=(i-1)*.055;steam.add(o);}
  const ownedGeometries=[stream.geometry,...steam.children.map(o=>o.geometry)],ownedMaterials=[stream.material,steamMat,liquid.material];
+ let harvest=null;
+ function harvestFor(id){if(harvest?.id===id)return harvest;if(harvest){harvest.bowl.dispose();harvest.source.dispose();harvest.spoon.dispose();harvest=null;}if(!isHarvestMeal(id))return null;const bowl=createHarvestBowl(id),source=createHarvestBowl(id),spoon=createHarvestSpoon(id);model.add(bowl.root,source.root,spoon.root);source.root.position.set(.43,1.125,.38);source.root.scale.setScalar(.9);harvest={id,bowl,source,spoon};return harvest;}
  let disposed=false,time=0,evaluations=0,provider={phase:'idle',progress:0,cupVisible:true,recipeId:null},current=controls('idle',0,0,false),previous=current,blendElapsed=.28,lastReduced=false,lastApplied=null;
  const worldQ=new THREE.Quaternion(),parentQ=new THREE.Quaternion(),qa=new THREE.Quaternion(),p0=V(),p1=V(),target=V(),direction=V();
  function align(bone,child,targetLocal){
@@ -73,24 +87,25 @@ export async function createKoalaBarista({pool=defaultPool,scale=1}={}){
  function evaluate(c){
   if(!lastApplied||lastApplied.recipeId!==provider.recipeId){const palette=drinkPalettes[provider.recipeId];stream.material.color.set(palette?.[0]??0xe8d8b8);liquid.material.color.set(palette?.[1]??legacyLiquidColor);}
   for(const[b,r]of rest){b.position.copy(r.p);b.quaternion.copy(r.q);}sync();
-  cup.visible=c.cupVisible;cup.position.fromArray(c.cup);cup.rotation.set(0,0,0);pitcher.position.fromArray(c.pitcher);pitcher.rotation.set(0,0,c.pitcherTilt);pitcher.visible=c.pitcherVisible;
+  const meal=harvestFor(provider.recipeId);cup.visible=c.cupVisible&&!meal;cup.position.fromArray(c.cup);cup.rotation.set(0,0,0);pitcher.position.fromArray(c.pitcher);pitcher.rotation.set(0,0,c.pitcherTilt);pitcher.visible=c.pitcherVisible;
+  if(meal){meal.bowl.root.visible=c.cupVisible;meal.bowl.root.position.fromArray(c.cup);meal.bowl.update({fill:c.fill??0});meal.source.root.visible=c.cupVisible&&!!c.sourceVisible;meal.spoon.root.visible=c.cupVisible&&!!c.ladleVisible;if(c.rightPaw)meal.spoon.root.position.fromArray(c.rightPaw).sub(meal.spoon.grip);meal.spoon.showConsumed((c.fill??0)>.65);}
   const left=c.leftPaw?V(...c.leftPaw):V(...c.cup).add(V(-.244,.121,-.007)),right=c.rightPaw?V(...c.rightPaw):c.pitcherVisible?V(...c.pitcher).add(V(.172,.123,0).applyAxisAngle(V(0,0,1),c.pitcherTilt)):V(...c.cup).add(V(.244,.121,-.007));
   solveArm('L',left,c.leftTilt,c.elbowLift);solveArm('R',right,c.rightTilt,c.elbowLift);
   const head=bones.Head;head.quaternion.multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(c.headX,c.headY,0)));
   stream.visible=c.pour;if(c.pour){const lip=V(-.143,.251,0).applyAxisAngle(V(0,0,1),c.pitcherTilt).add(V(...c.pitcher)),surface=V(...c.cup).add(V(0,.246,0)),delta=surface.clone().sub(lip);stream.position.copy(lip).add(surface).multiplyScalar(.5);stream.quaternion.setFromUnitVectors(V(0,1,0),delta.clone().normalize());stream.scale.y=delta.length();}
-  steam.visible=c.steam;steam.position.fromArray(c.pitcher).add(V(0,.245,0));steam.rotation.y=.2*Math.sin(time);sync();root.traverse(o=>{if(o.isSkinnedMesh)o.skeleton.update();});evaluations++;current=c;lastApplied={...provider};
+  steam.visible=c.steam||!!meal&&c.cupVisible&&c.fill>.65;steam.position.fromArray(meal?c.cup:c.pitcher).add(V(0,meal?.205:.245,0));steam.rotation.y=lastReduced?0:.2*Math.sin(time);sync();root.traverse(o=>{if(o.isSkinnedMesh)o.skeleton.update();});evaluations++;current=c;lastApplied={...provider};
  }
  const api={root,bones,model,
   present({phase='idle',progress=0,cupVisible=provider.cupVisible,recipeId=provider.recipeId}={}){if(disposed)return;phase=normalPhase(phase);progress=clamp(progress);if(phase!==provider.phase){previous=current;blendElapsed=0;}provider={phase,progress,cupVisible:!!cupVisible,recipeId:normalRecipe(recipeId)};},
-  pose({phase=provider.phase,progress=provider.progress,time:at=time,reduced=false,cupVisible=provider.cupVisible,recipeId=provider.recipeId}={}){if(disposed)return;provider={phase:normalPhase(phase),progress:clamp(progress),cupVisible:!!cupVisible,recipeId:normalRecipe(recipeId)};time=Number.isFinite(at)?Math.max(0,at):0;blendElapsed=.28;lastReduced=reduced;evaluate(controls(provider.phase,provider.progress,time,reduced,provider.cupVisible));},
+  pose({phase=provider.phase,progress=provider.progress,time:at=time,reduced=false,cupVisible=provider.cupVisible,recipeId=provider.recipeId}={}){if(disposed)return;provider={phase:normalPhase(phase),progress:clamp(progress),cupVisible:!!cupVisible,recipeId:normalRecipe(recipeId)};time=Number.isFinite(at)?Math.max(0,at):0;blendElapsed=.28;lastReduced=reduced;evaluate(controls(provider.phase,provider.progress,time,reduced,provider.cupVisible,provider.recipeId));},
   update({dt=0,visible=true,active=true,paused=false,animate=true,reduced=false}={}){
    if(disposed||paused||!visible||!active||!animate||!root.visible)return;for(let p=root.parent;p;p=p.parent)if(!p.visible)return;
    dt=clamp(dt,0,.05);if(!reduced)time+=dt;const changed=!lastApplied||lastApplied.phase!==provider.phase||lastApplied.progress!==provider.progress||lastApplied.cupVisible!==provider.cupVisible||lastApplied.recipeId!==provider.recipeId||lastReduced!==reduced;if(reduced&&!changed)return;
-   blendElapsed=Math.min(.28,blendElapsed+dt);const next=controls(provider.phase,provider.progress,time,reduced,provider.cupVisible);evaluate(blendElapsed<.28?lerpControls(previous,next,smooth(blendElapsed/.28)):next);lastReduced=reduced;
+   blendElapsed=Math.min(.28,blendElapsed+dt);const next=controls(provider.phase,provider.progress,time,reduced,provider.cupVisible,provider.recipeId);evaluate(blendElapsed<.28?lerpControls(previous,next,smooth(blendElapsed/.28)):next);lastReduced=reduced;
   },
-  snapshot(){return{phase:provider.phase,progress:provider.progress,cupVisible:provider.cupVisible,handoverReleased:provider.phase==='handover'&&lastApplied?.phase==='handover'&&lastApplied.progress>=.45&&blendElapsed>=.28,handoverReady:provider.phase==='handover'&&lastApplied?.phase==='handover'&&lastApplied.progress>=.9&&blendElapsed>=.28,time,evaluations,disposed};},
-  contactPoints(){sync();const points={};for(const side of['L','R']){const a=arms[side],q=a.hand.getWorldQuaternion(new THREE.Quaternion()),base=a.hand.getWorldPosition(V()),local=a.palmFromWrist.clone().applyQuaternion(a.handQ.clone().invert());points['palm'+side]=local.applyQuaternion(q).multiplyScalar(root.getWorldScale(V()).x).add(base).toArray();}points.cupBottom=cup.localToWorld(V(0,.015,0)).toArray();return points;},
-  dispose(){if(disposed)return;disposed=true;root.removeFromParent();const ss=new Set();model.traverse(o=>{if(o.isSkinnedMesh)ss.add(o.skeleton);});for(const s of ss)s.dispose();for(const g of ownedGeometries)g.dispose();for(const m of ownedMaterials)m.dispose();root.clear();lease.release();}
+  snapshot(){return{phase:provider.phase,progress:provider.progress,cupVisible:provider.cupVisible,handoverReleased:provider.phase==='handover'&&lastApplied?.phase==='handover'&&lastApplied.progress>=.45&&blendElapsed>=.28,handoverReady:provider.phase==='handover'&&lastApplied?.phase==='handover'&&lastApplied.progress>=.9&&blendElapsed>=.28,time,evaluations,disposed,recipeId:provider.recipeId,servingKind:harvest?'meal':'drink',...(harvest?harvest.bowl.snapshot():{})};},
+  contactPoints(){sync();const points={};for(const side of['L','R']){const a=arms[side],q=a.hand.getWorldQuaternion(new THREE.Quaternion()),base=a.hand.getWorldPosition(V()),local=a.palmFromWrist.clone().applyQuaternion(a.handQ.clone().invert());points['palm'+side]=local.applyQuaternion(q).multiplyScalar(root.getWorldScale(V()).x).add(base).toArray();}points.cupBottom=cup.localToWorld(V(0,.015,0)).toArray();if(harvest){points.bowlBottom=harvest.bowl.root.localToWorld(V()).toArray();points.servingTip=harvest.spoon.root.localToWorld(harvest.spoon.contact.clone()).toArray();points.servingGrip=harvest.spoon.root.localToWorld(harvest.spoon.grip.clone()).toArray();}return points;},
+  dispose(){if(disposed)return;disposed=true;root.removeFromParent();harvest?.bowl.dispose();harvest?.source.dispose();harvest?.spoon.dispose();harvest=null;const ss=new Set();model.traverse(o=>{if(o.isSkinnedMesh)ss.add(o.skeleton);});for(const s of ss)s.dispose();for(const g of ownedGeometries)g.dispose();for(const m of ownedMaterials)m.dispose();root.clear();lease.release();}
  };
  api.pose();return api;
 }

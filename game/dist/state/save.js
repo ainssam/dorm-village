@@ -1,8 +1,8 @@
-import {initialProgress,validateProgress,migrateProgress} from './progress.js';
+import {initialProgress,validateProgress,migrateProgress,PROGRESS_SCHEMA_VERSION} from './progress.js';
 import {SAVE_KEY,BACKUP_KEY,LEGACY_SAVE_KEY,LEGACY_BACKUP_KEY} from './save-keys.js';
 import {copyLegacyPhotos,LEGACY_PHOTO_STORE_KEY} from '../village/photo-storage.js';
 export {SAVE_KEY,BACKUP_KEY,LEGACY_SAVE_KEY,LEGACY_BACKUP_KEY};
-function parse(raw,allowLegacy=false){if(raw===null)return {status:'missing'};try{if(typeof raw!=='string'||raw.length>32768)return {status:'corrupted'};const s=JSON.parse(raw);if(s?.schemaVersion>6||s?.village?.cafe?.schemaVersion>1||s?.homeRobot?.schemaVersion>1||s?.homeBuild?.schemaVersion>1)return {status:'future-version'};const v=(allowLegacy||[2,3,4,5].includes(s?.schemaVersion))?migrateProgress(s):validateProgress(s);return v.valid?{status:'valid',state:v.state,legacy:s.schemaVersion===1,upgrade:[2,3,4,5].includes(s.schemaVersion)}:{status:'corrupted'};}catch{return {status:'corrupted'};}}
+function parse(raw,allowLegacy=false){if(raw===null)return {status:'missing'};try{if(typeof raw!=='string'||raw.length>32768)return {status:'corrupted'};const s=JSON.parse(raw);if(s?.schemaVersion>PROGRESS_SCHEMA_VERSION||s?.village?.cafe?.schemaVersion>1||s?.homeRobot?.schemaVersion>1||s?.homeBuild?.schemaVersion>1)return {status:'future-version'};const v=(allowLegacy||[2,3,4,5,6].includes(s?.schemaVersion))?migrateProgress(s):validateProgress(s);return v.valid?{status:'valid',state:v.state,legacy:s.schemaVersion===1,upgrade:[2,3,4,5,6].includes(s.schemaVersion)}:{status:'corrupted'};}catch{return {status:'corrupted'};}}
 function versionOf(raw){try{return JSON.parse(raw)?.schemaVersion;}catch{return null;}}
 function result(status,state,base,blocked=false){return {status,state,revision:state.revision,blocked,...base};}
 export function loadSave(storage,{writerReady=true}={}){
