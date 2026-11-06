@@ -1,0 +1,643 @@
+{
+  "scope": "Component DOM only: actual modal/English view/model/CSS, game.js blocked; real button inputs, no gameplay/travel/audio audition proof",
+  "sourceStable": true,
+  "sourceSha256": {
+    "dist/index.html": "e6994ab3caf8b63cb107c2a699c173d4ffe33b0dab239ee2d882a00393deef89",
+    "dist/ui.js": "aefb4119cb43e5211d12a7738e57611b81ae3df48a667832dc4b48e42b3d9b35",
+    "dist/style.css": "971621968f4fa5c6f71a23da4781914758cbbc9880006dfbcb6459ee5ecf1a2f",
+    "dist/release.css": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf",
+    "dist/english/view.js": "42216bf8cbd6556f293ea343d85104439703e3926928e30785f4f037c7dd6b8d",
+    "dist/english/content.js": "fe22652ab3640f2b9d651508098d14d11bf7d3c54a10d26e5e1ef5d9e69f9d63",
+    "dist/english/model.js": "e6ac64184a14108e886b580da5458e51160afb0f39e3cfa77acf25301443d742",
+    "dist/english/styles.css": "cc70dbcb7bf054fcbc667ddef65d09522b99146e4bbdaf90f32775e09c7e3fc1"
+  },
+  "harnessSha256": "3cff8ea790a0adfae6afef7ee82ee38aadc4b31337c62a82c15e4692529bfe88",
+  "results": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "passed": true,
+      "input": "emulated touch taps",
+      "directionsAsk": {
+        "map": null,
+        "firstChoice": {
+          "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+          "top": 406.59375,
+          "bottom": 550.59375,
+          "left": 29,
+          "right": 291,
+          "width": 262,
+          "height": 144,
+          "visible": true
+        }
+      },
+      "routeStart": {
+        "activeKey": "route-straight",
+        "firstChoice": {
+          "text": "Go straight.앞으로 가기",
+          "top": 240.09375,
+          "bottom": 328.09375,
+          "left": 29,
+          "right": 291,
+          "width": 262,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "wrong": {
+        "cafe-wrong": {
+          "group": "주문한 음료 그림 선택",
+          "activeKey": "drink-milk",
+          "feedback": {
+            "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+            "top": 287.34375,
+            "bottom": 390.09375,
+            "left": 29,
+            "right": 291,
+            "width": 262,
+            "height": 102.75,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "물",
+              "top": 107.84375,
+              "bottom": 269.34375,
+              "left": 29,
+              "right": 156.5,
+              "width": 127.5,
+              "height": 161.5,
+              "visible": true
+            },
+            {
+              "text": "우유",
+              "top": 107.84375,
+              "bottom": 269.34375,
+              "left": 163.5,
+              "right": 291,
+              "width": 127.5,
+              "height": 161.5,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        },
+        "route-wrong": {
+          "group": "안내에 맞는 움직임 선택",
+          "activeKey": "route-right",
+          "feedback": {
+            "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+            "top": 478.09375,
+            "bottom": 554.59375,
+            "left": 29,
+            "right": 291,
+            "width": 262,
+            "height": 76.5,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "Go straight.앞으로 가기",
+              "top": 176.09375,
+              "bottom": 264.09375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn left.왼쪽으로 돌기",
+              "top": 274.09375,
+              "bottom": 362.09375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn right.오른쪽으로 돌기",
+              "top": 372.09375,
+              "bottom": 460.09375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 88,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "passed": true,
+      "input": "emulated touch taps",
+      "directionsAsk": {
+        "map": null,
+        "firstChoice": {
+          "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+          "top": 378.59375,
+          "bottom": 466.59375,
+          "left": 29,
+          "right": 361,
+          "width": 332,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "routeStart": {
+        "activeKey": "route-straight",
+        "firstChoice": {
+          "text": "Go straight.앞으로 가기",
+          "top": 723.09375,
+          "bottom": 811.09375,
+          "left": 29,
+          "right": 361,
+          "width": 332,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "wrong": {
+        "cafe-wrong": {
+          "group": "주문한 음료 그림 선택",
+          "activeKey": "drink-milk",
+          "feedback": {
+            "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+            "top": 675.34375,
+            "bottom": 751.84375,
+            "left": 29,
+            "right": 361,
+            "width": 332,
+            "height": 76.5,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "물",
+              "top": 460.84375,
+              "bottom": 657.34375,
+              "left": 29,
+              "right": 191.5,
+              "width": 162.5,
+              "height": 196.5,
+              "visible": true
+            },
+            {
+              "text": "우유",
+              "top": 460.84375,
+              "bottom": 657.34375,
+              "left": 198.5,
+              "right": 361,
+              "width": 162.5,
+              "height": 196.5,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        },
+        "route-wrong": {
+          "group": "안내에 맞는 움직임 선택",
+          "activeKey": "route-right",
+          "feedback": {
+            "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+            "top": 484.09375,
+            "bottom": 560.59375,
+            "left": 29,
+            "right": 361,
+            "width": 332,
+            "height": 76.5,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "Go straight.앞으로 가기",
+              "top": 182.09375,
+              "bottom": 270.09375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn left.왼쪽으로 돌기",
+              "top": 280.09375,
+              "bottom": 368.09375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn right.오른쪽으로 돌기",
+              "top": 378.09375,
+              "bottom": 466.09375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 88,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "passed": true,
+      "input": "emulated touch taps",
+      "directionsAsk": {
+        "map": null,
+        "firstChoice": {
+          "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+          "top": 341.640625,
+          "bottom": 429.640625,
+          "left": 56,
+          "right": 788,
+          "width": 732,
+          "height": 88,
+          "visible": false
+        }
+      },
+      "routeStart": {
+        "activeKey": "route-straight",
+        "firstChoice": {
+          "text": "Go straight.앞으로 가기",
+          "top": 150.890625,
+          "bottom": 238.890625,
+          "left": 56,
+          "right": 788,
+          "width": 732,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "wrong": {
+        "cafe-wrong": {
+          "group": "주문한 음료 그림 선택",
+          "activeKey": "drink-milk",
+          "feedback": {
+            "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+            "top": 255.390625,
+            "bottom": 307.390625,
+            "left": 56,
+            "right": 675.53125,
+            "width": 619.53125,
+            "height": 52,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "물",
+              "top": 16.890625,
+              "bottom": 237.390625,
+              "left": 56,
+              "right": 240.5,
+              "width": 184.5,
+              "height": 220.5,
+              "visible": true
+            },
+            {
+              "text": "우유",
+              "top": 16.890625,
+              "bottom": 237.390625,
+              "left": 251.5,
+              "right": 436,
+              "width": 184.5,
+              "height": 220.5,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        },
+        "route-wrong": {
+          "group": "안내에 맞는 움직임 선택",
+          "activeKey": "route-right",
+          "feedback": {
+            "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+            "top": 324.890625,
+            "bottom": 376.890625,
+            "left": 56,
+            "right": 675.53125,
+            "width": 619.53125,
+            "height": 52,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "Go straight.앞으로 가기",
+              "top": 22.890625,
+              "bottom": 110.890625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn left.왼쪽으로 돌기",
+              "top": 120.890625,
+              "bottom": 208.890625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn right.오른쪽으로 돌기",
+              "top": 218.890625,
+              "bottom": 306.890625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 88,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "passed": true,
+      "input": "emulated touch taps",
+      "directionsAsk": {
+        "map": null,
+        "firstChoice": {
+          "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+          "top": 346.640625,
+          "bottom": 434.640625,
+          "left": 45,
+          "right": 723,
+          "width": 678,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "routeStart": {
+        "activeKey": "route-straight",
+        "firstChoice": {
+          "text": "Go straight.앞으로 가기",
+          "top": 839.890625,
+          "bottom": 927.890625,
+          "left": 45,
+          "right": 723,
+          "width": 678,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "wrong": {
+        "cafe-wrong": {
+          "group": "주문한 음료 그림 선택",
+          "activeKey": "drink-milk",
+          "feedback": {
+            "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+            "top": 625.390625,
+            "bottom": 677.390625,
+            "left": 45,
+            "right": 664.53125,
+            "width": 619.53125,
+            "height": 52,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "물",
+              "top": 386.890625,
+              "bottom": 607.390625,
+              "left": 45,
+              "right": 229.5,
+              "width": 184.5,
+              "height": 220.5,
+              "visible": true
+            },
+            {
+              "text": "우유",
+              "top": 386.890625,
+              "bottom": 607.390625,
+              "left": 240.5,
+              "right": 425,
+              "width": 184.5,
+              "height": 220.5,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        },
+        "route-wrong": {
+          "group": "안내에 맞는 움직임 선택",
+          "activeKey": "route-right",
+          "feedback": {
+            "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+            "top": 573.890625,
+            "bottom": 625.890625,
+            "left": 45,
+            "right": 664.53125,
+            "width": 619.53125,
+            "height": 52,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "Go straight.앞으로 가기",
+              "top": 271.890625,
+              "bottom": 359.890625,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn left.왼쪽으로 돌기",
+              "top": 369.890625,
+              "bottom": 457.890625,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn right.오른쪽으로 돌기",
+              "top": 467.890625,
+              "bottom": 555.890625,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 88,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        }
+      }
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "passed": true,
+      "input": "mouse clicks",
+      "directionsAsk": {
+        "map": null,
+        "firstChoice": {
+          "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+          "top": 346.640625,
+          "bottom": 434.640625,
+          "left": 354,
+          "right": 1086,
+          "width": 732,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "routeStart": {
+        "activeKey": "route-straight",
+        "firstChoice": {
+          "text": "Go straight.앞으로 가기",
+          "top": 798.890625,
+          "bottom": 886.890625,
+          "left": 354,
+          "right": 1086,
+          "width": 732,
+          "height": 88,
+          "visible": true
+        }
+      },
+      "wrong": {
+        "cafe-wrong": {
+          "group": "주문한 음료 그림 선택",
+          "activeKey": "drink-milk",
+          "feedback": {
+            "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+            "top": 625.390625,
+            "bottom": 677.390625,
+            "left": 354,
+            "right": 973.53125,
+            "width": 619.53125,
+            "height": 52,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "물",
+              "top": 386.890625,
+              "bottom": 607.390625,
+              "left": 354,
+              "right": 538.5,
+              "width": 184.5,
+              "height": 220.5,
+              "visible": true
+            },
+            {
+              "text": "우유",
+              "top": 386.890625,
+              "bottom": 607.390625,
+              "left": 549.5,
+              "right": 734,
+              "width": 184.5,
+              "height": 220.5,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        },
+        "route-wrong": {
+          "group": "안내에 맞는 움직임 선택",
+          "activeKey": "route-right",
+          "feedback": {
+            "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+            "top": 511.890625,
+            "bottom": 563.890625,
+            "left": 354,
+            "right": 973.53125,
+            "width": 619.53125,
+            "height": 52,
+            "visible": true
+          },
+          "choices": [
+            {
+              "text": "Go straight.앞으로 가기",
+              "top": 209.890625,
+              "bottom": 297.890625,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn left.왼쪽으로 돌기",
+              "top": 307.890625,
+              "bottom": 395.890625,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 88,
+              "visible": true
+            },
+            {
+              "text": "Turn right.오른쪽으로 돌기",
+              "top": 405.890625,
+              "bottom": 493.890625,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 88,
+              "visible": true
+            }
+          ],
+          "choiceBeforeAudio": true,
+          "feedbackBeforeAudio": true
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "curatedFiles": [
+    "scripts/language-roleplay-dom-review-2026-11-06.mjs",
+    "qa/language-visual-independent-2026-11-06.md",
+    "qa/language-roleplay-dom-summary-2026-11-06.json",
+    "qa/language-roleplay-dom-2026-11-06/final/results.json",
+    "qa/language-roleplay-dom-2026-11-06/final/320x568-directions-ask.png",
+    "qa/language-roleplay-dom-2026-11-06/final/320x568-route-wrong.png",
+    "qa/language-roleplay-dom-2026-11-06/final/320x568-cafe-wrong.png",
+    "qa/language-roleplay-dom-2026-11-06/final/390x844-directions-ask.png",
+    "qa/language-roleplay-dom-2026-11-06/final/844x390-route-wrong.png",
+    "qa/language-roleplay-dom-2026-11-06/final/768x1024-route-1.png",
+    "qa/language-roleplay-dom-2026-11-06/final/1440x900-route-1.png"
+  ]
+}

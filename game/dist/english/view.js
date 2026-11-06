@@ -18,17 +18,18 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
  const el=(tag,text='',attrs={})=>{const node=doc.createElement(tag);if(text)node.textContent=text;for(const[k,v]of Object.entries(attrs))node.setAttribute(k,String(v));return node;};
  const button=(key,text,action,attrs={})=>el('button',text,{type:'button','data-key':key,'data-english-action':action,...attrs});
  const paragraph=(text,kind='')=>el('p',text,kind?{class:kind}:{});
+ const dialogueLine=(prefix,line)=>{const p=paragraph(prefix,'english-dialogue-line');p.append(el('span',line,{lang:'en'}));return p;};
  const nav=el('div','',{class:'english-tabs',role:'tablist','aria-label':'영어 놀이 선택'});
  const panel=el('section','',{class:'english-panel',role:'tabpanel',id:`${uid}-panel`,tabindex:'0'});
  const status=paragraph('','english-feedback learning-feedback');status.setAttribute('role','status');status.setAttribute('aria-live','polite');status.setAttribute('aria-atomic','true');status.setAttribute('data-key','status');
- const actions=el('div','',{class:'english-actions'}),footer=el('div','',{class:'english-footer'});
+ const roleAudio=el('div','',{class:'english-roleplay-audio'}),actions=el('div','',{class:'english-actions'}),footer=el('div','',{class:'english-footer'});
  const tabs=TABS.map(([id,label])=>{const b=button(`tab-${id}`,label,'tab',{'data-value':id,role:'tab',id:`${uid}-tab-${id}`,'aria-controls':`${uid}-panel`});nav.append(b);return b;});
  const sources=el('details','',{class:'english-sources learning-source'});sources.append(el('summary','출처와 소리 안내'));
  sources.append(paragraph('예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.'));
  for(const source of C.sources){const p=paragraph('');p.append(el('a',source.title,{href:source.url,target:'_blank',rel:'noopener noreferrer'}));sources.append(p);}
  sources.append(paragraph(`${C.audioLabel} · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.`));
  footer.append(paragraph('낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히','english-note'),paragraph('탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.','english-note'),sources);
- container.setAttribute('class','english-learning learning-workspace');container.setAttribute('data-english-learning','');container.replaceChildren(nav,panel,status,actions,footer);
+ container.setAttribute('class','english-learning learning-workspace');container.setAttribute('data-english-learning','');container.replaceChildren(nav,panel,status,roleAudio,actions,footer);
 
  function say(text,correct=null){status.textContent=text;status.setAttribute('data-outcome',correct===null?'ready':correct?'correct':'retry');}
  function progress(index,total,text){panel.append(paragraph(`${index+1} / ${total} · ${text}`,'english-progress'));}
@@ -41,14 +42,14 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
   if(state.status==='error'){audioFailure();return;}
   audioNodes.status.textContent=state.status==='loading'?'소리를 준비하고 있어요.':state.status==='playing'?(state.slow?'천천히 재생 중이에요.':'재생 중이에요.'):'버튼을 누르면 다시 들을 수 있어요.';
  }
- function soundControls(id,text,{extraId,extraLabel}={}){
+ function soundControls(id,text,{extraId,extraLabel,destination=panel}={}){
   const box=el('div','',{class:'english-audio'}),row=el('div','',{class:'english-audio-actions'});
   const normal=button('play','소리 듣기','play',{'data-clip':id}),slow=button('slow','천천히 듣기','slow',{'data-clip':id});row.append(normal,slow,button('stop','소리 멈추기','stop'));
   if(extraId)row.append(button('example-play',extraLabel??'예문 듣기','play',{'data-clip':extraId}));
   const transcriptId=`${uid}-transcript`,toggle=button('transcript-toggle',transcriptOpen?'글자 숨기기':'글자 보기','transcript',{'aria-expanded':transcriptOpen,'aria-controls':transcriptId});row.append(toggle);
   const transcript=paragraph(ENGLISH_CLIPS[id]?.text??text,'english-transcript');transcript.setAttribute('data-key','transcript');transcript.setAttribute('id',transcriptId);transcript.setAttribute('lang','en');transcript.hidden=!transcriptOpen;
   const label=paragraph(C.audioLabel,'english-note'),audioStatus=paragraph('버튼을 누르면 소리가 나요.','english-audio-status');audioStatus.setAttribute('data-key','audio-status');audioStatus.setAttribute('role','status');audioStatus.setAttribute('aria-live','polite');
-  box.append(row,label,audioStatus,transcript);panel.append(box);audioNodes={id,currentId:id,normal,slow,transcript,toggle,status:audioStatus};
+  box.append(row,label,audioStatus,transcript);destination.append(box);audioNodes={id,currentId:id,normal,slow,transcript,toggle,status:audioStatus};
  }
  async function play(id,slow){
   stopAudio();const token=generation;const nodes=audioNodes;if(!nodes)return;nodes.currentId=id;nodes.transcript.textContent=ENGLISH_CLIPS[id]?.text??nodes.transcript.textContent;nodes.normal.setAttribute('data-clip',id);nodes.slow.setAttribute('data-clip',id);nodes.status.textContent='소리를 준비하고 있어요.';
@@ -78,7 +79,7 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
   panel.append(paragraph('놓은 조각을 누르면 뺄 수 있어요.','english-note'));
   const tiles=el('div','',{class:'english-tiles',role:'group','aria-label':'문장 조각 선택'});for(const tile of sentences.options()){const b=button(`tile-${tile.index}`,tile.text,'tile',{'data-value':tile.index,lang:'en'});b.disabled=s.selected.includes(tile.index)||s.correct===true;tiles.append(b);}panel.append(tiles);
   say(s.correct===null?'문장을 완성한 뒤 확인해 봐요.':s.correct?`완성했어요! ${q.explanationKo}`:`목표 뜻과 순서를 다시 맞춰 볼까요? ${q.explanationKo}`,s.correct);
-  if(s.correct){panel.append(paragraph(q.sentence,'english-answer'));soundControls(q.clipId,q.sentence);}roundControls(sentences,6,{check:true});
+  if(s.correct){panel.append(el('p',q.sentence,{class:'english-answer',lang:'en'}));soundControls(q.clipId,q.sentence);}roundControls(sentences,6,{check:true});
  }
  function roleChoice(choice){const b=button(`role-${choice.id}`,'','role-choice',{'data-value':choice.id,class:'english-dialogue-choice'});b.append(el('span',choice.line,{lang:'en'}),el('span',choice.meaningKo,{class:'english-choice-meaning'}));return b;}
  function renderMap(s){
@@ -95,25 +96,27 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
  }
  function renderRoleplay(){
   const menu=el('div','',{class:'english-roleplay-menu',role:'group','aria-label':'대화 장소 선택'});for(const id of ['cafe','directions'])menu.append(button(`roleplay-${id}`,C.roleplays[id].label,'roleplay-kind',{'data-value':id,'aria-pressed':roleKind===id}));panel.append(menu);
-  const s=roleplay.snapshot();panel.append(el('h3',C.roleplays[roleKind].label,{class:'english-prompt'}));if(roleKind==='directions')renderMap(s);
-  if(s.done){completion('대화를 마쳤어요',roleKind==='cafe'?'고른 음료를 찾고 감사 인사까지, 카페 대화를 완성했어요!':'길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!');return;}
-  const choices=el('div','',{class:'english-dialogue-choices',role:'group','aria-label':'내가 할 말 고르기'});
+  const s=roleplay.snapshot();panel.append(el('h3',C.roleplays[roleKind].label,{class:'english-prompt'}));
+  if(s.done){if(roleKind==='directions')renderMap(s);completion('대화를 마쳤어요',roleKind==='cafe'?'고른 음료를 찾고 감사 인사까지, 카페 대화를 완성했어요!':'길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!');return;}
+  let audioCue;const hearLater=(id,text)=>{audioCue={id,text};};
+  const choiceLabel=roleKind==='cafe'&&s.stage==='drink'?'주문한 음료 그림 선택':roleKind==='directions'&&s.stage==='route'?'안내에 맞는 움직임 선택':'내가 할 말 고르기';
+  const choices=el('div','',{class:'english-dialogue-choices',role:'group','aria-label':choiceLabel});
   if(roleKind==='cafe'){
    if(s.stage==='ask'){
-    panel.append(paragraph('상대방 · '+C.roleplays.cafe.greeting,'english-dialogue-line'),paragraph(C.roleplays.cafe.greetingKo));soundControls('cafe-1-staff',C.roleplays.cafe.greeting);C.roleplays.cafe.orders.forEach(c=>choices.append(roleChoice(c)));say('두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.');
+    panel.append(dialogueLine('상대방 · ',C.roleplays.cafe.greeting),paragraph(C.roleplays.cafe.greetingKo));hearLater('cafe-1-staff',C.roleplays.cafe.greeting);C.roleplays.cafe.orders.forEach(c=>choices.append(roleChoice(c)));say('두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.');
    }else if(s.stage==='drink'){
-    const order=C.roleplays.cafe.orders.find(c=>c.id===s.drink);panel.append(paragraph('내가 한 말 · '+order.line,'english-dialogue-line'));soundControls(`cafe-1-choice-${s.drink==='milk'?1:2}`,order.line);
+    const order=C.roleplays.cafe.orders.find(c=>c.id===s.drink);panel.append(dialogueLine('내가 한 말 · ',order.line));hearLater(`cafe-1-choice-${s.drink==='milk'?1:2}`,order.line);
     for(const id of ['water','milk']){const w=C.words.find(w=>w.id===id),b=button(`drink-${id}`,'','role-choice',{'data-value':id,'aria-label':`${w.meaningKo} 그림`});b.append(picture(id),el('span',w.meaningKo));choices.append(b);}choices.setAttribute('class','english-picture-choices english-drink-choices');
     say(s.correct===false?`주문은 “${order.line}”였어요. ${s.drink} 그림을 다시 찾아봐요.`:'내가 주문한 음료 그림을 찾아 주세요.',s.correct);
-   }else{panel.append(paragraph('상대방 · Here you are.','english-dialogue-line'),paragraph('여기 있어요.'));soundControls('cafe-2-staff','Here you are.');C.roleplays.thanks.forEach(c=>choices.append(roleChoice(c)));say('음료를 받았어요. 두 감사 표현 중 하나를 골라 봐요.');}
+   }else{panel.append(dialogueLine('상대방 · ','Here you are.'),paragraph('여기 있어요.'));hearLater('cafe-2-staff','Here you are.');C.roleplays.thanks.forEach(c=>choices.append(roleChoice(c)));say('음료를 받았어요. 두 감사 표현 중 하나를 골라 봐요.');}
   }else if(s.stage==='ask'){
-   panel.append(paragraph('도서관으로 가는 길을 정중하게 물어봐요.'));soundControls('directions-1',C.roleplays.directions.questions[0].line);C.roleplays.directions.questions.forEach(c=>choices.append(roleChoice(c)));say('두 표현 모두 길을 물어볼 때 쓸 수 있어요.');
+   panel.append(paragraph('도서관으로 가는 길을 정중하게 물어봐요.'));hearLater('directions-1',C.roleplays.directions.questions[0].line);C.roleplays.directions.questions.forEach(c=>choices.append(roleChoice(c)));say('두 표현 모두 길을 물어볼 때 쓸 수 있어요.');
   }else if(s.stage==='route'){
-   const step=C.directions.steps[s.routeIndex];panel.append(paragraph(`${s.routeIndex+1} / 3 · ${step.line}`,'english-dialogue-line'),paragraph(step.meaningKo));
-   soundControls(C.directions.clipId,C.directions.line);for(const [id,line,ko]of [['straight','Go straight.','앞으로 가기'],['left','Turn left.','왼쪽으로 돌기'],['right','Turn right.','오른쪽으로 돌기']]){const b=button(`route-${id}`,'','role-choice',{'data-value':id});b.append(el('span',line,{lang:'en'}),el('span',ko,{class:'english-choice-meaning'}));choices.append(b);}
+   const step=C.directions.steps[s.routeIndex];panel.append(dialogueLine(`${s.routeIndex+1} / 3 · `,step.line),paragraph(step.meaningKo));
+   hearLater(C.directions.clipId,C.directions.line);for(const [id,line,ko]of [['straight','Go straight.','앞으로 가기'],['left','Turn left.','왼쪽으로 돌기'],['right','Turn right.','오른쪽으로 돌기']]){const b=button(`route-${id}`,'','role-choice',{'data-value':id});b.append(el('span',line,{lang:'en'}),el('span',ko,{class:'english-choice-meaning'}));choices.append(b);}
    say(s.correct===false?`이번 안내는 “${step.line}”예요. ${step.meaningKo}`:'안내에 맞는 움직임을 골라 표시를 옮겨 봐요.',s.correct);
-  }else{panel.append(paragraph('도서관에 도착했어요!'));soundControls('directions-3','Thank you!');C.roleplays.thanks.forEach(c=>choices.append(roleChoice(c)));say('길을 알려 준 상대에게 고마움을 전해요.');}
-  panel.append(choices);actions.append(button('role-reset','대화 처음부터','role-reset'));
+  }else{panel.append(paragraph('도서관에 도착했어요!'));hearLater('directions-3','Thank you!');C.roleplays.thanks.forEach(c=>choices.append(roleChoice(c)));say('길을 알려 준 상대에게 고마움을 전해요.');}
+  if(roleKind==='directions'&&s.stage!=='ask')renderMap(s);panel.append(choices);if(audioCue){roleAudio.hidden=false;soundControls(audioCue.id,audioCue.text,{destination:roleAudio});}actions.append(button('role-reset','대화 처음부터','role-reset'));
  }
  function renderDictionary(){
   const menu=el('div','',{class:'english-shelf-menu',role:'group','aria-label':'책장 선택'});menu.append(button('shelf-words','그림 사전','shelf',{'data-value':'words','aria-pressed':shelf==='words'}),button('shelf-book','도름이 그림책','shelf',{'data-value':'book','aria-pressed':shelf==='book'}));panel.append(menu);
@@ -130,11 +133,16 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
  function render(){
   if(!alive)return;const focusKey=container.contains(doc.activeElement)?doc.activeElement?.getAttribute('data-key'):null;
   container.setAttribute('data-tab',tab);panel.setAttribute('aria-labelledby',`${uid}-tab-${tab}`);tabs.forEach((b,i)=>{const selected=TABS[i][0]===tab;b.setAttribute('aria-selected',selected);b.setAttribute('tabindex',selected?'0':'-1');});
-  audioNodes=null;panel.replaceChildren();actions.replaceChildren();({listening:renderListening,sentences:renderSentences,roleplay:renderRoleplay,dictionary:renderDictionary})[tab]();
-  if(focusKey){const target=[...container.querySelectorAll('[data-key]')].find(n=>n.getAttribute('data-key')===focusKey);if(target&&!target.disabled)target.focus();else{const fallback=[actions.querySelector('[data-key="next"]'),actions.querySelector('[data-key="restart"]'),...panel.querySelectorAll('button')].find(n=>n&&!n.disabled);(fallback??panel).focus();}}
+  audioNodes=null;panel.replaceChildren();roleAudio.replaceChildren();roleAudio.hidden=true;actions.replaceChildren();({listening:renderListening,sentences:renderSentences,roleplay:renderRoleplay,dictionary:renderDictionary})[tab]();
+  if(focusKey){const target=[...container.querySelectorAll('[data-key]')].find(n=>n.getAttribute('data-key')===focusKey);if(target&&!target.disabled)target.focus();else{const fallback=[actions.querySelector('[data-key="next"]'),actions.querySelector('[data-key="restart"]'),...(tab==='roleplay'?panel.querySelectorAll('[data-english-action="role-choice"]'):[]),...panel.querySelectorAll('button')].find(n=>n&&!n.disabled);(fallback??panel).focus();}}
  }
  function setTab(value){if(tab===value||!TABS.some(([id])=>id===value))return;stopAudio();transcriptOpen=false;tab=value;render();if(tab==='sentences')board();}
  const activeSession=()=>tab==='listening'?listening:tab==='sentences'?sentences:null;
+ function revealRoleFeedback(){
+  const dialog=container.closest?.('dialog');if(!dialog?.getBoundingClientRect||!status.getBoundingClientRect)return;
+  const message=status.getBoundingClientRect(),bounds=dialog.getBoundingClientRect();
+  if(message.top<bounds.top||message.bottom>bounds.bottom)status.scrollIntoView?.({block:'nearest',inline:'nearest',behavior:'instant'});
+ }
  function click(event){
   if(!alive)return;const b=event.target?.closest?.('[data-english-action]');if(!b||!container.contains(b)||b.disabled)return;const action=b.dataset.englishAction,value=b.dataset.value;
   if(action==='tab'){setTab(value);return;}
@@ -155,13 +163,13 @@ export function mountEnglishLearning({document:doc=globalThis.document,container
   else if(action==='shelf'&&tab==='dictionary'&&['words','book'].includes(value)){if(shelf===value)return;shelf=value;changed=true;}
   else if(action==='word'&&tab==='dictionary'&&C.words[Number(value)]){wordIndex=Number(value);changed=true;}
   else if(action==='page'&&tab==='dictionary'&&shelf==='book'){const next=pageIndex+Number(value);if(!Number.isInteger(next)||!C.book.pages[next])return;pageIndex=next;changed=true;}
-  if(!changed)return;stopAudio();transcriptOpen=false;render();if(updateBoard)board();
+  if(!changed)return;stopAudio();transcriptOpen=false;render();if(action==='role-choice'&&tab==='roleplay'&&roleplay.snapshot().correct===false)revealRoleFeedback();if(updateBoard)board();
  }
  function keydown(event){const b=event.target?.closest?.('[role="tab"]');if(!alive||!b||!container.contains(b)||event.altKey||event.ctrlKey||event.metaKey)return;const index=TABS.findIndex(([id])=>id===tab);let next;
   if(event.key==='ArrowRight')next=(index+1)%TABS.length;else if(event.key==='ArrowLeft')next=(index+TABS.length-1)%TABS.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=TABS.length-1;else return;event.preventDefault();setTab(TABS[next][0]);tabs[next].focus();
  }
  function hidden(){if(doc.hidden)stopAudio();}
  function blur(){stopAudio();}
- function dispose(){if(!alive)return;alive=false;stopAudio();unsubscribe();container.removeEventListener('click',click);container.removeEventListener('keydown',keydown);doc.removeEventListener?.('visibilitychange',hidden);doc.defaultView?.removeEventListener('blur',blur);if(mounts.get(container)===dispose)mounts.delete(container);}
+ function dispose(){if(!alive)return;alive=false;stopAudio();unsubscribe();roleAudio.replaceChildren();audioNodes=null;container.removeEventListener('click',click);container.removeEventListener('keydown',keydown);doc.removeEventListener?.('visibilitychange',hidden);doc.defaultView?.removeEventListener('blur',blur);if(mounts.get(container)===dispose)mounts.delete(container);}
  container.addEventListener('click',click);container.addEventListener('keydown',keydown);doc.addEventListener?.('visibilitychange',hidden);doc.defaultView?.addEventListener('blur',blur);mounts.set(container,dispose);render();unsubscribe=audio?.subscribe?.(updateAudio)??(()=>{});if(tab==='sentences')board();return dispose;
 }

@@ -1,0 +1,3195 @@
+{
+  "scope": "actual app; map controls plus legal nearby setup; content-answer QA solver, no injected outcomes/time, no actual audition/human-learning proof",
+  "full": false,
+  "touch": false,
+  "reduced": false,
+  "audioFailure": false,
+  "languages": [
+    "korean",
+    "english"
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "renderEvery": 12,
+  "renderScale": 1,
+  "sourceUnchanged": true,
+  "changed": [],
+  "results": [
+    {
+      "name": "korean-all-choice-composition-and-reference",
+      "passed": true
+    },
+    {
+      "name": "korean-stories-and-all-room-entry-points",
+      "passed": true
+    },
+    {
+      "name": "english-all-listening-and-sentence-rounds-text-only",
+      "passed": true
+    },
+    {
+      "name": "english-all-conversation-branches",
+      "passed": true
+    },
+    {
+      "name": "english-dictionary-book-phrases-and-text-fallback",
+      "passed": true
+    },
+    {
+      "name": "english-six-word-review-and-room-entry-points",
+      "passed": true
+    }
+  ],
+  "records": [
+    {
+      "name": "korean-entry",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 124.125,
+          "width": 790,
+          "height": 651.734375
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "맞춤법",
+            "key": "tab-spelling",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "글자 만들기",
+            "key": "tab-composition",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "순우리말",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "한글 이야기",
+            "key": "tab-history",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "되요",
+            "key": "choice-0",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 72,
+            "font": 28
+          },
+          {
+            "text": "돼요",
+            "key": "choice-1",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 72,
+            "font": 28
+          },
+          {
+            "text": "다시 해 보기",
+            "key": "retry",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다음 문제",
+            "key": "next",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 설명 보기",
+            "tag": "SUMMARY",
+            "sourceAccordion": true,
+            "height": 47,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "1 / 8 · 문장에 알맞은 말을 골라요",
+            "font": 18
+          },
+          {
+            "text": "빈칸에 들어갈 말을 눌러 봐요.",
+            "font": 20
+          },
+          {
+            "text": "국립국어원 · 상담 사례 모음: '되어요'의 준말",
+            "font": 16
+          },
+          {
+            "text": "공식 자료 확인 · 2026-10-04",
+            "font": 17
+          },
+          {
+            "text": "탭을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 17
+          }
+        ]
+      }
+    },
+    {
+      "name": "korean-spelling-0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "prompt": "이 책을 읽어도 ___?",
+        "wrong": "되요",
+        "answer": "돼요",
+        "feedback": "다시 골라 볼까요? ‘되어요’를 줄이면 ‘돼요’가 돼요."
+      }
+    },
+    {
+      "name": "korean-spelling-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "prompt": "오늘은 비가 ___ 와요.",
+        "wrong": "않",
+        "answer": "안",
+        "feedback": "다시 골라 볼까요? ‘아니’의 준말인 ‘안’은 ‘와요’ 앞에서 띄어 써요."
+      }
+    },
+    {
+      "name": "korean-composition-0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "target": "나",
+        "feedback": "지금은 ‘가’, 목표는 ‘나’예요. ㄴ 옆에 ㅏ를 놓아요."
+      }
+    },
+    {
+      "name": "korean-composition-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "target": "무",
+        "feedback": "지금은 ‘구’, 목표는 ‘무’예요. ㅁ 아래에 ㅜ를 놓아요."
+      }
+    },
+    {
+      "name": "korean-dictionary-read-0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "word": "하늘",
+        "definition": "땅이나 바다 위로 끝없이 넓게 보이는 공간.",
+        "example": "도름이가 하늘에 뜬 구름을 그렸어요."
+      }
+    },
+    {
+      "name": "korean-dictionary-read-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "word": "바람",
+        "definition": "공기가 움직이는 것.",
+        "example": "바람이 불자 창가의 종이 깃발이 살랑살랑 움직였어요."
+      }
+    },
+    {
+      "name": "korean-meaning-0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "word": "하늘",
+        "answer": "땅이나 바다 위로 끝없이 넓게 보이는 공간.",
+        "feedback": "뜻을 다시 읽어 볼까요? 땅이나 바다 위로 끝없이 넓게 보이는 공간."
+      }
+    },
+    {
+      "name": "korean-meaning-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "word": "바람",
+        "answer": "공기가 움직이는 것.",
+        "feedback": "뜻을 다시 읽어 볼까요? 공기가 움직이는 것."
+      }
+    },
+    {
+      "name": "korean-history",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 12,
+          "width": 790,
+          "height": 876
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "맞춤법",
+            "key": "tab-spelling",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "글자 만들기",
+            "key": "tab-composition",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "순우리말",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "한글 이야기",
+            "key": "tab-history",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 18
+          },
+          {
+            "text": "훈민정음은 어떤 이름일까요?",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 18
+          },
+          {
+            "text": "글자 만들어 보기",
+            "key": "history-compose",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 설명 보기",
+            "tag": "SUMMARY",
+            "sourceAccordion": true,
+            "height": 47,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "10월 9일 한글날",
+            "font": 18
+          },
+          {
+            "text": "누구나 쉽게 배워, 날마다 편하게",
+            "font": 24
+          },
+          {
+            "text": "세종의 뜻을 오늘말로 풀어쓴 문장",
+            "font": 17
+          },
+          {
+            "text": "한글날은 훈민정음을 널리 알린 일을 기념하는 날이에요.",
+            "font": 16
+          },
+          {
+            "text": "처음에는 28자 · 오늘날의 기본 글자는 24자 (자음 14자, 모음 10자)",
+            "font": 20
+          },
+          {
+            "text": "훈민정음은 세종이 만든 글자와 그 글자를 설명한 책의 이름이에요. 사람들이 자기 생각을 글로 쉽게 나눌 수 있게 하려는 뜻이 담겨 있어요.",
+            "font": 16
+          },
+          {
+            "text": "오늘의 말과 생각을 한글로 나눠요.",
+            "font": 20
+          },
+          {
+            "text": "국립한글박물관 · 한글날 제정 100주년 기념 기획특별전: 일구이륙 무한이륙",
+            "font": 16
+          },
+          {
+            "text": "국립한글박물관 · 훈민정음과 한글 디자인",
+            "font": 16
+          },
+          {
+            "text": "국립국어원 · 알고 싶은 한글: 한글의 구성",
+            "font": 16
+          },
+          {
+            "text": "국립국어원 · 알고 싶은 한글: 한글의 이름",
+            "font": 16
+          },
+          {
+            "text": "국사편찬위원회 우리역사넷 · 사료로 본 한국사: 한글의 글자 규칙, 『세종실록』 원문",
+            "font": 16
+          },
+          {
+            "text": "공식 자료 확인 · 2026-10-04",
+            "font": 17
+          },
+          {
+            "text": "탭을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 17
+          }
+        ]
+      }
+    },
+    {
+      "name": "korean-close-reset",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "explicitPolicy": "탭을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요."
+      }
+    },
+    {
+      "name": "story-seed",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "sentences": [
+          "도름이가 흙에 작은 씨앗을 심었어요.",
+          "물을 주고 햇볕이 드는 곳에서 기다렸어요.",
+          "며칠 뒤 초록 새싹이 고개를 내밀었어요."
+        ],
+        "insight": "“며칠 뒤”가 기다린 시간을 알려 줘요. 처음의 작은 씨앗이 마지막에는 새싹으로 달라졌어요."
+      }
+    },
+    {
+      "name": "korean-story-finished",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 55.859375,
+          "width": 790,
+          "height": 788.265625
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "작은 씨앗",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 16
+          },
+          {
+            "text": "책을 기다리는 친구",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 16
+          },
+          {
+            "text": "비 오는 날의 소풍",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 16
+          },
+          {
+            "text": "며칠 뒤",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "초록 새싹",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "이 이야기 처음부터",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48.390625,
+            "font": 16
+          },
+          {
+            "text": "다른 이야기 고르기",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48.390625,
+            "font": 16
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "읽고 싶은 이야기를 골라, 처음부터 마지막까지 문장을 이어요.",
+            "font": 16
+          },
+          {
+            "text": "시간이 흐르는 이야기 · 3 / 3문장",
+            "font": 14
+          },
+          {
+            "text": "“며칠 뒤”가 기다린 시간을 알려 줘요. 처음의 작은 씨앗이 마지막에는 새싹으로 달라졌어요.",
+            "font": 16
+          },
+          {
+            "text": "이야기를 바꿔도 하던 곳이 남아요. 창을 닫으면 처음부터 시작해요.",
+            "font": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "entry-korean.letters",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "tab": "composition"
+      }
+    },
+    {
+      "name": "entry-korean.dictionary",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "tab": "dictionary"
+      }
+    },
+    {
+      "name": "entry-korean.history",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "tab": "history"
+      }
+    },
+    {
+      "name": "english-entry",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 12,
+          "width": 790,
+          "height": 876
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "책",
+            "key": "choice-book",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 272.671875,
+            "font": 20
+          },
+          {
+            "text": "나무",
+            "key": "choice-tree",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 272.671875,
+            "font": 20
+          },
+          {
+            "text": "사과",
+            "key": "choice-apple",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 272.671875,
+            "font": 20
+          },
+          {
+            "text": "다시 해 보기",
+            "key": "retry",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다음 문제",
+            "key": "next",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "1 / 12 · 소리를 듣고 그림을 골라요",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 16
+          },
+          {
+            "text": "버튼을 누르면 다시 들을 수 있어요.",
+            "font": 16
+          },
+          {
+            "text": "소리 듣기를 누른 뒤 그림을 골라 봐요.",
+            "font": 16
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 16
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 16
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 16
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 16
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 16
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 16
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-listening-0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "word": "book",
+        "answer": "책",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "word": "pencil",
+        "answer": "연필",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-sentence-0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "sentence": "I have a book.",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? I have로 가진 것을 말해요. a book은 책 한 권이에요."
+      }
+    },
+    {
+      "name": "english-sentence-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "sentence": "This is my pencil.",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? This is로 소개해요. my pencil은 내 연필이에요."
+      }
+    },
+    {
+      "name": "english-sentence-progress",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 19.671875,
+          "width": 790,
+          "height": 860.640625
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "like",
+            "key": "tile-1",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 55,
+            "font": 20
+          },
+          {
+            "text": "apples.",
+            "key": "tile-2",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 55,
+            "font": 20
+          },
+          {
+            "text": "I",
+            "key": "tile-0",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 55,
+            "font": 20
+          },
+          {
+            "text": "문장 확인",
+            "key": "check",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다시 해 보기",
+            "key": "retry",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다음 문제",
+            "key": "next",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "3 / 6 · 뜻에 맞게 문장 조각을 놓아요",
+            "font": 16
+          },
+          {
+            "text": "아래 조각을 순서대로 눌러 주세요.",
+            "font": 16
+          },
+          {
+            "text": "놓은 조각을 누르면 뺄 수 있어요.",
+            "font": 16
+          },
+          {
+            "text": "문장을 완성한 뒤 확인해 봐요.",
+            "font": 16
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 16
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 16
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 16
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 16
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 16
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 16
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "cafe-greeting-language",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "상대방 · Hello! What would you like?",
+        "english": "Hello! What would you like?",
+        "englishLanguage": "en",
+        "choiceGroup": "내가 할 말 고르기"
+      }
+    },
+    {
+      "name": "english-directions-ask",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 12,
+          "width": 790,
+          "height": 876
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "카페에서 주문하기",
+            "key": "roleplay-cafe",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "길을 물어보기",
+            "key": "roleplay-directions",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+            "key": "role-where",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+            "key": "role-help",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "대화 처음부터",
+            "key": "role-reset",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "도서관으로 가는 길을 정중하게 물어봐요.",
+            "font": 16
+          },
+          {
+            "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 16
+          },
+          {
+            "text": "버튼을 누르면 소리가 나요.",
+            "font": 16
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 16
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 16
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 16
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 16
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 16
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 16
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "cafe-order-language-milk",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "내가 한 말 · Some milk, please.",
+        "english": "Some milk, please.",
+        "englishLanguage": "en",
+        "choiceGroup": "주문한 음료 그림 선택"
+      }
+    },
+    {
+      "name": "english-cafe-wrong-feedback",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "message": "주문은 “Some milk, please.”였어요. milk 그림을 다시 찾아봐요.",
+        "status": {
+          "top": 463.390625,
+          "bottom": 515.390625
+        },
+        "dialog": {
+          "top": 12,
+          "bottom": 888
+        },
+        "fullyVisible": true,
+        "focusedKey": "drink-water",
+        "focusedChoice": {
+          "top": 224.890625,
+          "bottom": 445.390625
+        },
+        "focusedChoiceVisible": true,
+        "beforeAudio": true
+      }
+    },
+    {
+      "name": "cafe-receive-language",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "상대방 · Here you are.",
+        "english": "Here you are.",
+        "englishLanguage": "en",
+        "choiceGroup": "내가 할 말 고르기"
+      }
+    },
+    {
+      "name": "cafe-milk-thank-you",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "feedback": "주문은 “Some milk, please.”였어요. milk 그림을 다시 찾아봐요."
+      }
+    },
+    {
+      "name": "directions-step-language",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "1 / 3 · Go straight.",
+        "english": "Go straight.",
+        "englishLanguage": "en",
+        "choiceGroup": "안내에 맞는 움직임 선택"
+      }
+    },
+    {
+      "name": "english-directions-route",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 12,
+          "width": 790,
+          "height": 876
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 41,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "카페에서 주문하기",
+            "key": "roleplay-cafe",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "길을 물어보기",
+            "key": "roleplay-directions",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "Go straight.앞으로 가기",
+            "key": "route-straight",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "Turn left.왼쪽으로 돌기",
+            "key": "route-left",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "Turn right.오른쪽으로 돌기",
+            "key": "route-right",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "대화 처음부터",
+            "key": "role-reset",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "1 / 3 · Go straight.",
+            "font": 23
+          },
+          {
+            "text": "앞으로 한 칸 가요.",
+            "font": 16
+          },
+          {
+            "text": "연습 지도 · 위쪽이 북쪽 ↑",
+            "font": 16
+          },
+          {
+            "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 16
+          },
+          {
+            "text": "버튼을 누르면 소리가 나요.",
+            "font": 16
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 16
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 16
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 16
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 16
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 16
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 16
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-route-wrong-left",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "message": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+        "status": {
+          "top": 609.890625,
+          "bottom": 661.890625
+        },
+        "dialog": {
+          "top": 12,
+          "bottom": 888
+        },
+        "fullyVisible": true,
+        "focusedKey": "route-left",
+        "focusedChoice": {
+          "top": 405.890625,
+          "bottom": 493.890625
+        },
+        "focusedChoiceVisible": true,
+        "beforeAudio": true
+      }
+    },
+    {
+      "name": "english-route-wrong-right",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "message": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+        "status": {
+          "top": 609.890625,
+          "bottom": 661.890625
+        },
+        "dialog": {
+          "top": 12,
+          "bottom": 888
+        },
+        "fullyVisible": true,
+        "focusedKey": "route-right",
+        "focusedChoice": {
+          "top": 503.890625,
+          "bottom": 591.890625
+        },
+        "focusedChoiceVisible": true,
+        "beforeAudio": true
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thank-you",
+        "line": "Go straight.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step-language",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "2 / 3 · Turn left.",
+        "english": "Turn left.",
+        "englishLanguage": "en",
+        "choiceGroup": "안내에 맞는 움직임 선택"
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thank-you",
+        "line": "Turn left.",
+        "wrongFeedback": [
+          {
+            "action": "straight",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step-language",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "3 / 3 · Go straight again.",
+        "english": "Go straight again.",
+        "englishLanguage": "en",
+        "choiceGroup": "안내에 맞는 움직임 선택"
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thank-you",
+        "line": "Go straight again.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-roleplay",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 12,
+          "width": 790,
+          "height": 876
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 195,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "카페에서 주문하기",
+            "key": "roleplay-cafe",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "길을 물어보기",
+            "key": "roleplay-directions",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+            "key": "role-where",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+            "key": "role-help",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "대화 처음부터",
+            "key": "role-reset",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "도서관으로 가는 길을 정중하게 물어봐요.",
+            "font": 16
+          },
+          {
+            "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 16
+          },
+          {
+            "text": "버튼을 누르면 소리가 나요.",
+            "font": 16
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 16
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 16
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 16
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 16
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 16
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 16
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-dictionary-book",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "example": "This is my book.",
+        "meaning": "책"
+      }
+    },
+    {
+      "name": "english-dictionary-pencil",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "example": "I have a blue pencil.",
+        "meaning": "연필"
+      }
+    },
+    {
+      "name": "english-book-page-0",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "Dormi has a blue pencil.",
+        "alt": "파란 연필을 가진 도름이"
+      }
+    },
+    {
+      "name": "english-book-page-1",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "The pencil is not on the desk.",
+        "alt": "연필이 없는 책상 위를 살펴보는 도름이"
+      }
+    },
+    {
+      "name": "english-book-page-2",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "Dormi looks under the chair.",
+        "alt": "의자 아래에 있는 파란 연필을 살펴보는 도름이"
+      }
+    },
+    {
+      "name": "english-book-page-3",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "text": "There it is! Now Dormi can draw a star.",
+        "alt": "찾은 파란 연필과 별 그림 옆의 도름이"
+      }
+    },
+    {
+      "name": "english-book-last-page",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 12,
+          "width": 790,
+          "height": 876
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림 사전",
+            "key": "shelf-words",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "도름이 그림책",
+            "key": "shelf-book",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "매일 쓰는 다섯 표현",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 51,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-1",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-2",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-3",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-4",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-5",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "앞장",
+            "key": "page-prev",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다음 장",
+            "key": "page-next",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "tag": "SUMMARY",
+            "sourceAccordion": false,
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "도름이의 파란 연필",
+            "font": 16
+          },
+          {
+            "text": "4 / 4 · 도름이의 작은 이야기",
+            "font": 16
+          },
+          {
+            "text": "There it is! Now Dormi can draw a star.",
+            "font": 25
+          },
+          {
+            "text": "여기 있네! 이제 도름이는 별을 그릴 수 있어요.",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 16
+          },
+          {
+            "text": "버튼을 누르면 소리가 나요.",
+            "font": 16
+          },
+          {
+            "text": "Hello!",
+            "font": 16
+          },
+          {
+            "text": "안녕하세요!",
+            "font": 16
+          },
+          {
+            "text": "Thank you.",
+            "font": 16
+          },
+          {
+            "text": "감사합니다.",
+            "font": 16
+          },
+          {
+            "text": "May I come in?",
+            "font": 16
+          },
+          {
+            "text": "들어가도 될까요?",
+            "font": 16
+          },
+          {
+            "text": "Could you help me?",
+            "font": 16
+          },
+          {
+            "text": "도와주시겠어요?",
+            "font": 16
+          },
+          {
+            "text": "See you!",
+            "font": 16
+          },
+          {
+            "text": "또 만나요!",
+            "font": 16
+          },
+          {
+            "text": "연필을 찾았네요! 도름이와 함께 다시 읽어 봐요.",
+            "font": 16
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 16
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 16
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 16
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 16
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 16
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 16
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 16
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-five-phrases",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "phrases": [
+          {
+            "line": "Hello!",
+            "meaning": "안녕하세요!"
+          },
+          {
+            "line": "Thank you.",
+            "meaning": "감사합니다."
+          },
+          {
+            "line": "May I come in?",
+            "meaning": "들어가도 될까요?"
+          },
+          {
+            "line": "Could you help me?",
+            "meaning": "도와주시겠어요?"
+          },
+          {
+            "line": "See you!",
+            "meaning": "또 만나요!"
+          }
+        ],
+        "mode": "read-only text; no listening claim"
+      }
+    },
+    {
+      "name": "english-word-review-complete",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "rect": {
+          "x": 325,
+          "y": 163.609375,
+          "width": 790,
+          "height": 572.765625
+        },
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "나무",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "창문",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "물",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "다시 짝 맞추기",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48.390625,
+            "font": 16
+          },
+          {
+            "text": "마을로 돌아가기",
+            "tag": "BUTTON",
+            "sourceAccordion": false,
+            "height": 48,
+            "font": 16
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "6 / 6",
+            "font": 16
+          },
+          {
+            "text": "window",
+            "font": 16
+          },
+          {
+            "text": "window = 창문 · 여섯 낱말을 모두 연결했어요!",
+            "font": 16
+          }
+        ]
+      }
+    },
+    {
+      "name": "six-word-review",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "seen": [
+          "tree",
+          "sun",
+          "chair",
+          "book",
+          "water",
+          "window"
+        ]
+      }
+    },
+    {
+      "name": "entry-english.sentences",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "tab": "sentences"
+      }
+    },
+    {
+      "name": "entry-english.roleplay",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "tab": "roleplay"
+      }
+    },
+    {
+      "name": "entry-english.dictionary",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "tab": "dictionary"
+      }
+    },
+    {
+      "name": "returned-to-village",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "data": {
+        "state": {
+          "ready": true,
+          "doreumiMotion": {
+            "phase": "idle",
+            "id": null,
+            "label": "",
+            "time": 0,
+            "duration": 0
+          },
+          "clawRuntime": null,
+          "fishScoopRuntime": null,
+          "lookoutRuntime": {
+            "phase": "idle",
+            "elapsed": 0,
+            "paused": false,
+            "mapQueued": false,
+            "scenic": false,
+            "generation": 0,
+            "cover": 0,
+            "disposed": false,
+            "error": null,
+            "ocean": null
+          },
+          "flightRuntime": {
+            "trip": null,
+            "presentation": null,
+            "settlement": {
+              "preparedRoom": null,
+              "cameraSize": null,
+              "syncedRoom": null,
+              "errors": []
+            },
+            "blocked": false,
+            "frameFailure": null,
+            "disposed": false
+          },
+          "boatRuntime": {
+            "trip": null,
+            "presentation": null,
+            "settlement": {
+              "preparedRoom": null,
+              "cameraSize": null,
+              "syncedRoom": null,
+              "errors": []
+            },
+            "blocked": false,
+            "disposed": false
+          },
+          "weatherRuntime": {
+            "status": "disabled",
+            "enabled": false,
+            "city": null,
+            "snapshot": null,
+            "freshness": "expired",
+            "error": null,
+            "retryAtUtcMs": 0,
+            "cacheEntries": 0,
+            "selectedCityId": "seoul",
+            "selectedCity": {
+              "id": "seoul",
+              "label": "서울",
+              "latDeg": 37.5665,
+              "lonDegEast": 126.978,
+              "timeZone": "Asia/Seoul",
+              "source": "preset",
+              "isExample": false,
+              "elevationM": 0
+            },
+            "visualsEnabled": true,
+            "reducedMotion": false,
+            "visualError": null
+          },
+          "produceRuntime": null,
+          "produce": {
+            "season": "calendar",
+            "nodes": {
+              "park.produce.strawberry": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.tomato": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.pumpkin": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.leafy": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.peach": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.pear": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.mandarin": {
+                "harvests": 0,
+                "phase": "seed"
+              }
+            }
+          },
+          "cafeFoodRuntime": {
+            "open": false,
+            "mode": null,
+            "notice": "",
+            "paused": false,
+            "readOnly": false,
+            "seated": false,
+            "seatId": null,
+            "enabledDrinks": [
+              "americano",
+              "latte",
+              "appleJuice",
+              "strawberryJuice",
+              "peachJuice",
+              "pearJuice",
+              "mandarinJuice"
+            ],
+            "enabledMeals": [
+              "tomatoBowl",
+              "pumpkinBowl",
+              "leafyBowl"
+            ],
+            "materials": {
+              "apple": 0,
+              "shell": 0,
+              "autumnLeaf": 0,
+              "petal": 0,
+              "pondFish": 0,
+              "seaFish": 0,
+              "strawberry": 0,
+              "tomato": 0,
+              "pumpkin": 0,
+              "leafy": 0,
+              "peach": 0,
+              "pear": 0,
+              "mandarin": 0
+            },
+            "bag": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "americano": 0,
+              "latte": 0,
+              "appleJuice": 0,
+              "strawberryJuice": 0,
+              "peachJuice": 0,
+              "pearJuice": 0,
+              "mandarinJuice": 0,
+              "tomatoBowl": 0,
+              "pumpkinBowl": 0,
+              "leafyBowl": 0
+            },
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "apples": 0,
+            "operation": null,
+            "barista": null,
+            "carry": null
+          },
+          "amusementFoodRuntime": null,
+          "cafeFood": {
+            "packed": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0
+            },
+            "made": {
+              "americano": 0,
+              "latte": 0,
+              "appleJuice": 0,
+              "strawberryJuice": 0,
+              "peachJuice": 0,
+              "pearJuice": 0,
+              "mandarinJuice": 0,
+              "tomatoBowl": 0,
+              "pumpkinBowl": 0,
+              "leafyBowl": 0
+            },
+            "consumed": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "americano": 0,
+              "latte": 0,
+              "appleJuice": 0,
+              "strawberryJuice": 0,
+              "peachJuice": 0,
+              "pearJuice": 0,
+              "mandarinJuice": 0,
+              "tomatoBowl": 0,
+              "pumpkinBowl": 0,
+              "leafyBowl": 0
+            }
+          },
+          "bakeryRuntime": null,
+          "squareRuntime": null,
+          "tentRuntime": {
+            "seaCue": null,
+            "active": false,
+            "mode": null,
+            "phase": "idle",
+            "duration": 0.8,
+            "inside": false,
+            "paused": false,
+            "activityId": null,
+            "isolated": false,
+            "width": 1440,
+            "height": 900
+          },
+          "marshmallowRuntime": null,
+          "fishCookingRuntime": null,
+          "plazaRuntime": {
+            "burning": false,
+            "clock": 0.061599999999991266,
+            "fireworks": null,
+            "guests": [
+              {
+                "id": "moa-playmate",
+                "x": -17.8,
+                "y": 0.05,
+                "z": 28.8,
+                "yaw": 0,
+                "pose": 0,
+                "moving": false,
+                "distance": 0,
+                "phase": "idle",
+                "seatId": "courtyard.campfire.seat.moa"
+              },
+              {
+                "id": "chinchilla",
+                "x": -8.6,
+                "y": 0.05,
+                "z": 30.6,
+                "yaw": 0,
+                "pose": 0,
+                "moving": false,
+                "distance": 0,
+                "phase": "idle",
+                "seatId": "courtyard.campfire.seat.chinchilla"
+              }
+            ],
+            "audio": {
+              "enabled": false,
+              "burning": false,
+              "muted": false,
+              "hidden": false,
+              "volume": 0.32,
+              "distance": 26.123743988946142,
+              "playing": false,
+              "voices": 0,
+              "burstVoices": 0,
+              "error": "",
+              "disposed": false
+            },
+            "busy": false,
+            "panel": false,
+            "seatControls": false,
+            "pendingFireworks": false,
+            "showCameraPhase": null,
+            "showContext": null,
+            "coverOpacity": 0
+          },
+          "fishingRuntime": null,
+          "fishing": {
+            "total": 0,
+            "counts": {
+              "petal-minnow": 0,
+              "moon-carp": 0,
+              "ribbon-mackerel": 0,
+              "star-bream": 0
+            },
+            "consumed": {
+              "petal-minnow": 0,
+              "moon-carp": 0,
+              "ribbon-mackerel": 0,
+              "star-bream": 0
+            },
+            "meals": {
+              "petal-minnow": 0,
+              "moon-carp": 0,
+              "ribbon-mackerel": 0,
+              "star-bream": 0
+            },
+            "firstCatch": {
+              "petal-minnow": null,
+              "moon-carp": null,
+              "ribbon-mackerel": null,
+              "star-bream": null
+            }
+          },
+          "musicChairRestRuntime": null,
+          "mathResidentRuntime": null,
+          "saveWritable": true,
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "gathering": {
+            "epoch": 0,
+            "nodes": {
+              "park.tree.west": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "park.tree.east": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "courtyard.shell.west": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "courtyard.shell.middle": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "courtyard.shell.east": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "park.leaves.west": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              }
+            }
+          },
+          "residentSpaceUse": null,
+          "elevatorRuntime": null,
+          "schoolFloor": null,
+          "locomotion": {
+            "airborne": false,
+            "height": 0,
+            "sprinting": false,
+            "moving": false,
+            "phase": 0
+          },
+          "gymRuntime": null,
+          "baseballRuntime": null,
+          "raceRuntime": null,
+          "passingRuntime": null,
+          "libraryQuestRuntime": null,
+          "buildRuntime": null,
+          "robotRuntime": null,
+          "cookingRuntime": null,
+          "sky": {
+            "id": "morning",
+            "label": "아침",
+            "clock": "09:57",
+            "timeZone": "Asia/Seoul"
+          },
+          "cafeRuntime": {
+            "open": false,
+            "running": false,
+            "shop": false,
+            "tab": "bread"
+          },
+          "throwRuntime": null,
+          "musicRuntime": null,
+          "audio": {
+            "enabled": false,
+            "unlocked": false,
+            "playing": null,
+            "listening": null,
+            "error": ""
+          },
+          "village": {
+            "cafe": {
+              "schemaVersion": 1,
+              "day": 1,
+              "phase": "idle",
+              "activeMs": 0,
+              "nextArrivalMs": 3000,
+              "nextOrdinal": 1,
+              "jobSerial": 0,
+              "orders": [],
+              "settled": [],
+              "stock": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "qualityStock": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "dough": null,
+              "oven": null,
+              "drink": null,
+              "upgrades": {
+                "warmOven": false,
+                "wideDisplay": false,
+                "cozyCorner": false
+              },
+              "coins": 0,
+              "ledger": {
+                "sold": {
+                  "milkRoll": 0,
+                  "croissant": 0,
+                  "miniCake": 0,
+                  "herbTea": 0,
+                  "cocoa": 0
+                },
+                "served": 0,
+                "revenue": 0,
+                "materials": 0,
+                "fastTips": 0,
+                "qualityTips": 0,
+                "cozyTips": 0,
+                "spent": 0
+              },
+              "today": {
+                "served": 0,
+                "revenue": 0,
+                "materials": 0,
+                "tips": 0
+              }
+            },
+            "bakery": {
+              "phase": "empty",
+              "decoration": null,
+              "completed": 0,
+              "pastries": 0
+            },
+            "mailbox": {
+              "letters": []
+            },
+            "photos": [],
+            "wallPlacements": {}
+          },
+          "residents": [],
+          "worldResidents": [],
+          "library": {
+            "selectedBookId": "pocket-star",
+            "borrowedBookId": null,
+            "readBookIds": []
+          },
+          "activity": null,
+          "discoveryIds": [],
+          "pose": {
+            "name": "run",
+            "amount": 0,
+            "time": 0,
+            "seatContactY": 0.11474484205245972,
+            "anchors": {
+              "leftHand": [
+                -0.6125609400080781,
+                0.43278150436692664,
+                0.05918379257451667
+              ],
+              "rightHand": [
+                0.612543566284419,
+                0.43278150436692664,
+                0.05918379257451667
+              ],
+              "leftFoot": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "rightFoot": [
+                0.211,
+                0.135,
+                0.11
+              ],
+              "seat": [
+                0,
+                0.11474484205245972,
+                0.011705340817570686
+              ],
+              "hands": {
+                "left": [
+                  -0.6125609400080781,
+                  0.43278150436692664,
+                  0.05918379257451667
+                ],
+                "right": [
+                  0.612543566284419,
+                  0.43278150436692664,
+                  0.05918379257451667
+                ]
+              },
+              "feet": {
+                "left": [
+                  -0.211,
+                  0.135,
+                  0.11
+                ],
+                "right": [
+                  0.211,
+                  0.135,
+                  0.11
+                ]
+              }
+            },
+            "bounds": {
+              "min": [
+                -0.5953607559204102,
+                0,
+                -0.4142390787601471
+              ],
+              "max": [
+                0.5953607559204102,
+                1.5831665396690369,
+                0.4671066105365753
+              ]
+            },
+            "bodyBounds": {
+              "min": [
+                -0.5953607559204102,
+                0,
+                -0.4142390787601471
+              ],
+              "max": [
+                0.5953607559204102,
+                1.244211196899414,
+                0.4142765998840332
+              ]
+            },
+            "sleepPitch": -1.5707963267948966,
+            "character": "doreumi-master-rig"
+          },
+          "won": false,
+          "roomId": "courtyard",
+          "worldId": "courtyard",
+          "localPosition": {
+            "x": 0,
+            "z": 3.1
+          },
+          "worldPosition": {
+            "x": 0,
+            "z": 3.1
+          },
+          "transitionPhase": "idle",
+          "inputLocked": false,
+          "starsCollected": 0,
+          "collectedIds": [],
+          "ownedItemIds": [
+            "plant",
+            "picture-frame"
+          ],
+          "rewardClaimIds": [],
+          "completedActivityIds": [],
+          "placements": {},
+          "garden": {
+            "phase": "seed",
+            "moments": [],
+            "petals": 0,
+            "harvests": 0,
+            "harvestedBedIds": []
+          },
+          "saveStatus": "saved",
+          "revision": 3,
+          "position": {
+            "x": 0,
+            "y": 0.05,
+            "z": 3.1
+          },
+          "camera": {
+            "mode": "walk",
+            "x": 7.999999999999997,
+            "y": 13.000000000000002,
+            "z": 23.099999999999998,
+            "target": {
+              "x": 0,
+              "y": 0.4000000000000001,
+              "z": 3.1
+            },
+            "zoom": 1
+          },
+          "quality": "medium",
+          "renderer": {
+            "frame": 126,
+            "calls": 134,
+            "triangles": 79348,
+            "points": 0,
+            "lines": 0,
+            "memory": {
+              "geometries": 3,
+              "textures": 8
+            },
+            "pixelRatio": 1,
+            "buffer": {
+              "width": 1440,
+              "height": 900
+            }
+          },
+          "timings": {
+            "transitionMs": [
+              462,
+              4,
+              405
+            ],
+            "frameIntervals": [
+              1966.6,
+              116.6,
+              366.7,
+              16.7,
+              16.6,
+              483.4,
+              250,
+              116.6,
+              16.6,
+              116.7,
+              100,
+              16.6,
+              116.7,
+              16.6,
+              16.7,
+              16.7,
+              16.7,
+              216.6,
+              100,
+              150,
+              33.3,
+              16.7,
+              16.6,
+              266.7,
+              283.3,
+              233.3,
+              83.4,
+              16.6,
+              16.6,
+              233.4,
+              16.6,
+              249.9,
+              16.8,
+              16.6,
+              116.6,
+              16.8,
+              200,
+              16.6
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": [],
+  "requestsFailed": [],
+  "audioRequests": [],
+  "travelLog": [
+    {
+      "from": "courtyard",
+      "to": "korean",
+      "selected": [
+        "schoolHall",
+        "korean"
+      ],
+      "actual": "korean"
+    },
+    {
+      "from": "korean",
+      "to": "english",
+      "selected": [
+        "english"
+      ],
+      "actual": "english"
+    },
+    {
+      "from": "english",
+      "to": "courtyard",
+      "selected": [
+        "courtyard"
+      ],
+      "actual": "courtyard"
+    }
+  ],
+  "nearLog": [
+    {
+      "requested": "korean.activity",
+      "position": {
+        "x": -6.5,
+        "z": -10.100000000000001
+      },
+      "target": {
+        "x": -6.5,
+        "z": -10.100000000000001
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.activity",
+      "position": {
+        "x": -6.5,
+        "z": -10.100000000000001
+      },
+      "target": {
+        "x": -6.5,
+        "z": -10.100000000000001
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.story",
+      "position": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "target": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.story",
+      "position": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "target": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.letters",
+      "position": {
+        "x": -9.6,
+        "z": -10.05
+      },
+      "target": {
+        "x": -9.6,
+        "z": -10.05
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.dictionary",
+      "position": {
+        "x": -11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": -11.2,
+        "z": -9.35
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.history",
+      "position": {
+        "x": -1.9500000000000002,
+        "z": -10.2
+      },
+      "target": {
+        "x": -1.9500000000000002,
+        "z": -10.2
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "english.activity",
+      "position": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "target": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.activity",
+      "position": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "target": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.roleplay",
+      "position": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "target": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.dictionary",
+      "position": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.dictionary",
+      "position": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.words",
+      "position": {
+        "x": 5.35,
+        "z": -8.05
+      },
+      "target": {
+        "x": 5.35,
+        "z": -8.05
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.sentences",
+      "position": {
+        "x": 6.5,
+        "z": -10.100000000000001
+      },
+      "target": {
+        "x": 6.5,
+        "z": -10.100000000000001
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.roleplay",
+      "position": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "target": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.dictionary",
+      "position": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "roomId": "english"
+    }
+  ]
+}

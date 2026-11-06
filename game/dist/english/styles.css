@@ -74,7 +74,11 @@
  .english-dictionary-entry h3{font-size:29px}
  .english-audio-actions button{flex-basis:125px}
  .english-roleplay-menu button,.english-shelf-menu button{flex:1 1 135px}
+ .english-roleplay-menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .english-roleplay-menu button{padding:10px 8px}
  .english-actions button{flex-basis:120px}
  .english-book-image{max-height:280px}
+ .english-map-frame{max-width:220px;margin:12px auto 16px}
 }
+@media(max-height:540px){.english-map-frame{max-width:220px}}
 @media(prefers-reduced-motion:reduce){.english-learning *{scroll-behavior:auto}}
