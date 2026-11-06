@@ -1,0 +1,639 @@
+{
+  "version": "2026.11.06.3",
+  "kind": "actual game input, original school-owned simulation clock, legal nearby-position setup only",
+  "runtimeFiles": 854,
+  "sourceSameAcrossFinalContexts": true,
+  "fingerprintEncoding": "SHA-256 of UTF-8 JSON path-to-sha256 object, sort_keys=True and separators=(comma, colon)",
+  "fingerprintSha256": "b0efe4c1d6124950ed6347e0dd6b0c9715e45f20e83f0e66858365ddd1a25ede",
+  "importantSourceSha256": {
+    "dist/index.html": "26996214bab555ad05cc5e374fa6d8fa1efd0bd00d0e054c91318b085bcb7c1f",
+    "dist/ui.js": "aefb4119cb43e5211d12a7738e57611b81ae3df48a667832dc4b48e42b3d9b35",
+    "dist/school/galton-workshop.js": "1e2286f05e7518d0fa4179ecfed7ead268432cca3cade39a21854fa5607f7331",
+    "dist/game.js": "8b29fe6d5243d774380e88a389672f85599030c6e4941999223eb2158ee6accb",
+    "dist/world/school-builders.js": "b455f05780a923847aa4d14b04a597cea11616a0634af3dd74f4ce881446240c"
+  },
+  "harnessSha256": "ddc8502de2bcc7267aadf37c4c527cc2d9bd60e72ed283b4d18d6a879fc840ae",
+  "contexts": [
+    {
+      "directory": "qa/galton-discovery-acceptance-2026-11-06/final-touch-320",
+      "version": "2026.11.06.3",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "input": "emulated native touch",
+      "selectInput": "Playwright selectOption on the native select; OS picker UI is not exercised",
+      "reduced": false,
+      "drawingEvery": 12,
+      "renderScale": 1,
+      "results": [
+        {
+          "name": "actual-galton-discovery",
+          "passed": true,
+          "elapsedMs": 54702,
+          "full100": true,
+          "completedTotals": [
+            30,
+            30,
+            100
+          ],
+          "timeControl": "Original school scene frames only; no model clock, count, random source, or outcome injection."
+        }
+      ],
+      "startupFocus": {
+        "tag": "H2",
+        "id": "modal-title",
+        "text": "작은 하루가 시작되는 곳,도름마을",
+        "route": null,
+        "autofocus": true,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 157,
+          "bottom": 227.1875
+        },
+        "dialogRect": {
+          "top": 16,
+          "bottom": 552
+        }
+      },
+      "firstTabFocus": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "느긋하게 산책꽃밭 · 낚시 · 계절 열매",
+        "route": "park",
+        "autofocus": false,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 388.78125,
+          "bottom": 462.21875
+        },
+        "dialogRect": {
+          "top": 16,
+          "bottom": 552
+        }
+      },
+      "resetCancelFocus": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "취소",
+        "route": null,
+        "autofocus": true,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 398.796875,
+          "bottom": 446.796875
+        },
+        "dialogRect": {
+          "top": 102.203125,
+          "bottom": 465.796875
+        }
+      },
+      "resetCancelMainAndBackupBytePreservation": "asserted in executed harness; destructive reset was never selected",
+      "initialView": {
+        "dialog": {
+          "x": 12,
+          "y": 12,
+          "width": 296,
+          "height": 544,
+          "scrollTop": 0
+        },
+        "title": {
+          "top": 31,
+          "bottom": 64.59375,
+          "height": 33.59375
+        },
+        "start": {
+          "top": 263.265625,
+          "bottom": 330.046875,
+          "height": 66.78125
+        },
+        "overflow": false,
+        "canvasTouchAction": "pan-y",
+        "tableFont": "16px",
+        "controls": [
+          {
+            "label": "30개 · 가볍게100개300개",
+            "height": 48
+          },
+          {
+            "label": "구슬 떨어뜨리기",
+            "height": 66.78125
+          },
+          {
+            "label": "잠깐 멈추기",
+            "height": 48
+          },
+          {
+            "label": "결과 지우기",
+            "height": 48
+          }
+        ]
+      },
+      "nativePan": {
+        "before": 79,
+        "after": 183,
+        "delta": 104,
+        "x": 160,
+        "y": 499.984375
+      },
+      "completed": {
+        "first-30-complete": {
+          "total": 30,
+          "bins": [
+            0,
+            2,
+            3,
+            3,
+            13,
+            3,
+            4,
+            2,
+            0
+          ],
+          "previousTotal": null,
+          "released": 30,
+          "landed": 30,
+          "inFlight": 0
+        },
+        "second-30-complete": {
+          "total": 30,
+          "bins": [
+            0,
+            1,
+            4,
+            5,
+            10,
+            3,
+            3,
+            3,
+            1
+          ],
+          "previousTotal": 30,
+          "released": 30,
+          "landed": 30,
+          "inFlight": 0
+        },
+        "100-complete": {
+          "total": 100,
+          "bins": [
+            2,
+            2,
+            7,
+            25,
+            29,
+            23,
+            10,
+            2,
+            0
+          ],
+          "previousTotal": 30,
+          "released": 100,
+          "landed": 100,
+          "inFlight": 0
+        }
+      },
+      "closeReopenPaused": true,
+      "identityBefore": 1,
+      "identityAfter": 2,
+      "movementRestored": {
+        "before": {
+          "x": 0,
+          "z": 3.1
+        },
+        "after": {
+          "x": 0.7110079917093117,
+          "z": 2.7730829217277044
+        },
+        "attempts": [
+          {
+            "key": "ArrowRight",
+            "after": {
+              "x": 0.7110079917093117,
+              "z": 2.7730829217277044
+            }
+          }
+        ]
+      },
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": [],
+        "runtimeStable": true,
+        "changed": []
+      },
+      "recordedUTC": {
+        "start": "2026-11-06T00:32:35.960Z",
+        "end": "2026-11-06T00:33:41.555Z"
+      }
+    },
+    {
+      "directory": "qa/galton-discovery-acceptance-2026-11-06/final-desktop",
+      "version": "2026.11.06.3",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "input": "mouse and keyboard",
+      "selectInput": "Playwright selectOption on the native select; OS picker UI is not exercised",
+      "reduced": false,
+      "drawingEvery": 12,
+      "renderScale": 1,
+      "results": [
+        {
+          "name": "actual-galton-discovery",
+          "passed": true,
+          "elapsedMs": 57750,
+          "full100": false,
+          "completedTotals": [
+            30,
+            30
+          ],
+          "timeControl": "Original school scene frames only; no model clock, count, random source, or outcome injection."
+        }
+      ],
+      "startupFocus": {
+        "tag": "H2",
+        "id": "modal-title",
+        "text": "작은 하루가 시작되는 곳,도름마을",
+        "route": null,
+        "autofocus": true,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 229.859375,
+          "bottom": 307.859375
+        },
+        "dialogRect": {
+          "top": 80.859375,
+          "bottom": 819.140625
+        }
+      },
+      "firstTabFocus": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "느긋하게 산책꽃밭 · 낚시 · 계절 열매",
+        "route": "park",
+        "autofocus": false,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 449.15625,
+          "bottom": 561.15625
+        },
+        "dialogRect": {
+          "top": 80.859375,
+          "bottom": 819.140625
+        }
+      },
+      "resetCancelFocus": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "취소",
+        "route": null,
+        "autofocus": true,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 529.796875,
+          "bottom": 577.796875
+        },
+        "dialogRect": {
+          "top": 293.203125,
+          "bottom": 606.796875
+        }
+      },
+      "resetCancelMainAndBackupBytePreservation": "asserted in executed harness; destructive reset was never selected",
+      "initialView": {
+        "dialog": {
+          "x": 325,
+          "y": 12,
+          "width": 790,
+          "height": 876,
+          "scrollTop": 0
+        },
+        "title": {
+          "top": 41,
+          "bottom": 74.59375,
+          "height": 33.59375
+        },
+        "start": {
+          "top": 188.375,
+          "bottom": 236.375,
+          "height": 48
+        },
+        "overflow": false,
+        "canvasTouchAction": "pan-y",
+        "tableFont": "16px",
+        "controls": [
+          {
+            "label": "30개 · 가볍게100개300개",
+            "height": 48
+          },
+          {
+            "label": "구슬 떨어뜨리기",
+            "height": 48
+          },
+          {
+            "label": "잠깐 멈추기",
+            "height": 48
+          },
+          {
+            "label": "결과 지우기",
+            "height": 48
+          }
+        ]
+      },
+      "nativePan": null,
+      "completed": {
+        "first-30-complete": {
+          "total": 30,
+          "bins": [
+            0,
+            1,
+            5,
+            1,
+            13,
+            5,
+            5,
+            0,
+            0
+          ],
+          "previousTotal": null,
+          "released": 30,
+          "landed": 30,
+          "inFlight": 0
+        },
+        "second-30-complete": {
+          "total": 30,
+          "bins": [
+            0,
+            2,
+            2,
+            1,
+            10,
+            9,
+            3,
+            3,
+            0
+          ],
+          "previousTotal": 30,
+          "released": 30,
+          "landed": 30,
+          "inFlight": 0
+        }
+      },
+      "closeReopenPaused": true,
+      "identityBefore": 1,
+      "identityAfter": 2,
+      "movementRestored": {
+        "before": {
+          "x": 0,
+          "z": 3.1
+        },
+        "after": {
+          "x": -0.4884065937063841,
+          "z": 3.2953626374825524
+        },
+        "attempts": [
+          {
+            "key": "ArrowRight",
+            "after": {
+              "x": 0,
+              "z": 3.1
+            }
+          },
+          {
+            "key": "ArrowLeft",
+            "after": {
+              "x": -0.4884065937063841,
+              "z": 3.2953626374825524
+            }
+          }
+        ]
+      },
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": [],
+        "runtimeStable": true,
+        "changed": []
+      },
+      "recordedUTC": {
+        "start": "2026-11-06T00:34:36.037Z",
+        "end": "2026-11-06T00:35:59.612Z"
+      }
+    },
+    {
+      "directory": "qa/galton-discovery-acceptance-2026-11-06/final-reduced-390",
+      "version": "2026.11.06.3",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "input": "emulated native touch",
+      "selectInput": "Playwright selectOption on the native select; OS picker UI is not exercised",
+      "reduced": true,
+      "drawingEvery": 12,
+      "renderScale": 1,
+      "results": [
+        {
+          "name": "actual-galton-discovery",
+          "passed": true,
+          "elapsedMs": 34500,
+          "full100": false,
+          "completedTotals": [
+            30,
+            30
+          ],
+          "timeControl": "Original school scene frames only; no model clock, count, random source, or outcome injection."
+        }
+      ],
+      "startupFocus": {
+        "tag": "H2",
+        "id": "modal-title",
+        "text": "작은 하루가 시작되는 곳,도름마을",
+        "route": null,
+        "autofocus": true,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 157,
+          "bottom": 227.1875
+        },
+        "dialogRect": {
+          "top": 16,
+          "bottom": 828
+        }
+      },
+      "firstTabFocus": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "느긋하게 산책꽃밭 · 낚시 · 계절 열매",
+        "route": "park",
+        "autofocus": false,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 388.78125,
+          "bottom": 462.21875
+        },
+        "dialogRect": {
+          "top": 16,
+          "bottom": 828
+        }
+      },
+      "resetCancelFocus": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "취소",
+        "route": null,
+        "autofocus": true,
+        "scrollTop": 0,
+        "activeRect": {
+          "top": 510.546875,
+          "bottom": 558.546875
+        },
+        "dialogRect": {
+          "top": 266.453125,
+          "bottom": 577.546875
+        }
+      },
+      "resetCancelMainAndBackupBytePreservation": "asserted in executed harness; destructive reset was never selected",
+      "initialView": {
+        "dialog": {
+          "x": 12,
+          "y": 12,
+          "width": 366,
+          "height": 820,
+          "scrollTop": 0
+        },
+        "title": {
+          "top": 31,
+          "bottom": 64.59375,
+          "height": 33.59375
+        },
+        "start": {
+          "top": 234.375,
+          "bottom": 282.375,
+          "height": 48
+        },
+        "overflow": false,
+        "canvasTouchAction": "pan-y",
+        "tableFont": "16px",
+        "controls": [
+          {
+            "label": "30개 · 가볍게100개300개",
+            "height": 48
+          },
+          {
+            "label": "구슬 떨어뜨리기",
+            "height": 48
+          },
+          {
+            "label": "잠깐 멈추기",
+            "height": 48
+          },
+          {
+            "label": "결과 지우기",
+            "height": 48
+          }
+        ]
+      },
+      "nativePan": {
+        "before": 0,
+        "after": 81,
+        "delta": 81,
+        "x": 195,
+        "y": 575.05859375
+      },
+      "completed": {
+        "first-30-complete": {
+          "total": 30,
+          "bins": [
+            0,
+            2,
+            1,
+            8,
+            6,
+            9,
+            2,
+            1,
+            1
+          ],
+          "previousTotal": null,
+          "released": 30,
+          "landed": 30,
+          "inFlight": 0
+        },
+        "second-30-complete": {
+          "total": 30,
+          "bins": [
+            0,
+            0,
+            3,
+            5,
+            9,
+            11,
+            2,
+            0,
+            0
+          ],
+          "previousTotal": 30,
+          "released": 30,
+          "landed": 30,
+          "inFlight": 0
+        }
+      },
+      "closeReopenPaused": true,
+      "identityBefore": 1,
+      "identityAfter": 2,
+      "movementRestored": {
+        "before": {
+          "x": 0,
+          "z": 3.1
+        },
+        "after": {
+          "x": 0.09954111883930128,
+          "z": 3.0542316090418797
+        },
+        "attempts": [
+          {
+            "key": "ArrowRight",
+            "after": {
+              "x": 0.09954111883930128,
+              "z": 3.0542316090418797
+            }
+          }
+        ]
+      },
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": [],
+        "runtimeStable": true,
+        "changed": []
+      },
+      "recordedUTC": {
+        "start": "2026-11-06T00:36:29.805Z",
+        "end": "2026-11-06T00:37:13.720Z"
+      }
+    }
+  ],
+  "boundaries": [
+    "No outcome, clock, random source, or saved-progress injection",
+    "Map travel and collision-checked nearby-position setup; not entrance-to-board walking",
+    "Native touch swipes and taps; selectOption does not exercise OS picker UI",
+    "300 chosen-count completion and actual browser reload are not part of these runs",
+    "Headless Chromium, software WebGL, DPR1 and 1-in-12 sampled 3D rendering; not physical-device/Safari/screen-reader/user-enjoyment proof",
+    "Historical attempts are retained as diagnostic records, not final passes"
+  ],
+  "curatedArtifacts": [
+    "scripts/galton-discovery-acceptance-2026-11-06.mjs",
+    "qa/galton-browser-final-2026-11-06.md",
+    "qa/galton-browser-final-2026-11-06.json",
+    "qa/galton-discovery-acceptance-2026-11-06/final-touch-320/runtime-start.json",
+    "qa/galton-discovery-acceptance-2026-11-06/final-touch-320/startup-before-dismiss.png",
+    "qa/galton-discovery-acceptance-2026-11-06/final-touch-320/startup-first-tab.png",
+    "qa/galton-discovery-acceptance-2026-11-06/final-touch-320/reset-cancel-focus.png",
+    "qa/galton-discovery-acceptance-2026-11-06/final-touch-320/ready.png",
+    "qa/galton-discovery-acceptance-2026-11-06/final-touch-320/canvas-swipe.png",
+    "qa/galton-discovery-acceptance-2026-11-06/final-touch-320/100-versus-30.png",
+    "qa/galton-discovery-acceptance-2026-11-06/final-desktop/ready.png",
+    "qa/galton-discovery-acceptance-2026-11-06/final-reduced-390/two-30-comparison.png"
+  ]
+}

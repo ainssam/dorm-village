@@ -1,0 +1,103 @@
+{
+  "version": "2026.11.06.3",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "input": "emulated native touch",
+  "selectInput": "Playwright selectOption on the native select; OS picker UI is not exercised",
+  "reduced": true,
+  "drawingEvery": 12,
+  "renderScale": 1,
+  "results": [
+    {
+      "name": "actual-galton-discovery",
+      "passed": true,
+      "elapsedMs": 34500,
+      "full100": false,
+      "completedTotals": [
+        30,
+        30
+      ],
+      "timeControl": "Original school scene frames only; no model clock, count, random source, or outcome injection."
+    }
+  ],
+  "travelLog": [
+    {
+      "from": "courtyard",
+      "to": "math",
+      "title": "2층 · 초록 분필 수학실",
+      "selected": [
+        "schoolHall",
+        "math"
+      ],
+      "actual": "math"
+    },
+    {
+      "from": "math",
+      "to": "courtyard",
+      "title": "마을 광장",
+      "selected": [
+        "courtyard"
+      ],
+      "actual": "courtyard"
+    },
+    {
+      "from": "courtyard",
+      "to": "math",
+      "title": "2층 · 초록 분필 수학실",
+      "selected": [
+        "schoolHall",
+        "math"
+      ],
+      "actual": "math"
+    },
+    {
+      "from": "math",
+      "to": "courtyard",
+      "title": "마을 광장",
+      "selected": [
+        "courtyard"
+      ],
+      "actual": "courtyard"
+    }
+  ],
+  "setupLog": [
+    {
+      "requested": "math.galton",
+      "position": {
+        "x": 2.6999999999999997,
+        "z": 10.149999999999999
+      },
+      "target": {
+        "x": 2.6999999999999997,
+        "z": 10.149999999999999
+      },
+      "roomId": "math"
+    },
+    {
+      "requested": "math.galton",
+      "position": {
+        "x": 2.6999999999999997,
+        "z": 10.149999999999999
+      },
+      "target": {
+        "x": 2.6999999999999997,
+        "z": 10.149999999999999
+      },
+      "roomId": "math"
+    },
+    {
+      "requested": "math.galton",
+      "position": {
+        "x": 2.6999999999999997,
+        "z": 10.149999999999999
+      },
+      "target": {
+        "x": 2.6999999999999997,
+        "z": 10.149999999999999
+      },
+      "roomId": "math"
+    }
+  ]
+}
