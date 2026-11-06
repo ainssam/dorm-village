@@ -19,7 +19,7 @@ const sentences=[
  ['This is my pencil.',['This','is','my','pencil.'],'이것은 내 연필이에요.','This is로 소개해요. my pencil은 내 연필이에요.'],
  ['I like apples.',['I','like','apples.'],'나는 사과를 좋아해요.','I like 뒤에 좋아하는 것을 놓아요. apples는 사과를 통틀어 말해요.'],
  ['The book is under the chair.',['The book','is','under','the chair.'],'책이 의자 아래에 있어요.','under는 아래에 있다는 뜻이에요. 의자 아래의 책을 말해요.'],
- ['May I have some water?',['May I','have','some water?'],'물 좀 주시겠어요?','May I have…?로 정중하게 부탁해요. some water는 물을 조금 달라는 뜻이에요.'],
+ ['May I have some water?',['May I','have','some water?'],'물 좀 주시겠어요?','May I have…?로 정중하게 부탁해요. some water는 양을 딱 정하지 않고 물을 말할 때 써요.'],
  ['The library is next to the school.',['The library','is','next to','the school.'],'도서관이 학교 옆에 있어요.','next to는 바로 옆에 있다는 뜻이에요.']
 ].map(([sentence,tokens,meaningKo,explanationKo],i)=>({id:`sentence-${i+1}`,sentence,tokens,meaningKo,explanationKo,clipId:`sentence-${i+1}`}));
 

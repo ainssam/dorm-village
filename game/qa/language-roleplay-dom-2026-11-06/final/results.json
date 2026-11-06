@@ -1,0 +1,5799 @@
+{
+  "scope": "Component DOM only: actual modal/English view/model/CSS, game.js blocked; real button inputs, no gameplay/travel/audio audition proof",
+  "before": {
+    "dist/index.html": "e6994ab3caf8b63cb107c2a699c173d4ffe33b0dab239ee2d882a00393deef89",
+    "dist/ui.js": "aefb4119cb43e5211d12a7738e57611b81ae3df48a667832dc4b48e42b3d9b35",
+    "dist/style.css": "971621968f4fa5c6f71a23da4781914758cbbc9880006dfbcb6459ee5ecf1a2f",
+    "dist/release.css": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf",
+    "dist/english/view.js": "42216bf8cbd6556f293ea343d85104439703e3926928e30785f4f037c7dd6b8d",
+    "dist/english/content.js": "fe22652ab3640f2b9d651508098d14d11bf7d3c54a10d26e5e1ef5d9e69f9d63",
+    "dist/english/model.js": "e6ac64184a14108e886b580da5458e51160afb0f39e3cfa77acf25301443d742",
+    "dist/english/styles.css": "cc70dbcb7bf054fcbc667ddef65d09522b99146e4bbdaf90f32775e09c7e3fc1"
+  },
+  "after": {
+    "dist/index.html": "e6994ab3caf8b63cb107c2a699c173d4ffe33b0dab239ee2d882a00393deef89",
+    "dist/ui.js": "aefb4119cb43e5211d12a7738e57611b81ae3df48a667832dc4b48e42b3d9b35",
+    "dist/style.css": "971621968f4fa5c6f71a23da4781914758cbbc9880006dfbcb6459ee5ecf1a2f",
+    "dist/release.css": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf",
+    "dist/english/view.js": "42216bf8cbd6556f293ea343d85104439703e3926928e30785f4f037c7dd6b8d",
+    "dist/english/content.js": "fe22652ab3640f2b9d651508098d14d11bf7d3c54a10d26e5e1ef5d9e69f9d63",
+    "dist/english/model.js": "e6ac64184a14108e886b580da5458e51160afb0f39e3cfa77acf25301443d742",
+    "dist/english/styles.css": "cc70dbcb7bf054fcbc667ddef65d09522b99146e4bbdaf90f32775e09c7e3fc1"
+  },
+  "sourceStable": true,
+  "results": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "touch": true,
+      "passed": true,
+      "captures": [
+        {
+          "stage": "cafe-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 31,
+              "bottom": 64.59375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.",
+              "top": 727.09375,
+              "bottom": 803.59375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 76.5,
+              "visible": false
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "top": 523.09375,
+                "bottom": 611.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": false
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "top": 621.09375,
+                "bottom": 709.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": null,
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n상대방 · Hello! What would you like?\n\n안녕하세요! 무엇을 드릴까요?\n\nSome milk, please.\n우유 좀 주세요.\nSome water, please.\n물 좀 주세요.\n\n두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 다시 들을 수 있어요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-drink",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 381,
+            "overflow": false,
+            "title": {
+              "top": -350,
+              "bottom": -316.40625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "내가 주문한 음료 그림을 찾아 주세요.",
+              "top": 287.34375,
+              "bottom": 337.59375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 50.25,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 107.84375,
+                "bottom": 269.34375,
+                "left": 29,
+                "right": 156.5,
+                "width": 127.5,
+                "height": 161.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 107.84375,
+                "bottom": 269.34375,
+                "left": 163.5,
+                "right": 291,
+                "width": 127.5,
+                "height": 161.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "물",
+                "height": 161.5
+              },
+              {
+                "text": "우유",
+                "height": 161.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-water",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n내가 주문한 음료 그림을 찾아 주세요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 381,
+            "overflow": false,
+            "title": {
+              "top": -350,
+              "bottom": -316.40625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+              "top": 287.34375,
+              "bottom": 390.09375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 102.75,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 107.84375,
+                "bottom": 269.34375,
+                "left": 29,
+                "right": 156.5,
+                "width": 127.5,
+                "height": 161.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 107.84375,
+                "bottom": 269.34375,
+                "left": 163.5,
+                "right": 291,
+                "width": 127.5,
+                "height": 161.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "물",
+                "height": 161.5
+              },
+              {
+                "text": "우유",
+                "height": 161.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-milk",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 31,
+              "bottom": 64.59375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+              "top": 722.59375,
+              "bottom": 799.09375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 76.5,
+              "visible": false
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "top": 406.59375,
+                "bottom": 550.59375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 144,
+                "visible": true
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "top": 560.59375,
+                "bottom": 704.59375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 144,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "height": 144
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "height": 144
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "roleplay-directions",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관으로 가는 길을 정중하게 물어봐요.\n\nExcuse me. Where is the library?\n실례합니다. 도서관이 어디에 있나요?\nCould you help me find the library, please?\n도서관 찾는 것을 도와주시겠어요?\n\n두 표현 모두 길을 물어볼 때 쓸 수 있어요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-1",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 511,
+            "overflow": false,
+            "title": {
+              "top": -480,
+              "bottom": -446.40625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": 4.09375,
+              "bottom": 224.09375,
+              "left": 50,
+              "right": 270,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 542.09375,
+              "bottom": 618.59375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 76.5,
+              "visible": false
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 240.09375,
+                "bottom": 328.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 338.09375,
+                "bottom": 426.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 436.09375,
+                "bottom": 524.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 575,
+            "overflow": false,
+            "title": {
+              "top": -544,
+              "bottom": -510.40625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -59.90625,
+              "bottom": 160.09375,
+              "left": 50,
+              "right": 270,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+              "top": 478.09375,
+              "bottom": 554.59375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 76.5,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 176.09375,
+                "bottom": 264.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 274.09375,
+                "bottom": 362.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 372.09375,
+                "bottom": 460.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-right",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-2",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 575,
+            "overflow": false,
+            "title": {
+              "top": -544,
+              "bottom": -510.40625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -59.90625,
+              "bottom": 160.09375,
+              "left": 50,
+              "right": 270,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,1",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 478.09375,
+              "bottom": 554.59375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 76.5,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 176.09375,
+                "bottom": 264.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 274.09375,
+                "bottom": 362.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 372.09375,
+                "bottom": 460.09375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n2 / 3 · Turn left.\n\n제자리에서 왼쪽으로 돌아요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n↑\n출발\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-thanks",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 575,
+            "overflow": false,
+            "title": {
+              "top": -544,
+              "bottom": -510.40625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -136.15625,
+              "bottom": 83.84375,
+              "left": 50,
+              "right": 270,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길을 알려 준 상대에게 고마움을 전해요.",
+              "top": 303.84375,
+              "bottom": 380.34375,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 76.5,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Thank you.감사합니다.",
+                "top": 99.84375,
+                "bottom": 187.84375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "top": 197.84375,
+                "bottom": 285.84375,
+                "left": 29,
+                "right": 291,
+                "width": 262,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "Thank you.감사합니다.",
+                "height": 88
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "role-thank-you",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관에 도착했어요!\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\nThank you.\n감사합니다.\nThanks!\n고마워요!\n\n길을 알려 준 상대에게 고마움을 전해요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-complete",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544,
+              "visible": true
+            },
+            "scrollTop": 553,
+            "overflow": false,
+            "title": {
+              "top": -522,
+              "bottom": -488.40625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -152.40625,
+              "bottom": 67.59375,
+              "left": 50,
+              "right": 270,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!",
+              "top": 140.78125,
+              "bottom": 217.28125,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 76.5,
+              "visible": true
+            },
+            "group": null,
+            "choices": [],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 78
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 78
+              },
+              {
+                "text": "처음부터 다시",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "restart",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\n대화를 마쳤어요\n\n길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!\n\n처음부터 다시\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touch": true,
+      "passed": true,
+      "captures": [
+        {
+          "stage": "cafe-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 31,
+              "bottom": 64.59375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.",
+              "top": 699.09375,
+              "bottom": 749.34375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 50.25,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "top": 495.09375,
+                "bottom": 583.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "top": 593.09375,
+                "bottom": 681.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": null,
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n상대방 · Hello! What would you like?\n\n안녕하세요! 무엇을 드릴까요?\n\nSome milk, please.\n우유 좀 주세요.\nSome water, please.\n물 좀 주세요.\n\n두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 다시 들을 수 있어요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-drink",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 31,
+              "bottom": 64.59375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "내가 주문한 음료 그림을 찾아 주세요.",
+              "top": 675.34375,
+              "bottom": 725.59375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 50.25,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 460.84375,
+                "bottom": 657.34375,
+                "left": 29,
+                "right": 191.5,
+                "width": 162.5,
+                "height": 196.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 460.84375,
+                "bottom": 657.34375,
+                "left": 198.5,
+                "right": 361,
+                "width": 162.5,
+                "height": 196.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 196.5
+              },
+              {
+                "text": "우유",
+                "height": 196.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-water",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n내가 주문한 음료 그림을 찾아 주세요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 31,
+              "bottom": 64.59375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+              "top": 675.34375,
+              "bottom": 751.84375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 76.5,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 460.84375,
+                "bottom": 657.34375,
+                "left": 29,
+                "right": 191.5,
+                "width": 162.5,
+                "height": 196.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 460.84375,
+                "bottom": 657.34375,
+                "left": 198.5,
+                "right": 361,
+                "width": 162.5,
+                "height": 196.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 196.5
+              },
+              {
+                "text": "우유",
+                "height": 196.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-milk",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 31,
+              "bottom": 64.59375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+              "top": 610.59375,
+              "bottom": 660.84375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 50.25,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "top": 378.59375,
+                "bottom": 466.59375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "top": 476.59375,
+                "bottom": 592.59375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 116,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "height": 88
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "height": 116
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "roleplay-directions",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관으로 가는 길을 정중하게 물어봐요.\n\nExcuse me. Where is the library?\n실례합니다. 도서관이 어디에 있나요?\nCould you help me find the library, please?\n도서관 찾는 것을 도와주시겠어요?\n\n두 표현 모두 길을 물어볼 때 쓸 수 있어요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-1",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 31,
+              "bottom": 64.59375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": {
+              "top": 487.09375,
+              "bottom": 707.09375,
+              "left": 85,
+              "right": 305,
+              "width": 220,
+              "height": 220,
+              "visible": true
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 1025.09375,
+              "bottom": 1075.34375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 50.25,
+              "visible": false
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 723.09375,
+                "bottom": 811.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 821.09375,
+                "bottom": 909.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": false
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 919.09375,
+                "bottom": 1007.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 541,
+            "overflow": false,
+            "title": {
+              "top": -510,
+              "bottom": -476.40625,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -53.90625,
+              "bottom": 166.09375,
+              "left": 85,
+              "right": 305,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+              "top": 484.09375,
+              "bottom": 560.59375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 76.5,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 182.09375,
+                "bottom": 270.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 280.09375,
+                "bottom": 368.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 378.09375,
+                "bottom": 466.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-right",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-2",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 541,
+            "overflow": false,
+            "title": {
+              "top": -510,
+              "bottom": -476.40625,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -53.90625,
+              "bottom": 166.09375,
+              "left": 85,
+              "right": 305,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,1",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 484.09375,
+              "bottom": 534.34375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 50.25,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 182.09375,
+                "bottom": 270.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 280.09375,
+                "bottom": 368.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 378.09375,
+                "bottom": 466.09375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n2 / 3 · Turn left.\n\n제자리에서 왼쪽으로 돌아요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n↑\n출발\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-thanks",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 541,
+            "overflow": false,
+            "title": {
+              "top": -510,
+              "bottom": -476.40625,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -130.15625,
+              "bottom": 89.84375,
+              "left": 85,
+              "right": 305,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길을 알려 준 상대에게 고마움을 전해요.",
+              "top": 309.84375,
+              "bottom": 360.09375,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 50.25,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Thank you.감사합니다.",
+                "top": 105.84375,
+                "bottom": 193.84375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "top": 203.84375,
+                "bottom": 291.84375,
+                "left": 29,
+                "right": 361,
+                "width": 332,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Thank you.감사합니다.",
+                "height": 88
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "role-thank-you",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관에 도착했어요!\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\nThank you.\n감사합니다.\nThanks!\n고마워요!\n\n길을 알려 준 상대에게 고마움을 전해요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-complete",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 832,
+              "left": 12,
+              "right": 378,
+              "width": 366,
+              "height": 820,
+              "visible": true
+            },
+            "scrollTop": 223,
+            "overflow": false,
+            "title": {
+              "top": -192,
+              "bottom": -158.40625,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": 149.59375,
+              "bottom": 369.59375,
+              "left": 85,
+              "right": 305,
+              "width": 220,
+              "height": 220,
+              "visible": true
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!",
+              "top": 442.78125,
+              "bottom": 519.28125,
+              "left": 29,
+              "right": 361,
+              "width": 332,
+              "height": 76.5,
+              "visible": true
+            },
+            "group": null,
+            "choices": [],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "처음부터 다시",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "restart",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\n대화를 마쳤어요\n\n길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!\n\n처음부터 다시\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "touch": true,
+      "passed": true,
+      "captures": [
+        {
+          "stage": "cafe-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.",
+              "top": 626.890625,
+              "bottom": 678.890625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": false
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "top": 422.890625,
+                "bottom": 510.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": false
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "top": 520.890625,
+                "bottom": 608.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": null,
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n상대방 · Hello! What would you like?\n\n안녕하세요! 무엇을 드릴까요?\n\nSome milk, please.\n우유 좀 주세요.\nSome water, please.\n물 좀 주세요.\n\n두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 다시 들을 수 있어요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-drink",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 370,
+            "overflow": false,
+            "title": {
+              "top": -329,
+              "bottom": -295.40625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "내가 주문한 음료 그림을 찾아 주세요.",
+              "top": 255.390625,
+              "bottom": 307.390625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 16.890625,
+                "bottom": 237.390625,
+                "left": 56,
+                "right": 240.5,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 16.890625,
+                "bottom": 237.390625,
+                "left": 251.5,
+                "right": 436,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 220.5
+              },
+              {
+                "text": "우유",
+                "height": 220.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-water",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n내가 주문한 음료 그림을 찾아 주세요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 370,
+            "overflow": false,
+            "title": {
+              "top": -329,
+              "bottom": -295.40625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+              "top": 255.390625,
+              "bottom": 307.390625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 16.890625,
+                "bottom": 237.390625,
+                "left": 56,
+                "right": 240.5,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 16.890625,
+                "bottom": 237.390625,
+                "left": 251.5,
+                "right": 436,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 220.5
+              },
+              {
+                "text": "우유",
+                "height": 220.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-milk",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 5,
+            "overflow": false,
+            "title": {
+              "top": 36,
+              "bottom": 69.59375,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+              "top": 545.640625,
+              "bottom": 597.640625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": false
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "top": 341.640625,
+                "bottom": 429.640625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": false
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "top": 439.640625,
+                "bottom": 527.640625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "height": 88
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "roleplay-directions",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관으로 가는 길을 정중하게 물어봐요.\n\nExcuse me. Where is the library?\n실례합니다. 도서관이 어디에 있나요?\nCould you help me find the library, please?\n도서관 찾는 것을 도와주시겠어요?\n\n두 표현 모두 길을 물어볼 때 쓸 수 있어요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-1",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 549,
+            "overflow": false,
+            "title": {
+              "top": -508,
+              "bottom": -474.40625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -89.109375,
+              "bottom": 130.890625,
+              "left": 312,
+              "right": 532,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 452.890625,
+              "bottom": 504.890625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": false
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 150.890625,
+                "bottom": 238.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 248.890625,
+                "bottom": 336.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 346.890625,
+                "bottom": 434.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 677,
+            "overflow": false,
+            "title": {
+              "top": -636,
+              "bottom": -602.40625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -217.109375,
+              "bottom": 2.890625,
+              "left": 312,
+              "right": 532,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+              "top": 324.890625,
+              "bottom": 376.890625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 22.890625,
+                "bottom": 110.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 120.890625,
+                "bottom": 208.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 218.890625,
+                "bottom": 306.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-right",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-2",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 677,
+            "overflow": false,
+            "title": {
+              "top": -636,
+              "bottom": -602.40625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -217.109375,
+              "bottom": 2.890625,
+              "left": 312,
+              "right": 532,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "2,1",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 324.890625,
+              "bottom": 376.890625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 22.890625,
+                "bottom": 110.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 120.890625,
+                "bottom": 208.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 218.890625,
+                "bottom": 306.890625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n2 / 3 · Turn left.\n\n제자리에서 왼쪽으로 돌아요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n↑\n출발\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-thanks",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 611,
+            "overflow": false,
+            "title": {
+              "top": -570,
+              "bottom": -536.40625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -227.359375,
+              "bottom": -7.359375,
+              "left": 312,
+              "right": 532,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길을 알려 준 상대에게 고마움을 전해요.",
+              "top": 216.640625,
+              "bottom": 268.640625,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Thank you.감사합니다.",
+                "top": 12.640625,
+                "bottom": 100.640625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "top": 110.640625,
+                "bottom": 198.640625,
+                "left": 56,
+                "right": 788,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Thank you.감사합니다.",
+                "height": 88
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "role-thank-you",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관에 도착했어요!\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\nThank you.\n감사합니다.\nThanks!\n고마워요!\n\n길을 알려 준 상대에게 고마움을 전해요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-complete",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817,
+              "width": 790,
+              "height": 366,
+              "visible": true
+            },
+            "scrollTop": 611,
+            "overflow": false,
+            "title": {
+              "top": -570,
+              "bottom": -536.40625,
+              "left": 56,
+              "right": 788,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -270.359375,
+              "bottom": -50.359375,
+              "left": 312,
+              "right": 532,
+              "width": 220,
+              "height": 220,
+              "visible": false
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!",
+              "top": 26.828125,
+              "bottom": 78.828125,
+              "left": 56,
+              "right": 675.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": null,
+            "choices": [],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "처음부터 다시",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "restart",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\n대화를 마쳤어요\n\n길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!\n\n처음부터 다시\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "touch": true,
+      "passed": true,
+      "captures": [
+        {
+          "stage": "cafe-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.",
+              "top": 626.890625,
+              "bottom": 678.890625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "top": 422.890625,
+                "bottom": 510.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "top": 520.890625,
+                "bottom": 608.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": null,
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n상대방 · Hello! What would you like?\n\n안녕하세요! 무엇을 드릴까요?\n\nSome milk, please.\n우유 좀 주세요.\nSome water, please.\n물 좀 주세요.\n\n두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 다시 들을 수 있어요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-drink",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "내가 주문한 음료 그림을 찾아 주세요.",
+              "top": 625.390625,
+              "bottom": 677.390625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 45,
+                "right": 229.5,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 240.5,
+                "right": 425,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 220.5
+              },
+              {
+                "text": "우유",
+                "height": 220.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-water",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n내가 주문한 음료 그림을 찾아 주세요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+              "top": 625.390625,
+              "bottom": 677.390625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 45,
+                "right": 229.5,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 240.5,
+                "right": 425,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 220.5
+              },
+              {
+                "text": "우유",
+                "height": 220.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-milk",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+              "top": 550.640625,
+              "bottom": 602.640625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "top": 346.640625,
+                "bottom": 434.640625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "top": 444.640625,
+                "bottom": 532.640625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "height": 88
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "roleplay-directions",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관으로 가는 길을 정중하게 물어봐요.\n\nExcuse me. Where is the library?\n실례합니다. 도서관이 어디에 있나요?\nCould you help me find the library, please?\n도서관 찾는 것을 도와주시겠어요?\n\n두 표현 모두 길을 물어볼 때 쓸 수 있어요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-1",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": {
+              "top": 459.890625,
+              "bottom": 819.890625,
+              "left": 204,
+              "right": 564,
+              "width": 360,
+              "height": 360,
+              "visible": true
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 1141.890625,
+              "bottom": 1193.890625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": false
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 839.890625,
+                "bottom": 927.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 937.890625,
+                "bottom": 1025.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": false
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 1035.890625,
+                "bottom": 1123.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 568,
+            "overflow": false,
+            "title": {
+              "top": -527,
+              "bottom": -493.40625,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -108.109375,
+              "bottom": 251.890625,
+              "left": 204,
+              "right": 564,
+              "width": 360,
+              "height": 360,
+              "visible": false
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+              "top": 573.890625,
+              "bottom": 625.890625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 271.890625,
+                "bottom": 359.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 369.890625,
+                "bottom": 457.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 467.890625,
+                "bottom": 555.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-right",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-2",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 568,
+            "overflow": false,
+            "title": {
+              "top": -527,
+              "bottom": -493.40625,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -108.109375,
+              "bottom": 251.890625,
+              "left": 204,
+              "right": 564,
+              "width": 360,
+              "height": 360,
+              "visible": false
+            },
+            "marker": "2,1",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 573.890625,
+              "bottom": 625.890625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 271.890625,
+                "bottom": 359.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 369.890625,
+                "bottom": 457.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 467.890625,
+                "bottom": 555.890625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n2 / 3 · Turn left.\n\n제자리에서 왼쪽으로 돌아요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n↑\n출발\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-thanks",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 488,
+            "overflow": false,
+            "title": {
+              "top": -447,
+              "bottom": -413.40625,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -104.359375,
+              "bottom": 255.640625,
+              "left": 204,
+              "right": 564,
+              "width": 360,
+              "height": 360,
+              "visible": false
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길을 알려 준 상대에게 고마움을 전해요.",
+              "top": 479.640625,
+              "bottom": 531.640625,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Thank you.감사합니다.",
+                "top": 275.640625,
+                "bottom": 363.640625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "top": 373.640625,
+                "bottom": 461.640625,
+                "left": 45,
+                "right": 723,
+                "width": 678,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Thank you.감사합니다.",
+                "height": 88
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "role-thank-you",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관에 도착했어요!\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\nThank you.\n감사합니다.\nThanks!\n고마워요!\n\n길을 알려 준 상대에게 고마움을 전해요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-complete",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 1012,
+              "left": 16,
+              "right": 752,
+              "width": 736,
+              "height": 1000,
+              "visible": true
+            },
+            "scrollTop": 118,
+            "overflow": false,
+            "title": {
+              "top": -77,
+              "bottom": -43.40625,
+              "left": 45,
+              "right": 723,
+              "width": 678,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": 222.640625,
+              "bottom": 582.640625,
+              "left": 204,
+              "right": 564,
+              "width": 360,
+              "height": 360,
+              "visible": true
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!",
+              "top": 659.828125,
+              "bottom": 711.828125,
+              "left": 45,
+              "right": 664.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": null,
+            "choices": [],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "처음부터 다시",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "restart",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\n대화를 마쳤어요\n\n길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!\n\n처음부터 다시\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        }
+      ]
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touch": false,
+      "passed": true,
+      "captures": [
+        {
+          "stage": "cafe-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.",
+              "top": 626.890625,
+              "bottom": 678.890625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "top": 422.890625,
+                "bottom": 510.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "top": 520.890625,
+                "bottom": 608.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Some milk, please.우유 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "Some water, please.물 좀 주세요.",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": null,
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n상대방 · Hello! What would you like?\n\n안녕하세요! 무엇을 드릴까요?\n\nSome milk, please.\n우유 좀 주세요.\nSome water, please.\n물 좀 주세요.\n\n두 표현 모두 정중해요. 마시고 싶은 것을 골라 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 다시 들을 수 있어요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-drink",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "내가 주문한 음료 그림을 찾아 주세요.",
+              "top": 625.390625,
+              "bottom": 677.390625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 354,
+                "right": 538.5,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 549.5,
+                "right": 734,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 220.5
+              },
+              {
+                "text": "우유",
+                "height": 220.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-water",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n내가 주문한 음료 그림을 찾아 주세요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "cafe-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.",
+              "top": 625.390625,
+              "bottom": 677.390625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "주문한 음료 그림 선택",
+            "choices": [
+              {
+                "text": "물",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 354,
+                "right": 538.5,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              },
+              {
+                "text": "우유",
+                "top": 386.890625,
+                "bottom": 607.390625,
+                "left": 549.5,
+                "right": 734,
+                "width": 184.5,
+                "height": 220.5,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "물",
+                "height": 220.5
+              },
+              {
+                "text": "우유",
+                "height": 220.5
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "drink-milk",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n카페에서 주문하기\n\n내가 한 말 · Some water, please.\n\n물\n우유\n\n주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-ask",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 0,
+            "overflow": false,
+            "title": {
+              "top": 41,
+              "bottom": 74.59375,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": true
+            },
+            "map": null,
+            "marker": null,
+            "feedback": {
+              "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+              "top": 550.640625,
+              "bottom": 602.640625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "top": 346.640625,
+                "bottom": 434.640625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "top": 444.640625,
+                "bottom": 532.640625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+                "height": 88
+              },
+              {
+                "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": null,
+            "activeKey": "roleplay-directions",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관으로 가는 길을 정중하게 물어봐요.\n\nExcuse me. Where is the library?\n실례합니다. 도서관이 어디에 있나요?\nCould you help me find the library, please?\n도서관 찾는 것을 도와주시겠어요?\n\n두 표현 모두 길을 물어볼 때 쓸 수 있어요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-1",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 41,
+            "overflow": false,
+            "title": {
+              "top": 0,
+              "bottom": 33.59375,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": 418.890625,
+              "bottom": 778.890625,
+              "left": 540,
+              "right": 900,
+              "width": 360,
+              "height": 360,
+              "visible": true
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 1100.890625,
+              "bottom": 1152.890625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": false
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 798.890625,
+                "bottom": 886.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 896.890625,
+                "bottom": 984.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": false
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 994.890625,
+                "bottom": 1082.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": false
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-wrong",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 630,
+            "overflow": false,
+            "title": {
+              "top": -589,
+              "bottom": -555.40625,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -170.109375,
+              "bottom": 189.890625,
+              "left": 540,
+              "right": 900,
+              "width": 360,
+              "height": 360,
+              "visible": false
+            },
+            "marker": "2,2",
+            "feedback": {
+              "text": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.",
+              "top": 511.890625,
+              "bottom": 563.890625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 209.890625,
+                "bottom": 297.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 307.890625,
+                "bottom": 395.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 405.890625,
+                "bottom": 493.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-right",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n1 / 3 · Go straight.\n\n앞으로 한 칸 가요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n출발\n↑\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "route-2",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 630,
+            "overflow": false,
+            "title": {
+              "top": -589,
+              "bottom": -555.40625,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -170.109375,
+              "bottom": 189.890625,
+              "left": 540,
+              "right": 900,
+              "width": 360,
+              "height": 360,
+              "visible": false
+            },
+            "marker": "2,1",
+            "feedback": {
+              "text": "안내에 맞는 움직임을 골라 표시를 옮겨 봐요.",
+              "top": 511.890625,
+              "bottom": 563.890625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "안내에 맞는 움직임 선택",
+            "choices": [
+              {
+                "text": "Go straight.앞으로 가기",
+                "top": 209.890625,
+                "bottom": 297.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "top": 307.890625,
+                "bottom": 395.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "top": 405.890625,
+                "bottom": 493.890625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Go straight.앞으로 가기",
+                "height": 88
+              },
+              {
+                "text": "Turn left.왼쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "Turn right.오른쪽으로 돌기",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "route-straight",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n2 / 3 · Turn left.\n\n제자리에서 왼쪽으로 돌아요.\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n↑\n출발\nGo straight.\n앞으로 가기\nTurn left.\n왼쪽으로 돌기\nTurn right.\n오른쪽으로 돌기\n\n안내에 맞는 움직임을 골라 표시를 옮겨 봐요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-thanks",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 612,
+            "overflow": false,
+            "title": {
+              "top": -571,
+              "bottom": -537.40625,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": -228.359375,
+              "bottom": 131.640625,
+              "left": 540,
+              "right": 900,
+              "width": 360,
+              "height": 360,
+              "visible": false
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길을 알려 준 상대에게 고마움을 전해요.",
+              "top": 355.640625,
+              "bottom": 407.640625,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": "내가 할 말 고르기",
+            "choices": [
+              {
+                "text": "Thank you.감사합니다.",
+                "top": 151.640625,
+                "bottom": 239.640625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "top": 249.640625,
+                "bottom": 337.640625,
+                "left": 354,
+                "right": 1086,
+                "width": 732,
+                "height": 88,
+                "visible": true
+              }
+            ],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "Thank you.감사합니다.",
+                "height": 88
+              },
+              {
+                "text": "Thanks!고마워요!",
+                "height": 88
+              },
+              {
+                "text": "소리 듣기",
+                "height": 50
+              },
+              {
+                "text": "천천히 듣기",
+                "height": 50
+              },
+              {
+                "text": "소리 멈추기",
+                "height": 50
+              },
+              {
+                "text": "글자 보기",
+                "height": 50
+              },
+              {
+                "text": "대화 처음부터",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "role-thank-you",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n도서관에 도착했어요!\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\nThank you.\n감사합니다.\nThanks!\n고마워요!\n\n길을 알려 준 상대에게 고마움을 전해요.\n\n소리 듣기\n천천히 듣기\n소리 멈추기\n글자 보기\n\n미국 영어 합성음성\n\n버튼을 누르면 소리가 나요.\n\n대화 처음부터\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        },
+        {
+          "stage": "directions-complete",
+          "data": {
+            "dialog": {
+              "top": 12,
+              "bottom": 888,
+              "left": 325,
+              "right": 1115,
+              "width": 790,
+              "height": 876,
+              "visible": true
+            },
+            "scrollTop": 242,
+            "overflow": false,
+            "title": {
+              "top": -201,
+              "bottom": -167.40625,
+              "left": 354,
+              "right": 1086,
+              "width": 732,
+              "height": 33.59375,
+              "visible": false
+            },
+            "map": {
+              "top": 98.640625,
+              "bottom": 458.640625,
+              "left": 540,
+              "right": 900,
+              "width": 360,
+              "height": 360,
+              "visible": true
+            },
+            "marker": "0,1",
+            "feedback": {
+              "text": "길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!",
+              "top": 535.828125,
+              "bottom": 587.828125,
+              "left": 354,
+              "right": 973.53125,
+              "width": 619.53125,
+              "height": 52,
+              "visible": true
+            },
+            "group": null,
+            "choices": [],
+            "choiceBeforeAudio": true,
+            "feedbackBeforeAudio": true,
+            "targets": [
+              {
+                "text": "×",
+                "height": 48
+              },
+              {
+                "text": "듣고 찾기",
+                "height": 50
+              },
+              {
+                "text": "문장 만들기",
+                "height": 50
+              },
+              {
+                "text": "마을 대화",
+                "height": 50
+              },
+              {
+                "text": "그림책 사전",
+                "height": 50
+              },
+              {
+                "text": "카페에서 주문하기",
+                "height": 50
+              },
+              {
+                "text": "길을 물어보기",
+                "height": 50
+              },
+              {
+                "text": "처음부터 다시",
+                "height": 50
+              }
+            ],
+            "labelFont": "20px",
+            "activeKey": "restart",
+            "text": "×\n소리숲 영어실\n듣고 찾기\n문장 만들기\n마을 대화\n그림책 사전\n카페에서 주문하기\n길을 물어보기\n길을 물어보기\n\n연습 지도 · 위쪽이 북쪽 ↑\n\n도서관\n←\n출발\n대화를 마쳤어요\n\n길 안내를 따라 도서관에 도착했어요. 대화를 완성했어요!\n\n처음부터 다시\n\n낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히\n\n탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.\n\n출처와 소리 안내"
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": []
+}

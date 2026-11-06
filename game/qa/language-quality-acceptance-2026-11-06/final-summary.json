@@ -1,0 +1,255 @@
+{
+  "version": "2026.11.06.4",
+  "wholePackageGate": {
+    "syntax": "passed",
+    "tests": 364,
+    "passed": 364,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMs": 122145.075881
+  },
+  "runtimeMatchesAllFiveRunsAndWholeGate": true,
+  "distFilesPerRun": 854,
+  "harnessIdenticalAcrossFiveRuns": true,
+  "method": "Actual app with real map/button input; QA prepares only legal nearby avatar positions and samples drawing. Source-answer lookup is a QA solver, with no injected learning outcomes or simulated time. Chromium software WebGL and muted speech do not prove real-device performance or speech pronunciation.",
+  "baselineInterpretation": "First pre-change handset run preserved a 48px-all-controls QA assertion failure; measured Korean source disclosure was47px, main controls48px+. Separate Korean full-content supplement passed. Baseline and final source fingerprints must not be conflated.",
+  "runs": [
+    {
+      "name": "final-touch",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scope": "full Korean and English content flows",
+      "languages": [
+        "korean",
+        "english"
+      ],
+      "touch": true,
+      "reducedMotion": false,
+      "passedGroups": 6,
+      "distFiles": 854,
+      "startEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "7af4e773e9e865773e20adf40b4a9e547706fb355a605849c5fae3e127e78072",
+      "pageExceptions": 0,
+      "httpErrors": 0,
+      "unexpectedRequestFailures": 0,
+      "expectedAudioFailures": [],
+      "consoleErrors": [],
+      "roleWrongFeedback": [
+        {
+          "case": "english-cafe-wrong-feedback",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "drink-water"
+        },
+        {
+          "case": "english-route-wrong-left",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-left"
+        },
+        {
+          "case": "english-route-wrong-right",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-right"
+        }
+      ],
+      "resultPath": "qa/language-quality-acceptance-2026-11-06/final-touch/results.json"
+    },
+    {
+      "name": "final-desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "scope": "representative flows; first two rounds per main quiz, one conversation path per kind, full book and six-word review",
+      "languages": [
+        "korean",
+        "english"
+      ],
+      "touch": false,
+      "reducedMotion": false,
+      "passedGroups": 6,
+      "distFiles": 854,
+      "startEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "7af4e773e9e865773e20adf40b4a9e547706fb355a605849c5fae3e127e78072",
+      "pageExceptions": 0,
+      "httpErrors": 0,
+      "unexpectedRequestFailures": 0,
+      "expectedAudioFailures": [],
+      "consoleErrors": [],
+      "roleWrongFeedback": [
+        {
+          "case": "english-cafe-wrong-feedback",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "drink-water"
+        },
+        {
+          "case": "english-route-wrong-left",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-left"
+        },
+        {
+          "case": "english-route-wrong-right",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-right"
+        }
+      ],
+      "resultPath": "qa/language-quality-acceptance-2026-11-06/final-desktop/results.json"
+    },
+    {
+      "name": "final-audio-failure",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "scope": "representative flows; first two rounds per main quiz, one conversation path per kind, full book and six-word review",
+      "languages": [
+        "english"
+      ],
+      "touch": true,
+      "reducedMotion": false,
+      "passedGroups": 4,
+      "distFiles": 854,
+      "startEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "7af4e773e9e865773e20adf40b4a9e547706fb355a605849c5fae3e127e78072",
+      "pageExceptions": 0,
+      "httpErrors": 0,
+      "unexpectedRequestFailures": 0,
+      "expectedAudioFailures": [
+        "normal/book-page-4.mp3",
+        "slow/book-page-4.mp3"
+      ],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: net::ERR_FAILED",
+          "url": "http://127.0.0.1:4173/english/audio/normal/book-page-4.mp3"
+        },
+        {
+          "text": "Failed to load resource: net::ERR_FAILED",
+          "url": "http://127.0.0.1:4173/english/audio/slow/book-page-4.mp3"
+        }
+      ],
+      "roleWrongFeedback": [
+        {
+          "case": "english-cafe-wrong-feedback",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "drink-water"
+        },
+        {
+          "case": "english-route-wrong-left",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-left"
+        },
+        {
+          "case": "english-route-wrong-right",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-right"
+        }
+      ],
+      "resultPath": "qa/language-quality-acceptance-2026-11-06/final-audio-failure/results.json"
+    },
+    {
+      "name": "final-landscape",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "scope": "representative flows; first two rounds per main quiz, one conversation path per kind, full book and six-word review",
+      "languages": [
+        "korean",
+        "english"
+      ],
+      "touch": true,
+      "reducedMotion": false,
+      "passedGroups": 6,
+      "distFiles": 854,
+      "startEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "7af4e773e9e865773e20adf40b4a9e547706fb355a605849c5fae3e127e78072",
+      "pageExceptions": 0,
+      "httpErrors": 0,
+      "unexpectedRequestFailures": 0,
+      "expectedAudioFailures": [],
+      "consoleErrors": [],
+      "roleWrongFeedback": [
+        {
+          "case": "english-cafe-wrong-feedback",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "drink-water"
+        },
+        {
+          "case": "english-route-wrong-left",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-left"
+        },
+        {
+          "case": "english-route-wrong-right",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-right"
+        }
+      ],
+      "resultPath": "qa/language-quality-acceptance-2026-11-06/final-landscape/results.json"
+    },
+    {
+      "name": "final-tablet-reduced",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "scope": "representative flows; first two rounds per main quiz, one conversation path per kind, full book and six-word review",
+      "languages": [
+        "korean",
+        "english"
+      ],
+      "touch": true,
+      "reducedMotion": true,
+      "passedGroups": 6,
+      "distFiles": 854,
+      "startEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "7af4e773e9e865773e20adf40b4a9e547706fb355a605849c5fae3e127e78072",
+      "pageExceptions": 0,
+      "httpErrors": 0,
+      "unexpectedRequestFailures": 0,
+      "expectedAudioFailures": [],
+      "consoleErrors": [],
+      "roleWrongFeedback": [
+        {
+          "case": "english-cafe-wrong-feedback",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "drink-water"
+        },
+        {
+          "case": "english-route-wrong-left",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-left"
+        },
+        {
+          "case": "english-route-wrong-right",
+          "helpVisible": true,
+          "selectedChoiceVisible": true,
+          "focusKey": "route-right"
+        }
+      ],
+      "resultPath": "qa/language-quality-acceptance-2026-11-06/final-tablet-reduced/results.json"
+    }
+  ]
+}

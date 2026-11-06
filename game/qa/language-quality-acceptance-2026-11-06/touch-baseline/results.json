@@ -1,0 +1,2716 @@
+{
+  "scope": "actual app; map controls plus legal nearby setup; content-answer QA solver, no injected outcomes/time, no actual audition/human-learning proof",
+  "full": true,
+  "touch": true,
+  "reduced": false,
+  "audioFailure": false,
+  "languages": [
+    "korean",
+    "english"
+  ],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "renderEvery": 12,
+  "renderScale": 1,
+  "sourceUnchanged": true,
+  "changed": [],
+  "results": [
+    {
+      "name": "korean-all-choice-composition-and-reference",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: all rendered controls provide48px height\n    at layout ([game]/scripts/language-quality-acceptance-2026-11-06.mjs:41:866)\n    at async [game]/scripts/language-quality-acceptance-2026-11-06.mjs:47:124\n    at async check ([game]/scripts/language-quality-acceptance-2026-11-06.mjs:42:67)\n    at async [game]/scripts/language-quality-acceptance-2026-11-06.mjs:46:3"
+    },
+    {
+      "name": "korean-stories-and-all-room-entry-points",
+      "passed": true
+    },
+    {
+      "name": "english-all-listening-and-sentence-rounds-text-only",
+      "passed": true
+    },
+    {
+      "name": "english-all-conversation-branches",
+      "passed": true
+    },
+    {
+      "name": "english-dictionary-book-phrases-and-text-fallback",
+      "passed": true
+    },
+    {
+      "name": "english-six-word-review-and-room-entry-points",
+      "passed": true
+    }
+  ],
+  "records": [
+    {
+      "name": "story-seed",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentences": [
+          "도름이가 흙에 작은 씨앗을 심었어요.",
+          "물을 주고 햇볕이 드는 곳에서 기다렸어요.",
+          "며칠 뒤 초록 새싹이 고개를 내밀었어요."
+        ],
+        "insight": "“며칠 뒤”가 기다린 시간을 알려 줘요. 처음의 작은 씨앗이 마지막에는 새싹으로 달라졌어요."
+      }
+    },
+    {
+      "name": "story-book",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentences": [
+          "도름이는 도서관에서 읽고 싶은 책을 골랐어요.",
+          "대출대에서 책을 빌린 뒤 집으로 가져왔어요.",
+          "책을 다 읽고, 기다리는 친구도 볼 수 있도록 반납했어요."
+        ],
+        "insight": "고르기 → 빌리기 → 읽고 반납하기가 이어져요. 마지막 문장은 도름이의 행동이 다른 친구에게도 도움이 된다는 것을 보여 줘요."
+      }
+    },
+    {
+      "name": "story-rain",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentences": [
+          "도름이와 모아는 공원에서 그림을 그리기로 했어요.",
+          "공원으로 가려는데 빗방울이 떨어지기 시작했어요.",
+          "둘은 도서관 창가에 앉아 비 오는 풍경을 그렸어요."
+        ],
+        "insight": "계획 → 뜻밖의 비 → 새로운 방법으로 이어져요. 이야기는 시간 순서뿐 아니라 문제가 생기고 해결되는 모습으로도 이어질 수 있어요."
+      }
+    },
+    {
+      "name": "korean-story-finished",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "rect": {
+          "x": 12,
+          "y": 12,
+          "width": 366,
+          "height": 820
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "작은 씨앗",
+            "height": 48,
+            "font": 16
+          },
+          {
+            "text": "책을 기다리는 친구",
+            "height": 48,
+            "font": 16
+          },
+          {
+            "text": "비 오는 날의 소풍",
+            "height": 48,
+            "font": 16
+          },
+          {
+            "text": "장소를 바꾸어 함께 그림을 그렸어요",
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "처음 계획대로 공원에서 그림을 그렸어요",
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "이 이야기 처음부터",
+            "height": 48.390625,
+            "font": 16
+          },
+          {
+            "text": "다른 이야기 고르기",
+            "height": 48.390625,
+            "font": 16
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "읽고 싶은 이야기를 골라, 처음부터 마지막까지 문장을 이어요.",
+            "font": 15
+          },
+          {
+            "text": "문제와 해결이 있는 이야기 · 3 / 3문장",
+            "font": 14
+          },
+          {
+            "text": "계획 → 뜻밖의 비 → 새로운 방법으로 이어져요. 이야기는 시간 순서뿐 아니라 문제가 생기고 해결되는 모습으로도 이어질 수 있어요.",
+            "font": 15
+          },
+          {
+            "text": "이야기를 바꿔도 하던 곳이 남아요. 창을 닫으면 처음부터 시작해요.",
+            "font": 14
+          }
+        ]
+      }
+    },
+    {
+      "name": "entry-korean.letters",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "tab": "composition"
+      }
+    },
+    {
+      "name": "entry-korean.dictionary",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "tab": "dictionary"
+      }
+    },
+    {
+      "name": "entry-korean.history",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "tab": "history"
+      }
+    },
+    {
+      "name": "english-entry",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "rect": {
+          "x": 12,
+          "y": 12,
+          "width": 366,
+          "height": 820
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "책",
+            "key": "choice-book",
+            "height": 140,
+            "font": 20
+          },
+          {
+            "text": "나무",
+            "key": "choice-tree",
+            "height": 140,
+            "font": 20
+          },
+          {
+            "text": "사과",
+            "key": "choice-apple",
+            "height": 140,
+            "font": 20
+          },
+          {
+            "text": "다시 해 보기",
+            "key": "retry",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다음 문제",
+            "key": "next",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "1 / 12 · 소리를 듣고 그림을 골라요",
+            "font": 15
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 15
+          },
+          {
+            "text": "버튼을 누르면 다시 들을 수 있어요.",
+            "font": 15
+          },
+          {
+            "text": "소리 듣기를 누른 뒤 그림을 골라 봐요.",
+            "font": 15
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 15
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 15
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 15
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 15
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 15
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 15
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 15
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-listening-0",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "book",
+        "answer": "책",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-1",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "pencil",
+        "answer": "연필",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "chair",
+        "answer": "의자",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-3",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "window",
+        "answer": "창문",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "tree",
+        "answer": "나무",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-5",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "flower",
+        "answer": "꽃",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-6",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "water",
+        "answer": "물",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-7",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "milk",
+        "answer": "우유",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-8",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "apple",
+        "answer": "사과",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-9",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "bread",
+        "answer": "빵",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-10",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "school",
+        "answer": "학교",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-listening-11",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "word": "library",
+        "answer": "도서관",
+        "mode": "visible transcript; sound not played",
+        "feedback": "다른 그림도 살펴볼까요? 다시 듣거나 글자 보기를 눌러 봐요."
+      }
+    },
+    {
+      "name": "english-sentence-0",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentence": "I have a book.",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? I have로 가진 것을 말해요. a book은 책 한 권이에요."
+      }
+    },
+    {
+      "name": "english-sentence-1",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentence": "This is my pencil.",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? This is로 소개해요. my pencil은 내 연필이에요."
+      }
+    },
+    {
+      "name": "english-sentence-2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentence": "I like apples.",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? I like 뒤에 좋아하는 것을 놓아요. apples는 사과를 통틀어 말해요."
+      }
+    },
+    {
+      "name": "english-sentence-3",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentence": "The book is under the chair.",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? under는 아래에 있다는 뜻이에요. 의자 아래의 책을 말해요."
+      }
+    },
+    {
+      "name": "english-sentence-4",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentence": "May I have some water?",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? May I have…?로 정중하게 부탁해요. some water는 물을 조금 달라는 뜻이에요."
+      }
+    },
+    {
+      "name": "english-sentence-5",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "sentence": "The library is next to the school.",
+        "feedback": "목표 뜻과 순서를 다시 맞춰 볼까요? next to는 바로 옆에 있다는 뜻이에요."
+      }
+    },
+    {
+      "name": "english-sentence-restart",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "rect": {
+          "x": 12,
+          "y": 12,
+          "width": 366,
+          "height": 820
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "have",
+            "key": "tile-1",
+            "height": 55,
+            "font": 20
+          },
+          {
+            "text": "a",
+            "key": "tile-2",
+            "height": 55,
+            "font": 20
+          },
+          {
+            "text": "book.",
+            "key": "tile-3",
+            "height": 55,
+            "font": 20
+          },
+          {
+            "text": "I",
+            "key": "tile-0",
+            "height": 55,
+            "font": 20
+          },
+          {
+            "text": "문장 확인",
+            "key": "check",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다시 해 보기",
+            "key": "retry",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다음 문제",
+            "key": "next",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "1 / 6 · 뜻에 맞게 문장 조각을 놓아요",
+            "font": 15
+          },
+          {
+            "text": "아래 조각을 순서대로 눌러 주세요.",
+            "font": 15
+          },
+          {
+            "text": "놓은 조각을 누르면 뺄 수 있어요.",
+            "font": 15
+          },
+          {
+            "text": "문장을 완성한 뒤 확인해 봐요.",
+            "font": 15
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 15
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 15
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 15
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 15
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 15
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 15
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 15
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "cafe-milk-thank-you",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "feedback": "주문은 “Some milk, please.”였어요. milk 그림을 다시 찾아봐요."
+      }
+    },
+    {
+      "name": "cafe-milk-thanks",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "feedback": "주문은 “Some milk, please.”였어요. milk 그림을 다시 찾아봐요."
+      }
+    },
+    {
+      "name": "cafe-water-thank-you",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "feedback": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요."
+      }
+    },
+    {
+      "name": "cafe-water-thanks",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "feedback": "주문은 “Some water, please.”였어요. water 그림을 다시 찾아봐요."
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thank-you",
+        "line": "Go straight.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thank-you",
+        "line": "Turn left.",
+        "wrongFeedback": [
+          {
+            "action": "straight",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thank-you",
+        "line": "Go straight again.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thanks",
+        "line": "Go straight.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thanks",
+        "line": "Turn left.",
+        "wrongFeedback": [
+          {
+            "action": "straight",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "where",
+        "thanks": "thanks",
+        "line": "Go straight again.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "help",
+        "thanks": "thank-you",
+        "line": "Go straight.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "help",
+        "thanks": "thank-you",
+        "line": "Turn left.",
+        "wrongFeedback": [
+          {
+            "action": "straight",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "help",
+        "thanks": "thank-you",
+        "line": "Go straight again.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "help",
+        "thanks": "thanks",
+        "line": "Go straight.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight.”예요. 앞으로 한 칸 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "help",
+        "thanks": "thanks",
+        "line": "Turn left.",
+        "wrongFeedback": [
+          {
+            "action": "straight",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Turn left.”예요. 제자리에서 왼쪽으로 돌아요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "directions-step",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "ask": "help",
+        "thanks": "thanks",
+        "line": "Go straight again.",
+        "wrongFeedback": [
+          {
+            "action": "left",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          },
+          {
+            "action": "right",
+            "feedback": "이번 안내는 “Go straight again.”예요. 도서관까지 앞으로 두 칸 더 가요."
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-roleplay",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "rect": {
+          "x": 12,
+          "y": 12,
+          "width": 366,
+          "height": 820
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "카페에서 주문하기",
+            "key": "roleplay-cafe",
+            "height": 78,
+            "font": 20
+          },
+          {
+            "text": "길을 물어보기",
+            "key": "roleplay-directions",
+            "height": 78,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "Excuse me. Where is the library?실례합니다. 도서관이 어디에 있나요?",
+            "key": "role-where",
+            "height": 88,
+            "font": 20
+          },
+          {
+            "text": "Could you help me find the library, please?도서관 찾는 것을 도와주시겠어요?",
+            "key": "role-help",
+            "height": 116,
+            "font": 20
+          },
+          {
+            "text": "대화 처음부터",
+            "key": "role-reset",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "연습 지도 · 위쪽이 북쪽 ↑",
+            "font": 15
+          },
+          {
+            "text": "도서관으로 가는 길을 정중하게 물어봐요.",
+            "font": 15
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 15
+          },
+          {
+            "text": "버튼을 누르면 소리가 나요.",
+            "font": 15
+          },
+          {
+            "text": "두 표현 모두 길을 물어볼 때 쓸 수 있어요.",
+            "font": 15
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 15
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 15
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 15
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 15
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 15
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 15
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 15
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-dictionary-book",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "This is my book.",
+        "meaning": "책"
+      }
+    },
+    {
+      "name": "english-dictionary-pencil",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "I have a blue pencil.",
+        "meaning": "연필"
+      }
+    },
+    {
+      "name": "english-dictionary-chair",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "Please sit on this chair.",
+        "meaning": "의자"
+      }
+    },
+    {
+      "name": "english-dictionary-window",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "The window is open.",
+        "meaning": "창문"
+      }
+    },
+    {
+      "name": "english-dictionary-tree",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "A bird is in the tree.",
+        "meaning": "나무"
+      }
+    },
+    {
+      "name": "english-dictionary-flower",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "This flower is yellow.",
+        "meaning": "꽃"
+      }
+    },
+    {
+      "name": "english-dictionary-water",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "I would like some water.",
+        "meaning": "물"
+      }
+    },
+    {
+      "name": "english-dictionary-milk",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "May I have some milk?",
+        "meaning": "우유"
+      }
+    },
+    {
+      "name": "english-dictionary-apple",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "I have two apples.",
+        "meaning": "사과"
+      }
+    },
+    {
+      "name": "english-dictionary-bread",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "I like bread.",
+        "meaning": "빵"
+      }
+    },
+    {
+      "name": "english-dictionary-school",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "Our school has a library.",
+        "meaning": "학교"
+      }
+    },
+    {
+      "name": "english-dictionary-library",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "example": "We read in the library.",
+        "meaning": "도서관"
+      }
+    },
+    {
+      "name": "english-book-page-0",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "text": "Dormi has a blue pencil.",
+        "alt": "파란 연필을 가진 도름이"
+      }
+    },
+    {
+      "name": "english-book-page-1",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "text": "The pencil is not on the desk.",
+        "alt": "연필이 없는 책상 위를 살펴보는 도름이"
+      }
+    },
+    {
+      "name": "english-book-page-2",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "text": "Dormi looks under the chair.",
+        "alt": "의자 아래에 있는 파란 연필을 살펴보는 도름이"
+      }
+    },
+    {
+      "name": "english-book-page-3",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "text": "There it is! Now Dormi can draw a star.",
+        "alt": "찾은 파란 연필과 별 그림 옆의 도름이"
+      }
+    },
+    {
+      "name": "english-book-last-page",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "rect": {
+          "x": 12,
+          "y": 12,
+          "width": 366,
+          "height": 820
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "듣고 찾기",
+            "key": "tab-listening",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "문장 만들기",
+            "key": "tab-sentences",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "마을 대화",
+            "key": "tab-roleplay",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림책 사전",
+            "key": "tab-dictionary",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "그림 사전",
+            "key": "shelf-words",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "도름이 그림책",
+            "key": "shelf-book",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 듣기",
+            "key": "play",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "천천히 듣기",
+            "key": "slow",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "소리 멈추기",
+            "key": "stop",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "글자 보기",
+            "key": "transcript-toggle",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "매일 쓰는 다섯 표현",
+            "height": 51,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-1",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-2",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-3",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-4",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "듣기",
+            "key": "phrase-5",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "앞장",
+            "key": "page-prev",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "다음 장",
+            "key": "page-next",
+            "height": 50,
+            "font": 20
+          },
+          {
+            "text": "출처와 소리 안내",
+            "height": 51,
+            "font": 20
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "도름이의 파란 연필",
+            "font": 15
+          },
+          {
+            "text": "4 / 4 · 도름이의 작은 이야기",
+            "font": 15
+          },
+          {
+            "text": "There it is! Now Dormi can draw a star.",
+            "font": 25
+          },
+          {
+            "text": "여기 있네! 이제 도름이는 별을 그릴 수 있어요.",
+            "font": 15
+          },
+          {
+            "text": "미국 영어 합성음성",
+            "font": 15
+          },
+          {
+            "text": "버튼을 누르면 소리가 나요.",
+            "font": 15
+          },
+          {
+            "text": "Hello!",
+            "font": 15
+          },
+          {
+            "text": "안녕하세요!",
+            "font": 15
+          },
+          {
+            "text": "Thank you.",
+            "font": 15
+          },
+          {
+            "text": "감사합니다.",
+            "font": 15
+          },
+          {
+            "text": "May I come in?",
+            "font": 15
+          },
+          {
+            "text": "들어가도 될까요?",
+            "font": 15
+          },
+          {
+            "text": "Could you help me?",
+            "font": 15
+          },
+          {
+            "text": "도와주시겠어요?",
+            "font": 15
+          },
+          {
+            "text": "See you!",
+            "font": 15
+          },
+          {
+            "text": "또 만나요!",
+            "font": 15
+          },
+          {
+            "text": "연필을 찾았네요! 도름이와 함께 다시 읽어 봐요.",
+            "font": 15
+          },
+          {
+            "text": "낱말 → 짧은 문장 → 상황 대화 · 시간 제한 없이 천천히",
+            "font": 15
+          },
+          {
+            "text": "탭과 책장을 바꿔도 하던 곳에서 이어져요. 학습실을 닫으면 처음부터 시작해요.",
+            "font": 15
+          },
+          {
+            "text": "예문과 이야기는 도름이를 위해 새로 썼어요. 아래 자료는 낱말·문법·활동 주제를 확인할 때 참고했어요.",
+            "font": 15
+          },
+          {
+            "text": "British Council · 어린이 낱말 놀이",
+            "font": 15
+          },
+          {
+            "text": "British Council · 위치를 나타내는 말",
+            "font": 15
+          },
+          {
+            "text": "British Council · 길 안내 표현",
+            "font": 15
+          },
+          {
+            "text": "British Council · 카페에서 주문하기",
+            "font": 15
+          },
+          {
+            "text": "미국 영어 합성음성 · Flite SLT. 듣기 어려우면 글자 보기를 눌러 주세요.",
+            "font": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "english-five-phrases",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "phrases": [
+          {
+            "line": "Hello!",
+            "meaning": "안녕하세요!"
+          },
+          {
+            "line": "Thank you.",
+            "meaning": "감사합니다."
+          },
+          {
+            "line": "May I come in?",
+            "meaning": "들어가도 될까요?"
+          },
+          {
+            "line": "Could you help me?",
+            "meaning": "도와주시겠어요?"
+          },
+          {
+            "line": "See you!",
+            "meaning": "또 만나요!"
+          }
+        ],
+        "mode": "read-only text; no listening claim"
+      }
+    },
+    {
+      "name": "english-word-review-complete",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "rect": {
+          "x": 12,
+          "y": 148.234375,
+          "width": 366,
+          "height": 547.515625
+        },
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "scrollTop": 0,
+        "overflow": false,
+        "buttons": [
+          {
+            "text": "×",
+            "height": 48,
+            "font": 24
+          },
+          {
+            "text": "의자",
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "해",
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "나무",
+            "height": 53.59375,
+            "font": 16
+          },
+          {
+            "text": "다시 짝 맞추기",
+            "height": 48.390625,
+            "font": 16
+          },
+          {
+            "text": "마을로 돌아가기",
+            "height": 48,
+            "font": 16
+          }
+        ],
+        "paragraphs": [
+          {
+            "text": "6 / 6",
+            "font": 15
+          },
+          {
+            "text": "chair",
+            "font": 15
+          },
+          {
+            "text": "chair = 의자 · 여섯 낱말을 모두 연결했어요!",
+            "font": 15
+          }
+        ]
+      }
+    },
+    {
+      "name": "six-word-review",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "seen": [
+          "book",
+          "tree",
+          "sun",
+          "window",
+          "water",
+          "chair"
+        ]
+      }
+    },
+    {
+      "name": "entry-english.sentences",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "tab": "sentences"
+      }
+    },
+    {
+      "name": "entry-english.roleplay",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "tab": "roleplay"
+      }
+    },
+    {
+      "name": "entry-english.dictionary",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "tab": "dictionary"
+      }
+    },
+    {
+      "name": "returned-to-village",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "data": {
+        "state": {
+          "ready": true,
+          "doreumiMotion": {
+            "phase": "idle",
+            "id": null,
+            "label": "",
+            "time": 0,
+            "duration": 0
+          },
+          "clawRuntime": null,
+          "fishScoopRuntime": null,
+          "lookoutRuntime": {
+            "phase": "idle",
+            "elapsed": 0,
+            "paused": false,
+            "mapQueued": false,
+            "scenic": false,
+            "generation": 0,
+            "cover": 0,
+            "disposed": false,
+            "error": null,
+            "ocean": null
+          },
+          "flightRuntime": {
+            "trip": null,
+            "presentation": null,
+            "settlement": {
+              "preparedRoom": null,
+              "cameraSize": null,
+              "syncedRoom": null,
+              "errors": []
+            },
+            "blocked": false,
+            "frameFailure": null,
+            "disposed": false
+          },
+          "boatRuntime": {
+            "trip": null,
+            "presentation": null,
+            "settlement": {
+              "preparedRoom": null,
+              "cameraSize": null,
+              "syncedRoom": null,
+              "errors": []
+            },
+            "blocked": false,
+            "disposed": false
+          },
+          "weatherRuntime": {
+            "status": "disabled",
+            "enabled": false,
+            "city": null,
+            "snapshot": null,
+            "freshness": "expired",
+            "error": null,
+            "retryAtUtcMs": 0,
+            "cacheEntries": 0,
+            "selectedCityId": "seoul",
+            "selectedCity": {
+              "id": "seoul",
+              "label": "서울",
+              "latDeg": 37.5665,
+              "lonDegEast": 126.978,
+              "timeZone": "Asia/Seoul",
+              "source": "preset",
+              "isExample": false,
+              "elevationM": 0
+            },
+            "visualsEnabled": true,
+            "reducedMotion": false,
+            "visualError": null
+          },
+          "produceRuntime": null,
+          "produce": {
+            "season": "calendar",
+            "nodes": {
+              "park.produce.strawberry": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.tomato": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.pumpkin": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.leafy": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.peach": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.pear": {
+                "harvests": 0,
+                "phase": "seed"
+              },
+              "park.produce.mandarin": {
+                "harvests": 0,
+                "phase": "seed"
+              }
+            }
+          },
+          "cafeFoodRuntime": {
+            "open": false,
+            "mode": null,
+            "notice": "",
+            "paused": false,
+            "readOnly": false,
+            "seated": false,
+            "seatId": null,
+            "enabledDrinks": [
+              "americano",
+              "latte",
+              "appleJuice",
+              "strawberryJuice",
+              "peachJuice",
+              "pearJuice",
+              "mandarinJuice"
+            ],
+            "enabledMeals": [
+              "tomatoBowl",
+              "pumpkinBowl",
+              "leafyBowl"
+            ],
+            "materials": {
+              "apple": 0,
+              "shell": 0,
+              "autumnLeaf": 0,
+              "petal": 0,
+              "pondFish": 0,
+              "seaFish": 0,
+              "strawberry": 0,
+              "tomato": 0,
+              "pumpkin": 0,
+              "leafy": 0,
+              "peach": 0,
+              "pear": 0,
+              "mandarin": 0
+            },
+            "bag": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "americano": 0,
+              "latte": 0,
+              "appleJuice": 0,
+              "strawberryJuice": 0,
+              "peachJuice": 0,
+              "pearJuice": 0,
+              "mandarinJuice": 0,
+              "tomatoBowl": 0,
+              "pumpkinBowl": 0,
+              "leafyBowl": 0
+            },
+            "stock": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "herbTea": 0,
+              "cocoa": 0
+            },
+            "apples": 0,
+            "operation": null,
+            "barista": null,
+            "carry": null
+          },
+          "amusementFoodRuntime": null,
+          "cafeFood": {
+            "packed": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0
+            },
+            "made": {
+              "americano": 0,
+              "latte": 0,
+              "appleJuice": 0,
+              "strawberryJuice": 0,
+              "peachJuice": 0,
+              "pearJuice": 0,
+              "mandarinJuice": 0,
+              "tomatoBowl": 0,
+              "pumpkinBowl": 0,
+              "leafyBowl": 0
+            },
+            "consumed": {
+              "milkRoll": 0,
+              "croissant": 0,
+              "miniCake": 0,
+              "americano": 0,
+              "latte": 0,
+              "appleJuice": 0,
+              "strawberryJuice": 0,
+              "peachJuice": 0,
+              "pearJuice": 0,
+              "mandarinJuice": 0,
+              "tomatoBowl": 0,
+              "pumpkinBowl": 0,
+              "leafyBowl": 0
+            }
+          },
+          "bakeryRuntime": null,
+          "squareRuntime": null,
+          "tentRuntime": {
+            "seaCue": null,
+            "active": false,
+            "mode": null,
+            "phase": "idle",
+            "duration": 0.8,
+            "inside": false,
+            "paused": false,
+            "activityId": null,
+            "isolated": false,
+            "width": 390,
+            "height": 844
+          },
+          "marshmallowRuntime": null,
+          "fishCookingRuntime": null,
+          "plazaRuntime": {
+            "burning": false,
+            "clock": 0.06169999999999709,
+            "fireworks": null,
+            "guests": [
+              {
+                "id": "moa-playmate",
+                "x": -17.8,
+                "y": 0.05,
+                "z": 28.8,
+                "yaw": 0,
+                "pose": 0,
+                "moving": false,
+                "distance": 0,
+                "phase": "idle",
+                "seatId": "courtyard.campfire.seat.moa"
+              },
+              {
+                "id": "chinchilla",
+                "x": -8.6,
+                "y": 0.05,
+                "z": 30.6,
+                "yaw": 0,
+                "pose": 0,
+                "moving": false,
+                "distance": 0,
+                "phase": "idle",
+                "seatId": "courtyard.campfire.seat.chinchilla"
+              }
+            ],
+            "audio": {
+              "enabled": false,
+              "burning": false,
+              "muted": false,
+              "hidden": false,
+              "volume": 0.32,
+              "distance": 26.123743988946142,
+              "playing": false,
+              "voices": 0,
+              "burstVoices": 0,
+              "error": "",
+              "disposed": false
+            },
+            "busy": false,
+            "panel": false,
+            "seatControls": false,
+            "pendingFireworks": false,
+            "showCameraPhase": null,
+            "showContext": null,
+            "coverOpacity": 0
+          },
+          "fishingRuntime": null,
+          "fishing": {
+            "total": 0,
+            "counts": {
+              "petal-minnow": 0,
+              "moon-carp": 0,
+              "ribbon-mackerel": 0,
+              "star-bream": 0
+            },
+            "consumed": {
+              "petal-minnow": 0,
+              "moon-carp": 0,
+              "ribbon-mackerel": 0,
+              "star-bream": 0
+            },
+            "meals": {
+              "petal-minnow": 0,
+              "moon-carp": 0,
+              "ribbon-mackerel": 0,
+              "star-bream": 0
+            },
+            "firstCatch": {
+              "petal-minnow": null,
+              "moon-carp": null,
+              "ribbon-mackerel": null,
+              "star-bream": null
+            }
+          },
+          "musicChairRestRuntime": null,
+          "mathResidentRuntime": null,
+          "saveWritable": true,
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "gathering": {
+            "epoch": 0,
+            "nodes": {
+              "park.tree.west": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "park.tree.east": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "courtyard.shell.west": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "courtyard.shell.middle": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "courtyard.shell.east": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              },
+              "park.leaves.west": {
+                "harvests": 0,
+                "pickedAt": 0,
+                "moments": []
+              }
+            }
+          },
+          "residentSpaceUse": null,
+          "elevatorRuntime": null,
+          "schoolFloor": null,
+          "locomotion": {
+            "airborne": false,
+            "height": 0,
+            "sprinting": false,
+            "moving": false,
+            "phase": 0
+          },
+          "gymRuntime": null,
+          "baseballRuntime": null,
+          "raceRuntime": null,
+          "passingRuntime": null,
+          "libraryQuestRuntime": null,
+          "buildRuntime": null,
+          "robotRuntime": null,
+          "cookingRuntime": null,
+          "sky": {
+            "id": "morning",
+            "label": "아침",
+            "clock": "09:41",
+            "timeZone": "Asia/Seoul"
+          },
+          "cafeRuntime": {
+            "open": false,
+            "running": false,
+            "shop": false,
+            "tab": "bread"
+          },
+          "throwRuntime": null,
+          "musicRuntime": null,
+          "audio": {
+            "enabled": false,
+            "unlocked": false,
+            "playing": null,
+            "listening": null,
+            "error": ""
+          },
+          "village": {
+            "cafe": {
+              "schemaVersion": 1,
+              "day": 1,
+              "phase": "idle",
+              "activeMs": 0,
+              "nextArrivalMs": 3000,
+              "nextOrdinal": 1,
+              "jobSerial": 0,
+              "orders": [],
+              "settled": [],
+              "stock": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "qualityStock": {
+                "milkRoll": 0,
+                "croissant": 0,
+                "miniCake": 0,
+                "herbTea": 0,
+                "cocoa": 0
+              },
+              "dough": null,
+              "oven": null,
+              "drink": null,
+              "upgrades": {
+                "warmOven": false,
+                "wideDisplay": false,
+                "cozyCorner": false
+              },
+              "coins": 0,
+              "ledger": {
+                "sold": {
+                  "milkRoll": 0,
+                  "croissant": 0,
+                  "miniCake": 0,
+                  "herbTea": 0,
+                  "cocoa": 0
+                },
+                "served": 0,
+                "revenue": 0,
+                "materials": 0,
+                "fastTips": 0,
+                "qualityTips": 0,
+                "cozyTips": 0,
+                "spent": 0
+              },
+              "today": {
+                "served": 0,
+                "revenue": 0,
+                "materials": 0,
+                "tips": 0
+              }
+            },
+            "bakery": {
+              "phase": "empty",
+              "decoration": null,
+              "completed": 0,
+              "pastries": 0
+            },
+            "mailbox": {
+              "letters": []
+            },
+            "photos": [],
+            "wallPlacements": {}
+          },
+          "residents": [],
+          "worldResidents": [],
+          "library": {
+            "selectedBookId": "pocket-star",
+            "borrowedBookId": null,
+            "readBookIds": []
+          },
+          "activity": null,
+          "discoveryIds": [],
+          "pose": {
+            "name": "run",
+            "amount": 0,
+            "time": 0,
+            "seatContactY": 0.11474484205245972,
+            "anchors": {
+              "leftHand": [
+                -0.6125609400080781,
+                0.43278150436692664,
+                0.05918379257451667
+              ],
+              "rightHand": [
+                0.612543566284419,
+                0.43278150436692664,
+                0.05918379257451667
+              ],
+              "leftFoot": [
+                -0.211,
+                0.135,
+                0.11
+              ],
+              "rightFoot": [
+                0.211,
+                0.135,
+                0.11
+              ],
+              "seat": [
+                0,
+                0.11474484205245972,
+                0.011705340817570686
+              ],
+              "hands": {
+                "left": [
+                  -0.6125609400080781,
+                  0.43278150436692664,
+                  0.05918379257451667
+                ],
+                "right": [
+                  0.612543566284419,
+                  0.43278150436692664,
+                  0.05918379257451667
+                ]
+              },
+              "feet": {
+                "left": [
+                  -0.211,
+                  0.135,
+                  0.11
+                ],
+                "right": [
+                  0.211,
+                  0.135,
+                  0.11
+                ]
+              }
+            },
+            "bounds": {
+              "min": [
+                -0.5953607559204102,
+                0,
+                -0.4142390787601471
+              ],
+              "max": [
+                0.5953607559204102,
+                1.5831665396690369,
+                0.4671066105365753
+              ]
+            },
+            "bodyBounds": {
+              "min": [
+                -0.5953607559204102,
+                0,
+                -0.4142390787601471
+              ],
+              "max": [
+                0.5953607559204102,
+                1.244211196899414,
+                0.4142765998840332
+              ]
+            },
+            "sleepPitch": -1.5707963267948966,
+            "character": "doreumi-master-rig"
+          },
+          "won": false,
+          "roomId": "courtyard",
+          "worldId": "courtyard",
+          "localPosition": {
+            "x": 0,
+            "z": 3.1
+          },
+          "worldPosition": {
+            "x": 0,
+            "z": 3.1
+          },
+          "transitionPhase": "idle",
+          "inputLocked": false,
+          "starsCollected": 0,
+          "collectedIds": [],
+          "ownedItemIds": [
+            "plant",
+            "picture-frame"
+          ],
+          "rewardClaimIds": [],
+          "completedActivityIds": [],
+          "placements": {},
+          "garden": {
+            "phase": "seed",
+            "moments": [],
+            "petals": 0,
+            "harvests": 0,
+            "harvestedBedIds": []
+          },
+          "saveStatus": "saved",
+          "revision": 3,
+          "position": {
+            "x": 0,
+            "y": 0.05,
+            "z": 3.1
+          },
+          "camera": {
+            "mode": "walk",
+            "x": 7.999999999999997,
+            "y": 13.000000000000002,
+            "z": 23.099999999999998,
+            "target": {
+              "x": 0,
+              "y": 0.4000000000000001,
+              "z": 3.1
+            },
+            "zoom": 1
+          },
+          "quality": "medium",
+          "renderer": {
+            "frame": 155,
+            "calls": 129,
+            "triangles": 78808,
+            "points": 0,
+            "lines": 0,
+            "memory": {
+              "geometries": 3,
+              "textures": 8
+            },
+            "pixelRatio": 1,
+            "buffer": {
+              "width": 390,
+              "height": 844
+            }
+          },
+          "timings": {
+            "transitionMs": [
+              582,
+              4,
+              390
+            ],
+            "frameIntervals": [
+              16.7,
+              16.6,
+              16.7,
+              16.6,
+              16.7,
+              366.6,
+              16.7,
+              16.7,
+              16.7,
+              16.6,
+              16.7,
+              16.7,
+              16.7,
+              16.7,
+              133.4,
+              16.6,
+              16.6,
+              100.1,
+              16.6,
+              66.6,
+              16.8,
+              16.6,
+              16.7,
+              16.6,
+              16.7,
+              16.7,
+              83.3,
+              16.7,
+              16.6,
+              16.7,
+              16.7,
+              16.6,
+              16.7,
+              16.7,
+              16.5,
+              16.8,
+              16.6,
+              16.7,
+              166.7,
+              16.6,
+              16.7,
+              16.6,
+              66.7,
+              16.7,
+              16.6,
+              16.7,
+              16.6,
+              16.7,
+              16.6,
+              16.6,
+              16.8,
+              133.2,
+              16.8,
+              16.6,
+              16.6,
+              16.7,
+              16.7,
+              16.6,
+              16.7,
+              16.7,
+              16.6,
+              16.7,
+              16.7,
+              16.6,
+              16.6,
+              16.8,
+              16.6,
+              100,
+              16.6,
+              16.7,
+              16.7,
+              16.6,
+              100,
+              16.6,
+              16.7,
+              16.6,
+              16.7,
+              83.3,
+              16.7,
+              16.6,
+              16.6,
+              16.6,
+              16.8,
+              16.6,
+              16.7,
+              16.7,
+              16.7,
+              16.7,
+              16.7,
+              16.6,
+              150.1,
+              16.6,
+              16.7,
+              66.6,
+              16.7
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "failed": [],
+  "requestsFailed": [],
+  "audioRequests": [],
+  "travelLog": [
+    {
+      "from": "courtyard",
+      "to": "korean",
+      "selected": [
+        "schoolHall",
+        "korean"
+      ],
+      "actual": "korean"
+    },
+    {
+      "from": "korean",
+      "to": "english",
+      "selected": [
+        "english"
+      ],
+      "actual": "english"
+    },
+    {
+      "from": "english",
+      "to": "courtyard",
+      "selected": [
+        "courtyard"
+      ],
+      "actual": "courtyard"
+    }
+  ],
+  "nearLog": [
+    {
+      "requested": "korean.activity",
+      "position": {
+        "x": -6.5,
+        "z": -10.100000000000001
+      },
+      "target": {
+        "x": -6.5,
+        "z": -10.100000000000001
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.story",
+      "position": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "target": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.story",
+      "position": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "target": {
+        "x": -7.65,
+        "z": -8.05
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.letters",
+      "position": {
+        "x": -9.6,
+        "z": -10.05
+      },
+      "target": {
+        "x": -9.6,
+        "z": -10.05
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.dictionary",
+      "position": {
+        "x": -11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": -11.2,
+        "z": -9.35
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "korean.history",
+      "position": {
+        "x": -1.9500000000000002,
+        "z": -10.2
+      },
+      "target": {
+        "x": -1.9500000000000002,
+        "z": -10.2
+      },
+      "roomId": "korean"
+    },
+    {
+      "requested": "english.activity",
+      "position": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "target": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.activity",
+      "position": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "target": {
+        "x": 1.7999999999999998,
+        "z": -9.4
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.roleplay",
+      "position": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "target": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.dictionary",
+      "position": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.dictionary",
+      "position": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.words",
+      "position": {
+        "x": 5.35,
+        "z": -8.05
+      },
+      "target": {
+        "x": 5.35,
+        "z": -8.05
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.sentences",
+      "position": {
+        "x": 6.5,
+        "z": -10.100000000000001
+      },
+      "target": {
+        "x": 6.5,
+        "z": -10.100000000000001
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.roleplay",
+      "position": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "target": {
+        "x": 3.4,
+        "z": -10.05
+      },
+      "roomId": "english"
+    },
+    {
+      "requested": "english.dictionary",
+      "position": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "target": {
+        "x": 11.2,
+        "z": -9.35
+      },
+      "roomId": "english"
+    }
+  ]
+}
