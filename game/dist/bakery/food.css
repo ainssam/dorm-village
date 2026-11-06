@@ -53,3 +53,10 @@
 }
 #stage:has(.cafe-food-ui[data-open=true][data-order=true][data-seated=false]) .action-area #action,
 #stage:has(.cafe-food-ui[data-open=true][data-order=true][data-seated=false]) .action-area #nearby-hint{display:none}
+/* Keep the food and seated pair visible on the narrowest phones. The full room
+   name remains readable; the clock returns outside ordering and seating. */
+@media(max-width:360px){
+ .game-shell:has(.cafe-food-ui[data-open=true]:not([hidden]),.cafe-food-ui[data-seated=true]:not([hidden])) .topbar .title{padding:6px}
+ .game-shell:has(.cafe-food-ui[data-open=true]:not([hidden]),.cafe-food-ui[data-seated=true]:not([hidden])) .topbar .eyebrow{display:none}
+ .game-shell:has(.cafe-food-ui[data-open=true]:not([hidden]),.cafe-food-ui[data-seated=true]:not([hidden])) .topbar h1{font-size:16px;line-height:1.3}
+}

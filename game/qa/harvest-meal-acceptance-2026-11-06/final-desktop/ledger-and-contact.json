@@ -1,0 +1,1057 @@
+[
+  {
+    "name": "harvest",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "before": {
+        "crop": "tomato",
+        "harvests": 0,
+        "material": 0,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "after": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "text": "토마토 텃밭\n\n놀이 여름 · 돌보기 계절: 여름\n\n토마토 2개를 재료가방에 넣었어요\n\n다시 물 주기\n수확한 작물은 어디에 쓸까요?\n\n토마토 1개로 밀구름 카페 2층에서 수확 한 그릇을 준비해요. 혼자 먹거나 친구와 나눠요.\n\n놀이 계절\n한국 달력\n놀이 봄\n놀이 여름\n놀이 가을\n놀이 겨울\n\n한국 달력을 따르거나 놀이 계절을 직접 골라요. 기다릴 필요 없이 물을 주면 자라요. 익은 작물과 모은 재료는 계속 남아요.\n\n산책으로 돌아가기"
+    }
+  },
+  {
+    "name": "missing-ingredient-selectable",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "crop": "pumpkin",
+      "text": "코알라의 작은 카페\n닫기\n\n수확한 채소 하나로 준비해요\n\n준비할 것\n음료\n수확 한 그릇\n음식 고르기\n토마토 한 그릇 · 토마토 1개\n호박 한 그릇 · 호박 1개\n잎채소 한 그릇 · 잎채소 1개\n\n호박 1개 필요 · 가방 0개\n\n한 그릇 준비하기\n\n첫 한 입 전에 취소하면 음식은 그대로예요"
+    }
+  },
+  {
+    "name": "tomato-order-layout-1",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "width": 1440,
+      "height": 900,
+      "compact": "false",
+      "mode": "meal",
+      "text": "코알라의 작은 카페\n닫기\n\n수확한 채소 하나로 준비해요\n\n준비할 것\n음료\n수확 한 그릇\n음식 고르기\n토마토 한 그릇 · 토마토 1개\n호박 한 그릇 · 호박 1개\n잎채소 한 그릇 · 잎채소 1개\n\n토마토 1개 사용 · 가방 2개\n\n한 그릇 준비하기\n\n첫 한 입 전에 취소하면 음식은 그대로예요",
+      "panel": {
+        "x": 1116,
+        "y": 462.609375,
+        "width": 312,
+        "height": 347.390625
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "disabled": false,
+          "x": 1365.609375,
+          "y": 473.609375,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "한 그릇 준비하기",
+          "disabled": false,
+          "x": 1127,
+          "y": 718,
+          "width": 290,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "receive",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "before": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "beginning": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "ready": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "after": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "barista": {
+        "phase": "handover",
+        "progress": 0.9138461538461267,
+        "cupVisible": true,
+        "handoverReleased": true,
+        "handoverReady": true,
+        "time": 26.572899999999937,
+        "evaluations": 1386,
+        "disposed": false,
+        "recipeId": "tomatoBowl",
+        "servingKind": "meal",
+        "itemId": "tomatoBowl",
+        "contentsFraction": 1,
+        "consumed": false
+      }
+    }
+  },
+  {
+    "name": "tomato-order-layout-2",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "width": 1440,
+      "height": 900,
+      "compact": "false",
+      "mode": "meal",
+      "text": "코알라의 작은 카페\n닫기\n\n토마토 한 그릇을 음식주머니에 넣었어요. 2층 빈 의자에 앉아 음식주머니를 열어요\n\n준비할 것\n음료\n수확 한 그릇\n음식 고르기\n토마토 한 그릇 · 토마토 1개\n호박 한 그릇 · 호박 1개\n잎채소 한 그릇 · 잎채소 1개\n\n토마토 1개 사용 · 가방 1개\n\n한 그릇 준비하기\n\n작은 발견 · 토마토는 열매예요. 그릇 속 작은 조각을 찾아봐요.\n\n첫 한 입 전에 취소하면 음식은 그대로예요",
+      "panel": {
+        "x": 1116,
+        "y": 374.71875,
+        "width": 312,
+        "height": 435.28125
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "disabled": false,
+          "x": 1365.609375,
+          "y": 385.71875,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "한 그릇 준비하기",
+          "disabled": false,
+          "x": 1127,
+          "y": 652.5,
+          "width": 290,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "receive",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "before": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "beginning": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "ready": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "after": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      },
+      "barista": {
+        "phase": "handover",
+        "progress": 0.9180000000000024,
+        "cupVisible": true,
+        "handoverReleased": true,
+        "handoverReady": true,
+        "time": 30.207999999999966,
+        "evaluations": 1562,
+        "disposed": false,
+        "recipeId": "tomatoBowl",
+        "servingKind": "meal",
+        "itemId": "tomatoBowl",
+        "contentsFraction": 1,
+        "consumed": false
+      }
+    }
+  },
+  {
+    "name": "prepared-bowls-material-bag",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "entries": [
+        {
+          "label": "토마토 한 그릇",
+          "count": "2그릇"
+        }
+      ],
+      "text": "포장한 음식\n\n토마토 한 그릇\n2그릇\n\n카페 아래층에서 빵을 포장하고, 위층에서 음료나 수확 한 그릇을 받아요. 토마토·호박·잎채소 중 하나를 1개 써서 한 그릇을 준비해요. 위층 의자에 앉아 음식주머니를 열면 먹을 수 있고, 함께 쉬는 친구에게 한 그릇을 나눌 수도 있어요. 집에 놓는 주스 트레이와 잼 병은 별도로 보관하는 장식이에요."
+    }
+  },
+  {
+    "name": "projection-seated",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "aspect": null,
+      "frustum": {
+        "left": -6.959999999999999,
+        "right": 6.959999999999999,
+        "top": 4.35,
+        "bottom": -4.35
+      },
+      "matrix": [
+        0.14367816091954025,
+        0,
+        0,
+        0,
+        0,
+        0.2298850574712644,
+        0,
+        0,
+        0,
+        0,
+        -0.010005002501250625,
+        0,
+        0,
+        0,
+        -1.001000500250125,
+        1
+      ],
+      "position": [
+        4.056637671045604,
+        13.200000000000008,
+        19.42132992724837
+      ],
+      "quaternion": [
+        -0.24695806157193553,
+        0.17271357906829704,
+        0.044782036810496674,
+        0.9524580329910365
+      ],
+      "target": [
+        -1.943362328954344,
+        3.7000000000000135,
+        3.421329927248457
+      ],
+      "zoom": 1,
+      "controlsEnabled": false,
+      "bakeryActivity": true,
+      "canvas": {
+        "width": 1440,
+        "height": 900
+      },
+      "stage": {
+        "width": 1440,
+        "height": 900
+      },
+      "projectionAspect": 1.5999999999999999,
+      "viewportAspect": 1.6,
+      "squarePixelRatio": 1.0000000000000002
+    }
+  },
+  {
+    "name": "friend-precontact-cancel",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "before": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      },
+      "early": {
+        "phase": "seated",
+        "residentId": "chinchilla",
+        "token": {
+          "visit": 1
+        },
+        "seatId": "bakeryCafe.tea-chair-left",
+        "sharing": true,
+        "shareItem": "tomatoBowl",
+        "shareConsumed": false,
+        "notice": "",
+        "pose": {
+          "x": -3.7,
+          "z": -0.2,
+          "y": 3.84,
+          "yaw": 0,
+          "visible": true,
+          "support": {
+            "x": -2.35,
+            "z": -0.2,
+            "surface": "floor2",
+            "supportY": 3.25,
+            "tread": -1
+          },
+          "airborne": false,
+          "walking": false,
+          "rigid": false,
+          "seated": true,
+          "seating": false,
+          "leaving": false,
+          "done": false,
+          "waiting": false,
+          "seatId": "bakeryCafe.tea-chair-left",
+          "radius": 0.66,
+          "owner": {
+            "visit": 1
+          },
+          "phase": 0,
+          "time": 30.875599999999853,
+          "floor": "floor2",
+          "floorY": 3.25,
+          "supportY": 3.25
+        },
+        "serving": null
+      },
+      "after": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      }
+    }
+  },
+  {
+    "name": "tomato-friend-compact",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "width": 1440,
+      "height": 900,
+      "compact": "true",
+      "mode": "meal",
+      "text": "닫기\n\n친구가 한 입 먹었어요\n\n음식 고르기\n나눔 마치기",
+      "panel": {
+        "x": 1116,
+        "y": 653,
+        "width": 312,
+        "height": 119
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "disabled": false,
+          "x": 1367.609375,
+          "y": 662,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "음식 고르기",
+          "disabled": true,
+          "x": 1125,
+          "y": 715,
+          "width": 144,
+          "height": 48
+        },
+        {
+          "name": "나눔 마치기",
+          "disabled": false,
+          "x": 1275,
+          "y": 715,
+          "width": 144,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "friend-bite",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "before": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      },
+      "contact": {
+        "phase": "seated",
+        "residentId": "chinchilla",
+        "token": {
+          "visit": 1
+        },
+        "seatId": "bakeryCafe.tea-chair-left",
+        "sharing": true,
+        "shareItem": "tomatoBowl",
+        "shareConsumed": true,
+        "notice": "",
+        "pose": {
+          "x": -3.7,
+          "z": -0.2,
+          "y": 3.84,
+          "yaw": 0,
+          "visible": true,
+          "support": {
+            "x": -2.35,
+            "z": -0.2,
+            "surface": "floor2",
+            "supportY": 3.25,
+            "tread": -1
+          },
+          "airborne": false,
+          "walking": false,
+          "rigid": false,
+          "seated": true,
+          "seating": false,
+          "leaving": false,
+          "done": false,
+          "waiting": false,
+          "seatId": "bakeryCafe.tea-chair-left",
+          "radius": 0.66,
+          "owner": {
+            "visit": 1
+          },
+          "phase": 0,
+          "time": 33.527299999999975,
+          "floor": "floor2",
+          "floorY": 3.25,
+          "supportY": 3.25
+        },
+        "serving": {
+          "kind": "meal",
+          "itemId": "tomatoBowl",
+          "consumed": true,
+          "contentsFraction": 0.42,
+          "tableTopY": 4.18,
+          "bowlBottomY": 4.188,
+          "spoonContact": [
+            -3.7,
+            4.6,
+            0.15598062179661965
+          ],
+          "mouth": [
+            -3.7,
+            4.6,
+            0.1559806217966197
+          ],
+          "hand": [
+            -3.458154655481097,
+            4.551659261514409,
+            0.1560289664004053
+          ],
+          "mouthContactError": 5.551115123125783e-17,
+          "handContactError": 0,
+          "targetError": 0,
+          "travel": 1,
+          "reach": 1
+        }
+      },
+      "after": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      }
+    }
+  },
+  {
+    "name": "self-precontact-cancel",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "before": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      },
+      "operation": {
+        "id": "cafe-food-5",
+        "kind": "dine",
+        "phase": "eating",
+        "itemId": "tomatoBowl",
+        "elapsed": 0,
+        "consumed": false,
+        "action": {
+          "type": "FOOD_CONSUME",
+          "itemId": "tomatoBowl",
+          "expectedConsumed": 1,
+          "expectedRevision": 11
+        },
+        "retryable": false
+      },
+      "proof": {
+        "itemId": "tomatoBowl",
+        "tableTopY": 4.18,
+        "servingBottomY": 4.315742710358204,
+        "mouth": [
+          -0.000008686861829421133,
+          0.9214723100670494,
+          0.2552301054776036
+        ],
+        "contact": [
+          0.000048911488586864116,
+          0.6740773595356506,
+          0.6899229718711152
+        ],
+        "hand": [
+          0.19463174279259876,
+          0.6415333098531968,
+          0.3834847128498558
+        ],
+        "mouthContactError": 0.500162126674352,
+        "handContactError": 5.551115123125783e-17,
+        "faceClearance": 0.43469286639351157,
+        "elapsed": 0,
+        "consumed": false,
+        "biteVisible": false,
+        "tablePoint": [
+          -3.7,
+          4.205,
+          1.58
+        ],
+        "nativeGrip": {
+          "iterations": 41,
+          "solveError": 0.0000962735877302456
+        },
+        "kind": "meal",
+        "bowlBottomY": 4.205,
+        "contentsFraction": 1,
+        "spoonContact": [
+          0.000048911488586864116,
+          0.6740773595356506,
+          0.6899229718711152
+        ]
+      },
+      "after": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      }
+    }
+  },
+  {
+    "name": "tomato-self-midlift-component-views",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "kind": "read-only alternate-camera component view at actual first bite",
+      "proof": {
+        "itemId": "tomatoBowl",
+        "tableTopY": 4.18,
+        "servingBottomY": 4.371006504292498,
+        "mouth": [
+          -0.000008686861829421133,
+          0.9214723100670494,
+          0.2552301054776036
+        ],
+        "contact": [
+          0.000012797298983806618,
+          0.7905518821295093,
+          0.48530363390391396
+        ],
+        "hand": [
+          0.3397922527182353,
+          0.7020412343158395,
+          0.38762156339657183
+        ],
+        "mouthContactError": 0.26471491721368867,
+        "handContactError": 0,
+        "faceClearance": 0.23007352842631035,
+        "elapsed": 0.45650000000000013,
+        "consumed": false,
+        "biteVisible": false,
+        "tablePoint": [
+          -3.7,
+          4.205,
+          1.58
+        ],
+        "nativeGrip": {
+          "iterations": 11,
+          "solveError": 0.00008916768810562301
+        },
+        "kind": "meal",
+        "bowlBottomY": 4.205,
+        "contentsFraction": 1,
+        "spoonContact": [
+          0.000012797298983806618,
+          0.7905518821295093,
+          0.48530363390391396
+        ]
+      },
+      "frames": [
+        {
+          "name": "front-oblique",
+          "cameraLocal": [
+            1.2,
+            1.7,
+            2.2
+          ],
+          "lookAtLocal": [
+            0.1,
+            0.78,
+            0.15
+          ],
+          "frustumSpan": 2.1,
+          "file": "tomato-self-midlift-component-front-oblique.png"
+        },
+        {
+          "name": "side",
+          "cameraLocal": [
+            2,
+            1,
+            1
+          ],
+          "lookAtLocal": [
+            0.05,
+            0.72,
+            0.2
+          ],
+          "frustumSpan": 2.5,
+          "file": "tomato-self-midlift-component-side.png"
+        }
+      ]
+    }
+  },
+  {
+    "name": "tomato-self-first-bite-component-views",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "kind": "read-only alternate-camera component view at actual first bite",
+      "proof": {
+        "itemId": "tomatoBowl",
+        "tableTopY": 4.18,
+        "servingBottomY": 4.561598837002208,
+        "mouth": [
+          -0.000008686861829421133,
+          0.9214723100670494,
+          0.2552301054776036
+        ],
+        "contact": [
+          -0.000020820458149896012,
+          0.9214734989264545,
+          0.2552287497263295
+        ],
+        "hand": [
+          0.36047317554505076,
+          0.8861520108606968,
+          0.29550866192167646
+        ],
+        "mouthContactError": 0.000012266849957119937,
+        "handContactError": 0,
+        "faceClearance": -0.0000013557512741346756,
+        "elapsed": 0.9747999999999881,
+        "consumed": true,
+        "biteVisible": false,
+        "tablePoint": [
+          -3.7,
+          4.205,
+          1.58
+        ],
+        "nativeGrip": {
+          "iterations": 1,
+          "solveError": 0.00006793392484579458
+        },
+        "kind": "meal",
+        "bowlBottomY": 4.205,
+        "contentsFraction": 0.42,
+        "spoonContact": [
+          -0.000020820458149896012,
+          0.9214734989264545,
+          0.2552287497263295
+        ]
+      },
+      "frames": [
+        {
+          "name": "front-oblique",
+          "cameraLocal": [
+            1.2,
+            1.7,
+            2.2
+          ],
+          "lookAtLocal": [
+            0.1,
+            0.78,
+            0.15
+          ],
+          "frustumSpan": 2.1,
+          "file": "tomato-self-first-bite-component-front-oblique.png"
+        },
+        {
+          "name": "side",
+          "cameraLocal": [
+            2,
+            1,
+            1
+          ],
+          "lookAtLocal": [
+            0.05,
+            0.72,
+            0.2
+          ],
+          "frustumSpan": 2.5,
+          "file": "tomato-self-first-bite-component-side.png"
+        }
+      ]
+    }
+  },
+  {
+    "name": "tomato-self-compact",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "width": 1440,
+      "height": 900,
+      "compact": "true",
+      "mode": "meal",
+      "text": "닫기\n\n한 입 먹었어요\n\n음식 고르기\n그만 먹기",
+      "panel": {
+        "x": 1116,
+        "y": 653,
+        "width": 312,
+        "height": 119
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "disabled": false,
+          "x": 1367.609375,
+          "y": 662,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "음식 고르기",
+          "disabled": false,
+          "x": 1125,
+          "y": 715,
+          "width": 150.90625,
+          "height": 48
+        },
+        {
+          "name": "그만 먹기",
+          "disabled": false,
+          "x": 1281.90625,
+          "y": 715,
+          "width": 137.09375,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "self-bite",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "before": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      },
+      "contact": {
+        "food": {
+          "open": true,
+          "mode": "dine",
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": true,
+          "seatId": "bakeryCafe.chair-left",
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "enabledMeals": [
+            "tomatoBowl",
+            "pumpkinBowl",
+            "leafyBowl"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0,
+            "tomatoBowl": 0,
+            "pumpkinBowl": 0,
+            "leafyBowl": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": {
+            "id": "cafe-food-6",
+            "kind": "dine",
+            "phase": "eating",
+            "itemId": "tomatoBowl",
+            "elapsed": 0.9582000000000114,
+            "consumed": true,
+            "action": {
+              "type": "FOOD_CONSUME",
+              "itemId": "tomatoBowl",
+              "expectedConsumed": 1,
+              "expectedRevision": 11
+            },
+            "retryable": false
+          },
+          "barista": {
+            "phase": "idle",
+            "progress": 0,
+            "cupVisible": true,
+            "handoverReleased": false,
+            "handoverReady": false,
+            "time": 62.13910000000174,
+            "evaluations": 3240,
+            "disposed": false,
+            "recipeId": null,
+            "servingKind": "drink"
+          },
+          "carry": {
+            "visible": false,
+            "handleContact": [
+              -0.6125609400080774,
+              0.4327815043669272,
+              0.05918379257451756
+            ]
+          }
+        },
+        "proof": {
+          "itemId": "tomatoBowl",
+          "tableTopY": 4.18,
+          "servingBottomY": 4.561590448661488,
+          "mouth": [
+            -0.000008686861829421133,
+            0.9214723100670494,
+            0.2552301054776036
+          ],
+          "contact": [
+            -0.000022886432872511772,
+            0.9214737016546897,
+            0.25522851921517153
+          ],
+          "hand": [
+            0.3604712926355993,
+            0.8861445186502652,
+            0.29550004372056415
+          ],
+          "mouthContactError": 0.00001435550634675184,
+          "handContactError": 0,
+          "faceClearance": -0.0000015862624320739371,
+          "elapsed": 0.9582000000000114,
+          "consumed": true,
+          "biteVisible": false,
+          "tablePoint": [
+            -3.7,
+            4.205,
+            1.58
+          ],
+          "nativeGrip": {
+            "iterations": 1,
+            "solveError": 0.00007950768635907215
+          },
+          "kind": "meal",
+          "bowlBottomY": 4.205,
+          "contentsFraction": 0.42,
+          "spoonContact": [
+            -0.000022886432872511772,
+            0.9214737016546897,
+            0.25522851921517153
+          ]
+        }
+      },
+      "after": {
+        "crop": "tomato",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 2,
+        "bag": 0
+      }
+    }
+  },
+  {
+    "name": "projection-seat-exit",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "detail": {
+      "aspect": null,
+      "frustum": {
+        "left": -6.96,
+        "right": 6.96,
+        "top": 4.35,
+        "bottom": -4.35
+      },
+      "matrix": [
+        0.14367816091954022,
+        0,
+        0,
+        0,
+        0,
+        0.2298850574712644,
+        0,
+        0,
+        0,
+        0,
+        -0.010005002501250625,
+        0,
+        0,
+        0,
+        -1.001000500250125,
+        1
+      ],
+      "position": [
+        4.056637671045604,
+        13.200000000000008,
+        19.42132992724837
+      ],
+      "quaternion": [
+        -0.24695806157193553,
+        0.17271357906829704,
+        0.044782036810496674,
+        0.9524580329910365
+      ],
+      "target": [
+        -1.943362328954344,
+        3.7000000000000135,
+        3.421329927248457
+      ],
+      "zoom": 1,
+      "controlsEnabled": true,
+      "bakeryActivity": false,
+      "canvas": {
+        "width": 1440,
+        "height": 900
+      },
+      "stage": {
+        "width": 1440,
+        "height": 900
+      },
+      "projectionAspect": 1.6000000000000003,
+      "viewportAspect": 1.6,
+      "squarePixelRatio": 0.9999999999999999
+    }
+  }
+]

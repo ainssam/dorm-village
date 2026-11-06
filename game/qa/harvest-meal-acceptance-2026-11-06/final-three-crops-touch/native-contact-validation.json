@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "note": "Recorded actual first-bite snapshots checked against final native threshold after run started; no runtime state changed.",
+  "limits": {
+    "maxMouthContactError": 0.002,
+    "maxHandContactError": 0.002,
+    "maxSolverIterations": 48
+  },
+  "checks": [
+    {
+      "crop": "tomato",
+      "harvests": 1,
+      "mouthContactError": 1.2693145414557369e-05,
+      "handContactError": 0,
+      "nativeGrip": {
+        "iterations": 1,
+        "solveError": 7.029597335447508e-05
+      }
+    },
+    {
+      "crop": "pumpkin",
+      "harvests": 1,
+      "mouthContactError": 1.3007824323222912e-05,
+      "handContactError": 0,
+      "nativeGrip": {
+        "iterations": 1,
+        "solveError": 7.203962152092155e-05
+      }
+    },
+    {
+      "crop": "leafy",
+      "harvests": 1,
+      "mouthContactError": 1.2721964584437903e-05,
+      "handContactError": 0,
+      "nativeGrip": {
+        "iterations": 1,
+        "solveError": 7.045565964015377e-05
+      }
+    },
+    {
+      "crop": "tomato",
+      "harvests": 2,
+      "mouthContactError": 1.2344560380882728e-05,
+      "handContactError": 0,
+      "nativeGrip": {
+        "iterations": 1,
+        "solveError": 6.836450223042357e-05
+      }
+    }
+  ]
+}

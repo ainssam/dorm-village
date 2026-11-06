@@ -1,0 +1,551 @@
+{
+  "scope": "Production food UI and CSS with explicit snapshot fixtures; game.js blocked; no gameplay or persisted quantities are claimed.",
+  "results": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "passed": true,
+      "stablePicker": true,
+      "order": {
+        "initialChooseVisible": true,
+        "viewport": [
+          320,
+          568
+        ],
+        "panel": {
+          "x": 16,
+          "y": 132.25,
+          "width": 292,
+          "height": 205.75,
+          "top": 132.25,
+          "right": 308,
+          "bottom": 338,
+          "left": 16
+        },
+        "panelClient": 290,
+        "panelScroll": 290,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음료수확 한 그릇",
+            "height": 48,
+            "width": 212.609375
+          },
+          {
+            "text": "토마토 한 그릇 · 토마토 1개호박 한 그릇 · 호박 1개잎채소 한 그릇 · 잎채소 1개",
+            "height": 48,
+            "width": 270
+          },
+          {
+            "text": "한 그릇 준비하기",
+            "height": 48,
+            "width": 270
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "true"
+      },
+      "sharing": {
+        "initialChooseVisible": false,
+        "viewport": [
+          320,
+          568
+        ],
+        "panel": {
+          "x": 12,
+          "y": 219,
+          "width": 292,
+          "height": 119,
+          "top": 219,
+          "right": 304,
+          "bottom": 338,
+          "left": 12
+        },
+        "panelClient": 290,
+        "panelScroll": 290,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음식 고르기",
+            "height": 48,
+            "width": 134
+          },
+          {
+            "text": "나눔 멈추기",
+            "height": 48,
+            "width": 134
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "false"
+      },
+      "headingBefore": {
+        "height": 56.59375,
+        "font": "16px",
+        "clock": "none",
+        "text": "밀구름 베이커리 카페"
+      },
+      "seatedHeading": {
+        "height": 56.59375,
+        "font": "16px",
+        "clock": "none",
+        "text": "밀구름 베이커리 카페"
+      },
+      "restoredHeading": {
+        "height": 140.09375,
+        "font": "25px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "passed": true,
+      "stablePicker": true,
+      "order": {
+        "initialChooseVisible": true,
+        "viewport": [
+          390,
+          844
+        ],
+        "panel": {
+          "x": 86,
+          "y": 266.609375,
+          "width": 292,
+          "height": 347.390625,
+          "top": 266.609375,
+          "right": 378,
+          "bottom": 614,
+          "left": 86
+        },
+        "panelClient": 290,
+        "panelScroll": 290,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음료수확 한 그릇",
+            "height": 48,
+            "width": 270
+          },
+          {
+            "text": "토마토 한 그릇 · 토마토 1개호박 한 그릇 · 호박 1개잎채소 한 그릇 · 잎채소 1개",
+            "height": 48,
+            "width": 270
+          },
+          {
+            "text": "한 그릇 준비하기",
+            "height": 48,
+            "width": 270
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "true"
+      },
+      "sharing": {
+        "initialChooseVisible": false,
+        "viewport": [
+          390,
+          844
+        ],
+        "panel": {
+          "x": 12,
+          "y": 495,
+          "width": 292,
+          "height": 119,
+          "top": 495,
+          "right": 304,
+          "bottom": 614,
+          "left": 12
+        },
+        "panelClient": 290,
+        "panelScroll": 290,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음식 고르기",
+            "height": 48,
+            "width": 134
+          },
+          {
+            "text": "나눔 멈추기",
+            "height": 48,
+            "width": 134
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "false"
+      },
+      "headingBefore": {
+        "height": 107.59375,
+        "font": "25px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      },
+      "seatedHeading": {
+        "height": 107.59375,
+        "font": "25px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      },
+      "restoredHeading": {
+        "height": 107.59375,
+        "font": "25px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      }
+    },
+    {
+      "viewport": [
+        844,
+        390
+      ],
+      "passed": true,
+      "stablePicker": true,
+      "order": {
+        "initialChooseVisible": true,
+        "viewport": [
+          844,
+          390
+        ],
+        "panel": {
+          "x": 372,
+          "y": 201,
+          "width": 460,
+          "height": 173,
+          "top": 201,
+          "right": 832,
+          "bottom": 374,
+          "left": 372
+        },
+        "panelClient": 458,
+        "panelScroll": 458,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음료수확 한 그릇",
+            "height": 48,
+            "width": 198.171875
+          },
+          {
+            "text": "토마토 한 그릇 · 토마토 1개호박 한 그릇 · 호박 1개잎채소 한 그릇 · 잎채소 1개",
+            "height": 48,
+            "width": 237.8125
+          },
+          {
+            "text": "한 그릇 준비하기",
+            "height": 48,
+            "width": 237.8125
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "true"
+      },
+      "sharing": {
+        "initialChooseVisible": false,
+        "viewport": [
+          844,
+          390
+        ],
+        "panel": {
+          "x": 12,
+          "y": 82,
+          "width": 280,
+          "height": 105,
+          "top": 82,
+          "right": 292,
+          "bottom": 187,
+          "left": 12
+        },
+        "panelClient": 278,
+        "panelScroll": 278,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음식 고르기",
+            "height": 48,
+            "width": 128
+          },
+          {
+            "text": "나눔 멈추기",
+            "height": 48,
+            "width": 128
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "false"
+      },
+      "headingBefore": {
+        "height": 57.390625,
+        "font": "32px",
+        "clock": "none",
+        "text": "밀구름 베이커리 카페"
+      },
+      "seatedHeading": {
+        "height": 57.390625,
+        "font": "32px",
+        "clock": "none",
+        "text": "밀구름 베이커리 카페"
+      },
+      "restoredHeading": {
+        "height": 57.390625,
+        "font": "32px",
+        "clock": "none",
+        "text": "밀구름 베이커리 카페"
+      }
+    },
+    {
+      "viewport": [
+        768,
+        1024
+      ],
+      "passed": true,
+      "stablePicker": true,
+      "order": {
+        "initialChooseVisible": true,
+        "viewport": [
+          768,
+          1024
+        ],
+        "panel": {
+          "x": 444,
+          "y": 660.609375,
+          "width": 312,
+          "height": 347.390625,
+          "top": 660.609375,
+          "right": 756,
+          "bottom": 1008,
+          "left": 444
+        },
+        "panelClient": 310,
+        "panelScroll": 310,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음료수확 한 그릇",
+            "height": 48,
+            "width": 290
+          },
+          {
+            "text": "토마토 한 그릇 · 토마토 1개호박 한 그릇 · 호박 1개잎채소 한 그릇 · 잎채소 1개",
+            "height": 48,
+            "width": 290
+          },
+          {
+            "text": "한 그릇 준비하기",
+            "height": 48,
+            "width": 290
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "true"
+      },
+      "sharing": {
+        "initialChooseVisible": false,
+        "viewport": [
+          768,
+          1024
+        ],
+        "panel": {
+          "x": 444,
+          "y": 889,
+          "width": 312,
+          "height": 119,
+          "top": 889,
+          "right": 756,
+          "bottom": 1008,
+          "left": 444
+        },
+        "panelClient": 310,
+        "panelScroll": 310,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음식 고르기",
+            "height": 48,
+            "width": 144
+          },
+          {
+            "text": "나눔 멈추기",
+            "height": 48,
+            "width": 144
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "false"
+      },
+      "headingBefore": {
+        "height": 82.984375,
+        "font": "32px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      },
+      "seatedHeading": {
+        "height": 82.984375,
+        "font": "32px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      },
+      "restoredHeading": {
+        "height": 82.984375,
+        "font": "32px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      }
+    },
+    {
+      "viewport": [
+        1440,
+        900
+      ],
+      "passed": true,
+      "stablePicker": true,
+      "order": {
+        "initialChooseVisible": true,
+        "viewport": [
+          1440,
+          900
+        ],
+        "panel": {
+          "x": 1116,
+          "y": 536.609375,
+          "width": 312,
+          "height": 347.390625,
+          "top": 536.609375,
+          "right": 1428,
+          "bottom": 884,
+          "left": 1116
+        },
+        "panelClient": 310,
+        "panelScroll": 310,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음료수확 한 그릇",
+            "height": 48,
+            "width": 290
+          },
+          {
+            "text": "토마토 한 그릇 · 토마토 1개호박 한 그릇 · 호박 1개잎채소 한 그릇 · 잎채소 1개",
+            "height": 48,
+            "width": 290
+          },
+          {
+            "text": "한 그릇 준비하기",
+            "height": 48,
+            "width": 290
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "true"
+      },
+      "sharing": {
+        "initialChooseVisible": false,
+        "viewport": [
+          1440,
+          900
+        ],
+        "panel": {
+          "x": 1116,
+          "y": 765,
+          "width": 312,
+          "height": 119,
+          "top": 765,
+          "right": 1428,
+          "bottom": 884,
+          "left": 1116
+        },
+        "panelClient": 310,
+        "panelScroll": 310,
+        "targets": [
+          {
+            "text": "닫기",
+            "height": 48,
+            "width": 51.390625
+          },
+          {
+            "text": "음식 고르기",
+            "height": 48,
+            "width": 144
+          },
+          {
+            "text": "나눔 멈추기",
+            "height": 48,
+            "width": 144
+          }
+        ],
+        "recipeSize": "15px",
+        "discoverySize": "15px",
+        "orderData": "false"
+      },
+      "headingBefore": {
+        "height": 82.984375,
+        "font": "32px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      },
+      "seatedHeading": {
+        "height": 82.984375,
+        "font": "32px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      },
+      "restoredHeading": {
+        "height": 82.984375,
+        "font": "32px",
+        "clock": "inline",
+        "text": "밀구름 베이커리 카페"
+      }
+    }
+  ],
+  "errors": []
+}

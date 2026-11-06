@@ -1,0 +1,255 @@
+{
+  "recordedUTC": "2026-11-05T23:52:58.690Z",
+  "files": {
+    "dist/bakery/camera-height.js": {
+      "sha256": "932b941410d07863cb320e344639006bea212e724a07db1baca47ba83bcad8a1",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/construction.js": {
+      "sha256": "145855d9e7491c78fdfbd3d72a9b7f3621f335b577c071362a12d8c06515158c",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/dining-view.js": {
+      "sha256": "048ff1afafd0928cc0660c5332b4c350a756b6d2ae1c2d5db0f03cc1e6a8654d",
+      "mtime": 1793921665.4006448
+    },
+    "dist/bakery/drink-presentation.js": {
+      "sha256": "f7cdb3e10b9efa028c84d281da2408f706e2c1378ddb4b3b3fa110d4cc11243e",
+      "mtime": 1793899799.1886933
+    },
+    "dist/bakery/entry-frame.js": {
+      "sha256": "565a81a0d968d72c9ad2e1c19f4d73a7739195a2204f696872e8267c4105014b",
+      "mtime": 1793893226.1408374
+    },
+    "dist/bakery/food-bag.js": {
+      "sha256": "00cb55cdd4ec93f3b1bc2fdf71229487589a3252ea8d3e52abb646cb18f1ce1b",
+      "mtime": 1793921253.9054756
+    },
+    "dist/bakery/food-carry.js": {
+      "sha256": "52b142c9158ab353eef78b9f530f2e951c0d47bc0e21b3cd74394a008b8a5d39",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/food-colors.js": {
+      "sha256": "0cc8b95d6e4ca11d0edbdb3f9859dd9fa2ac830247aa1f3ff87d137785f7a36f",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/food-controller.js": {
+      "sha256": "7d96baf4efce1f144ed658c2fa98d4994c9aaf633ad46a19ac6e802df2e17955",
+      "mtime": 1793921255.1654854
+    },
+    "dist/bakery/food-host.js": {
+      "sha256": "bcf3295b9df7c36ee96e6bcb0e17561433ac24b9f5c5dedbad2be51304f8d0b4",
+      "mtime": 1793899709.4516323
+    },
+    "dist/bakery/food-occupancy.js": {
+      "sha256": "879a42360dd6ab01a2f0324c925dbc744a584adfb156cdff1274d9622aefee7f",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/food-ui.js": {
+      "sha256": "b06de12e401e43f1d24f809e67e3b82e1bc669c29d906e30b3e516939a0b6f67",
+      "mtime": 1793900571.7430973
+    },
+    "dist/bakery/food-visibility.js": {
+      "sha256": "38e3fab9859c703f2692d505f5aabdc7db6ffaf1d5bdab49482ba037010ef76e",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/food.css": {
+      "sha256": "6dab68d569965445e6d02a3c066305b7f803dfd94752172055fbc99ba594b5a8",
+      "mtime": 1793921252.693466
+    },
+    "dist/bakery/game-integration.js": {
+      "sha256": "a86277d2f493677c022626218bb868b3978d9e81f0ef42043548aec689c96537",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/guest-corridor.js": {
+      "sha256": "8164c6c86a0de12f8350cad326d41f70aa04095de38b898b0136d43bba9a0c76",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/guest-service.js": {
+      "sha256": "4837d32d9237198e9b5ff79b85a449ccf70f1bc021a042e09325de804f65c85d",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/harvest-resident-serving.js": {
+      "sha256": "fd9af821a3ea20d40f692d80b24cb32cf48fd06847a10d9771f431c3013335e0",
+      "mtime": 1793921246.2254157
+    },
+    "dist/bakery/harvest-serving.js": {
+      "sha256": "4cabcfd584b92116ddc110411d280a433d55ce57efdeda0b5b64b6595799b8f7",
+      "mtime": 1793900540.4544778
+    },
+    "dist/bakery/layout.js": {
+      "sha256": "7e661049f8e13d22283ddda46e560dfe1295a2f2590d996ca69961816078e72b",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/movement.js": {
+      "sha256": "a7c6fa9c1f8e94cb3527bbd55db233d33a8fc3387eb6054180d99404a9825663",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/presentation.js": {
+      "sha256": "c01e1742786f2c066cc874f93df6388868c80db3d82ea1c5c425c61421063c63",
+      "mtime": 1793892659.4407148
+    },
+    "dist/bakery/surfaces.js": {
+      "sha256": "97f4f2a6bc244dbbffef7009f128960a99b8af8b4da84c9d8ed6cffb8d7c74ac",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/tea-attachment.js": {
+      "sha256": "2dc28300f1adc2165a97665152b769ef5fe72a1d6eb4a15d39e0e499bc2396d8",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/tea-furniture.js": {
+      "sha256": "4fa378876e4467e77d1338cbe1fce27d00309d74c71b3f2a14d9e51af14285e4",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/tea-layout.js": {
+      "sha256": "315d34e78ee7fc361c993c1f0f127e17234f20ef9a312be45814eed1c9dbbd84",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/tea-residents.js": {
+      "sha256": "02993154fa5f3e7e5568eabe97f8774b561bc515150eef0b65cfde8d2e101034",
+      "mtime": 1793900283.9791384
+    },
+    "dist/bakery/tea-route.js": {
+      "sha256": "02dd0a4650753ead0373fd8f39d159b231ea542a606accc5f0819b5165106d43",
+      "mtime": 1793491965.1690948
+    },
+    "dist/bakery/tea-time.js": {
+      "sha256": "d23ded144318e2710b53006cb5782d61ac93c55a360cf280404dd56533972e9e",
+      "mtime": 1793899995.7263227
+    },
+    "dist/bakery/view.js": {
+      "sha256": "d7a0ebd7a84d97eaa4bb2c89f4102d94f0e49be6794ef5e6b9a7a9ea02bd0e3b",
+      "mtime": 1793491965.1700702
+    },
+    "dist/camera-fit.js": {
+      "sha256": "e106f71fc02f65fddbbd9dce4357a2d9b511a2402c1c0e733c222986186f0307",
+      "mtime": 1793491965.1700702
+    },
+    "dist/camera.js": {
+      "sha256": "1ccad55642b77ccfb36572f79c1a9e5b972fcc88cb32696bf97d79fa92ad0eb5",
+      "mtime": 1793921379.3985462
+    },
+    "dist/font-faces.css": {
+      "sha256": "31ff966fa28c0d497cebab2b45c9c4557e82be4d13e56d1eb4012bde15499f24",
+      "mtime": 1793491965.21407
+    },
+    "dist/game.js": {
+      "sha256": "8b29fe6d5243d774380e88a389672f85599030c6e4941999223eb2158ee6accb",
+      "mtime": 1793900186.9840338
+    },
+    "dist/hud.css": {
+      "sha256": "840fb44462ee9f3072f1e1192afa4a77ea4b0d0a6652d055898d9dc95b87be7d",
+      "mtime": 1793491965.24207
+    },
+    "dist/index.html": {
+      "sha256": "fd6c0acde53f1b6d2292390639d166201e3838ed9841f2b5a1f60c7f8e8d1452",
+      "mtime": 1793921253.5651414
+    },
+    "dist/produce/camera.js": {
+      "sha256": "ee68728b61c80c8bb74e54e8067d78fa7027503fc6f808cbc33bb2ac6adf297e",
+      "mtime": 1793491965.257522
+    },
+    "dist/produce/controller.js": {
+      "sha256": "b556cd4411585ab44c09d2fb0a1f916396a7194c18cc4247f6d89e77eec9de44",
+      "mtime": 1793539763.8246367
+    },
+    "dist/produce/crop-notes.js": {
+      "sha256": "790e30ee1ce19c88fab79fc8b54a583f0d5ae60b21212b59473da3936087400f",
+      "mtime": 1793899709.4516888
+    },
+    "dist/produce/game-integration.js": {
+      "sha256": "6d08a2a95cb54ac70bd08002f6d0b65083720fea60434f9d35a046c28795e7aa",
+      "mtime": 1793894305.5381968
+    },
+    "dist/produce/host.js": {
+      "sha256": "cd4e39f3b5012317ddf67e2d1cbacfe36804ac75505b57151891cacebfd1c0c1",
+      "mtime": 1793491965.257522
+    },
+    "dist/produce/layout.js": {
+      "sha256": "442ae82ad3832bb5d15e098738db9ef18c4b814448a70498826cacb980a9e061",
+      "mtime": 1793491965.257522
+    },
+    "dist/produce/produce.css": {
+      "sha256": "3fecc4b46447e57a9ed47ec3b80807fa5cdcc195b6407a4f24958fc6b3a87711",
+      "mtime": 1793894670.600148
+    },
+    "dist/produce/session.js": {
+      "sha256": "b53646e8efb1073041a8d5deef967e004e50dc78357ce9d57072c1158f3ea126",
+      "mtime": 1793491965.257522
+    },
+    "dist/produce/view.js": {
+      "sha256": "34470d7b9a42a729b3152abfd5dbb43d3ac7c65234b2bb6c922d06a4a269f3cf",
+      "mtime": 1793491965.257522
+    },
+    "dist/release.css": {
+      "sha256": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf",
+      "mtime": 1793892647.344056
+    },
+    "dist/residents/koala-barista-worktop.js": {
+      "sha256": "c426f26398538f616a7482d31ee2a7b9f285455ca8dcd7a8e53d1756413f3574",
+      "mtime": 1793491965.28607
+    },
+    "dist/residents/koala-barista.js": {
+      "sha256": "fd496bccdd7c690fdae536a178aeab61855c5fd09a6b5c892832a60fa073be67",
+      "mtime": 1793900500.6701684
+    },
+    "dist/state/cafe-food.js": {
+      "sha256": "4d65de6e9a5fb337e64741c63c1d5c21bfaaa0cfc77754bcc535a895b35ef2c8",
+      "mtime": 1793899696.630395
+    },
+    "dist/state/fishing.js": {
+      "sha256": "0b68d1bdafe1e1cbb96b5e790887b76d80ed4c84e0da010aae11754c7cd44350",
+      "mtime": 1793491965.3567848
+    },
+    "dist/state/food-catalog.js": {
+      "sha256": "625ae2232bd87a71aaf924dbc3b891059bedf0015db9506a071648c466cbae00",
+      "mtime": 1793899696.630295
+    },
+    "dist/state/garden.js": {
+      "sha256": "47177d9853619a281e427127b1330c520b83b4ed5641a6f5d84864413c488ce4",
+      "mtime": 1793491965.3567848
+    },
+    "dist/state/gathering.js": {
+      "sha256": "f9704937ef4f46311619c008a38ea797af48b9a048675ccf8cfcf4dad913aa27",
+      "mtime": 1793899696.6305652
+    },
+    "dist/state/library.js": {
+      "sha256": "d5b5f3034df6698c9ca08e5ac4774c0e0780c92c924d42f2ed13d48cabb99358",
+      "mtime": 1793491965.3567848
+    },
+    "dist/state/produce-season.js": {
+      "sha256": "9cfb18960562c6b38a9a7b675354a288b3837a9b57115ea6d8f453d441767d80",
+      "mtime": 1793491965.3567848
+    },
+    "dist/state/produce.js": {
+      "sha256": "9550d40633d0b391c06c072e98041b6db78b85325d60e83ed5d5002f0d617fac",
+      "mtime": 1793899696.6304743
+    },
+    "dist/state/progress.js": {
+      "sha256": "8375c63c39261fbe5978347f00606a097048c3480fdc299079058879bd4ff28e",
+      "mtime": 1793899696.630663
+    },
+    "dist/state/save-keys.js": {
+      "sha256": "0bd029d9ac5fc033891029bad3a0ca745a03658509cefb8cf0e53ff14f9c99c5",
+      "mtime": 1793491965.3567848
+    },
+    "dist/state/save-writer.js": {
+      "sha256": "8d458732aff7ad628c80dc9eeb05f7d2c8ebc024cdb6e50987002be203fb0767",
+      "mtime": 1793491965.3567848
+    },
+    "dist/state/save.js": {
+      "sha256": "ce63ccc05adfb484ff9ff9dd220b1be42aceec5ab966043dde731e97b17c8a47",
+      "mtime": 1793899696.6307917
+    },
+    "dist/style.css": {
+      "sha256": "891085bf26ce75be5d289b8e466099c4c6602949f305817fc0a44dff1db9bbf9",
+      "mtime": 1793892181.436414
+    },
+    "dist/ui.js": {
+      "sha256": "e968a2b618804b89a0a74bf2e3d8550b8652f7058a4b03d73fd8f2705ab89434",
+      "mtime": 1793892247.7200556
+    }
+  },
+  "changed": [],
+  "stable": true
+}

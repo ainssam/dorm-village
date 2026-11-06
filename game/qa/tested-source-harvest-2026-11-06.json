@@ -7,7 +7,7 @@
     "failed": 0,
     "cancelled": 0,
     "skipped": 0,
-    "durationMs": 120539.601382
+    "durationMs": 104540.846177
   },
   "sourceUnchangedDuringChecks": true,
   "files": {
@@ -122,7 +122,7 @@
     "dist/bakery/food-occupancy.js": "879a42360dd6ab01a2f0324c925dbc744a584adfb156cdff1274d9622aefee7f",
     "dist/bakery/food-ui.js": "b06de12e401e43f1d24f809e67e3b82e1bc669c29d906e30b3e516939a0b6f67",
     "dist/bakery/food-visibility.js": "38e3fab9859c703f2692d505f5aabdc7db6ffaf1d5bdab49482ba037010ef76e",
-    "dist/bakery/food.css": "6dab68d569965445e6d02a3c066305b7f803dfd94752172055fbc99ba594b5a8",
+    "dist/bakery/food.css": "9c8fea096050486dab4f6aa8d12e67bb8f89eee9d0d59463ecb3971627218208",
     "dist/bakery/game-integration.js": "a86277d2f493677c022626218bb868b3978d9e81f0ef42043548aec689c96537",
     "dist/bakery/guest-corridor.js": "8164c6c86a0de12f8350cad326d41f70aa04095de38b898b0136d43bba9a0c76",
     "dist/bakery/guest-service.js": "4837d32d9237198e9b5ff79b85a449ccf70f1bc021a042e09325de804f65c85d",

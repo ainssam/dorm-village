@@ -1,0 +1,1182 @@
+[
+  {
+    "name": "harvest",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "before": {
+        "crop": "leafy",
+        "harvests": 0,
+        "material": 0,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "after": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "text": "잎채소 텃밭\n\n놀이 봄 · 돌보기 계절: 봄·겨울\n\n잎채소 2개를 재료가방에 넣었어요\n\n다시 물 주기\n수확한 작물은 어디에 쓸까요?\n\n잎채소 1개로 밀구름 카페 2층에서 수확 한 그릇을 준비해요. 열매 대신 잎을 먹는 채소예요.\n\n놀이 계절\n한국 달력\n놀이 봄\n놀이 여름\n놀이 가을\n놀이 겨울\n\n한국 달력을 따르거나 놀이 계절을 직접 골라요. 기다릴 필요 없이 물을 주면 자라요. 익은 작물과 모은 재료는 계속 남아요.\n\n산책으로 돌아가기"
+    }
+  },
+  {
+    "name": "missing-ingredient-selectable",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "crop": "tomato",
+      "text": "닫기\n음료\n수확 한 그릇\n음식 고르기\n토마토 한 그릇 · 토마토 1개\n호박 한 그릇 · 호박 1개\n잎채소 한 그릇 · 잎채소 1개\n\n토마토 1개 필요 · 가방 0개\n\n한 그릇 준비하기"
+    }
+  },
+  {
+    "name": "hud-initial-order",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "header": {
+        "x": 12,
+        "y": 14,
+        "width": 118,
+        "height": 56.59375
+      },
+      "title": "밀구름 베이커리 카페",
+      "titleFont": "16px",
+      "clockVisible": false
+    }
+  },
+  {
+    "name": "initial-meal-order",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "compact": "false",
+      "mode": "meal",
+      "text": "닫기\n음료\n수확 한 그릇\n음식 고르기\n토마토 한 그릇 · 토마토 1개\n호박 한 그릇 · 호박 1개\n잎채소 한 그릇 · 잎채소 1개\n\n잎채소 1개 사용 · 가방 2개\n\n한 그릇 준비하기",
+      "panel": {
+        "x": 16,
+        "y": 132.25,
+        "width": 292,
+        "height": 205.75
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "action": "close",
+          "disabled": false,
+          "x": 245.609375,
+          "y": 143.25,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "한 그릇 준비하기",
+          "action": "choose",
+          "disabled": false,
+          "x": 27,
+          "y": 279,
+          "width": 270,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false,
+      "header": {
+        "width": 320,
+        "height": 568,
+        "header": {
+          "x": 12,
+          "y": 14,
+          "width": 118,
+          "height": 56.59375
+        },
+        "title": "밀구름 베이커리 카페",
+        "titleFont": "16px",
+        "clockVisible": false
+      }
+    }
+  },
+  {
+    "name": "leafy-order-layout-1",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "compact": "false",
+      "mode": "meal",
+      "text": "닫기\n음료\n수확 한 그릇\n음식 고르기\n토마토 한 그릇 · 토마토 1개\n호박 한 그릇 · 호박 1개\n잎채소 한 그릇 · 잎채소 1개\n\n잎채소 1개 사용 · 가방 2개\n\n한 그릇 준비하기",
+      "panel": {
+        "x": 16,
+        "y": 132.25,
+        "width": 292,
+        "height": 205.75
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "action": "close",
+          "disabled": false,
+          "x": 245.609375,
+          "y": 143.25,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "한 그릇 준비하기",
+          "action": "choose",
+          "disabled": false,
+          "x": 27,
+          "y": 279,
+          "width": 270,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "receive",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "before": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "beginning": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "ready": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 2,
+        "made": 0,
+        "consumed": 0,
+        "bag": 0
+      },
+      "after": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "barista": {
+        "phase": "handover",
+        "progress": 0.9215384615384686,
+        "cupVisible": true,
+        "handoverReleased": true,
+        "handoverReady": true,
+        "time": 0,
+        "evaluations": 351,
+        "disposed": false,
+        "recipeId": "leafyBowl",
+        "servingKind": "meal",
+        "itemId": "leafyBowl",
+        "contentsFraction": 1,
+        "consumed": false
+      }
+    }
+  },
+  {
+    "name": "leafy-order-layout-2",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "compact": "false",
+      "mode": "meal",
+      "text": "코알라의 작은 카페\n닫기\n\n잎채소 한 그릇을 음식주머니에 넣었어요. 2층 빈 의자에 앉아 음식주머니를 열어요\n\n준비할 것\n음료\n수확 한 그릇\n음식 고르기\n토마토 한 그릇 · 토마토 1개\n호박 한 그릇 · 호박 1개\n잎채소 한 그릇 · 잎채소 1개\n\n잎채소 1개 사용 · 가방 1개\n\n한 그릇 준비하기\n\n작은 발견 · 잎채소는 잎을 먹는 채소예요. 열매와 모양이 어떻게 다른가요?\n\n첫 한 입 전에 취소하면 음식은 그대로예요",
+      "panel": {
+        "x": 16,
+        "y": 81,
+        "width": 292,
+        "height": 257
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "action": "close",
+          "disabled": false,
+          "x": 245.609375,
+          "y": 92,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "한 그릇 준비하기",
+          "action": "choose",
+          "disabled": false,
+          "x": 27,
+          "y": 358.78125,
+          "width": 270,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "receive",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "before": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "beginning": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "ready": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 1,
+        "made": 1,
+        "consumed": 0,
+        "bag": 1
+      },
+      "after": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      },
+      "barista": {
+        "phase": "handover",
+        "progress": 0.9090769230768763,
+        "cupVisible": true,
+        "handoverReleased": true,
+        "handoverReady": true,
+        "time": 0,
+        "evaluations": 522,
+        "disposed": false,
+        "recipeId": "leafyBowl",
+        "servingKind": "meal",
+        "itemId": "leafyBowl",
+        "contentsFraction": 1,
+        "consumed": false
+      }
+    }
+  },
+  {
+    "name": "prepared-bowls-material-bag",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "entries": [
+        {
+          "label": "잎채소 한 그릇",
+          "count": "2그릇"
+        }
+      ],
+      "text": "포장한 음식\n\n잎채소 한 그릇\n2그릇\n\n카페 아래층에서 빵을 포장하고, 위층에서 음료나 수확 한 그릇을 받아요. 토마토·호박·잎채소 중 하나를 1개 써서 한 그릇을 준비해요. 위층 의자에 앉아 음식주머니를 열면 먹을 수 있고, 함께 쉬는 친구에게 한 그릇을 나눌 수도 있어요. 집에 놓는 주스 트레이와 잼 병은 별도로 보관하는 장식이에요."
+    }
+  },
+  {
+    "name": "projection-seated",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "aspect": null,
+      "frustum": {
+        "left": -2.153846153846154,
+        "right": 2.153846153846154,
+        "top": 3.8230769230769233,
+        "bottom": -3.8230769230769233
+      },
+      "matrix": [
+        0.4642857142857142,
+        0,
+        0,
+        0,
+        0,
+        0.26156941649899396,
+        0,
+        0,
+        0,
+        0,
+        -0.010005002501250625,
+        0,
+        0,
+        0,
+        -1.001000500250125,
+        1
+      ],
+      "position": [
+        4.023851737381764,
+        13.199999999999974,
+        19.57095858958659
+      ],
+      "quaternion": [
+        -0.24695806157193442,
+        0.17271357906829746,
+        0.04478203681049656,
+        0.9524580329910367
+      ],
+      "target": [
+        -1.9761482626182214,
+        3.6999999999999913,
+        3.5709585895866156
+      ],
+      "zoom": 1,
+      "controlsEnabled": false,
+      "bakeryActivity": true,
+      "canvas": {
+        "width": 320,
+        "height": 568
+      },
+      "stage": {
+        "width": 320,
+        "height": 568
+      },
+      "projectionAspect": 0.563380281690141,
+      "viewportAspect": 0.5633802816901409,
+      "squarePixelRatio": 0.9999999999999998
+    }
+  },
+  {
+    "name": "hud-seated",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "header": {
+        "x": 12,
+        "y": 14,
+        "width": 118,
+        "height": 56.59375
+      },
+      "title": "밀구름 베이커리 카페",
+      "titleFont": "16px",
+      "clockVisible": false
+    }
+  },
+  {
+    "name": "friend-precontact-cancel",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "before": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      },
+      "early": {
+        "phase": "seated",
+        "residentId": "chinchilla",
+        "token": {
+          "visit": 1
+        },
+        "seatId": "bakeryCafe.tea-chair-left",
+        "sharing": true,
+        "shareItem": "leafyBowl",
+        "shareConsumed": false,
+        "notice": "",
+        "pose": {
+          "x": -3.7,
+          "z": -0.2,
+          "y": 3.84,
+          "yaw": 0,
+          "visible": true,
+          "support": {
+            "x": -2.35,
+            "z": -0.2,
+            "surface": "floor2",
+            "supportY": 3.25,
+            "tread": -1
+          },
+          "airborne": false,
+          "walking": false,
+          "rigid": false,
+          "seated": true,
+          "seating": false,
+          "leaving": false,
+          "done": false,
+          "waiting": false,
+          "seatId": "bakeryCafe.tea-chair-left",
+          "radius": 0.66,
+          "owner": {
+            "visit": 1
+          },
+          "phase": 0,
+          "time": 30.94920000000012,
+          "floor": "floor2",
+          "floorY": 3.25,
+          "supportY": 3.25
+        },
+        "serving": null
+      },
+      "after": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      }
+    }
+  },
+  {
+    "name": "leafy-friend-compact",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "compact": "true",
+      "mode": "meal",
+      "text": "닫기\n\n친구가 한 입 먹었어요\n\n음식 고르기\n나눔 마치기",
+      "panel": {
+        "x": 12,
+        "y": 329,
+        "width": 292,
+        "height": 119
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "action": "close",
+          "disabled": false,
+          "x": 243.609375,
+          "y": 338,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "음식 고르기",
+          "action": "expand",
+          "disabled": true,
+          "x": 21,
+          "y": 391,
+          "width": 134,
+          "height": 48
+        },
+        {
+          "name": "나눔 마치기",
+          "action": "share-stop",
+          "disabled": false,
+          "x": 161,
+          "y": 391,
+          "width": 134,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "friend-bite",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "before": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 0,
+        "bag": 2
+      },
+      "contact": {
+        "phase": "seated",
+        "residentId": "chinchilla",
+        "token": {
+          "visit": 1
+        },
+        "seatId": "bakeryCafe.tea-chair-left",
+        "sharing": true,
+        "shareItem": "leafyBowl",
+        "shareConsumed": true,
+        "notice": "",
+        "pose": {
+          "x": -3.7,
+          "z": -0.2,
+          "y": 3.84,
+          "yaw": 0,
+          "visible": true,
+          "support": {
+            "x": -2.35,
+            "z": -0.2,
+            "surface": "floor2",
+            "supportY": 3.25,
+            "tread": -1
+          },
+          "airborne": false,
+          "walking": false,
+          "rigid": false,
+          "seated": true,
+          "seating": false,
+          "leaving": false,
+          "done": false,
+          "waiting": false,
+          "seatId": "bakeryCafe.tea-chair-left",
+          "radius": 0.66,
+          "owner": {
+            "visit": 1
+          },
+          "phase": 0,
+          "time": 32.63060000000013,
+          "floor": "floor2",
+          "floorY": 3.25,
+          "supportY": 3.25
+        },
+        "serving": {
+          "kind": "meal",
+          "itemId": "leafyBowl",
+          "consumed": true,
+          "contentsFraction": 0.42,
+          "tableTopY": 4.18,
+          "bowlBottomY": 4.188,
+          "spoonContact": [
+            -3.7,
+            4.6,
+            0.15598062179661965
+          ],
+          "mouth": [
+            -3.7,
+            4.6,
+            0.1559806217966197
+          ],
+          "hand": [
+            -3.458154655481097,
+            4.551659261514409,
+            0.1560289664004053
+          ],
+          "mouthContactError": 5.551115123125783e-17,
+          "handContactError": 0,
+          "targetError": 0,
+          "travel": 1,
+          "reach": 1
+        }
+      },
+      "after": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      }
+    }
+  },
+  {
+    "name": "self-precontact-cancel",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "before": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      },
+      "operation": {
+        "id": "cafe-food-5",
+        "kind": "dine",
+        "phase": "eating",
+        "itemId": "leafyBowl",
+        "elapsed": 0,
+        "consumed": false,
+        "action": {
+          "type": "FOOD_CONSUME",
+          "itemId": "leafyBowl",
+          "expectedConsumed": 1,
+          "expectedRevision": 11
+        },
+        "retryable": false
+      },
+      "proof": {
+        "itemId": "leafyBowl",
+        "tableTopY": 4.18,
+        "servingBottomY": 4.315900065152907,
+        "mouth": [
+          -0.000008686861829421133,
+          0.9214723100670486,
+          0.2552301054776036
+        ],
+        "contact": [
+          0.000050762925725186814,
+          0.674303665717951,
+          0.6895222821942106
+        ],
+        "hand": [
+          0.19561483552798942,
+          0.6414528544354678,
+          0.38374210346233323
+        ],
+        "mouthContactError": 0.49970194820602465,
+        "handContactError": 5.551115123125783e-17,
+        "faceClearance": 0.434292176716607,
+        "elapsed": 0.016700000000011643,
+        "consumed": false,
+        "biteVisible": false,
+        "tablePoint": [
+          -3.7,
+          4.205,
+          1.58
+        ],
+        "nativeGrip": {
+          "iterations": 2,
+          "solveError": 0.00009962345350821243
+        },
+        "kind": "meal",
+        "bowlBottomY": 4.205,
+        "contentsFraction": 1,
+        "spoonContact": [
+          0.000050762925725186814,
+          0.674303665717951,
+          0.6895222821942106
+        ]
+      },
+      "after": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      }
+    }
+  },
+  {
+    "name": "leafy-self-midlift-component-views",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "kind": "read-only alternate-camera component view at actual first bite",
+      "proof": {
+        "itemId": "leafyBowl",
+        "tableTopY": 4.18,
+        "servingBottomY": 4.3710058567462085,
+        "mouth": [
+          -0.000008686861829421133,
+          0.9214723100670486,
+          0.2552301054776036
+        ],
+        "contact": [
+          0.000013403689157117163,
+          0.7905517241332939,
+          0.4853034594086416
+        ],
+        "hand": [
+          0.3397918988338673,
+          0.7020406473127978,
+          0.3876184374386775
+        ],
+        "mouthContactError": 0.26471484374380433,
+        "handContactError": 0,
+        "faceClearance": 0.230073353931038,
+        "elapsed": 0.4565000000000002,
+        "consumed": false,
+        "biteVisible": false,
+        "tablePoint": [
+          -3.7,
+          4.205,
+          1.58
+        ],
+        "nativeGrip": {
+          "iterations": 11,
+          "solveError": 0.00009236790989005297
+        },
+        "kind": "meal",
+        "bowlBottomY": 4.205,
+        "contentsFraction": 1,
+        "spoonContact": [
+          0.000013403689157117163,
+          0.7905517241332939,
+          0.4853034594086416
+        ]
+      },
+      "frames": [
+        {
+          "name": "front-oblique",
+          "cameraLocal": [
+            1.2,
+            1.7,
+            2.2
+          ],
+          "lookAtLocal": [
+            0.1,
+            0.78,
+            0.15
+          ],
+          "frustumSpan": 2.1,
+          "file": "leafy-self-midlift-component-front-oblique.png"
+        },
+        {
+          "name": "side",
+          "cameraLocal": [
+            2,
+            1,
+            1
+          ],
+          "lookAtLocal": [
+            0.05,
+            0.72,
+            0.2
+          ],
+          "frustumSpan": 2.5,
+          "file": "leafy-self-midlift-component-side.png"
+        }
+      ]
+    }
+  },
+  {
+    "name": "leafy-self-first-bite-component-views",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "kind": "read-only alternate-camera component view at actual first bite",
+      "proof": {
+        "itemId": "leafyBowl",
+        "tableTopY": 4.18,
+        "servingBottomY": 4.561592134102046,
+        "mouth": [
+          -0.000008686861829421133,
+          0.9214723100670486,
+          0.2552301054776036
+        ],
+        "contact": [
+          -0.000022471351830737757,
+          0.9214736609168966,
+          0.25522856552010365
+        ],
+        "hand": [
+          0.36047167096204147,
+          0.886146024034034,
+          0.2955017753457212
+        ],
+        "mouthContactError": 0.000013935868434015163,
+        "handContactError": 0,
+        "faceClearance": -0.0000015399574999630516,
+        "elapsed": 0.9583000000000175,
+        "consumed": true,
+        "biteVisible": false,
+        "tablePoint": [
+          -3.7,
+          4.205,
+          1.58
+        ],
+        "nativeGrip": {
+          "iterations": 1,
+          "solveError": 0.0000771822107350973
+        },
+        "kind": "meal",
+        "bowlBottomY": 4.205,
+        "contentsFraction": 0.42,
+        "spoonContact": [
+          -0.000022471351830737757,
+          0.9214736609168966,
+          0.25522856552010365
+        ]
+      },
+      "frames": [
+        {
+          "name": "front-oblique",
+          "cameraLocal": [
+            1.2,
+            1.7,
+            2.2
+          ],
+          "lookAtLocal": [
+            0.1,
+            0.78,
+            0.15
+          ],
+          "frustumSpan": 2.1,
+          "file": "leafy-self-first-bite-component-front-oblique.png"
+        },
+        {
+          "name": "side",
+          "cameraLocal": [
+            2,
+            1,
+            1
+          ],
+          "lookAtLocal": [
+            0.05,
+            0.72,
+            0.2
+          ],
+          "frustumSpan": 2.5,
+          "file": "leafy-self-first-bite-component-side.png"
+        }
+      ]
+    }
+  },
+  {
+    "name": "leafy-self-compact",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "compact": "true",
+      "mode": "meal",
+      "text": "닫기\n\n한 입 먹었어요\n\n음식 고르기\n그만 먹기",
+      "panel": {
+        "x": 12,
+        "y": 329,
+        "width": 292,
+        "height": 119
+      },
+      "buttons": [
+        {
+          "name": "닫기",
+          "action": "close",
+          "disabled": false,
+          "x": 243.609375,
+          "y": 338,
+          "width": 51.390625,
+          "height": 48
+        },
+        {
+          "name": "음식 고르기",
+          "action": "expand",
+          "disabled": false,
+          "x": 21,
+          "y": 391,
+          "width": 140.90625,
+          "height": 48
+        },
+        {
+          "name": "그만 먹기",
+          "action": "cancel",
+          "disabled": false,
+          "x": 167.90625,
+          "y": 391,
+          "width": 127.09375,
+          "height": 48
+        }
+      ],
+      "bodyFont": "16px",
+      "overflow": false
+    }
+  },
+  {
+    "name": "self-bite",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "before": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 1,
+        "bag": 1
+      },
+      "contact": {
+        "food": {
+          "open": true,
+          "mode": "dine",
+          "notice": "",
+          "paused": false,
+          "readOnly": false,
+          "seated": true,
+          "seatId": "bakeryCafe.chair-left",
+          "enabledDrinks": [
+            "americano",
+            "latte",
+            "appleJuice",
+            "strawberryJuice",
+            "peachJuice",
+            "pearJuice",
+            "mandarinJuice"
+          ],
+          "enabledMeals": [
+            "tomatoBowl",
+            "pumpkinBowl",
+            "leafyBowl"
+          ],
+          "materials": {
+            "apple": 0,
+            "shell": 0,
+            "autumnLeaf": 0,
+            "petal": 0,
+            "pondFish": 0,
+            "seaFish": 0,
+            "strawberry": 0,
+            "tomato": 0,
+            "pumpkin": 0,
+            "leafy": 0,
+            "peach": 0,
+            "pear": 0,
+            "mandarin": 0
+          },
+          "bag": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "americano": 0,
+            "latte": 0,
+            "appleJuice": 0,
+            "strawberryJuice": 0,
+            "peachJuice": 0,
+            "pearJuice": 0,
+            "mandarinJuice": 0,
+            "tomatoBowl": 0,
+            "pumpkinBowl": 0,
+            "leafyBowl": 0
+          },
+          "stock": {
+            "milkRoll": 0,
+            "croissant": 0,
+            "miniCake": 0,
+            "herbTea": 0,
+            "cocoa": 0
+          },
+          "apples": 0,
+          "operation": {
+            "id": "cafe-food-6",
+            "kind": "dine",
+            "phase": "eating",
+            "itemId": "leafyBowl",
+            "elapsed": 0.9583000000000175,
+            "consumed": true,
+            "action": {
+              "type": "FOOD_CONSUME",
+              "itemId": "leafyBowl",
+              "expectedConsumed": 1,
+              "expectedRevision": 11
+            },
+            "retryable": false
+          },
+          "barista": {
+            "phase": "idle",
+            "progress": 0,
+            "cupVisible": true,
+            "handoverReleased": false,
+            "handoverReady": false,
+            "time": 0,
+            "evaluations": 3,
+            "disposed": false,
+            "recipeId": null,
+            "servingKind": "drink"
+          },
+          "carry": {
+            "visible": false,
+            "handleContact": [
+              -0.612560940008078,
+              0.4327815043669272,
+              0.05918379257451711
+            ]
+          }
+        },
+        "proof": {
+          "itemId": "leafyBowl",
+          "tableTopY": 4.18,
+          "servingBottomY": 4.561592134102046,
+          "mouth": [
+            -0.000008686861829421133,
+            0.9214723100670486,
+            0.2552301054776036
+          ],
+          "contact": [
+            -0.000022471351830737757,
+            0.9214736609168966,
+            0.25522856552010365
+          ],
+          "hand": [
+            0.36047167096204147,
+            0.886146024034034,
+            0.2955017753457212
+          ],
+          "mouthContactError": 0.000013935868434015163,
+          "handContactError": 0,
+          "faceClearance": -0.0000015399574999630516,
+          "elapsed": 0.9583000000000175,
+          "consumed": true,
+          "biteVisible": false,
+          "tablePoint": [
+            -3.7,
+            4.205,
+            1.58
+          ],
+          "nativeGrip": {
+            "iterations": 1,
+            "solveError": 0.0000771822107350973
+          },
+          "kind": "meal",
+          "bowlBottomY": 4.205,
+          "contentsFraction": 0.42,
+          "spoonContact": [
+            -0.000022471351830737757,
+            0.9214736609168966,
+            0.25522856552010365
+          ]
+        }
+      },
+      "after": {
+        "crop": "leafy",
+        "harvests": 1,
+        "material": 0,
+        "made": 2,
+        "consumed": 2,
+        "bag": 0
+      }
+    }
+  },
+  {
+    "name": "projection-seat-exit",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "aspect": null,
+      "frustum": {
+        "left": -2.153846153846154,
+        "right": 2.153846153846154,
+        "top": 3.8230769230769233,
+        "bottom": -3.8230769230769233
+      },
+      "matrix": [
+        0.4642857142857142,
+        0,
+        0,
+        0,
+        0,
+        0.26156941649899396,
+        0,
+        0,
+        0,
+        0,
+        -0.010005002501250625,
+        0,
+        0,
+        0,
+        -1.001000500250125,
+        1
+      ],
+      "position": [
+        3.949999999999986,
+        13.199999999999974,
+        19.699999999999974
+      ],
+      "quaternion": [
+        -0.24695806157193442,
+        0.17271357906829746,
+        0.04478203681049656,
+        0.9524580329910367
+      ],
+      "target": [
+        -2.05,
+        3.6999999999999913,
+        3.7000000000000006
+      ],
+      "zoom": 1,
+      "controlsEnabled": true,
+      "bakeryActivity": false,
+      "canvas": {
+        "width": 320,
+        "height": 568
+      },
+      "stage": {
+        "width": 320,
+        "height": 568
+      },
+      "projectionAspect": 0.563380281690141,
+      "viewportAspect": 0.5633802816901409,
+      "squarePixelRatio": 0.9999999999999998
+    }
+  },
+  {
+    "name": "hud-seat-exit",
+    "viewport": {
+      "width": 320,
+      "height": 568
+    },
+    "detail": {
+      "width": 320,
+      "height": 568,
+      "header": {
+        "x": 12,
+        "y": 14,
+        "width": 118,
+        "height": 140.09375
+      },
+      "title": "밀구름 베이커리 카페",
+      "titleFont": "25px",
+      "clockVisible": true
+    }
+  }
+]

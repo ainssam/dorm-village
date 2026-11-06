@@ -1,0 +1,93 @@
+{
+  "kind": "isolated-original-geometry-diagnostic",
+  "note": "This poses the original native model for a surface probe; it does not represent real input, storage or a harvested meal. Screenshot pixels are from the separate actual desktop run.",
+  "method": "Sample the approved neutral.webp smile through the assets.js face shader coordinates on actual skinned triangles, then find each sample’s closest point on the transformed spoon scoop triangles.",
+  "paintedSmileTextureBounds": [
+    349,
+    490,
+    426,
+    509
+  ],
+  "textureSize": [
+    768,
+    768
+  ],
+  "faceTriangles": 821,
+  "smileSamples": 3598,
+  "socket": [
+    -0.000008686861829421133,
+    0.921472310067049,
+    0.2552301054776036
+  ],
+  "socketToPaintedSmileDistance": 0.04102095899083752,
+  "scoopCenter": [
+    0.0005312131556474142,
+    0.8962089513771252,
+    0.2980696713718114
+  ],
+  "scoopToPaintedSmileDistance": 1.8399583873458416e-7,
+  "nearest": {
+    "smile": [
+      -0.000609969794927917,
+      0.8839033623462114,
+      0.27448252949890456
+    ],
+    "scoop": [
+      -0.0006099805666106695,
+      0.8839031803096377,
+      0.27448250498104665
+    ]
+  },
+  "screenshotDarkComponents": {
+    "midlift": [
+      {
+        "pixels": 69,
+        "bounds": [
+          376,
+          419,
+          400,
+          425
+        ],
+        "center": [
+          388.42028985507244,
+          423
+        ]
+      },
+      {
+        "pixels": 76,
+        "bounds": [
+          423,
+          405,
+          428,
+          420
+        ],
+        "center": [
+          425.88157894736844,
+          411.1842105263158
+        ]
+      }
+    ],
+    "first-bite": [
+      {
+        "pixels": 76,
+        "bounds": [
+          423,
+          405,
+          428,
+          420
+        ],
+        "center": [
+          425.88157894736844,
+          411.1842105263158
+        ]
+      }
+    ]
+  },
+  "sha256": {
+    "dist/assets.js": "920d68fcf0fd07837b8c16751991568f70a2c1f72f2da775a7c2c99dda03f409",
+    "dist/doreumi-rig-poses.js": "3abc7c247ecb6dcb18c0090c0a1813e1ea31c42d48c05d793b4c43b26945038c",
+    "dist/bakery/dining-view.js": "048ff1afafd0928cc0660c5332b4c350a756b6d2ae1c2d5db0f03cc1e6a8654d",
+    "dist/characters/doreumi/neutral.webp": "4ba04a6a6808448b77ec3e1809d802e8a736923364e00b9e5253517ee9bbe7c9",
+    "dist/characters/doreumi/village.glb": "037a4be1f2bfc9eabad32ca835bd1cc8ba22fbcf29ee6e171845e41de624941b"
+  }
+}

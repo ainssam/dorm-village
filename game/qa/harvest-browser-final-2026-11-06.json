@@ -1,0 +1,298 @@
+{
+  "status": "Passed: final functional flows, targeted320px correction and visual review",
+  "applicationVersion": "2026.11.06.2",
+  "runtimeCommit": "63fc7ec",
+  "browser": "Chromium154.0.8037.57 headless, SwiftShader, Linux",
+  "runtimeScope": "62 files: index/game/ui/camera/camera-fit, top-level CSS, state/bakery/produce JS-CSS, koala resident JS",
+  "contexts": [
+    {
+      "directory": "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch",
+      "input": "touch, normal motion",
+      "viewports": [
+        "390x844",
+        "844x390",
+        "768x1024"
+      ],
+      "crops": [
+        "tomato",
+        "pumpkin",
+        "leafy"
+      ],
+      "deviceScaleFactor": 1,
+      "renderEvery": 12,
+      "repeat": true,
+      "reload": true,
+      "legacyLatte": 2,
+      "legacyBread": 1,
+      "checks": [
+        {
+          "name": "harvest-to-shared-meals",
+          "passed": true,
+          "elapsedMs": 533531
+        },
+        {
+          "name": "legacy-bread-bake-pack-eat",
+          "passed": true,
+          "elapsedMs": 99648
+        }
+      ],
+      "cropLedger": {
+        "tomato": {
+          "crop": "tomato",
+          "harvests": 2,
+          "material": 1,
+          "made": 3,
+          "consumed": 3,
+          "bag": 0
+        },
+        "pumpkin": {
+          "crop": "pumpkin",
+          "harvests": 1,
+          "material": 0,
+          "made": 2,
+          "consumed": 2,
+          "bag": 0
+        },
+        "leafy": {
+          "crop": "leafy",
+          "harvests": 1,
+          "material": 0,
+          "made": 2,
+          "consumed": 2,
+          "bag": 0
+        }
+      },
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": [],
+        "runtimeStable": true,
+        "runtimeChanged": []
+      },
+      "runtimeFiles": 62,
+      "runtimeDigest": "a801026e4e0059cf5148772ff493034e88b49758342c01899a70b0f0afc1ad5f",
+      "startedUTC": "2026-11-05T23:36:05.735Z",
+      "endedUTC": "2026-11-05T23:46:51.144Z",
+      "harnessSha256": "1e53e216aa3b5399e45d45a3b30cfc22a6348ad9f6436f784b3637b96fe9b854",
+      "nativeFirstBites": 4,
+      "maxNativePalmError": 0,
+      "maxNativeMouthSocketError": 1.3007824323222912e-05,
+      "maxProjectionRatioError": 2.220446049250313e-16,
+      "friendIds": [
+        "chinchilla"
+      ]
+    },
+    {
+      "directory": "qa/harvest-meal-acceptance-2026-11-06/final-desktop",
+      "input": "mouse/keyboard, normal motion",
+      "viewports": [
+        "1440x900"
+      ],
+      "crops": [
+        "tomato"
+      ],
+      "deviceScaleFactor": 1,
+      "renderEvery": 12,
+      "repeat": false,
+      "reload": false,
+      "checks": [
+        {
+          "name": "harvest-to-shared-meals",
+          "passed": true,
+          "elapsedMs": 321838
+        }
+      ],
+      "cropLedger": {
+        "tomato": {
+          "crop": "tomato",
+          "harvests": 1,
+          "material": 0,
+          "made": 2,
+          "consumed": 2,
+          "bag": 0
+        }
+      },
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": [],
+        "runtimeStable": true,
+        "runtimeChanged": []
+      },
+      "runtimeFiles": 62,
+      "runtimeDigest": "a801026e4e0059cf5148772ff493034e88b49758342c01899a70b0f0afc1ad5f",
+      "startedUTC": "2026-11-05T23:47:20.876Z",
+      "endedUTC": "2026-11-05T23:52:58.690Z",
+      "harnessSha256": "012d94ef721051052dc614895fc932d30a291aaccc36aa7f2636d1792434f6d7",
+      "nativeFirstBites": 1,
+      "maxNativePalmError": 0,
+      "maxNativeMouthSocketError": 1.435550634675184e-05,
+      "maxProjectionRatioError": 2.220446049250313e-16,
+      "friendIds": [
+        "chinchilla"
+      ]
+    },
+    {
+      "directory": "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact",
+      "input": "emulated touch, reduced motion",
+      "viewports": [
+        "320x568"
+      ],
+      "crops": [
+        "leafy"
+      ],
+      "deviceScaleFactor": 1,
+      "renderEvery": 12,
+      "repeat": false,
+      "reload": false,
+      "checks": [
+        {
+          "name": "harvest-to-shared-meals",
+          "passed": true,
+          "elapsedMs": 215055
+        }
+      ],
+      "cropLedger": {
+        "leafy": {
+          "crop": "leafy",
+          "harvests": 1,
+          "material": 0,
+          "made": 2,
+          "consumed": 2,
+          "bag": 0
+        }
+      },
+      "health": {
+        "errors": [],
+        "consoleErrors": [],
+        "failed": [],
+        "runtimeStable": true,
+        "runtimeChanged": []
+      },
+      "runtimeFiles": 62,
+      "runtimeDigest": "dd5c4ad841c4223a031ae47f29abc8d7689ea0a59ab1492a433ab7b717baeb29",
+      "startedUTC": "2026-11-06T00:02:46.095Z",
+      "endedUTC": "2026-11-06T00:06:27.487Z",
+      "harnessSha256": "fb585a8862267f1ee57751afad3b87d611924716b351b6142693e4b502fcd7c5",
+      "nativeFirstBites": 1,
+      "maxNativePalmError": 0,
+      "maxNativeMouthSocketError": 1.3935868434015163e-05,
+      "maxProjectionRatioError": 2.220446049250313e-16,
+      "friendIds": [
+        "chinchilla"
+      ],
+      "hudStates": {
+        "hud-initial-order": {
+          "width": 320,
+          "height": 568,
+          "header": {
+            "x": 12,
+            "y": 14,
+            "width": 118,
+            "height": 56.59375
+          },
+          "title": "밀구름 베이커리 카페",
+          "titleFont": "16px",
+          "clockVisible": false
+        },
+        "hud-seated": {
+          "width": 320,
+          "height": 568,
+          "header": {
+            "x": 12,
+            "y": 14,
+            "width": 118,
+            "height": 56.59375
+          },
+          "title": "밀구름 베이커리 카페",
+          "titleFont": "16px",
+          "clockVisible": false
+        },
+        "hud-seat-exit": {
+          "width": 320,
+          "height": 568,
+          "header": {
+            "x": 12,
+            "y": 14,
+            "width": 118,
+            "height": 140.09375
+          },
+          "title": "밀구름 베이커리 카페",
+          "titleFont": "25px",
+          "clockVisible": true
+        }
+      }
+    }
+  ],
+  "visualContact": {
+    "nativePalmErrorLimit": 0.002,
+    "nativeMouthSocketErrorLimit": 0.002,
+    "mouthSocketIsNotPaintedSmileCentroid": true,
+    "nativeScoopToPaintedSmileSurfaceDistance": 1.84e-07,
+    "surfaceEvidence": "qa/harvest-native-smile-contact-2026-11-06.json",
+    "diagnosticCamera": "Cloned offscreen camera at the actual naturally reached frame; live camera, actor state and outcomes unchanged",
+    "surfaceProbe": "qa/harvest-native-smile-contact-probe.mjs",
+    "review": "qa/harvest-scene-review-2026-11-06.md",
+    "socketToPaintedSmileDistance": 0.04102
+  },
+  "limits": [
+    "Headless software WebGL and emulated touch; no physical phone GPU, FPS, Safari/Firefox or native OS picker assessment.",
+    "QA_RENDER_EVERY=12 drawing sampling; input, animation progression and reward logic not overridden.",
+    "Browser sharing used chinchilla only; three resident species are separate model tests.",
+    "DOM fixture checks exercise CSS and synthetic controller snapshots, not actual harvest or save outcomes.",
+    "Earlier pre-fix runs and occluded frontal component captures are excluded as final visual evidence."
+  ],
+  "recommendedEvidenceFiles": [
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/tomato-actual-harvest-1.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/tomato-ready-2.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/prepared-bowls-material-bag.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/seated-resize-844x390.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/seated-resize-768x1024.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/legacy-bread-material-bag.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/tomato-self-midlift-component-front-oblique.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/tomato-self-first-bite-component-front-oblique.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/tomato-self-first-bite-component-side.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/leafy-ready-1.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/prepared-bowls-material-bag.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/leafy-friend-first-bite.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/results.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/health.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/runtime-start.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/runtime-end.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/ledger-and-contact.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/harness-used.mjs",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/results.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/health.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/runtime-start.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/runtime-end.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/ledger-and-contact.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-desktop/harness-used.mjs",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/results.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/health.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/runtime-start.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/runtime-end.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/ledger-and-contact.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/harness-used.mjs",
+    "qa/harvest-meal-acceptance-2026-11-06/final-three-crops-touch/native-contact-validation.json",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/initial-meal-order.png",
+    "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact/seat-exit-320x568.png",
+    "qa/harvest-native-smile-contact-2026-11-06.json",
+    "qa/harvest-native-smile-contact-probe.mjs"
+  ],
+  "runtimeDelta": {
+    "baseRuntimeCommit": "63fc7ec",
+    "changedAfterTouchAndDesktop": [
+      "dist/bakery/food.css"
+    ],
+    "beforeSha256": "6dab68d569965445e6d02a3c066305b7f803dfd94752172055fbc99ba594b5a8",
+    "afterSha256": "9c8fea096050486dab4f6aa8d12e67bb8f89eee9d0d59463ecb3971627218208",
+    "scope": "7CSSlines only, max-width360px with cafe food UI open or seated. Full title16px, clock temporarily hidden. Selector never matches prior390px+ and desktop contexts.",
+    "targetedRecheck": "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320-compact",
+    "allOtherScopedRuntimeFilesIdentical": true
+  },
+  "prior320Diagnostic": {
+    "directory": "qa/harvest-meal-acceptance-2026-11-06/final-reduced-320",
+    "functionalPassed": true,
+    "reasonSuperseded": "140.09px room title partly obscured seated characters. Final targeted run verifies56.59px title during order/seat and140.09px/clock restoration on exit."
+  }
+}
