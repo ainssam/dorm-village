@@ -1,0 +1,46 @@
+{
+  "base": "3eaa676120a329f3f361de20f17def7f0e312d8d",
+  "branch": "fix/music-playback-recovery-2026-11-06",
+  "files": {
+    "dist/audio/game-audio.js": "76bbdbbc86af064584971be7d09c310d7d2f916b5ba60f825d419842cc8d0304",
+    "dist/school/music-controller.js": "0ddf1adb9ba00ed36c590513f63c5ef8e0d76c953e4429c224dcff4f4896e0b9",
+    "dist/school/music-symbols.js": "b8a163570d1283cdee3e5b9b8b81b8c351fe5e48d4e4ff80638eb765fa49d9bd",
+    "tests/music-listening-recovery.test.mjs": "386bc35b1397924cada924dcff74d5fa3036c58305c4823cac4321fabcc2fa0d",
+    "tests/music-quiz-focus.test.mjs": "a60897747f8f6d0ac88f22c408e9646413933a46076c25baae51ce4802f6c9a8",
+    "scripts/music-listening-acceptance-2026-11-06.mjs": "efddd35642cc552b6f93b90fdb2b156992c16ff39563b00c4b650915e5c82217",
+    "scripts/music-quiz-focus-dom-2026-11-06.mjs": "a25c4771bfdfa754ec0319c48b1066f5d7b3507cb4a6cc0050892b4012293154"
+  },
+  "focusedTests": {
+    "pass": 31,
+    "fail": 0,
+    "newListening": 13,
+    "newQuizFocus": 6
+  },
+  "componentDOM": {
+    "viewports": [
+      "320x568",
+      "844x390",
+      "1440x900"
+    ],
+    "gameModuleBlocked": true,
+    "webglAttempts": 0,
+    "errors": 0,
+    "coverage": [
+      "answer Enter/Space focus and Tab",
+      "all six wrong/retry/correct",
+      "owned Next to first new answer and Tab to second",
+      "last Next to visible Restart; Tab/Shift+Tab then Enter restarts",
+      "Escape cleanup/unlock"
+    ],
+    "results": "qa/music-quiz-focus-dom-2026-11-06/after/results.json",
+    "quizSourceSHA256": "b8a163570d1283cdee3e5b9b8b81b8c351fe5e48d4e4ff80638eb765fa49d9bd"
+  },
+  "notRun": [
+    "whole package",
+    "actual 3D app music acceptance",
+    "audible listening",
+    "push",
+    "deploy"
+  ],
+  "independentReview": "Final audio, copy, answer and owned-Next focus handlers/tests approved; no blockers."
+}
