@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-11-08T11:51:23.876Z",
+  "version": "2026.11.06.5",
+  "project": "dorm-village",
+  "account": "아인2",
+  "productionUrl": "https://dorm-village.vercel.app/",
+  "pullRequest": "https://github.com/ainssam/dorm-village/pull/8",
+  "reviewedHead": "a3e203483c6635c66782bf1f9158249a77e4cadf",
+  "commit": "9b3dd54e5dfd8040cd2414f60a1ddd0a7a0544a4",
+  "deploymentId": "dpl_BpKpyYEByVUGt8wrrdEjJs3bkWgB",
+  "deploymentUrl": "https://dorm-village-m3im548ht-ain-b38f.vercel.app",
+  "state": "READY",
+  "aliases": [
+    "dorm-village.vercel.app",
+    "dorm-village-ain-b38f.vercel.app"
+  ],
+  "buildDurationMs": 492638,
+  "verification": {
+    "localSyntax": "passed",
+    "localTests": 383,
+    "localFailed": 0,
+    "sourceFilesPinned": 941,
+    "manifestSHA256": "11c0d9fa0754bb6569af6ed40a2a1abbe889f5fce82c7ab3d5eca7830f9e85ff",
+    "publicApplicationVersion": "2026.11.06.5",
+    "manifestMatchesLocal": true,
+    "brandSourceMatchesLocal": true
+  },
+  "publicMetadata": {
+    "canonical": "https://dorm-village.vercel.app/",
+    "favicon": "https://dorm-village.vercel.app/favicon.ico",
+    "viewport": "width=device-width,initial-scale=1,viewport-fit=cover",
+    "theme_color": "#234d48",
+    "og": {
+      "title": "도름마을 · Dorm Village",
+      "description": "도름이와 걷고, 만들고, 쉬어 가는 작은 세계. 학교와 마을, 구름섬에서 나만의 하루를 보내요.",
+      "type": "website",
+      "url": "https://dorm-village.vercel.app/",
+      "site_name": "도름마을",
+      "locale": "ko_KR",
+      "image": [
+        "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png"
+      ],
+      "image:width": "1200",
+      "image:height": "630",
+      "image:type": "image/png",
+      "image:alt": "파스텔 마을에서 손을 흔드는 도름이와 도름마을 제목 — 홍보 일러스트"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "도름마을 · 잠깐 놀고, 만들고, 쉬어 가요",
+      "description": "가입 없이 도름이와 산책하고, 만들고, 가볍게 놀아요. 휴대폰·태블릿·컴퓨터에서 만나는 작은 마을.",
+      "image": "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png"
+    },
+    "other": {
+      "application-version": "2026.11.06.5"
+    }
+  },
+  "assets": [
+    {
+      "url": "https://dorm-village.vercel.app/manifest.webmanifest",
+      "title": null,
+      "error": null
+    },
+    {
+      "url": "https://dorm-village.vercel.app/brand/source.json",
+      "title": null,
+      "error": null
+    },
+    {
+      "url": "https://dorm-village.vercel.app/brand/dorm-village-kakao-1200x630.png",
+      "title": "dorm-village-kakao-1200x630.png (1200×630)",
+      "error": null
+    },
+    {
+      "url": "https://dorm-village.vercel.app/favicon.ico",
+      "title": "favicon.ico (64×64)",
+      "error": null
+    }
+  ],
+  "limits": "Public verification covers READY state, pinned source, version and static assets. Actual 3D flows were verified locally on the reviewed source on 2026-11-06 and hashes rechecked on 2026-11-08; remote extractor does not provide usable WebGL. No audible quality, physical-device or public-runtime performance claim."
+}
