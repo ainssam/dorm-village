@@ -1,0 +1,81 @@
+{
+  "scope": "Real Chromium production UI/quiz/CSS; game.js replaced with empty module; WebGL forbidden",
+  "fixed": false,
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "expectedFix": false,
+      "afterAnswer": {
+        "tag": "BODY",
+        "id": "",
+        "text": "\n\n\n도름이의 작은 세계3층 · 작은 음악실\n✦ 별빛 마을에서 보내는 작은 하루\n\n\n\n\n\n✦그랜드 피아노 · 음표 퀴즈 · 헤드셋 음악 감상\n지도소리메뉴\n\n마을 놀이 도구닫기\n놀이 안내 · 장소 찾기\n도름이 동작 ·",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 0
+      },
+      "afterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "4분음표",
+        "inChoices": true,
+        "pressed": "false",
+        "scrollTop": 0
+      },
+      "rounds": [],
+      "closeUnlock": true,
+      "errors": [],
+      "webglAttempts": 0
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "expectedFix": false,
+      "afterAnswer": {
+        "tag": "BODY",
+        "id": "",
+        "text": "\n\n\n도름이의 작은 세계3층 · 작은 음악실\n✦ 별빛 마을에서 보내는 작은 하루\n\n\n\n\n\n✦그랜드 피아노 · 음표 퀴즈 · 헤드셋 음악 감상\n지도소리메뉴\n\n마을 놀이 도구닫기\n놀이 안내 · 장소 찾기\n도름이 동작 ·",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 266
+      },
+      "afterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "4분음표",
+        "inChoices": true,
+        "pressed": "false",
+        "scrollTop": 266
+      },
+      "rounds": [],
+      "closeUnlock": true,
+      "errors": [],
+      "webglAttempts": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "expectedFix": false,
+      "afterAnswer": {
+        "tag": "BODY",
+        "id": "",
+        "text": "\n\n\n도름이의 작은 세계3층 · 작은 음악실\n✦ 별빛 마을에서 보내는 작은 하루\n\n\n\n\n\n✦그랜드 피아노 · 음표 퀴즈 · 헤드셋 음악 감상\n지도소리메뉴\n\n마을 놀이 도구닫기\n놀이 안내 · 장소 찾기\n도름이 동작 ·",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 0
+      },
+      "afterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "4분음표",
+        "inChoices": true,
+        "pressed": "false",
+        "scrollTop": 0
+      },
+      "rounds": [],
+      "closeUnlock": true,
+      "errors": [],
+      "webglAttempts": 0
+    }
+  ]
+}

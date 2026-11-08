@@ -1,0 +1,1520 @@
+{
+  "scope": "Real Chromium production UI/quiz/CSS; keyboard input; game.js replaced with empty module; WebGL forbidden; scroll observer delegates to native method",
+  "fixed": true,
+  "navigationFixed": true,
+  "feedbackFixed": false,
+  "sourceRef": "HEAD",
+  "baseline": null,
+  "quizSourceSHA256": "b8a163570d1283cdee3e5b9b8b81b8c351fe5e48d4e4ff80638eb765fa49d9bd",
+  "before": {
+    "dist/index.html": "7332e6dddbc187a6abdaa3f7e3d33c30b81aa23ca4fcf46a769696443c474a08",
+    "dist/ui.js": "aefb4119cb43e5211d12a7738e57611b81ae3df48a667832dc4b48e42b3d9b35",
+    "dist/style.css": "971621968f4fa5c6f71a23da4781914758cbbc9880006dfbcb6459ee5ecf1a2f",
+    "dist/release.css": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf",
+    "dist/school/subject-explorations.css": "5f94ebb5f2de0b0ab70658213d9e6c718cee9e7949a7c5382a0fcfb284857040",
+    "dist/school/music-symbols.js": "8c8d8c12c48b418547c8b217603d0d7320c6e4d745321a71c87216e852cb1283",
+    "dist/state/progress.js": "8375c63c39261fbe5978347f00606a097048c3480fdc299079058879bd4ff28e",
+    "dist/font-faces.css": "31ff966fa28c0d497cebab2b45c9c4557e82be4d13e56d1eb4012bde15499f24"
+  },
+  "after": {
+    "dist/index.html": "7332e6dddbc187a6abdaa3f7e3d33c30b81aa23ca4fcf46a769696443c474a08",
+    "dist/ui.js": "aefb4119cb43e5211d12a7738e57611b81ae3df48a667832dc4b48e42b3d9b35",
+    "dist/style.css": "971621968f4fa5c6f71a23da4781914758cbbc9880006dfbcb6459ee5ecf1a2f",
+    "dist/release.css": "b065db45de8ecd9b6822e8f3ad83f9b07e0ec7e7f43ec3479e52de7517e74faf",
+    "dist/school/subject-explorations.css": "5f94ebb5f2de0b0ab70658213d9e6c718cee9e7949a7c5382a0fcfb284857040",
+    "dist/school/music-symbols.js": "8c8d8c12c48b418547c8b217603d0d7320c6e4d745321a71c87216e852cb1283",
+    "dist/state/progress.js": "8375c63c39261fbe5978347f00606a097048c3480fdc299079058879bd4ff28e",
+    "dist/font-faces.css": "31ff966fa28c0d497cebab2b45c9c4557e82be4d13e56d1eb4012bde15499f24"
+  },
+  "sourceStable": true,
+  "results": [
+    {
+      "width": 320,
+      "height": 568,
+      "expectedFix": true,
+      "expectedNavigationFix": true,
+      "expectedFeedbackFix": false,
+      "afterAnswer": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "2분음표",
+        "inChoices": true,
+        "pressed": "true",
+        "scrollTop": 0
+      },
+      "firstFeedback": {
+        "feedback": {
+          "top": 544.90625,
+          "bottom": 649.65625,
+          "left": 29,
+          "right": 291
+        },
+        "dialog": {
+          "top": 12,
+          "bottom": 556,
+          "left": 12,
+          "right": 308
+        },
+        "selected": {
+          "top": 424.53125,
+          "bottom": 475.71875,
+          "left": 29,
+          "right": 291
+        },
+        "feedbackVisible": false,
+        "selectedChoiceVisible": true,
+        "focusText": "2분음표",
+        "pressed": "true",
+        "scrollTop": 0,
+        "scrollCalls": 0
+      },
+      "afterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "온음표",
+        "inChoices": true,
+        "pressed": "false",
+        "scrollTop": 0
+      },
+      "afterCompletion": {
+        "tag": "BUTTON",
+        "id": "music-retry",
+        "text": "처음부터 다시",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 69
+      },
+      "completionAfterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "마을로 돌아가기",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 69
+      },
+      "rounds": [
+        {
+          "id": "quarter",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 304.90625,
+              "bottom": 409.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 184.53125,
+              "bottom": 235.71875,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "2분음표",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 304.90625,
+              "bottom": 383.40625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 124.34375,
+              "bottom": 175.53125,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "4분음표",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "한 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          }
+        },
+        {
+          "id": "half",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 331.90625,
+              "bottom": 436.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 271.71875,
+              "bottom": 322.90625,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 331.90625,
+              "bottom": 436.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 211.53125,
+              "bottom": 262.71875,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "두 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "네 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "반 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          }
+        },
+        {
+          "id": "whole",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 304.90625,
+              "bottom": 409.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 184.53125,
+              "bottom": 235.71875,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "반 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 304.90625,
+              "bottom": 409.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 124.34375,
+              "bottom": 175.53125,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "반 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          }
+        },
+        {
+          "id": "eighth",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 331.90625,
+              "bottom": 436.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 271.71875,
+              "bottom": 322.90625,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 331.90625,
+              "bottom": 436.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 211.53125,
+              "bottom": 262.71875,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "반 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "한 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          }
+        },
+        {
+          "id": "paired-eighths",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 331.90625,
+              "bottom": 436.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 271.71875,
+              "bottom": 322.90625,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 331.90625,
+              "bottom": 410.40625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 211.53125,
+              "bottom": 262.71875,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "한 박",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박 크게 연주해요",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "더 빨리 연주해요",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 240
+          }
+        },
+        {
+          "id": "rest",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 304.90625,
+              "bottom": 409.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 124.34375,
+              "bottom": 175.53125,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "두 박 크게 연주해요",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 304.90625,
+              "bottom": 409.65625,
+              "left": 29,
+              "right": 291
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308
+            },
+            "selected": {
+              "top": 244.71875,
+              "bottom": 295.90625,
+              "left": 29,
+              "right": 291
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "한 박 소리를 쉬어요",
+            "pressed": "true",
+            "scrollTop": 240,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "music-retry",
+            "text": "처음부터 다시",
+            "inChoices": false,
+            "pressed": null,
+            "scrollTop": 69
+          },
+          "nextTab": null
+        }
+      ],
+      "feedbackScrolls": [],
+      "closeUnlock": true,
+      "errors": [],
+      "webglAttempts": 0
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "expectedFix": true,
+      "expectedNavigationFix": true,
+      "expectedFeedbackFix": false,
+      "afterAnswer": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "2분음표",
+        "inChoices": true,
+        "pressed": "true",
+        "scrollTop": 266
+      },
+      "firstFeedback": {
+        "feedback": {
+          "top": 289.953125,
+          "bottom": 343.953125,
+          "left": 56,
+          "right": 675.53125
+        },
+        "dialog": {
+          "top": 12,
+          "bottom": 378,
+          "left": 27,
+          "right": 817
+        },
+        "selected": {
+          "top": 169.578125,
+          "bottom": 220.765625,
+          "left": 56,
+          "right": 788
+        },
+        "feedbackVisible": true,
+        "selectedChoiceVisible": true,
+        "focusText": "2분음표",
+        "pressed": "true",
+        "scrollTop": 266,
+        "scrollCalls": 0
+      },
+      "afterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "온음표",
+        "inChoices": true,
+        "pressed": "false",
+        "scrollTop": 266
+      },
+      "afterCompletion": {
+        "tag": "BUTTON",
+        "id": "music-retry",
+        "text": "처음부터 다시",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 243
+      },
+      "completionAfterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "마을로 돌아가기",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 243
+      },
+      "rounds": [
+        {
+          "id": "quarter",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 137.578125,
+              "bottom": 188.765625,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "2분음표",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 77.390625,
+              "bottom": 128.578125,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "4분음표",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "한 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          }
+        },
+        {
+          "id": "half",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 197.765625,
+              "bottom": 248.953125,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 137.578125,
+              "bottom": 188.765625,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "두 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "네 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "반 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          }
+        },
+        {
+          "id": "whole",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 137.578125,
+              "bottom": 188.765625,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "반 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 77.390625,
+              "bottom": 128.578125,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "반 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          }
+        },
+        {
+          "id": "eighth",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 197.765625,
+              "bottom": 248.953125,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 137.578125,
+              "bottom": 188.765625,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "반 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "한 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          }
+        },
+        {
+          "id": "paired-eighths",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 197.765625,
+              "bottom": 248.953125,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 137.578125,
+              "bottom": 188.765625,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "한 박",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박 크게 연주해요",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "더 빨리 연주해요",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 298
+          }
+        },
+        {
+          "id": "rest",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 77.390625,
+              "bottom": 128.578125,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "두 박 크게 연주해요",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 257.953125,
+              "bottom": 311.953125,
+              "left": 56,
+              "right": 675.53125
+            },
+            "dialog": {
+              "top": 12,
+              "bottom": 378,
+              "left": 27,
+              "right": 817
+            },
+            "selected": {
+              "top": 197.765625,
+              "bottom": 248.953125,
+              "left": 56,
+              "right": 788
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "한 박 소리를 쉬어요",
+            "pressed": "true",
+            "scrollTop": 298,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "music-retry",
+            "text": "처음부터 다시",
+            "inChoices": false,
+            "pressed": null,
+            "scrollTop": 243
+          },
+          "nextTab": null
+        }
+      ],
+      "feedbackScrolls": [],
+      "closeUnlock": true,
+      "errors": [],
+      "webglAttempts": 0
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "expectedFix": true,
+      "expectedNavigationFix": true,
+      "expectedFeedbackFix": false,
+      "afterAnswer": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "2분음표",
+        "inChoices": true,
+        "pressed": "true",
+        "scrollTop": 0
+      },
+      "firstFeedback": {
+        "feedback": {
+          "top": 603.46875,
+          "bottom": 657.46875,
+          "left": 354,
+          "right": 973.53125
+        },
+        "dialog": {
+          "top": 59.515625,
+          "bottom": 840.46875,
+          "left": 325,
+          "right": 1115
+        },
+        "selected": {
+          "top": 483.09375,
+          "bottom": 534.28125,
+          "left": 354,
+          "right": 1086
+        },
+        "feedbackVisible": true,
+        "selectedChoiceVisible": true,
+        "focusText": "2분음표",
+        "pressed": "true",
+        "scrollTop": 0,
+        "scrollCalls": 0
+      },
+      "afterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "온음표",
+        "inChoices": true,
+        "pressed": "false",
+        "scrollTop": 0
+      },
+      "afterCompletion": {
+        "tag": "BUTTON",
+        "id": "music-retry",
+        "text": "처음부터 다시",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 0
+      },
+      "completionAfterTab": {
+        "tag": "BUTTON",
+        "id": "",
+        "text": "마을로 돌아가기",
+        "inChoices": false,
+        "pressed": null,
+        "scrollTop": 0
+      },
+      "rounds": [
+        {
+          "id": "quarter",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 483.09375,
+              "bottom": 534.28125,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "2분음표",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 422.90625,
+              "bottom": 474.09375,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "4분음표",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "한 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          }
+        },
+        {
+          "id": "half",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 543.28125,
+              "bottom": 594.46875,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 483.09375,
+              "bottom": 534.28125,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "두 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "네 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "반 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          }
+        },
+        {
+          "id": "whole",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 483.09375,
+              "bottom": 534.28125,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "반 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 422.90625,
+              "bottom": 474.09375,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "반 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          }
+        },
+        {
+          "id": "eighth",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 543.28125,
+              "bottom": 594.46875,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 483.09375,
+              "bottom": 534.28125,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "반 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "한 박",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          }
+        },
+        {
+          "id": "paired-eighths",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 543.28125,
+              "bottom": 594.46875,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "네 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 483.09375,
+              "bottom": 534.28125,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "한 박",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "두 박 크게 연주해요",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          },
+          "nextTab": {
+            "tag": "BUTTON",
+            "id": "",
+            "text": "더 빨리 연주해요",
+            "inChoices": true,
+            "pressed": "false",
+            "scrollTop": 0
+          }
+        },
+        {
+          "id": "rest",
+          "wrongCorrectFocus": true,
+          "wrongFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 422.90625,
+              "bottom": 474.09375,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "두 박 크게 연주해요",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "correctFeedback": {
+            "feedback": {
+              "top": 603.46875,
+              "bottom": 657.46875,
+              "left": 354,
+              "right": 973.53125
+            },
+            "dialog": {
+              "top": 59.515625,
+              "bottom": 840.46875,
+              "left": 325,
+              "right": 1115
+            },
+            "selected": {
+              "top": 543.28125,
+              "bottom": 594.46875,
+              "left": 354,
+              "right": 1086
+            },
+            "feedbackVisible": true,
+            "selectedChoiceVisible": true,
+            "focusText": "한 박 소리를 쉬어요",
+            "pressed": "true",
+            "scrollTop": 0,
+            "scrollCalls": 0
+          },
+          "afterNext": {
+            "tag": "BUTTON",
+            "id": "music-retry",
+            "text": "처음부터 다시",
+            "inChoices": false,
+            "pressed": null,
+            "scrollTop": 0
+          },
+          "nextTab": null
+        }
+      ],
+      "feedbackScrolls": [],
+      "closeUnlock": true,
+      "errors": [],
+      "webglAttempts": 0
+    }
+  ]
+}

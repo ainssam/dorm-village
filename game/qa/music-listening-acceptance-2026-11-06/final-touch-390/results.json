@@ -1,0 +1,1906 @@
+{
+  "scope": "Actual map/nearby action and DOM controls with real Web Audio decode; observational native buffer-source methods/gain, no altered audio outcomes/time; no injected network failure; no speaker audition or learner-performance claim",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "touch": true,
+  "reduced": false,
+  "injectFailure": false,
+  "injected": 0,
+  "renderEvery": 12,
+  "renderScale": 1,
+  "results": [
+    {
+      "name": "listening-failure-controls-and-explicit-recovery",
+      "passed": true
+    },
+    {
+      "name": "listening-five-tracks-play-pause-level-and-close",
+      "passed": true
+    },
+    {
+      "name": "music-quiz-six-wrong-retry-correct-complete-restart",
+      "passed": true
+    }
+  ],
+  "records": [
+    {
+      "name": "listening-initial-before-scroll",
+      "data": {
+        "dialog": {
+          "left": 12,
+          "top": 16,
+          "right": 378,
+          "bottom": 828,
+          "width": 366,
+          "height": 812
+        },
+        "title": {
+          "left": 12,
+          "top": 16,
+          "right": 378,
+          "bottom": 66,
+          "width": 366,
+          "height": 50
+        },
+        "close": {
+          "left": 314.328125,
+          "top": 19,
+          "right": 373,
+          "bottom": 63,
+          "width": 58.671875,
+          "height": 44
+        },
+        "scrollTop": 0,
+        "panel": {
+          "left": 12,
+          "top": 414.453125,
+          "right": 378,
+          "bottom": 828,
+          "width": 366,
+          "height": 413.546875,
+          "scrollTop": 0,
+          "clientHeight": 414,
+          "scrollHeight": 629
+        },
+        "horizontalOverflow": false,
+        "pageOverflow": false,
+        "active": {
+          "tag": "BUTTON",
+          "id": ""
+        },
+        "controls": [
+          {
+            "id": "",
+            "text": "나가기",
+            "left": 314.328125,
+            "top": 19,
+            "right": 373,
+            "bottom": 63,
+            "width": 58.671875,
+            "height": 44
+          },
+          {
+            "id": "",
+            "text": "창가의 작은 빛피아노 소품 · 44초",
+            "track": "windowlight",
+            "left": 22,
+            "top": 422.453125,
+            "right": 368,
+            "bottom": 500.09375,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "주머니 속 연스윙 재즈 · 37초",
+            "track": "pocket-kites",
+            "left": 22,
+            "top": 508.09375,
+            "right": 368,
+            "bottom": 585.734375,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "노을 종이배앰비언트 · 42초",
+            "track": "afterglow-paperboats",
+            "left": 22,
+            "top": 593.734375,
+            "right": 368,
+            "bottom": 671.375,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "클로버 왈츠포크 왈츠 · 40초",
+            "track": "clover-waltz",
+            "left": 22,
+            "top": 679.375,
+            "right": 368,
+            "bottom": 757.015625,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "픽셀 행진8비트 칩튠 · 38초",
+            "track": "pixel-parade",
+            "left": 22,
+            "top": 765.015625,
+            "right": 368,
+            "bottom": 842.65625,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "listen-play",
+            "text": "재생",
+            "left": 22,
+            "top": 854.65625,
+            "right": 80.84375,
+            "bottom": 898.65625,
+            "width": 58.84375,
+            "height": 44
+          },
+          {
+            "id": "listen-mute",
+            "text": "음소거",
+            "left": 90.84375,
+            "top": 854.65625,
+            "right": 166.109375,
+            "bottom": 898.65625,
+            "width": 75.265625,
+            "height": 44
+          },
+          {
+            "id": "listen-volume",
+            "text": "",
+            "left": 213.765625,
+            "top": 854.65625,
+            "right": 342.765625,
+            "bottom": 898.65625,
+            "width": 129,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "failure-injection-skipped",
+      "data": {
+        "injectFailure": false
+      }
+    },
+    {
+      "name": "native-level-windowlight",
+      "data": {
+        "track": "windowlight",
+        "levelBefore": 70,
+        "level": 71,
+        "muted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        },
+        "unmuted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": 0.7099999785423279,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": 0.7099999785423279,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "track-windowlight",
+      "data": {
+        "title": "창가의 작은 빛",
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": "windowlight",
+          "listening": {
+            "id": "windowlight",
+            "playing": true
+          },
+          "error": ""
+        },
+        "level": "71",
+        "claim": "decoded source/DOM state only; no audible quality claim"
+      }
+    },
+    {
+      "name": "native-level-pocket-kites",
+      "data": {
+        "track": "pocket-kites",
+        "levelBefore": 71,
+        "level": 72,
+        "muted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        },
+        "unmuted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": 0.7200000286102295,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": 0.7200000286102295,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "track-pocket-kites",
+      "data": {
+        "title": "주머니 속 연",
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": "pocket-kites",
+          "listening": {
+            "id": "pocket-kites",
+            "playing": true
+          },
+          "error": ""
+        },
+        "level": "72",
+        "claim": "decoded source/DOM state only; no audible quality claim"
+      }
+    },
+    {
+      "name": "native-level-afterglow-paperboats",
+      "data": {
+        "track": "afterglow-paperboats",
+        "levelBefore": 72,
+        "level": 73,
+        "muted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        },
+        "unmuted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": 0.7300000190734863,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": 0.7300000190734863,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "track-afterglow-paperboats",
+      "data": {
+        "title": "노을 종이배",
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": "afterglow-paperboats",
+          "listening": {
+            "id": "afterglow-paperboats",
+            "playing": true
+          },
+          "error": ""
+        },
+        "level": "73",
+        "claim": "decoded source/DOM state only; no audible quality claim"
+      }
+    },
+    {
+      "name": "native-level-clover-waltz",
+      "data": {
+        "track": "clover-waltz",
+        "levelBefore": 73,
+        "level": 74,
+        "muted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 6,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        },
+        "unmuted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 6,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": 0.7400000095367432,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": 0.7400000095367432,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "track-clover-waltz",
+      "data": {
+        "title": "클로버 왈츠",
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": "clover-waltz",
+          "listening": {
+            "id": "clover-waltz",
+            "playing": true
+          },
+          "error": ""
+        },
+        "level": "74",
+        "claim": "decoded source/DOM state only; no audible quality claim"
+      }
+    },
+    {
+      "name": "native-level-pixel-parade",
+      "data": {
+        "track": "pixel-parade",
+        "levelBefore": 74,
+        "level": 75,
+        "muted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 6,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 8,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 9,
+              "loop": true,
+              "duration": 38.4,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 9,
+              "loop": true,
+              "duration": 38.4,
+              "gain": 0,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        },
+        "unmuted": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 6,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 8,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 9,
+              "loop": true,
+              "duration": 38.4,
+              "gain": 0.75,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 9,
+              "loop": true,
+              "duration": 38.4,
+              "gain": 0.75,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "track-pixel-parade",
+      "data": {
+        "title": "픽셀 행진",
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": "pixel-parade",
+          "listening": {
+            "id": "pixel-parade",
+            "playing": true
+          },
+          "error": ""
+        },
+        "level": "75",
+        "claim": "decoded source/DOM state only; no audible quality claim"
+      }
+    },
+    {
+      "name": "listening-last-track-controls",
+      "data": {
+        "dialog": {
+          "left": 12,
+          "top": 16,
+          "right": 378,
+          "bottom": 828,
+          "width": 366,
+          "height": 812
+        },
+        "title": {
+          "left": 12,
+          "top": 16,
+          "right": 378,
+          "bottom": 66,
+          "width": 366,
+          "height": 50
+        },
+        "close": {
+          "left": 314.328125,
+          "top": 19,
+          "right": 373,
+          "bottom": 63,
+          "width": 58.671875,
+          "height": 44
+        },
+        "scrollTop": 0,
+        "panel": {
+          "left": 12,
+          "top": 414.453125,
+          "right": 378,
+          "bottom": 828,
+          "width": 366,
+          "height": 413.546875,
+          "scrollTop": 179,
+          "clientHeight": 414,
+          "scrollHeight": 629
+        },
+        "horizontalOverflow": false,
+        "pageOverflow": false,
+        "active": {
+          "tag": "BUTTON",
+          "id": "listen-play"
+        },
+        "controls": [
+          {
+            "id": "",
+            "text": "나가기",
+            "left": 314.328125,
+            "top": 19,
+            "right": 373,
+            "bottom": 63,
+            "width": 58.671875,
+            "height": 44
+          },
+          {
+            "id": "",
+            "text": "창가의 작은 빛피아노 소품 · 44초",
+            "track": "windowlight",
+            "left": 22,
+            "top": 243.453125,
+            "right": 368,
+            "bottom": 321.09375,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "주머니 속 연스윙 재즈 · 37초",
+            "track": "pocket-kites",
+            "left": 22,
+            "top": 329.09375,
+            "right": 368,
+            "bottom": 406.734375,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "노을 종이배앰비언트 · 42초",
+            "track": "afterglow-paperboats",
+            "left": 22,
+            "top": 414.734375,
+            "right": 368,
+            "bottom": 492.375,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "클로버 왈츠포크 왈츠 · 40초",
+            "track": "clover-waltz",
+            "left": 22,
+            "top": 500.375,
+            "right": 368,
+            "bottom": 578.015625,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "",
+            "text": "픽셀 행진8비트 칩튠 · 38초",
+            "track": "pixel-parade",
+            "left": 22,
+            "top": 586.015625,
+            "right": 368,
+            "bottom": 663.65625,
+            "width": 346,
+            "height": 77.640625
+          },
+          {
+            "id": "listen-play",
+            "text": "재생",
+            "left": 22,
+            "top": 675.65625,
+            "right": 80.84375,
+            "bottom": 719.65625,
+            "width": 58.84375,
+            "height": 44
+          },
+          {
+            "id": "listen-mute",
+            "text": "음소거",
+            "left": 90.84375,
+            "top": 675.65625,
+            "right": 166.109375,
+            "bottom": 719.65625,
+            "width": 75.265625,
+            "height": 44
+          },
+          {
+            "id": "listen-volume",
+            "text": "",
+            "left": 213.765625,
+            "top": 675.65625,
+            "right": 342.765625,
+            "bottom": 719.65625,
+            "width": 129,
+            "height": 44
+          }
+        ]
+      }
+    },
+    {
+      "name": "playing-track-switch",
+      "data": {
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": "windowlight",
+          "listening": {
+            "id": "windowlight",
+            "playing": true
+          },
+          "error": ""
+        },
+        "graph": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 6,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 8,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 9,
+              "loop": true,
+              "duration": 38.4,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 10,
+              "loop": true,
+              "duration": 38.4,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 11,
+              "loop": true,
+              "duration": 38.4,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 12,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": 0.75,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ],
+          "active": [
+            {
+              "id": 12,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": 0.75,
+              "contextState": "running",
+              "connected": true,
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "closed-while-playing",
+      "data": {
+        "beforePosition": {
+          "x": -9.85,
+          "y": 0.05,
+          "z": 5
+        },
+        "afterPosition": {
+          "x": -9.85,
+          "y": 0.05,
+          "z": 5
+        },
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        },
+        "graph": {
+          "available": true,
+          "sources": [
+            {
+              "id": 1,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 2,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 3,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 4,
+              "loop": true,
+              "duration": 36.92308390022676,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 5,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 6,
+              "loop": true,
+              "duration": 42.35294784580499,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 7,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 8,
+              "loop": true,
+              "duration": 40,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 9,
+              "loop": true,
+              "duration": 38.4,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 10,
+              "loop": true,
+              "duration": 38.4,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 11,
+              "loop": true,
+              "duration": 38.4,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            },
+            {
+              "id": 12,
+              "loop": true,
+              "duration": 43.636371882086166,
+              "gain": null,
+              "contextState": "running",
+              "connected": false,
+              "active": false
+            }
+          ],
+          "active": []
+        }
+      }
+    },
+    {
+      "name": "quiz-initial-before-scroll",
+      "data": {
+        "dialog": {
+          "left": 12,
+          "top": 42.921875,
+          "right": 378,
+          "bottom": 801.078125,
+          "width": 366,
+          "height": 758.15625
+        },
+        "title": {
+          "left": 29,
+          "top": 61.921875,
+          "right": 361,
+          "bottom": 95.515625,
+          "width": 332,
+          "height": 33.59375
+        },
+        "close": {
+          "left": 325,
+          "top": 49.921875,
+          "right": 373,
+          "bottom": 97.921875,
+          "width": 48,
+          "height": 48
+        },
+        "scrollTop": 0,
+        "panel": null,
+        "horizontalOverflow": false,
+        "pageOverflow": false,
+        "active": {
+          "tag": "BUTTON",
+          "id": ""
+        },
+        "controls": [
+          {
+            "id": "",
+            "text": "×",
+            "left": 325,
+            "top": 49.921875,
+            "right": 373,
+            "bottom": 97.921875,
+            "width": 48,
+            "height": 48
+          },
+          {
+            "id": "",
+            "text": "4분음표",
+            "left": 29,
+            "top": 395.265625,
+            "right": 361,
+            "bottom": 446.453125,
+            "width": 332,
+            "height": 51.1875
+          },
+          {
+            "id": "",
+            "text": "2분음표",
+            "left": 29,
+            "top": 455.453125,
+            "right": 361,
+            "bottom": 506.640625,
+            "width": 332,
+            "height": 51.1875
+          },
+          {
+            "id": "",
+            "text": "온음표",
+            "left": 29,
+            "top": 515.640625,
+            "right": 361,
+            "bottom": 566.828125,
+            "width": 332,
+            "height": 51.1875
+          },
+          {
+            "id": "music-retry",
+            "text": "다시 생각하기",
+            "left": 29,
+            "top": 645.078125,
+            "right": 140.359375,
+            "bottom": 693.078125,
+            "width": 111.359375,
+            "height": 48
+          },
+          {
+            "id": "music-next",
+            "text": "다음 음표",
+            "left": 146.359375,
+            "top": 645.078125,
+            "right": 231.796875,
+            "bottom": 693.078125,
+            "width": 85.4375,
+            "height": 48
+          },
+          {
+            "id": "",
+            "text": "마을로 돌아가기",
+            "left": 228.390625,
+            "top": 734.078125,
+            "right": 361,
+            "bottom": 782.078125,
+            "width": 132.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "name": "quiz-quarter",
+      "data": {
+        "answer": "4분음표",
+        "feedback": "다시 살펴볼까요? 4분음표예요. 이 퀴즈에서는 4분음표를 한 박으로 세어요.",
+        "focusAfterAnswer": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "2분음표",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusPolicy": "chosen answer retains keyboard focus after feedback"
+      }
+    },
+    {
+      "name": "quiz-navigation-quarter",
+      "data": {
+        "focusAfterCorrect": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "4분음표",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusAfterNext": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "한 박",
+          "inChoices": true,
+          "pressed": "false"
+        },
+        "focusAfterNextTab": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "두 박",
+          "inChoices": true,
+          "pressed": "false"
+        }
+      }
+    },
+    {
+      "name": "quiz-half",
+      "data": {
+        "answer": "두 박",
+        "feedback": "다시 살펴볼까요? 2분음표는 4분음표 두 개만큼 길어요. 한 소리를 두 박 이어서 연주해요.",
+        "focusAfterAnswer": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "네 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusPolicy": "chosen answer retains keyboard focus after feedback"
+      }
+    },
+    {
+      "name": "quiz-navigation-half",
+      "data": {
+        "focusAfterCorrect": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "두 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusAfterNext": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "네 박",
+          "inChoices": true,
+          "pressed": "false"
+        },
+        "focusAfterNextTab": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "반 박",
+          "inChoices": true,
+          "pressed": "false"
+        }
+      }
+    },
+    {
+      "name": "quiz-whole",
+      "data": {
+        "answer": "네 박",
+        "feedback": "다시 살펴볼까요? 온음표는 4분음표 네 개만큼 길어요. 이 퀴즈에서는 네 박 이어서 연주해요.",
+        "focusAfterAnswer": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "반 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusPolicy": "chosen answer retains keyboard focus after feedback"
+      }
+    },
+    {
+      "name": "quiz-navigation-whole",
+      "data": {
+        "focusAfterCorrect": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "네 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusAfterNext": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "두 박",
+          "inChoices": true,
+          "pressed": "false"
+        },
+        "focusAfterNextTab": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "반 박",
+          "inChoices": true,
+          "pressed": "false"
+        }
+      }
+    },
+    {
+      "name": "quiz-eighth",
+      "data": {
+        "answer": "반 박",
+        "feedback": "다시 살펴볼까요? 8분음표는 4분음표 길이의 절반이에요. 한 박을 똑같이 나눈 반 박이에요.",
+        "focusAfterAnswer": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "네 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusPolicy": "chosen answer retains keyboard focus after feedback"
+      }
+    },
+    {
+      "name": "quiz-navigation-eighth",
+      "data": {
+        "focusAfterCorrect": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "반 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusAfterNext": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "두 박",
+          "inChoices": true,
+          "pressed": "false"
+        },
+        "focusAfterNextTab": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "한 박",
+          "inChoices": true,
+          "pressed": "false"
+        }
+      }
+    },
+    {
+      "name": "quiz-paired-eighths",
+      "data": {
+        "answer": "한 박",
+        "feedback": "다시 살펴볼까요? 반 박과 반 박이 만나 한 박이 돼요. 음표 두 개의 길이를 모두 합쳐요.",
+        "focusAfterAnswer": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "네 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusPolicy": "chosen answer retains keyboard focus after feedback"
+      }
+    },
+    {
+      "name": "quiz-navigation-paired-eighths",
+      "data": {
+        "focusAfterCorrect": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "한 박",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusAfterNext": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "두 박 크게 연주해요",
+          "inChoices": true,
+          "pressed": "false"
+        },
+        "focusAfterNextTab": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "더 빨리 연주해요",
+          "inChoices": true,
+          "pressed": "false"
+        }
+      }
+    },
+    {
+      "name": "quiz-rest",
+      "data": {
+        "answer": "한 박 소리를 쉬어요",
+        "feedback": "다시 살펴볼까요? 4분쉼표에서는 한 박 쉬어요. 소리는 쉬지만 속으로 박은 계속 세어요.",
+        "focusAfterAnswer": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "두 박 크게 연주해요",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusPolicy": "chosen answer retains keyboard focus after feedback"
+      }
+    },
+    {
+      "name": "quiz-navigation-rest",
+      "data": {
+        "focusAfterCorrect": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "한 박 소리를 쉬어요",
+          "inChoices": true,
+          "pressed": "true"
+        },
+        "focusAfterNext": {
+          "tag": "BUTTON",
+          "id": "music-retry",
+          "text": "처음부터 다시",
+          "inChoices": false,
+          "pressed": null
+        },
+        "focusAfterNextTab": null
+      }
+    },
+    {
+      "name": "quiz-six-complete",
+      "data": {
+        "dialog": {
+          "left": 12,
+          "top": 128.703125,
+          "right": 378,
+          "bottom": 715.296875,
+          "width": 366,
+          "height": 586.59375
+        },
+        "title": {
+          "left": 29,
+          "top": 147.703125,
+          "right": 361,
+          "bottom": 181.296875,
+          "width": 332,
+          "height": 33.59375
+        },
+        "close": {
+          "left": 325,
+          "top": 135.703125,
+          "right": 373,
+          "bottom": 183.703125,
+          "width": 48,
+          "height": 48
+        },
+        "scrollTop": 0,
+        "panel": null,
+        "horizontalOverflow": false,
+        "pageOverflow": false,
+        "active": {
+          "tag": "BUTTON",
+          "id": "music-retry"
+        },
+        "controls": [
+          {
+            "id": "",
+            "text": "×",
+            "left": 325,
+            "top": 135.703125,
+            "right": 373,
+            "bottom": 183.703125,
+            "width": 48,
+            "height": 48
+          },
+          {
+            "id": "music-retry",
+            "text": "처음부터 다시",
+            "left": 29,
+            "top": 559.296875,
+            "right": 140.359375,
+            "bottom": 607.296875,
+            "width": 111.359375,
+            "height": 48
+          },
+          {
+            "id": "music-next",
+            "text": "마치기",
+            "left": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "width": 0,
+            "height": 0
+          },
+          {
+            "id": "",
+            "text": "마을로 돌아가기",
+            "left": 228.390625,
+            "top": 648.296875,
+            "right": 361,
+            "bottom": 696.296875,
+            "width": 132.609375,
+            "height": 48
+          }
+        ]
+      }
+    },
+    {
+      "name": "quiz-restart-focus",
+      "data": {
+        "completionTab": {
+          "tag": "BUTTON",
+          "id": "",
+          "text": "마을로 돌아가기",
+          "inChoices": false,
+          "pressed": null
+        },
+        "afterRestart": {
+          "tag": "BUTTON",
+          "id": "music-retry",
+          "text": "다시 생각하기",
+          "inChoices": false,
+          "pressed": null
+        }
+      }
+    },
+    {
+      "name": "returned-to-village",
+      "data": {
+        "roomId": "courtyard",
+        "inputLocked": false,
+        "audio": {
+          "enabled": false,
+          "unlocked": true,
+          "playing": null,
+          "listening": null,
+          "error": ""
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "consoleErrors": [],
+  "httpErrors": [],
+  "requestErrors": [],
+  "musicRequests": [
+    {
+      "url": "http://127.0.0.1:4173/audio/music/windowlight.mp3",
+      "time": 1793927720561
+    },
+    {
+      "url": "http://127.0.0.1:4173/audio/music/pocket-kites.mp3",
+      "time": 1793927721384
+    },
+    {
+      "url": "http://127.0.0.1:4173/audio/music/afterglow-paperboats.mp3",
+      "time": 1793927722078
+    },
+    {
+      "url": "http://127.0.0.1:4173/audio/music/clover-waltz.mp3",
+      "time": 1793927722856
+    },
+    {
+      "url": "http://127.0.0.1:4173/audio/music/pixel-parade.mp3",
+      "time": 1793927723578
+    }
+  ],
+  "travelLog": [
+    {
+      "from": "courtyard",
+      "to": "music",
+      "selected": [
+        "schoolHall",
+        "music"
+      ]
+    },
+    {
+      "from": "music",
+      "to": "courtyard",
+      "selected": [
+        "courtyard"
+      ]
+    }
+  ],
+  "nearLog": [
+    {
+      "requested": "music.listen",
+      "position": {
+        "x": -9.85,
+        "z": 5
+      },
+      "target": {
+        "x": -9.85,
+        "z": 5
+      },
+      "roomId": "music"
+    },
+    {
+      "requested": "music.listen",
+      "position": {
+        "x": -9.85,
+        "z": 5
+      },
+      "target": {
+        "x": -9.85,
+        "z": 5
+      },
+      "roomId": "music"
+    },
+    {
+      "requested": "music.listen",
+      "position": {
+        "x": -9.85,
+        "z": 5
+      },
+      "target": {
+        "x": -9.85,
+        "z": 5
+      },
+      "roomId": "music"
+    },
+    {
+      "requested": "music.quiz",
+      "position": {
+        "x": -7,
+        "z": 10.15
+      },
+      "target": {
+        "x": -7,
+        "z": 10.15
+      },
+      "roomId": "music"
+    },
+    {
+      "requested": "music.quiz",
+      "position": {
+        "x": -7,
+        "z": 10.15
+      },
+      "target": {
+        "x": -7,
+        "z": 10.15
+      },
+      "roomId": "music"
+    }
+  ],
+  "sourceUnchanged": true,
+  "changed": []
+}
