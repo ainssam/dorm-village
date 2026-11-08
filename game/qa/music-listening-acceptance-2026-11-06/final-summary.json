@@ -1,0 +1,693 @@
+{
+  "version": "2026.11.06.5",
+  "scope": "Final post-feedback-fix actual app validation of music listening and note quiz, not instrument audition or whole-village proof. Real WebAudio node observer delegates original native methods/arguments without fake contexts, decode outcomes, time, or learning state. Browser output muted; no speaker audition/performance claim.",
+  "wholePackageGate": {
+    "syntax": "passed",
+    "tests": 383,
+    "passed": 383,
+    "failed": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "durationMs": 121564.300278
+  },
+  "runtimeMatchesAllFiveRunsAndWholeGate": true,
+  "distFilesPerRun": 854,
+  "harnessIdenticalAcrossFiveRuns": true,
+  "runs": [
+    {
+      "name": "verified-touch-320",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "touch": true,
+      "reducedMotion": false,
+      "scope": "all five listening tracks begin/stop/restart/mute/level, active switch/close/restore, all six quiz wrong/retry/correct/next/complete/restart; explicit503 recovery only when injected is true",
+      "injected503": true,
+      "groupsPassed": 3,
+      "sourceFiles": 854,
+      "sourceStartEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "1c283a16730528783ffabd5452e9cb6a11073345f2d0e864576c292785e9dc6a",
+      "pageExceptions": 0,
+      "failedNetworkRequests": 0,
+      "expectedHTTP503": 1,
+      "expectedConsoleErrors": 1,
+      "unexpectedHTTPErrors": 0,
+      "unexpectedConsoleErrors": 0,
+      "nativeLevels": [
+        {
+          "track": "windowlight",
+          "selectedPercent": 71,
+          "mutedGain": 0,
+          "unmutedGain": 0.7099999785423279,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pocket-kites",
+          "selectedPercent": 72,
+          "mutedGain": 0,
+          "unmutedGain": 0.7200000286102295,
+          "sameNativeSource": true
+        },
+        {
+          "track": "afterglow-paperboats",
+          "selectedPercent": 73,
+          "mutedGain": 0,
+          "unmutedGain": 0.7300000190734863,
+          "sameNativeSource": true
+        },
+        {
+          "track": "clover-waltz",
+          "selectedPercent": 74,
+          "mutedGain": 0,
+          "unmutedGain": 0.7400000095367432,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pixel-parade",
+          "selectedPercent": 75,
+          "mutedGain": 0,
+          "unmutedGain": 0.75,
+          "sameNativeSource": true
+        }
+      ],
+      "quizFeedbackVisibility": [
+        {
+          "case": "quiz-quarter-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "2분음표"
+        },
+        {
+          "case": "quiz-quarter-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "4분음표"
+        },
+        {
+          "case": "quiz-half-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-half-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박"
+        },
+        {
+          "case": "quiz-whole-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-whole-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-paired-eighths-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-paired-eighths-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박"
+        },
+        {
+          "case": "quiz-rest-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박 크게 연주해요"
+        },
+        {
+          "case": "quiz-rest-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박 소리를 쉬어요"
+        }
+      ],
+      "keyboardNavigationRecords": 6,
+      "results": "qa/music-listening-acceptance-2026-11-06/verified-touch-320/results.json"
+    },
+    {
+      "name": "verified-touch-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touch": true,
+      "reducedMotion": false,
+      "scope": "all five listening tracks begin/stop/restart/mute/level, active switch/close/restore, all six quiz wrong/retry/correct/next/complete/restart; explicit503 recovery only when injected is true",
+      "injected503": false,
+      "groupsPassed": 3,
+      "sourceFiles": 854,
+      "sourceStartEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "1c283a16730528783ffabd5452e9cb6a11073345f2d0e864576c292785e9dc6a",
+      "pageExceptions": 0,
+      "failedNetworkRequests": 0,
+      "expectedHTTP503": 0,
+      "expectedConsoleErrors": 0,
+      "unexpectedHTTPErrors": 0,
+      "unexpectedConsoleErrors": 0,
+      "nativeLevels": [
+        {
+          "track": "windowlight",
+          "selectedPercent": 71,
+          "mutedGain": 0,
+          "unmutedGain": 0.7099999785423279,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pocket-kites",
+          "selectedPercent": 72,
+          "mutedGain": 0,
+          "unmutedGain": 0.7200000286102295,
+          "sameNativeSource": true
+        },
+        {
+          "track": "afterglow-paperboats",
+          "selectedPercent": 73,
+          "mutedGain": 0,
+          "unmutedGain": 0.7300000190734863,
+          "sameNativeSource": true
+        },
+        {
+          "track": "clover-waltz",
+          "selectedPercent": 74,
+          "mutedGain": 0,
+          "unmutedGain": 0.7400000095367432,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pixel-parade",
+          "selectedPercent": 75,
+          "mutedGain": 0,
+          "unmutedGain": 0.75,
+          "sameNativeSource": true
+        }
+      ],
+      "quizFeedbackVisibility": [
+        {
+          "case": "quiz-quarter-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "2분음표"
+        },
+        {
+          "case": "quiz-quarter-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "4분음표"
+        },
+        {
+          "case": "quiz-half-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-half-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박"
+        },
+        {
+          "case": "quiz-whole-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-whole-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-paired-eighths-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-paired-eighths-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박"
+        },
+        {
+          "case": "quiz-rest-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박 크게 연주해요"
+        },
+        {
+          "case": "quiz-rest-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박 소리를 쉬어요"
+        }
+      ],
+      "keyboardNavigationRecords": 6,
+      "results": "qa/music-listening-acceptance-2026-11-06/verified-touch-390/results.json"
+    },
+    {
+      "name": "verified-landscape",
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "touch": true,
+      "reducedMotion": false,
+      "scope": "all five listening tracks begin/stop/restart/mute/level, active switch/close/restore, all six quiz wrong/retry/correct/next/complete/restart; explicit503 recovery only when injected is true",
+      "injected503": false,
+      "groupsPassed": 3,
+      "sourceFiles": 854,
+      "sourceStartEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "1c283a16730528783ffabd5452e9cb6a11073345f2d0e864576c292785e9dc6a",
+      "pageExceptions": 0,
+      "failedNetworkRequests": 0,
+      "expectedHTTP503": 0,
+      "expectedConsoleErrors": 0,
+      "unexpectedHTTPErrors": 0,
+      "unexpectedConsoleErrors": 0,
+      "nativeLevels": [
+        {
+          "track": "windowlight",
+          "selectedPercent": 71,
+          "mutedGain": 0,
+          "unmutedGain": 0.7099999785423279,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pocket-kites",
+          "selectedPercent": 72,
+          "mutedGain": 0,
+          "unmutedGain": 0.7200000286102295,
+          "sameNativeSource": true
+        },
+        {
+          "track": "afterglow-paperboats",
+          "selectedPercent": 73,
+          "mutedGain": 0,
+          "unmutedGain": 0.7300000190734863,
+          "sameNativeSource": true
+        },
+        {
+          "track": "clover-waltz",
+          "selectedPercent": 74,
+          "mutedGain": 0,
+          "unmutedGain": 0.7400000095367432,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pixel-parade",
+          "selectedPercent": 75,
+          "mutedGain": 0,
+          "unmutedGain": 0.75,
+          "sameNativeSource": true
+        }
+      ],
+      "quizFeedbackVisibility": [
+        {
+          "case": "quiz-quarter-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "2분음표"
+        },
+        {
+          "case": "quiz-quarter-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "4분음표"
+        },
+        {
+          "case": "quiz-half-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-half-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박"
+        },
+        {
+          "case": "quiz-whole-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-whole-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-paired-eighths-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-paired-eighths-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박"
+        },
+        {
+          "case": "quiz-rest-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박 크게 연주해요"
+        },
+        {
+          "case": "quiz-rest-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박 소리를 쉬어요"
+        }
+      ],
+      "keyboardNavigationRecords": 6,
+      "results": "qa/music-listening-acceptance-2026-11-06/verified-landscape/results.json"
+    },
+    {
+      "name": "verified-tablet-reduced",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "touch": true,
+      "reducedMotion": true,
+      "scope": "all five listening tracks begin/stop/restart/mute/level, active switch/close/restore, all six quiz wrong/retry/correct/next/complete/restart; explicit503 recovery only when injected is true",
+      "injected503": false,
+      "groupsPassed": 3,
+      "sourceFiles": 854,
+      "sourceStartEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "1c283a16730528783ffabd5452e9cb6a11073345f2d0e864576c292785e9dc6a",
+      "pageExceptions": 0,
+      "failedNetworkRequests": 0,
+      "expectedHTTP503": 0,
+      "expectedConsoleErrors": 0,
+      "unexpectedHTTPErrors": 0,
+      "unexpectedConsoleErrors": 0,
+      "nativeLevels": [
+        {
+          "track": "windowlight",
+          "selectedPercent": 71,
+          "mutedGain": 0,
+          "unmutedGain": 0.7099999785423279,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pocket-kites",
+          "selectedPercent": 72,
+          "mutedGain": 0,
+          "unmutedGain": 0.7200000286102295,
+          "sameNativeSource": true
+        },
+        {
+          "track": "afterglow-paperboats",
+          "selectedPercent": 73,
+          "mutedGain": 0,
+          "unmutedGain": 0.7300000190734863,
+          "sameNativeSource": true
+        },
+        {
+          "track": "clover-waltz",
+          "selectedPercent": 74,
+          "mutedGain": 0,
+          "unmutedGain": 0.7400000095367432,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pixel-parade",
+          "selectedPercent": 75,
+          "mutedGain": 0,
+          "unmutedGain": 0.75,
+          "sameNativeSource": true
+        }
+      ],
+      "quizFeedbackVisibility": [
+        {
+          "case": "quiz-quarter-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "2분음표"
+        },
+        {
+          "case": "quiz-quarter-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "4분음표"
+        },
+        {
+          "case": "quiz-half-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-half-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박"
+        },
+        {
+          "case": "quiz-whole-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-whole-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-paired-eighths-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-paired-eighths-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박"
+        },
+        {
+          "case": "quiz-rest-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박 크게 연주해요"
+        },
+        {
+          "case": "quiz-rest-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박 소리를 쉬어요"
+        }
+      ],
+      "keyboardNavigationRecords": 6,
+      "results": "qa/music-listening-acceptance-2026-11-06/verified-tablet-reduced/results.json"
+    },
+    {
+      "name": "verified-desktop",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "touch": false,
+      "reducedMotion": false,
+      "scope": "all five listening tracks begin/stop/restart/mute/level, active switch/close/restore, all six quiz wrong/retry/correct/next/complete/restart; explicit503 recovery only when injected is true",
+      "injected503": false,
+      "groupsPassed": 3,
+      "sourceFiles": 854,
+      "sourceStartEndUnchanged": true,
+      "matchesWholeGate": true,
+      "harnessSHA256": "1c283a16730528783ffabd5452e9cb6a11073345f2d0e864576c292785e9dc6a",
+      "pageExceptions": 0,
+      "failedNetworkRequests": 0,
+      "expectedHTTP503": 0,
+      "expectedConsoleErrors": 0,
+      "unexpectedHTTPErrors": 0,
+      "unexpectedConsoleErrors": 0,
+      "nativeLevels": [
+        {
+          "track": "windowlight",
+          "selectedPercent": 71,
+          "mutedGain": 0,
+          "unmutedGain": 0.7099999785423279,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pocket-kites",
+          "selectedPercent": 72,
+          "mutedGain": 0,
+          "unmutedGain": 0.7200000286102295,
+          "sameNativeSource": true
+        },
+        {
+          "track": "afterglow-paperboats",
+          "selectedPercent": 73,
+          "mutedGain": 0,
+          "unmutedGain": 0.7300000190734863,
+          "sameNativeSource": true
+        },
+        {
+          "track": "clover-waltz",
+          "selectedPercent": 74,
+          "mutedGain": 0,
+          "unmutedGain": 0.7400000095367432,
+          "sameNativeSource": true
+        },
+        {
+          "track": "pixel-parade",
+          "selectedPercent": 75,
+          "mutedGain": 0,
+          "unmutedGain": 0.75,
+          "sameNativeSource": true
+        }
+      ],
+      "quizFeedbackVisibility": [
+        {
+          "case": "quiz-quarter-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "2분음표"
+        },
+        {
+          "case": "quiz-quarter-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "4분음표"
+        },
+        {
+          "case": "quiz-half-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-half-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박"
+        },
+        {
+          "case": "quiz-whole-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-whole-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-eighth-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "반 박"
+        },
+        {
+          "case": "quiz-paired-eighths-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "네 박"
+        },
+        {
+          "case": "quiz-paired-eighths-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박"
+        },
+        {
+          "case": "quiz-rest-wrong-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "두 박 크게 연주해요"
+        },
+        {
+          "case": "quiz-rest-correct-feedback",
+          "explanationVisible": true,
+          "selectedAnswerVisible": true,
+          "focusedAnswer": "한 박 소리를 쉬어요"
+        }
+      ],
+      "keyboardNavigationRecords": 6,
+      "results": "qa/music-listening-acceptance-2026-11-06/verified-desktop/results.json"
+    }
+  ]
+}

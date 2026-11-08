@@ -1,0 +1,152 @@
+{
+  "scope": "Historical functional passes; final visual acceptance declined because the320px quiz wrong-answer explanation was outside the dialog. Listening503 error message was visible. No post-fix claim.",
+  "sameRuntimeAcrossThreeRuns": true,
+  "runs": [
+    {
+      "path": "qa/music-listening-acceptance-2026-11-06/final-touch-320",
+      "role": "pre-feedback-fix functional and visual diagnostic evidence",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "functionalGroupsPassed": 3,
+      "sourceUnchanged": true,
+      "fileCount": 854,
+      "sourceFingerprints": {
+        "start": "qa/music-listening-acceptance-2026-11-06/final-touch-320/runtime-start.json",
+        "end": "qa/music-listening-acceptance-2026-11-06/final-touch-320/runtime-end.json"
+      },
+      "harnessSHA256": "5dcee1ac09c42c64d2451791e73cf9f2d245c158a18ae1028cba1efa30f49749",
+      "httpErrors": [
+        {
+          "url": "http://127.0.0.1:4173/audio/music/windowlight.mp3",
+          "status": 503
+        }
+      ],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:4173/audio/music/windowlight.mp3"
+        }
+      ],
+      "pageExceptions": [],
+      "networkRequestErrors": [],
+      "visibility": []
+    },
+    {
+      "path": "qa/music-listening-acceptance-2026-11-06/final-touch-390",
+      "role": "pre-feedback-fix functional and visual diagnostic evidence",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "functionalGroupsPassed": 3,
+      "sourceUnchanged": true,
+      "fileCount": 854,
+      "sourceFingerprints": {
+        "start": "qa/music-listening-acceptance-2026-11-06/final-touch-390/runtime-start.json",
+        "end": "qa/music-listening-acceptance-2026-11-06/final-touch-390/runtime-end.json"
+      },
+      "harnessSHA256": "5dcee1ac09c42c64d2451791e73cf9f2d245c158a18ae1028cba1efa30f49749",
+      "httpErrors": [],
+      "consoleErrors": [],
+      "pageExceptions": [],
+      "networkRequestErrors": [],
+      "visibility": []
+    },
+    {
+      "path": "qa/music-listening-acceptance-2026-11-06/status-diagnostic-320",
+      "role": "pre-feedback-fix functional and visual diagnostic evidence",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "functionalGroupsPassed": 3,
+      "sourceUnchanged": true,
+      "fileCount": 854,
+      "sourceFingerprints": {
+        "start": "qa/music-listening-acceptance-2026-11-06/status-diagnostic-320/runtime-start.json",
+        "end": "qa/music-listening-acceptance-2026-11-06/status-diagnostic-320/runtime-end.json"
+      },
+      "harnessSHA256": "5a04bf621de91659c067d822157edba63f68629085ea4db310991769b4f31317",
+      "httpErrors": [
+        {
+          "url": "http://127.0.0.1:4173/audio/music/windowlight.mp3",
+          "status": 503
+        }
+      ],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 503 (Service Unavailable)",
+          "url": "http://127.0.0.1:4173/audio/music/windowlight.mp3"
+        }
+      ],
+      "pageExceptions": [],
+      "networkRequestErrors": [],
+      "visibility": [
+        {
+          "name": "first-play-failure-visibility",
+          "data": {
+            "text": "음악을 열지 못했어요. 다시 재생해 주세요",
+            "message": {
+              "top": 496.890625,
+              "bottom": 546.265625,
+              "left": 22,
+              "right": 298,
+              "width": 276,
+              "height": 49.375
+            },
+            "clip": {
+              "top": 273.6875,
+              "bottom": 552,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 278.3125
+            },
+            "scrollTop": 321,
+            "fullyVisible": true,
+            "partlyVisible": true,
+            "active": {
+              "tag": "BUTTON",
+              "id": "listen-play",
+              "text": "재생"
+            },
+            "method": "natural focus/scroll after real button input; no scroll-to-status helper"
+          }
+        },
+        {
+          "name": "quiz-first-wrong-feedback-visibility",
+          "data": {
+            "text": "다시 살펴볼까요? 4분음표예요. 이 퀴즈에서는 4분음표를 한 박으로 세어요.",
+            "message": {
+              "top": 544.90625,
+              "bottom": 649.65625,
+              "left": 29,
+              "right": 291,
+              "width": 262,
+              "height": 104.75
+            },
+            "clip": {
+              "top": 12,
+              "bottom": 556,
+              "left": 12,
+              "right": 308,
+              "width": 296,
+              "height": 544
+            },
+            "scrollTop": 0,
+            "fullyVisible": false,
+            "partlyVisible": true,
+            "active": {
+              "tag": "BUTTON",
+              "id": "",
+              "text": "2분음표"
+            },
+            "method": "natural focus/scroll after real button input; no scroll-to-status helper"
+          }
+        }
+      ]
+    }
+  ]
+}
