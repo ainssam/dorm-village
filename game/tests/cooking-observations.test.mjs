@@ -27,14 +27,31 @@ function heat(state,seconds,level=2) {
 function controllerFixture(draft) {
   const nodes=new Map(),events=[],saves=[];
   const node=id=>{
-    if(!nodes.has(id)) nodes.set(id,{textContent:'',innerHTML:'',hidden:false,disabled:false,dataset:{},style:{setProperty(){}},listeners:new Map(),setAttribute(){},addEventListener(type,fn){this.listeners.set(type,fn);},removeEventListener(type){this.listeners.delete(type);},querySelectorAll(){return [];}});
+    if(!nodes.has(id)){
+      const element={textContent:'',hidden:false,disabled:false,dataset:{},children:[],style:{setProperty(){}},listeners:new Map(),setAttribute(){},addEventListener(type,fn){this.listeners.set(type,fn);},removeEventListener(type){this.listeners.delete(type);},querySelectorAll(){return [];}};
+      Object.defineProperty(element,'innerHTML',{
+        get(){return this.markup??'';},
+        set(markup){
+          this.markup=markup;
+          this.children=Array.from(markup.matchAll(/data-index="(\d+)"/g),match=>{
+            const count={textContent:''};
+            return {dataset:{cookAction:'pour',index:match[1]},disabled:false,querySelector(selector){assert.equal(selector,'strong');return count;}};
+          });
+        }
+      });
+      nodes.set(id,element);
+    }
     return nodes.get(id);
   };
   const doc={hidden:false,querySelector:selector=>node(selector.slice(1)),addEventListener(){},removeEventListener(){}};
   const win={addEventListener(){},removeEventListener(){}};
   const controller=createCookingController({doc,win,ui:{workshop(_title,_body,mount){mount();return true;}},getView:()=>({homeView:{},root:{}}),getActors:()=>({}),getProgress:()=>({homeCooking:cookingSave(draft)}),transact:action=>{saves.push(action.cooking);return true;},createSession:()=>({update(){events.push('update');},tick(){events.push('tick');},dispose(){}}),createViewport:()=>({render(){events.push('render');},dispose(){}})});
   assert.equal(controller.open(),true);
-  const click=action=>{node('cooking-panel').contains=()=>true;node('cooking-panel').listeners.get('click')({target:{closest:()=>({dataset:{cookAction:action},disabled:false})}});};
+  const click=action=>{
+    const button=typeof action==='string'?{dataset:{cookAction:action},disabled:false}:action;
+    node('cooking-panel').contains=()=>true;
+    node('cooking-panel').listeners.get('click')({target:{closest:()=>button}});
+  };
   return {controller,node,events,saves,click};
 }
 
@@ -175,4 +192,18 @@ test('cocoa view keeps its concentration colour across heating and restores borr
   session.dispose();
   assert.equal(player.parent,scene);
   assert.deepEqual(player.position,originalPosition);
+});
+
+test('pouring updates the same ingredient control and leaves the next cup available',()=>{
+  const f=controllerFixture(initialCooking('salad'));
+  const ingredients=f.node('cook-ingredients');
+  const first=ingredients.children[0];
+  f.click(first);
+  assert.equal(ingredients.children[0],first);
+  assert.equal(first.querySelector('strong').textContent,'1컵');
+  assert.equal(first.disabled,false);
+  f.click(first);
+  assert.equal(f.controller.snapshot().amounts[0],2);
+  assert.equal(first.querySelector('strong').textContent,'2컵');
+  f.controller.close();
 });
