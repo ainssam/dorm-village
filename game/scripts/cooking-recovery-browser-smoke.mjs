@@ -7,7 +7,7 @@ const touch=process.env.QA_TOUCH==='1',out='qa/cooking-recovery-browser';
 const renderEvery=12;
 await mkdir(out,{recursive:true});
 const errors=[],results=[],nearLog=[];
-const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader','--use-angle=swiftshader','--mute-audio']});
+const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader','--use-angle=swiftshader','--mute-audio']});
 const context=await browser.newContext({viewport:{width,height},isMobile:touch,hasTouch:touch});
 const page=await context.newPage();
 page.setDefaultTimeout(40000);

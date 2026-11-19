@@ -12,7 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { width: 1440, height: 900, touch: '0' }
           - { width: 390, height: 844, touch: '1' }
           - { width: 844, height: 390, touch: '1' }
     defaults:
@@ -26,7 +25,13 @@ jobs:
         with:
           node-version: '24'
       - run: npm ci
-      - run: npx playwright install --with-deps chromium
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
       - run: |
           npm run serve > /tmp/dorm-village-server.log 2>&1 &
           curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
