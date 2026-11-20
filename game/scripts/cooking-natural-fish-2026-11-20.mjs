@@ -257,6 +257,7 @@ try {
  assert.equal(reloaded.fishCookingRuntime,null);
  assert.equal(reloaded.fishingRuntime,null);
  results.push({step:'reload preserved catch and cooking ledgers',fishing:reloaded.fishing,placement:reloaded.placements['home.shelf-left']});
+ if(!await page.locator('#nature-guide').isVisible())await press('#hud-menu');
  await press('#nature-guide');
  await page.waitForSelector('.nature-fish.known');
  const expected=Object.values(reloaded.fishing.counts).filter(count=>count>0).length;
