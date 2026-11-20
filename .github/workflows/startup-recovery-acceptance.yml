@@ -1,0 +1,53 @@
+name: Startup recovery acceptance
+on:
+  push:
+    branches: [qa/edge-startup-recovery-2026-11-20]
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - run: npm run check
+      - run: npm test
+  edge:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Check installed Microsoft Edge
+        run: |
+          $edge = Join-Path ${env:ProgramFiles(x86)} 'Microsoft\Edge\Application\msedge.exe'
+          $edge64 = Join-Path $env:ProgramFiles 'Microsoft\Edge\Application\msedge.exe'
+          if (-not (Test-Path $edge) -and -not (Test-Path $edge64)) { npx playwright install msedge }
+      - name: Exercise startup and recovery
+        run: |
+          $server = Start-Process -FilePath 'npm.cmd' -ArgumentList 'run','serve' -NoNewWindow -PassThru
+          try { node scripts/startup-recovery-edge.mjs; $testCode=$LASTEXITCODE }
+          finally { Stop-Process -Id $server.Id -ErrorAction SilentlyContinue }
+          exit $testCode
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: startup-recovery-edge
+          path: game/qa/startup-recovery-edge
