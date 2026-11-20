@@ -13,7 +13,7 @@ const fetches=await Promise.all(['','game.js','vendor/three.module.js'].map(asyn
   return {path,status:r.status,contentType:r.headers.get('content-type'),cache:r.headers.get('cache-control'),bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')};
  }catch(e){return {path,error:String(e)};}
 }));
-const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader','--use-angle=swiftshader','--mute-audio']});
+const browser=await chromium.launch({headless:true,channel:process.env.BOOT_CHANNEL||undefined,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader','--use-angle=swiftshader','--mute-audio']});
 const context=await browser.newContext({viewport:{width,height},hasTouch:width<500,isMobile:width<500});
 const page=await context.newPage();
 page.on('pageerror',e=>logs.push({kind:'pageerror',text:e.stack??e.message}));
@@ -31,7 +31,7 @@ try{
  await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000}).catch(e=>{navigationError=String(e);});
  await page.waitForFunction(()=>window.dormiGame?.getState()?.ready||document.body?.dataset.state==='error',null,{timeout:55000}).catch(()=>{});
  result=await state().catch(e=>({error:String(e)}));
- console.log(JSON.stringify({mode,url,width,result,navigationError,fetches,logs,network,unfinished:[...seen].slice(0,40)}));
+ console.log(JSON.stringify({mode,url,width,result,navigationError,fetches,logs,network,unfinished:[...seen].slice(0,40),browser:browser.version()}));
  await page.screenshot({path:out+'/startup.png',timeout:8000}).catch(()=>{});
 }finally{
  await writeFile(out+'/results.json',JSON.stringify({mode,url,width,result,navigationError,fetches,logs,network,unfinished:[...seen]},null,2));

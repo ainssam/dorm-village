@@ -1,4 +1,4 @@
-name: Diagnose published startup
+name: Diagnose published startup in Windows Edge
 on:
   push:
     branches: [qa/production-startup-2026-11-20]
@@ -6,15 +6,8 @@ permissions:
   contents: read
 jobs:
   startup:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 6
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - {target: production, width: 390}
-          - {target: production, width: 1440}
-          - {target: previous, width: 390}
+    runs-on: windows-2025
+    timeout-minutes: 8
     defaults:
       run:
         working-directory: game
@@ -26,19 +19,18 @@ jobs:
         with:
           node-version: '24'
       - run: npm ci
-      - name: Select Chrome
+      - name: Check installed Microsoft Edge
         run: |
-          if command -v google-chrome >/dev/null; then
-            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
-          else
-            npx playwright install chromium
-          fi
+          $edge = Join-Path ${env:ProgramFiles(x86)} 'Microsoft\Edge\Application\msedge.exe'
+          $edge64 = Join-Path $env:ProgramFiles 'Microsoft\Edge\Application\msedge.exe'
+          if (-not (Test-Path $edge) -and -not (Test-Path $edge64)) { npx playwright install msedge }
       - run: node scripts/production-startup-check.mjs
         env:
-          BOOT_TARGET: ${{ matrix.target }}
-          BOOT_WIDTH: ${{ matrix.width }}
+          BOOT_TARGET: production
+          BOOT_WIDTH: '1440'
+          BOOT_CHANNEL: msedge
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: startup-${{ matrix.target }}-${{ matrix.width }}
+          name: startup-production-windows-edge
           path: game/qa/production-startup
