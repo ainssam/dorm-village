@@ -1,0 +1,44 @@
+name: Diagnose published startup
+on:
+  push:
+    branches: [qa/production-startup-2026-11-20]
+permissions:
+  contents: read
+jobs:
+  startup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {target: production, width: 390}
+          - {target: production, width: 1440}
+          - {target: previous, width: 390}
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - run: node scripts/production-startup-check.mjs
+        env:
+          BOOT_TARGET: ${{ matrix.target }}
+          BOOT_WIDTH: ${{ matrix.width }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: startup-${{ matrix.target }}-${{ matrix.width }}
+          path: game/qa/production-startup
