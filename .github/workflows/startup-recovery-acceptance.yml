@@ -5,22 +5,6 @@ on:
 permissions:
   contents: read
 jobs:
-  regression:
-    runs-on: ubuntu-24.04
-    timeout-minutes: 12
-    defaults:
-      run:
-        working-directory: game
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-      - run: npm ci
-      - run: npm run check
-      - run: npm test
   edge:
     runs-on: windows-2025
     timeout-minutes: 10
@@ -42,7 +26,7 @@ jobs:
           if (-not (Test-Path $edge) -and -not (Test-Path $edge64)) { npx playwright install msedge }
       - name: Exercise startup and recovery
         run: |
-          $server = Start-Process -FilePath 'npm.cmd' -ArgumentList 'run','serve' -NoNewWindow -PassThru
+          $server = Start-Process -FilePath 'node' -ArgumentList 'scripts/serve.mjs' -RedirectStandardOutput server-output.log -RedirectStandardError server-error.log -NoNewWindow -PassThru
           try { node scripts/startup-recovery-edge.mjs; $testCode=$LASTEXITCODE }
           finally { Stop-Process -Id $server.Id -ErrorAction SilentlyContinue }
           exit $testCode

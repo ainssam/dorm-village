@@ -18,14 +18,18 @@ async function scenario(name,run){
  const context=await browser.newContext({viewport:{width:1440,height:900}});
  const page=await context.newPage();
  const errors=[];
+ page.setDefaultNavigationTimeout(20000);
+ console.log('Starting '+name);
  page.on('pageerror',e=>errors.push(e.message));
  page.on('response',r=>{if(r.status()>=400&&r.url().startsWith(url))errors.push(r.status()+' '+r.url());});
  try{
   await run(page);
   assert.deepEqual(errors,[]);
   results.push({name,passed:true});
+  console.log('Passed '+name);
  }catch(error){
   results.push({name,passed:false,error:String(error),errors});
+  console.log('Failed '+name+': '+error);
   await page.screenshot({path:out+'/'+name+'-failed.png',timeout:5000}).catch(()=>{});
  }finally{
   await context.close();
