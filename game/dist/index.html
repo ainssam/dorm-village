@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#234d48"><meta name="description" content="도름이와 걷고, 만들고, 쉬어 가는 작은 세계. 학교와 마을, 구름섬에서 나만의 하루를 보내요.">
 <title>도름마을 · Dorm Village</title>
-<meta name="application-version" content="2026.11.20.1">
+<meta name="application-version" content="2026.11.20.2">
 <meta property="og:title" content="도름마을 · Dorm Village"><meta property="og:description" content="도름이와 걷고, 만들고, 쉬어 가는 작은 세계. 학교와 마을, 구름섬에서 나만의 하루를 보내요."><meta property="og:type" content="website">
 <meta property="og:url" content="https://dorm-village.vercel.app/">
 <meta property="og:site_name" content="도름마을">
@@ -81,13 +81,20 @@
 <p class="hud-help">이동 WASD · 방향키 / 행동 E<br>달리기 Shift / 점프 Space<br>지도 M / 방 맞춤 R / 회전 [ ]<br>드래그로 화면 이동 · 휠로 확대<br>우클릭 드래그로 좌우·위아래 회전</p><p class="hud-help">휴대폰은 스틱을 끝까지 밀면 달려요<br>한 손가락 이동 · 두 손가락 드래그 회전<br>손가락을 벌리거나 모아 확대·축소</p>
 </section></div>
 <p id="camera-mouse-help" class="camera-mouse-help">왼쪽 드래그 이동 · 우클릭 드래그 회전·기울기 · 휠 확대 <span>(Shift+드래그도 회전)</span></p>
-<div class="loading" id="loading" role="status"><span class="loader-star" aria-hidden="true">✦</span><p>도름이가 오는 중…</p></div>
+<div class="loading" id="loading">
+  <span class="loader-star" aria-hidden="true">✦</span>
+  <p id="loading-message" role="status">도름이가 오는 중…</p>
+  <div id="loading-help" hidden>
+    <p>조금 더 기다리거나 연결을 확인한 뒤 다시 열어 보세요.</p>
+    <button type="button" id="loading-retry" class="primary">다시 열기</button>
+  </div>
+</div>
 <section id="activity-note" class="activity-note" hidden aria-live="polite"><div class="activity-heading"><strong id="activity-title"></strong><button id="activity-close" type="button" aria-label="안내만 접기. 활동은 계속돼요">안내 접기 <span aria-hidden="true">×</span></button></div><p id="activity-text" tabindex="0" role="region" aria-label="활동 이야기 · 길면 스크롤해서 읽기"></p><span id="activity-status">잠깐 머물러 볼까요?</span></section>
 <section id="library-quest" class="library-quest" hidden aria-label="사서 도우미 의뢰"><div class="quest-toolbar"><span id="quest-progress" role="status" aria-live="polite" aria-atomic="true"></span><button id="quest-toggle" type="button" aria-controls="quest-details" aria-expanded="true">안내 접기</button><button id="quest-clue" type="button" aria-label="의뢰 다시 읽기">다시 읽기</button><button id="quest-next" type="button" hidden>다음 의뢰</button><button id="quest-stop" type="button" aria-label="사서 도우미 그만하기">그만하기</button></div><div id="quest-details"><strong id="quest-title"></strong><p id="quest-status"></p></div></section>
 <div class="message" id="message" role="status" aria-live="polite"></div>
 <p id="elevator-status" class="elevator-status" role="status" aria-live="polite" hidden></p>
 <div id="fade" aria-hidden="true"></div>
-<div class="fallback" id="fallback" hidden role="alert"><span aria-hidden="true">✦</span><h2 id="fallback-title">3D 화면을 열지 못했어요</h2><p id="fallback-text">브라우저의 하드웨어 가속을 켜거나 최신 Chrome 또는 Safari에서 다시 열어 주세요. 저장된 놀이는 그대로 남아 있어요.</p><button id="retry">다시 열기</button></div>
+<div class="fallback" id="fallback" hidden role="alert"><span aria-hidden="true">✦</span><h2 id="fallback-title">3D 화면을 열지 못했어요</h2><p id="fallback-text">브라우저를 최신 버전으로 업데이트하고 하드웨어 가속을 켜 보세요. 저장된 놀이는 그대로 남아 있어요.</p><button id="retry">다시 열기</button></div>
 <section id="doreumi-performance" class="doreumi-performance" hidden aria-label="도름이 동작 재생"><div><strong id="doreumi-motion-status" role="status"></strong><span>이동 · E · Esc로 마치기</span></div><button id="doreumi-retry" type="button" hidden>다시 시도</button><button id="doreumi-stop" type="button">그만하기</button></section>
 <div class="bottom-controls"><div class="dpad stick-controls"><button id="move-stick" class="movement-stick" type="button" aria-label="이동 스틱. 끝까지 밀면 달리고 놓으면 멈춰요" aria-describedby="stick-help"><span class="stick-track" aria-hidden="true"></span><span class="stick-knob" aria-hidden="true">✦</span></button><span id="stick-help">끝까지 밀면 달리기</span></div><div class="action-area"><button id="doreumi-open" type="button" aria-haspopup="dialog" disabled>동작</button><button id="jump" type="button" hidden disabled aria-label="점프 · Space" title="점프 · Space">점프</button><button id="piano-seat-play" type="button" hidden disabled>피아노 연주하기</button><button id="plane-view-open" type="button" hidden disabled>비행기 바라보기</button><button id="harbor-view-open" type="button" hidden disabled>등대 바라보기</button><button id="island-view-open" type="button" hidden disabled>바다와 구름섬 바라보기</button><button id="rest-sky-open" type="button" hidden disabled>하늘 보기</button><button id="activity-guide" class="activity-guide" hidden type="button" aria-controls="activity-note" aria-expanded="false">활동 안내</button><p id="nearby-hint" hidden>문 앞에서 행동 · 길 찾기는 지도</p><button id="action" disabled hidden aria-describedby="nearby-hint"><span id="action-label">천천히 둘러보기</span><kbd>E</kbd></button><p class="hints">이동 WASD · 방향키　/　지도 M　/　화면 이동 드래그 · 회전 우클릭 드래그 / [ ] · 확대 휠</p></div></div>
 </section>
@@ -95,6 +102,31 @@
 </main>
 <dialog id="modal" aria-labelledby="modal-title"><div id="modal-content"></div></dialog>
 <noscript><p>도름이와 놀려면 JavaScript를 켜 주세요.</p></noscript>
+<script id="startup-wait">
+(()=>{
+ const loading=document.getElementById('loading');
+ const message=document.getElementById('loading-message');
+ const help=document.getElementById('loading-help');
+ const retry=document.getElementById('loading-retry');
+ const timer=window.setTimeout(()=>{
+  if(loading.hidden)return;
+  message.textContent='도름이가 오는 데 시간이 걸려요';
+  help.hidden=false;
+ },12000);
+ const observer=new MutationObserver(()=>{
+  if(!loading.hidden)return;
+  window.clearTimeout(timer);
+  observer.disconnect();
+ });
+ observer.observe(loading,{attributes:true,attributeFilter:['hidden']});
+ retry.onclick=()=>{
+  if(loading.hidden||help.hidden||retry.disabled)return;
+  retry.disabled=true;
+  retry.textContent='다시 여는 중…';
+  window.location.reload();
+ };
+})();
+</script>
 <script id="startup-bootstrap">
 (()=>{
  const fallback=document.getElementById('fallback');
