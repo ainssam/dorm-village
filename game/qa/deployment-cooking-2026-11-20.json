@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-11-20T08:34:20.520Z",
+  "version": "2026.11.20.1",
+  "project": "dorm-village",
+  "account": "아인2",
+  "productionUrl": "https://dorm-village.vercel.app/",
+  "pullRequest": "https://github.com/ainssam/dorm-village/pull/9",
+  "reviewedHead": "8a295684e3ab6f2167e98d31f1b221300b6c2411",
+  "commit": "e7e6b33eece25dfa4879d208bdd8433b0b52d1da",
+  "deploymentId": "dpl_8uUo2sGNNnSuYHLCcxr1JLFmqg9i",
+  "deploymentUrl": "https://dorm-village-d7w94lh6u-ain-b38f.vercel.app",
+  "state": "READY",
+  "aliases": [
+    "dorm-village.vercel.app",
+    "dorm-village-ain-b38f.vercel.app"
+  ],
+  "buildDurationMs": 435368,
+  "verification": {
+    "syntax": "passed",
+    "test": {
+      "tests": 387,
+      "passed": 387,
+      "failed": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "durationMs": 399938.114012
+    },
+    "publicApplicationVersion": "2026.11.20.1",
+    "manifestMatchesSource": true,
+    "brandMetadataMatchesSource": true,
+    "kakaoImage": "1200×630",
+    "favicon": "64×64"
+  },
+  "browserReview": "qa/cooking-release-review-2026-11-20.md"
+}
