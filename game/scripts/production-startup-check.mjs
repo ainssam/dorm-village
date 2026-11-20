@@ -4,6 +4,16 @@ import { createHash } from 'node:crypto';
 
 const mode=process.env.BOOT_TARGET;
 const url=mode==='previous'?'https://dorm-village-m3im548ht-ain-b38f.vercel.app/':'https://dorm-village.vercel.app/';
+const expected=process.env.BOOT_EXPECTED;
+if(expected){
+ const deadline=Date.now()+180000;
+ while(Date.now()<deadline){
+  const res=await fetch(url+'?startup-verification='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(12000)}).catch(()=>null);
+  const html=await res?.text();
+  if(res?.ok&&html?.includes('content="'+expected+'"'))break;
+  await new Promise(resolve=>setTimeout(resolve,4000));
+ }
+}
 const width=Number(process.env.BOOT_WIDTH),height=width<500?844:900;
 const out='qa/production-startup',network=[],logs=[],seen=new Set();
 await mkdir(out,{recursive:true});
@@ -37,4 +47,4 @@ try{
  await writeFile(out+'/results.json',JSON.stringify({mode,url,width,result,navigationError,fetches,logs,network,unfinished:[...seen]},null,2));
  await browser.close();
 }
-if(!result?.ready)process.exitCode=1;
+if(!result?.ready||(expected&&result.version!==expected)||logs.some(x=>x.kind==='pageerror')||network.length)process.exitCode=1;

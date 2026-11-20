@@ -29,6 +29,7 @@ jobs:
           BOOT_TARGET: production
           BOOT_WIDTH: '1440'
           BOOT_CHANNEL: msedge
+          BOOT_EXPECTED: '2026.11.20.2'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
