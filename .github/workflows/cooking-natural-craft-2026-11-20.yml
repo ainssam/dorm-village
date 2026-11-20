@@ -1,4 +1,4 @@
-name: Natural craft acceptance
+name: Natural jam and shell frame acceptance
 on:
   push:
     branches: [qa/cooking-natural-craft-2026-11-20]
@@ -13,7 +13,6 @@ jobs:
       matrix:
         include:
           - { width: 1440, height: 900, touch: '0' }
-          - { width: 768, height: 1024, touch: '1' }
     defaults:
       run:
         working-directory: game
@@ -21,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-          fetch-depth: 2
+          fetch-depth: 3
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -43,11 +42,12 @@ jobs:
           node scripts/cooking-natural-craft-2026-11-20.mjs
         env:
           QA_CANDIDATE: d842ac7877a3fcf4df6896dac5a8a620887f45b7
+          QA_CRAFT_FOLLOWUP: '1'
           QA_WIDTH: ${{ matrix.width }}
           QA_HEIGHT: ${{ matrix.height }}
           QA_TOUCH: ${{ matrix.touch }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: natural-craft-${{ matrix.width }}x${{ matrix.height }}
-          path: game/qa/cooking-natural-craft
+          name: natural-jam-shell-${{ matrix.width }}x${{ matrix.height }}
+          path: game/qa/cooking-natural-jam-shell

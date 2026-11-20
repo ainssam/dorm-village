@@ -3,7 +3,8 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {chromium} from '@playwright/test';
 
 const width=Number(process.env.QA_WIDTH),height=Number(process.env.QA_HEIGHT);
-const touch=process.env.QA_TOUCH==='1',out='qa/cooking-natural-craft';
+const touch=process.env.QA_TOUCH==='1',followUp=process.env.QA_CRAFT_FOLLOWUP==='1';
+const out=followUp?'qa/cooking-natural-jam-shell':'qa/cooking-natural-craft';
 const renderEvery=12;
 await mkdir(out,{recursive:true});
 const errors=[],results=[],nearLog=[],checks=[];
@@ -90,9 +91,10 @@ try {
   await leaveActivity();
  }
  async function focusId(){return page.evaluate(()=>document.activeElement?.id??'');}
- async function openApple(){
-  await open('homeKitchen.apple-keepsakes','[data-gathered-recipe="apple-juice"]');
-  await press('[data-gathered-recipe="apple-juice"]');
+ async function openApple(recipe='apple-juice'){
+  const button=`[data-gathered-recipe="${recipe}"]`;
+  await open('homeKitchen.apple-keepsakes',button);
+  await press(button);
   await page.waitForSelector('#preparation-next');
  }
  async function openLeaf(){
@@ -138,6 +140,60 @@ try {
   assert.ok((await state()).saveWritable);
  }
 
+
+ if(followUp){
+  stage='four natural apples';
+  await waitGame(()=>window.dormiGame.getState().saveWritable);
+  assert.equal((await state()).materials.apple,0);
+  assert.equal((await state()).materials.shell,0);
+  await travel('park');
+  await gather('park.tree.west','apple',2);
+  await gather('park.tree.east','apple',2);
+  assert.equal((await state()).materials.apple,4);
+  await done('gather two pairs of apples from the park');
+
+  stage='apple jam preparation and placement';
+  await travel('homeKitchen');
+  await openApple('apple-jam');
+  await make('apple-jam','apple',3);
+  assert.equal((await state()).materials.apple,1);
+  await placePreparation('home.shelf-left','apple-jam');
+  await shot('apple-jam-placed');
+  await done('jam uses 3 apples only on confirm and can be placed');
+
+  stage='three natural shore shells';
+  await travel('courtyard');
+  for(const position of ['west','middle','east']){
+   stage='natural shore shell '+position;
+   await gather('courtyard.shell.'+position,'shell',1);
+  }
+  assert.equal((await state()).materials.shell,3);
+  await done('gather one shell from each of the three natural shoreline positions');
+
+  stage='shell frame preparation and placement';
+  await travel('workshop');
+  await open('workshop.table','#shell-frame-prepare');
+  await press('#shell-frame-prepare');
+  await page.waitForSelector('#preparation-next');
+  await make('shell-frame','shell',3);
+  assert.equal((await state()).materials.shell,0);
+  await placePreparation('home.shelf-right','shell-frame');
+  await shot('shell-frame-placed');
+  await done('shell frame uses 3 shells only on confirm and can be placed');
+
+  stage='reload jam and shell frame';
+  const saved=await state();
+  await reload();
+  const reopened=await state();
+  assert.deepEqual(reopened.materials,saved.materials);
+  assert.deepEqual(reopened.ownedItemIds,saved.ownedItemIds);
+  assert.deepEqual(reopened.placements,saved.placements);
+  assert.equal(reopened.placements['home.shelf-left'],'apple-jam');
+  assert.equal(reopened.placements['home.shelf-right'],'shell-frame');
+  await travel('home');
+  await shot('jam-and-shell-frame-restored');
+  await done('reload preserves jam, shell frame and their placements');
+ }else{
  stage='park, water, and natural apples';
  await waitGame(()=>window.dormiGame.getState().saveWritable);
  assert.equal((await state()).materials.apple,0);
@@ -228,8 +284,9 @@ try {
  await travel('home');
  await shot('home-persisted');
  await done('reload preserves material ledger, ownership and placement');
- stage='completed';
+ }
  assert.deepEqual(errors,[]);
+ stage='completed';
 } catch(error) {
  failure={stage,message:error.message,detail:error.stack};
  console.error('Natural craft QA failed at '+stage+'\n'+error.stack);
