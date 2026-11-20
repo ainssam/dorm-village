@@ -3,12 +3,13 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {chromium} from '@playwright/test';
 
 const width=Number(process.env.QA_WIDTH),height=Number(process.env.QA_HEIGHT);
+const reduced=process.env.QA_REDUCED==='1';
 const touch=process.env.QA_TOUCH==='1',out='qa/cooking-recovery-browser';
 const renderEvery=12;
 await mkdir(out,{recursive:true});
 const errors=[],results=[],nearLog=[];
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader','--use-angle=swiftshader','--mute-audio']});
-const context=await browser.newContext({viewport:{width,height},isMobile:touch,hasTouch:touch});
+const context=await browser.newContext({viewport:{width,height},isMobile:touch,hasTouch:touch,reducedMotion:reduced?'reduce':'no-preference'});
 const page=await context.newPage();
 page.setDefaultTimeout(40000);
 page.on('pageerror',error=>errors.push(error.message));
@@ -106,10 +107,26 @@ try {
  await close();
  results.push('free salad, mixing, result and reopen');
 
+ await open('homeKitchen.cook','#cook-result');
+ await press('#cook-reset');
+ await page.waitForSelector('#cook-measure');
+ for(const index of [0,0,0,0,1,1,2])await press(pour.nth(index));
+ await press('#cook-mix');
+ await press('[data-cook-action="quadrant"][data-index="0"]');
+ for(let turn=0;turn<6;turn++)for(const index of [1,2,3,0])await press(`[data-cook-action="quadrant"][data-index="${index}"]`);
+ assert.match(await page.locator('#cook-turns').innerText(),/6\.00/);
+ await press('#cook-salad-finish');
+ assert.match(await page.locator('#cook-result-title').innerText(),/조금 으깨진/);
+ const comparison=await page.locator('#cook-comparison').innerText();
+ assert.match(comparison,/직전 실험.*고르게 섞인.*3\.00바퀴/);
+ await shot('salad-comparison');
+ await close();
+ results.push('salad three and six turns compared');
+
  assert.deepEqual(errors,[]);
- console.log(JSON.stringify({width,height,touch,results,nearLog,errors}));
+ console.log(JSON.stringify({width,height,touch,reduced,results,nearLog,errors}));
 } finally {
- await writeFile(out+'/results.json',JSON.stringify({width,height,touch,results,nearLog,errors},null,2));
- if(results.length!==3)await page.screenshot({path:out+'/last-screen.png',timeout:10000}).catch(()=>{});
+ await writeFile(out+'/results.json',JSON.stringify({width,height,touch,reduced,results,nearLog,errors},null,2));
+ if(results.length!==4)await page.screenshot({path:out+'/last-screen.png',timeout:10000}).catch(()=>{});
  await browser.close();
 }

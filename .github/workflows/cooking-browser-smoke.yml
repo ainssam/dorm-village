@@ -12,8 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { width: 390, height: 844, touch: '1' }
-          - { width: 844, height: 390, touch: '1' }
+          - { width: 320, height: 568, touch: '1', reduced: '0' }
+          - { width: 768, height: 1024, touch: '1', reduced: '1' }
     defaults:
       run:
         working-directory: game
@@ -40,6 +40,7 @@ jobs:
           QA_WIDTH: ${{ matrix.width }}
           QA_HEIGHT: ${{ matrix.height }}
           QA_TOUCH: ${{ matrix.touch }}
+          QA_REDUCED: ${{ matrix.reduced }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:
