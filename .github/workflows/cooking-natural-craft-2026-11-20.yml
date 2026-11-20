@@ -1,0 +1,53 @@
+name: Natural craft acceptance
+on:
+  push:
+    branches: [qa/cooking-natural-craft-2026-11-20]
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { width: 1440, height: 900, touch: '0' }
+          - { width: 768, height: 1024, touch: '1' }
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify release runtime and tests match the PR
+        run: git diff --exit-code "$QA_CANDIDATE" HEAD -- dist tests package.json package-lock.json vercel.json
+        env:
+          QA_CANDIDATE: d842ac7877a3fcf4df6896dac5a8a620887f45b7
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - run: |
+          npm run serve > /tmp/dorm-village-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/cooking-natural-craft-2026-11-20.mjs
+        env:
+          QA_CANDIDATE: d842ac7877a3fcf4df6896dac5a8a620887f45b7
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+          QA_TOUCH: ${{ matrix.touch }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: natural-craft-${{ matrix.width }}x${{ matrix.height }}
+          path: game/qa/cooking-natural-craft
