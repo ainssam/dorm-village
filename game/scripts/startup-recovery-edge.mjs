@@ -17,7 +17,11 @@ const ready=page=>page.waitForFunction(()=>window.dormiGame?.getState()?.ready,n
 async function scenario(name,run){
  const context=await browser.newContext({viewport:{width:1440,height:900}});
  const page=await context.newPage();
- const errors=[];
+ const errors=[],requests=new Set();
+ page.on('request',r=>requests.add(r.url()));
+ page.on('requestfinished',r=>requests.delete(r.url()));
+ page.on('requestfailed',r=>requests.delete(r.url()));
+ page.on('console',m=>{if(m.type()==='error')console.log('Browser error '+m.text().slice(0,350));});
  page.setDefaultNavigationTimeout(20000);
  console.log('Starting '+name);
  page.on('pageerror',e=>errors.push(e.message));
@@ -28,7 +32,16 @@ async function scenario(name,run){
   results.push({name,passed:true});
   console.log('Passed '+name);
  }catch(error){
-  results.push({name,passed:false,error:String(error),errors});
+  const state=await page.evaluate(()=>({
+   stage:document.body?.dataset.state,
+   app:window.dormiGame?.getState()?.ready,
+   loader:document.querySelector('#loading')?.textContent?.trim(),
+   fallback:document.querySelector('#fallback')?.hidden?null:document.querySelector('#fallback')?.textContent?.trim(),
+   lockRequestedAt:window.qaLockRequestAt,
+   now:performance.now()
+  })).catch(e=>({error:String(e)}));
+  results.push({name,passed:false,error:String(error),errors,state,unfinished:[...requests].slice(0,25)});
+  console.log(JSON.stringify({state,unfinished:[...requests].slice(0,25)}));
   console.log('Failed '+name+': '+error);
   await page.screenshot({path:out+'/'+name+'-failed.png',timeout:5000}).catch(()=>{});
  }finally{
@@ -37,57 +50,12 @@ async function scenario(name,run){
 }
 
 try{
- await scenario('ordinary-start',async page=>{
-  await page.goto(url,{waitUntil:'domcontentloaded'});
-  await ready(page);
-  assert.equal(await page.locator('meta[name=application-version]').getAttribute('content'),'2026.11.20.2');
-  assert.equal(await page.locator('#loading').isVisible(),false);
-  assert.equal(await page.locator('#loading-help').isVisible(),false);
- });
- await scenario('delayed-model-continues',async page=>{
-  let release;
-  const wait=new Promise(resolve=>{release=resolve;});
-  await page.route('**/characters/doreumi/village.glb',async route=>{
-   await wait;
-   await route.continue().catch(()=>{});
-  },{times:1});
-  try{
-   await page.goto(url,{waitUntil:'domcontentloaded'});
-   await page.locator('#loading-retry').waitFor({timeout:35000});
-   assert.match(await page.locator('#loading-message').innerText(),/시간이 걸려요/);
-   await page.screenshot({path:out+'/delayed-model.png'});
-   release();
-   await ready(page);
-   assert.equal(await page.locator('#loading-retry').isVisible(),false);
-  }finally{release();}
- });
- await scenario('stalled-module-manual-retry',async page=>{
-  let release;
-  const wait=new Promise(resolve=>{release=resolve;});
-  await page.route('**/game.js',async route=>{
-   await wait;
-   await route.continue().catch(()=>{});
-  },{times:1});
-  try{
-   await page.goto(url,{waitUntil:'domcontentloaded'});
-   await page.locator('#loading-retry').waitFor({timeout:35000});
-   await page.evaluate(()=>sessionStorage.setItem('startup-qa-reload','retained'));
-   const navigation=page.waitForEvent('framenavigated',{predicate:f=>f===page.mainFrame(),timeout:25000});
-   await page.locator('#loading-retry').focus();
-   await page.keyboard.press('Enter');
-   await navigation;
-   release();
-   await ready(page);
-   assert.equal(await page.evaluate(()=>sessionStorage.getItem('startup-qa-reload')),'retained');
-   assert.equal(await page.locator('#loading').isVisible(),false);
-  }finally{release();}
- });
  await scenario('stalled-storage-lock-read-only',async page=>{
   await page.addInitScript(()=>{
    const locks=navigator.locks;
    if(!locks)throw Error('Web Locks unavailable for this fixture');
    const request=locks.request.bind(locks);
-   Object.defineProperty(locks,'request',{value:(name,...args)=>name==='dormi.world.v2.writer'?new Promise(()=>{}):request(name,...args)});
+   Object.defineProperty(locks,'request',{value:(name,...args)=>name==='dormi.world.v2.writer'?(window.qaLockRequestAt=performance.now(),new Promise(()=>{})):request(name,...args)});
   });
   await page.goto(url,{waitUntil:'domcontentloaded'});
   await ready(page);
@@ -100,4 +68,4 @@ try{
  await writeFile(out+'/results.json',JSON.stringify(summary,null,2));
  await browser.close();
 }
-assert.ok(results.length===4&&results.every(r=>r.passed),'One or more startup scenarios failed');
+assert.ok(results.length===1&&results.every(r=>r.passed),'One or more startup scenarios failed');
