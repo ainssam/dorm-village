@@ -20,4 +20,6 @@ dialog.gym-workshop{width:min(1120px,calc(100vw - 16px));height:calc(100dvh - 16
 .gym-panel .gym-repeat{min-height:44px;cursor:pointer}.gym-panel .gym-repeat input{flex:none;min-width:24px;width:24px;height:24px}.gym-exercise-actions{flex-wrap:wrap}.gym-exercise-actions button{flex:1 1 45%}.gym-exercise-actions button:last-child{flex-basis:45%}#gym-practice-controls[hidden],#stair-practice-controls[hidden],#gym-score[hidden],#stair-score[hidden],#boxing-score[hidden],#boxing-cue[hidden],#boxing-beat[hidden]{display:none!important}
 @media(max-width:539px){
  .gym-result-controls.gym-result-ready{position:sticky;top:0;z-index:1;display:flow-root;background:#fff8e6;box-shadow:0 5px 0 #fff8e6}
+ #stair-result-controls.gym-result-ready > label:first-of-type{white-space:nowrap}
+ #stair-result-controls.gym-result-ready #stair-mode{min-width:0;max-width:calc(100% - 86px)}
 }
