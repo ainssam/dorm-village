@@ -12,6 +12,49 @@ const source = await readFile('dist/game.js', 'utf8');
 const marker = 'window.dormiGame=Object.freeze({getState:readState});';
 assert.equal(source.split(marker).length, 2);
 const approach = String.raw`
+
+  window.squareProbe = (() => {
+    const tick = square.tick.bind(square);
+    const draw = renderer.render.bind(renderer);
+    const clear = renderer.clear.bind(renderer);
+    let samples = {}, startedAt = null, stride = 1, frame = 0, inDraw = false, capture = false;
+    const shouldDraw = () => capture || frame % stride === 0;
+    renderer.clear = (...args) => { if (inDraw || shouldDraw()) return clear(...args); };
+    renderer.render = (...args) => {
+      const paint = shouldDraw();
+      frame++;
+      if (paint) {
+        inDraw = true;
+        try { return draw(...args); }
+        finally { inDraw = false; }
+      }
+    };
+    square.tick = dt => {
+      const phase = square.snapshot()?.phase;
+      const now = performance.now();
+      if (phase) {
+        const key = phase + (stride > 1 ? '-sampled' : '-full');
+        const p = samples[key] ??= { frames: 0, sim: 0, from: now, until: now };
+        p.frames++;
+        p.sim += dt;
+        p.until = now;
+      }
+      return tick(dt);
+    };
+    return {
+      reset() { samples = {}; startedAt = performance.now(); stride = 1; },
+      stride(n) { stride = n; },
+      capture(n) { capture = n; },
+      read() {
+        return {
+          wallSeconds: Math.round(performance.now() - startedAt) / 1000,
+          samples: Object.fromEntries(Object.entries(samples).map(([k,v]) => [k, {
+            frames: v.frames, simSeconds: +v.sim.toFixed(3), wallSeconds: +((v.until-v.from)/1000).toFixed(3)
+          }]))
+        };
+      },
+    };
+  })();
   window.squareApproach = () => {
     const id = 'courtyard.group-activities';
     const target = interactionWorld().interactables.find(t => t.id === id);
@@ -67,7 +110,11 @@ try {
   };
   const state = () => page.evaluate(() => window.dormiGame.getState());
   const wait = (fn, arg = null, timeout = 30000) => page.waitForFunction(fn, arg, { timeout });
-  const shot = name => page.screenshot({ path: out + '/' + name + '.png', timeout: 18000 });
+  const shot = async name => {
+    await page.evaluate(() => { window.squareProbe.capture(true); return new Promise(done => requestAnimationFrame(() => requestAnimationFrame(done))); });
+    try { await page.screenshot({ path: out + '/' + name + '.png', timeout: 18000 }); }
+    finally { await page.evaluate(() => window.squareProbe.capture(false)); }
+  };
   await page.goto(origin, { waitUntil: 'domcontentloaded' });
   await wait(() => window.dormiGame?.getState().ready, null, 100000);
   await click(page.getByRole('button', { name: '마을 둘러보기', exact: true }));
@@ -81,9 +128,18 @@ try {
   const test = async (name, actions) => {
     try {
       await page.evaluate(() => window.squareApproach());
-      if (touch) await click('#action'); else await page.keyboard.press('KeyE');
+      await click('#action');
+      await page.evaluate(() => window.squareProbe.reset());
       await click('#square-' + name);
-      await get('#square-start').waitFor({ state: 'visible', timeout: sourceChanges.length ? 100000 : 10000 });
+      if (!touch && sourceChanges.length) {
+        await wait(() => window.dormiGame.getState().squareRuntime?.phase === 'gathering', null, 45000);
+        await page.waitForTimeout(8000);
+        console.log('SQUARE_RAW_GATHER', name, JSON.stringify(await page.evaluate(() => window.squareProbe.read())));
+        await page.evaluate(() => window.squareProbe.stride(8));
+      }
+      await get('#square-start').waitFor({ state: 'visible', timeout: sourceChanges.length ? 150000 : 10000 });
+      const gather = await page.evaluate(() => window.squareProbe.read());
+      console.log('SQUARE_GATHER', name, JSON.stringify(gather));
       await shot(name + '-ready');
       await click('#square-start');
       await wait(() => window.dormiGame.getState().squareRuntime?.phase === 'playing', null, 45000);
@@ -98,9 +154,9 @@ try {
         } finally { await page.keyboard.up('KeyW'); }
       }
       await shot(name + '-exited');
-      results.push({ name, passed: true, result });
+      results.push({ name, passed: true, result, gather });
     } catch(error) {
-      results.push({ name, passed: false, error: String(error).slice(0, 900), state: (await state()).squareRuntime });
+      results.push({ name, passed: false, error: String(error).slice(0, 900), state: (await state()).squareRuntime, gather: await page.evaluate(() => window.squareProbe.read()) });
       await shot(name + '-error').catch(() => {});
       await click('#square-leave').catch(() => {});
     }
