@@ -1,0 +1,62 @@
+name: Library entry before and after
+on:
+  push:
+    branches: [qa/library-readable-entry-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  review:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {width: 320, height: 568}
+          - {width: 390, height: 844}
+          - {width: 768, height: 1024}
+          - {width: 1440, height: 900}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 342d800f38289c98ad68236c3c6a8ab61916f8e4
+          fetch-depth: 2
+          path: candidate
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+        working-directory: candidate/game
+      - name: Select browser
+        working-directory: candidate/game
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Check library framing
+        working-directory: candidate/game
+        env:
+          QA_RELEASE: '342d800f38289c98ad68236c3c6a8ab61916f8e4'
+          QA_BASELINE: '3abcca53e329f12357461bf97261906a3169d358'
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+        run: |
+          cp ../../harness/game/scripts/library-entry-acceptance.mjs scripts/
+          npm run check
+          node --test tests/library-entry-framing.test.mjs
+          node scripts/serve.mjs > /tmp/dorm-library-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          QA_PHASE=baseline node scripts/library-entry-acceptance.mjs
+          QA_PHASE=candidate node scripts/library-entry-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: library-entry-${{ matrix.width }}x${{ matrix.height }}
+          path: candidate/game/qa/library-entry
