@@ -1,0 +1,47 @@
+name: Finish field and park activities on two devices
+on:
+  push:
+    branches: [qa/outdoor-sports-follow-up-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  screenshots:
+    name: ${{ matrix.group }} · ${{ matrix.layout }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [field-tail, park-garden]
+        layout: [pc, phone]
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Use the app controls and capture each activity
+        run: |
+          npm run serve > /tmp/dorm-village-server.log 2>&1 &
+          node scripts/outdoor-sports-follow-up-2026-11-21.mjs
+        env:
+          VILLAGE_LAYOUT: ${{ matrix.layout }}
+          OUTDOOR_GROUP: ${{ matrix.group }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ${{ matrix.group }}-${{ matrix.layout }}
+          path: game/qa/outdoor-sports-follow-up
