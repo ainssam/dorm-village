@@ -5,7 +5,7 @@ import { chromium } from '@playwright/test';
 
 const runtimeBase = 'ad6ecd43f7dfbe5f7e67d761bc0a95095ae69833';
 const paths = ['dist/game.js', 'dist/square/host.js'];
-const sourceChanges = execFileSync('git', ['diff', '--name-only', runtimeBase, 'HEAD', '--', 'dist'], { encoding: 'utf8' }).trim().split(/\r?\n/).filter(Boolean);
+const sourceChanges = execFileSync('git', ['diff', '--name-only', '--relative', runtimeBase, 'HEAD', '--', 'dist'], { encoding: 'utf8' }).trim().split(/\r?\n/).filter(Boolean);
 assert.ok(sourceChanges.length === 0 || sourceChanges.join(',') === paths.join(','), 'Runtime must match the known regression base or the scoped fix');
 const touch = process.env.SQUARE_DEVICE === 'phone';
 const source = await readFile('dist/game.js', 'utf8');
