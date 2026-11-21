@@ -179,7 +179,7 @@ sampleRender(){const render=renderer.render.bind(renderer),clear=renderer.clear.
   await steerTo(next.practiceTarget);
   await drive(0,.35,()=>wait(()=>window.__leisureQAAcceptance.bumper()?.practiceIndex===3,null,50000));
   const complete=await sample();assert.equal(complete.practiceState,'complete');
-  assert.ok(await page.locator('[data-bumper-again]').isVisible());
+  await page.locator('[data-bumper-again]').waitFor({state:'visible',timeout:12000});
   check('bumper-all-three-markers',complete);await capture('05-bumper-completed');
   await press('[data-bumper-again]');assert.equal((await sample()).practiceIndex,0);
   const pause=page.locator('[data-bumper-pause]');
