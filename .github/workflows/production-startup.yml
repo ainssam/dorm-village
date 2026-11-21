@@ -1,0 +1,37 @@
+name: Verify published Dorm Village in Windows Edge
+on:
+  push:
+    branches: [qa/production-startup-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  startup:
+    runs-on: windows-2025
+    timeout-minutes: 8
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Check installed Microsoft Edge
+        run: |
+          $edge = Join-Path ${env:ProgramFiles(x86)} 'Microsoft\Edge\Application\msedge.exe'
+          $edge64 = Join-Path $env:ProgramFiles 'Microsoft\Edge\Application\msedge.exe'
+          if (-not (Test-Path $edge) -and -not (Test-Path $edge64)) { npx playwright install msedge }
+      - run: node scripts/production-startup-check.mjs
+        env:
+          BOOT_TARGET: production
+          BOOT_WIDTH: '1440'
+          BOOT_CHANNEL: msedge
+          BOOT_EXPECTED: '2026.11.21.1'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: startup-production-windows-edge
+          path: game/qa/production-startup

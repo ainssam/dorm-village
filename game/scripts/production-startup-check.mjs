@@ -1,0 +1,57 @@
+import { chromium } from '@playwright/test';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+
+const mode=process.env.BOOT_TARGET;
+const url=mode==='previous'?'https://dorm-village-m3im548ht-ain-b38f.vercel.app/':'https://dorm-village.vercel.app/';
+const expected=process.env.BOOT_EXPECTED;
+if(expected){
+ const deadline=Date.now()+180000;
+ while(Date.now()<deadline){
+  const res=await fetch(url+'?startup-verification='+Date.now(),{cache:'no-store',signal:AbortSignal.timeout(12000)}).catch(()=>null);
+  const html=await res?.text();
+  if(res?.ok&&html?.includes('content="'+expected+'"'))break;
+  await new Promise(resolve=>setTimeout(resolve,4000));
+ }
+}
+const width=Number(process.env.BOOT_WIDTH),height=width<500?844:900;
+const out='qa/production-startup',network=[],logs=[],seen=new Set();
+await mkdir(out,{recursive:true});
+const fetches=await Promise.all(['','game.js','vendor/three.module.js','manifest.webmanifest','favicon.ico','brand/dorm-village-kakao-1200x630.png'].map(async path=>{
+ try{
+  const r=await fetch(url+path,{signal:AbortSignal.timeout(12000)}),b=new Uint8Array(await r.arrayBuffer());
+  const png=path.endsWith('kakao-1200x630.png')?{width:new DataView(b.buffer).getUint32(16),height:new DataView(b.buffer).getUint32(20)}:null;
+  return {path,png,status:r.status,contentType:r.headers.get('content-type'),cache:r.headers.get('cache-control'),bytes:b.length,sha256:createHash('sha256').update(b).digest('hex')};
+ }catch(e){return {path,error:String(e)};}
+}));
+const browser=await chromium.launch({headless:true,channel:process.env.BOOT_CHANNEL||undefined,executablePath:process.env.CHROMIUM_PATH||undefined,args:['--no-sandbox','--disable-dev-shm-usage','--enable-unsafe-swiftshader','--use-angle=swiftshader','--mute-audio']});
+const context=await browser.newContext({viewport:{width,height},hasTouch:width<500,isMobile:width<500});
+const page=await context.newPage();
+page.on('pageerror',e=>logs.push({kind:'pageerror',text:e.stack??e.message}));
+page.on('console',m=>{if(['error','warning','warn'].includes(m.type()))logs.push({kind:m.type(),text:m.text().slice(0,800)});});
+page.on('request',request=>seen.add(request.url()));
+page.on('requestfinished',request=>seen.delete(request.url()));
+page.on('response',r=>{if(r.status()>=400)network.push({url:r.url(),status:r.status()});});
+page.on('requestfailed',r=>{network.push({url:r.url(),failure:r.failure()?.errorText});seen.delete(r.url());});
+const state=()=>page.evaluate(()=>{
+ const s=window.dormiGame?.getState(),loading=document.querySelector('#loading'),fallback=document.querySelector('#fallback');
+ return {title:document.title,version:document.querySelector('meta[name="application-version"]')?.content,ready:s?.ready??false,failed:s?.failed,bodyState:document.body?.dataset.state,loaderVisible:!!loading&&!loading.hidden&&getComputedStyle(loading).display!=='none',fallbackVisible:!!fallback&&!fallback.hidden&&getComputedStyle(fallback).display!=='none',fallbackText:fallback?.hidden?null:fallback?.textContent?.trim(),room:s?.roomId,docReady:document.readyState};
+});
+let result=null,navigationError=null,entered=false;
+try{
+ await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000}).catch(e=>{navigationError=String(e);});
+ await page.waitForFunction(()=>window.dormiGame?.getState()?.ready||document.body?.dataset.state==='error',null,{timeout:55000}).catch(()=>{});
+ result=await state().catch(e=>({error:String(e)}));
+ if(result?.ready){
+  const welcome=page.getByRole('button',{name:'마을 둘러보기',exact:true});
+  if(await welcome.isVisible())await welcome.click({timeout:14000});
+  await page.waitForFunction(()=>!document.querySelector('dialog[open]')&&window.dormiGame.getState().roomId==='courtyard'&&!window.dormiGame.getState().inputLocked,null,{timeout:18000});
+  entered=true;
+ }
+ console.log(JSON.stringify({mode,url,width,result,entered,navigationError,fetches,logs,network,unfinished:[...seen].slice(0,40),browser:browser.version()}));
+ await page.screenshot({path:out+'/startup.png',timeout:8000}).catch(()=>{});
+}finally{
+ await writeFile(out+'/results.json',JSON.stringify({mode,url,width,result,entered,navigationError,fetches,logs,network,unfinished:[...seen]},null,2));
+ await browser.close();
+}
+if(!result?.ready||!entered||result.loaderVisible||result.fallbackVisible||fetches.some(x=>x.status!==200)||fetches.find(x=>x.png)?.png.width!==1200||fetches.find(x=>x.png)?.png.height!==630||(expected&&result.version!==expected)||logs.some(x=>x.kind==='pageerror')||network.length)process.exitCode=1;
