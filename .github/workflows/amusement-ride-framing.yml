@@ -7,12 +7,11 @@ permissions:
 jobs:
   ride:
     runs-on: ubuntu-24.04
-    timeout-minutes: 13
+    timeout-minutes: 12
     strategy:
       fail-fast: false
       matrix:
         include:
-          - { width: 1440, height: 900, touch: '0', reduced: '0', rides: 'carousel' }
           - { width: 1440, height: 900, touch: '0', reduced: '0', rides: 'coaster' }
     defaults:
       run:

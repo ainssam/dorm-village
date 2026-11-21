@@ -120,17 +120,18 @@ sampleRender(){const render=renderer.render.bind(renderer),clear=renderer.clear.
    checkpoint='ride';
    if(kind==='coaster'){
     const action=page.locator('[data-coaster-control]');
-    for(let attempt=0;attempt<2;attempt++){
-     if(await action.getAttribute('aria-pressed')==='true'){await press(action);continue;}
-     if(/출발|한 번 더/.test(await action.innerText()))await press(action);
-     break;
-    }
+    const controlLabel=async()=>await action.getAttribute('aria-label')??'';
+    await page.waitForFunction(()=>/출발|계속하기/.test(document.querySelector('[data-coaster-control]')?.getAttribute('aria-label')??''),null,{timeout:16000});
+    if(/계속하기/.test(await controlLabel()))await press(action);
+    await page.waitForFunction(()=>/출발/.test(document.querySelector('[data-coaster-control]')?.getAttribute('aria-label')??''),null,{timeout:12000});
+    console.log('START '+JSON.stringify({label:await controlLabel(),pressed:await action.getAttribute('aria-pressed')}));
+    await press(action);
     await page.waitForFunction(()=>window.__rideAcceptance.metrics().coaster==='lap',null,{timeout:25000});
    }
    await page.waitForTimeout(kind==='viking'?1900:900);
    row.stages.riding=await witness(kind+'-riding');
    if(kind==='carousel'||kind==='coaster'){
-    await page.waitForTimeout(1400);
+    await page.waitForTimeout(2300);
     row.stages.ridingLater=await witness(kind+'-riding-later');
    }
    checkpoint='exit';
