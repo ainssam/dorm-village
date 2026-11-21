@@ -14,9 +14,36 @@ export function createSubjectTools({ui,document:doc=globalThis.document,random=M
   return ui.workshop('영어 낱말 짝 맞추기','<p id="english-progress"></p><p id="english-word" class="english-word" lang="en"></p><div id="english-choices" class="subject-choices"></div><p id="subject-feedback" role="status"></p><button id="english-next" class="primary" hidden>다음 낱말</button><button id="english-restart" class="primary" hidden>다시 짝 맞추기</button>',()=>{
    const area=doc.querySelector('#english-choices'),next=doc.querySelector('#english-next'),restart=doc.querySelector('#english-restart');
    function render(){const item=order[round],others=shuffle(ENGLISH_WORDS.filter(x=>x!==item),random).slice(0,2),choices=shuffle([item,...others],random);answered=false;doc.querySelector('#english-progress').textContent=(round+1)+' / '+order.length;doc.querySelector('#english-word').textContent=item.word;doc.querySelector('#subject-feedback').textContent='이 낱말의 뜻을 골라요';area.innerHTML=choices.map(x=>`<button data-meaning="${x.word}">${x.meaning}</button>`).join('');next.hidden=true;restart.hidden=true;}
-   const choose=e=>{if(!alive||answered)return;const b=e.target.closest?.('[data-meaning]');if(!b||!area.contains(b))return;const item=order[round];if(b.dataset.meaning!==item.word){doc.querySelector('#subject-feedback').textContent='다른 뜻도 살펴봐요';return;}answered=true;const complete=round===order.length-1;doc.querySelector('#subject-feedback').textContent=item.word+' = '+item.meaning+(complete?' · 여섯 낱말을 모두 연결했어요!':'');for(const button of area.querySelectorAll('button'))button.disabled=true;next.hidden=complete;restart.hidden=!complete;};
-   const advance=()=>{if(!alive||!answered||round>=order.length-1)return;round++;render();};
-   const reset=()=>{if(!alive)return;round=0;order.splice(0,order.length,...shuffle(ENGLISH_WORDS,random));render();area.querySelector('button')?.focus();};
+   function focusNext(owner,from,to){
+    if(owner&&to&&(doc.activeElement===from||doc.activeElement===doc.body))to.focus();
+   }
+   const choose=e=>{
+    if(!alive||answered)return;
+    const b=e.target.closest?.('[data-meaning]');
+    if(!b||!area.contains(b))return;
+    const item=order[round],feedback=doc.querySelector('#subject-feedback');
+    if(b.dataset.meaning!==item.word){feedback.textContent='다른 뜻도 살펴봐요';return;}
+    const ownedFocus=doc.activeElement===b;
+    answered=true;
+    const complete=round===order.length-1;
+    feedback.textContent=item.word+' = '+item.meaning+(complete?' · 여섯 낱말을 모두 연결했어요!':'');
+    for(const button of area.querySelectorAll('button'))button.disabled=true;
+    next.hidden=complete;
+    restart.hidden=!complete;
+    focusNext(ownedFocus,b,complete?restart:next);
+   };
+   const advance=()=>{
+    if(!alive||!answered||round>=order.length-1)return;
+    const ownedFocus=doc.activeElement===next;
+    round++;render();
+    focusNext(ownedFocus,next,area.querySelector('button'));
+   };
+   const reset=()=>{
+    if(!alive)return;
+    const ownedFocus=doc.activeElement===restart;
+    round=0;order.splice(0,order.length,...shuffle(ENGLISH_WORDS,random));render();
+    focusNext(ownedFocus,restart,area.querySelector('button'));
+   };
    area.addEventListener('click',choose);next.addEventListener('click',advance);restart.addEventListener('click',reset);render();
    return()=>{alive=false;area.removeEventListener('click',choose);next.removeEventListener('click',advance);restart.removeEventListener('click',reset);};
   },{kind:'school-workshop'});
