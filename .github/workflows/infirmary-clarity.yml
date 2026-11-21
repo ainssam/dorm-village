@@ -12,8 +12,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {phase: before, width: 320}
-          - {phase: before, width: 1440}
           - {phase: after, width: 320}
           - {phase: after, width: 1440}
     defaults:
@@ -49,7 +47,7 @@ jobs:
             test "$(git -C ../audit-baseline rev-parse HEAD)" = '3abcca53e329f12357461bf97261906a3169d358'
             export QA_APP="$GITHUB_WORKSPACE/audit-baseline/game"
           else
-            git fetch --no-tags --depth=1 origin 'b618de79f079f273159d9f8fb28e8e46ed0227ab'
+            git fetch --no-tags --depth=1 origin '86b96183d13aa7513a039d0725fee4c729119334'
             git diff --exit-code FETCH_HEAD HEAD -- dist tests package.json package-lock.json
             export QA_APP="$GITHUB_WORKSPACE/game"
           fi

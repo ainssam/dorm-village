@@ -116,6 +116,16 @@ try{
   assert.match(wrong.target.text,after?/단서를 다시 살펴봐요/:/다시 살펴봐요/);
   if(after)assert.ok(wrong.target.fullyVisible,'card '+i+' immediate hint visible');
   await select.selectOption(reason);
+  if(after&&narrow){
+   const size=await select.evaluate(el=>{
+    const s=getComputedStyle(el),ctx=document.createElement('canvas').getContext('2d');
+    ctx.font=s.font;
+    return {width:ctx.measureText(el.selectedOptions[0].textContent).width,space:el.clientWidth-parseFloat(s.paddingLeft)-parseFloat(s.paddingRight)-18};
+   });
+   assert.ok(size.width<=size.space,'card '+i+' selected reason fits: '+JSON.stringify(size));
+   const info=rows.find(r=>r.name==='card-'+i+'-clue');
+   if(info)info.metrics.option=size;
+  }
   await press('#health-check');
   const right=await snap('card-'+i+'-right','#learning-status');
   assert.doesNotMatch(right.target.text,/다시 살펴봐요/);
@@ -147,7 +157,7 @@ finally{
    parts.push('<div><small>'+id+'</small><img src="data:image/png;base64,'+png+'"></div>');
   }
   await montage.setViewportSize({width:640,height:1160});
-  await montage.setContent('<style>body{margin:0;display:grid;grid-template-columns:repeat(2,1fr);font-family:sans-serif}img{width:320px;display:block}small{display:block;height:12px;line-height:12px}</style>'+parts.join(''));
+  await montage.setContent('<meta name="viewport" content="width=device-width,initial-scale=1"><style>body{margin:0;display:grid;grid-template-columns:repeat(2,1fr);font-family:sans-serif}img{width:320px;display:block}small{display:block;height:12px;line-height:12px}</style>'+parts.join(''));
   const jpeg=await montage.screenshot({path:out+'/contact.jpg',type:'jpeg',quality:48});
   const encoded=jpeg.toString('base64');
   for(let i=0;i<encoded.length;i+=4096)console.log('HEALTH_MONTAGE '+encoded.slice(i,i+4096));

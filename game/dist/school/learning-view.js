@@ -28,7 +28,7 @@ export function createLearningTools({ui,applyArt=()=>{},getAudio=null}){
   let reason = '';
 
   return open('health', `
-   <p>글이 어디에서 왔는지 찾아보는 놀이예요. 가상 글 3장을 한 장씩 살펴봐요.</p>
+   <p>가상 글 3장 중 한 장을 고르고, 뒤집어 단서를 찾아봐요.</p>
    <div class="school-tool-row" role="group" aria-label="연습할 글">
     ${HEALTH_CARDS.map((c,i)=>`<button data-health-card="${c.id}" aria-pressed="${c.id==='a'}">글 ${i+1}</button>`).join('')}
    </div>
@@ -46,7 +46,7 @@ export function createLearningTools({ui,applyArt=()=>{},getAudio=null}){
     </div>
    </section>
    <section id="health-steps" hidden>
-    <h3 id="health-where">이 글의 처음 출처를 찾아볼 수 있나요?</h3>
+    <h3 id="health-where">이 글이 어디에서 왔는지 확인할 수 있나요?</h3>
     <div class="learning-trays" role="group" aria-labelledby="health-where">
      <button data-health-tray="start" aria-pressed="false">누가 썼고 어디서 왔는지 찾아볼 수 있어요</button>
      <button data-health-tray="check" aria-pressed="false">출처를 찾을 단서가 더 필요해요</button>
@@ -54,10 +54,10 @@ export function createLearningTools({ui,applyArt=()=>{},getAudio=null}){
     <label class="learning-select" id="health-reason-step" hidden>그렇게 생각한 이유는 무엇인가요?
      <select id="health-reason">
       <option value="">이유를 골라요</option>
-      <option value="author">누가 썼고 어떤 자료를 참고했는지 빠져 있어요</option>
-      <option value="traceable">쓴 사람, 참고 자료, 적용 대상을 살펴볼 수 있어요</option>
-      <option value="original">로고는 있지만 원래 글의 주소와 날짜가 없어요</option>
-      <option value="popular">좋아요가 많아서 믿을 수 있어요</option>
+      <option value="author">쓴 사람·참고 자료 없음</option>
+      <option value="traceable">쓴 곳·참고 자료가 있어요</option>
+      <option value="original">원래 글 주소·날짜 없음</option>
+      <option value="popular">좋아요가 많아요</option>
      </select>
     </label>
     <div class="school-tool-row" id="health-actions" hidden>
