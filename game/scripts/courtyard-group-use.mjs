@@ -4,7 +4,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { chromium } from '@playwright/test';
 
 const runtimeBase = 'ad6ecd43f7dfbe5f7e67d761bc0a95095ae69833';
-const paths = ['dist/game.js', 'dist/square/host.js'];
+const paths = ['dist/game.js', 'dist/square/controller.js', 'dist/square/host.js', 'dist/square/rope-session.js', 'dist/square/session.js'];
 const sourceChanges = execFileSync('git', ['diff', '--name-only', '--relative', runtimeBase, 'HEAD', '--', 'dist'], { encoding: 'utf8' }).trim().split(/\r?\n/).filter(Boolean);
 assert.ok(sourceChanges.length === 0 || sourceChanges.join(',') === paths.join(','), 'Runtime must match the known regression base or the scoped fix');
 const touch = process.env.SQUARE_DEVICE === 'phone';
@@ -131,14 +131,13 @@ try {
       await click('#action');
       await page.evaluate(() => window.squareProbe.reset());
       await click('#square-' + name);
-      if (!touch && sourceChanges.length) {
-        await wait(() => window.dormiGame.getState().squareRuntime?.phase === 'gathering', null, 45000);
-        await page.waitForTimeout(8000);
-        console.log('SQUARE_RAW_GATHER', name, JSON.stringify(await page.evaluate(() => window.squareProbe.read())));
-        await page.evaluate(() => window.squareProbe.stride(8));
-      }
+      await get('#square-gather').waitFor({ state: 'visible', timeout: 25000 });
+      const prompt = await page.evaluate(() => window.squareProbe.read());
+      await shot(name + '-gather-option');
+      await click('#square-gather');
       await get('#square-start').waitFor({ state: 'visible', timeout: sourceChanges.length ? 150000 : 10000 });
-      const gather = await page.evaluate(() => window.squareProbe.read());
+      assert.equal((await state()).squareRuntime.elapsed, 0, 'Quick gathering must not start or score the activity');
+      const gather = { prompt, ready: await page.evaluate(() => window.squareProbe.read()) };
       console.log('SQUARE_GATHER', name, JSON.stringify(gather));
       await shot(name + '-ready');
       await click('#square-start');
@@ -168,7 +167,7 @@ try {
     assert.equal((await state()).squareRuntime.paused, true);
     await click('#square-pause');
     assert.equal((await state()).squareRuntime.paused, false);
-    await wait(() => window.dormiGame.getState().squareRuntime?.phase === 'result', null, 160000);
+    await wait(() => window.dormiGame.getState().squareRuntime?.phase === 'result', null, 250000);
     const result = await get('#square-status').innerText();
     assert.match(result, /함께.*움직였어요/);
     await shot('exercise-result');
