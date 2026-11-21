@@ -1,0 +1,62 @@
+name: Inspect common menus at every device size
+on:
+  push:
+    branches: [qa/common-menu-views-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  panels:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: windows-2025, width: 1440, height: 900, channel: msedge}
+          - {os: ubuntu-24.04, width: 320, height: 568, channel: ''}
+          - {os: ubuntu-24.04, width: 844, height: 390, channel: ''}
+          - {os: ubuntu-24.04, width: 768, height: 1024, channel: ''}
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome on Linux
+        if: runner.os == 'Linux'
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Run panel audit
+        shell: bash
+        if: runner.os == 'Linux'
+        run: |
+          node scripts/serve.mjs > /tmp/dorm-village-ui.log 2>&1 &
+          node scripts/common-menu-views-2026-11-21.mjs
+        env:
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+      - name: Run Windows Edge audit
+        if: runner.os == 'Windows'
+        run: |
+          $server=Start-Process -FilePath 'node' -ArgumentList 'scripts/serve.mjs' -RedirectStandardOutput server-output.log -RedirectStandardError server-error.log -NoNewWindow -PassThru
+          try { node scripts/common-menu-views-2026-11-21.mjs; $code=$LASTEXITCODE }
+          finally { Stop-Process -Id $server.Id -ErrorAction SilentlyContinue }
+          exit $code
+        env:
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+          QA_CHANNEL: ${{ matrix.channel }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: panels-${{ matrix.width }}
+          path: game/qa/common-menu-views
