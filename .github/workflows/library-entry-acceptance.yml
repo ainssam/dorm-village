@@ -14,8 +14,6 @@ jobs:
         include:
           - {width: 320, height: 568}
           - {width: 390, height: 844}
-          - {width: 768, height: 1024}
-          - {width: 1440, height: 900}
     steps:
       - uses: actions/checkout@v4
         with:

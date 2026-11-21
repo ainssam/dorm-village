@@ -173,7 +173,8 @@ try{
  assert.ok(entry.onCanvas);
  assert.ok(entry.features.desk,'loan desk target exists');
  if(!baseline&&width<=520){
-  assert.ok(entry.proxyHeight>=43,'readable phone entry actor size');
+  const previous=JSON.parse(await readFile('qa/library-entry/baseline/library.json','utf8')).results[0];
+  assert.ok(entry.proxyHeight>=Math.round(previous.proxyHeight*1.65),'phone entry is at least 1.65× the whole-room baseline');
   for(const feature of ['desk','sign','door']){
    const p=entry.features[feature];
    assert.ok(p&&p.x>=8&&p.x<=width-8&&p.y>=115&&p.y<=height-130,feature+' is inside the main play area '+JSON.stringify(p));
@@ -203,7 +204,7 @@ try{
   await page.setViewportSize({width,height});
   const portrait=await record('06-portrait-return');
   assert.ok(portrait.onCanvas);
-  assert.ok(portrait.proxyHeight>=43);
+  assert.ok(portrait.proxyHeight>=Math.round(previous.proxyHeight*1.65));
  }
  await chooseFit();
  const fit=await record('07-room-fit');
@@ -212,6 +213,30 @@ try{
  assert.deepEqual(errors,[]);
  assert.deepEqual(network,[]);
 }finally{
+ if(!baseline){
+  const sheet=await context.newPage();
+  const files=['baseline/01-entry.png','candidate/01-entry.png','candidate/02-approach-loan.png','candidate/07-room-fit.png'];
+  const tiles=[];
+  for(const name of files){
+   const bytes=await readFile('qa/library-entry/'+name).catch(()=>null);
+   if(bytes)tiles.push({name,data:bytes.toString('base64')});
+  }
+  if(tiles.length){
+   const jpg=await sheet.evaluate(async tiles=>{
+    const canvas=document.createElement('canvas'),ctx=canvas.getContext('2d');
+    canvas.width=720;canvas.height=470;ctx.fillStyle='#fff8e8';ctx.fillRect(0,0,720,470);
+    for(const [i,tile] of tiles.entries()){
+     const img=new Image();img.src='data:image/png;base64,'+tile.data;await img.decode();
+     const w=Math.min(174,img.width*442/img.height),h=w*img.height/img.width,x=i*180+(180-w)/2;
+     ctx.drawImage(img,x,4,w,h);ctx.fillStyle='#234242';ctx.font='12px sans-serif';ctx.fillText(tile.name,i*180+3,460,174);
+    }
+    return canvas.toDataURL('image/jpeg',.72).split(',')[1];
+   },tiles);
+   await writeFile('qa/library-entry/comparison.jpg',Buffer.from(jpg,'base64'));
+   for(let n=0;n<jpg.length;n+=3100)console.log('LibraryImage '+n+' '+jpg.slice(n,n+3100));
+  }
+  await sheet.close();
+ }
  await writeFile(out+'/library.json',JSON.stringify(summary(),null,2));
  await browser.close();
 }
