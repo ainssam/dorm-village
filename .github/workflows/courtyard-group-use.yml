@@ -1,0 +1,41 @@
+name: Courtyard exercise and rope browser regression
+on:
+  push:
+    branches: [fix/courtyard-group-render-2026-11-21]
+concurrency:
+  group: courtyard-square-regression-${{ github.ref }}
+  cancel-in-progress: false
+permissions:
+  contents: read
+jobs:
+  play:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - device: phone
+            runner: ubuntu-24.04
+          - device: edge
+            runner: windows-2025
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: node scripts/courtyard-group-use.mjs
+        env:
+          SQUARE_DEVICE: ${{ matrix.device }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: courtyard-group-${{ matrix.device }}
+          path: game/qa/courtyard-group-use
