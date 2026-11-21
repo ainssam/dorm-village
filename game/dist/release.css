@@ -154,3 +154,23 @@ dialog{overscroll-behavior:contain;scrollbar-width:thin}dialog button{word-break
 .doreumi-performance[hidden]{display:none}.doreumi-performance>div{display:flex;flex-direction:column;gap:4px}.doreumi-performance strong{font-size:15px}.doreumi-performance span{font-size:11px;color:#526a60}.doreumi-performance button{min-height:44px;padding:9px 12px;border:1px solid #bdc9b3;border-radius:11px;background:#edf2df;color:#234d48;font:600 13px Pretendard,sans-serif}
 @media(max-width:640px){.motion-grid{gap:8px}.motion-card{padding:12px 10px;min-height:100px}.motion-card strong{font-size:15px}.motion-intro{padding-right:20px}.doreumi-performance{right:12px;max-width:calc(100% - 24px);gap:8px;padding:9px 10px}.doreumi-performance strong{font-size:14px}.doreumi-performance span{font-size:10px}#doreumi-open{padding:9px 13px}}
 @media(max-width:640px){.doreumi-performance{top:calc(var(--hud-mission-top,88px) + 48px)}}
+
+.village-welcome .welcome-actions {
+ justify-content: flex-start;
+ margin: 14px 0 8px;
+}
+@media (max-height: 460px) {
+ .village-welcome { padding: 18px 22px; }
+ .village-welcome .welcome-doreumi { width: 50px; height: 50px; margin-bottom: 8px; }
+ .village-welcome h2 { font-size: 27px; line-height: 1.25; margin: 6px 0 8px; }
+ .village-welcome .welcome-lead { font-size: 16px; line-height: 1.55; margin: 0; }
+ .village-welcome .welcome-actions { margin: 10px 0 8px; }
+}
+@media (max-width: 480px) and (orientation: portrait) {
+ .village-map .map-illustration:has(.map-list-mode) { display: flex; flex-direction: column; }
+ .village-map .map-illustration:has(.map-list-mode) .map-view-tools { order: -1; margin: 4px 0 10px; }
+ .village-map .village-atlas.map-list-mode { height: auto; min-height: 0; }
+ .village-map .map-list-mode .map-labels { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 10px; }
+ .village-map .map-list-mode .map-place { min-height: 48px; min-width: 0; }
+ .village-map .map-list-mode .map-north { display: none; }
+}
