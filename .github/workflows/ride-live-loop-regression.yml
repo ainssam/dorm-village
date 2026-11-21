@@ -1,0 +1,22 @@
+name: Ride live-loop fixture regression
+on:
+  push:
+    branches: [qa/ride-live-loop-regression-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - run: node --test tests/amusement-active-camera.test.mjs tests/bumper-game-host.test.mjs tests/kart-game-host.test.mjs tests/connected-flight-camera-interruptions.test.mjs tests/connected-flight-travel-composition.test.mjs
