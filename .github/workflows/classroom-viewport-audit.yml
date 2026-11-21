@@ -1,0 +1,53 @@
+name: Classroom matching dialog on short screens
+on:
+  push:
+    branches: [qa/classroom-matching-landscape-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {runner: ubuntu-24.04, channel: '', width: 844, height: 390, touch: '1'}
+          - {runner: ubuntu-24.04, channel: '', width: 667, height: 375, touch: '1'}
+          - {runner: ubuntu-24.04, channel: '', width: 390, height: 844, touch: '1'}
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Configure Chrome
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Run Chrome capture
+        if: runner.os == 'Linux'
+        shell: bash
+        run: |
+          node scripts/serve.mjs > server.log 2>&1 &
+          node scripts/classroom-viewport-audit.mjs
+        env:
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+          QA_TOUCH: ${{ matrix.touch }}
+          QA_CHANNEL: ${{ matrix.channel }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: classroom-${{ matrix.width }}x${{ matrix.height }}
+          path: game/qa/classroom-viewport
