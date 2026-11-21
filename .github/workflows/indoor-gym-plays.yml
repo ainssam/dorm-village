@@ -1,0 +1,54 @@
+name: Exercise every indoor gym activity
+on:
+  push:
+    branches: [qa/gym-result-feedback-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {group: results, width: 320}
+          - {group: results, width: 390}
+          - {group: results, width: 1440}
+          - {group: extras, width: 390}
+          - {group: extras, width: 1440}
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - run: git diff --exit-code ed17d9d5e9e1aff7023732041a195b87db0bb85c HEAD -- dist tests package.json package-lock.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - if: matrix.group == 'results' && matrix.width == 1440
+        run: node --test tests/*gym*.test.mjs tests/*curling*.test.mjs tests/*archery*.test.mjs tests/*laser*.test.mjs tests/*stair*.test.mjs
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Play actual gym activities
+        run: |
+          node scripts/serve.mjs > /tmp/dorm-school-views-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/indoor-gym-plays.mjs
+        env:
+          QA_GROUP: ${{ matrix.group }}
+          QA_WIDTH: ${{ matrix.width }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: indoor-gym-${{ matrix.group }}-${{ matrix.width }}
+          path: game/qa/indoor-gym-plays
