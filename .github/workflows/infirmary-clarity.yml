@@ -1,0 +1,63 @@
+name: Infirmary activities before and after
+on:
+  push:
+    branches: [qa/health-quiz-clarity-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  health:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {phase: before, width: 320}
+          - {phase: before, width: 1440}
+          - {phase: after, width: 320}
+          - {phase: after, width: 1440}
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        if: matrix.phase == 'before'
+        with:
+          ref: 3abcca53e329f12357461bf97261906a3169d358
+          path: audit-baseline
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chromium
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Exact source and health activities
+        env:
+          QA_PHASE: ${{ matrix.phase }}
+          QA_WIDTH: ${{ matrix.width }}
+        run: |
+          if [ "$QA_PHASE" = before ]; then
+            test "$(git -C ../audit-baseline rev-parse HEAD)" = '3abcca53e329f12357461bf97261906a3169d358'
+            export QA_APP="$GITHUB_WORKSPACE/audit-baseline/game"
+          else
+            git fetch --no-tags --depth=1 origin 'b618de79f079f273159d9f8fb28e8e46ed0227ab'
+            git diff --exit-code FETCH_HEAD HEAD -- dist tests package.json package-lock.json
+            export QA_APP="$GITHUB_WORKSPACE/game"
+          fi
+          (cd "$QA_APP" && node scripts/serve.mjs) > /tmp/dorm-infirmary-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/infirmary-clarity-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: infirmary-${{ matrix.phase }}-${{ matrix.width }}
+          path: game/qa/health-clarity
