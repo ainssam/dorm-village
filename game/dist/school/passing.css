@@ -6,3 +6,15 @@ body.passing-open .topbar,body.passing-open footer,#stage.passing-open .scene-to
 .passing-panel button[hidden]{display:none}.passing-panel button:disabled{opacity:.48}.passing-panel input:focus-visible,.passing-panel button:focus-visible,.passing-court:focus-visible{outline:3px solid #b58c39;outline-offset:2px}
 
 .passing-partners{margin-bottom:7px}
+
+
+/* A small portrait screen keeps the launch and receive controls together. */
+@media(max-width:540px){
+ .passing-panel{display:flex;flex-direction:column}
+ .passing-panel>*{flex:none}
+ .passing-controls{order:-3}
+ .passing-actions{order:-2}
+ #passing-feedback{order:-1}
+ .passing-move{grid-template-columns:repeat(3,44px);grid-template-rows:repeat(3,44px);flex-basis:138px}
+ .passing-move button,.passing-actions button{min-height:44px}
+}
