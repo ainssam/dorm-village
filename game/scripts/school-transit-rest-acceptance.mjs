@@ -40,7 +40,7 @@ async function shot(name){
  console.log('TRANSIT_SHOT '+JSON.stringify(output.shots.at(-1)));
 }
 async function tapAction(expected){
- await wait(t=>window.__transitQA.read().near===t,expected,10000);
+ await wait(t=>{const s=window.__transitQA.read();return s.near===t&&!s.locked&&!s.modal;},expected,10000);
  if(touch)await press('#action');
  else await page.keyboard.press('e');
 }
@@ -176,12 +176,14 @@ try{
  if(touch)await press(d.locator('[data-close]'));
  else await page.keyboard.press('Escape');
  await d.waitFor({state:'hidden'});
+ await wait(()=>!window.__transitQA.read().locked);
  assert.equal((await state()).floor,1);
  assert.equal((await state()).trip,null);
  output.results.push({event:'selector-dismiss'});
  await floorPanel(1);
  await selectFloor(1);
  await d.waitFor({state:'hidden'});
+ await wait(()=>!window.__transitQA.read().locked);
  assert.equal((await state()).trip,null);
  output.results.push({event:'current-floor-no-trip'});
  await ride(1,2);
