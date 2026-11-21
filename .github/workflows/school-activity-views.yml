@@ -1,0 +1,47 @@
+name: Capture school activities
+on:
+  push:
+    branches: [qa/school-activity-views-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [study, language, school, movement]
+        width: [1440, 320]
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - run: git diff --exit-code HEAD^ HEAD -- dist tests package.json package-lock.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Open and capture each school activity
+        run: |
+          node scripts/serve.mjs > /tmp/dorm-school-views-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/school-activity-views.mjs
+        env:
+          QA_GROUP: ${{ matrix.group }}
+          QA_WIDTH: ${{ matrix.width }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: school-activity-${{ matrix.group }}-${{ matrix.width }}
+          path: game/qa/school-activity-views
