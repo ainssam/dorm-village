@@ -13,3 +13,29 @@
 #stage .vehicle-play-panel [hidden]{display:none!important}
 @media(max-width:540px){#stage .vehicle-play-panel{width:min(286px,calc(100vw - 28px));padding:10px;font-size:13px;max-height:calc(100dvh - 320px)}}
 @media(max-height:520px) and (min-width:541px){#stage .vehicle-play-panel{left:0;bottom:calc(100% + 6px);width:240px;max-height:calc(100dvh - 255px);padding:8px;font-size:12px}#stage .vehicle-play-panel>strong{font-size:13px}#stage .vehicle-play-panel button{min-height:40px;font-size:13px}}
+
+/* Keep the track clear once the kart's options are closed. The pause and
+   dismount buttons own their original positions. */
+@media (max-width:540px), (max-height:520px) and (min-width:541px) {
+ #stage .kart-play-panel:not(:has(.vehicle-play-choices[open], [data-kart-retry]:not([hidden]))) {
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:4px 8px;
+  padding:4px 8px;
+ }
+ #stage .kart-play-panel:not(:has(.vehicle-play-choices[open], [data-kart-retry]:not([hidden])))>strong {
+  display:none;
+ }
+ #stage .kart-play-panel .vehicle-play-choices:not([open]) {
+  border:0;
+  padding:0;
+ }
+ #stage .kart-play-panel .vehicle-play-choices:not([open]) summary {
+  min-height:44px;
+  line-height:44px;
+  white-space:nowrap;
+ }
+ #stage .kart-play-panel>.vehicle-play-result, #stage .kart-play-panel>[data-kart-retry] {
+  grid-column:1/-1;
+ }
+}

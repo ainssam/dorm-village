@@ -101,7 +101,7 @@ test('reset confirmation preserves native scrolling to its explicit cancel autof
  assert.equal(f.dialog.scrollTop,0,'the next ordinary dialog still starts at the top');
 });
 
-test('welcome places initial focus on its heading instead of its lower close button',t=>{
+test('welcome focuses its heading and puts the primary action before optional routes',t=>{
  const f=fixture(t);
  f.dialog.showModal=()=>{
   f.dialog.open=true;
@@ -115,7 +115,9 @@ test('welcome places initial focus on its heading instead of its lower close but
  assert.equal(f.doc.activeElement,heading);assert.equal(f.dialog.scrollTop,0,'welcome begins at its title');
  const descendants=node=>node.children.flatMap(child=>[child,...descendants(child)]),order=descendants(content),afterHeading=order.slice(order.indexOf(heading)+1);
  const firstButton=afterHeading.find(node=>node.tagName==='BUTTON');
- assert.equal(firstButton.getAttribute('data-welcome-place'),'park','the first route follows the heading in keyboard document order');
- assert(!content.querySelectorAll('[data-close]').some(button=>button.getAttribute('autofocus')!==null),'lower close actions do not steal initial focus');
+ assert.equal(firstButton.getAttribute('class'),'primary','entering the village is the first action after the welcome heading');
+ assert.notEqual(firstButton.getAttribute('data-close'),null,'the primary action enters the village');
+ assert(afterHeading.indexOf(firstButton)<afterHeading.findIndex(node=>node.getAttribute('data-welcome-place')==='park'),'optional routes follow the primary action');
+ assert(!content.querySelectorAll('[data-close]').some(button=>button.getAttribute('autofocus')!==null),'close actions do not steal initial focus');
  f.ui.close();f.flush();assert.equal(f.doc.activeElement,f.trigger);assert.equal(f.locked,false);
 });
