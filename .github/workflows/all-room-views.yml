@@ -1,0 +1,57 @@
+name: Recapture changed room locations
+on:
+  push:
+    branches: [qa/room-final-delta-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {width: 1440, height: 900}
+          - {width: 390, height: 844}
+          - {width: 768, height: 1024}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: d46eb9185a5a30f10acb4328589b3e0c23552037
+          path: baseline
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+        working-directory: baseline/game
+      - name: Select browser
+        working-directory: baseline/game
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Capture each room
+        working-directory: baseline/game
+        env:
+          QA_RELEASE: 'd46eb9185a5a30f10acb4328589b3e0c23552037'
+          QA_ROOMS: 'infirmary,library'
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+        run: |
+          cp ../../harness/game/scripts/all-room-views-2026-11-21.mjs scripts/
+          node scripts/serve.mjs > /tmp/dorm-room-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/all-room-views-2026-11-21.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: final-changed-rooms-${{ matrix.width }}x${{ matrix.height }}
+          path: baseline/game/qa/all-room-views
