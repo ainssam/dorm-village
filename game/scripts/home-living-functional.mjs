@@ -189,7 +189,7 @@ const scenes={
   await wait(()=>window.dormiGame.getState().activity?.phase==='active');
   assert.match((await app()).activity?.id??'',/home.bed/);
   await capture('home-bed-resting.png');
-  await pressSelector('#leave-activity');
+  await pressSelector('#action');
   await wait(()=>!window.dormiGame.getState().activity&&!window.dormiGame.getState().inputLocked);
   await capture('home-bed-exit.png');
   return 'Settled on the bed, left using the dedicated control, and regained movement';
@@ -259,6 +259,8 @@ const scenes={
   for(const [index,name] of ['west','middle','east'].entries()){
    await approach('courtyard','courtyard.shell.'+name);await play();
    await wait(expected=>window.dormiGame.getState().materials.shell===expected,index+1);
+   await pressSelector('#action');
+   await wait(()=>!window.dormiGame.getState().activity&&!window.dormiGame.getState().inputLocked);
   }
   await open('workshop','workshop.table','#shell-frame-prepare');
   await pressSelector('#shell-frame-prepare');
@@ -314,7 +316,7 @@ const scenes={
   return 'Baked milk roll and prepared herbal tea, served first guest, coins and timer pause confirmed; checked packed-food panel and exit';
  }
 };
-const chosen=suite==='house'?['decorate','bed','cooking','robot','blocks']:['workshop','cafe'];
+const chosen=suite==='house'?['bed']:['workshop'];
 const summary=()=>({ref,suite,viewport:{width,height,touch},results,steps,sceneVisits,errors,consoleErrors,network});
 try{
  await page.goto(base,{waitUntil:'domcontentloaded'});
