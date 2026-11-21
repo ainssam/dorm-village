@@ -1,0 +1,48 @@
+name: Play the bumper circle with a keyboard
+on:
+  push:
+    branches: [qa/bumper-desktop-controls-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  leisure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {activity: bumper, width: 1440, height: 900, touch: '0'}
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Play using ordinary controls
+        run: |
+          npm run serve > /tmp/leisure-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/leisure-actual-play-2026-11-21.mjs
+        env:
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+          QA_TOUCH: ${{ matrix.touch }}
+          QA_ACTIVITY: ${{ matrix.activity }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: leisure-${{ matrix.activity }}-${{ matrix.width }}x${{ matrix.height }}
+          path: game/qa/leisure-actual-play
