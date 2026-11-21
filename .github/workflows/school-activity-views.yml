@@ -20,7 +20,8 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - run: git diff --exit-code HEAD^ HEAD -- dist tests package.json package-lock.json
+          fetch-depth: 3
+      - run: git diff --exit-code 3abcca53e329f12357461bf97261906a3169d358 HEAD -- dist tests package.json package-lock.json
       - uses: actions/setup-node@v4
         with:
           node-version: '24'

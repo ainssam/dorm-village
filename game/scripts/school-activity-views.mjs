@@ -100,6 +100,101 @@ async function sheets(){
  }finally{await mg.close();}
 }
 
+async function firstAction(item){
+ const press=async loc=>{if(touch)await loc.tap({timeout:6000});else {await loc.focus({timeout:6000});await page.keyboard.press('Enter');}};
+ const loc=s=>page.locator(s);
+ const get=async s=>await loc(s).textContent({timeout:5000});
+ const focus=()=>page.evaluate(()=>({id:document.activeElement?.id,tag:document.activeElement?.tagName,data:document.activeElement?.dataset.meaning}));
+ const bounds=s=>page.evaluate(s=>{
+  const n=document.querySelector(s),d=document.querySelector('dialog[open]');
+  if(!n||!d)return null;
+  const r=n.getBoundingClientRect(),h=d.getBoundingClientRect();
+  return {top:r.top,bottom:r.bottom,dialogTop:h.top,dialogBottom:h.bottom,height:innerHeight,visible:r.top>=Math.max(h.top,0)&&r.bottom<=Math.min(h.bottom,innerHeight)};
+ },s);
+ const notes={};
+ switch(item.id){
+  case 'english.words':{
+   const direction=await get('#subject-feedback');
+   const word=(await get('#english-word')).trim();
+   const answer=loc('[data-meaning="'+word+'"]');
+   const wrong=loc('[data-meaning]:not([data-meaning="'+word+'"])').last();
+   await press(wrong);
+   notes.wrong={direction,feedback:await get('#subject-feedback'),bounds:await bounds('#subject-feedback'),focus:await focus()};
+   await press(answer);
+   notes.correct={feedback:await get('#subject-feedback'),next:await loc('#english-next').isVisible(),bounds:await bounds('#subject-feedback'),focus:await focus()};
+   await press(loc('#english-next'));
+   notes.advance={progress:await get('#english-progress'),feedback:await get('#subject-feedback'),focus:await focus()};
+   break;
+  }
+  case 'science.observe':{
+   await press(loc('#pendulum-start'));
+   notes.started={focus:await focus(),status:await get('#pendulum-status')};
+   await press(loc('#pendulum-pause'));
+   notes.paused={focus:await focus(),status:await get('#pendulum-status')};
+   await press(loc('#pendulum-start'));
+   await page.waitForFunction(()=>document.querySelector('#pendulum-history button'),null,{timeout:15000});
+   notes.result={period:await get('#pendulum-period'),status:await get('#pendulum-status'),bounds:await bounds('#pendulum-status')};
+   break;
+  }
+  case 'science.light':{
+   const before=await get('#light-status');
+   const input=loc('[data-light="0"]');
+   await input.focus();
+   await page.keyboard.press('ArrowLeft');
+   notes.adjusted={before,after:await get('#light-status'),bounds:await bounds('#light-status'),focus:await focus(),method:'keyboard range'};
+   break;
+  }
+  case 'math.galton':{
+   await press(loc('#galton-start'));
+   notes.started={focus:await focus(),status:await get('#galton-status')};
+   await press(loc('#galton-pause'));
+   notes.paused={focus:await focus(),status:await get('#galton-status')};
+   break;
+  }
+  case 'art.paint':{
+   const color=loc('[data-art-color]').nth(2);
+   await press(color);
+   const board=loc('#art-canvas');
+   if(touch)await board.tap({timeout:6000});
+   else await board.click({timeout:6000});
+   notes.drew={color:await color.getAttribute('aria-pressed'),undoEnabled:await loc('#art-undo').isEnabled(),status:await get('#art-status')};
+   break;
+  }
+  case 'sportsField.throw':{
+   await press(loc('#throw-launch'));
+   await page.waitForTimeout(1600);
+   notes.launch={feedback:await get('#throw-feedback'),status:await get('#throw-score'),focus:await focus(),bounds:await bounds('#throw-feedback')};
+   break;
+  }
+  case 'sportsField.pass':
+  case 'schoolGym.pass':{
+   await press(loc('#passing-launch'));
+   await page.waitForTimeout(1600);
+   notes.launch={feedback:await get('#passing-feedback'),status:await get('#passing-score'),focus:await focus(),bounds:await bounds('#passing-feedback')};
+   break;
+  }
+  case 'sportsField.race':{
+   await press(loc('#race-start'));
+   stillReady: for(let i=0;i<16;i++){
+    if(await loc('#race-stride').isEnabled())break stillReady;
+    await page.waitForTimeout(250);
+   }
+   if(await loc('#race-stride').isEnabled())await press(loc('#race-stride'));
+   notes.race={status:await get('#race-status'),focus:await focus(),bounds:await bounds('#race-status')};
+   break;
+  }
+  case 'sportsField.baseball':{
+   await press(loc('#baseball-start'));
+   await page.waitForTimeout(1000);
+   if(await loc('#baseball-swing').isEnabled())await press(loc('#baseball-swing'));
+   notes.swing={status:await get('#baseball-status'),call:await get('#baseball-call'),focus:await focus()};
+   break;
+  }
+  default:return null;
+ }
+ return notes;
+}
+
 try{
  await page.goto(url,{waitUntil:'domcontentloaded',timeout:45000});
  await page.waitForFunction(()=>window.dormiGame?.getState()?.ready,null,{timeout:120000});
@@ -125,6 +220,32 @@ try{
   }
   const filename=String(rows.length+1).padStart(2,'0')+'-'+item.id+'.jpg';
   try{await capture(out+'/'+filename);row.shot=filename;}catch(e){row.problem=(row.problem?row.problem+' | ':'')+'capture: '+e.message.slice(0,140);}
+
+  if(!row.problem){
+   try{
+    row.firstAction=await firstAction(item);
+    if(row.firstAction){
+     row.firstShot=filename.replace('.jpg','-first.jpg');
+     await capture(out+'/'+row.firstShot);
+     console.log('SCHOOL_FIRST '+JSON.stringify({id:row.id,...row.firstAction}));
+    }
+   }catch(e){
+    row.firstProblem=e.message.slice(0,240);
+    console.log('SCHOOL_FIRST_ISSUE '+JSON.stringify({id:row.id,error:row.firstProblem}));
+   }
+   if(row.panel){
+    try{
+     const close=page.locator('dialog[open] [data-close]').first();
+     if(touch)await close.tap({timeout:5000});
+     else await page.keyboard.press('Escape');
+     await page.waitForFunction(()=>!document.querySelector('dialog[open]'),null,{timeout:4500});
+     row.exit='closed';
+    }catch(e){
+     row.exit=e.message.slice(0,150);
+     console.log('SCHOOL_EXIT_ISSUE '+JSON.stringify({id:row.id,error:row.exit}));
+    }
+   }
+  }
   row.errors=errors.slice(before);
   rows.push(row);
   printRow(row);
