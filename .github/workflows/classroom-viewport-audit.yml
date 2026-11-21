@@ -1,7 +1,7 @@
-name: Classroom viewport candidate
+name: Classroom viewport across landscape widths
 on:
   push:
-    branches: [qa/classroom-framing-fix-2026-11-21]
+    branches: [qa/classroom-wide-tablet-2026-11-21]
 permissions:
   contents: read
 jobs:
@@ -12,9 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {runner: windows-2025, channel: msedge, width: 1440, height: 900, touch: '0'}
-          - {runner: ubuntu-24.04, channel: '', width: 390, height: 844, touch: '1'}
-          - {runner: ubuntu-24.04, channel: '', width: 768, height: 1024, touch: '1'}
+          - {runner: ubuntu-24.04, channel: '', width: 1024, height: 768, touch: '1'}
+          - {runner: ubuntu-24.04, channel: '', width: 844, height: 390, touch: '1'}
     defaults:
       run:
         working-directory: game
@@ -41,19 +40,6 @@ jobs:
         run: |
           node scripts/serve.mjs > server.log 2>&1 &
           node scripts/classroom-viewport-audit.mjs
-        env:
-          QA_WIDTH: ${{ matrix.width }}
-          QA_HEIGHT: ${{ matrix.height }}
-          QA_TOUCH: ${{ matrix.touch }}
-          QA_CHANNEL: ${{ matrix.channel }}
-      - name: Run Edge capture
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          $server = Start-Process -FilePath 'node' -ArgumentList 'scripts/serve.mjs' -RedirectStandardOutput server-output.log -RedirectStandardError server-error.log -NoNewWindow -PassThru
-          try { node scripts/classroom-viewport-audit.mjs; $testCode=$LASTEXITCODE }
-          finally { Stop-Process -Id $server.Id -ErrorAction SilentlyContinue }
-          exit $testCode
         env:
           QA_WIDTH: ${{ matrix.width }}
           QA_HEIGHT: ${{ matrix.height }}

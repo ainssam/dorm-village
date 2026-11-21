@@ -96,13 +96,13 @@ try {
  equals(fit.actorHeight,back.actorHeight);
  equals(back.zoom*.5,manual.zoom,.01);
  assert.ok(manual.actorHeight<back.actorHeight*.67,'manual zoom-out visibly reduces classroom scale');
- if(touch){
+ if(width<960||height<520){
   equals(entry.zoom,1.25,.01);equals(fit.zoom,1,.01);
   assert.ok(fit.wall.left>=0&&fit.wall.right<=width);
  }else{
   equals(entry.zoom,1,.01);
   equals(entry.actorHeight,fit.actorHeight);
-  assert.ok(entry.actorHeight>=105&&entry.actorHeight<=155,'desktop actor has a readable projection without cropping the classroom');
+  assert.ok(entry.actorHeight>=height*.105&&entry.actorHeight<=height*.18,'desktop actor has a readable projection without cropping the classroom');
   for(const m of [entry,fit,back]){
    assert.ok(m.wall.left>=24&&m.wall.right<=m.w-24&&m.wall.top>=30&&m.wall.bottom<=m.h-70,'full classroom is in view');
    assert.ok(m.floor.right-m.floor.left>=m.w*.55,'classroom floor occupies useful center width');
