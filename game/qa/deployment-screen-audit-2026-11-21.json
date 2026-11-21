@@ -1,0 +1,68 @@
+{
+  "version": "2026.11.21.1",
+  "productionUrl": "https://dorm-village.vercel.app/",
+  "project": "dorm-village",
+  "account": "아인2",
+  "deploymentId": "dpl_8i9gCW9vHXVpYuRKA3HFXx5T6Em2",
+  "deploymentUrl": "https://dorm-village-1m7wckhwh-ain-b38f.vercel.app/",
+  "target": "production",
+  "state": "READY",
+  "readyAt": "2026-11-21T03:23:01.486Z",
+  "source": {
+    "reviewed": "7d00794465f0dc8e0293b498297463d001e8d522",
+    "merged": "4734705b2116f8a33134bfefe85cf0081c5129da",
+    "tree": "12d981c61133c86dc5cd5f2e705c51360f3f4946"
+  },
+  "test": {
+    "run": 44859947315,
+    "passed": 400,
+    "failed": 0,
+    "skipped": 0
+  },
+  "publicBrowser": {
+    "name": "Windows Edge",
+    "version": "157.0.4341.60",
+    "run": 44860800393,
+    "artifact": 14688739295,
+    "entered": true,
+    "room": "courtyard",
+    "scriptErrors": 0,
+    "requestErrors": 0,
+    "assets": [
+      {
+        "path": "/",
+        "status": 200,
+        "type": "text/html; charset=utf-8"
+      },
+      {
+        "path": "/game.js",
+        "status": 200,
+        "type": "application/javascript; charset=utf-8"
+      },
+      {
+        "path": "/vendor/three.module.js",
+        "status": 200,
+        "type": "application/javascript; charset=utf-8"
+      },
+      {
+        "path": "/manifest.webmanifest",
+        "status": 200,
+        "type": "application/manifest+json; charset=utf-8"
+      },
+      {
+        "path": "/favicon.ico",
+        "status": 200,
+        "type": "image/vnd.microsoft.icon"
+      },
+      {
+        "path": "/brand/dorm-village-kakao-1200x630.png",
+        "status": 200,
+        "type": "image/png",
+        "png": {
+          "width": 1200,
+          "height": 630
+        }
+      }
+    ]
+  }
+}
