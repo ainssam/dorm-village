@@ -53,8 +53,9 @@ async function travel(id){
  if((await state()).roomId===id)return 'already there';
  await hit('#village-map');
  const selector=id==='sportsField'?'[data-map-place=schoolHall]':'[data-map-place='+id+']';
- if(touch&&await page.locator(selector).isHidden())await hit('[data-map-link='+(id==='sportsField'?'schoolHall':id)+']');
- else await hit(selector);
+ const list=page.locator('#map-list-toggle');
+ if(await list.getAttribute('aria-pressed')!=='true')await press(list);
+ await hit('[data-map-link='+(id==='sportsField'?'schoolHall':id)+']');
  if(id==='sportsField')await hit('[data-map-place=sportsField]');
  await hit('#map-travel');
  await wait(id=>{const s=window.dormiGame.getState();return s.roomId===id&&!s.inputLocked&&!document.querySelector('dialog[open]');},id,90000);
