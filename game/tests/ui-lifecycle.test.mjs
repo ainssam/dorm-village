@@ -46,6 +46,15 @@ trace.length=0;ui.render(progress,'home');ui.map();assert.equal(document.activeE
 for(const id of ['classroom','home','courtyard','playground','park','library']){ui.render(progress,id);assert.ok(ids.get('mission').textContent.length>0);}
 console.log('PASS: six locations, current focus, selectable details, current-location no-op, center route, asynchronous close/unlock/travel order, cancellation, and all six hints. DOM fixture only; native browser layout and Escape remain unverified.');
 
+globalThis.matchMedia=query=>({matches:query.includes('max-width: 480px')});
+ui.render(progress,'classroom');ui.map();
+assert.equal(document.activeElement.dataset.mapPlace,'schoolHall','The visible landmark receives focus in the compact list');
+assert.equal(ids.get('map-zoom-controls').hidden,true,'Compact list initially hides map-only zoom controls');
+ids.get('map-list-toggle').onclick();
+assert.equal(ids.get('map-zoom-controls').hidden,false,'Zoom controls return in the illustration view');
+assert.equal(ids.get('map-list-toggle').attrs['aria-pressed'],'false');
+dialog.close();handlers.close();delete globalThis.matchMedia;
+
 // Model the asynchronous import lifecycle without pretending this DOM fixture is WebGL.
 await new Promise(setImmediate);
 let release,mounts=0,disposals=0;

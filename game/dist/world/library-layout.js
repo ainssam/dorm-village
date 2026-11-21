@@ -20,8 +20,9 @@ export const LIBRARY_INTERACTIONS=[
  {id:'library.loan',type:'loan',at:libraryRolePoint('chinchilla',{x:-5.3,z:1.2}),radius:.85,label:'책 대출 · 반납하기'},
  {id:'library.guide',type:'libraryQuest',residentId:'chinchilla',at:libraryRolePoint('chinchilla',{x:-6.9,z:3.4}),radius:1.05,label:'친칠라 사서 · 책 찾기 의뢰',text:'왼쪽 입구에는 대출대, 안쪽에는 책장과 큰 공용 책상, 오른쪽 창가에는 조용한 독서석이 있어요. 책장에서 책을 고르고 빈 의자에서 읽어 보세요. 주민 가까이에서는 이야기할 수 있어요.'}
 ];
+// Use the other side of the desk for a greeting; the quest keeps its own approach.
 export const LIBRARY_RESIDENTS=[
- {id:'chinchilla',name:'친칠라',role:'친칠라 사서',stationary:true,home:libraryRolePoint('chinchilla',{x:-5.3,z:2.93,yaw:Math.PI+.06}),talkAt:libraryRolePoint('chinchilla',{x:-6.9,z:3.4}),interactionRadius:1.05,path:[libraryRolePoint('chinchilla',{x:-5.3,z:2.93})],text:'어서 와요! 대출 장부를 확인하고 있어요. 책장에서 마음에 드는 이야기를 골라 한 권 빌려 갈 수 있어요. 다 읽으면 이 대출대에서 돌려주세요.'},
+ {id:'chinchilla',name:'친칠라',role:'친칠라 사서',stationary:true,home:libraryRolePoint('chinchilla',{x:-5.3,z:2.93,yaw:Math.PI+.06}),talkAt:libraryRolePoint('chinchilla',{x:-3.75,z:3.36}),interactionRadius:1.05,path:[libraryRolePoint('chinchilla',{x:-5.3,z:2.93})],text:'어서 와요! 대출 장부를 확인하고 있어요. 책장에서 마음에 드는 이야기를 골라 한 권 빌려 갈 수 있어요. 다 읽으면 이 대출대에서 돌려주세요.'},
  {id:'armadillo',name:'아르마딜로',role:'책을 고르는 친구',stationary:true,home:libraryRolePoint('armadillo',{x:-2.135,z:-3.2,yaw:Math.PI-.83}),talkAt:{x:-7.7,z:1.4},interactionRadius:1,path:[libraryRolePoint('armadillo',{x:-2.135,z:-3.2})],text:'책장을 살피며 다음 이야기를 고르고 있어요. 어느 이야기가 좋을까요? 책장 앞에서 세 이야기의 제목을 살펴봐요.'},
  {id:'capybara',name:'카피바라',role:'의자에서 읽는 친구',stationary:true,home:{x:6.2,z:-4.52,yaw:Math.PI-.12},talkAt:{x:7.55,z:-3.5},interactionRadius:1,path:[{x:6.2,z:-4.52}],text:'폭신한 의자에서 책 한 권을 읽고 있어요. 빈 의자에 앉아 천천히 읽어 볼까요? 책을 덮고 그냥 쉬어도 좋아요.'}
 ];
