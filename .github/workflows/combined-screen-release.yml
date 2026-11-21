@@ -1,0 +1,25 @@
+name: Dorm Village combined release tests
+on:
+  push:
+    branches: [qa/combined-screen-final-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: d46eb9185a5a30f10acb4328589b3e0c23552037
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: game/package-lock.json
+      - working-directory: game
+        run: |
+          test "$(git rev-parse HEAD)" = "d46eb9185a5a30f10acb4328589b3e0c23552037"
+          npm ci
+          npm run check
+          npm test
