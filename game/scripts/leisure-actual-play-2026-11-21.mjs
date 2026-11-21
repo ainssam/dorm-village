@@ -111,8 +111,11 @@ sampleRender(){const render=renderer.render.bind(renderer),clear=renderer.clear.
    }finally{await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});}
   }
   const keys=[...(dy>0?['ArrowUp']:dy<0?['ArrowDown']:[]),...(dx>0?['ArrowRight']:dx<0?['ArrowLeft']:[])];
-  if(await page.locator('.kart-controls').isVisible())await page.locator('.kart-controls').focus();
-  else await page.locator('#scene').focus();
+  if(!(await state()).activity)await page.locator('#scene').focus();
+  else {
+   const focused=await page.evaluate(()=>({target:document.activeElement?.outerHTML.slice(0,180),focus:document.hasFocus()}));
+   console.log('BUMPER_KEY_BEFORE '+JSON.stringify({keys,focused,bumper:await qa('bumper')}));
+  }
   for(const key of keys)await page.keyboard.down(key);
   try{
    if((await state()).activity){await page.waitForTimeout(450);console.log('BUMPER_KEY_HELD '+JSON.stringify({keys,bumper:await qa('bumper'),focused:await page.evaluate(()=>document.activeElement?.outerHTML.slice(0,180))}));}
