@@ -41,8 +41,9 @@ export function createRaceController({ui,getView,getActors,stage,isAllowed=()=>t
   else if(s.phase==='result')status=s.winner==='tie'?'거의 동시에 도착했어요!':s.winner==='player'?'도름이가 먼저 도착했어요! 함께 한 번 더?':'토끼가 먼저 도착했어요! 편한 박자로 다시 해 봐요';
   else if(s.phase==='running')status=s.rabbitFinish!==null?'토끼가 도착했어요. 도름이도 자기 속도로 끝까지!':live.touch?'아래 큰 버튼으로 달려요':'큰 버튼이나 스페이스 키로 달려요';
   $('race-status').textContent=status;
-  stride.textContent=mode==='hold'?'길게 누르기':'톡톡 누르기';
-  stride.hidden=['ready','result'].includes(s.phase);
+  stride.textContent=s.playerFinish!==null?'도착했어요':mode==='hold'?'길게 누르기':'톡톡 누르기';
+  // Keep replay below the stride while a finishing player may still be holding it.
+  stride.hidden=s.phase==='ready';
   stride.disabled=s.phase!=='running'||s.paused||s.playerFinish!==null;
   $('race-start').hidden=s.phase!=='ready';
   $('race-pause').hidden=['ready','result'].includes(s.phase);
