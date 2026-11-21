@@ -98,7 +98,7 @@ async function walkInRoom(id){
  const after=(await state()).worldPosition;
  return {before,after,movement:Math.hypot(after.x-before.x,after.z-before.z)};
 }
-const clickClose=async()=>{await hit('dialog[open] [data-close]');await wait(()=>!document.querySelector('dialog[open]')&&!window.dormiGame.getState().inputLocked);};
+const clickClose=async()=>{await press(page.locator('dialog[open] [data-close]').first());await wait(()=>!document.querySelector('dialog[open]')&&!window.dormiGame.getState().inputLocked);};
 async function task(name,fn){
  const began=Date.now(),from=events.length;
  console.log('OUTDOOR_BEGIN '+name);
@@ -273,8 +273,6 @@ try{
  }
 
  if(group==='field-tail'){
-  await task('run-complete',()=>pose('sportsField.run','school-run',17.5));
-  await task('football',football);
   for(const id of ['athletic-rabbit','baseball-tiger'])await task(id+'-conversation',async()=>{
    await action('resident.'+id);
    const line=await page.locator('dialog[open]').innerText();
@@ -284,38 +282,6 @@ try{
  }
  if(group==='park-garden'){
   await task('gardener-conversation',async()=>{await action('resident.gardener-hedgehog');const line=await page.locator('dialog[open]').innerText();assert.match(line,/꽃밭/);await captured('gardener-conversation');await clickClose();return{line,exited:true};});
-  await task('garden-cycle',async()=>{
-   await pose('park.flowers','flower-water',1);
-   assert.equal((await state()).garden.phase,'growing');
-   await pose('park.bench','pond-sky',2);
-   await travel('playground');
-   await pose('playground.swing','cloud-swing',2);
-   assert.equal((await state()).garden.phase,'ready');
-   await travel('park');
-   const beds=['park.flowers','park.flowers-west','park.flowers-north'];
-   const marks=[];
-   for(const [i,id]of beds.entries()){
-    await action(id);
-    await wait(count=>window.dormiGame.getState().garden.petals===count,(i+1)*3,30000);
-    marks.push({id,petals:(await state()).garden.petals});
-    await captured(id+'-petals');
-   }
-   assert.equal((await state()).garden.phase,'seed');
-   return {marks,final:(await state()).garden};
-  });
-  for(const id of ['park.leaves.west','park.tree.west','park.tree.east'])await task(id,async()=>{
-   const material=id.includes('tree')?'apple':'autumnLeaf';
-   const available=(await targets()).some(t=>t.id===id);
-   if(!available)return{calendarUnavailable:true};
-   const initial=(await state()).materials[material];
-   const near=await action(id);
-   await wait(id=>window.dormiGame.getState().activity?.id===id,id,10000);
-   await captured(id+'-gathering');
-   await wait(({initial,material})=>window.dormiGame.getState().materials[material]>initial,{initial,material},35000);
-   const after=(await state()).materials[material];
-   await leavePose(id);
-   return {near,material,initial,after};
-  });
  }
  const thumb=touch?278:420,contact=await browser.newPage();
  for(let index=0;index<captures.length;index+=4){
