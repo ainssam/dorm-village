@@ -1,0 +1,48 @@
+name: School elevator corridors and forest rest
+on:
+  push:
+    branches: [qa/school-transit-rest-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  transit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 14
+    strategy:
+      fail-fast: false
+      matrix:
+        width: [390, 1440]
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Exact source and native controls
+        env:
+          QA_WIDTH: ${{ matrix.width }}
+          QA_SOURCE: ad6ecd43f7dfbe5f7e67d761bc0a95095ae69833
+        run: |
+          git fetch --no-tags --depth=1 origin "$QA_SOURCE"
+          git diff --exit-code FETCH_HEAD HEAD -- dist tests package.json package-lock.json
+          export QA_APP="$GITHUB_WORKSPACE/game"
+          node scripts/serve.mjs > /tmp/dorm-transit-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/school-transit-rest-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: school-transit-${{ matrix.width }}
+          path: game/qa/school-transit-rest
