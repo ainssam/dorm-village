@@ -9,6 +9,7 @@ const sourceChanges = execFileSync('git', ['diff', '--name-only', '--relative', 
 assert.ok(sourceChanges.length === 0 || sourceChanges.join(',') === paths.join(','), 'Runtime must match the known regression base or the scoped fix');
 const touch = process.env.SQUARE_DEVICE === 'phone';
 const mode = process.env.SQUARE_MODE;
+const edgeProof = process.env.SQUARE_EDGE_PROOF;
 assert.ok(['calm', 'rope-timed'].includes(mode));
 const source = await readFile('dist/game.js', 'utf8');
 const marker = 'window.dormiGame=Object.freeze({getState:readState});';
@@ -143,8 +144,15 @@ try {
       console.log('SQUARE_GATHER', name, JSON.stringify(gather));
       await shot(name + '-ready');
       await click('#square-start');
-      await wait(() => window.dormiGame.getState().squareRuntime?.phase === 'playing', null, 45000);
-      const result = await actions();
+      const started = (await state()).squareRuntime.phase;
+      assert.ok(['countdown', 'playing'].includes(started));
+      await shot('native-started');
+      let result = { started };
+      if (edgeProof !== 'start') {
+        if (edgeProof === 'finish') await page.evaluate(() => window.squareProbe.stride(10));
+        await wait(() => window.dormiGame.getState().squareRuntime?.phase === 'playing', null, 80000);
+        result = await actions();
+      }
       await click('#square-leave');
       await wait(() => { const s = window.dormiGame.getState(); return s.roomId === 'courtyard' && !s.squareRuntime && !s.inputLocked && !document.querySelector('dialog[open]'); });
       const prior = (await state()).worldPosition;

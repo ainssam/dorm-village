@@ -1,0 +1,36 @@
+name: Native Edge quick-gather start and exercise finish
+on:
+  push:
+    branches: [qa/courtyard-edge-start-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  exercise:
+    runs-on: windows-2025
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        phase: [start, finish]
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci
+      - run: node scripts/courtyard-group-use.mjs
+        env:
+          SQUARE_DEVICE: edge
+          SQUARE_MODE: calm
+          SQUARE_EDGE_PROOF: ${{ matrix.phase }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: courtyard-edge-${{ matrix.phase }}
+          path: game/qa/courtyard-group-use
