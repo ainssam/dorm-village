@@ -29,7 +29,7 @@ export function createLearningTools({ui,applyArt=()=>{},getAudio=null}){
 
   return open('health', `
    <p>가상 글 3장 중 한 장을 고르고, 뒤집어 단서를 찾아봐요.</p>
-   <div class="school-tool-row" role="group" aria-label="연습할 글">
+   <div class="school-tool-row" role="group" aria-label="연습할 글" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr))">
     ${HEALTH_CARDS.map((c,i)=>`<button data-health-card="${c.id}" aria-pressed="${c.id==='a'}">글 ${i+1}</button>`).join('')}
    </div>
    <p id="health-progress" class="caption"></p>

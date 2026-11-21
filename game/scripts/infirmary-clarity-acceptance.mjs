@@ -102,7 +102,8 @@ try{
  await snap('quiz-restart','#health-quiz-prompt');
  await close();
  await open('infirmary.learning','#health-flip');
- await snap('card-start','#health-title');
+ const entry=await snap('card-start','#health-flip');
+ if(after)assert.ok(entry.target.fullyVisible,'reveal clues button visible on the first screen');
  for(const [i,id,tray,reason]of [[1,'a','check','author'],[2,'b','start','traceable'],[3,'c','check','original']]){
   await press('[data-health-card="'+id+'"]');
   await press('#health-flip');

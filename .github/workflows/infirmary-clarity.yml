@@ -47,7 +47,7 @@ jobs:
             test "$(git -C ../audit-baseline rev-parse HEAD)" = '3abcca53e329f12357461bf97261906a3169d358'
             export QA_APP="$GITHUB_WORKSPACE/audit-baseline/game"
           else
-            git fetch --no-tags --depth=1 origin '86b96183d13aa7513a039d0725fee4c729119334'
+            git fetch --no-tags --depth=1 origin '5818d5747def2a842cc771911fc1efaa8cd2be30'
             git diff --exit-code FETCH_HEAD HEAD -- dist tests package.json package-lock.json
             export QA_APP="$GITHUB_WORKSPACE/game"
           fi
