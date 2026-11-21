@@ -1,0 +1,45 @@
+name: Baseball touch and keyboard verification
+on:
+  push:
+    branches: [qa/village-baseball-touch-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  screenshots:
+    name: ${{ matrix.layout }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        layout: [pc, phone, landscape]
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Bat through five pitches using real input
+        run: |
+          npm run serve > /tmp/dorm-village-server.log 2>&1 &
+          node scripts/village-baseball-touch-2026-11-21.mjs
+        env:
+          VILLAGE_LAYOUT: ${{ matrix.layout }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: baseball-${{ matrix.layout }}
+          path: game/qa/village-baseball-touch
