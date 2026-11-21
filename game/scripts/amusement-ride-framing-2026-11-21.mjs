@@ -134,11 +134,26 @@ sampleRender(){const render=renderer.render.bind(renderer),clear=renderer.clear.
     await page.waitForTimeout(2300);
     row.stages.ridingLater=await witness(kind+'-riding-later');
    }
+   if(kind==='coaster'&&touch&&!reduced){
+    const control=page.locator('[data-coaster-control]');
+    assert.match(await control.innerText(),/멈춤/);
+    await press(control);
+    await page.waitForFunction(()=>/계속하기/.test(document.querySelector('[data-coaster-control]')?.getAttribute('aria-label')??''));
+    await page.setViewportSize({width:844,height:390});
+    row.stages.pausedLandscape=await witness('coaster-paused-landscape');
+    assert.equal(row.stages.pausedLandscape.camera,'amusement.coaster.active-view');
+    assert.ok(row.stages.pausedLandscape.center[0]>=0&&row.stages.pausedLandscape.center[0]<=844);
+    assert.ok(row.stages.pausedLandscape.center[1]>=0&&row.stages.pausedLandscape.center[1]<=390);
+    await press(control);
+    await page.waitForFunction(()=>/멈춤/.test(document.querySelector('[data-coaster-control]')?.getAttribute('aria-label')??''));
+    await page.waitForFunction(earlier=>window.__rideAcceptance.metrics().rideTime>earlier+.3,row.stages.pausedLandscape.rideTime,{timeout:12000});
+   }
+   if(kind==='coaster'&&reduced)assert.equal(row.stages.ridingLater.main,true,'motion reduction keeps the fixed wide coaster view');
    checkpoint='exit';
    await press('#action');
    await page.waitForFunction(()=>!window.dormiGame.getState().activity||window.dormiGame.getState().activity.phase==='exiting',null,{timeout:8000});
    console.log('EXIT '+JSON.stringify((await state()).activity));
-   await page.waitForFunction(()=>!window.dormiGame.getState().activity,null,{timeout:195000});
+   await page.waitForFunction(()=>!window.dormiGame.getState().activity,null,{timeout:270000});
    await page.waitForTimeout(450);
    row.stages.exit=await witness(kind+'-exit');
    assert.equal(row.stages.exit.main,true,'walking camera restored');

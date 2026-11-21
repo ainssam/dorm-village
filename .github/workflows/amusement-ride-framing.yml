@@ -1,7 +1,7 @@
 name: Verify amusement ride focus
 on:
   push:
-    branches: [qa/amusement-ride-recovery-2026-11-21]
+    branches: [qa/amusement-coaster-small-2026-11-21]
 permissions:
   contents: read
 jobs:
@@ -12,7 +12,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { width: 1440, height: 900, touch: '0', reduced: '0', rides: 'coaster' }
+          - { width: 390, height: 844, touch: '1', reduced: '0', rides: 'coaster' }
+          - { width: 844, height: 390, touch: '1', reduced: '1', rides: 'coaster' }
     defaults:
       run:
         working-directory: game
