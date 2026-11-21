@@ -1,0 +1,51 @@
+name: Capture active amusement rides
+on:
+  push:
+    branches: [qa/amusement-ride-framing-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  ride:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 13
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { width: 1440, height: 900, touch: '0', reduced: '0', rides: 'carousel,viking,coaster,kart,bumper' }
+          - { width: 390, height: 844, touch: '1', reduced: '0', rides: 'carousel,coaster,viking' }
+          - { width: 844, height: 390, touch: '1', reduced: '1', rides: 'carousel,coaster' }
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Capture ride phases
+        run: |
+          npm run serve > /tmp/dorm-village-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/amusement-ride-framing-2026-11-21.mjs
+        env:
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+          QA_TOUCH: ${{ matrix.touch }}
+          QA_REDUCED: ${{ matrix.reduced }}
+          QA_RIDES: ${{ matrix.rides }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ride-${{ matrix.width }}x${{ matrix.height }}
+          path: game/qa/amusement-ride-framing
