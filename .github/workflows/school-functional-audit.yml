@@ -1,0 +1,53 @@
+name: School and library functional audit
+on:
+  push:
+    branches: [qa/school-and-library-functional-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  capture:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {group: matching, width: 390, height: 844, touch: '1'}
+          - {group: library, width: 1440, height: 900, touch: '0'}
+          - {group: science-math, width: 1440, height: 900, touch: '0'}
+          - {group: languages, width: 768, height: 1024, touch: '1'}
+          - {group: art-music-robot, width: 1440, height: 900, touch: '0'}
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: git diff --exit-code ad6ecd43f7dfbe5f7e67d761bc0a95095ae69833 HEAD -- dist tests package.json package-lock.json
+      - run: npm ci
+      - name: Choose browser
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Exercise actions
+        run: |
+          node scripts/serve.mjs > server.log 2>&1 &
+          node scripts/school-functional-audit.mjs
+        env:
+          QA_GROUP: ${{ matrix.group }}
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+          QA_TOUCH: ${{ matrix.touch }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: school-function-${{ matrix.group }}
+          path: game/qa/school-functional
