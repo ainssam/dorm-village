@@ -8,6 +8,8 @@ const paths = ['dist/game.js', 'dist/square/controller.js', 'dist/square/host.js
 const sourceChanges = execFileSync('git', ['diff', '--name-only', '--relative', runtimeBase, 'HEAD', '--', 'dist'], { encoding: 'utf8' }).trim().split(/\r?\n/).filter(Boolean);
 assert.ok(sourceChanges.length === 0 || sourceChanges.join(',') === paths.join(','), 'Runtime must match the known regression base or the scoped fix');
 const touch = process.env.SQUARE_DEVICE === 'phone';
+const mode = process.env.SQUARE_MODE;
+assert.ok(['calm', 'rope-timed'].includes(mode));
 const source = await readFile('dist/game.js', 'utf8');
 const marker = 'window.dormiGame=Object.freeze({getState:readState});';
 assert.equal(source.split(marker).length, 2);
@@ -161,7 +163,7 @@ try {
     }
     console.log('SQUARE_RESULT', JSON.stringify(results.at(-1)));
   };
-  await test('calm', async () => {
+  if (mode === 'calm') await test('calm', async () => {
     await shot('exercise-playing');
     await click('#square-pause');
     assert.equal((await state()).squareRuntime.paused, true);
@@ -173,7 +175,7 @@ try {
     await shot('exercise-result');
     return result;
   });
-  await test('rope-timed', async () => {
+  if (mode === 'rope-timed') await test('rope-timed', async () => {
     await get('#square-tap').waitFor({ state: 'visible', timeout: 10000 });
     const sample = page.evaluate(() => new Promise(resolve => {
       const deadline = performance.now() + 12000;
@@ -193,6 +195,7 @@ try {
     await shot('rope-result');
     return result;
   });
+  assert.equal(results.length, 1);
   assert.ok(results.every(result => result.passed), 'Both exercise and timed rope must complete and return');
   assert.deepEqual([...pageErrors], []);
   assert.deepEqual(httpErrors, []);
