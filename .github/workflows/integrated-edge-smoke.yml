@@ -1,0 +1,51 @@
+name: Integrated Windows Edge smoke
+on:
+  push:
+    branches: [qa/combined-native-edge-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  edge:
+    runs-on: windows-2025
+    timeout-minutes: 9
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify candidate source
+        run: |
+          git diff --exit-code ${{ env.SOURCE_SHA }} HEAD -- ../game/dist ../game/tests package.json package-lock.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Write-Host "Runtime candidate ${{ env.SOURCE_SHA }}"
+        env:
+          SOURCE_SHA: 27db4aa8e4446e863487715e2b8141e17bc23953
+      - run: npm ci
+      - name: Verify Microsoft Edge
+        run: |
+          $edge = Join-Path ${env:ProgramFiles(x86)} 'Microsoft\Edge\Application\msedge.exe'
+          $edge64 = Join-Path $env:ProgramFiles 'Microsoft\Edge\Application\msedge.exe'
+          if (-not (Test-Path $edge) -and -not (Test-Path $edge64)) { npx playwright install msedge }
+      - name: Run clean startup and camera / health smoke
+        shell: pwsh
+        run: |
+          $server = Start-Process -FilePath 'node' -ArgumentList 'scripts/serve.mjs' -RedirectStandardOutput server-output.log -RedirectStandardError server-error.log -NoNewWindow -PassThru
+          try { node scripts/integrated-edge-smoke.mjs; $testCode=$LASTEXITCODE }
+          finally { Stop-Process -Id $server.Id -ErrorAction SilentlyContinue }
+          exit $testCode
+        env:
+          QA_WIDTH: '1440'
+          QA_HEIGHT: '900'
+          QA_TOUCH: '0'
+          QA_CHANNEL: msedge
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: integrated-edge-smoke
+          path: game/qa/classroom-viewport
