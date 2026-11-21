@@ -1,0 +1,46 @@
+name: Verify new visitor school loop
+on:
+  push:
+    branches: [qa/school-first-visitor-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  visitor:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        width: [1440, 390]
+    defaults:
+      run:
+        working-directory: game
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 2
+      - run: git diff --exit-code d46eb9185a5a30f10acb4328589b3e0c23552037 HEAD -- dist tests package.json package-lock.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+      - name: Select Chrome
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: New visitor, walk, quiz, exit
+        run: |
+          node scripts/serve.mjs >/tmp/dorm-visitor-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/school-first-visitor.mjs
+        env:
+          QA_WIDTH: ${{ matrix.width }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: first-school-visit-${{ matrix.width }}
+          path: game/qa/school-first-visitor
