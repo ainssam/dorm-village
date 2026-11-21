@@ -1,0 +1,56 @@
+name: Use home, kitchen, study, blocks, crafts and bakery
+on:
+  push:
+    branches: [qa/home-living-functional-2026-11-21]
+permissions:
+  contents: read
+jobs:
+  activity:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 13
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {suite: house, width: 390, height: 844}
+          - {suite: craft, width: 1440, height: 900}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ad6ecd43f7dfbe5f7e67d761bc0a95095ae69833
+          path: candidate
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          path: harness
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci
+        working-directory: candidate/game
+      - name: Select browser
+        working-directory: candidate/game
+        run: |
+          if command -v google-chrome >/dev/null; then
+            echo "CHROMIUM_PATH=$(command -v google-chrome)" >> "$GITHUB_ENV"
+          else
+            npx playwright install chromium
+          fi
+      - name: Perform the living activities
+        working-directory: candidate/game
+        env:
+          QA_RELEASE: 'ad6ecd43f7dfbe5f7e67d761bc0a95095ae69833'
+          QA_SUITE: ${{ matrix.suite }}
+          QA_WIDTH: ${{ matrix.width }}
+          QA_HEIGHT: ${{ matrix.height }}
+        run: |
+          cp ../../harness/game/scripts/home-living-functional.mjs scripts/
+          node scripts/serve.mjs > /tmp/dorm-living-server.log 2>&1 &
+          curl --retry 12 --retry-connrefused --retry-delay 1 -fsS http://127.0.0.1:4173/ -o /dev/null
+          node scripts/home-living-functional.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: home-living-${{ matrix.suite }}-${{ matrix.width }}x${{ matrix.height }}
+          path: candidate/game/qa/home-living-functional
