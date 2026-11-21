@@ -8,8 +8,8 @@ body.passing-open .topbar,body.passing-open footer,#stage.passing-open .scene-to
 .passing-partners{margin-bottom:7px}
 
 
-/* A small portrait screen keeps the launch and receive controls together. */
-@media(max-width:540px){
+/* Small touch layouts keep the launch and receive controls together. */
+@media(max-width:540px),(max-height:540px) and (pointer:coarse){
  .passing-panel{display:flex;flex-direction:column}
  .passing-panel>*{flex:none}
  .passing-controls{order:-3}
