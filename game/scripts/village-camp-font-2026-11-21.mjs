@@ -5,7 +5,7 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 
 const base='3abcca53e329f12357461bf97261906a3169d358';
-const sourceDiff=execFileSync('git',['diff','--name-only',base,'HEAD','--','dist','tests','package.json','package-lock.json'],{encoding:'utf8'});
+const sourceDiff=execFileSync('git',['diff','--name-only','--relative',base,'HEAD','--','dist','tests','package.json','package-lock.json'],{encoding:'utf8'});
 assert.equal(sourceDiff.trim(),'dist/plaza/plaza.css','Candidate changes only the camping stylesheet');
 const origin='http://127.0.0.1:4173/';
 const suite='camp',layout=process.env.VILLAGE_LAYOUT,phase=process.env.VILLAGE_FONT_PHASE;
